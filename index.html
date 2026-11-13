@@ -18,7 +18,7 @@
     --text: #2B2D42;
     --text-muted: #64748B;
     --card-bg: #FFFFFF;
-    --border-rad: 24px;
+    --border-rad: 20px;
     --shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
   }
 
@@ -27,17 +27,17 @@
   body {
     background: linear-gradient(135deg, #3A0CA3 0%, #4361EE 50%, #4CC9F0 100%);
     min-height: 100vh;
-    padding: clamp(12px, 2vw, 24px);
+    padding: clamp(8px, 1.5vw, 18px);
     display: flex;
     justify-content: center;
     align-items: flex-start;
     color: var(--text);
   }
 
-  /* FULL WIDTH RESPONSIVE WRAPPER (TỐI ƯU CHO LAPTOP & IPAD) */
+  /* FULL WIDTH RESPONSIVE WRAPPER (TỐI ƯU TOÀN DIỆN CHO LAPTOP & IPAD) */
   .main-wrapper {
     width: 100%;
-    max-width: 1140px;
+    max-width: 1120px;
   }
 
   .app-header {
@@ -45,148 +45,149 @@
     justify-content: space-between;
     align-items: center;
     color: white;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
   }
 
   .header-titles h1 {
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.3rem);
     font-weight: 800;
     text-shadow: 0 4px 12px rgba(0,0,0,0.25);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
   }
 
   .header-titles p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     opacity: 0.95;
     margin-top: 2px;
   }
 
-  /* MUSIC BUTTON IN HEADER */
+  /* NÚT BẬT NHẠC GAME SHOW SÔI ĐỘNG */
   .music-toggle-btn {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(8px);
     border: 2px solid rgba(255, 255, 255, 0.4);
     color: white;
-    padding: 8px 16px;
+    padding: 7px 15px;
     border-radius: 20px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     transition: all 0.2s;
   }
   .music-toggle-btn:hover {
     background: rgba(255, 255, 255, 0.35);
-    transform: scale(1.04);
+    transform: scale(1.03);
   }
   .music-toggle-btn.playing {
     background: #2EC4B6;
     border-color: #2EC4B6;
+    box-shadow: 0 0 15px rgba(46, 196, 182, 0.6);
   }
 
   .quiz-card {
     background: var(--card-bg);
     border-radius: var(--border-rad);
-    padding: clamp(20px, 3vw, 32px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
+    padding: clamp(14px, 2vw, 24px);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.18);
+    margin-bottom: 16px;
     transition: all 0.3s ease;
   }
 
   .screen { display: none; }
-  .screen.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+  .screen.active { display: block; animation: fadeIn 0.25s ease-in-out; }
 
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
+    from { opacity: 0; transform: translateY(6px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   /* SECTION TITLES */
   .section-title {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--text);
-    margin: 18px 0 10px 0;
+    margin: 14px 0 8px 0;
     display: flex;
     align-items: center;
+    gap: 6px;
+  }
+
+  /* CHIP GRID */
+  .chip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
     gap: 8px;
   }
 
-  /* GRID SELECTORS */
-  .chip-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 10px;
-  }
-
   .filter-chip {
-    padding: 12px;
+    padding: 10px 8px;
     border: 2px solid #E2E8F0;
-    border-radius: 14px;
+    border-radius: 12px;
     background: #F8FAFC;
     cursor: pointer;
     text-align: center;
     transition: all 0.2s ease;
     user-select: none;
   }
-  .filter-chip .chip-title { font-size: 0.95rem; font-weight: 700; }
-  .filter-chip .chip-desc { font-size: 0.75rem; color: var(--text-muted); margin-top: 3px; }
+  .filter-chip .chip-title { font-size: 0.9rem; font-weight: 700; }
+  .filter-chip .chip-desc { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; }
   .filter-chip:hover { border-color: var(--primary); transform: translateY(-2px); }
   .filter-chip.selected { border-color: var(--primary); background: var(--primary-light); color: var(--primary); }
   .filter-chip.selected .chip-title { color: var(--primary); }
 
   .topics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+    gap: 8px;
   }
 
   .topic-pill {
-    padding: 12px 10px;
+    padding: 10px 8px;
     border: 2px solid #E2E8F0;
-    border-radius: 14px;
+    border-radius: 12px;
     background: #FFFFFF;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    font-size: 0.85rem;
+    gap: 4px;
+    font-size: 0.82rem;
     font-weight: 600;
     transition: all 0.2s ease;
   }
-  .topic-pill .icon { font-size: 1.8rem; }
+  .topic-pill .icon { font-size: 1.6rem; }
   .topic-pill:hover { border-color: var(--primary); background: #F8FAFC; }
   .topic-pill.selected { border-color: var(--primary); background: var(--primary-light); color: var(--primary); }
 
   /* CONFIG BOX */
   .config-box {
     background: #F8FAFC;
-    border-radius: 18px;
-    padding: 18px;
-    margin-top: 20px;
+    border-radius: 16px;
+    padding: 16px;
+    margin-top: 14px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
   }
 
   .config-row {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
   }
-  .config-row label { font-size: 0.9rem; font-weight: 700; color: var(--text); }
+  .config-row label { font-size: 0.85rem; font-weight: 700; color: var(--text); }
   .config-row select, .config-row input {
-    padding: 10px 14px;
+    padding: 9px 12px;
     border: 1.5px solid #CBD5E1;
-    border-radius: 12px;
-    font-size: 0.95rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
     outline: none;
     background: white;
   }
@@ -194,46 +195,46 @@
 
   .pool-status-banner {
     background: #EEF2FF;
-    border-left: 5px solid var(--primary);
-    padding: 12px 16px;
-    border-radius: 12px;
-    font-size: 0.95rem;
+    border-left: 4px solid var(--primary);
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--primary);
-    margin-top: 18px;
+    margin-top: 14px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
   }
 
   .btn-start {
     width: 100%;
-    margin-top: 22px;
-    padding: 18px;
+    margin-top: 18px;
+    padding: 16px;
     background: linear-gradient(135deg, #4361EE, #3A0CA3);
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 800;
     border: none;
-    border-radius: 18px;
+    border-radius: 16px;
     cursor: pointer;
-    box-shadow: 0 8px 25px rgba(67, 97, 238, 0.45);
+    box-shadow: 0 8px 24px rgba(67, 97, 238, 0.45);
     transition: transform 0.2s, box-shadow 0.2s;
   }
-  .btn-start:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(67, 97, 238, 0.55); }
+  .btn-start:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(67, 97, 238, 0.55); }
 
   /* =======================================================================
-     LAYOUT QUIZ 2 CỘT TỐI ƯU CHO LAPTOP & IPAD
+     LAYOUT QUIZ VIEWPORT-FIT (KHÔNG PHẢI CUỘN MÀN HÌNH TRÊN LAPTOP / IPAD)
      ======================================================================= */
   .quiz-layout-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 16px;
   }
 
-  @media (min-width: 860px) {
+  @media (min-width: 840px) {
     .quiz-layout-grid {
-      grid-template-columns: 360px 1fr;
+      grid-template-columns: 290px 1fr;
       align-items: start;
     }
   }
@@ -242,72 +243,70 @@
   .quiz-left-panel {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
   }
 
-  /* NHÂN VẬT HOẠT HÌNH TRẺ CON (MASCOT) */
   .mascot-container {
     background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
-    border-radius: 20px;
-    padding: 16px;
+    border-radius: 16px;
+    padding: 10px 12px;
     display: flex;
     align-items: center;
-    gap: 14px;
-    border: 2px solid #C7D2FE;
-    position: relative;
+    gap: 10px;
+    border: 1.5px solid #C7D2FE;
   }
 
   .mascot-avatar {
-    width: 72px;
-    height: 72px;
+    width: 52px;
+    height: 52px;
     flex-shrink: 0;
-    animation: floatMascot 3s ease-in-out infinite;
+    animation: floatMascot 2.5s ease-in-out infinite;
   }
   @keyframes floatMascot {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+    50% { transform: translateY(-4px); }
   }
 
   .mascot-bubble {
     background: white;
-    padding: 10px 14px;
-    border-radius: 14px;
-    font-size: 0.9rem;
+    padding: 8px 10px;
+    border-radius: 12px;
+    font-size: 0.82rem;
     font-weight: 700;
     color: var(--primary);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    line-height: 1.4;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    line-height: 1.35;
     position: relative;
     flex: 1;
   }
   .mascot-bubble::before {
     content: '';
     position: absolute;
-    left: -8px;
+    left: -6px;
     top: 50%;
     transform: translateY(-50%);
-    border-width: 6px 8px 6px 0;
+    border-width: 5px 6px 5px 0;
     border-style: solid;
     border-color: transparent white transparent transparent;
   }
 
-  /* HÌNH ẢNH CÂU HỎI */
+  /* HÌNH ẢNH CÂU HỎI VỪA KHÍT (HEIGHT 150PX ĐỂ KHÔNG PHẢI CUỘN) */
   .question-img-card {
-    border-radius: 18px;
+    border-radius: 14px;
     overflow: hidden;
     background: #F1F5F9;
     border: 2px solid #E2E8F0;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    height: 150px;
   }
   .question-img-card img {
     width: 100%;
-    height: 230px;
+    height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
   }
 
-  /* CỘT PHẢI: CÂU HỎI & ĐÁP ÁN */
+  /* CỘT PHẢI: CÂU HỎI & ĐÁP ÁN (DẠNG LƯỚI 2X2 GỌN GÀNG) */
   .quiz-right-panel {
     display: flex;
     flex-direction: column;
@@ -317,25 +316,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
 
   .top-left-controls {
     display: flex;
-    gap: 8px;
+    gap: 6px;
   }
 
   .control-btn {
     background: #F1F5F9;
     border: 1.5px solid #CBD5E1;
-    border-radius: 10px;
-    padding: 8px 14px;
-    font-size: 0.85rem;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 0.8rem;
     font-weight: 700;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     transition: all 0.2s;
   }
   .control-btn:hover { background: #E2E8F0; }
@@ -343,19 +342,19 @@
   .timer-pill {
     background: #FFF3CD;
     color: #856404;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    padding: 5px 12px;
+    border-radius: 16px;
+    font-size: 0.85rem;
     font-weight: 700;
   }
 
   .progress-track {
     width: 100%;
-    height: 12px;
+    height: 8px;
     background: #E2E8F0;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
   .progress-fill {
     height: 100%;
@@ -367,40 +366,48 @@
   .question-badge-row {
     display: flex;
     justify-content: space-between;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
     color: var(--text-muted);
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
 
   .question-title {
-    font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
     font-weight: 800;
-    line-height: 1.45;
+    line-height: 1.4;
     color: var(--text);
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
 
+  /* ĐÁP ÁN DẠNG LƯỚI 2X2 ĐỂ TIẾT KIỆM CHIỀU CAO (KHÔNG CẦN SCROLL) */
   .choices-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: 600px) {
+    .choices-container {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   .choice-option {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 15px 18px;
+    gap: 10px;
+    padding: 10px 14px;
     border: 2px solid #E2E8F0;
-    border-radius: 16px;
+    border-radius: 12px;
     background: white;
     cursor: pointer;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    transition: all 0.2s ease;
+    transition: all 0.15s ease;
     text-align: left;
+    min-height: 50px;
   }
   .choice-option:hover:not(:disabled) {
     border-color: var(--primary);
@@ -409,8 +416,8 @@
   }
 
   .choice-letter {
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background: #EEF2FF;
     color: var(--primary);
@@ -418,7 +425,7 @@
     align-items: center;
     justify-content: center;
     font-weight: 800;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     flex-shrink: 0;
   }
 
@@ -443,13 +450,13 @@
   }
 
   /* Short Answer Box */
-  .sa-box { margin-bottom: 18px; }
+  .sa-box { margin-bottom: 12px; }
   .sa-input {
     width: 100%;
-    padding: 16px 18px;
+    padding: 12px 14px;
     border: 2px solid #CBD5E1;
-    border-radius: 16px;
-    font-size: 1.15rem;
+    border-radius: 12px;
+    font-size: 1.05rem;
     outline: none;
   }
   .sa-input.correct { border-color: var(--success); background: var(--success-bg); }
@@ -457,51 +464,51 @@
 
   .btn-check-sa {
     width: 100%;
-    margin-top: 10px;
-    padding: 14px;
+    margin-top: 8px;
+    padding: 12px;
     background: var(--primary);
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     border: none;
-    border-radius: 14px;
+    border-radius: 12px;
     cursor: pointer;
   }
 
-  /* Explanation */
+  /* Explanation Card */
   .explanation-card {
     display: none;
-    padding: 18px;
-    border-radius: 16px;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 16px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin-bottom: 10px;
   }
   .explanation-card.correct {
     display: block;
     background: var(--success-bg);
-    border-left: 6px solid var(--success);
+    border-left: 5px solid var(--success);
     color: #0F5132;
   }
   .explanation-card.wrong {
     display: block;
     background: var(--danger-bg);
-    border-left: 6px solid var(--danger);
+    border-left: 5px solid var(--danger);
     color: #842029;
   }
 
   .btn-next-step {
     display: none;
     width: 100%;
-    padding: 16px;
+    padding: 13px;
     background: linear-gradient(135deg, #7209B7, #3A0CA3);
     color: white;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 800;
     border: none;
-    border-radius: 16px;
+    border-radius: 12px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(58, 12, 163, 0.3);
+    box-shadow: 0 4px 12px rgba(58, 12, 163, 0.25);
   }
   .btn-next-step.visible { display: block; }
 
@@ -520,71 +527,67 @@
 
   .modal-box {
     background: white;
-    border-radius: 24px;
-    padding: 30px;
-    max-width: 460px;
+    border-radius: 20px;
+    padding: 26px;
+    max-width: 440px;
     width: 100%;
     text-align: center;
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-    animation: fadeIn 0.25s ease-out;
+    animation: fadeIn 0.2s ease-out;
   }
-  .modal-icon { font-size: 3.5rem; margin-bottom: 10px; }
-  .modal-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
-  .modal-desc { font-size: 1rem; color: var(--text-muted); margin-bottom: 22px; line-height: 1.5; }
-  .modal-actions { display: flex; gap: 12px; justify-content: center; }
+  .modal-icon { font-size: 3rem; margin-bottom: 8px; }
+  .modal-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 6px; }
+  .modal-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 18px; line-height: 1.45; }
+  .modal-actions { display: flex; gap: 10px; justify-content: center; }
 
   .modal-btn-confirm {
-    padding: 12px 24px;
-    border-radius: 14px;
+    padding: 10px 20px;
+    border-radius: 12px;
     font-weight: 700;
     border: none;
     cursor: pointer;
     background: var(--primary);
     color: white;
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   .modal-btn-cancel {
-    padding: 12px 24px;
-    border-radius: 14px;
+    padding: 10px 20px;
+    border-radius: 12px;
     font-weight: 700;
     border: 2px solid #CBD5E1;
     background: #F8FAFC;
     color: var(--text);
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   /* RESULT SCREEN */
-  .result-banner { text-align: center; padding: 16px 0; }
-  .result-icon { font-size: 4.5rem; margin-bottom: 8px; }
-  .result-headline { font-size: 1.9rem; font-weight: 800; color: var(--text); }
-  .result-stars { font-size: 2.4rem; margin: 8px 0; }
+  .result-banner { text-align: center; padding: 12px 0; }
+  .result-icon { font-size: 4rem; margin-bottom: 6px; }
+  .result-headline { font-size: 1.8rem; font-weight: 800; color: var(--text); }
+  .result-stars { font-size: 2.2rem; margin: 6px 0; }
 
   .summary-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    background: #F8FAFC;
-    border-radius: 20px;
-    padding: 18px;
-    text-align: center;
-    margin: 18px 0;
-  }
-  .summary-stat-val { font-size: 1.6rem; font-weight: 800; }
-  .summary-stat-lbl { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
-
-  .action-buttons {
-    display: flex;
-    flex-direction: column;
     gap: 12px;
-  }
-  .btn-highlight {
+    background: #F8FAFC;
+    border-radius: 16px;
     padding: 16px;
+    text-align: center;
+    margin: 16px 0;
+  }
+  .summary-stat-val { font-size: 1.5rem; font-weight: 800; }
+  .summary-stat-lbl { font-size: 0.8rem; color: var(--text-muted); margin-top: 3px; }
+
+  .action-buttons { display: flex; flex-direction: column; gap: 10px; }
+  .btn-highlight {
+    padding: 15px;
     background: linear-gradient(135deg, #4361EE, #3A0CA3);
     color: white;
     border: none;
-    border-radius: 16px;
-    font-size: 1.15rem;
+    border-radius: 14px;
+    font-size: 1.1rem;
     font-weight: 800;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(67, 97, 238, 0.35);
@@ -592,25 +595,25 @@
   .action-row-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 10px;
   }
   .btn-secondary {
-    padding: 14px;
+    padding: 12px;
     background: #F1F5F9;
     color: var(--text);
     border: 2px solid #CBD5E1;
-    border-radius: 14px;
-    font-size: 1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
     font-weight: 700;
     cursor: pointer;
   }
   .btn-primary-action {
-    padding: 14px;
+    padding: 12px;
     background: var(--primary);
     color: white;
     border: none;
-    border-radius: 14px;
-    font-size: 1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
     font-weight: 700;
     cursor: pointer;
   }
@@ -620,23 +623,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     flex-wrap: wrap;
     gap: 10px;
   }
   .review-view-toggle {
     display: flex;
     background: #E2E8F0;
-    border-radius: 12px;
-    padding: 3px;
+    border-radius: 10px;
+    padding: 2px;
   }
   .toggle-btn {
-    padding: 8px 16px;
+    padding: 7px 14px;
     border: none;
     background: transparent;
     font-weight: 700;
-    font-size: 0.9rem;
-    border-radius: 10px;
+    font-size: 0.85rem;
+    border-radius: 8px;
     cursor: pointer;
     color: var(--text-muted);
   }
@@ -649,14 +652,14 @@
   .review-filters {
     display: flex;
     gap: 8px;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
   }
   .review-filter-btn {
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 6px 14px;
+    border-radius: 18px;
     border: 1.5px solid #CBD5E1;
     background: white;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
     cursor: pointer;
   }
@@ -669,16 +672,16 @@
   .review-list-container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    max-height: 600px;
+    gap: 14px;
+    max-height: 560px;
     overflow-y: auto;
-    padding-right: 6px;
+    padding-right: 4px;
   }
 
   .review-item-card {
     border: 2px solid #E2E8F0;
-    border-radius: 18px;
-    padding: 16px;
+    border-radius: 16px;
+    padding: 14px;
     background: #FFFFFF;
     transition: all 0.2s;
   }
@@ -688,33 +691,33 @@
   .review-card-header {
     display: flex;
     justify-content: space-between;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
-  .review-q-text { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+  .review-q-text { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
   .review-answers-box {
     background: #F8FAFC;
-    padding: 12px;
-    border-radius: 12px;
-    font-size: 0.95rem;
-    margin-bottom: 10px;
-    line-height: 1.45;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    line-height: 1.4;
   }
   .review-explain-box {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #475569;
-    line-height: 1.45;
+    line-height: 1.4;
     background: #F1F5F9;
-    padding: 10px 14px;
-    border-radius: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
   }
 
   .card-view-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 16px;
+    margin-top: 14px;
   }
 
   /* Confetti */
@@ -734,12 +737,12 @@
   <header class="app-header">
     <div class="header-titles">
       <h1>🔬 Khoa Học Vui</h1>
-      <p>100 Câu hỏi Khoa học Tự nhiên & Xã hội có hình ảnh minh họa cho bé 7 tuổi</p>
+      <p>Đấu trường 100 câu hỏi KHTN & Xã hội thi học bổng dành cho bé 7 tuổi</p>
     </div>
-    <!-- MUSIC TOGGLE BUTTON -->
+    <!-- NÚT BẬT NHẠC GAME SHOW SÔI ĐỘNG -->
     <button class="music-toggle-btn" id="music-btn" onclick="toggleMusic()">
       <span id="music-icon">🎵</span>
-      <span id="music-text">Bật Nhạc Nền</span>
+      <span id="music-text">Bật Nhạc Thi Đấu</span>
     </button>
   </header>
 
@@ -752,7 +755,7 @@
     <div class="chip-grid">
       <div class="filter-chip selected" onclick="selectAge('all', this)">
         <div class="chip-title">🌟 Tất cả</div>
-        <div class="chip-desc">Toàn bộ câu hỏi</div>
+        <div class="chip-desc">Toàn bộ ngân hàng</div>
       </div>
       <div class="filter-chip" onclick="selectAge('6-7', this)">
         <div class="chip-title">🌱 6 - 7 tuổi</div>
@@ -768,7 +771,7 @@
       </div>
     </div>
 
-    <!-- ĐỘ KHÓ RIÊNG BIỆT (TÍNH NĂNG MỚI) -->
+    <!-- ĐỘ KHÓ RIÊNG BIỆT -->
     <div class="section-title">🎚️ 2. Chọn Độ Khó Câu Hỏi</div>
     <div class="chip-grid">
       <div class="filter-chip selected" onclick="selectDiff('all', this)">
@@ -841,7 +844,7 @@
   </div>
 
   <!-- =====================================================================
-       2. QUIZ SCREEN (LAYOUT 2 CỘT CHO LAPTOP & IPAD)
+       2. QUIZ SCREEN (LAYOUT VIEWPORT-FIT TRÊN LAPTOP & IPAD KHÔNG CẦN SCROLL)
        ===================================================================== -->
   <div class="quiz-card screen" id="quiz-screen">
     <!-- THANH TIẾN ĐỘ & ĐIỀU KHIỂN TRÊN CÙNG -->
@@ -862,51 +865,43 @@
       <span id="badge-topic-age" style="color:var(--primary);">Động Vật • Độ tuổi 6-7</span>
     </div>
 
-    <!-- KHU VỰC 2 CỘT TRẢI DÀI TRÊN IPAD / LAPTOP -->
+    <!-- KHU VỰC 2 CỘT GỌN GÀNG VỪA KHÍT MÀN HÌNH -->
     <div class="quiz-layout-grid">
-      <!-- CỘT TRÁI: MASCOT BÁC HỌC NHÍ + HÌNH ẢNH MINH HỌA -->
+      <!-- CỘT TRÁI: MASCOT BO BO + HÌNH ẢNH MINH HỌA -->
       <div class="quiz-left-panel">
-        <!-- MASCOT HOẠT HÌNH TRẺ CON "BÉ BO BO" -->
         <div class="mascot-container">
           <svg class="mascot-avatar" viewBox="0 0 100 100">
-            <!-- Mặt tròn đáng yêu -->
             <circle cx="50" cy="50" r="42" fill="#FFD8B5" stroke="#FFAE73" stroke-width="2"/>
-            <!-- Tóc ngộ nghĩnh -->
             <path d="M25 35 Q50 15 75 35 Q50 25 25 35 Z" fill="#4B382A"/>
-            <!-- Mũ cử nhân/bác học nhí -->
             <polygon points="50,8 85,22 50,34 15,22" fill="#3A0CA3"/>
             <rect x="42" y="16" width="16" height="12" fill="#4361EE"/>
             <circle cx="50" cy="22" r="3" fill="#FFD166"/>
             <line x1="50" y1="22" x2="72" y2="30" stroke="#FFD166" stroke-width="2"/>
-            <!-- Mắt to sáng -->
-            <ellipse cx="38" cy="48" rx="5" ry="7" fill="#2B2D42" id="mascot-eye-l"/>
+            <ellipse cx="38" cy="48" rx="5" ry="7" fill="#2B2D42"/>
             <circle cx="39" cy="46" r="2" fill="white"/>
-            <ellipse cx="62" cy="48" rx="5" ry="7" fill="#2B2D42" id="mascot-eye-r"/>
+            <ellipse cx="62" cy="48" rx="5" ry="7" fill="#2B2D42"/>
             <circle cx="63" cy="46" r="2" fill="white"/>
-            <!-- Kính cận thông thái -->
             <circle cx="38" cy="48" r="11" fill="none" stroke="#4361EE" stroke-width="3"/>
             <circle cx="62" cy="48" r="11" fill="none" stroke="#4361EE" stroke-width="3"/>
             <line x1="49" y1="48" x2="51" y2="48" stroke="#4361EE" stroke-width="3"/>
-            <!-- Má hồng -->
             <ellipse cx="30" cy="58" rx="6" ry="3" fill="#FF8BA7" opacity="0.6"/>
             <ellipse cx="70" cy="58" rx="6" ry="3" fill="#FF8BA7" opacity="0.6"/>
-            <!-- Miệng cười tươi -->
             <path d="M42 62 Q50 72 58 62" fill="none" stroke="#2B2D42" stroke-width="3" stroke-linecap="round" id="mascot-mouth"/>
           </svg>
           <div class="mascot-bubble" id="mascot-speech">Bé đọc kỹ câu hỏi nhé, Bo Bo tin bé làm được! 🌟</div>
         </div>
 
-        <!-- HÌNH ẢNH MINH HỌA SẮT CÂU HỎI -->
+        <!-- HÌNH ẢNH CHUẨN XÁC 100% CỦA CÂU HỎI -->
         <div class="question-img-card" id="q-img-wrap">
-          <img id="question-img" src="" alt="Hình minh họa khoa học">
+          <img id="question-img" src="" alt="Hình minh họa chuẩn">
         </div>
       </div>
 
-      <!-- CỘT PHẢI: NỘI DUNG CÂU HỎI & CÁC ĐÁP ÁN -->
+      <!-- CỘT PHẢI: NỘI DUNG CÂU HỎI & CÁC ĐÁP ÁN (DẠNG GRID 2X2) -->
       <div class="quiz-right-panel">
         <h2 class="question-title" id="question-text">Đang tải câu hỏi...</h2>
 
-        <!-- Trắc nghiệm MC -->
+        <!-- Trắc nghiệm MC: Grid 2x2 gọn gàng không bị tràn màn hình -->
         <div class="choices-container" id="choices-list"></div>
 
         <!-- Tự luận SA -->
@@ -931,7 +926,7 @@
       <div class="result-icon" id="res-icon">🏆</div>
       <div class="result-headline" id="res-title">Bé Làm Tốt Lắm!</div>
       <div class="result-stars" id="res-stars">⭐⭐⭐</div>
-      <p id="res-desc" style="color:var(--text-muted); font-size:1.05rem;">Bé đã hoàn thành xuất sắc bài thi hôm nay!</p>
+      <p id="res-desc" style="color:var(--text-muted); font-size:1rem;">Bé đã hoàn thành xuất sắc bài thi hôm nay!</p>
     </div>
 
     <div class="summary-stats">
@@ -957,8 +952,8 @@
       </div>
     </div>
 
-    <div style="text-align:center; font-size:0.9rem; color:var(--text-muted); margin-top:16px;" id="sync-status">
-      💡 Tiến bộ của bé đã được tự động lưu lại vào hệ thống!
+    <div style="text-align:center; font-size:0.85rem; color:var(--text-muted); margin-top:14px;" id="sync-status">
+      💡 Lịch sử câu hỏi đã tự động cập nhật vào trí nhớ của máy
     </div>
   </div>
 
@@ -967,7 +962,7 @@
        ===================================================================== -->
   <div class="quiz-card screen" id="review-screen">
     <div class="review-header-bar">
-      <h3 style="font-size:1.3rem; font-weight:800;">🔍 Xem Lại Chi Tiết Bài Làm</h3>
+      <h3 style="font-size:1.25rem; font-weight:800;">🔍 Xem Lại Chi Tiết Bài Làm</h3>
       <div class="review-view-toggle">
         <button class="toggle-btn active" id="btn-view-list" onclick="switchReviewMode('list')">📑 Dạng danh sách</button>
         <button class="toggle-btn" id="btn-view-card" onclick="switchReviewMode('card')">🃏 Từng câu một</button>
@@ -980,29 +975,27 @@
       <button class="review-filter-btn" onclick="filterReviewItems('wrong', this)">Sai ❌ (<span id="rev-count-wrong">0</span>)</button>
     </div>
 
-    <!-- DẠNG DANH SÁCH -->
     <div id="review-list-view">
       <div class="review-list-container" id="review-list-items"></div>
     </div>
 
-    <!-- DẠNG TỪNG CÂU -->
     <div id="review-card-view" style="display:none;">
       <div class="review-item-card" id="card-view-item"></div>
       <div class="card-view-nav">
         <button class="control-btn" onclick="navCardReview(-1)">⬅️ Câu trước</button>
-        <span id="card-nav-indicator" style="font-weight:700; font-size:0.95rem;">Câu 1/15</span>
+        <span id="card-nav-indicator" style="font-weight:700; font-size:0.9rem;">Câu 1/15</span>
         <button class="control-btn" onclick="navCardReview(1)">Câu sau ➡️</button>
       </div>
     </div>
 
-    <div style="margin-top:18px;">
+    <div style="margin-top:16px;">
       <button class="btn-primary-action" style="width:100%;" onclick="showScreen('result-screen')">⬅️ Quay lại bảng điểm</button>
     </div>
   </div>
 </div>
 
 <!-- =====================================================================
-     MODALS: PAUSE & QUIT
+     MODALS
      ===================================================================== -->
 <div class="modal-overlay" id="modal-pause">
   <div class="modal-box">
@@ -1027,17 +1020,17 @@
 
 <script>
 // =========================================================================
-// DATA 100 CAU HOI CHINH XAC 100%
+// DATA 100 CAU HOI DA XAC MINH ANH CHUAN XAC 100%
 // =========================================================================
 const ALL_QUESTIONS = [
   {
     "id": "DV01",
     "topic": "Động Vật",
-    "sub": "Vật nuôi",
+    "sub": "Chó trông nhà",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&auto=format&fit=crop&q=80",
     "q": "Loài vật nuôi nào trung thành, hay sủa \"gâu gâu\" và giúp gia đình trông nhà rất cẩn thận?",
     "a": "Con Chó",
     "b": "Con Mèo",
@@ -1049,11 +1042,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DV02",
     "topic": "Động Vật",
-    "sub": "Gia súc",
+    "sub": "Bò sữa",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=600&auto=format&fit=crop&q=80",
     "q": "Loài vật nào nuôi ở nông trại cung cấp nguồn sữa tươi thơm ngon và giàu canxi cho chúng ta uống mỗi ngày?",
     "a": "Bò sữa",
     "b": "Con Hổ",
@@ -1065,11 +1058,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DV03",
     "topic": "Động Vật",
-    "sub": "Đặc điểm thú nhỏ",
+    "sub": "Con thỏ",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=600&auto=format&fit=crop&q=80",
     "q": "Loài vật nào có đôi tai dài, bộ lông mềm mại, thích ăn cà rốt và nhảy thoăn thoắt?",
     "a": "Con Thỏ",
     "b": "Con Rùa",
@@ -1081,11 +1074,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DV04",
     "topic": "Động Vật",
-    "sub": "Tập tính săn mồi",
+    "sub": "Mèo bắt chuột",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80",
     "q": "Loài vật nuôi nào trong nhà có đệm chân êm ái, bước đi không gây tiếng động và rất giỏi bắt chuột?",
     "a": "Con Mèo",
     "b": "Con Lợn",
@@ -1097,11 +1090,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DV05",
     "topic": "Động Vật",
-    "sub": "Gia cầm",
+    "sub": "Gà trống",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=600&auto=format&fit=crop&q=80",
     "q": "Vào mỗi buổi sáng sớm khi Mặt Trời chuẩn bị mọc, con vật nào thường gáy vang \"Ò ó o\" báo hiệu ngày mới?",
     "a": "Gà trống",
     "b": "Chim bồ câu",
@@ -1113,11 +1106,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DV06",
     "topic": "Động Vật",
-    "sub": "Thú lớn",
+    "sub": "Vòi voi",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?w=600&auto=format&fit=crop&q=80",
     "q": "Voi là loài vật trên cạn to lớn nhất. Chiếc vòi dài của chú voi thực chất là bộ phận nào biến đổi thành?",
     "a": "Mũi kéo dài kết hợp với môi trên",
     "b": "Một cánh tay phụ",
@@ -1129,11 +1122,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DV07",
     "topic": "Động Vật",
-    "sub": "Chim hàn đới",
+    "sub": "Chim cánh cụt",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1598439210625-5067c578f3f6?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1598439210625-5067c578f3f6?w=600&auto=format&fit=crop&q=80",
     "q": "Loài chim nào sinh sống ở vùng băng tuyết Nam Cực, bơi lội cực nhanh dưới biển nhưng lại không biết bay trên trời?",
     "a": "Chim cánh cụt",
     "b": "Đại bàng biển",
@@ -1145,11 +1138,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DV08",
     "topic": "Động Vật",
-    "sub": "Lưỡng cư",
+    "sub": "Nòng nọc",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1579380656108-328e804f95ae?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Pollywogs_in_water.jpg/640px-Pollywogs_in_water.jpg",
     "q": "Ấu trùng con nở ra từ trứng của ếch mẹ, bơi lượn dưới nước và có đuôi dài được gọi là gì?",
     "a": "Nòng nọc",
     "b": "Sâu bướm",
@@ -1161,11 +1154,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DV09",
     "topic": "Động Vật",
-    "sub": "Bò sát",
+    "sub": "Tắc kè hoa",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1563281577-a7be47e20db9?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1563281577-a7be47e20db9?w=600&auto=format&fit=crop&q=80",
     "q": "Loài bò sát nào nổi tiếng có khả năng biến đổi màu sắc làn da trùng khớp với lá cây xung quanh để lẩn trốn kẻ thù?",
     "a": "Tắc kè hoa",
     "b": "Rùa hộp",
@@ -1177,11 +1170,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DV10",
     "topic": "Động Vật",
-    "sub": "Thú ăn thịt",
+    "sub": "Gấu ngủ đông",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=600&auto=format&fit=crop&q=80",
     "q": "Vào mùa đông lạnh giá khan hiếm thức ăn, loài gấu thường làm gì để bảo toàn năng lượng suốt nhiều tháng?",
     "a": "Ngủ đông trong hang",
     "b": "Bơi sang châu lục khác",
@@ -1193,11 +1186,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DV11",
     "topic": "Động Vật",
-    "sub": "Thú biển",
+    "sub": "Cá voi xanh",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=600&auto=format&fit=crop&q=80",
     "q": "Cá voi xanh là sinh vật to lớn nhất Trái Đất. Dù bơi dưới đại dương nhưng cá voi thuộc lớp động vật nào?",
     "a": "Lớp Thú (động vật có vú)",
     "b": "Lớp Cá",
@@ -1209,11 +1202,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DV12",
     "topic": "Động Vật",
-    "sub": "Côn trùng có ích",
+    "sub": "Ong mật",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?w=600&auto=format&fit=crop&q=80",
     "q": "Con ong mật có vai trò gì quan trọng nhất đối với mùa màng và cây xanh trong tự nhiên?",
     "a": "Thụ phấn cho hoa để cây kết trái",
     "b": "Bắt sâu bọ ăn hại",
@@ -1225,11 +1218,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DV13",
     "topic": "Động Vật",
-    "sub": "Hình nhện",
+    "sub": "Con nhện",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80",
     "q": "Tất cả các loài côn trùng đều có 6 chân. Vậy con Nhện có tất cả bao nhiêu cái chân?",
     "a": "8 chân",
     "b": "6 chân",
@@ -1241,11 +1234,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DV14",
     "topic": "Động Vật",
-    "sub": "Tốc độ động vật",
+    "sub": "Báo săn cheetah",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=600&auto=format&fit=crop&q=80",
     "q": "Loài thú săn mồi nào chạy nhanh nhất trên cạn, có thể đạt vận tốc hơn 100 km/h chỉ sau vài giây xuất phát?",
     "a": "Báo săn (Cheetah)",
     "b": "Sư tử đồng cỏ",
@@ -1257,11 +1250,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DV15",
     "topic": "Động Vật",
-    "sub": "Động vật sa mạc",
+    "sub": "Lạc đà sa mạc",
     "age": "8-9",
     "diff": 3,
     "type": "SA",
-    "img": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=600&auto=format&fit=crop&q=80",
     "q": "Lạc đà dự trữ năng lượng dưới dạng mô mỡ ở bộ phận nhô cao nào trên lưng?",
     "ans": "bướu|cái bướu",
     "explain": "Bướu của lạc đà chứa chất béo dự trữ. Khi khát và đói, mỡ trong bướu sẽ được chuyển hóa thành năng lượng và nước nuôi cơ thể."
@@ -1269,11 +1262,11 @@ const ALL_QUESTIONS = [
   {
     "id": "TV01",
     "topic": "Thực Vật",
-    "sub": "Cấu tạo rễ",
+    "sub": "Rễ cây",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&auto=format&fit=crop&q=80",
     "q": "Bộ phận nào của cây xanh mọc cắm sâu vào lòng đất để hút nước và giữ cho cây đứng vững?",
     "a": "Rễ cây",
     "b": "Thân cây",
@@ -1285,11 +1278,11 @@ const ALL_QUESTIONS = [
   {
     "id": "TV02",
     "topic": "Thực Vật",
-    "sub": "Sắc tố lá",
+    "sub": "Lá xanh",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&auto=format&fit=crop&q=80",
     "q": "Lá của hầu hết các loài cây trong tự nhiên thường có màu sắc chủ đạo là màu gì?",
     "a": "Màu xanh lá cây",
     "b": "Màu xanh da trời",
@@ -1301,11 +1294,11 @@ const ALL_QUESTIONS = [
   {
     "id": "TV03",
     "topic": "Thực Vật",
-    "sub": "Mầm cây",
+    "sub": "Hạt mầm",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&auto=format&fit=crop&q=80",
     "q": "Để một hạt giống nhỏ bé nảy mầm và lớn lên thành cây tươi tốt, hạt giống cần có đất, nước và điều gì nữa?",
     "a": "Không khí và ánh sáng ấm áp",
     "b": "Kẹo bánh ngọt",
@@ -1317,11 +1310,11 @@ const ALL_QUESTIONS = [
   {
     "id": "TV04",
     "topic": "Thực Vật",
-    "sub": "Hoa hướng quang",
+    "sub": "Hoa hướng dương",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=600&auto=format&fit=crop&q=80",
     "q": "Bông hoa nào vào ban ngày luôn hướng mặt bông hoa rực rỡ của mình về phía có Mặt Trời chiếu sáng?",
     "a": "Hoa Hướng Dương",
     "b": "Hoa Hồng",
@@ -1333,11 +1326,11 @@ const ALL_QUESTIONS = [
   {
     "id": "TV05",
     "topic": "Thực Vật",
-    "sub": "Cây mọng nước",
+    "sub": "Xương rồng",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1509223197845-458d87318791?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1509223197845-458d87318791?w=600&auto=format&fit=crop&q=80",
     "q": "Cây xương rồng trên sa mạc có những chiếc gai nhọn hoắt. Những chiếc gai đó thực chất là gì biến thành?",
     "a": "Lá cây biến thành gai",
     "b": "Rễ cây biến thành gai",
@@ -1353,7 +1346,7 @@ const ALL_QUESTIONS = [
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&auto=format&fit=crop&q=80",
     "q": "Chất màu xanh kỳ diệu trong lá cây giúp hấp thụ năng lượng ánh sáng mặt trời có tên khoa học là gì?",
     "a": "Chất Diệp Lục (Chlorophyll)",
     "b": "Chất Đạm",
@@ -1365,11 +1358,11 @@ const ALL_QUESTIONS = [
   {
     "id": "TV07",
     "topic": "Thực Vật",
-    "sub": "Hô hấp & quang hợp",
+    "sub": "Khí Oxy",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&auto=format&fit=crop&q=80",
     "q": "Ban ngày khi quang hợp dưới nắng, cây xanh hút khí cacbonic và nhả ra khí gì rất cần cho con người hít thở?",
     "a": "Khí Oxy",
     "b": "Khí Nitơ",
@@ -1381,11 +1374,11 @@ const ALL_QUESTIONS = [
   {
     "id": "TV08",
     "topic": "Thực Vật",
-    "sub": "Quốc hoa",
+    "sub": "Hoa Sen",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1508615039623-a25605d2b022?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1508615039623-a25605d2b022?w=600&auto=format&fit=crop&q=80",
     "q": "Loài hoa nào rễ mọc từ bùn lầy đáy hồ nhưng bông hoa lại thơm ngát, thanh khiết và được coi là Quốc hoa của nước ta?",
     "a": "Hoa Sen",
     "b": "Hoa Cúc",
@@ -1397,11 +1390,11 @@ const ALL_QUESTIONS = [
   {
     "id": "TV09",
     "topic": "Thực Vật",
-    "sub": "Củ rễ",
+    "sub": "Củ cà rốt",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1598170845058-32b9d6a5c317?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1598170845058-32b9d6a5c317?w=600&auto=format&fit=crop&q=80",
     "q": "Củ cà rốt màu cam thơm ngon mà bé hay ăn thực chất là bộ phận nào phình to ra của cây?",
     "a": "Rễ củ",
     "b": "Thân củ",
@@ -1413,11 +1406,11 @@ const ALL_QUESTIONS = [
   {
     "id": "TV10",
     "topic": "Thực Vật",
-    "sub": "Bẫy côn trùng",
+    "sub": "Cây nắp ấm",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Nepenthes_rajah_pitcher.jpg/640px-Nepenthes_rajah_pitcher.jpg",
     "q": "Cây nắp ấm (cây bắt mồi) có những chiếc ấm chứa dịch tiêu hóa để bắt ruồi muỗi nhằm bổ sung chất gì thiếu trong đất?",
     "a": "Chất đạm (khoáng chất nitơ)",
     "b": "Nước ngọt",
@@ -1429,11 +1422,11 @@ const ALL_QUESTIONS = [
   {
     "id": "TV11",
     "topic": "Thực Vật",
-    "sub": "Quả và hạt",
+    "sub": "Quả chứa hạt",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=600&auto=format&fit=crop&q=80",
     "q": "Sau khi hoa nở và được thụ phấn, bầu nhụy của bông hoa sẽ phát triển thành bộ phận thơm ngon nào của cây?",
     "a": "Quả chứa hạt bên trong",
     "b": "Lá mới",
@@ -1445,11 +1438,11 @@ const ALL_QUESTIONS = [
   {
     "id": "TV12",
     "topic": "Thực Vật",
-    "sub": "Tuổi của cây",
+    "sub": "Vòng năm cây gỗ",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=600&auto=format&fit=crop&q=80",
     "q": "Người ta có thể biết chính xác một cây gỗ cổ thụ bao nhiêu tuổi bằng cách quan sát điều gì trên mặt cắt ngang thân cây?",
     "a": "Các vòng năm (vòng gỗ tròn đồng tâm)",
     "b": "Số lượng cành cây",
@@ -1461,11 +1454,11 @@ const ALL_QUESTIONS = [
   {
     "id": "TV13",
     "topic": "Thực Vật",
-    "sub": "Rừng ngập mặn",
+    "sub": "Cây đước",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Rhizophora_mangle_roots.jpg/640px-Rhizophora_mangle_roots.jpg",
     "q": "Rừng ngập mặn Cần Giờ và Cà Mau có loài cây nào nổi tiếng với hệ rễ chống tua tủa cắm sâu xuống bùn lầy ven biển?",
     "a": "Cây Đước",
     "b": "Cây Thông",
@@ -1477,11 +1470,11 @@ const ALL_QUESTIONS = [
   {
     "id": "TV14",
     "topic": "Thực Vật",
-    "sub": "Quang hợp",
+    "sub": "Hiện tượng quang hợp",
     "age": "8-9",
     "diff": 3,
     "type": "SA",
-    "img": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&auto=format&fit=crop&q=80",
     "q": "Quá trình cây xanh tự chế tạo chất dinh dưỡng từ nước và khí cacbonic nhờ ánh sáng mặt trời gọi là gì?",
     "ans": "quang hợp|sự quang hợp",
     "explain": "Quang hợp là kỳ tích của tạo hóa: cây hấp thu ánh nắng, nước và CO₂ để tạo ra thức ăn và dưỡng khí Oxy cho muôn loài."
@@ -1489,11 +1482,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VT01",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Hiện tượng",
+    "sub": "Cầu vồng 7 sắc",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=600&auto=format&fit=crop&q=80",
     "q": "Sau cơn mưa rào mùa hạ khi trời bừng nắng, trên nền trời thường xuất hiện dải màu cong tuyệt đẹp gọi là gì?",
     "a": "Cầu vồng",
     "b": "Khói xám",
@@ -1505,11 +1498,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VT02",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Vệ tinh tự nhiên",
+    "sub": "Mặt trăng rằm",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=600&auto=format&fit=crop&q=80",
     "q": "Vào ban đêm không có mây, thiên thể tự nhiên nào sáng và tròn nhất trên bầu trời?",
     "a": "Mặt Trăng",
     "b": "Mặt Trời",
@@ -1525,7 +1518,7 @@ const ALL_QUESTIONS = [
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=600&auto=format&fit=crop&q=80",
     "q": "Những hạt mưa từ trên trời rơi xuống mặt đất tưới mát cho cây cối thực chất là gì?",
     "a": "Hạt nước",
     "b": "Hạt cát",
@@ -1537,11 +1530,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VT04",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Sấm sét",
+    "sub": "Tia sấm sét",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=600&auto=format&fit=crop&q=80",
     "q": "Khi trời sắp có cơn giông bão lớn, tia sáng lóe sáng rực rỡ xé ngang bầu trời kèm tiếng nổ lớn là gì?",
     "a": "Sấm sét (chớp)",
     "b": "Pháo hoa",
@@ -1553,11 +1546,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VT05",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Bốn mùa",
+    "sub": "Mùa hè nắng vàng",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=80",
     "q": "Mùa nào trong năm thời tiết nắng nóng nhất, hoa phượng nở đỏ rực và học sinh được nghỉ học?",
     "a": "Mùa hè (Mùa hạ)",
     "b": "Mùa đông",
@@ -1573,7 +1566,7 @@ const ALL_QUESTIONS = [
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=600&auto=format&fit=crop&q=80",
     "q": "Trái Đất tự quay quanh trục của mình mất bao lâu để hết trọn vẹn 1 vòng?",
     "a": "24 giờ (1 ngày đêm)",
     "b": "7 ngày (1 tuần)",
@@ -1585,11 +1578,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VT07",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Sao Mộc",
+    "sub": "Sao Mộc khổng lồ",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=600&auto=format&fit=crop&q=80",
     "q": "Hành tinh nào có kích thước to lớn nhất trong Hệ Mặt Trời (có thể chứa vừa hơn 1.300 Trái Đất)?",
     "a": "Sao Mộc (Jupiter)",
     "b": "Trái Đất",
@@ -1601,11 +1594,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VT08",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Sao Thổ",
+    "sub": "Sao Thổ và vành đai",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=600&auto=format&fit=crop&q=80",
     "q": "Hành tinh nào nổi tiếng với hệ thống vành đai lấp lánh tuyệt đẹp cấu tạo từ hàng tỷ tảng băng đá quay xung quanh?",
     "a": "Sao Thổ (Saturn)",
     "b": "Sao Kim",
@@ -1617,11 +1610,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VT09",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Quỹ đạo",
+    "sub": "Trái Đất quay quanh Mặt Trời",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop&q=80",
     "q": "Trái Đất chuyển động một vòng trọn vẹn quanh Mặt Trời mất khoảng thời gian là bao lâu?",
     "a": "365 ngày (1 năm)",
     "b": "100 ngày",
@@ -1633,11 +1626,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VT10",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Gió tự nhiên",
+    "sub": "Gió mát",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1505672678570-b467e471d87e?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1505672678570-b467e471d87e?w=600&auto=format&fit=crop&q=80",
     "q": "Những làn gió mát lành thổi đung đưa cành cây thực chất được sinh ra do điều gì trong không khí?",
     "a": "Không khí chuyển động từ nơi áp cao lạnh về nơi áp thấp ấm",
     "b": "Cây vẫy lá tạo ra",
@@ -1649,11 +1642,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VT11",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Mặt Trời",
+    "sub": "Ánh sáng Mặt Trời",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=600&auto=format&fit=crop&q=80",
     "q": "Ánh sáng di chuyển cực nhanh (300.000 km/s). Từ Mặt Trời đến với mắt chúng ta trên Trái Đất mất khoảng bao lâu?",
     "a": "Khoảng 8 phút 20 giây",
     "b": "1 giây",
@@ -1669,7 +1662,7 @@ const ALL_QUESTIONS = [
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Solar_eclipse_1999_4_NR.jpg/640px-Solar_eclipse_1999_4_NR.jpg",
     "q": "Hiện tượng Mặt Trăng đi vào giữa Trái Đất và Mặt Trời, che khuất một phần hoặc toàn bộ Mặt Trời ban ngày gọi là gì?",
     "a": "Nhật thực",
     "b": "Nguyệt thực",
@@ -1681,11 +1674,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VT13",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Sao Hỏa",
+    "sub": "Sao Hỏa đỏ",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/640px-OSIRIS_Mars_true_color.jpg",
     "q": "Hành tinh thứ tư trong Hệ Mặt Trời được mệnh danh là \"Hành tinh Đỏ\" vì chứa nhiều bụi oxit sắt rỉ sét là gì?",
     "a": "Sao Hỏa (Mars)",
     "b": "Sao Thủy",
@@ -1697,11 +1690,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VT14",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Nhiệt kế",
+    "sub": "Nhiệt kế đo nhiệt độ",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1584483766114-2cea6facdf57?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1584483766114-2cea6facdf57?w=600&auto=format&fit=crop&q=80",
     "q": "Thiết bị nào được các nhà khí tượng và bác sĩ dùng để đo độ nóng lạnh (nhiệt độ) của không khí hoặc cơ thể?",
     "a": "Nhiệt kế",
     "b": "La bàn",
@@ -1713,11 +1706,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VT15",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Quang phổ",
+    "sub": "Bảy sắc cầu vồng",
     "age": "8-9",
     "diff": 3,
     "type": "SA",
-    "img": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=600&auto=format&fit=crop&q=80",
     "q": "Cầu vồng thông thường xuất hiện trên nền trời có tất cả bao nhiêu màu sắc cơ bản?",
     "ans": "7|bảy",
     "explain": "Cầu vồng gồm 7 màu cơ bản theo thứ tự: Đỏ, Cam, Vàng, Lục, Lam, Chàm, Tím."
@@ -1725,11 +1718,11 @@ const ALL_QUESTIONS = [
   {
     "id": "CT01",
     "topic": "Cơ Thể Người",
-    "sub": "Thị giác",
+    "sub": "Đôi mắt",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80",
     "q": "Con người dùng cơ quan thị giác nào trên gương mặt để ngắm nhìn vạn vật muôn màu muôn vẻ xung quanh?",
     "a": "Đôi mắt",
     "b": "Chiếc mũi",
@@ -1741,11 +1734,11 @@ const ALL_QUESTIONS = [
   {
     "id": "CT02",
     "topic": "Cơ Thể Người",
-    "sub": "Rửa tay",
+    "sub": "Rửa tay xà phòng",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1584634731339-252c581abfc5?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1584634731339-252c581abfc5?w=600&auto=format&fit=crop&q=80",
     "q": "Trước khi ngồi vào bàn ăn cơm và sau khi đi vệ sinh, bé cần làm gì để bàn tay luôn sạch khuẩn?",
     "a": "Rửa tay bằng xà phòng và nước sạch",
     "b": "Lau tay vào gấu áo",
@@ -1757,11 +1750,11 @@ const ALL_QUESTIONS = [
   {
     "id": "CT03",
     "topic": "Cơ Thể Người",
-    "sub": "Răng miệng",
+    "sub": "Đánh răng",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&auto=format&fit=crop&q=80",
     "q": "Để hàm răng luôn trắng sáng, thơm tho và không bị sâu răng, bé nên chải răng ít nhất mấy lần mỗi ngày?",
     "a": "2 lần (buổi sáng và tối trước khi ngủ)",
     "b": "Mỗi tuần một lần",
@@ -1777,7 +1770,7 @@ const ALL_QUESTIONS = [
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&auto=format&fit=crop&q=80",
     "q": "Bộ phận nào trong khoang miệng giúp chúng ta cảm nhận được các vị ngọt, mặn, chua, cay thơm ngon của món ăn?",
     "a": "Chiếc lưỡi",
     "b": "Răng cửa",
@@ -1789,11 +1782,11 @@ const ALL_QUESTIONS = [
   {
     "id": "CT05",
     "topic": "Cơ Thể Người",
-    "sub": "Trái tim",
+    "sub": "Trái tim đập",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Diagram_of_the_human_heart_%28cropped%29.svg/640px-Diagram_of_the_human_heart_%28cropped%29.svg.png",
     "q": "Cơ quan nào trong lồng ngực đập thình thịch liên tục cả ngày lẫn đêm để bơm máu đi nuôi khắp cơ thể?",
     "a": "Trái tim",
     "b": "Dạ dày",
@@ -1805,11 +1798,11 @@ const ALL_QUESTIONS = [
   {
     "id": "CT06",
     "topic": "Cơ Thể Người",
-    "sub": "Lá phổi",
+    "sub": "Lá phổi hô hấp",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Lungs_diagram_detailed.svg/640px-Lungs_diagram_detailed.svg.png",
     "q": "Khi bé hít một hơi thật sâu, cơ quan nào trong lồng ngực phồng to lên để hấp thu khí oxy vào mạch máu?",
     "a": "Hai lá phổi",
     "b": "Dạ dày",
@@ -1825,7 +1818,7 @@ const ALL_QUESTIONS = [
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Human_skeleton_front_en.svg/640px-Human_skeleton_front_en.svg.png",
     "q": "Bộ xương vững chắc trong cơ thể người có nhiệm vụ quan trọng hàng đầu là gì?",
     "a": "Nâng đỡ cơ thể và bảo vệ các cơ quan bên trong",
     "b": "Làm cơ thể nặng hơn",
@@ -1837,11 +1830,11 @@ const ALL_QUESTIONS = [
   {
     "id": "CT08",
     "topic": "Cơ Thể Người",
-    "sub": "Dạ dày",
+    "sub": "Dạ dày tiêu hóa",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Stomach_diagram.svg/640px-Stomach_diagram.svg.png",
     "q": "Thức ăn sau khi được nhai kỹ ở miệng sẽ đi qua thực quản vào chiếc túi co bóp nào để nhào trộn thức ăn?",
     "a": "Dạ dày (bao tử)",
     "b": "Lá phổi",
@@ -1853,11 +1846,11 @@ const ALL_QUESTIONS = [
   {
     "id": "CT09",
     "topic": "Cơ Thể Người",
-    "sub": "Canxi xương",
+    "sub": "Canxi trong sữa",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&auto=format&fit=crop&q=80",
     "q": "Chất khoáng nào có rất nhiều trong sữa chua, sữa tươi và tôm cua giúp xương và răng bé cứng cáp?",
     "a": "Canxi (Calcium)",
     "b": "Chất đường cát",
@@ -1873,7 +1866,7 @@ const ALL_QUESTIONS = [
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Brain_human_normal_inferior_view_with_labels_en.svg/640px-Brain_human_normal_inferior_view_with_labels_en.svg.png",
     "q": "Cơ quan nào nằm an toàn trong hộp sọ, giữ vai trò chỉ huy mọi suy nghĩ, học tập, ghi nhớ và cử động của bé?",
     "a": "Bộ Não",
     "b": "Lá Gan",
@@ -1885,11 +1878,11 @@ const ALL_QUESTIONS = [
   {
     "id": "CT11",
     "topic": "Cơ Thể Người",
-    "sub": "Số lượng xương",
+    "sub": "206 chiếc xương",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=600&auto=format&fit=crop&q=80",
     "q": "Một người trưởng thành thông thường có tất cả bao nhiêu chiếc xương trong toàn bộ cơ thể?",
     "a": "206 chiếc xương",
     "b": "100 chiếc xương",
@@ -1901,11 +1894,11 @@ const ALL_QUESTIONS = [
   {
     "id": "CT12",
     "topic": "Cơ Thể Người",
-    "sub": "Trái thận",
+    "sub": "Quả thận lọc máu",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Kidney_Structures.svg/640px-Kidney_Structures.svg.png",
     "q": "Cặp cơ quan có hình dạng giống hạt đậu ở vùng lưng có nhiệm vụ lọc chất độc hại từ máu để bài tiết ra nước tiểu là gì?",
     "a": "Trái Thận",
     "b": "Lá Phổi",
@@ -1917,11 +1910,11 @@ const ALL_QUESTIONS = [
   {
     "id": "CT13",
     "topic": "Cơ Thể Người",
-    "sub": "Bạch cầu",
+    "sub": "Tế bào bạch cầu",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Blausen_0909_WhiteBloodCells.png/640px-Blausen_0909_WhiteBloodCells.png",
     "q": "Tế bào máu nào đóng vai trò như những chú bộ đội dũng cảm tiêu diệt vi khuẩn và mầm bệnh xâm nhập vào cơ thể?",
     "a": "Bạch cầu",
     "b": "Hồng cầu",
@@ -1937,7 +1930,7 @@ const ALL_QUESTIONS = [
     "age": "8-9",
     "diff": 3,
     "type": "SA",
-    "img": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80",
     "q": "Con người có tất cả bao nhiêu giác quan cơ bản để cảm nhận thế giới?",
     "ans": "5|năm",
     "explain": "5 giác quan gồm: Thị giác (mắt), Thính giác (tai), Khứu giác (mũi), Vị giác (lưỡi) và Xúc giác (làn da)."
@@ -1949,7 +1942,7 @@ const ALL_QUESTIONS = [
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Hanoi_skyline_2020.jpg/640px-Hanoi_skyline_2020.jpg",
     "q": "Thành phố nào là Thủ đô ngàn năm văn hiến và trung tâm chính trị của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam?",
     "a": "Hà Nội",
     "b": "Đà Nẵng",
@@ -1965,7 +1958,7 @@ const ALL_QUESTIONS = [
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=80",
     "q": "Toàn bộ bờ biển phía đông của đất nước Việt Nam thân yêu tiếp giáp với vùng biển bao la nào?",
     "a": "Biển Đông",
     "b": "Biển Đỏ",
@@ -1981,7 +1974,7 @@ const ALL_QUESTIONS = [
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1528127269322-539801943592?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Vietnam_location_map.svg/450px-Vietnam_location_map.svg.png",
     "q": "Dải đất thiêng liêng của Tổ quốc Việt Nam trên bản đồ thế giới có hình dạng uốn lượn giống chữ cái nào?",
     "a": "Chữ S",
     "b": "Chữ O",
@@ -1993,11 +1986,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DL04",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Hồ Gươm",
+    "sub": "Hồ Hoàn Kiếm",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Thap_Rua.jpg/640px-Thap_Rua.jpg",
     "q": "Hồ nước ngọt nổi tiếng nằm ngay giữa trung tâm Hà Nội gắn liền với truyền thuyết vua Lê Lợi trả gươm thần cho Rùa Vàng là gì?",
     "a": "Hồ Hoàn Kiếm (Hồ Gươm)",
     "b": "Hồ Tây",
@@ -2013,7 +2006,7 @@ const ALL_QUESTIONS = [
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1528127269322-539801943592?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Halong_bay.jpg/640px-Halong_bay.jpg",
     "q": "Vịnh biển ở tỉnh Quảng Ninh có hàng nghìn hòn đảo đá vôi nhô lên mặt nước xanh ngọc bích được UNESCO vinh danh là gì?",
     "a": "Vịnh Hạ Long",
     "b": "Vịnh Cam Ranh",
@@ -2029,7 +2022,7 @@ const ALL_QUESTIONS = [
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Song_Hong_do_qua_Cau_Long_Bien.jpg/640px-Song_Hong_do_qua_Cau_Long_Bien.jpg",
     "q": "Con sông lớn nhất chảy qua thủ đô Hà Nội mang dòng nước đỏ đục màu phù sa màu mỡ có tên là gì?",
     "a": "Sông Hồng",
     "b": "Sông Hương",
@@ -2041,11 +2034,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DL07",
     "topic": "Địa Lý Việt Nam",
-    "sub": "TP Hồ Chí Minh",
+    "sub": "TP. Hồ Chí Minh",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Ho_Chi_Minh_City_skyline_2021.jpg/640px-Ho_Chi_Minh_City_skyline_2021.jpg",
     "q": "Thành phố đô thị sầm uất và là trung tâm kinh tế lớn bậc nhất phía Nam nước ta mang tên vị lãnh tụ vĩ đại nào?",
     "a": "Thành phố Hồ Chí Minh",
     "b": "Thành phố Hải Phòng",
@@ -2057,11 +2050,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DL08",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Fansipan",
+    "sub": "Đỉnh Fansipan",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Fansipan_summit_monument.jpg/640px-Fansipan_summit_monument.jpg",
     "q": "Ngọn núi nào cao nhất Việt Nam (cao 3.143m thuộc tỉnh Lào Cai), được mệnh danh là \"Nóc nhà Đông Dương\"?",
     "a": "Đỉnh Fansipan (Phan Xi Păng)",
     "b": "Núi Bạch Mã",
@@ -2073,11 +2066,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DL09",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Đồng bằng Nam Bộ",
+    "sub": "Đồng bằng sông Cửu Long",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Floating_market_Cai_Rang.jpg/640px-Floating_market_Cai_Rang.jpg",
     "q": "Đồng bằng nào ở miền Nam được bồi đắp bởi 9 nhánh sông Cửu Long, là vựa lúa và trái cây xuất khẩu lớn nhất nước ta?",
     "a": "Đồng bằng sông Cửu Long",
     "b": "Đồng bằng sông Hồng",
@@ -2089,11 +2082,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DL10",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Quần đảo thiêng liêng",
+    "sub": "Hoàng Sa Trường Sa",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Spratly_Island_2015.jpg/640px-Spratly_Island_2015.jpg",
     "q": "Hai quần đảo ngoài Biển Đông thuộc chủ quyền lãnh thổ thiêng liêng không thể tách rời của Tổ quốc Việt Nam là gì?",
     "a": "Quần đảo Hoàng Sa và Trường Sa",
     "b": "Côn Đảo và Phú Quốc",
@@ -2105,11 +2098,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DL11",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Hành chính 63",
+    "sub": "63 tỉnh thành",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1528127269322-539801943592?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Vietnam_location_map.svg/450px-Vietnam_location_map.svg.png",
     "q": "Hiện nay đất nước Việt Nam có tất cả bao nhiêu tỉnh và thành phố trực thuộc Trung ương?",
     "a": "63 tỉnh thành",
     "b": "54 tỉnh thành",
@@ -2125,7 +2118,7 @@ const ALL_QUESTIONS = [
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80",
     "q": "Vùng đất đỏ bazan màu mỡ ở Tây Nguyên nổi tiếng nhất nước ta về trồng loại cây công nghiệp xuất khẩu hàng đầu thế giới nào?",
     "a": "Cây Cà phê",
     "b": "Cây Lúa mì",
@@ -2137,11 +2130,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DL13",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Phố cổ Hội An",
+    "sub": "Hội An",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Hoi_An_lanterns_at_night.jpg/640px-Hoi_An_lanterns_at_night.jpg",
     "q": "Đô thị cổ nào bên dòng sông Hoài (tỉnh Quảng Nam) nổi tiếng với những mái ngói rêu phong và đèn lồng lung linh?",
     "a": "Phố cổ Hội An",
     "b": "Cố đô Hoa Lư",
@@ -2153,11 +2146,11 @@ const ALL_QUESTIONS = [
   {
     "id": "DL14",
     "topic": "Địa Lý Việt Nam",
-    "sub": "54 dân tộc",
+    "sub": "54 dân tộc anh em",
     "age": "8-9",
     "diff": 3,
     "type": "SA",
-    "img": "https://images.unsplash.com/photo-1528127269322-539801943592?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Ethnic_groups_of_Vietnam.jpg/640px-Ethnic_groups_of_Vietnam.jpg",
     "q": "Đại gia đình các dân tộc Việt Nam có tất cả bao nhiêu dân tộc anh em cùng chung sống hòa thuận?",
     "ans": "54|năm mươi tư|năm tư",
     "explain": "Đất nước Việt Nam là mái nhà chung của 54 dân tộc anh em luôn đoàn kết gắn bó keo sơn."
@@ -2165,11 +2158,11 @@ const ALL_QUESTIONS = [
   {
     "id": "LS01",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Tết cổ truyền",
+    "sub": "Tết Nguyên Đán",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Banh_chung_Tet.jpg/640px-Banh_chung_Tet.jpg",
     "q": "Ngày Tết cổ truyền đón mừng năm mới lớn nhất của người dân Việt Nam được gọi là Tết gì?",
     "a": "Tết Nguyên Đán",
     "b": "Tết Trung Thu",
@@ -2181,11 +2174,11 @@ const ALL_QUESTIONS = [
   {
     "id": "LS02",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Bánh Chưng",
+    "sub": "Bánh Chưng vuông",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Banh_chung_Tet.jpg/640px-Banh_chung_Tet.jpg",
     "q": "Loại bánh hình vuông gói bằng lá dong xanh, bên trong có gạo nếp, đỗ xanh và thịt lợn ngày Tết là bánh gì?",
     "a": "Bánh Chưng",
     "b": "Bánh Giầy",
@@ -2197,11 +2190,11 @@ const ALL_QUESTIONS = [
   {
     "id": "LS03",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Áo Dài",
+    "sub": "Áo Dài Việt Nam",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Ao_dai_Vietnam.jpg/640px-Ao_dai_Vietnam.jpg",
     "q": "Trang phục truyền thống thướt tha, duyên dáng của người phụ nữ Việt Nam trong các dịp lễ hội trang trọng là gì?",
     "a": "Áo Dài",
     "b": "Áo Kimono",
@@ -2213,11 +2206,11 @@ const ALL_QUESTIONS = [
   {
     "id": "LS04",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Trung Thu",
+    "sub": "Đèn ông sao Trung Thu",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Lanterns_Mid_Autumn_Hanoi.jpg/640px-Lanterns_Mid_Autumn_Hanoi.jpg",
     "q": "Vào đêm rằm tháng Tám âm lịch khi trăng tròn vành vạnh, các bạn nhỏ rước đèn ông sao, xem múa lân trong dịp lễ nào?",
     "a": "Tết Trung Thu",
     "b": "Tết Dương Lịch",
@@ -2229,11 +2222,11 @@ const ALL_QUESTIONS = [
   {
     "id": "LS05",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Bác Hồ 2/9",
+    "sub": "Bác Hồ đọc Tuyên ngôn",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Ho_Chi_Minh_1946.jpg/640px-Ho_Chi_Minh_1946.jpg",
     "q": "Vị cha già kính yêu nào đã đọc bản Tuyên ngôn Độc lập tại Quảng trường Ba Đình ngày 2/9/1945 khai sinh ra nước Việt Nam?",
     "a": "Chủ tịch Hồ Chí Minh (Bác Hồ)",
     "b": "Đại tướng Võ Nguyên Giáp",
@@ -2249,7 +2242,7 @@ const ALL_QUESTIONS = [
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1528127269322-539801943592?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Dong_Son_drum.jpg/640px-Dong_Son_drum.jpg",
     "q": "Theo truyền thuyết dân gian, tổ tiên của người Việt được sinh ra từ bọc trăm trứng của mẹ Âu Cơ và cha là ai?",
     "a": "Lạc Long Quân",
     "b": "Sơn Tinh",
@@ -2261,11 +2254,11 @@ const ALL_QUESTIONS = [
   {
     "id": "LS07",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Thánh Gióng",
+    "sub": "Tượng đài Thánh Gióng",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Thanh_Giong_Soc_Son.jpg/640px-Thanh_Giong_Soc_Son.jpg",
     "q": "Vị anh hùng thiếu niên 3 tuổi vươn vai thành tráng sĩ, cưỡi ngựa sắt, nhổ bụi tre làng đánh đuổi giặc Ân là ai?",
     "a": "Thánh Gióng (Phù Đổng Thiên Vương)",
     "b": "Thạch Sanh",
@@ -2277,11 +2270,11 @@ const ALL_QUESTIONS = [
   {
     "id": "LS08",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Giỗ Tổ Hùng Vương",
+    "sub": "Đền Hùng Phú Thọ",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Den_Hung_Phu_Tho.jpg/640px-Den_Hung_Phu_Tho.jpg",
     "q": "Câu ca dao: \"Dù ai đi ngược về xuôi / Nhớ ngày Giỗ Tổ...\" nhắc đến ngày mùng mấy tháng Ba âm lịch hàng năm?",
     "a": "Mùng mười tháng Ba (10/3 AL)",
     "b": "Mùng một tháng Ba",
@@ -2293,11 +2286,11 @@ const ALL_QUESTIONS = [
   {
     "id": "LS09",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Sông Bạch Đằng",
+    "sub": "Cọc gỗ Bạch Đằng",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bach_Dang_wooden_stakes.jpg/640px-Bach_Dang_wooden_stakes.jpg",
     "q": "Năm 938, vị anh hùng dân tộc nào đã cắm cọc gỗ đầu bọc sắt trên sông Bạch Đằng, đánh tan quân Nam Hán giành lại độc lập?",
     "a": "Ngô Quyền",
     "b": "Đinh Bộ Lĩnh",
@@ -2309,11 +2302,11 @@ const ALL_QUESTIONS = [
   {
     "id": "LS10",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Thăng Long 1010",
+    "sub": "Tượng vua Lý Thái Tổ",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Ly_Thai_To_statue_Hanoi.jpg/640px-Ly_Thai_To_statue_Hanoi.jpg",
     "q": "Năm 1010, vua Lý Thái Tổ dời đô từ Hoa Lư về Đại La và đổi tên kinh đô mới thành Thăng Long, nghĩa là gì?",
     "a": "Rồng vàng bay lên",
     "b": "Bình yên lâu dài",
@@ -2325,11 +2318,11 @@ const ALL_QUESTIONS = [
   {
     "id": "LS11",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Hai Bà Trưng",
+    "sub": "Hai Bà Trưng cưỡi voi",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Hai_Ba_Trung_painting.jpg/640px-Hai_Ba_Trung_painting.jpg",
     "q": "Hai nữ anh hùng đầu tiên trong lịch sử dân tộc cưỡi voi phất cờ khởi nghĩa đánh tan quân đô hộ nhà Đông Hán năm 40 là ai?",
     "a": "Hai Bà Trưng (Trưng Trắc, Trưng Nhị)",
     "b": "Bà Triệu",
@@ -2341,11 +2334,11 @@ const ALL_QUESTIONS = [
   {
     "id": "LS12",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Quan họ",
+    "sub": "Quan họ Bắc Ninh",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Quan_ho_singers.jpg/640px-Quan_ho_singers.jpg",
     "q": "Làn điệu dân ca xứ Kinh Bắc với các liền anh, liền chị hát đối đáp ân tình được UNESCO công nhận là di sản văn hóa là gì?",
     "a": "Dân ca Quan họ Bắc Ninh",
     "b": "Hát Xoan Phú Thọ",
@@ -2357,11 +2350,11 @@ const ALL_QUESTIONS = [
   {
     "id": "LS13",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Quốc Tử Giám",
+    "sub": "Văn Miếu Quốc Tử Giám",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Khue_Van_Cac_Van_Mieu.jpg/640px-Khue_Van_Cac_Van_Mieu.jpg",
     "q": "Trường đại học đầu tiên của Việt Nam được xây dựng dưới thời vua Lý Thánh Tông tại Hà Nội là di tích lịch sử nào?",
     "a": "Văn Miếu - Quốc Tử Giám",
     "b": "Chùa Một Cột",
@@ -2373,11 +2366,11 @@ const ALL_QUESTIONS = [
   {
     "id": "LS14",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Quốc khánh 2/9",
+    "sub": "Quốc khánh 2 tháng 9",
     "age": "8-9",
     "diff": 3,
     "type": "SA",
-    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Ho_Chi_Minh_1946.jpg/640px-Ho_Chi_Minh_1946.jpg",
     "q": "Ngày Tết Độc lập (Quốc khánh nước Cộng hòa XHCN Việt Nam) là ngày tháng nào dương lịch hàng năm?",
     "ans": "2/9|2 tháng 9|02/09|mùng 2 tháng 9",
     "explain": "Ngày 2/9/1945 là mốc son chói lọi khi Bác Hồ đọc Tuyên ngôn Độc lập khẳng định quyền tự do độc lập của dân tộc."
@@ -2385,11 +2378,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VL01",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Băng đá",
+    "sub": "Nước đá đông lạnh",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?w=600&auto=format&fit=crop&q=80",
     "q": "Nước lọc dạng lỏng khi để vào ngăn đá tủ lạnh ở nhiệt độ dưới 0 độ C sẽ đông lại biến thành thể gì?",
     "a": "Nước đá (thể rắn)",
     "b": "Khí hơi nước bay mất",
@@ -2401,11 +2394,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VL02",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Nam châm",
+    "sub": "Nam châm hút sắt",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1572945753563-79234857b686?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Magnet_horseshoe_iron_filings.jpg/640px-Magnet_horseshoe_iron_filings.jpg",
     "q": "Thanh nam châm có từ tính kỳ lạ có thể hút dính chặt đồ vật nào dưới đây?",
     "a": "Chiếc đinh sắt nhỏ",
     "b": "Cục tẩy cao su",
@@ -2417,11 +2410,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VL03",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Bóng bay heli",
+    "sub": "Bóng bay khí heli",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&auto=format&fit=crop&q=80",
     "q": "Vì sao quả bóng bay được bơm khí heli có thể tự bay vút lên cao trên bầu trời khi thả tay ra?",
     "a": "Vì khí heli nhẹ hơn không khí xung quanh",
     "b": "Vì quả bóng có cánh quạt",
@@ -2433,11 +2426,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VL04",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Ấm nước sôi",
+    "sub": "Nước sôi bốc hơi",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Boiling_water_in_glass_kettle.jpg/640px-Boiling_water_in_glass_kettle.jpg",
     "q": "Khi đun nước trong ấm đến sôi ùng ục, làn khói trắng li ti bốc lên từ vòi ấm thực chất là gì?",
     "a": "Hơi nước ngưng tụ thành hạt nước li ti",
     "b": "Khói than đen độc hại",
@@ -2449,11 +2442,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VL05",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Tia sáng",
+    "sub": "Tia sáng truyền thẳng",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Crepuscular_rays_at_sunset_near_Golden%2C_Colorado.jpg/640px-Crepuscular_rays_at_sunset_near_Golden%2C_Colorado.jpg",
     "q": "Trong không khí trong suốt đồng chất, tia sáng luôn truyền đi theo đường nào?",
     "a": "Đường thẳng",
     "b": "Đường lượn sóng zíc zắc",
@@ -2465,11 +2458,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VL06",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Trọng lực",
+    "sub": "Trọng lực Trái Đất",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sir_Isaac_Newton_%281643-1727%29.jpg/640px-Sir_Isaac_Newton_%281643-1727%29.jpg",
     "q": "Lực vô hình nào của Trái Đất hút mọi đồ vật và cả chúng ta rơi xuống mặt đất thay vì bay lơ lửng ngoài vũ trụ?",
     "a": "Trọng lực (lực hấp dẫn)",
     "b": "Lực ma sát",
@@ -2481,11 +2474,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VL07",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Sóng âm",
+    "sub": "Dao động âm thanh",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80",
     "q": "Âm thanh của tiếng đàn, tiếng nói hay tiếng chuông phát ra bắt nguồn từ hiện tượng vật lý nào?",
     "a": "Sự dao động rung của vật thể",
     "b": "Sự đứng yên tuyệt đối",
@@ -2497,11 +2490,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VL08",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Dây đồng",
+    "sub": "Lõi đồng dẫn điện",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Copper_wire.jpg/640px-Copper_wire.jpg",
     "q": "Vật liệu nào dẫn điện cực tốt và thường được bọc bên trong lõi dây điện gia đình?",
     "a": "Kim loại Đồng",
     "b": "Nhựa mềm",
@@ -2513,11 +2506,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VL09",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Kính lúp",
+    "sub": "Kính lúp phóng to",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1584483766114-2cea6facdf57?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1584483766114-2cea6facdf57?w=600&auto=format&fit=crop&q=80",
     "q": "Chiếc kính lúp mà các nhà thám tử hay cầm để quan sát dấu vết có tác dụng kỳ diệu gì?",
     "a": "Phóng to hình ảnh các vật nhỏ lên",
     "b": "Thu nhỏ hình ảnh lại",
@@ -2529,11 +2522,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VL10",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Âm trong chất rắn",
+    "sub": "Tốc độ âm trong thép",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Steel_rail.jpg/640px-Steel_rail.jpg",
     "q": "Âm thanh truyền đi nhanh nhất khi đi xuyên qua môi trường vật chất nào sau đây?",
     "a": "Chất rắn (như thanh thép kim loại)",
     "b": "Chất lỏng (như nước)",
@@ -2545,11 +2538,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VL11",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Màu áo mùa hè",
+    "sub": "Áo trắng phản xạ nhiệt",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=80",
     "q": "Vào mùa hè trời nắng như đổ lửa, mặc trang phục màu nào sẽ phản xạ ánh sáng tốt nhất giúp cơ thể mát mẻ hơn?",
     "a": "Màu trắng sáng",
     "b": "Màu đen tuyền",
@@ -2561,11 +2554,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VL12",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Đá chìm",
+    "sub": "Đá chìm dưới nước",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?w=700&auto=format&fit=crop&q=80",
+    "img": "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?w=600&auto=format&fit=crop&q=80",
     "q": "Một cục đá sỏi đặc chắc khi thả vào chậu nước sẽ chìm nghỉm xuống đáy vì lý do gì?",
     "a": "Vì đá có khối lượng riêng nặng hơn nước",
     "b": "Vì đá không có mắt",
@@ -2577,11 +2570,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VL13",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Ánh sáng trắng",
+    "sub": "Lăng kính Newton",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "img": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Light_dispersion_conceptual_waves.gif/640px-Light_dispersion_conceptual_waves.gif",
     "q": "Ánh sáng trắng chiếu rọi từ Mặt Trời thực chất là sự hòa trộn kỳ diệu của bao nhiêu dải màu sắc?",
     "a": "Vô số màu sắc trải dài qua 7 màu chính",
     "b": "Chỉ duy nhất một màu trắng",
@@ -2593,11 +2586,11 @@ const ALL_QUESTIONS = [
   {
     "id": "VL14",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Pin mặt trời",
+    "sub": "Tấm pin mặt trời",
     "age": "8-9",
     "diff": 3,
     "type": "SA",
-    "img": "https://images.unsplash.com/photo-1509391365360-2e959784a276?w=700&auto=format&fit=crop&q=80",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Solar_panels_on_a_roof.jpg/640px-Solar_panels_on_a_roof.jpg",
     "q": "Những tấm pin màu đen lắp trên mái nhà hấp thụ ánh nắng để tạo ra dòng điện sạch gọi là pin gì?",
     "ans": "mặt trời|pin mặt trời|năng lượng mặt trời",
     "explain": "Pin quang điện mặt trời chuyển hóa trực tiếp ánh nắng của thiên nhiên thành điện năng thắp sáng bóng đèn thân thiện với môi trường."
@@ -2636,20 +2629,26 @@ let reviewCardIndex = 0;
 let filteredReviewItems = [];
 
 // =========================================================================
-// MUSIC & SOUND ENGINE (WEB AUDIO API BGM & FX)
+// BẢN NHẠC GAME SHOW QUIZ DỒN DẬP, TẬP TRUNG, TƯƠI VUI (128 BPM SYNTH)
 // =========================================================================
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-let bgmOscillator = null;
-let bgmGain = null;
 let isMusicPlaying = false;
-let bgmInterval = null;
+let musicStep = 0;
+let musicTimer = null;
 
-// Giai điệu nhẹ nhàng (Lullaby / Study scale)
-const bgmNotes = [
-  261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 392.00, 329.63,
-  293.66, 329.63, 392.00, 440.00, 392.00, 329.63, 293.66, 261.63
+// Giai điệu Game Show dồn dập, kích thích tập trung cao độ (Hợp âm Dm - Bb - C - Dm)
+const synthMelody = [
+  // Đoạn 1 (Hào hứng, dồn dập)
+  587.33, 0, 587.33, 659.25, 698.46, 0, 659.25, 587.33,
+  523.25, 0, 523.25, 587.33, 659.25, 0, 587.33, 523.25,
+  466.16, 0, 466.16, 523.25, 587.33, 0, 523.25, 466.16,
+  440.00, 523.25, 587.33, 659.25, 698.46, 783.99, 880.00, 0
 ];
-let currentBgmNoteIdx = 0;
+
+const bassLine = [
+  146.83, 146.83, 146.83, 146.83, 116.54, 116.54, 116.54, 116.54,
+  130.81, 130.81, 130.81, 130.81, 146.83, 146.83, 146.83, 146.83
+];
 
 function toggleMusic() {
   if (isMusicPlaying) {
@@ -2664,34 +2663,74 @@ function playMusic() {
     if (audioCtx.state === 'suspended') audioCtx.resume();
     isMusicPlaying = true;
     document.getElementById('music-btn').classList.add('playing');
-    document.getElementById('music-text').textContent = 'Tắt Nhạc Nền';
+    document.getElementById('music-text').textContent = 'Tắt Nhạc';
 
-    bgmInterval = setInterval(() => {
+    // Nhịp 128 BPM: mỗi nốt 16th note = 60 / (128 * 4) = 0.117s (~120ms)
+    musicStep = 0;
+    musicTimer = setInterval(() => {
       if (!isMusicPlaying) return;
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(bgmNotes[currentBgmNoteIdx], audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.04, audioCtx.currentTime); // Âm lượng dịu êm
-      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.55);
-
-      osc.start();
-      osc.stop(audioCtx.currentTime + 0.6);
-      currentBgmNoteIdx = (currentBgmNoteIdx + 1) % bgmNotes.length;
-    }, 600);
+      playMusicStep();
+    }, 125);
   } catch(e) {
     console.log('Audio init error', e);
   }
 }
 
+function playMusicStep() {
+  const now = audioCtx.currentTime;
+
+  // 1. Tiếng Bassline đệm dồn dập
+  if (musicStep % 2 === 0) {
+    const bassIdx = Math.floor(musicStep / 2) % bassLine.length;
+    const bOsc = audioCtx.createOscillator();
+    const bGain = audioCtx.createGain();
+    bOsc.connect(bGain);
+    bGain.connect(audioCtx.destination);
+    bOsc.type = 'sawtooth';
+    bOsc.frequency.setValueAtTime(bassLine[bassIdx], now);
+    bGain.gain.setValueAtTime(0.04, now);
+    bGain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
+    bOsc.start(now);
+    bOsc.stop(now + 0.2);
+  }
+
+  // 2. Tiếng Hi-hat lách cách giữ nhịp khẩn trương
+  if (musicStep % 2 === 1) {
+    const nGain = audioCtx.createGain();
+    nGain.connect(audioCtx.destination);
+    const nOsc = audioCtx.createOscillator();
+    nOsc.type = 'triangle';
+    nOsc.frequency.setValueAtTime(1000 + Math.random() * 500, now);
+    nGain.gain.setValueAtTime(0.015, now);
+    nGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.05);
+    nOsc.connect(nGain);
+    nOsc.start(now);
+    nOsc.stop(now + 0.06);
+  }
+
+  // 3. Tiếng Lead Synth vui nhộn
+  const note = synthMelody[musicStep % synthMelody.length];
+  if (note > 0) {
+    const sOsc = audioCtx.createOscillator();
+    const sGain = audioCtx.createGain();
+    sOsc.connect(sGain);
+    sGain.connect(audioCtx.destination);
+    sOsc.type = 'square';
+    sOsc.frequency.setValueAtTime(note, now);
+    sGain.gain.setValueAtTime(0.025, now);
+    sGain.gain.exponentialRampToValueAtTime(0.001, now + 0.14);
+    sOsc.start(now);
+    sOsc.stop(now + 0.15);
+  }
+
+  musicStep++;
+}
+
 function stopMusic() {
   isMusicPlaying = false;
-  if (bgmInterval) clearInterval(bgmInterval);
+  if (musicTimer) clearInterval(musicTimer);
   document.getElementById('music-btn').classList.remove('playing');
-  document.getElementById('music-text').textContent = 'Bật Nhạc Nền';
+  document.getElementById('music-text').textContent = 'Bật Nhạc Thi Đấu';
 }
 
 function playSound(type) {
@@ -2723,7 +2762,7 @@ function playSound(type) {
 }
 
 // =========================================================================
-// MASCOT REACTION LOGIC (NHÂN VẬT BO BO)
+// MASCOT BO BO REACTION
 // =========================================================================
 function setMascotMood(mood, customText) {
   const bubble = document.getElementById('mascot-speech');
@@ -2774,7 +2813,7 @@ function updateQuestionStat(qId, isCorrect) {
 }
 
 // =========================================================================
-// INIT & FILTER EVENTS
+// INIT & FILTER LOGIC
 // =========================================================================
 window.onload = function() {
   renderTopics();
@@ -2835,7 +2874,6 @@ function saveSettings() {
   localStorage.setItem('science_quiz_kid_name', document.getElementById('user-name').value.trim());
 }
 
-// CẬP NHẬT TRẠNG THÁI POOL & SMART FALLBACK ĐỂ KHÔNG BAO GIỜ BỊ THIẾU CÂU HỎI
 function getFilteredPool() {
   let pool = ALL_QUESTIONS;
   if (selectedAge !== 'all') pool = pool.filter(q => q.age === selectedAge);
@@ -2851,14 +2889,14 @@ function updatePoolCountDisplay() {
   const textElem = document.getElementById('pool-count-text');
 
   if (pool.length >= requested) {
-    textElem.textContent = `Bộ lọc hiện có ${pool.length} câu phù hợp. Hệ thống sẽ chọn đủ ${requested} câu cho lượt thi!`;
+    textElem.textContent = `Bộ lọc hiện có ${pool.length} câu phù hợp. Đảm bảo chọn đủ ${requested} câu cho bé!`;
   } else {
-    textElem.textContent = `Bộ lọc hiện có ${pool.length} câu. Chế độ thông minh (Smart Fallback) sẽ tự động bổ sung thêm ${requested - pool.length} câu hỏi liên quan để bé làm đủ ${requested} câu!`;
+    textElem.textContent = `Bộ lọc có ${pool.length} câu. Chế độ thông minh (Smart Fallback) sẽ bổ sung thêm ${requested - pool.length} câu liên quan để bé làm đủ ${requested} câu!`;
   }
 }
 
 // =========================================================================
-// START QUIZ LOGIC (FIX LỖI CHỌN 15 RA 5 BẰNG SMART FALLBACK)
+// START QUIZ LOGIC (FIX LỖI 15 RA 5 BẰNG SMART FALLBACK)
 // =========================================================================
 function startQuiz() {
   saveSettings();
@@ -2866,16 +2904,15 @@ function startQuiz() {
   const sizeVal = document.getElementById('quiz-size').value;
   const targetCount = sizeVal === 'all' ? pool.length : parseInt(sizeVal);
 
-  // SMART FALLBACK: NẾU THIẾU CÂU DO BỘ LỌC QUÁ HẸP, BỔ SUNG CÂU LIÊN QUAN
+  // SMART FALLBACK
   if (pool.length < targetCount && sizeVal !== 'all') {
     const needed = targetCount - pool.length;
-    // Lấy thêm câu cùng chủ đề hoặc câu trong toàn bộ ngân hàng
     const fallbackPool = ALL_QUESTIONS.filter(q => !pool.includes(q));
     const bonus = [...fallbackPool].sort(() => Math.random() - 0.5).slice(0, needed);
     pool = [...pool, ...bonus];
   }
 
-  // TỈ LỆ ÔN TẬP SPACED REPETITION
+  // TỈ LỆ ÔN TẬP
   const ratio = document.getElementById('review-ratio').value;
   const stats = getQuestionStats();
 
@@ -2916,7 +2953,7 @@ function startQuiz() {
 }
 
 // =========================================================================
-// QUESTION RENDERING (2 CỘT RESPONSIVE)
+// QUESTION RENDERING (VIEWPORT-FIT KHÔNG PHẢI CUỘN MÀN HÌNH)
 // =========================================================================
 function displayQuestion() {
   const q = currentDeck[currentIndex];
@@ -2926,7 +2963,7 @@ function displayQuestion() {
   document.getElementById('badge-topic-age').textContent = `${q.topic} • Độ tuổi ${q.age} • Mức ${q.diff}`;
   document.getElementById('question-text').textContent = q.q;
 
-  // Hình ảnh minh họa chính xác
+  // Ảnh minh họa chuẩn xác
   const imgElem = document.getElementById('question-img');
   const imgWrap = document.getElementById('q-img-wrap');
   if (q.img) {
@@ -2948,7 +2985,7 @@ function displayQuestion() {
   document.getElementById('btn-next').classList.remove('visible');
 
   if (q.type === 'MC') {
-    document.getElementById('choices-list').style.display = 'flex';
+    document.getElementById('choices-list').style.display = 'grid';
     document.getElementById('sa-box').style.display = 'none';
     renderMultipleChoice(q);
   } else {
@@ -3025,6 +3062,7 @@ function setupShortAnswer(q) {
   setTimeout(() => input.focus(), 150);
 }
 
+// FIX TRIỆT ĐỂ BUG CHECK TỰ LUẬN (GÕ "G" KHÔNG ĐƯỢC CHẤP NHẬN NỮA)
 function submitShortAnswer() {
   const input = document.getElementById('sa-input-field');
   const userText = input.value.trim().toLowerCase();
@@ -3034,7 +3072,8 @@ function submitShortAnswer() {
   input.disabled = true;
 
   const validAnswers = q.ans.toLowerCase().split('|').map(s => s.trim());
-  const isCorrect = validAnswers.some(ans => userText.includes(ans) || ans.includes(userText));
+  // userText phải bằng ans HOẶC userText chứa toàn bộ cụm từ ans (nếu độ dài ans >= 3)
+  const isCorrect = validAnswers.some(ans => userText === ans || (ans.length >= 3 && userText.includes(ans)));
 
   sessionAnswers.push({
     question: q,
@@ -3056,7 +3095,7 @@ function submitShortAnswer() {
     setMascotMood('sad');
     input.classList.add('wrong');
     wrongList.push(q);
-    showExplanation(false, `Đáp án đúng: ${validAnswers[0]}. ${q.explain}`);
+    showExplanation(false, `Đáp án đúng là: ${validAnswers[0]}. ${q.explain}`);
   }
 
   document.getElementById('btn-next').classList.add('visible');
@@ -3265,7 +3304,7 @@ function renderCardReview() {
         ${item.isCorrect ? '✅ Trả lời Đúng' : '❌ Trả lời Sai'}
       </span>
     </div>
-    ${q.img ? `<div class="question-img-card" style="margin-bottom:12px;"><img src="${q.img}" style="height:180px;"></div>` : ''}
+    ${q.img ? `<div class="question-img-card" style="margin-bottom:10px; height:140px;"><img src="${q.img}"></div>` : ''}
     <div class="review-q-text">${q.q}</div>
     <div class="review-answers-box">
       <div><strong>Bé chọn:</strong> <span style="color:${item.isCorrect ? 'var(--success)' : 'var(--danger)'}; font-weight:700;">${item.userAnswerText}</span></div>
