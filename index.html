@@ -13,6 +13,7 @@
     --danger: #E71D36;
     --danger-bg: #FDE8EA;
     --warning: #FF9F1C;
+    --warning-bg: #FFF8EB;
     --text: #2B2D42;
     --text-muted: #6C757D;
     --card-bg: #FFFFFF;
@@ -24,7 +25,7 @@
   body {
     background: linear-gradient(135deg, #4361EE 0%, #3A0CA3 50%, #7209B7 100%);
     min-height: 100vh;
-    padding: 20px 14px;
+    padding: 16px 12px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -33,13 +34,13 @@
 
   .main-wrapper {
     width: 100%;
-    max-width: 720px;
+    max-width: 760px;
   }
 
   .app-header {
     text-align: center;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
   .app-header h1 {
@@ -49,22 +50,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
   }
 
   .app-header p {
-    font-size: 1rem;
-    opacity: 0.9;
-    margin-top: 6px;
+    font-size: 0.95rem;
+    opacity: 0.95;
+    margin-top: 4px;
   }
 
   .quiz-card {
     background: var(--card-bg);
     border-radius: var(--border-rad);
-    padding: clamp(20px, 4vw, 32px);
+    padding: clamp(18px, 4vw, 28px);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
     margin-bottom: 20px;
     transition: all 0.3s ease;
+    position: relative;
   }
 
   .screen { display: none; }
@@ -80,13 +82,12 @@
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--text);
-    margin: 18px 0 10px 0;
+    margin: 16px 0 8px 0;
     display: flex;
     align-items: center;
     gap: 8px;
   }
 
-  /* Age Selector */
   .age-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -103,34 +104,12 @@
     transition: all 0.2s ease;
     user-select: none;
   }
+  .filter-chip .chip-title { font-size: 0.95rem; font-weight: 700; }
+  .filter-chip .chip-desc { font-size: 0.75rem; color: var(--text-muted); margin-top: 3px; }
+  .filter-chip:hover { border-color: var(--primary); transform: translateY(-2px); }
+  .filter-chip.selected { border-color: var(--primary); background: var(--primary-light); color: var(--primary); }
+  .filter-chip.selected .chip-title { color: var(--primary); }
 
-  .filter-chip .chip-title {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--text);
-  }
-
-  .filter-chip .chip-desc {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-top: 3px;
-  }
-
-  .filter-chip:hover {
-    border-color: var(--primary);
-    transform: translateY(-2px);
-  }
-
-  .filter-chip.selected {
-    border-color: var(--primary);
-    background: var(--primary-light);
-    color: var(--primary);
-  }
-  .filter-chip.selected .chip-title {
-    color: var(--primary);
-  }
-
-  /* Topics Grid */
   .topics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
@@ -151,25 +130,18 @@
     font-weight: 600;
     transition: all 0.2s ease;
   }
-
   .topic-pill .icon { font-size: 1.8rem; }
-
-  .topic-pill:hover {
-    border-color: var(--primary);
-    background: #F8FAFC;
-  }
-
-  .topic-pill.selected {
-    border-color: var(--primary);
-    background: var(--primary-light);
-    color: var(--primary);
-  }
+  .topic-pill:hover { border-color: var(--primary); background: #F8FAFC; }
+  .topic-pill.selected { border-color: var(--primary); background: var(--primary-light); color: var(--primary); }
 
   .config-box {
     background: #F8FAFC;
     border-radius: 16px;
     padding: 16px;
-    margin-top: 20px;
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .config-row {
@@ -177,17 +149,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    margin-bottom: 10px;
   }
-
-  .config-row:last-child { margin-bottom: 0; }
-
-  .config-row label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text);
-  }
-
+  .config-row label { font-size: 0.9rem; font-weight: 600; color: var(--text); }
   .config-row select, .config-row input {
     padding: 8px 12px;
     border: 1.5px solid #CBD5E1;
@@ -196,13 +159,9 @@
     outline: none;
   }
 
-  .config-row select:focus, .config-row input:focus {
-    border-color: var(--primary);
-  }
-
   .btn-start {
     width: 100%;
-    margin-top: 22px;
+    margin-top: 20px;
     padding: 16px;
     background: linear-gradient(135deg, #4361EE, #3A0CA3);
     color: white;
@@ -214,36 +173,41 @@
     box-shadow: 0 8px 24px rgba(67, 97, 238, 0.4);
     transition: transform 0.2s, box-shadow 0.2s;
   }
+  .btn-start:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(67, 97, 238, 0.5); }
 
-  .btn-start:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(67, 97, 238, 0.5);
-  }
-
-  /* QUIZ SCREEN */
-  .quiz-top {
+  /* QUIZ SCREEN HEADER & CONTROLS */
+  .quiz-top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
-  .meta-tag {
+  .top-left-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .control-btn {
+    background: #F1F5F9;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: var(--primary-light);
-    color: var(--primary);
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
+    gap: 4px;
+    transition: all 0.2s;
   }
+  .control-btn:hover { background: #E2E8F0; }
 
   .timer-pill {
     background: #FFF3CD;
     color: #856404;
-    padding: 5px 12px;
+    padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 700;
@@ -255,9 +219,8 @@
     background: #E2E8F0;
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
-
   .progress-fill {
     height: 100%;
     width: 0%;
@@ -265,26 +228,55 @@
     transition: width 0.3s ease;
   }
 
+  .question-badge-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  /* Question Illustration */
+  .question-img-container {
+    width: 100%;
+    max-height: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    background: #F1F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .question-img-container img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
   .question-title {
-    font-size: clamp(1.15rem, 3.5vw, 1.45rem);
+    font-size: clamp(1.15rem, 3.5vw, 1.4rem);
     font-weight: 700;
     line-height: 1.5;
     color: var(--text);
-    margin-bottom: 22px;
+    margin-bottom: 18px;
   }
 
   .choices-container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin-bottom: 16px;
   }
 
   .choice-option {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 14px 18px;
+    padding: 13px 16px;
     border: 2px solid #E2E8F0;
     border-radius: 14px;
     background: white;
@@ -294,7 +286,6 @@
     transition: all 0.2s ease;
     text-align: left;
   }
-
   .choice-option:hover:not(:disabled) {
     border-color: var(--primary);
     background: var(--primary-light);
@@ -335,10 +326,7 @@
   }
 
   /* Short Answer Box */
-  .sa-box {
-    margin-bottom: 20px;
-  }
-
+  .sa-box { margin-bottom: 16px; }
   .sa-input {
     width: 100%;
     padding: 14px 16px;
@@ -347,7 +335,6 @@
     font-size: 1.05rem;
     outline: none;
   }
-  .sa-input:focus { border-color: var(--primary); }
   .sa-input.correct { border-color: var(--success); background: var(--success-bg); }
   .sa-input.wrong { border-color: var(--danger); background: var(--danger-bg); }
 
@@ -364,13 +351,14 @@
     cursor: pointer;
   }
 
+  /* Explanation */
   .explanation-card {
     display: none;
     padding: 16px;
     border-radius: 14px;
     font-size: 0.95rem;
     line-height: 1.5;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
   .explanation-card.correct {
     display: block;
@@ -399,66 +387,221 @@
   }
   .btn-next-step.visible { display: block; }
 
-  /* RESULT SCREEN */
-  .result-banner {
+  /* MODALS (PAUSE & QUIT) */
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+  }
+  .modal-overlay.active { display: flex; }
+
+  .modal-box {
+    background: white;
+    border-radius: 20px;
+    padding: 26px;
+    max-width: 440px;
+    width: 100%;
     text-align: center;
-    padding: 20px 0;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    animation: fadeIn 0.25s ease-out;
+  }
+  .modal-icon { font-size: 3.5rem; margin-bottom: 10px; }
+  .modal-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 8px; }
+  .modal-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
+  .modal-actions { display: flex; gap: 10px; justify-content: center; }
+
+  .modal-btn-confirm {
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    background: var(--primary);
+    color: white;
+    font-size: 1rem;
+  }
+  .modal-btn-cancel {
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    border: 2px solid #CBD5E1;
+    background: #F8FAFC;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 1rem;
   }
 
-  .result-icon { font-size: 4.5rem; margin-bottom: 10px; }
-  .result-headline { font-size: 1.8rem; font-weight: 800; color: var(--text); }
-  .result-stars { font-size: 2.2rem; margin: 10px 0; }
+  /* RESULT SCREEN */
+  .result-banner { text-align: center; padding: 14px 0; }
+  .result-icon { font-size: 4rem; margin-bottom: 8px; }
+  .result-headline { font-size: 1.7rem; font-weight: 800; color: var(--text); }
+  .result-stars { font-size: 2rem; margin: 8px 0; }
 
   .summary-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 10px;
     background: #F8FAFC;
     border-radius: 16px;
-    padding: 16px;
+    padding: 14px;
     text-align: center;
-    margin: 20px 0;
+    margin: 16px 0;
   }
-
-  .summary-stat-val { font-size: 1.5rem; font-weight: 800; }
-  .summary-stat-lbl { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+  .summary-stat-val { font-size: 1.4rem; font-weight: 800; }
+  .summary-stat-lbl { font-size: 0.75rem; color: var(--text-muted); margin-top: 3px; }
 
   .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn-highlight {
+    padding: 15px;
+    background: linear-gradient(135deg, #4361EE, #3A0CA3);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.35);
+  }
+  .action-row-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 10px;
   }
-
   .btn-secondary {
-    padding: 14px;
+    padding: 12px;
     background: #F1F5F9;
     color: var(--text);
     border: 2px solid #CBD5E1;
     border-radius: 14px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     cursor: pointer;
   }
-
   .btn-primary-action {
-    padding: 14px;
+    padding: 12px;
     background: var(--primary);
     color: white;
     border: none;
     border-radius: 14px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     cursor: pointer;
   }
 
-  .sync-message {
-    text-align: center;
+  /* REVIEW SCREEN */
+  .review-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .review-view-toggle {
+    display: flex;
+    background: #E2E8F0;
+    border-radius: 10px;
+    padding: 2px;
+  }
+  .toggle-btn {
+    padding: 6px 14px;
+    border: none;
+    background: transparent;
+    font-weight: 700;
     font-size: 0.85rem;
+    border-radius: 8px;
+    cursor: pointer;
     color: var(--text-muted);
+  }
+  .toggle-btn.active {
+    background: white;
+    color: var(--primary);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .review-filters {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .review-filter-btn {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1.5px solid #CBD5E1;
+    background: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .review-filter-btn.active {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    color: var(--primary);
+  }
+
+  /* List View items */
+  .review-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-height: 540px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+
+  .review-item-card {
+    border: 2px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 14px;
+    background: #FFFFFF;
+    transition: all 0.2s;
+  }
+  .review-item-card.is-correct { border-color: var(--success); background: #FAFFFC; }
+  .review-item-card.is-wrong { border-color: var(--danger); background: #FFFBFB; }
+
+  .review-card-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .review-q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .review-answers-box {
+    background: #F8FAFC;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .review-explain-box {
+    font-size: 0.85rem;
+    color: #475569;
+    line-height: 1.4;
+    background: #F1F5F9;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+
+  /* Card View Navigation */
+  .card-view-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 14px;
   }
 
-  /* Confetti pieces */
+  /* Confetti */
   .confetti {
     position: fixed; width: 10px; height: 10px; top: -10px; z-index: 9999;
     pointer-events: none;
@@ -474,16 +617,18 @@
 <div class="main-wrapper">
   <header class="app-header">
     <h1>🔬 Khoa Học Vui</h1>
-    <p>Hệ thống 100 câu hỏi ôn thi học bổng KHTN & Xã hội</p>
+    <p>100 Câu hỏi Khoa học Tự nhiên & Xã hội có hình ảnh minh họa</p>
   </header>
 
-  <!-- HOME SCREEN -->
+  <!-- ========================================== -->
+  <!-- 1. HOME SCREEN                             -->
+  <!-- ========================================== -->
   <div class="quiz-card screen active" id="home-screen">
     <div class="section-title">👶 1. Chọn Độ Tuổi Phù Hợp</div>
     <div class="age-grid">
       <div class="filter-chip selected" onclick="selectAge('all', this)">
         <div class="chip-title">🌟 Tất cả</div>
-        <div class="chip-desc">100 câu hỏi</div>
+        <div class="chip-desc">Toàn bộ 100 câu</div>
       </div>
       <div class="filter-chip" onclick="selectAge('6-7', this)">
         <div class="chip-title">🌱 6 - 7 tuổi</div>
@@ -500,23 +645,31 @@
     </div>
 
     <div class="section-title">📚 2. Chọn Chủ Đề Ôn Luyện</div>
-    <div class="topics-grid" id="topics-list">
-      <!-- Injected by JS -->
-    </div>
+    <div class="topics-grid" id="topics-list"></div>
 
+    <div class="section-title">🧠 3. Chế Độ Luyện Tập (Ghi Nhớ)</div>
     <div class="config-box">
       <div class="config-row">
-        <label>👤 Tên bé ôn tập:</label>
-        <input type="text" id="user-name" placeholder="Bé Minh" value="Bé Yêu" style="width: 140px;">
+        <label>🔁 Tỉ lệ câu hỏi ôn lại:</label>
+        <select id="review-ratio">
+          <option value="random" selected>🎲 Ngẫu nhiên chuẩn</option>
+          <option value="mistakes">🔄 Ưu tiên câu bé từng làm sai (50% sai + 50% mới)</option>
+          <option value="unseen">🆕 Chỉ câu chưa từng làm (100% câu mới)</option>
+          <option value="reviewed">🔁 Củng cố trí nhớ (100% câu đã từng làm)</option>
+        </select>
       </div>
       <div class="config-row">
         <label>⏱️ Số câu mỗi lượt chơi:</label>
         <select id="quiz-size">
-          <option value="10">10 câu (Nhanh 5-7p)</option>
-          <option value="20" selected>20 câu (Chuẩn thi)</option>
-          <option value="30">30 câu (Thử thách)</option>
-          <option value="all">Toàn bộ câu hỏi lọc được</option>
+          <option value="10">10 câu (Nhanh 5-7 phút)</option>
+          <option value="15" selected>15 câu (Chuẩn thi)</option>
+          <option value="20">20 câu (Thử thách)</option>
+          <option value="all">Toàn bộ câu lọc được</option>
         </select>
+      </div>
+      <div class="config-row">
+        <label>👤 Tên bé ôn tập:</label>
+        <input type="text" id="user-name" placeholder="Bé Minh" value="Bé Yêu" style="width: 140px;">
       </div>
       <div class="config-row">
         <label>🌐 Google Apps Script URL:</label>
@@ -527,10 +680,15 @@
     <button class="btn-start" onclick="startQuiz()">🚀 BẮT ĐẦU ÔN LUYỆN</button>
   </div>
 
-  <!-- QUIZ PLAY SCREEN -->
+  <!-- ========================================== -->
+  <!-- 2. QUIZ SCREEN                             -->
+  <!-- ========================================== -->
   <div class="quiz-card screen" id="quiz-screen">
-    <div class="quiz-top">
-      <div class="meta-tag" id="badge-topic">Động Vật</div>
+    <div class="quiz-top-bar">
+      <div class="top-left-controls">
+        <button class="control-btn" onclick="pauseQuiz()">⏸️ Tạm dừng</button>
+        <button class="control-btn" onclick="askQuitQuiz()">🚪 Thoát</button>
+      </div>
       <div class="timer-pill" id="quiz-timer">⏱ 00:00</div>
     </div>
 
@@ -538,9 +696,14 @@
       <div class="progress-fill" id="progress-fill"></div>
     </div>
 
-    <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:0.85rem; color:var(--text-muted); font-weight:700;">
-      <span id="question-number">Câu 1/20</span>
-      <span id="badge-age" style="color:var(--primary);">6-7 tuổi</span>
+    <div class="question-badge-row">
+      <span id="question-number">Câu 1/15</span>
+      <span id="badge-topic-age" style="color:var(--primary);">Động Vật • 6-7 tuổi</span>
+    </div>
+
+    <!-- Question Illustration Image -->
+    <div class="question-img-container" id="q-img-wrap">
+      <img id="question-img" src="" alt="Hình ảnh câu hỏi" loading="lazy">
     </div>
 
     <h2 class="question-title" id="question-text">Đang tải câu hỏi...</h2>
@@ -560,13 +723,15 @@
     <button class="btn-next-step" id="btn-next" onclick="goNextQuestion()">Câu tiếp theo ➔</button>
   </div>
 
-  <!-- RESULT SCREEN -->
+  <!-- ========================================== -->
+  <!-- 3. RESULT SCREEN                           -->
+  <!-- ========================================== -->
   <div class="quiz-card screen" id="result-screen">
     <div class="result-banner">
       <div class="result-icon" id="res-icon">🏆</div>
       <div class="result-headline" id="res-title">Bé Làm Tốt Lắm!</div>
       <div class="result-stars" id="res-stars">⭐⭐⭐</div>
-      <p id="res-desc" style="color:var(--text-muted);">Bé đã hoàn thành lượt ôn tập với kết quả ấn tượng!</p>
+      <p id="res-desc" style="color:var(--text-muted); font-size:0.95rem;">Bé đã hoàn thành xuất sắc lượt ôn tập!</p>
     </div>
 
     <div class="summary-stats">
@@ -576,7 +741,7 @@
       </div>
       <div>
         <div class="summary-stat-val" id="res-correct" style="color:var(--success);">0/0</div>
-        <div class="summary-stat-lbl">ĐÚNG</div>
+        <div class="summary-stat-lbl">CÂU ĐÚNG</div>
       </div>
       <div>
         <div class="summary-stat-val" id="res-time" style="color:var(--warning);">00:00</div>
@@ -585,1488 +750,1661 @@
     </div>
 
     <div class="action-buttons">
-      <button class="btn-secondary" onclick="replayMistakes()" id="btn-replay-wrong">🔄 Ôn lại câu sai</button>
-      <button class="btn-primary-action" onclick="backToHome()">🏠 Về Trang Chủ</button>
+      <button class="btn-highlight" onclick="openReviewScreen()">🔍 Xem lại chi tiết toàn bộ bài làm</button>
+      <div class="action-row-buttons">
+        <button class="btn-secondary" onclick="replayMistakes()" id="btn-replay-wrong">🔄 Ôn lại câu sai</button>
+        <button class="btn-primary-action" onclick="backToHome()">🏠 Về Trang Chủ</button>
+      </div>
     </div>
 
-    <div class="sync-message" id="sync-status">💡 Kết quả tự động ghi nhớ trên trình duyệt này</div>
+    <div style="text-align:center; font-size:0.85rem; color:var(--text-muted); margin-top:14px;" id="sync-status">
+      💡 Lịch sử câu hỏi đã tự động cập nhật vào trí nhớ của máy
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 4. REVIEW SCREEN (Xem lại toàn bộ bài thi) -->
+  <!-- ========================================== -->
+  <div class="quiz-card screen" id="review-screen">
+    <div class="review-header-bar">
+      <h3 style="font-size:1.2rem; font-weight:800;">🔍 Xem Lại Bài Vừa Thi</h3>
+      <div class="review-view-toggle">
+        <button class="toggle-btn active" id="btn-view-list" onclick="switchReviewMode('list')">📑 Dạng danh sách</button>
+        <button class="toggle-btn" id="btn-view-card" onclick="switchReviewMode('card')">🃏 Từng câu một</button>
+      </div>
+    </div>
+
+    <!-- Filter chips for Review -->
+    <div class="review-filters">
+      <button class="review-filter-btn active" onclick="filterReviewItems('all', this)">Tất cả (<span id="rev-count-all">0</span>)</button>
+      <button class="review-filter-btn" onclick="filterReviewItems('correct', this)">Đúng ✅ (<span id="rev-count-correct">0</span>)</button>
+      <button class="review-filter-btn" onclick="filterReviewItems('wrong', this)">Sai ❌ (<span id="rev-count-wrong">0</span>)</button>
+    </div>
+
+    <!-- Container for LIST VIEW -->
+    <div id="review-list-view">
+      <div class="review-list-container" id="review-list-items"></div>
+    </div>
+
+    <!-- Container for CARD VIEW -->
+    <div id="review-card-view" style="display:none;">
+      <div class="review-item-card" id="card-view-item"></div>
+      <div class="card-view-nav">
+        <button class="control-btn" onclick="navCardReview(-1)">⬅️ Câu trước</button>
+        <span id="card-nav-indicator" style="font-weight:700; font-size:0.9rem;">Câu 1/15</span>
+        <button class="control-btn" onclick="navCardReview(1)">Câu sau ➡️</button>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;">
+      <button class="btn-primary-action" style="width:100%;" onclick="showScreen('result-screen')">⬅️ Quay lại bảng điểm</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- MODAL: PAUSE                               -->
+<!-- ========================================== -->
+<div class="modal-overlay" id="modal-pause">
+  <div class="modal-box">
+    <div class="modal-icon">⏸️</div>
+    <div class="modal-title">Đang Tạm Dừng</div>
+    <div class="modal-desc">Đồng hồ đã dừng lại. Bé hãy uống một ngụm nước, chớp mắt thư giãn rồi cùng làm tiếp nhé!</div>
+    <button class="modal-btn-confirm" onclick="resumeQuiz()">▶️ Tiếp tục làm bài</button>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- MODAL: QUIT                                -->
+<!-- ========================================== -->
+<div class="modal-overlay" id="modal-quit">
+  <div class="modal-box">
+    <div class="modal-icon">🚪</div>
+    <div class="modal-title">Dừng Bài Thi?</div>
+    <div class="modal-desc">Bé có chắc muốn rời khỏi lượt ôn này không? Kết quả hiện tại sẽ không được lưu nếu thoát ngang.</div>
+    <div class="modal-actions">
+      <button class="modal-btn-cancel" onclick="closeQuitModal()">Tiếp tục làm</button>
+      <button class="modal-btn-confirm" style="background:var(--danger);" onclick="confirmQuit()">Đồng ý thoát</button>
+    </div>
   </div>
 </div>
 
 <script>
-// 100 QUESTIONS DATA
+// =========================================================================
+// 100 CAU HOI KHOA HOC DA CHUAN HOA
+// =========================================================================
 const ALL_QUESTIONS = [
   {
-    "id": "Q001",
+    "id": "DV01",
     "topic": "Động Vật",
-    "sub": "Nhận biết",
+    "sub": "Vật nuôi quanh em",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Con vật nào dưới đây thường sủa \"gâu gâu\" và trông nhà rất giỏi?",
+    "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&auto=format&fit=crop&q=80",
+    "q": "Loài vật nuôi nào trung thành, hay sủa \"gâu gâu\" và giúp gia đình trông nhà rất cẩn thận?",
     "a": "Con Chó",
     "b": "Con Mèo",
-    "c": "Con Gà",
-    "d": "Con Heo",
+    "c": "Con Thỏ",
+    "d": "Con Gà",
     "ans": "A",
-    "explain": "Chó là loài vật nuôi trung thành, biết sủa để trông nhà và báo cho chủ."
+    "explain": "Chó có thính giác và khứu giác cực kỳ nhạy bén, lại rất trung thành với chủ nên là người bạn trông nhà tuyệt vời nhất!"
   },
   {
-    "id": "Q002",
+    "id": "DV02",
+    "topic": "Động Vật",
+    "sub": "Động vật nông trại",
+    "age": "6-7",
+    "diff": 1,
+    "type": "MC",
+    "img": "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=600&auto=format&fit=crop&q=80",
+    "q": "Loài vật nào nuôi ở nông trại cung cấp nguồn sữa tươi thơm ngon và giàu canxi cho chúng ta uống mỗi ngày?",
+    "a": "Bò sữa",
+    "b": "Con Hổ",
+    "c": "Sư tử",
+    "d": "Con Voi",
+    "ans": "A",
+    "explain": "Bò sữa ăn cỏ và cho con người nguồn sữa tươi ngọt lành, giàu canxi giúp xương bé phát triển cao lớn."
+  },
+  {
+    "id": "DV03",
+    "topic": "Động Vật",
+    "sub": "Đặc điểm động vật",
+    "age": "6-7",
+    "diff": 1,
+    "type": "MC",
+    "img": "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=600&auto=format&fit=crop&q=80",
+    "q": "Loài vật nào có đôi tai dài, bộ lông mềm mại, thích ăn cà rốt và nhảy thoăn thoắt?",
+    "a": "Con Thỏ",
+    "b": "Con Rùa",
+    "c": "Con Vịt",
+    "d": "Con Cóc",
+    "ans": "A",
+    "explain": "Thỏ có đôi tai dài giúp đón âm thanh từ mọi hướng để phát hiện nguy hiểm từ rất xa."
+  },
+  {
+    "id": "DV04",
     "topic": "Động Vật",
     "sub": "Tập tính",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Mèo thích bắt loài động vật nhỏ nào trong nhà nhất?",
-    "a": "Con Chuột",
-    "b": "Con Voi",
+    "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80",
+    "q": "Loài vật nuôi nào trong nhà có đệm chân êm ái, bước đi không gây tiếng động và rất giỏi bắt chuột?",
+    "a": "Con Mèo",
+    "b": "Con Lợn",
     "c": "Con Bò",
-    "d": "Con Hổ",
-    "ans": "A",
-    "explain": "Mèo có vuốt sắc và thính giác tốt, rất thích rình bắt chuột."
-  },
-  {
-    "id": "Q003",
-    "topic": "Động Vật",
-    "sub": "Đặc điểm",
-    "age": "6-7",
-    "diff": 1,
-    "type": "MC",
-    "q": "Loài vật nào có đôi tai dài, thích ăn cà rốt và nhảy thoăn thoắt?",
-    "a": "Con Thỏ",
-    "b": "Con Vịt",
-    "c": "Con Rùa",
-    "d": "Con Gấu",
-    "ans": "A",
-    "explain": "Thỏ có đôi tai dài giúp nghe ngóng nguy hiểm từ xa và thích ăn các loại củ, rau xanh."
-  },
-  {
-    "id": "Q004",
-    "topic": "Động Vật",
-    "sub": "Môi trường sống",
-    "age": "6-7",
-    "diff": 1,
-    "type": "MC",
-    "q": "Con vật nào sống dưới nước và bơi bằng vây, thở bằng mang?",
-    "a": "Con Cá",
-    "b": "Con Gà",
-    "c": "Con Khỉ",
     "d": "Con Ngựa",
     "ans": "A",
-    "explain": "Cá sống hoàn toàn dưới nước, có vây để bơi và mang để lọc oxy."
+    "explain": "Mèo có móng vuốt sắc nhọn có thể co thụt vào và đệm chân êm giúp rình bắt chuột mà không phát ra tiếng động."
   },
   {
-    "id": "Q005",
+    "id": "DV05",
     "topic": "Động Vật",
-    "sub": "Nhận biết",
+    "sub": "Thế giới loài chim",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Con vật nào vào mỗi buổi sáng thường gáy \"Ò ó o\" báo hiệu bình minh?",
+    "img": "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=600&auto=format&fit=crop&q=80",
+    "q": "Vào mỗi buổi sáng sớm khi Mặt Trời chuẩn bị mọc, con vật nào thường gáy vang \"Ò ó o\" báo hiệu ngày mới?",
     "a": "Gà trống",
-    "b": "Vịt xiêm",
-    "c": "Chim bồ câu",
-    "d": "Mèo mướp",
-    "ans": "A",
-    "explain": "Gà trống gáy vang vào buổi sáng sớm theo đồng hồ sinh học tự nhiên."
-  },
-  {
-    "id": "Q006",
-    "topic": "Động Vật",
-    "sub": "Nhận biết",
-    "age": "6-7",
-    "diff": 1,
-    "type": "MC",
-    "q": "Loài vật nào cho con người sữa tươi thơm ngon hàng ngày?",
-    "a": "Bò sữa",
-    "b": "Sư tử",
-    "c": "Chó sói",
-    "d": "Đại bàng",
-    "ans": "A",
-    "explain": "Bò sữa được nuôi để cung cấp sữa tươi giàu canxi và dinh dưỡng cho con người."
-  },
-  {
-    "id": "Q007",
-    "topic": "Động Vật",
-    "sub": "Thức ăn",
-    "age": "7-8",
-    "diff": 2,
-    "type": "MC",
-    "q": "Loài vật nào sau đây là động vật chỉ ăn cỏ và lá cây?",
-    "a": "Hươu cao cổ",
-    "b": "Hổ vằn",
-    "c": "Cá sấu",
-    "d": "Chó sói",
-    "ans": "A",
-    "explain": "Hươu cao cổ là động vật ăn thực vật, dùng chiếc cổ dài để ăn lá trên ngọn cây cao."
-  },
-  {
-    "id": "Q008",
-    "topic": "Động Vật",
-    "sub": "Tập tính",
-    "age": "7-8",
-    "diff": 2,
-    "type": "MC",
-    "q": "Loài chim nào sống ở xứ lạnh Nam Cực, bơi lặn cực giỏi nhưng lại không bay được?",
-    "a": "Chim cánh cụt",
     "b": "Chim bồ câu",
-    "c": "Chim đại bàng",
-    "d": "Chim én",
+    "c": "Vịt con",
+    "d": "Chó con",
     "ans": "A",
-    "explain": "Chim cánh cụt có cánh biến đổi thành mái chèo giúp bơi lội siêu nhanh dưới nước."
+    "explain": "Gà trống có đồng hồ sinh học đặc biệt trong não, biết chính xác khi nào trời sắp sáng để cất tiếng gáy vang gọi mọi người thức dậy."
   },
   {
-    "id": "Q009",
+    "id": "DV06",
     "topic": "Động Vật",
-    "sub": "Sinh sản",
+    "sub": "Động vật hoang dã",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Con ếch con khi mới nở từ trứng ra và sống dưới nước được gọi là gì?",
+    "img": "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?w=600&auto=format&fit=crop&q=80",
+    "q": "Voi là loài vật trên cạn to lớn nhất. Chiếc vòi dài của chú voi thực chất là bộ phận nào biến đổi thành?",
+    "a": "Mũi kéo dài kết hợp với môi trên",
+    "b": "Một cánh tay phụ",
+    "c": "Cái lưỡi dài ra",
+    "d": "Cái đuôi phía trước",
+    "ans": "A",
+    "explain": "Vòi voi chính là mũi và môi trên kéo dài, chứa hơn 40.000 bó cơ giúp voi hút nước, gắp thức ăn và thậm chí nhặt chiếc kim nhỏ!"
+  },
+  {
+    "id": "DV07",
+    "topic": "Động Vật",
+    "sub": "Thích nghi tự nhiên",
+    "age": "7-8",
+    "diff": 2,
+    "type": "MC",
+    "img": "https://images.unsplash.com/photo-1598439210625-5067c578f3f6?w=600&auto=format&fit=crop&q=80",
+    "q": "Loài chim nào sinh sống ở vùng băng tuyết Nam Cực, bơi lội cực nhanh dưới biển nhưng lại không biết bay trên trời?",
+    "a": "Chim cánh cụt",
+    "b": "Đại bàng biển",
+    "c": "Hải âu",
+    "d": "Bồ nông",
+    "ans": "A",
+    "explain": "Chim cánh cụt biến đôi cánh thành mái chèo khỏe khoắn và có lớp mỡ dày để bơi lặn săn cá trong làn nước băng giá."
+  },
+  {
+    "id": "DV08",
+    "topic": "Động Vật",
+    "sub": "Đặc điểm sinh sản",
+    "age": "7-8",
+    "diff": 2,
+    "type": "MC",
+    "img": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&auto=format&fit=crop&q=80",
+    "q": "Ấu trùng con nở ra từ trứng của ếch mẹ, bơi lượn dưới nước và có đuôi dài được gọi là gì?",
     "a": "Nòng nọc",
     "b": "Sâu bướm",
-    "c": "Cá con",
-    "d": "Giun đất",
+    "c": "Nhộng",
+    "d": "Giun nước",
     "ans": "A",
-    "explain": "Trứng ếch nở ra nòng nọc có đuôi bơi dưới nước, sau đó mới mọc chân và tiêu biến đuôi thành ếch."
+    "explain": "Nòng nọc sống dưới nước và thở bằng mang. Sau đó nó mới mọc chân sau, chân trước, rụng đuôi và trở thành chú ếch trưởng thành."
   },
   {
-    "id": "Q010",
+    "id": "DV09",
     "topic": "Động Vật",
-    "sub": "Thích nghi",
+    "sub": "Ngụy trang tự nhiên",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Voi dùng chiếc vòi dài của mình để làm gì?",
-    "a": "Hút nước, gắp thức ăn và cầm nắm",
-    "b": "Để bay",
-    "c": "Để đào hầm dưới đất",
-    "d": "Chỉ để ngửi",
-    "ans": "A",
-    "explain": "Vòi voi là sự kết hợp giữa mũi và môi trên, cử động cực kỳ khéo léo để lấy thức ăn, nước uống."
-  },
-  {
-    "id": "Q011",
-    "topic": "Động Vật",
-    "sub": "Tập tính",
-    "age": "7-8",
-    "diff": 2,
-    "type": "MC",
-    "q": "Gấu bắc cực và một số loài gấu thường làm gì suốt mùa đông giá rét?",
-    "a": "Ngủ đông trong hang",
-    "b": "Bơi sang châu Phi",
-    "c": "Trèo lên cây hót",
-    "d": "Thay đổi màu lông sang màu xanh",
-    "ans": "A",
-    "explain": "Ngủ đông giúp gấu tiết kiệm năng lượng khi mùa đông khan hiếm nguồn thức ăn."
-  },
-  {
-    "id": "Q012",
-    "topic": "Động Vật",
-    "sub": "Đặc điểm",
-    "age": "7-8",
-    "diff": 2,
-    "type": "MC",
-    "q": "Loài bò sát nào có khả năng đổi màu da theo môi trường xung quanh để ngụy trang?",
+    "img": "https://images.unsplash.com/photo-1563281577-a7be47e20db9?w=600&auto=format&fit=crop&q=80",
+    "q": "Loài bò sát nào nổi tiếng có khả năng biến đổi màu sắc làn da trùng khớp với lá cây xung quanh để lẩn trốn kẻ thù?",
     "a": "Tắc kè hoa",
-    "b": "Rùa cạn",
-    "c": "Trăn gấm",
-    "d": "Thằn lằn bóng",
+    "b": "Rùa hộp",
+    "c": "Trăn đất",
+    "d": "Cá sấu",
     "ans": "A",
-    "explain": "Tắc kè hoa đổi màu sắc da nhờ các tế bào sắc tố đặc biệt để ẩn nấp kẻ thù hoặc săn mồi."
+    "explain": "Dưới da tắc kè hoa có các tế bào sắc tố đặc biệt có thể co giãn, giúp thay đổi màu da để ngụy trang hoặc bộc lộ tâm trạng."
   },
   {
-    "id": "Q013",
+    "id": "DV10",
     "topic": "Động Vật",
-    "sub": "Phân loại",
+    "sub": "Thói quen sinh tồn",
+    "age": "7-8",
+    "diff": 2,
+    "type": "MC",
+    "img": "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=600&auto=format&fit=crop&q=80",
+    "q": "Vào mùa đông lạnh giá khan hiếm thức ăn, loài gấu thường làm gì để bảo toàn năng lượng suốt nhiều tháng?",
+    "a": "Ngủ đông trong hang",
+    "b": "Bơi sang châu lục khác",
+    "c": "Trèo lên ngọn cây",
+    "d": "Lặn xuống đáy sông",
+    "ans": "A",
+    "explain": "Trước khi ngủ đông, gấu ăn thật nhiều để tích mỡ. Khi ngủ đông, nhịp tim và hơi thở của gấu chậm lại tối đa để không tốn năng lượng."
+  },
+  {
+    "id": "DV11",
+    "topic": "Động Vật",
+    "sub": "Phân loại động vật",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Cá voi xanh là loài động vật thuộc lớp nào?",
+    "img": "https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=600&auto=format&fit=crop&q=80",
+    "q": "Cá voi xanh là sinh vật to lớn nhất Trái Đất. Dù bơi dưới đại dương nhưng cá voi thuộc lớp động vật nào?",
     "a": "Lớp Thú (động vật có vú)",
     "b": "Lớp Cá",
     "c": "Lớp Lưỡng cư",
     "d": "Lớp Bò sát",
     "ans": "A",
-    "explain": "Tuy sống dưới biển nhưng cá voi thở bằng phổi, đẻ con và nuôi con bằng sữa mẹ nên thuộc lớp Thú."
+    "explain": "Cá voi thở bằng phổi, đẻ con và nuôi con bằng sữa mẹ ấm áp, vì vậy nó là động vật có vú (lớp Thú) chứ không phải lớp Cá."
   },
   {
-    "id": "Q014",
+    "id": "DV12",
     "topic": "Động Vật",
-    "sub": "Sinh học",
+    "sub": "Thế giới côn trùng",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Loài côn trùng nào nhảy từ bông hoa này sang bông hoa khác giúp thụ phấn cho cây và tạo ra mật ngọt?",
-    "a": "Con Ong mật",
-    "b": "Con Ruồi",
-    "c": "Con Muỗi",
-    "d": "Con Chuồn chuồn",
+    "img": "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?w=600&auto=format&fit=crop&q=80",
+    "q": "Con ong mật có vai trò gì quan trọng nhất đối với mùa màng và cây xanh trong tự nhiên?",
+    "a": "Thụ phấn cho hoa để cây kết trái",
+    "b": "Bắt sâu bọ ăn hại",
+    "c": "Tưới nước cho hoa",
+    "d": "Làm sạch lá cây",
     "ans": "A",
-    "explain": "Ong mật có vai trò cực kỳ to lớn đối với hệ sinh thái nhờ thụ phấn cho hoa màu và cây rừng."
+    "explain": "Khi bay đi hút mật, phấn hoa dính vào chân ong và chuyển sang hoa khác, giúp cây thụ phấn để đơm hoa kết trái ngọt."
   },
   {
-    "id": "Q015",
+    "id": "DV13",
     "topic": "Động Vật",
-    "sub": "Đặc điểm",
+    "sub": "Phân loại sinh học",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Loài chim nào có thị lực cực kỳ tinh tường, thường bay lượn trên cao và được mệnh danh là chúa tể bầu trời?",
-    "a": "Đại bàng",
-    "b": "Chim sâu",
-    "c": "Chim gõ kiến",
-    "d": "Chim sẻ",
-    "ans": "A",
-    "explain": "Đại bàng có đôi mắt sắc bén phát hiện con mồi nhỏ từ khoảng cách hàng cây số."
-  },
-  {
-    "id": "Q016",
-    "topic": "Động Vật",
-    "sub": "Phân loại",
-    "age": "8-9",
-    "diff": 3,
-    "type": "MC",
-    "q": "Con nhện có mấy cái chân?",
+    "img": "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80",
+    "q": "Tất cả các loài côn trùng đều có 6 chân. Vậy con Nhện có tất cả bao nhiêu cái chân?",
     "a": "8 chân",
     "b": "6 chân",
     "c": "4 chân",
     "d": "10 chân",
     "ans": "A",
-    "explain": "Côn trùng chỉ có 6 chân, còn nhện có 8 chân và thuộc lớp Hình nhện (Arachnida)."
+    "explain": "Nhện có 8 chân và cơ thể chia làm 2 phần, nên nhện không phải là côn trùng mà thuộc lớp Hình nhện (Arachnida)."
   },
   {
-    "id": "Q017",
+    "id": "DV14",
     "topic": "Động Vật",
-    "sub": "Đặc điểm",
+    "sub": "Kỷ lục thế giới tự nhiên",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Loài vật nào trên cạn chạy nhanh nhất thế giới trong cự ly ngắn (đạt tới hơn 100 km/h)?",
+    "img": "https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=600&auto=format&fit=crop&q=80",
+    "q": "Loài thú săn mồi nào chạy nhanh nhất trên cạn, có thể đạt vận tốc hơn 100 km/h chỉ sau vài giây xuất phát?",
     "a": "Báo săn (Cheetah)",
-    "b": "Sư tử",
-    "c": "Ngựa vằn",
-    "d": "Linh cẩu",
+    "b": "Sư tử đồng cỏ",
+    "c": "Hổ Siberia",
+    "d": "Linh cẩu đốm",
     "ans": "A",
-    "explain": "Báo Cheetah có thân hình khí động học, bước sải dài giúp tăng tốc từ 0 lên 100 km/h chỉ trong vài giây."
+    "explain": "Báo săn Cheetah có cơ thể thon gọn như chiếc xe đua khí động học, sống lưng dẻo và móng vuốt bám đất siêu bám."
   },
   {
-    "id": "Q018",
+    "id": "DV15",
     "topic": "Động Vật",
-    "sub": "Thích nghi",
+    "sub": "Thích nghi sa mạc",
     "age": "8-9",
     "diff": 3,
     "type": "SA",
-    "q": "Lạc đà dự trữ năng lượng chủ yếu dưới dạng chất béo ở bộ phận nào trên lưng?",
+    "img": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=600&auto=format&fit=crop&q=80",
+    "q": "Lạc đà dự trữ năng lượng dưới dạng mô mỡ ở bộ phận nhô cao nào trên lưng?",
     "ans": "bướu|cái bướu",
-    "explain": "Bướu của lạc đà chứa mô mỡ dự trữ năng lượng giúp chúng sống nhiều ngày trên sa mạc cằn cỗi."
+    "explain": "Bướu của lạc đà chứa chất béo dự trữ. Khi khát và đói, mỡ trong bướu sẽ được chuyển hóa thành năng lượng và nước nuôi cơ thể."
   },
   {
-    "id": "Q019",
+    "id": "TV01",
     "topic": "Thực Vật",
-    "sub": "Cơ bản",
+    "sub": "Cấu tạo cây xanh",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Bộ phận nào của cây nằm sâu dưới mặt đất giúp cây đứng vững và hút nước?",
+    "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&auto=format&fit=crop&q=80",
+    "q": "Bộ phận nào của cây xanh mọc cắm sâu vào lòng đất để hút nước và giữ cho cây đứng vững?",
     "a": "Rễ cây",
-    "b": "Lá cây",
-    "c": "Hoa",
-    "d": "Quả",
+    "b": "Thân cây",
+    "c": "Lá cây",
+    "d": "Bông hoa",
     "ans": "A",
-    "explain": "Rễ bám chắc vào đất để giữ cây không bị đổ và hút nước nuôi các bộ phận khác."
+    "explain": "Rễ cây như những chiếc mỏ neo bám chắc vào đất và có vô số lông hút nhỏ xíu để hút nước và khoáng chất."
   },
   {
-    "id": "Q020",
+    "id": "TV02",
     "topic": "Thực Vật",
-    "sub": "Nhận biết",
+    "sub": "Màu sắc thực vật",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Lá của đa số các loài cây thường có màu sắc gì?",
+    "img": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&auto=format&fit=crop&q=80",
+    "q": "Lá của hầu hết các loài cây trong tự nhiên thường có màu sắc chủ đạo là màu gì?",
     "a": "Màu xanh lá cây",
-    "b": "Màu xanh dương",
+    "b": "Màu xanh da trời",
     "c": "Màu đen",
-    "d": "Màu tím đậm",
+    "d": "Màu tím than",
     "ans": "A",
-    "explain": "Lá cây màu xanh nhờ sắc tố diệp lục bên trong tế bào lá."
+    "explain": "Lá cây có màu xanh lục vì chứa hàng triệu tế bào sắc tố diệp lục, giúp cây đón ánh sáng Mặt Trời."
   },
   {
-    "id": "Q021",
+    "id": "TV03",
     "topic": "Thực Vật",
-    "sub": "Cơ bản",
+    "sub": "Điều kiện sinh trưởng",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Để một hạt mầm nảy mầm và phát triển thành cây con cần có nước và gì nữa?",
-    "a": "Đất, không khí và ánh sáng ấm áp",
-    "b": "Đồ chơi",
-    "c": "Kẹo ngọt",
-    "d": "Nước đá lạnh",
+    "img": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&auto=format&fit=crop&q=80",
+    "q": "Để một hạt giống nhỏ bé nảy mầm và lớn lên thành cây tươi tốt, hạt giống cần có đất, nước và điều gì nữa?",
+    "a": "Không khí và ánh sáng ấm áp",
+    "b": "Kẹo bánh ngọt",
+    "c": "Nước đá lạnh",
+    "d": "Bóng tối hoàn toàn",
     "ans": "A",
-    "explain": "Hạt giống cần độ ẩm thích hợp, không khí và nhiệt độ ấm áp để nảy mầm."
+    "explain": "Cây xanh cũng như các bạn nhỏ, cần được uống nước, hít thở không khí và sưởi ấm dưới ánh nắng mặt trời."
   },
   {
-    "id": "Q022",
+    "id": "TV04",
     "topic": "Thực Vật",
-    "sub": "Nhận biết",
+    "sub": "Tính hướng sáng",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Loài hoa nào vào ban ngày luôn hướng bông hoa về phía Mặt Trời mọc?",
+    "img": "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=600&auto=format&fit=crop&q=80",
+    "q": "Bông hoa nào vào ban ngày luôn hướng mặt bông hoa rực rỡ của mình về phía có Mặt Trời chiếu sáng?",
     "a": "Hoa Hướng Dương",
     "b": "Hoa Hồng",
-    "c": "Hoa Sen",
-    "d": "Hoa Nhài",
+    "c": "Hoa Nhài",
+    "d": "Hoa Dạ Yến Thảo",
     "ans": "A",
-    "explain": "Hoa hướng dương có tính hướng quang, luôn quay mặt về hướng có ánh nắng Mặt Trời."
+    "explain": "Hoa hướng dương có một loại hormone tăng trưởng ở cuống hoa nhạy cảm với ánh sáng, luôn vươn về hướng Mặt Trời mọc."
   },
   {
-    "id": "Q023",
+    "id": "TV05",
     "topic": "Thực Vật",
-    "sub": "Đặc điểm",
+    "sub": "Thực vật sa mạc",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Cây xương rồng thường có nhiều cái gì nhọn hoắt thay cho lá để tránh mất nước?",
-    "a": "Gai nhọn",
-    "b": "Lông vũ",
-    "c": "Cánh hoa",
-    "d": "Móng vuốt",
+    "img": "https://images.unsplash.com/photo-1509223197845-458d87318791?w=600&auto=format&fit=crop&q=80",
+    "q": "Cây xương rồng trên sa mạc có những chiếc gai nhọn hoắt. Những chiếc gai đó thực chất là gì biến thành?",
+    "a": "Lá cây biến thành gai",
+    "b": "Rễ cây biến thành gai",
+    "c": "Hoa biến thành gai",
+    "d": "Vỏ thân cây",
     "ans": "A",
-    "explain": "Lá cây xương rồng tiêu giảm biến thành gai giúp cây giảm tối đa sự thoát hơi nước."
+    "explain": "Ở sa mạc rất hiếm mưa, lá cây xương rồng teo nhỏ biến thành gai nhọn để không bị bốc hơi nước và tự vệ trước thú ăn cỏ."
   },
   {
-    "id": "Q024",
+    "id": "TV06",
     "topic": "Thực Vật",
-    "sub": "Quang hợp",
+    "sub": "Quang hợp kỳ diệu",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Chất màu xanh trong lá cây giúp cây hấp thụ ánh sáng mặt trời có tên là gì?",
-    "a": "Chất Diệp Lục",
+    "img": "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=600&auto=format&fit=crop&q=80",
+    "q": "Chất màu xanh kỳ diệu trong lá cây giúp hấp thụ năng lượng ánh sáng mặt trời có tên khoa học là gì?",
+    "a": "Chất Diệp Lục (Chlorophyll)",
     "b": "Chất Đạm",
-    "c": "Đường cát",
-    "d": "Chất béo",
+    "c": "Chất Đường",
+    "d": "Chất Béo",
     "ans": "A",
-    "explain": "Chất diệp lục (chlorophyll) có vai trò hấp thụ năng lượng mặt trời để cây tạo chất dinh dưỡng."
+    "explain": "Chất diệp lục như một \"nhà máy năng lượng mặt trời tí hon\", giúp cây tạo ra tinh bột nuôi cơ thể."
   },
   {
-    "id": "Q025",
+    "id": "TV07",
     "topic": "Thực Vật",
-    "sub": "Sinh học",
+    "sub": "Lợi ích cây xanh",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Ban ngày dưới ánh nắng, cây xanh hút khí cacbonic và nhả ra khí gì rất cần cho con người hô hấp?",
+    "img": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&auto=format&fit=crop&q=80",
+    "q": "Ban ngày khi quang hợp dưới nắng, cây xanh hút khí cacbonic và nhả ra khí gì rất cần cho con người hít thở?",
     "a": "Khí Oxy",
     "b": "Khí Nitơ",
     "c": "Khí Gas",
-    "d": "Khí Bụi",
+    "d": "Khí Bụi bẩn",
     "ans": "A",
-    "explain": "Nhờ quang hợp, cây xanh thải ra khí oxy trong lành giúp con người và động vật hít thở."
+    "explain": "Cây xanh là lá phổi xanh của Trái Đất, cung cấp nguồn dưỡng khí Oxy trong lành để mọi loài sinh vật thở."
   },
   {
-    "id": "Q026",
+    "id": "TV08",
     "topic": "Thực Vật",
-    "sub": "Nhận biết",
+    "sub": "Quốc hoa Việt Nam",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Loài hoa nào mọc từ bùn lầy dưới đáy hồ nhưng lại tỏa hương ngát và là quốc hoa của Việt Nam?",
+    "img": "https://images.unsplash.com/photo-1508615039623-a25605d2b022?w=600&auto=format&fit=crop&q=80",
+    "q": "Loài hoa nào rễ mọc từ bùn lầy đáy hồ nhưng bông hoa lại thơm ngát, thanh khiết và được coi là Quốc hoa của nước ta?",
     "a": "Hoa Sen",
     "b": "Hoa Cúc",
     "c": "Hoa Mai",
     "d": "Hoa Đào",
     "ans": "A",
-    "explain": "Hoa sen tượng trưng cho sự thanh khiết \"gần bùn mà chẳng hôi tanh mùi bùn\"."
+    "explain": "Hoa sen tượng trưng cho tâm hồn thanh cao và ý chí kiên cường của người Việt Nam: \"Gần bùn mà chẳng hôi tanh mùi bùn\"."
   },
   {
-    "id": "Q027",
+    "id": "TV09",
     "topic": "Thực Vật",
-    "sub": "Cấu tạo",
+    "sub": "Biến dạng thực vật",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Củ cà rốt mà chúng ta thường ăn thực chất là bộ phận nào biến dạng của cây?",
+    "img": "https://images.unsplash.com/photo-1598170845058-32b9d6a5c317?w=600&auto=format&fit=crop&q=80",
+    "q": "Củ cà rốt màu cam thơm ngon mà bé hay ăn thực chất là bộ phận nào phình to ra của cây?",
     "a": "Rễ củ",
-    "b": "Thân cây",
-    "c": "Quả",
-    "d": "Hạt",
+    "b": "Thân củ",
+    "c": "Quả cà rốt",
+    "d": "Hạt cà rốt",
     "ans": "A",
-    "explain": "Cà rốt phình to rễ chính thành củ để dự trữ chất dinh dưỡng cho cây."
+    "explain": "Cà rốt phình to rễ cái thành củ chứa nhiều tinh bột, đường và vitamin A để dự trữ dưỡng chất cho cây."
   },
   {
-    "id": "Q028",
+    "id": "TV10",
     "topic": "Thực Vật",
-    "sub": "Tập tính",
+    "sub": "Cây bắt mồi",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Cây nắp ấm (cây bắt mồi) bắt ruồi muỗi để bổ sung chất dinh dưỡng nào còn thiếu trong đất?",
-    "a": "Khoáng chất và đạm (nitơ)",
+    "img": "https://images.unsplash.com/photo-1508615039623-a25605d2b022?w=600&auto=format&fit=crop&q=80",
+    "q": "Cây nắp ấm (cây bắt mồi) có những chiếc ấm chứa dịch tiêu hóa để bắt ruồi muỗi nhằm bổ sung chất gì thiếu trong đất?",
+    "a": "Chất đạm (khoáng chất nitơ)",
     "b": "Nước ngọt",
-    "c": "Ánh sáng",
-    "d": "Đất sét",
+    "c": "Ánh nắng",
+    "d": "Đất cát",
     "ans": "A",
-    "explain": "Sống ở đất nghèo dinh dưỡng, cây nắp ấm bẫy côn trùng để tiêu hóa lấy hợp chất nitơ."
+    "explain": "Sống ở vùng đất cằn cỗi thiếu đạm, cây nắp ấm đã tiến hóa chiếc lá thành bẫy trơn trượt để tiêu hóa sâu bọ lấy dưỡng chất."
   },
   {
-    "id": "Q029",
+    "id": "TV11",
     "topic": "Thực Vật",
-    "sub": "Sinh sản",
+    "sub": "Sinh sản thực vật",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Quả và hạt của cây xanh được hình thành từ bộ phận nào sau khi được thụ phấn?",
-    "a": "Hoa",
-    "b": "Lá",
-    "c": "Rễ",
-    "d": "Vỏ cây",
+    "img": "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=600&auto=format&fit=crop&q=80",
+    "q": "Sau khi hoa nở và được thụ phấn, bầu nhụy của bông hoa sẽ phát triển thành bộ phận thơm ngon nào của cây?",
+    "a": "Quả chứa hạt bên trong",
+    "b": "Lá mới",
+    "c": "Rễ con",
+    "d": "Gai nhọn",
     "ans": "A",
-    "explain": "Sau khi thụ phấn và thụ tinh, noãn của hoa phát triển thành hạt, bầu nhụy phát triển thành quả."
+    "explain": "Sau khi thụ phấn, cánh hoa sẽ tàn, bầu nhụy lớn lên thành quả mọng ngọt để bảo vệ hạt và hấp dẫn chim thú phát tán hạt."
   },
   {
-    "id": "Q030",
+    "id": "TV12",
     "topic": "Thực Vật",
-    "sub": "Đặc điểm",
+    "sub": "Vòng đời cây gỗ",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Người ta có thể đếm số tuổi của một cây gỗ to sau khi chặt bằng cách đếm cái gì trên mặt cắt ngang thân?",
-    "a": "Các vòng năm (vòng gỗ)",
-    "b": "Số lượng cành",
-    "c": "Số lá rụng",
-    "d": "Độ sâu của rễ",
+    "img": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=600&auto=format&fit=crop&q=80",
+    "q": "Người ta có thể biết chính xác một cây gỗ cổ thụ bao nhiêu tuổi bằng cách quan sát điều gì trên mặt cắt ngang thân cây?",
+    "a": "Các vòng năm (vòng gỗ tròn đồng tâm)",
+    "b": "Số lượng cành cây",
+    "c": "Chiều dài của rễ",
+    "d": "Màu sắc vỏ cây",
     "ans": "A",
-    "explain": "Mỗi năm cây gỗ tăng trưởng thêm một vòng tầng sinh gỗ sáng và tối, tạo thành một vòng năm."
+    "explain": "Mỗi năm cây phát triển thêm một lớp gỗ sáng vào mùa mưa và tối vào mùa khô, tạo thành một vòng năm đánh dấu đúng 1 tuổi."
   },
   {
-    "id": "Q031",
+    "id": "TV13",
     "topic": "Thực Vật",
-    "sub": "Sinh thái",
+    "sub": "Hệ sinh thái rừng ngập mặn",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Rừng ngập mặn ven biển có loài cây nào với hệ rễ chùm chống đỡ ngoạn mục trong nước mặn?",
+    "img": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=600&auto=format&fit=crop&q=80",
+    "q": "Rừng ngập mặn Cần Giờ và Cà Mau có loài cây nào nổi tiếng với hệ rễ chống tua tủa cắm sâu xuống bùn lầy ven biển?",
     "a": "Cây Đước",
     "b": "Cây Thông",
-    "c": "Cây Bàng",
-    "d": "Cây Chuối",
+    "c": "Cây Xoài",
+    "d": "Cây Nhãn",
     "ans": "A",
-    "explain": "Cây đước có rễ chống hình nỏ giúp bám trụ chắc trong bùn lầy sóng biển."
+    "explain": "Cây đước có chùm rễ nỏ mọc cong từ thân cắm xuống nước mặn, giúp cây chống chọi bão tố và chắn sóng bảo vệ bờ biển."
   },
   {
-    "id": "Q032",
+    "id": "TV14",
     "topic": "Thực Vật",
-    "sub": "Ứng dụng",
-    "age": "8-9",
-    "diff": 3,
-    "type": "MC",
-    "q": "Thuốc nấm kháng sinh cứu sống hàng triệu người Penicillin ban đầu được điều chế từ loài sinh vật nào?",
-    "a": "Nấm mốc",
-    "b": "Cây tràm",
-    "c": "Cây bạch đàn",
-    "d": "Cây hoa cúc",
-    "ans": "A",
-    "explain": "Alexander Fleming tình cờ phát hiện ra nấm mốc Penicillium có khả năng tiêu diệt vi khuẩn."
-  },
-  {
-    "id": "Q033",
-    "topic": "Thực Vật",
-    "sub": "Sinh học",
+    "sub": "Quá trình sinh học",
     "age": "8-9",
     "diff": 3,
     "type": "SA",
-    "q": "Quá trình cây xanh tự chế tạo chất hữu cơ từ nước và khí cacbonic nhờ ánh sáng gọi là gì?",
+    "img": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&auto=format&fit=crop&q=80",
+    "q": "Quá trình cây xanh tự chế tạo chất dinh dưỡng từ nước và khí cacbonic nhờ ánh sáng mặt trời gọi là gì?",
     "ans": "quang hợp|sự quang hợp",
-    "explain": "Quang hợp là phản ứng sinh hóa nền tảng duy trì sự sống trên Trái Đất."
+    "explain": "Quang hợp là kỳ tích của tạo hóa: cây hấp thu ánh nắng, nước và CO₂ để tạo ra thức ăn và dưỡng khí Oxy cho muôn loài."
   },
   {
-    "id": "Q034",
+    "id": "VT01",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Thời tiết",
+    "sub": "Hiện tượng thiên nhiên",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Sau cơn mưa rào mùa hè có ánh nắng, trên bầu trời thường xuất hiện dải màu cong tuyệt đẹp gọi là gì?",
+    "img": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=600&auto=format&fit=crop&q=80",
+    "q": "Sau cơn mưa rào mùa hạ khi trời bừng nắng, trên nền trời thường xuất hiện dải màu cong tuyệt đẹp gọi là gì?",
     "a": "Cầu vồng",
-    "b": "Đám mây đen",
-    "c": "Tia chớp",
-    "d": "Khinh khí cầu",
+    "b": "Khói xám",
+    "c": "Tia sét",
+    "d": "Sao băng",
     "ans": "A",
-    "explain": "Cầu vồng tạo ra do ánh sáng mặt trời bị khúc xạ và tán sắc qua các giọt nước mưa li ti."
+    "explain": "Cầu vồng xuất hiện khi ánh sáng trắng của Mặt Trời đi qua hàng triệu giọt nước mưa li ti và bị tách thành 7 sắc màu rực rỡ."
   },
   {
-    "id": "Q035",
+    "id": "VT02",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Quan sát",
+    "sub": "Thiên văn cơ bản",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Vào ban đêm không có mây, thiên thể tự nhiên tròn sáng và to nhất trên bầu trời là gì?",
+    "img": "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=600&auto=format&fit=crop&q=80",
+    "q": "Vào ban đêm không có mây, thiên thể tự nhiên nào sáng và tròn nhất trên bầu trời?",
     "a": "Mặt Trăng",
     "b": "Mặt Trời",
-    "c": "Sao Kim",
-    "d": "Sao Hỏa",
+    "c": "Sao Hỏa",
+    "d": "Ngọn hải đăng",
     "ans": "A",
-    "explain": "Mặt Trăng là vệ tinh tự nhiên quay quanh Trái Đất và phản chiếu ánh sáng Mặt Trời."
+    "explain": "Mặt Trăng là vệ tinh tự nhiên của Trái Đất. Ban đêm Mặt Trăng nhận ánh sáng từ Mặt Trời và phản chiếu lại xuống Trái Đất."
   },
   {
-    "id": "Q036",
+    "id": "VT03",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Hiện tượng",
+    "sub": "Chu trình nước",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Mưa rơi xuống mặt đất thực chất là những hạt gì?",
+    "img": "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=600&auto=format&fit=crop&q=80",
+    "q": "Những hạt mưa từ trên trời rơi xuống mặt đất tưới mát cho cây cối thực chất là gì?",
     "a": "Hạt nước",
     "b": "Hạt cát",
-    "c": "Hạt đá quý",
-    "d": "Hạt dầu ăn",
+    "c": "Hạt sỏi nhỏ",
+    "d": "Hạt đường",
     "ans": "A",
-    "explain": "Hơi nước bốc lên ngưng tụ thành mây, khi gặp lạnh sẽ tích tụ thành giọt nước rơi xuống thành mưa."
+    "explain": "Nước ở ao hồ bốc hơi bay lên cao tạo thành mây. Khi mây gặp lạnh, các giọt nước tụ lại nặng dần và rơi xuống thành mưa."
   },
   {
-    "id": "Q037",
+    "id": "VT04",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Thời tiết",
+    "sub": "Thời tiết dông bão",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Khi trời sắp mưa to thường có gió giật mạnh và tia sáng lóe lên trên trời gọi là gì?",
-    "a": "Tia sét (sấm chớp)",
-    "b": "Cầu vồng",
-    "c": "Sao băng",
-    "d": "Ánh đèn đường",
+    "img": "https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=600&auto=format&fit=crop&q=80",
+    "q": "Khi trời sắp có cơn giông bão lớn, tia sáng lóe sáng rực rỡ xé ngang bầu trời kèm tiếng nổ lớn là gì?",
+    "a": "Sấm sét (chớp)",
+    "b": "Pháo hoa",
+    "c": "Đèn pha ô tô",
+    "d": "Ánh trăng rằm",
     "ans": "A",
-    "explain": "Sét là sự phóng điện giữa các đám mây tích điện trái dấu hoặc giữa mây và mặt đất."
+    "explain": "Sét là luồng điện cực mạnh phóng ra giữa các đám mây tích điện. Ánh sáng đi nhanh hơn âm thanh nên ta thấy chớp trước khi nghe thấy sấm."
   },
   {
-    "id": "Q038",
+    "id": "VT05",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Bốn mùa",
+    "sub": "Khí hậu bốn mùa",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Mùa nào trong năm thời tiết nóng nực nhất và học sinh được nghỉ hè?",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=80",
+    "q": "Mùa nào trong năm thời tiết nắng nóng nhất, hoa phượng nở đỏ rực và học sinh được nghỉ học?",
     "a": "Mùa hè (Mùa hạ)",
     "b": "Mùa đông",
-    "c": "Mùa thu",
-    "d": "Mùa xuân",
+    "c": "Mùa xuân",
+    "d": "Mùa thu",
     "ans": "A",
-    "explain": "Mùa hè nhận được nhiều nhiệt lượng từ Mặt Trời nhất, ngày dài hơn đêm."
+    "explain": "Vào mùa hè, nửa cầu nơi chúng ta sống nghiêng về phía Mặt Trời nhiều nhất, nhận được nhiều nhiệt độ nhất nên rất ấm nóng."
   },
   {
-    "id": "Q039",
+    "id": "VT06",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Vũ trụ",
+    "sub": "Chuyển động Trái Đất",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Trái Đất mất khoảng bao lâu để tự quay quanh trục của mình được đúng 1 vòng?",
+    "img": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=600&auto=format&fit=crop&q=80",
+    "q": "Trái Đất tự quay quanh trục của mình mất bao lâu để hết trọn vẹn 1 vòng?",
     "a": "24 giờ (1 ngày đêm)",
-    "b": "7 ngày",
-    "c": "30 ngày",
-    "d": "365 ngày",
+    "b": "7 ngày (1 tuần)",
+    "c": "30 ngày (1 tháng)",
+    "d": "365 ngày (1 năm)",
     "ans": "A",
-    "explain": "Sự tự quay quanh trục trong 24 giờ tạo nên hiện tượng ngày và đêm luân phiên nhau."
+    "explain": "Trái Đất quay quanh trục mất 24 tiếng. Nửa được Mặt Trời chiếu sáng là ban ngày, nửa khuất bóng tối là ban đêm."
   },
   {
-    "id": "Q040",
+    "id": "VT07",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Vũ trụ",
+    "sub": "Hành tinh khổng lồ",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Hành tinh nào to lớn nhất trong Hệ Mặt Trời của chúng ta?",
+    "img": "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=600&auto=format&fit=crop&q=80",
+    "q": "Hành tinh nào có kích thước to lớn nhất trong Hệ Mặt Trời (có thể chứa vừa hơn 1.300 Trái Đất)?",
     "a": "Sao Mộc (Jupiter)",
     "b": "Trái Đất",
     "c": "Sao Hỏa",
     "d": "Sao Thủy",
     "ans": "A",
-    "explain": "Sao Mộc là hành tinh khí khổng lồ, thể tích có thể chứa hơn 1.300 Trái Đất."
+    "explain": "Sao Mộc là gã khổng lồ khí trong Hệ Mặt Trời, có cơn bão Vết Đỏ Lớn to gấp nhiều lần cả hành tinh Trái Đất."
   },
   {
-    "id": "Q041",
+    "id": "VT08",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Thiên văn",
+    "sub": "Vẻ đẹp hành tinh",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Hành tinh nào có vành đai bụi và băng đá sáng lấp lánh rõ đẹp nhất xung quanh?",
+    "img": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=600&auto=format&fit=crop&q=80",
+    "q": "Hành tinh nào nổi tiếng với hệ thống vành đai lấp lánh tuyệt đẹp cấu tạo từ hàng tỷ tảng băng đá quay xung quanh?",
     "a": "Sao Thổ (Saturn)",
-    "b": "Sao Thủy",
-    "c": "Sao Kim",
+    "b": "Sao Kim",
+    "c": "Sao Thủy",
     "d": "Mặt Trăng",
     "ans": "A",
-    "explain": "Sao Thổ nổi tiếng với hệ thống vành đai ngoạn mục cấu thành từ vô số khối băng đá."
+    "explain": "Vành đai Sao Thổ rộng hàng trăm nghìn cây số nhưng mỏng manh, phản chiếu ánh sáng rực rỡ như chiếc vương miện lấp lánh."
   },
   {
-    "id": "Q042",
+    "id": "VT09",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Vũ trụ",
+    "sub": "Một năm Trái Đất",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Trái Đất chuyển động quanh Mặt Trời mất bao nhiêu ngày để hết 1 vòng (1 năm)?",
-    "a": "365 ngày (hoặc 366 ngày năm nhuận)",
+    "img": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop&q=80",
+    "q": "Trái Đất chuyển động một vòng trọn vẹn quanh Mặt Trời mất khoảng thời gian là bao lâu?",
+    "a": "365 ngày (1 năm)",
     "b": "100 ngày",
     "c": "24 ngày",
-    "d": "730 ngày",
+    "d": "30 ngày",
     "ans": "A",
-    "explain": "Trái Đất quay trọn 1 vòng quanh Mặt Trời mất xấp xỉ 365,25 ngày."
+    "explain": "Trái Đất mất khoảng 365 ngày và 6 giờ để đi hết một vòng quanh Mặt Trời. 6 giờ tích lũy sau 4 năm tạo thành năm nhuận 366 ngày."
   },
   {
-    "id": "Q043",
+    "id": "VT10",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Thời tiết",
+    "sub": "Nguyên nhân tạo gió",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Gió được sinh ra do hiện tượng gì trong khí quyển?",
-    "a": "Sự chuyển động của không khí từ nơi áp cao về nơi áp thấp",
-    "b": "Cây cối vẫy lá tạo ra",
-    "c": "Quạt máy của con người",
-    "d": "Mặt trăng kéo nước",
+    "img": "https://images.unsplash.com/photo-1505672678570-b467e471d87e?w=600&auto=format&fit=crop&q=80",
+    "q": "Những làn gió mát lành thổi đung đưa cành cây thực chất được sinh ra do điều gì trong không khí?",
+    "a": "Không khí chuyển động từ nơi áp cao lạnh về nơi áp thấp ấm",
+    "b": "Cây vẫy lá tạo ra",
+    "c": "Mặt Biển thổi vào",
+    "d": "Chim bay tạo gió",
     "ans": "A",
-    "explain": "Chênh lệch nhiệt độ và áp suất khí quyển làm các luồng không khí di chuyển tạo thành gió."
+    "explain": "Nắng Mặt Trời sưởi ấm các vùng đất không đều nhau. Không khí nóng bay lên cao, không khí lạnh tràn vào thế chỗ tạo thành gió."
   },
   {
-    "id": "Q044",
+    "id": "VT11",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Vật lý thiên văn",
+    "sub": "Vận tốc ánh sáng",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Ánh sáng từ Mặt Trời truyền đến Trái Đất mất khoảng bao nhiêu thời gian?",
+    "img": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=600&auto=format&fit=crop&q=80",
+    "q": "Ánh sáng di chuyển cực nhanh (300.000 km/s). Từ Mặt Trời đến với mắt chúng ta trên Trái Đất mất khoảng bao lâu?",
     "a": "Khoảng 8 phút 20 giây",
     "b": "1 giây",
     "c": "1 giờ",
-    "d": "1 ngày",
+    "d": "1 ngày đêm",
     "ans": "A",
-    "explain": "Khoảng cách ~150 triệu km chia cho tốc độ ánh sáng 300.000 km/s mất xấp xỉ 8,3 phút."
+    "explain": "Mặt Trời cách Trái Đất tới 150 triệu km, nên tia nắng phải vượt qua chặng đường vũ trụ mất hơn 8 phút mới chạm tới làn da bé."
   },
   {
-    "id": "Q045",
+    "id": "VT12",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Hiện tượng",
+    "sub": "Hiện tượng thiên văn học",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Khi Mặt Trăng nằm chính giữa che khuất ánh sáng từ Mặt Trời chiếu tới Trái Đất gọi là hiện tượng gì?",
+    "img": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=600&auto=format&fit=crop&q=80",
+    "q": "Hiện tượng Mặt Trăng đi vào giữa Trái Đất và Mặt Trời, che khuất một phần hoặc toàn bộ Mặt Trời ban ngày gọi là gì?",
     "a": "Nhật thực",
     "b": "Nguyệt thực",
-    "c": "Sao đổi ngôi",
+    "c": "Sao băng",
     "d": "Thủy triều đỏ",
     "ans": "A",
-    "explain": "Nhật thực xảy ra khi Mặt Trăng đi qua giữa Trái Đất và Mặt Trời trong ban ngày."
+    "explain": "Nhật thực xảy ra khi bóng tối của Mặt Trăng đổ xuống Trái Đất giữa ban ngày, làm bầu trời tối sầm lại trong vài phút kỳ thú."
   },
   {
-    "id": "Q046",
+    "id": "VT13",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Hành tinh",
+    "sub": "Hành tinh lân cận",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Hành tinh nào trong Hệ Mặt Trời được gọi là \"Hành tinh Đỏ\" do bề mặt phủ nhiều oxit sắt?",
+    "img": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=600&auto=format&fit=crop&q=80",
+    "q": "Hành tinh thứ tư trong Hệ Mặt Trời được mệnh danh là \"Hành tinh Đỏ\" vì chứa nhiều bụi oxit sắt rỉ sét là gì?",
     "a": "Sao Hỏa (Mars)",
-    "b": "Sao Kim",
-    "c": "Sao Hải Vương",
-    "d": "Sao Mộc",
+    "b": "Sao Thủy",
+    "c": "Sao Kim",
+    "d": "Sao Hải Vương",
     "ans": "A",
-    "explain": "Sao Hỏa có màu đỏ cam đặc trưng do bụi oxit sắt (rỉ sét) bao phủ khắp bề mặt."
+    "explain": "Bề mặt Sao Hỏa phủ đầy cát bụi chứa oxit sắt màu đỏ cam giống như kim loại bị gỉ sét, hiện đang được các robot khám phá."
   },
   {
-    "id": "Q047",
+    "id": "VT14",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Thời tiết",
+    "sub": "Dụng cụ khí tượng",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Khí cụ đo nhiệt độ của không khí hoặc cơ thể con người gọi là gì?",
+    "img": "https://images.unsplash.com/photo-1584483766114-2cea6facdf57?w=600&auto=format&fit=crop&q=80",
+    "q": "Thiết bị nào được các nhà khí tượng và bác sĩ dùng để đo độ nóng lạnh (nhiệt độ) của không khí hoặc cơ thể?",
     "a": "Nhiệt kế",
     "b": "La bàn",
-    "c": "Áp kế",
-    "d": "Thước kẻ",
+    "c": "Thước đo góc",
+    "d": "Cân điện tử",
     "ans": "A",
-    "explain": "Nhiệt kế dùng sự co giãn của chất lỏng (thủy ngân/cồn) hoặc cảm biến điện tử để đo độ nóng lạnh."
+    "explain": "Nhiệt kế đo nhiệt độ bằng cách quan sát chất lỏng giãn nở theo nhiệt độ hoặc cảm biến hồng ngoại điện tử."
   },
   {
-    "id": "Q048",
+    "id": "VT15",
     "topic": "Vũ Trụ & Thời Tiết",
-    "sub": "Vũ trụ",
+    "sub": "Tán sắc ánh sáng",
     "age": "8-9",
     "diff": 3,
     "type": "SA",
-    "q": "Cầu vồng thông thường được mắt người nhìn thấy có bao nhiêu màu sắc cơ bản?",
+    "img": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=600&auto=format&fit=crop&q=80",
+    "q": "Cầu vồng thông thường xuất hiện trên nền trời có tất cả bao nhiêu màu sắc cơ bản?",
     "ans": "7|bảy",
-    "explain": "7 màu cơ bản: Đỏ, Cam, Vàng, Lục, Lam, Chàm, Tím."
+    "explain": "Cầu vồng gồm 7 màu cơ bản theo thứ tự: Đỏ, Cam, Vàng, Lục, Lam, Chàm, Tím."
   },
   {
-    "id": "Q049",
+    "id": "CT01",
     "topic": "Cơ Thể Người",
-    "sub": "Giác quan",
+    "sub": "Năm giác quan",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Con người dùng bộ phận nào để nhìn ngắm thế giới muôn màu xung quanh?",
+    "img": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80",
+    "q": "Con người dùng cơ quan thị giác nào trên gương mặt để ngắm nhìn vạn vật muôn màu muôn vẻ xung quanh?",
     "a": "Đôi mắt",
-    "b": "Cái mũi",
-    "c": "Cái tai",
-    "d": "Bàn chân",
+    "b": "Chiếc mũi",
+    "c": "Đôi tai",
+    "d": "Cái miệng",
     "ans": "A",
-    "explain": "Đôi mắt là thị giác, giúp tiếp nhận ánh sáng và hình ảnh gửi về não bộ."
+    "explain": "Đôi mắt như hai chiếc máy ảnh kỳ diệu thu nhận ánh sáng và truyền hình ảnh về não bộ giúp bé nhận biết mọi thứ."
   },
   {
-    "id": "Q050",
+    "id": "CT02",
     "topic": "Cơ Thể Người",
-    "sub": "Vệ sinh",
+    "sub": "Vệ sinh phòng bệnh",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Trước khi ăn cơm và sau khi đi vệ sinh, bé cần làm gì để diệt vi khuẩn?",
+    "img": "https://images.unsplash.com/photo-1584634731339-252c581abfc5?w=600&auto=format&fit=crop&q=80",
+    "q": "Trước khi ngồi vào bàn ăn cơm và sau khi đi vệ sinh, bé cần làm gì để bàn tay luôn sạch khuẩn?",
     "a": "Rửa tay bằng xà phòng và nước sạch",
-    "b": "Lau tay vào áo",
-    "c": "Chỉ cần thổi phù phù",
-    "d": "Không cần làm gì",
+    "b": "Lau tay vào gấu áo",
+    "c": "Chỉ thổi phù phù vào tay",
+    "d": "Không cần rửa",
     "ans": "A",
-    "explain": "Rửa tay với xà phòng loại bỏ các vi khuẩn gây bệnh đường ruột và hô hấp."
+    "explain": "Xà phòng sẽ cuốn trôi vi khuẩn bám trên tay, ngăn không cho chúng xâm nhập vào đường ruột gây đau bụng."
   },
   {
-    "id": "Q051",
+    "id": "CT03",
     "topic": "Cơ Thể Người",
-    "sub": "Răng miệng",
+    "sub": "Chăm sóc răng miệng",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Để bảo vệ răng không bị sâu và thơm tho, bé nên chải răng ít nhất mấy lần mỗi ngày?",
-    "a": "2 lần (sáng sau ngủ dậy và tối trước khi đi ngủ)",
-    "b": "Một tuần một lần",
+    "img": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&auto=format&fit=crop&q=80",
+    "q": "Để hàm răng luôn trắng sáng, thơm tho và không bị sâu răng, bé nên chải răng ít nhất mấy lần mỗi ngày?",
+    "a": "2 lần (buổi sáng và tối trước khi ngủ)",
+    "b": "Mỗi tuần một lần",
     "c": "Không cần chải bao giờ",
-    "d": "Một tháng một lần",
+    "d": "Chỉ chải khi ăn kẹo",
     "ans": "A",
-    "explain": "Đánh răng đúng cách 2 lần mỗi ngày giúp làm sạch mảng bám thức ăn và ngăn ngừa sâu răng."
+    "explain": "Chải răng 2 lần mỗi ngày giúp làm sạch mảng bám thức ăn thừa, ngăn chặn vi khuẩn tiết axit phá hoại men răng."
   },
   {
-    "id": "Q052",
+    "id": "CT04",
     "topic": "Cơ Thể Người",
-    "sub": "Giác quan",
+    "sub": "Vị giác",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Lưỡi của chúng ta có vai trò chính là gì trong các giác quan?",
-    "a": "Nếm vị (ngọt, mặn, chua, đắng)",
-    "b": "Dùng để nghe tiếng chim hót",
-    "c": "Dùng để ngửi mùi thơm",
-    "d": "Dùng để nhìn màu sắc",
+    "img": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&auto=format&fit=crop&q=80",
+    "q": "Bộ phận nào trong khoang miệng giúp chúng ta cảm nhận được các vị ngọt, mặn, chua, cay thơm ngon của món ăn?",
+    "a": "Chiếc lưỡi",
+    "b": "Răng cửa",
+    "c": "Môi trên",
+    "d": "Hai bên má",
     "ans": "A",
-    "explain": "Trên bề mặt lưỡi có hàng nghìn gai vị giác giúp cảm nhận các vị khác nhau của thức ăn."
+    "explain": "Trên mặt lưỡi có hàng nghìn nụ vị giác li ti gửi tín hiệu lên não để nhận biết vị ngon lành của đồ ăn."
   },
   {
-    "id": "Q053",
+    "id": "CT05",
     "topic": "Cơ Thể Người",
-    "sub": "Cơ quan",
+    "sub": "Máy bơm kỳ diệu",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Cơ quan nào đập thình thịch trong lồng ngực làm nhiệm vụ bơm máu đi khắp cơ thể?",
+    "img": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&auto=format&fit=crop&q=80",
+    "q": "Cơ quan nào trong lồng ngực đập thình thịch liên tục cả ngày lẫn đêm để bơm máu đi nuôi khắp cơ thể?",
     "a": "Trái tim",
     "b": "Dạ dày",
-    "c": "Hai lá phổi",
-    "d": "Bộ não",
+    "c": "Cặp mắt",
+    "d": "Khối xương",
     "ans": "A",
-    "explain": "Trái tim hoạt động như chiếc máy bơm cơ bắp không biết mệt mỏi trong suốt cuộc đời."
+    "explain": "Trái tim có kích thước cỡ bằng nắm tay của bé, co bóp khoảng 80-100 lần mỗi phút để đưa máu giàu oxy đi nuôi tế bào."
   },
   {
-    "id": "Q054",
+    "id": "CT06",
     "topic": "Cơ Thể Người",
-    "sub": "Hô hấp",
+    "sub": "Cơ quan hô hấp",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Khi hít không khí vào, cơ quan nào phồng lên để hấp thụ khí oxy vào máu?",
+    "img": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=600&auto=format&fit=crop&q=80",
+    "q": "Khi bé hít một hơi thật sâu, cơ quan nào trong lồng ngực phồng to lên để hấp thu khí oxy vào mạch máu?",
     "a": "Hai lá phổi",
-    "b": "Ruột non",
-    "c": "Xương bánh chè",
+    "b": "Dạ dày",
+    "c": "Bàng quang",
+    "d": "Ruột non",
+    "ans": "A",
+    "explain": "Hai lá phổi chứa tới 300 triệu phế nang nhỏ li ti giúp trao đổi dưỡng khí oxy từ không khí vào trong máu."
+  },
+  {
+    "id": "CT07",
+    "topic": "Cơ Thể Người",
+    "sub": "Khung xương cơ thể",
+    "age": "7-8",
+    "diff": 2,
+    "type": "MC",
+    "img": "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=600&auto=format&fit=crop&q=80",
+    "q": "Bộ xương vững chắc trong cơ thể người có nhiệm vụ quan trọng hàng đầu là gì?",
+    "a": "Nâng đỡ cơ thể và bảo vệ các cơ quan bên trong",
+    "b": "Làm cơ thể nặng hơn",
+    "c": "Chỉ để cơ bắp bám vào",
+    "d": "Không có vai trò gì",
+    "ans": "A",
+    "explain": "Khung xương giúp ta đứng thẳng, chạy nhảy và đóng vai trò như chiếc áo giáp che chở cho não, tim, phổi."
+  },
+  {
+    "id": "CT08",
+    "topic": "Cơ Thể Người",
+    "sub": "Hệ tiêu hóa",
+    "age": "7-8",
+    "diff": 2,
+    "type": "MC",
+    "img": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&auto=format&fit=crop&q=80",
+    "q": "Thức ăn sau khi được nhai kỹ ở miệng sẽ đi qua thực quản vào chiếc túi co bóp nào để nhào trộn thức ăn?",
+    "a": "Dạ dày (bao tử)",
+    "b": "Lá phổi",
+    "c": "Khí quản",
     "d": "Bàng quang",
     "ans": "A",
-    "explain": "Phổi chứa hàng triệu phế nang giúp trao đổi khí oxy và cacbonic giữa máu và không khí."
+    "explain": "Dạ dày tiết ra dịch vị axit và co bóp mạnh mẽ nghiền nát thức ăn thành chất lỏng dễ tiêu hóa."
   },
   {
-    "id": "Q055",
+    "id": "CT09",
     "topic": "Cơ Thể Người",
-    "sub": "Bộ xương",
+    "sub": "Khoáng chất phát triển",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Bộ xương trong cơ thể người có vai trò gì quan trọng nhất?",
-    "a": "Nâng đỡ cơ thể và bảo vệ các nội quan bên trong",
-    "b": "Làm cơ thể nặng hơn",
-    "c": "Để cơ thể biến hình",
-    "d": "Chỉ để trang trí",
+    "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&auto=format&fit=crop&q=80",
+    "q": "Chất khoáng nào có rất nhiều trong sữa chua, sữa tươi và tôm cua giúp xương và răng bé cứng cáp?",
+    "a": "Canxi (Calcium)",
+    "b": "Chất đường cát",
+    "c": "Chất béo mỡ",
+    "d": "Bột ngọt",
     "ans": "A",
-    "explain": "Xương làm khung đỡ, giúp vận động và bảo vệ các cơ quan nhạy cảm như não, tim, phổi."
+    "explain": "Canxi là vật liệu xây dựng chính tạo nên mật độ chắc khỏe của xương và men răng, giúp bé cao lớn vượt trội."
   },
   {
-    "id": "Q056",
+    "id": "CT10",
     "topic": "Cơ Thể Người",
-    "sub": "Tiêu hóa",
-    "age": "7-8",
-    "diff": 2,
+    "sub": "Trung tâm chỉ huy",
+    "age": "8-9",
+    "diff": 3,
     "type": "MC",
-    "q": "Thức ăn sau khi nuốt qua thực quản sẽ đi vào cơ quan co bóp hình túi nào để nhào trộn thức ăn?",
-    "a": "Dạ dày (bao tử)",
-    "b": "Bàng quang",
-    "c": "Hộp sọ",
+    "img": "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&auto=format&fit=crop&q=80",
+    "q": "Cơ quan nào nằm an toàn trong hộp sọ, giữ vai trò chỉ huy mọi suy nghĩ, học tập, ghi nhớ và cử động của bé?",
+    "a": "Bộ Não",
+    "b": "Lá Gan",
+    "c": "Trái Thận",
     "d": "Cuống họng",
     "ans": "A",
-    "explain": "Dạ dày tiết ra axit và enzyme để nghiền nhỏ thức ăn thành chất lỏng sền sệt."
+    "explain": "Bộ não chứa hàng chục tỷ tế bào thần kinh liên kết chằng chịt, làm việc không ngừng nghỉ để bé suy nghĩ và học hỏi."
   },
   {
-    "id": "Q057",
+    "id": "CT11",
     "topic": "Cơ Thể Người",
-    "sub": "Dinh dưỡng",
-    "age": "7-8",
-    "diff": 2,
-    "type": "MC",
-    "q": "Chất khoáng nào có nhiều trong sữa và tôm cua giúp xương và răng bé chắc khỏe?",
-    "a": "Canxi (Calcium)",
-    "b": "Đường cát",
-    "c": "Muối ớt",
-    "d": "Mỡ động vật",
-    "ans": "A",
-    "explain": "Canxi là thành phần cốt lõi cấu tạo nên sự cứng cáp của mô xương và răng."
-  },
-  {
-    "id": "Q058",
-    "topic": "Cơ Thể Người",
-    "sub": "Hệ thần kinh",
+    "sub": "Số lượng xương",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Cơ quan nào nằm an toàn bên trong hộp sọ chỉ huy mọi suy nghĩ, cảm xúc và hành động của ta?",
-    "a": "Bộ não",
-    "b": "Gan",
-    "c": "Lách",
-    "d": "Thận",
+    "img": "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=600&auto=format&fit=crop&q=80",
+    "q": "Một người trưởng thành thông thường có tất cả bao nhiêu chiếc xương trong toàn bộ cơ thể?",
+    "a": "206 chiếc xương",
+    "b": "100 chiếc xương",
+    "c": "350 chiếc xương",
+    "d": "50 chiếc xương",
     "ans": "A",
-    "explain": "Bộ não có hàng chục tỷ nơ-ron thần kinh liên tục xử lý thông tin và điều khiển cơ thể."
+    "explain": "Khi mới sinh ra bé có khoảng 270 chiếc xương nhỏ. Khi lớn lên, nhiều xương sáp nhập vào nhau thành 206 chiếc xương bền chắc."
   },
   {
-    "id": "Q059",
+    "id": "CT12",
     "topic": "Cơ Thể Người",
-    "sub": "Giải phẫu",
+    "sub": "Cơ quan lọc chất thải",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Người trưởng thành thông thường có tổng cộng bao nhiêu chiếc xương trong cơ thể?",
-    "a": "206 chiếc",
-    "b": "100 chiếc",
-    "c": "350 chiếc",
-    "d": "50 chiếc",
+    "img": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&auto=format&fit=crop&q=80",
+    "q": "Cặp cơ quan có hình dạng giống hạt đậu ở vùng lưng có nhiệm vụ lọc chất độc hại từ máu để bài tiết ra nước tiểu là gì?",
+    "a": "Trái Thận",
+    "b": "Lá Phổi",
+    "c": "Dạ Dày",
+    "d": "Tuyến Nước Bọt",
     "ans": "A",
-    "explain": "Khi còn bé ta có khoảng 270 chiếc xương, khi lớn nhiều xương hợp nhất lại còn 206 chiếc."
+    "explain": "Hai quả thận hoạt động như máy lọc nước siêu vi, lọc sạch gần 200 lít máu mỗi ngày để tống chất cặn bã ra ngoài."
   },
   {
-    "id": "Q060",
+    "id": "CT13",
     "topic": "Cơ Thể Người",
-    "sub": "Bài tiết",
+    "sub": "Đội quân miễn dịch",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Cặp cơ quan có hình giống hạt đậu nằm ở vùng thắt lưng có nhiệm vụ lọc chất thải từ máu thành nước tiểu là gì?",
-    "a": "Thận",
-    "b": "Phổi",
-    "c": "Tụy",
-    "d": "Ruột già",
-    "ans": "A",
-    "explain": "Thận lọc khoảng 180 lít máu mỗi ngày để loại bỏ độc tố và duy trì cân bằng nước."
-  },
-  {
-    "id": "Q061",
-    "topic": "Cơ Thể Người",
-    "sub": "Máu",
-    "age": "8-9",
-    "diff": 3,
-    "type": "MC",
-    "q": "Thành phần nào trong máu làm nhiệm vụ như những người lính dũng cảm chống lại vi khuẩn và mầm bệnh?",
+    "img": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&auto=format&fit=crop&q=80",
+    "q": "Tế bào máu nào đóng vai trò như những chú bộ đội dũng cảm tiêu diệt vi khuẩn và mầm bệnh xâm nhập vào cơ thể?",
     "a": "Bạch cầu",
     "b": "Hồng cầu",
     "c": "Huyết tương",
     "d": "Tiểu cầu",
     "ans": "A",
-    "explain": "Bạch cầu là tế bào miễn dịch bảo vệ cơ thể khỏi virus, vi khuẩn xâm nhập."
+    "explain": "Tế bào bạch cầu là hệ thống phòng thủ tự nhiên của cơ thể, nhanh chóng bao vây và tiêu diệt virus vi trùng gây hại."
   },
   {
-    "id": "Q062",
+    "id": "CT14",
     "topic": "Cơ Thể Người",
-    "sub": "Giác quan",
+    "sub": "Giác quan con người",
     "age": "8-9",
     "diff": 3,
     "type": "SA",
-    "q": "Con người thông thường có tất cả bao nhiêu giác quan cơ bản?",
+    "img": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80",
+    "q": "Con người có tất cả bao nhiêu giác quan cơ bản để cảm nhận thế giới?",
     "ans": "5|năm",
-    "explain": "5 giác quan: Thị giác (mắt), Thính giác (tai), Khứu giác (mũi), Vị giác (lưỡi), Xúc giác (da)."
+    "explain": "5 giác quan gồm: Thị giác (mắt), Thính giác (tai), Khứu giác (mũi), Vị giác (lưỡi) và Xúc giác (làn da)."
   },
   {
-    "id": "Q063",
+    "id": "DL01",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Hành chính",
+    "sub": "Thủ đô đất nước",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Thủ đô của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam là thành phố nào?",
+    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80",
+    "q": "Thành phố nào là Thủ đô ngàn năm văn hiến và trung tâm chính trị của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam?",
     "a": "Hà Nội",
     "b": "Đà Nẵng",
     "c": "Huế",
     "d": "Cần Thơ",
     "ans": "A",
-    "explain": "Hà Nội là thủ đô ngàn năm văn hiến và trung tâm chính trị của nước ta."
+    "explain": "Hà Nội là thủ đô của Việt Nam, nổi tiếng với 36 phố phường cổ kính, Hồ Gươm và lăng Bác Hồ kính yêu."
   },
   {
-    "id": "Q064",
+    "id": "DL02",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Biển đảo",
+    "sub": "Biển đảo quê hương",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Bờ biển của đất nước Việt Nam nằm tiếp giáp với vùng biển lớn nào?",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=80",
+    "q": "Toàn bộ bờ biển phía đông của đất nước Việt Nam thân yêu tiếp giáp với vùng biển bao la nào?",
     "a": "Biển Đông",
-    "b": "Biển Đen",
-    "c": "Biển Đỏ",
-    "d": "Bắc Băng Dương",
+    "b": "Biển Đỏ",
+    "c": "Biển Đen",
+    "d": "Đại Tây Dương",
     "ans": "A",
-    "explain": "Việt Nam có hơn 3.260 km đường bờ biển giáp với Biển Đông giàu tài nguyên."
+    "explain": "Việt Nam có hơn 3.260 km đường bờ biển tuyệt đẹp tiếp giáp trọn vẹn với Biển Đông giàu tài nguyên tôm cá."
   },
   {
-    "id": "Q065",
+    "id": "DL03",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Nhận biết",
+    "sub": "Hình dáng non sông",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Dải đất hình chữ gì trên bản đồ biểu thị hình dáng đất nước Việt Nam?",
+    "img": "https://images.unsplash.com/photo-1528127269322-539801943592?w=600&auto=format&fit=crop&q=80",
+    "q": "Dải đất thiêng liêng của Tổ quốc Việt Nam trên bản đồ thế giới có hình dạng uốn lượn giống chữ cái nào?",
     "a": "Chữ S",
     "b": "Chữ O",
     "c": "Chữ V",
     "d": "Chữ U",
     "ans": "A",
-    "explain": "Bản đồ đất nước Việt Nam uốn lượn thon thả hình chữ S đặc trưng."
+    "explain": "Đất nước Việt Nam uốn lượn mềm mại hình chữ S, phía bắc có núi cao, phía nam có sông ngòi đồng bằng trù phú."
   },
   {
-    "id": "Q066",
+    "id": "DL04",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Địa danh",
+    "sub": "Thắng cảnh thủ đô",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Hồ nước ngọt nổi tiếng nằm ngay giữa trung tâm thủ đô Hà Nội gắn liền truyền thuyết Rùa Vàng là hồ gì?",
+    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80",
+    "q": "Hồ nước ngọt nổi tiếng nằm ngay giữa trung tâm Hà Nội gắn liền với truyền thuyết vua Lê Lợi trả gươm thần cho Rùa Vàng là gì?",
     "a": "Hồ Hoàn Kiếm (Hồ Gươm)",
     "b": "Hồ Tây",
     "c": "Hồ Ba Bể",
-    "d": "Hồ Trị An",
+    "d": "Hồ Dầu Tiếng",
     "ans": "A",
-    "explain": "Hồ Gươm gắn với truyền thuyết vua Lê Lợi trả gươm báu cho Rùa Thần sau khi đánh tan giặc."
+    "explain": "Hồ Hoàn Kiếm mang ý nghĩa trả lại gươm báu cho Rùa Vàng sau khi vua Lê Lợi đánh tan quân xâm lược giữ nền thái bình."
   },
   {
-    "id": "Q067",
+    "id": "DL05",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Danh thắng",
+    "sub": "Kỳ quan thiên nhiên",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Vịnh biển nổi tiếng ở tỉnh Quảng Ninh có hàng nghìn hòn đảo đá vôi kỳ vĩ được UNESCO vinh danh là gì?",
+    "img": "https://images.unsplash.com/photo-1528127269322-539801943592?w=600&auto=format&fit=crop&q=80",
+    "q": "Vịnh biển ở tỉnh Quảng Ninh có hàng nghìn hòn đảo đá vôi nhô lên mặt nước xanh ngọc bích được UNESCO vinh danh là gì?",
     "a": "Vịnh Hạ Long",
     "b": "Vịnh Cam Ranh",
     "c": "Vịnh Nha Trang",
-    "d": "Vịnh Dung Quất",
+    "d": "Vịnh Lăng Cô",
     "ans": "A",
-    "explain": "Vịnh Hạ Long là di sản thiên nhiên thế giới nổi tiếng toàn cầu của Việt Nam."
+    "explain": "Vịnh Hạ Long là di sản thiên nhiên thế giới nổi tiếng, gắn với truyền thuyết đàn rồng hạ phàm phun châu nhả ngọc tạo thành đảo."
   },
   {
-    "id": "Q068",
+    "id": "DL06",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Sông ngòi",
+    "sub": "Sông ngòi miền Bắc",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Con sông lớn nhất chảy qua thủ đô Hà Nội có dòng nước đỏ màu phù sa là sông gì?",
+    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80",
+    "q": "Con sông lớn nhất chảy qua thủ đô Hà Nội mang dòng nước đỏ đục màu phù sa màu mỡ có tên là gì?",
     "a": "Sông Hồng",
-    "b": "Sông Đồng Nai",
-    "c": "Sông Sài Gòn",
-    "d": "Sông Hương",
+    "b": "Sông Hương",
+    "c": "Sông Tiền",
+    "d": "Sông Hậu",
     "ans": "A",
-    "explain": "Sông Hồng đem phù sa màu mỡ bồi đắp nên Đồng bằng Bắc Bộ trù phú."
+    "explain": "Sông Hồng bồi đắp lượng phù sa khổng lồ tạo nên Đồng bằng Bắc Bộ - cái nôi của nền văn minh lúa nước ngàn đời."
   },
   {
-    "id": "Q069",
+    "id": "DL07",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Đô thị",
+    "sub": "Thành phố mang tên Bác",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Thành phố mang tên Bác Hồ, là trung tâm kinh tế sôi động nhất phía Nam nước ta là gì?",
+    "img": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&auto=format&fit=crop&q=80",
+    "q": "Thành phố đô thị sầm uất và là trung tâm kinh tế lớn bậc nhất phía Nam nước ta mang tên vị lãnh tụ vĩ đại nào?",
     "a": "Thành phố Hồ Chí Minh",
     "b": "Thành phố Hải Phòng",
     "c": "Thành phố Vũng Tàu",
-    "d": "Thành phố Quy Nhơn",
+    "d": "Thành phố Cần Thơ",
     "ans": "A",
-    "explain": "TP. Hồ Chí Minh là đầu tàu kinh tế, văn hóa quan trọng bậc nhất của cả nước."
+    "explain": "Thành phố Hồ Chí Minh (trước đây là Sài Gòn) là trung tâm kinh tế, văn hóa năng động bậc nhất của cả nước."
   },
   {
-    "id": "Q070",
+    "id": "DL08",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Núi non",
+    "sub": "Đỉnh núi cao nhất",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Ngọn núi nào cao nhất Việt Nam (cao 3.143m), được mệnh danh là \"Nóc nhà Đông Dương\"?",
+    "img": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=600&auto=format&fit=crop&q=80",
+    "q": "Ngọn núi nào cao nhất Việt Nam (cao 3.143m thuộc tỉnh Lào Cai), được mệnh danh là \"Nóc nhà Đông Dương\"?",
     "a": "Đỉnh Fansipan (Phan Xi Păng)",
     "b": "Núi Bạch Mã",
     "c": "Núi Bà Đen",
     "d": "Đỉnh Mẫu Sơn",
     "ans": "A",
-    "explain": "Fansipan nằm ở dãy Hoàng Liên Sơn, tỉnh Lào Cai, là ngọn núi cao nhất 3 nước Đông Dương."
+    "explain": "Fansipan thuộc dãy Hoàng Liên Sơn hùng vĩ, quanh năm mây mù bao phủ là đỉnh núi cao nhất 3 nước Việt Nam, Lào, Campuchia."
   },
   {
-    "id": "Q071",
+    "id": "DL09",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Đồng bằng",
+    "sub": "Vựa lúa miền Nam",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Vùng đồng bằng nào ở miền Nam được bồi đắp bởi 9 nhánh sông Cửu Long, là vựa lúa lớn nhất nước?",
+    "img": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&auto=format&fit=crop&q=80",
+    "q": "Đồng bằng nào ở miền Nam được bồi đắp bởi 9 nhánh sông Cửu Long, là vựa lúa và trái cây xuất khẩu lớn nhất nước ta?",
     "a": "Đồng bằng sông Cửu Long",
     "b": "Đồng bằng sông Hồng",
     "c": "Đồng bằng duyên hải miền Trung",
-    "d": "Cao nguyên Di Linh",
+    "d": "Vùng núi Tây Bắc",
     "ans": "A",
-    "explain": "Đồng bằng sông Cửu Long cung cấp phần lớn sản lượng lúa gạo xuất khẩu của Việt Nam."
+    "explain": "Đồng bằng sông Cửu Long đất đai phì nhiêu, kênh rạch chằng chịt, sản xuất hơn một nửa sản lượng gạo của cả nước."
   },
   {
-    "id": "Q072",
+    "id": "DL10",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Quần đảo",
+    "sub": "Chủ quyền biển đảo",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Hai quần đảo thiêng liêng ngoài Biển Đông thuộc chủ quyền không thể tách rời của Việt Nam là gì?",
-    "a": "Hoàng Sa và Trường Sa",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=80",
+    "q": "Hai quần đảo ngoài Biển Đông thuộc chủ quyền lãnh thổ thiêng liêng không thể tách rời của Tổ quốc Việt Nam là gì?",
+    "a": "Quần đảo Hoàng Sa và Trường Sa",
     "b": "Côn Đảo và Phú Quốc",
     "c": "Cát Bà và Cô Tô",
-    "d": "Hòn Khoai và Hòn Gai",
+    "d": "Hòn Gai và Hòn Mê",
     "ans": "A",
-    "explain": "Hoàng Sa (thuộc Đà Nẵng) và Trường Sa (thuộc Khánh Hòa) là hai quần đảo chủ quyền của Tổ quốc."
+    "explain": "Hoàng Sa (thuộc TP Đà Nẵng) và Trường Sa (thuộc tỉnh Khánh Hòa) là máu thịt thiêng liêng của Tổ quốc Việt Nam."
   },
   {
-    "id": "Q073",
+    "id": "DL11",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Hành chính",
+    "sub": "Hành chính quốc gia",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Hiện nay nước Cộng hòa Xã hội Chủ nghĩa Việt Nam có bao nhiêu tỉnh và thành phố trực thuộc Trung ương?",
+    "img": "https://images.unsplash.com/photo-1528127269322-539801943592?w=600&auto=format&fit=crop&q=80",
+    "q": "Hiện nay đất nước Việt Nam có tất cả bao nhiêu tỉnh và thành phố trực thuộc Trung ương?",
     "a": "63 tỉnh thành",
     "b": "54 tỉnh thành",
     "c": "68 tỉnh thành",
     "d": "50 tỉnh thành",
     "ans": "A",
-    "explain": "Nước ta gồm 5 thành phố trực thuộc Trung ương và 58 tỉnh (tổng cộng 63 đơn vị hành chính cấp tỉnh)."
+    "explain": "Nước ta gồm 5 thành phố trực thuộc Trung ương (Hà Nội, TP.HCM, Hải Phòng, Đà Nẵng, Cần Thơ) cùng 58 tỉnh, tổng cộng 63 đơn vị."
   },
   {
-    "id": "Q074",
+    "id": "DL12",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Nông nghiệp",
+    "sub": "Thủ phủ cà phê",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Vùng đất đỏ bazan Tây Nguyên nổi tiếng nhất cả nước về trồng loại cây công nghiệp xuất khẩu nào?",
+    "img": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80",
+    "q": "Vùng đất đỏ bazan màu mỡ ở Tây Nguyên nổi tiếng nhất nước ta về trồng loại cây công nghiệp xuất khẩu hàng đầu thế giới nào?",
     "a": "Cây Cà phê",
     "b": "Cây Lúa mì",
-    "c": "Cây Táo tây",
-    "d": "Cây Bắp cải",
+    "c": "Cây Táo đỏ",
+    "d": "Cây Dâu tây",
     "ans": "A",
-    "explain": "Tây Nguyên có khí hậu và thổ nhưỡng lý tưởng, đưa Việt Nam thành nước xuất khẩu cà phê top đầu thế giới."
+    "explain": "Khí hậu và đất đỏ bazan Tây Nguyên tạo nên hương vị cà phê Robusta hảo hạng, đưa Việt Nam đứng top đầu xuất khẩu thế giới."
   },
   {
-    "id": "Q075",
+    "id": "DL13",
     "topic": "Địa Lý Việt Nam",
-    "sub": "Dân tộc",
+    "sub": "Di sản văn hóa thế giới",
+    "age": "8-9",
+    "diff": 3,
+    "type": "MC",
+    "img": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&auto=format&fit=crop&q=80",
+    "q": "Đô thị cổ nào bên dòng sông Hoài (tỉnh Quảng Nam) nổi tiếng với những mái ngói rêu phong và đèn lồng lung linh?",
+    "a": "Phố cổ Hội An",
+    "b": "Cố đô Hoa Lư",
+    "c": "Thành Cổ Loa",
+    "d": "Kinh thành Huế",
+    "ans": "A",
+    "explain": "Phố cổ Hội An từng là thương cảng quốc tế sầm uất thế kỷ 16-17, được UNESCO công nhận là di sản văn hóa thế giới."
+  },
+  {
+    "id": "DL14",
+    "topic": "Địa Lý Việt Nam",
+    "sub": "Khối đại đoàn kết",
     "age": "8-9",
     "diff": 3,
     "type": "SA",
-    "q": "Đại gia đình các dân tộc Việt Nam có tất cả bao nhiêu dân tộc anh em cùng chung sống?",
+    "img": "https://images.unsplash.com/photo-1528127269322-539801943592?w=600&auto=format&fit=crop&q=80",
+    "q": "Đại gia đình các dân tộc Việt Nam có tất cả bao nhiêu dân tộc anh em cùng chung sống hòa thuận?",
     "ans": "54|năm mươi tư|năm tư",
-    "explain": "Việt Nam có 54 dân tộc anh em đoàn kết, trong đó dân tộc Kinh chiếm số lượng đông nhất."
+    "explain": "Đất nước Việt Nam là mái nhà chung của 54 dân tộc anh em luôn đoàn kết gắn bó keo sơn."
   },
   {
-    "id": "Q076",
+    "id": "LS01",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Lễ Tết",
+    "sub": "Tết sum vầy",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Ngày Tết cổ truyền lớn nhất đầu năm của người Việt Nam được gọi là Tết gì?",
+    "img": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&auto=format&fit=crop&q=80",
+    "q": "Ngày Tết cổ truyền đón mừng năm mới lớn nhất của người dân Việt Nam được gọi là Tết gì?",
     "a": "Tết Nguyên Đán",
     "b": "Tết Trung Thu",
     "c": "Tết Đoan Ngọ",
     "d": "Tết Hàn Thực",
     "ans": "A",
-    "explain": "Tết Nguyên Đán là dịp đoàn tụ gia đình sum họp, tiễn năm cũ và đón mừng năm mới."
+    "explain": "Tết Nguyên Đán là dịp con cháu sum vầy bên ông bà cha mẹ, chúc Tết và nhận lì xì may mắn đầu năm."
   },
   {
-    "id": "Q077",
+    "id": "LS02",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Món ăn truyền thống",
+    "sub": "Bánh truyền thống",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Bánh truyền thống hình vuông gói bằng lá dong, bên trong có gạo nếp, đỗ xanh và thịt lợn ngày Tết là bánh gì?",
+    "img": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&auto=format&fit=crop&q=80",
+    "q": "Loại bánh hình vuông gói bằng lá dong xanh, bên trong có gạo nếp, đỗ xanh và thịt lợn ngày Tết là bánh gì?",
     "a": "Bánh Chưng",
     "b": "Bánh Giầy",
-    "c": "Bánh Mì",
-    "d": "Bánh Bèo",
+    "c": "Bánh Gai",
+    "d": "Bánh Cuốn",
     "ans": "A",
-    "explain": "Bánh Chưng gắn với câu chuyện hoàng tử Lang Liêu thời Hùng Vương, tượng trưng cho Đất."
+    "explain": "Bánh Chưng gắn liền với hoàng tử Lang Liêu đời Hùng Vương, hình vuông tượng trưng cho Mẹ Đất bao la."
   },
   {
-    "id": "Q078",
+    "id": "LS03",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Trang phục",
+    "sub": "Quốc phục duyên dáng",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Trang phục truyền thống thướt tha mang đậm nét duyên dáng của người phụ nữ Việt Nam là gì?",
+    "img": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&auto=format&fit=crop&q=80",
+    "q": "Trang phục truyền thống thướt tha, duyên dáng của người phụ nữ Việt Nam trong các dịp lễ hội trang trọng là gì?",
     "a": "Áo Dài",
     "b": "Áo Kimono",
     "c": "Áo Hanbok",
-    "d": "Váy Dạ hội",
+    "d": "Váy dạ hội",
     "ans": "A",
-    "explain": "Áo Dài là quốc phục tôn vinh vẻ đẹp truyền thống của người Việt."
+    "explain": "Áo Dài là nét đẹp văn hóa đặc sắc tôn vinh vẻ đoan trang, dịu dàng của người phụ nữ Việt Nam."
   },
   {
-    "id": "Q079",
+    "id": "LS04",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Lễ hội thiếu nhi",
+    "sub": "Tết của bé thơ",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Vào rằm tháng Tám âm lịch, các bạn nhỏ rước đèn ông sao, xem múa lân và phá cỗ trong dịp lễ nào?",
+    "img": "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=600&auto=format&fit=crop&q=80",
+    "q": "Vào đêm rằm tháng Tám âm lịch khi trăng tròn vành vạnh, các bạn nhỏ rước đèn ông sao, xem múa lân trong dịp lễ nào?",
     "a": "Tết Trung Thu",
     "b": "Tết Dương Lịch",
     "c": "Lễ Giáng Sinh",
     "d": "Tết Trồng Cây",
     "ans": "A",
-    "explain": "Tết Trung Thu là ngày hội trăng rằm dành cho thiếu nhi với chú Cuội và chị Hằng Nga."
+    "explain": "Tết Trung Thu là ngày hội trông trăng dành cho thiếu nhi, có chú Cuội, chị Hằng và mâm cỗ ngọt ngào."
   },
   {
-    "id": "Q080",
+    "id": "LS05",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Lịch sử",
+    "sub": "Ngày khai sinh đất nước",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Vị lãnh tụ vĩ đại đã đọc bản Tuyên ngôn Độc lập khai sinh ra nước Việt Nam Dân chủ Cộng hòa ngày 2/9/1945 là ai?",
+    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80",
+    "q": "Vị cha già kính yêu nào đã đọc bản Tuyên ngôn Độc lập tại Quảng trường Ba Đình ngày 2/9/1945 khai sinh ra nước Việt Nam?",
     "a": "Chủ tịch Hồ Chí Minh (Bác Hồ)",
     "b": "Đại tướng Võ Nguyên Giáp",
     "c": "Vua Quang Trung",
     "d": "Vua Bảo Đại",
     "ans": "A",
-    "explain": "Bác Hồ kính yêu đã đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình lịch sử."
+    "explain": "Chủ tịch Hồ Chí Minh kính yêu đã dành cả cuộc đời vì độc lập tự do cho Tổ quốc và hạnh phúc của nhân dân."
   },
   {
-    "id": "Q081",
+    "id": "LS06",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Nguồn gốc dân tộc",
+    "sub": "Nguồn gốc con rồng cháu tiên",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Theo truyền thuyết dân gian, tổ tiên của người Việt sinh ra từ bọc trăm trứng của Lạc Long Quân và ai?",
-    "a": "Mẹ Âu Cơ",
-    "b": "Bà Triệu",
-    "c": "Cô Tấm",
-    "d": "Bà Trưng Trắc",
+    "img": "https://images.unsplash.com/photo-1528127269322-539801943592?w=600&auto=format&fit=crop&q=80",
+    "q": "Theo truyền thuyết dân gian, tổ tiên của người Việt được sinh ra từ bọc trăm trứng của mẹ Âu Cơ và cha là ai?",
+    "a": "Lạc Long Quân",
+    "b": "Sơn Tinh",
+    "c": "Thủy Tinh",
+    "d": "An Dương Vương",
     "ans": "A",
-    "explain": "Truyền thuyết Lạc Long Quân - Âu Cơ giải thích nguồn gốc \"đồng bào\" (cùng một bọc) của dân tộc Việt."
+    "explain": "Truyền thuyết Lạc Long Quân - Âu Cơ sinh ra bọc trăm trứng nở thành trăm người con, giải thích hai tiếng \"đồng bào\" ruột thịt."
   },
   {
-    "id": "Q082",
+    "id": "LS07",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Truyền thuyết",
+    "sub": "Anh hùng tuổi thơ",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Người anh hùng làng Gióng 3 tuổi vươn vai thành tráng sĩ cưỡi ngựa sắt, nhổ tre đánh đuổi giặc Ân là ai?",
+    "img": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=600&auto=format&fit=crop&q=80",
+    "q": "Vị anh hùng thiếu niên 3 tuổi vươn vai thành tráng sĩ, cưỡi ngựa sắt, nhổ bụi tre làng đánh đuổi giặc Ân là ai?",
     "a": "Thánh Gióng (Phù Đổng Thiên Vương)",
     "b": "Thạch Sanh",
-    "c": "Trần Hưng Đạo",
-    "d": "Lý Thường Kiệt",
+    "c": "Trần Quốc Toản",
+    "d": "Lý Tự Trọng",
     "ans": "A",
-    "explain": "Thánh Gióng là biểu tượng của tinh thần quật cường chống giặc ngoại xâm của tuổi trẻ Việt Nam."
+    "explain": "Thánh Gióng là biểu tượng của tinh thần yêu nước quật cường, tuổi nhỏ chí lớn bảo vệ quê hương."
   },
   {
-    "id": "Q083",
+    "id": "LS08",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Lễ giỗ tổ",
+    "sub": "Quốc lễ giỗ tổ",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Câu ca dao \"Dù ai đi ngược về xuôi / Nhớ ngày Giỗ Tổ...\" nhắc đến ngày mùng mấy tháng Ba âm lịch?",
+    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80",
+    "q": "Câu ca dao: \"Dù ai đi ngược về xuôi / Nhớ ngày Giỗ Tổ...\" nhắc đến ngày mùng mấy tháng Ba âm lịch hàng năm?",
     "a": "Mùng mười tháng Ba (10/3 AL)",
     "b": "Mùng một tháng Ba",
     "c": "Rằm tháng Ba",
     "d": "Ngày ba mươi tháng Ba",
     "ans": "A",
-    "explain": "Ngày 10 tháng 3 âm lịch hàng năm là ngày Giỗ Tổ Hùng Vương, ngày quốc lễ tưởng nhớ các vua Hùng."
+    "explain": "Ngày 10/3 âm lịch là ngày Giỗ Tổ Hùng Vương, ngày toàn dân nhớ về công đức các vua Hùng đã có công dựng nước."
   },
   {
-    "id": "Q084",
+    "id": "LS09",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Chiến công lịch sử",
+    "sub": "Chiến thắng cọc gỗ",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Năm 938, vị anh hùng nào dùng kế cắm cọc gỗ đầu bọc sắt trên sông Bạch Đằng đánh tan quân Nam Hán?",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=80",
+    "q": "Năm 938, vị anh hùng dân tộc nào đã cắm cọc gỗ đầu bọc sắt trên sông Bạch Đằng, đánh tan quân Nam Hán giành lại độc lập?",
     "a": "Ngô Quyền",
     "b": "Đinh Bộ Lĩnh",
-    "c": "Lê Lợi",
-    "d": "Quang Trung",
+    "c": "Lê Hoàn",
+    "d": "Lý Thường Kiệt",
     "ans": "A",
-    "explain": "Chiến thắng Bạch Đằng của Ngô Quyền đã chấm dứt hơn 1.000 năm Bắc thuộc, mở ra kỷ nguyên độc lập lâu dài."
+    "explain": "Chiến thắng Bạch Đằng lẫy lừng của Ngô Quyền năm 938 đã chấm dứt hơn 1000 năm Bắc thuộc, mở ra kỷ nguyên độc lập muôn đời."
   },
   {
-    "id": "Q085",
+    "id": "LS10",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Lịch sử kinh đô",
+    "sub": "Kinh đô Rồng bay",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Năm 1010, vua Lý Thái Tổ dời đô từ Hoa Lư về thành Đại La và đổi tên kinh đô thành gì?",
-    "a": "Thăng Long (Rồng bay lên)",
-    "b": "Phú Xuân",
-    "c": "Gia Định",
-    "d": "Tây Đô",
+    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80",
+    "q": "Năm 1010, vua Lý Thái Tổ dời đô từ Hoa Lư về Đại La và đổi tên kinh đô mới thành Thăng Long, nghĩa là gì?",
+    "a": "Rồng vàng bay lên",
+    "b": "Bình yên lâu dài",
+    "c": "Non sông tươi đẹp",
+    "d": "Thành phố vững bền",
     "ans": "A",
-    "explain": "Thăng Long (Hà Nội ngày nay) mang ý nghĩa rồng vàng bay lên, mở ra thời kỳ hưng thịnh của dân tộc."
+    "explain": "Vua Lý Thái Tổ thấy rồng vàng bay lên trên đất Đại La nên đặt tên là Thăng Long (Hà Nội ngày nay), tượng trưng cho sự hưng thịnh."
   },
   {
-    "id": "Q086",
+    "id": "LS11",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Danh nhân",
+    "sub": "Nữ tướng kiệt xuất",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Hai nữ anh hùng đầu tiên cưỡi voi ra trận phất cờ khởi nghĩa đánh đuổi quân Đông Hán năm 40 là ai?",
+    "img": "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?w=600&auto=format&fit=crop&q=80",
+    "q": "Hai nữ anh hùng đầu tiên trong lịch sử dân tộc cưỡi voi phất cờ khởi nghĩa đánh tan quân đô hộ nhà Đông Hán năm 40 là ai?",
     "a": "Hai Bà Trưng (Trưng Trắc, Trưng Nhị)",
     "b": "Bà Triệu",
     "c": "Nguyễn Thị Minh Khai",
-    "d": "Võ Thị Sáu",
+    "d": "Bà Võ Thị Sáu",
     "ans": "A",
-    "explain": "Hai Bà Trưng là những nữ anh hùng kiệt xuất mở đầu truyền thống bất khuất của phụ nữ Việt Nam."
+    "explain": "Hai Bà Trưng cưỡi voi ra trận rửa nợ nước trả thù nhà, mở đầu trang sử oanh liệt của các nữ anh hùng dân tộc."
   },
   {
-    "id": "Q087",
+    "id": "LS12",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Di sản âm nhạc",
+    "sub": "Di sản ca hát truyền thống",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Làn điệu dân ca mượt mà với các liền anh, liền chị mặc áo the khăn xếp trao câu hát đối ở Bắc Ninh là gì?",
-    "a": "Dân ca Quan họ",
-    "b": "Hát Xẩm",
-    "c": "Đờn ca tài tử",
-    "d": "Hát Ca trù",
+    "img": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80",
+    "q": "Làn điệu dân ca xứ Kinh Bắc với các liền anh, liền chị hát đối đáp ân tình được UNESCO công nhận là di sản văn hóa là gì?",
+    "a": "Dân ca Quan họ Bắc Ninh",
+    "b": "Hát Xoan Phú Thọ",
+    "c": "Đờn ca tài tử Nam Bộ",
+    "d": "Hát Bài Chòi",
     "ans": "A",
-    "explain": "Dân ca Quan họ Bắc Ninh được UNESCO công nhận là di sản văn hóa phi vật thể của nhân loại."
+    "explain": "Quan họ Bắc Ninh có giai điệu mượt mà, sâu lắng thể hiện nét văn hóa thanh lịch, mến khách của người dân Kinh Bắc."
   },
   {
-    "id": "Q088",
+    "id": "LS13",
     "topic": "Lịch Sử & Văn Hóa",
-    "sub": "Ngày lễ",
+    "sub": "Văn miếu ngàn năm",
+    "age": "8-9",
+    "diff": 3,
+    "type": "MC",
+    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80",
+    "q": "Trường đại học đầu tiên của Việt Nam được xây dựng dưới thời vua Lý Thánh Tông tại Hà Nội là di tích lịch sử nào?",
+    "a": "Văn Miếu - Quốc Tử Giám",
+    "b": "Chùa Một Cột",
+    "c": "Tháp Rùa",
+    "d": "Hoàng Thành Thăng Long",
+    "ans": "A",
+    "explain": "Văn Miếu - Quốc Tử Giám là biểu tượng của tinh thần hiếu học, nơi lưu giữ 82 bia tiến sĩ vinh danh những bậc hiền tài."
+  },
+  {
+    "id": "LS14",
+    "topic": "Lịch Sử & Văn Hóa",
+    "sub": "Ngày Quốc khánh",
     "age": "8-9",
     "diff": 3,
     "type": "SA",
-    "q": "Ngày Quốc khánh chính thức của nước Việt Nam là ngày tháng nào dương lịch hàng năm?",
+    "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80",
+    "q": "Ngày Tết Độc lập (Quốc khánh nước Cộng hòa XHCN Việt Nam) là ngày tháng nào dương lịch hàng năm?",
     "ans": "2/9|2 tháng 9|02/09|mùng 2 tháng 9",
-    "explain": "Ngày 2/9/1945 là ngày Bác Hồ đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình."
+    "explain": "Ngày 2/9/1945 là mốc son chói lọi khi Bác Hồ đọc Tuyên ngôn Độc lập khẳng định quyền tự do độc lập của dân tộc."
   },
   {
-    "id": "Q089",
+    "id": "VL01",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Trạng thái",
+    "sub": "Trạng thái của nước",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Nước lỏng khi để trong ngăn đá tủ lạnh ở nhiệt độ dưới 0 độ C sẽ biến thành gì?",
+    "img": "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?w=600&auto=format&fit=crop&q=80",
+    "q": "Nước lọc dạng lỏng khi để vào ngăn đá tủ lạnh ở nhiệt độ dưới 0 độ C sẽ đông lại biến thành thể gì?",
     "a": "Nước đá (thể rắn)",
-    "b": "Hơi nước bay đi",
-    "c": "Nước ngọt có ga",
-    "d": "Sữa tươi chua",
+    "b": "Khí hơi nước bay mất",
+    "c": "Nước ngọt có gas",
+    "d": "Sữa chua",
     "ans": "A",
-    "explain": "Nước đông đặc thành băng đá thể rắn khi nhiệt độ giảm xuống dưới điểm đóng băng 0°C."
+    "explain": "Nước tồn tại ở 3 thể: Thể lỏng (nước uống), Thể rắn (băng đá) và Thể khí (hơi nước)."
   },
   {
-    "id": "Q090",
+    "id": "VL02",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Từ tính",
+    "sub": "Lực từ tính",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Cục nam châm có thể hút dính được đồ vật nào dưới đây?",
+    "img": "https://images.unsplash.com/photo-1572945753563-79234857b686?w=600&auto=format&fit=crop&q=80",
+    "q": "Thanh nam châm có từ tính kỳ lạ có thể hút dính chặt đồ vật nào dưới đây?",
     "a": "Chiếc đinh sắt nhỏ",
-    "b": "Cục tẩy bằng cao su",
-    "c": "Thước kẻ bằng gỗ",
-    "d": "Chai nước bằng nhựa",
+    "b": "Cục tẩy cao su",
+    "c": "Cái thước nhựa",
+    "d": "Mẩu gỗ vụn",
     "ans": "A",
-    "explain": "Nam châm có từ trường hút mạnh các kim loại từ tính như sắt, thép, niken."
+    "explain": "Nam châm tạo ra từ trường hút mạnh các kim loại chứa sắt, niken và thép."
   },
   {
-    "id": "Q091",
+    "id": "VL03",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Hiện tượng",
+    "sub": "Lực đẩy bay bổng",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Vì sao quả bóng bay được bơm khí heli hoặc khí nóng có thể bay vút lên trời?",
-    "a": "Vì khí bên trong nhẹ hơn không khí xung quanh",
-    "b": "Vì quả bóng có cánh",
-    "c": "Vì gió thổi từ trên xuống",
-    "d": "Vì quả bóng có động cơ",
+    "img": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&auto=format&fit=crop&q=80",
+    "q": "Vì sao quả bóng bay được bơm khí heli có thể tự bay vút lên cao trên bầu trời khi thả tay ra?",
+    "a": "Vì khí heli nhẹ hơn không khí xung quanh",
+    "b": "Vì quả bóng có cánh quạt",
+    "c": "Vì gió kéo quả bóng lên",
+    "d": "Vì quả bóng không có trọng lượng",
     "ans": "A",
-    "explain": "Theo lực đẩy Ac-si-mét, vật có khối lượng riêng nhẹ hơn chất lỏng/chất khí xung quanh sẽ nổi lên."
+    "explain": "Khí heli có khối lượng nhẹ hơn không khí, nên theo lực đẩy Ac-si-mét, quả bóng sẽ nổi lên bay bổng lên trời."
   },
   {
-    "id": "Q092",
+    "id": "VL04",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Nhiệt độ",
+    "sub": "Sự sôi và bốc hơi",
     "age": "6-7",
     "diff": 1,
     "type": "MC",
-    "q": "Khi đun nước trong ấm đến sôi sùng sục, ta thấy làn khói trắng bay ra từ vòi, đó là gì?",
-    "a": "Hơi nước ngưng tụ li ti",
-    "b": "Khói than độc hại",
-    "c": "Bụi bẩn trong ấm",
-    "d": "Bọt xà phòng",
+    "img": "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?w=600&auto=format&fit=crop&q=80",
+    "q": "Khi đun nước trong ấm đến sôi ùng ục, làn khói trắng li ti bốc lên từ vòi ấm thực chất là gì?",
+    "a": "Hơi nước ngưng tụ thành hạt nước li ti",
+    "b": "Khói than đen độc hại",
+    "c": "Bụi bẩn bốc lên",
+    "d": "Xà phòng bay hơi",
     "ans": "A",
-    "explain": "Nước sôi ở 100°C bốc hơi nhanh chóng, khi gặp không khí mát hơn sẽ ngưng tụ thành hạt nước nhỏ li ti trông như làn sương."
+    "explain": "Nước sôi ở 100°C biến thành hơi nước vô hình, khi ra ngoài gặp không khí lạnh ngưng tụ thành hạt sương nhỏ li ti trông như khói."
   },
   {
-    "id": "Q093",
+    "id": "VL05",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Quang học",
+    "sub": "Truyền thẳng ánh sáng",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Trong môi trường trong suốt và đồng tính (như không khí trong lành), ánh sáng truyền đi theo đường nào?",
+    "img": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=600&auto=format&fit=crop&q=80",
+    "q": "Trong không khí trong suốt đồng chất, tia sáng luôn truyền đi theo đường nào?",
     "a": "Đường thẳng",
-    "b": "Đường cong tròn",
-    "c": "Đường gãy khúc chữ Z",
-    "d": "Đường xoắn ốc lò xo",
+    "b": "Đường lượn sóng zíc zắc",
+    "c": "Đường cong tròn",
+    "d": "Đường xoắn lò xo",
     "ans": "A",
-    "explain": "Định luật truyền thẳng của ánh sáng giải thích hiện tượng tạo thành bóng đen phía sau vật cản."
+    "explain": "Ánh sáng luôn truyền theo đường thẳng, chính vì vậy khi gặp vật cản ánh sáng sẽ tạo ra chiếc bóng râm phía sau."
   },
   {
-    "id": "Q094",
+    "id": "VL06",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Lực cơ học",
+    "sub": "Lực hút Trái Đất",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Lực nào của Trái Đất hút mọi vật rơi về phía mặt đất thay vì bay lơ lửng vào không gian?",
+    "img": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop&q=80",
+    "q": "Lực vô hình nào của Trái Đất hút mọi đồ vật và cả chúng ta rơi xuống mặt đất thay vì bay lơ lửng ngoài vũ trụ?",
     "a": "Trọng lực (lực hấp dẫn)",
     "b": "Lực ma sát",
-    "c": "Lực căng dây",
+    "c": "Lực gió thổi",
     "d": "Lực đàn hồi",
     "ans": "A",
-    "explain": "Trọng lực của Trái Đất kéo mọi vật thể có khối lượng về phía tâm của nó."
+    "explain": "Trái Đất có khối lượng khổng lồ nên sinh ra trọng lực hút mọi vật thể về phía tâm của nó."
   },
   {
-    "id": "Q095",
+    "id": "VL07",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Âm thanh",
+    "sub": "Nguồn gốc âm thanh",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Âm thanh được tạo ra khi các vật thể có hiện tượng gì?",
-    "a": "Dao động (rung rinh)",
-    "b": "Đứng yên hoàn toàn",
-    "c": "Bị làm lạnh đóng băng",
-    "d": "Đổi màu sắc rực rỡ",
+    "img": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80",
+    "q": "Âm thanh của tiếng đàn, tiếng nói hay tiếng chuông phát ra bắt nguồn từ hiện tượng vật lý nào?",
+    "a": "Sự dao động rung của vật thể",
+    "b": "Sự đứng yên tuyệt đối",
+    "c": "Sự làm lạnh đóng băng",
+    "d": "Sự đổi màu sắc",
     "ans": "A",
-    "explain": "Mọi âm thanh phát ra (dây đàn, thanh quản) đều bắt nguồn từ sự dao động rung của vật thể."
+    "explain": "Khi gảy dây đàn, dây rung rinh làm các hạt phân tử không khí xung quanh dao động theo truyền đến màng nhĩ tai ta."
   },
   {
-    "id": "Q096",
+    "id": "VL08",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Điện học",
+    "sub": "Dẫn điện an toàn",
     "age": "7-8",
     "diff": 2,
     "type": "MC",
-    "q": "Vật liệu nào sau đây là chất dẫn điện rất tốt thường được dùng làm lõi dây điện?",
-    "a": "Kim loại Đồng (hoặc Nhôm)",
-    "b": "Nhựa dẻo",
-    "c": "Gỗ khô",
-    "d": "Thủy tinh",
+    "img": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&auto=format&fit=crop&q=80",
+    "q": "Vật liệu nào dẫn điện cực tốt và thường được bọc bên trong lõi dây điện gia đình?",
+    "a": "Kim loại Đồng",
+    "b": "Nhựa mềm",
+    "c": "Thủy tinh",
+    "d": "Gỗ khô",
     "ans": "A",
-    "explain": "Đồng có các electron tự do di chuyển dễ dàng, là kim loại dẫn điện xuất sắc và phổ biến."
+    "explain": "Đồng là kim loại có các electron chuyển động tự do rất linh hoạt nên dẫn dòng điện đi xa cực kỳ hiệu quả."
   },
   {
-    "id": "Q097",
+    "id": "VL09",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Âm học",
+    "sub": "Thấu kính hội tụ",
+    "age": "7-8",
+    "diff": 2,
+    "type": "MC",
+    "img": "https://images.unsplash.com/photo-1584483766114-2cea6facdf57?w=600&auto=format&fit=crop&q=80",
+    "q": "Chiếc kính lúp mà các nhà thám tử hay cầm để quan sát dấu vết có tác dụng kỳ diệu gì?",
+    "a": "Phóng to hình ảnh các vật nhỏ lên",
+    "b": "Thu nhỏ hình ảnh lại",
+    "c": "Làm đồ vật biến mất",
+    "d": "Đổi màu sắc của vật",
+    "ans": "A",
+    "explain": "Kính lúp là thấu kính hội tụ bẻ cong các tia sáng đi qua nó, tạo ra hình ảnh phóng đại to hơn kích thước thật."
+  },
+  {
+    "id": "VL10",
+    "topic": "Vật Chất & Hiện Tượng",
+    "sub": "Tốc độ âm thanh",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Âm thanh truyền đi nhanh nhất trong môi trường nào sau đây?",
-    "a": "Chất rắn (như thanh thép)",
+    "img": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80",
+    "q": "Âm thanh truyền đi nhanh nhất khi đi xuyên qua môi trường vật chất nào sau đây?",
+    "a": "Chất rắn (như thanh thép kim loại)",
     "b": "Chất lỏng (như nước)",
     "c": "Chất khí (như không khí)",
     "d": "Môi trường chân không",
     "ans": "A",
-    "explain": "Trong chất rắn các phân tử xếp xít nhau nhất nên truyền xung động âm thanh nhanh hơn nhiều so với lỏng và khí."
+    "explain": "Trong chất rắn, các phân tử xếp xít chặt chẽ vào nhau nên va chạm và truyền rung động âm thanh nhanh hơn nhiều so với lỏng và khí."
   },
   {
-    "id": "Q098",
+    "id": "VL11",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Vật lý nhiệt",
+    "sub": "Hấp thụ nhiệt ánh sáng",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Vào mùa hè nắng gắt, mặc áo màu nào sẽ đỡ bị hấp thụ nhiệt nóng nhất?",
-    "a": "Màu trắng (hoặc màu rất sáng)",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=80",
+    "q": "Vào mùa hè trời nắng như đổ lửa, mặc trang phục màu nào sẽ phản xạ ánh sáng tốt nhất giúp cơ thể mát mẻ hơn?",
+    "a": "Màu trắng sáng",
     "b": "Màu đen tuyền",
-    "c": "Màu xanh tím than",
-    "d": "Màu nâu đất",
+    "c": "Màu nâu sẫm",
+    "d": "Màu tím đậm",
     "ans": "A",
-    "explain": "Màu trắng phản xạ hầu hết các bước sóng ánh sáng mặt trời, giúp cơ thể mát hơn màu đen."
+    "explain": "Màu trắng phản xạ hầu hết các tia sáng mặt trời ngược lại môi trường, trong khi màu đen hấp thụ gần hết quang năng biến thành nhiệt nóng."
   },
   {
-    "id": "Q099",
+    "id": "VL12",
     "topic": "Vật Chất & Hiện Tượng",
     "sub": "Khối lượng riêng",
     "age": "8-9",
     "diff": 3,
     "type": "MC",
-    "q": "Hầu hết các hòn đá khi thả vào chậu nước sẽ xảy ra hiện tượng gì?",
-    "a": "Chìm nghỉm xuống đáy",
-    "b": "Nổi bồng bềnh trên mặt nước",
-    "c": "Tan biến thành nước",
-    "d": "Bốc cháy thành lửa",
+    "img": "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?w=600&auto=format&fit=crop&q=80",
+    "q": "Một cục đá sỏi đặc chắc khi thả vào chậu nước sẽ chìm nghỉm xuống đáy vì lý do gì?",
+    "a": "Vì đá có khối lượng riêng nặng hơn nước",
+    "b": "Vì đá không có mắt",
+    "c": "Vì nước đẩy đá xuống",
+    "d": "Vì đá bị ngấm nước",
     "ans": "A",
-    "explain": "Đá có khối lượng riêng lớn hơn nước nhiều nên bị chìm (chỉ một số ít đá bọt núi lửa xốp mới nổi được)."
+    "explain": "Một vật chìm xuống khi mật độ khối lượng riêng của nó lớn hơn chất lỏng xung quanh."
   },
   {
-    "id": "Q100",
+    "id": "VL13",
     "topic": "Vật Chất & Hiện Tượng",
-    "sub": "Quang phổ",
+    "sub": "Bản chất ánh sáng trắng",
+    "age": "8-9",
+    "diff": 3,
+    "type": "MC",
+    "img": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=600&auto=format&fit=crop&q=80",
+    "q": "Ánh sáng trắng chiếu rọi từ Mặt Trời thực chất là sự hòa trộn kỳ diệu của bao nhiêu dải màu sắc?",
+    "a": "Vô số màu sắc trải dài qua 7 màu chính",
+    "b": "Chỉ duy nhất một màu trắng",
+    "c": "Chỉ có 2 màu đen và trắng",
+    "d": "Chỉ có 3 màu",
+    "ans": "A",
+    "explain": "Nhà bác học Newton đã dùng lăng kính thủy tinh tách ánh sáng trắng của Mặt Trời thành dải cầu vồng 7 sắc rực rỡ."
+  },
+  {
+    "id": "VL14",
+    "topic": "Vật Chất & Hiện Tượng",
+    "sub": "Năng lượng sạch",
     "age": "8-9",
     "diff": 3,
     "type": "SA",
-    "q": "Tấm kính lúp mà các nhà thám tử dùng để phóng to hình ảnh thực chất là loại thấu kính gì?",
-    "ans": "thấu kính hội tụ|hội tụ",
-    "explain": "Thấu kính hội tụ bẻ cong tia sáng làm ảnh tạo ra to hơn kích thước thật của vật."
+    "img": "https://images.unsplash.com/photo-1509391365360-2e959784a276?w=600&auto=format&fit=crop&q=80",
+    "q": "Những tấm pin màu đen lắp trên mái nhà hấp thụ ánh nắng để tạo ra dòng điện sạch gọi là pin gì?",
+    "ans": "mặt trời|pin mặt trời|năng lượng mặt trời",
+    "explain": "Pin quang điện mặt trời chuyển hóa trực tiếp ánh nắng của thiên nhiên thành điện năng thắp sáng bóng đèn thân thiện với môi trường."
   }
 ];
 
@@ -2078,19 +2416,89 @@ const TOPIC_CONFIG = [
   { id: 'Cơ Thể Người', name: 'Cơ Thể Người', icon: '🫀' },
   { id: 'Địa Lý Việt Nam', name: 'Địa Lý VN', icon: '🗺️' },
   { id: 'Lịch Sử & Văn Hóa', name: 'Lịch Sử & Văn Hóa', icon: '📜' },
-  { id: 'Vật Chất & Hiện Tượng', name: 'Vật Lý & Vật Chất', icon: '🧲' }
+  { id: 'Vật Chất & Hiện Tượng', name: 'Vật Lý & Năng Lượng', icon: '🧲' }
 ];
 
+// STATE VARIABLES
 let selectedAge = 'all';
 let selectedTopic = 'all';
 let currentDeck = [];
 let currentIndex = 0;
 let correctCount = 0;
 let wrongList = [];
+let sessionAnswers = []; // Lưu lại lịch sử từng câu bé đã chọn
 let timerInterval = null;
 let startTime = null;
+let elapsedSeconds = 0;
+let isPaused = false;
 
+// REVIEW SCREEN STATE
+let reviewFilter = 'all'; // 'all', 'correct', 'wrong'
+let reviewMode = 'list';   // 'list', 'card'
+let reviewCardIndex = 0;
+let filteredReviewItems = [];
+
+// =========================================================================
+// SOUND EFFECTS (Web Audio API - không cần internet)
+// =========================================================================
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playSound(type) {
+  try {
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    if (type === 'correct') {
+      // Tiếng chuông Ting Ting vui tai
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
+      osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.1); // A5
+      gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.4);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.4);
+    } else if (type === 'wrong') {
+      // Tiếng Boing nhẹ nhàng
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+      osc.frequency.setValueAtTime(160, audioCtx.currentTime + 0.15);
+      gain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.35);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.35);
+    }
+  } catch(e) {
+    // Trình duyệt chặn âm thanh
+  }
+}
+
+// =========================================================================
+// LOCAL STORAGE FOR SPACED REPETITION (GHI NHỚ LỊCH SỬ CÂU HỎI)
+// =========================================================================
+function getQuestionStats() {
+  try {
+    return JSON.parse(localStorage.getItem('science_quiz_q_stats') || '{}');
+  } catch(e) {
+    return {};
+  }
+}
+
+function updateQuestionStat(qId, isCorrect) {
+  const stats = getQuestionStats();
+  if (!stats[qId]) stats[qId] = { seen: 0, correct: 0, wrong: 0, lastTime: 0 };
+  stats[qId].seen += 1;
+  if (isCorrect) stats[qId].correct += 1;
+  else stats[qId].wrong += 1;
+  stats[qId].lastTime = Date.now();
+  localStorage.setItem('science_quiz_q_stats', JSON.stringify(stats));
+}
+
+// =========================================================================
 // INIT
+// =========================================================================
 window.onload = function() {
   renderTopics();
   loadSavedSettings();
@@ -2132,6 +2540,9 @@ function saveSettings() {
   localStorage.setItem('science_quiz_kid_name', document.getElementById('user-name').value.trim());
 }
 
+// =========================================================================
+// START QUIZ LOGIC (APPLY RATIO)
+// =========================================================================
 function startQuiz() {
   saveSettings();
   let pool = ALL_QUESTIONS;
@@ -2148,18 +2559,43 @@ function startQuiz() {
     return;
   }
 
+  const ratio = document.getElementById('review-ratio').value;
+  const stats = getQuestionStats();
+  const sizeVal = document.getElementById('quiz-size').value;
+  const targetCount = sizeVal === 'all' ? pool.length : parseInt(sizeVal);
+
+  if (ratio === 'unseen') {
+    // Chỉ chọn câu chưa từng làm
+    const unseenPool = pool.filter(q => !stats[q.id] || stats[q.id].seen === 0);
+    pool = unseenPool.length > 0 ? unseenPool : pool;
+  } else if (ratio === 'reviewed') {
+    // Chỉ chọn câu đã từng làm
+    const reviewedPool = pool.filter(q => stats[q.id] && stats[q.id].seen > 0);
+    pool = reviewedPool.length > 0 ? reviewedPool : pool;
+  } else if (ratio === 'mistakes') {
+    // Ưu tiên 50% câu từng sai + 50% câu mới
+    const wrongPool = pool.filter(q => stats[q.id] && stats[q.id].wrong > stats[q.id].correct);
+    const otherPool = pool.filter(q => !wrongPool.includes(q));
+    const half = Math.floor(targetCount / 2);
+    const selectedWrong = [...wrongPool].sort(() => Math.random() - 0.5).slice(0, half);
+    const selectedOther = [...otherPool].sort(() => Math.random() - 0.5).slice(0, targetCount - selectedWrong.length);
+    pool = [...selectedWrong, ...selectedOther];
+  }
+
   // Shuffle
   pool = [...pool].sort(() => Math.random() - 0.5);
 
-  const size = document.getElementById('quiz-size').value;
-  if (size !== 'all') {
-    pool = pool.slice(0, parseInt(size));
+  if (sizeVal !== 'all') {
+    pool = pool.slice(0, targetCount);
   }
 
   currentDeck = pool;
   currentIndex = 0;
   correctCount = 0;
   wrongList = [];
+  sessionAnswers = [];
+  elapsedSeconds = 0;
+  isPaused = false;
   startTime = Date.now();
 
   showScreen('quiz-screen');
@@ -2167,14 +2603,26 @@ function startQuiz() {
   startTimer();
 }
 
+// =========================================================================
+// QUESTION RENDERING
+// =========================================================================
 function displayQuestion() {
   const q = currentDeck[currentIndex];
   const total = currentDeck.length;
 
   document.getElementById('question-number').textContent = `Câu ${currentIndex + 1} / ${total}`;
-  document.getElementById('badge-topic').textContent = q.topic;
-  document.getElementById('badge-age').textContent = `Độ tuổi ${q.age} (${q.diff === 1 ? 'Dễ' : (q.diff === 2 ? 'Vừa' : 'Nâng cao')})`;
+  document.getElementById('badge-topic-age').textContent = `${q.topic} • Độ tuổi ${q.age}`;
   document.getElementById('question-text').textContent = q.q;
+
+  // Image handle
+  const imgElem = document.getElementById('question-img');
+  const imgWrap = document.getElementById('q-img-wrap');
+  if (q.img) {
+    imgElem.src = q.img;
+    imgWrap.style.display = 'flex';
+  } else {
+    imgWrap.style.display = 'none';
+  }
 
   const pct = (currentIndex / total) * 100;
   document.getElementById('progress-fill').style.width = pct + '%';
@@ -2211,25 +2659,38 @@ function renderMultipleChoice(q) {
     const btn = document.createElement('button');
     btn.className = 'choice-option';
     btn.innerHTML = `<span class="choice-letter">${opt.key}</span><span>${opt.text}</span>`;
-    btn.onclick = () => handleChoiceSelect(opt.key, btn);
+    btn.onclick = () => handleChoiceSelect(opt.key, opt.text, btn);
     container.appendChild(btn);
   });
 }
 
-function handleChoiceSelect(chosenKey, chosenBtn) {
+function handleChoiceSelect(chosenKey, chosenText, chosenBtn) {
   const q = currentDeck[currentIndex];
   const allBtns = document.querySelectorAll('.choice-option');
   allBtns.forEach(b => b.disabled = true);
 
   const isCorrect = (chosenKey === q.ans);
+  
+  // Lưu lịch sử câu này
+  sessionAnswers.push({
+    question: q,
+    userAnswerKey: chosenKey,
+    userAnswerText: chosenText,
+    isCorrect: isCorrect
+  });
+
+  updateQuestionStat(q.id, isCorrect);
+
   if (isCorrect) {
+    playSound('correct');
     chosenBtn.classList.add('correct');
     correctCount++;
     showExplanation(true, q.explain);
   } else {
+    playSound('wrong');
     chosenBtn.classList.add('wrong');
     wrongList.push(q);
-    // highlight correct
+    // highlight đáp án đúng
     allBtns.forEach(b => {
       if (b.querySelector('.choice-letter').textContent === q.ans) {
         b.classList.add('correct');
@@ -2261,11 +2722,22 @@ function submitShortAnswer() {
   const validAnswers = q.ans.toLowerCase().split('|').map(s => s.trim());
   const isCorrect = validAnswers.some(ans => userText.includes(ans) || ans.includes(userText));
 
+  sessionAnswers.push({
+    question: q,
+    userAnswerKey: 'Tự luận',
+    userAnswerText: input.value.trim(),
+    isCorrect: isCorrect
+  });
+
+  updateQuestionStat(q.id, isCorrect);
+
   if (isCorrect) {
+    playSound('correct');
     input.classList.add('correct');
     correctCount++;
     showExplanation(true, q.explain);
   } else {
+    playSound('wrong');
     input.classList.add('wrong');
     wrongList.push(q);
     showExplanation(false, `Đáp án đúng: ${validAnswers[0]}. ${q.explain}`);
@@ -2277,7 +2749,7 @@ function submitShortAnswer() {
 function showExplanation(isCorrect, text) {
   const card = document.getElementById('explanation-card');
   card.className = `explanation-card ${isCorrect ? 'correct' : 'wrong'}`;
-  card.innerHTML = `<strong>${isCorrect ? '🎉 Hoan hô! Chính xác!' : '💡 Chưa đúng rồi!'}</strong><br>${text}`;
+  card.innerHTML = `<strong>${isCorrect ? '🎉 Hoan hô! Chính xác!' : '💡 Vì sao lại thế nhỉ?'}</strong><br>${text}`;
   card.style.display = 'block';
 }
 
@@ -2290,13 +2762,47 @@ function goNextQuestion() {
   }
 }
 
+// =========================================================================
+// PAUSE & QUIT LOGIC
+// =========================================================================
+function pauseQuiz() {
+  isPaused = true;
+  clearInterval(timerInterval);
+  document.getElementById('modal-pause').classList.add('active');
+}
+
+function resumeQuiz() {
+  document.getElementById('modal-pause').classList.remove('active');
+  isPaused = false;
+  startTimer();
+}
+
+function askQuitQuiz() {
+  pauseQuiz();
+  document.getElementById('modal-pause').classList.remove('active');
+  document.getElementById('modal-quit').classList.add('active');
+}
+
+function closeQuitModal() {
+  document.getElementById('modal-quit').classList.remove('active');
+  resumeQuiz();
+}
+
+function confirmQuit() {
+  document.getElementById('modal-quit').classList.remove('active');
+  clearInterval(timerInterval);
+  backToHome();
+}
+
+// =========================================================================
+// FINISH QUIZ & SUMMARY
+// =========================================================================
 function finishQuiz() {
   clearInterval(timerInterval);
   const total = currentDeck.length;
   const pct = Math.round((correctCount / total) * 100);
-  const timeTakenSec = Math.floor((Date.now() - startTime) / 1000);
-  const minutes = Math.floor(timeTakenSec / 60);
-  const seconds = timeTakenSec % 60;
+  const minutes = Math.floor(elapsedSeconds / 60);
+  const seconds = elapsedSeconds % 60;
   const timeStr = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 
   document.getElementById('res-score').textContent = pct + '%';
@@ -2329,15 +2835,162 @@ function finishQuiz() {
   document.getElementById('btn-replay-wrong').style.display = wrongList.length > 0 ? 'block' : 'none';
 
   showScreen('result-screen');
-  sendDataToAppsScript(total, correctCount, pct, timeTakenSec);
+  sendDataToAppsScript(total, correctCount, pct, elapsedSeconds);
 }
 
+// =========================================================================
+// REVIEW SYSTEM (DẠNG DANH SÁCH & DẠNG TỪNG CÂU)
+// =========================================================================
+function openReviewScreen() {
+  reviewFilter = 'all';
+  reviewMode = 'list';
+  reviewCardIndex = 0;
+
+  // Cập nhật số lượng
+  document.getElementById('rev-count-all').textContent = sessionAnswers.length;
+  document.getElementById('rev-count-correct').textContent = sessionAnswers.filter(a => a.isCorrect).length;
+  document.getElementById('rev-count-wrong').textContent = sessionAnswers.filter(a => !a.isCorrect).length;
+
+  document.querySelectorAll('.review-filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.review-filter-btn')[0].classList.add('active');
+
+  applyReviewFilter();
+  showScreen('review-screen');
+}
+
+function switchReviewMode(mode) {
+  reviewMode = mode;
+  document.getElementById('btn-view-list').classList.toggle('active', mode === 'list');
+  document.getElementById('btn-view-card').classList.toggle('active', mode === 'card');
+
+  document.getElementById('review-list-view').style.display = mode === 'list' ? 'block' : 'none';
+  document.getElementById('review-card-view').style.display = mode === 'card' ? 'block' : 'none';
+
+  if (mode === 'card') {
+    reviewCardIndex = 0;
+    renderCardReview();
+  }
+}
+
+function filterReviewItems(filter, btn) {
+  reviewFilter = filter;
+  document.querySelectorAll('.review-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyReviewFilter();
+}
+
+function applyReviewFilter() {
+  if (reviewFilter === 'correct') {
+    filteredReviewItems = sessionAnswers.filter(a => a.isCorrect);
+  } else if (reviewFilter === 'wrong') {
+    filteredReviewItems = sessionAnswers.filter(a => !a.isCorrect);
+  } else {
+    filteredReviewItems = [...sessionAnswers];
+  }
+
+  renderListReview();
+  if (reviewMode === 'card') {
+    reviewCardIndex = 0;
+    renderCardReview();
+  }
+}
+
+function renderListReview() {
+  const container = document.getElementById('review-list-items');
+  container.innerHTML = '';
+
+  if (filteredReviewItems.length === 0) {
+    container.innerHTML = '<div style="text-align:center; padding:20px; color:var(--text-muted);">Không có câu hỏi nào trong mục này.</div>';
+    return;
+  }
+
+  filteredReviewItems.forEach((item, idx) => {
+    const q = item.question;
+    const card = document.createElement('div');
+    card.className = `review-item-card ${item.isCorrect ? 'is-correct' : 'is-wrong'}`;
+
+    card.innerHTML = `
+      <div class="review-card-header">
+        <span>Câu ${idx + 1} (${q.topic} - ${q.age})</span>
+        <span style="color:${item.isCorrect ? 'var(--success)' : 'var(--danger)'};">
+          ${item.isCorrect ? '✅ Đúng' : '❌ Chưa đúng'}
+        </span>
+      </div>
+      <div class="review-q-text">${q.q}</div>
+      <div class="review-answers-box">
+        <div><strong>Bé đã chọn:</strong> <span style="color:${item.isCorrect ? 'var(--success)' : 'var(--danger)'}; font-weight:700;">${item.userAnswerText}</span></div>
+        ${!item.isCorrect ? `<div style="margin-top:4px;"><strong>Đáp án đúng:</strong> <span style="color:var(--success); font-weight:700;">${getCorrectAnswerText(q)}</span></div>` : ''}
+      </div>
+      <div class="review-explain-box">
+        <strong>💡 Giải thích:</strong> ${q.explain}
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderCardReview() {
+  const container = document.getElementById('card-view-item');
+  if (filteredReviewItems.length === 0) {
+    container.innerHTML = '<div style="text-align:center; padding:20px; color:var(--text-muted);">Không có câu hỏi nào.</div>';
+    return;
+  }
+
+  const item = filteredReviewItems[reviewCardIndex];
+  const q = item.question;
+  const total = filteredReviewItems.length;
+
+  document.getElementById('card-nav-indicator').textContent = `Câu ${reviewCardIndex + 1} / ${total}`;
+
+  container.className = `review-item-card ${item.isCorrect ? 'is-correct' : 'is-wrong'}`;
+  container.innerHTML = `
+    <div class="review-card-header">
+      <span>${q.topic} • Độ tuổi ${q.age}</span>
+      <span style="color:${item.isCorrect ? 'var(--success)' : 'var(--danger)'};">
+        ${item.isCorrect ? '✅ Trả lời Đúng' : '❌ Trả lời Sai'}
+      </span>
+    </div>
+    ${q.img ? `<div class="question-img-container" style="max-height:160px; margin-bottom:10px;"><img src="${q.img}" style="height:160px;"></div>` : ''}
+    <div class="review-q-text">${q.q}</div>
+    <div class="review-answers-box">
+      <div><strong>Bé chọn:</strong> <span style="color:${item.isCorrect ? 'var(--success)' : 'var(--danger)'}; font-weight:700;">${item.userAnswerText}</span></div>
+      ${!item.isCorrect ? `<div style="margin-top:4px;"><strong>Đáp án đúng:</strong> <span style="color:var(--success); font-weight:700;">${getCorrectAnswerText(q)}</span></div>` : ''}
+    </div>
+    <div class="review-explain-box">
+      <strong>💡 Vì sao lại thế nhỉ?</strong><br>${q.explain}
+    </div>
+  `;
+}
+
+function navCardReview(direction) {
+  if (filteredReviewItems.length === 0) return;
+  reviewCardIndex += direction;
+  if (reviewCardIndex < 0) reviewCardIndex = 0;
+  if (reviewCardIndex >= filteredReviewItems.length) reviewCardIndex = filteredReviewItems.length - 1;
+  renderCardReview();
+}
+
+function getCorrectAnswerText(q) {
+  if (q.type === 'MC') {
+    if (q.ans === 'A') return `A. ${q.a}`;
+    if (q.ans === 'B') return `B. ${q.b}`;
+    if (q.ans === 'C') return `C. ${q.c}`;
+    if (q.ans === 'D') return `D. ${q.d}`;
+  }
+  return q.ans.split('|')[0];
+}
+
+// =========================================================================
+// HELPERS & NAVIGATION
+// =========================================================================
 function replayMistakes() {
   if (wrongList.length === 0) return;
   currentDeck = [...wrongList].sort(() => Math.random() - 0.5);
   currentIndex = 0;
   correctCount = 0;
   wrongList = [];
+  sessionAnswers = [];
+  elapsedSeconds = 0;
   startTime = Date.now();
   showScreen('quiz-screen');
   displayQuestion();
@@ -2359,10 +3012,12 @@ function startTimer() {
   clearInterval(timerInterval);
   const timerElem = document.getElementById('quiz-timer');
   timerInterval = setInterval(() => {
-    const elapsed = Math.floor((Date.now() - startTime) / 1000);
-    const m = Math.floor(elapsed / 60);
-    const s = elapsed % 60;
-    timerElem.textContent = `⏱ ${m}:${s < 10 ? '0' : ''}${s}`;
+    if (!isPaused) {
+      elapsedSeconds++;
+      const m = Math.floor(elapsedSeconds / 60);
+      const s = elapsedSeconds % 60;
+      timerElem.textContent = `⏱ ${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+    }
   }, 1000);
 }
 
@@ -2382,10 +3037,7 @@ function fireConfetti() {
 function sendDataToAppsScript(total, correct, pct, seconds) {
   const scriptUrl = document.getElementById('apps-script-url').value.trim();
   const statusElem = document.getElementById('sync-status');
-  if (!scriptUrl) {
-    statusElem.textContent = '💡 Bạn chưa điền URL Apps Script nên kết quả chỉ lưu trên máy này.';
-    return;
-  }
+  if (!scriptUrl) return;
 
   statusElem.textContent = '⏳ Đang đồng bộ kết quả lên Google Drive / Sheets...';
 
