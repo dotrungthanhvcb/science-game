@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
+<script src="questions_500.js"></script>
 <script src="questions.js"></script>
 <title>🔬 Khoa Học Vui - Đấu Trường Nhí 100 Câu</title>
 <style>
@@ -787,6 +788,188 @@
     border-color: var(--primary);
   }
 
+
+  /* =========================================================================
+     BỘ LỌC CHỌN NGUỒN CÂU HỎI (5 NGUỒN CHUẨN + KHÁC) & BADGE NGUỒN
+     ========================================================================= */
+  .source-filter-card {
+    background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+    border: 2px solid #E2E8F0;
+    border-radius: 18px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  }
+  .source-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .source-header-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .source-action-btns {
+    display: flex;
+    gap: 8px;
+  }
+  .btn-source-action {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    color: #475569;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .btn-source-action:hover {
+    background: #EEF2FF;
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-1px);
+  }
+  .source-chips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+  }
+  .source-toggle-chip {
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .source-toggle-chip:hover {
+    border-color: #A5B4FC;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(67, 97, 238, 0.08);
+  }
+  .source-toggle-chip.selected {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, #FFFFFF 0%, #F5F7FF 100%);
+    box-shadow: 0 4px 14px rgba(67, 97, 238, 0.16);
+  }
+  .source-chip-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .source-chip-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .source-chip-icon {
+    font-size: 1.3rem;
+  }
+  .source-chip-title {
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--dark);
+  }
+  .source-chip-badge {
+    background: #E2E8F0;
+    color: #475569;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+  }
+  .source-toggle-chip.selected .source-chip-badge {
+    background: #EEF2FF;
+    color: var(--primary);
+  }
+  .source-chip-desc {
+    font-size: 0.8rem;
+    color: #64748B;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+  .source-chip-checkbox-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+  .source-checkbox-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    border: 2px solid #CBD5E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: white;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  .source-toggle-chip.selected .source-checkbox-indicator {
+    background: var(--primary);
+    border-color: var(--primary);
+  }
+  .source-status-summary {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #EEF2FF;
+    border-left: 4px solid var(--primary);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #3730A3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+  }
+  .source-status-summary.warning {
+    background: #FEF2F2;
+    border-left-color: #EF4444;
+    color: #B91C1C;
+  }
+  .btn-start:disabled, .btn-start.disabled-btn {
+    opacity: 0.45 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+    filter: grayscale(0.85);
+    box-shadow: none !important;
+  }
+  /* BADGE NGUỒN TRONG GIAO DIỆN LÀM BÀI */
+  .badge-source {
+    background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+    color: #4338CA;
+    border: 1.5px solid #C7D2FE;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 6px rgba(67, 97, 238, 0.08);
+  }
+
 </style>
 </head>
 <body>
@@ -920,6 +1103,7 @@
 
     <div class="question-badge-row">
       <span id="question-number">Câu 1/15</span>
+      <span id="badge-source" class="badge-source">📗 Nguồn: SGK Việt Nam</span>
       <span id="badge-topic-age" style="color:var(--primary);">Động Vật • Độ tuổi 6-7</span>
     </div>
 
@@ -1121,6 +1305,191 @@
 </div>
 
 <script>
+
+// =========================================================================
+// HỆ THỐNG QUẢN LÝ MASTER POOL & 5 NGUỒN HỌC LIỆU CHUẨN + KHÁC
+// =========================================================================
+const SOURCE_CONFIG = [
+  { id: "SGK Việt Nam (GDPT 2018)", name: "SGK Việt Nam (GDPT 2018)", icon: "📗", desc: "Môn TN&XH & Khoa học (Lớp 1-5)", defaultSelected: true },
+  { id: "Trạng Nguyên & Violympic", name: "Trạng Nguyên & Violympic", icon: "🏆", desc: "Câu ngắn gọn, phản xạ tư duy nhanh", defaultSelected: true },
+  { id: "Kangaroo Khoa học (IKSC)", name: "Kangaroo Khoa học (IKSC)", icon: "🦘", desc: "Tư duy quan sát, logic thực tế", defaultSelected: true },
+  { id: "IXL & Khan Academy", name: "IXL & Khan Academy", icon: "🌐", desc: "Phân loại khoa học chuẩn quốc tế", defaultSelected: true },
+  { id: "National Geographic Kids", name: "National Geographic Kids", icon: "🦁", desc: "Fun facts, thiên nhiên kỳ thú & vũ trụ", defaultSelected: true },
+  { id: "Khác", name: "Khác (Kho câu hỏi cũ)", icon: "📦", desc: "Ngân hàng câu hỏi trước đây", defaultSelected: false }
+];
+
+let selectedSources = new Set([
+  "SGK Việt Nam (GDPT 2018)",
+  "Trạng Nguyên & Violympic",
+  "Kangaroo Khoa học (IKSC)",
+  "IXL & Khan Academy",
+  "National Geographic Kids"
+]);
+
+let MASTER_POOL = [];
+
+function getSourceIcon(sourceName) {
+  if (!sourceName) return '💡';
+  if (sourceName.includes('SGK')) return '📗';
+  if (sourceName.includes('Trạng Nguyên') || sourceName.includes('Violympic')) return '🏆';
+  if (sourceName.includes('Kangaroo') || sourceName.includes('IKSC')) return '🦘';
+  if (sourceName.includes('IXL') || sourceName.includes('Khan')) return '🌐';
+  if (sourceName.includes('National') || sourceName.includes('Geographic')) return '🦁';
+  return '📦';
+}
+
+function normalizeQuestion(q, defaultSource) {
+  const text = q.question || q.q || "";
+  let opts = q.options;
+  if (!opts || opts.length < 4) {
+    opts = [q.a || "", q.b || "", q.c || "", q.d || ""];
+  }
+  let cIdx = q.correctIndex;
+  if (cIdx === undefined || cIdx === null) {
+    const letter = (q.ans || "A").trim().toUpperCase();
+    cIdx = letter === 'B' ? 1 : (letter === 'C' ? 2 : (letter === 'D' ? 3 : 0));
+  }
+  const ansLetter = ['A', 'B', 'C', 'D'][cIdx];
+  const sourceName = q.source || defaultSource || "Khác";
+  
+  let age = q.age || "7-8";
+  if (q.grade) {
+    age = q.grade <= 2 ? "6-7" : (q.grade <= 3 ? "7-8" : "8-9");
+  }
+  
+  let diffNum = q.diff || (q.difficulty === 'easy' ? 1 : (q.difficulty === 'medium' ? 2 : 3));
+
+  return {
+    id: q.id,
+    q: text,
+    question: text,
+    options: opts,
+    a: opts[0],
+    b: opts[1],
+    c: opts[2],
+    d: opts[3],
+    correctIndex: cIdx,
+    ans: ansLetter,
+    source: sourceName,
+    topic: q.topic || "Khác",
+    sub: q.sub || "",
+    age: age,
+    diff: diffNum,
+    difficulty: q.difficulty || (diffNum === 1 ? 'easy' : (diffNum === 2 ? 'medium' : 'hard')),
+    grade: q.grade || (diffNum === 1 ? 2 : (diffNum === 2 ? 3 : 4)),
+    explain: q.explain || "",
+    img: q.img || "",
+    type: q.type || "MC"
+  };
+}
+
+function initMasterPool() {
+  const pool = [];
+  const seenIds = new Set();
+
+  // 1. Nạp từ window.QUESTIONS_500 (nếu có từ questions_500.js)
+  if (window.QUESTIONS_500 && Array.isArray(window.QUESTIONS_500)) {
+    window.QUESTIONS_500.forEach(q => {
+      const norm = normalizeQuestion(q, q.source);
+      if (!seenIds.has(norm.id)) {
+        seenIds.add(norm.id);
+        pool.push(norm);
+      }
+    });
+  }
+
+  // 2. Nạp từ ALL_QUESTIONS (từ questions.js, gán source = 'Khác')
+  if (typeof ALL_QUESTIONS !== 'undefined' && Array.isArray(ALL_QUESTIONS)) {
+    ALL_QUESTIONS.forEach(q => {
+      const norm = normalizeQuestion(q, "Khác");
+      if (!seenIds.has(norm.id)) {
+        seenIds.add(norm.id);
+        pool.push(norm);
+      }
+    });
+  }
+
+  MASTER_POOL = pool;
+
+  // 3. Nếu chạy trên web server (Vercel/HTTP), thử nạp questions.json cập nhật
+  if (window.location.protocol.startsWith('http')) {
+    fetch('questions.json')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data) && data.length > 0) {
+          data.forEach(q => {
+            const norm = normalizeQuestion(q, q.source);
+            const idx = MASTER_POOL.findIndex(item => item.id === norm.id);
+            if (idx !== -1) {
+              MASTER_POOL[idx] = norm;
+            } else {
+              MASTER_POOL.push(norm);
+            }
+          });
+          renderSourceChips();
+          updatePoolCountDisplay();
+        }
+      })
+      .catch(e => console.log('Fetch questions.json note:', e));
+  }
+}
+
+function renderSourceChips() {
+  const container = document.getElementById('source-chips-container');
+  if (!container) return;
+  container.innerHTML = '';
+
+  SOURCE_CONFIG.forEach(src => {
+    // Đếm số câu hỏi của nguồn này trong MASTER_POOL
+    const count = MASTER_POOL.filter(q => {
+      if (src.id === "Khác") {
+        return q.source === "Khác" || !q.source || q.source === "Khác (Kho câu hỏi cũ)";
+      }
+      return q.source === src.id;
+    }).length;
+
+    const isSelected = selectedSources.has(src.id);
+    const chip = document.createElement('div');
+    chip.className = `source-toggle-chip ${isSelected ? 'selected' : ''}`;
+    chip.onclick = () => toggleSource(src.id);
+
+    chip.innerHTML = `
+      <div class="source-chip-top">
+        <div class="source-chip-icon-title">
+          <span class="source-chip-icon">${src.icon}</span>
+          <span class="source-chip-title">${src.name}</span>
+        </div>
+        <span class="source-chip-badge">${count} câu</span>
+      </div>
+      <div class="source-chip-desc">${src.desc}</div>
+      <div class="source-chip-checkbox-row">
+        <div class="source-checkbox-indicator">${isSelected ? '✓' : ''}</div>
+      </div>
+    `;
+    container.appendChild(chip);
+  });
+}
+
+function toggleSource(sourceId) {
+  if (selectedSources.has(sourceId)) {
+    selectedSources.delete(sourceId);
+  } else {
+    selectedSources.add(sourceId);
+  }
+  renderSourceChips();
+  updatePoolCountDisplay();
+}
+
+function selectAllSources(isSelectAll) {
+  if (isSelectAll) {
+    SOURCE_CONFIG.forEach(s => selectedSources.add(s.id));
+  } else {
+    selectedSources.clear();
+  }
+  renderSourceChips();
+  updatePoolCountDisplay();
+}
+
 // =========================================================================
 // DATA 100 CAU HOI DA XAC MINH ANH CHUAN XAC 100%
 // =========================================================================
@@ -1408,6 +1777,8 @@ function updateQuestionStat(qId, isCorrect) {
 // INIT & FILTER LOGIC
 // =========================================================================
 window.onload = function() {
+  initMasterPool();
+  renderSourceChips();
   renderTopics();
   loadSavedSettings();
   updatePoolCountDisplay();
@@ -1467,11 +1838,35 @@ function saveSettings() {
 }
 
 function getFilteredPool() {
-  let pool = ALL_QUESTIONS;
-  if (selectedAge !== 'all') pool = pool.filter(q => q.age === selectedAge);
-  if (selectedDiff !== 'all') pool = pool.filter(q => String(q.diff) === selectedDiff);
-  if (selectedTopic !== 'all') pool = pool.filter(q => q.topic === selectedTopic);
-  return pool;
+  const poolSource = MASTER_POOL.length > 0 ? MASTER_POOL : (typeof ALL_QUESTIONS !== 'undefined' ? ALL_QUESTIONS : []);
+  
+  return poolSource.filter(q => {
+    // 1. Kiểm tra bộ lọc nguồn
+    const qSrc = q.source || "Khác";
+    let matchSource = false;
+    for (let s of selectedSources) {
+      if (s === "Khác" && (qSrc === "Khác" || qSrc === "Khác (Kho câu hỏi cũ)")) {
+        matchSource = true;
+        break;
+      }
+      if (qSrc === s) {
+        matchSource = true;
+        break;
+      }
+    }
+    if (!matchSource) return false;
+
+    // 2. Kiểm tra bộ lọc độ tuổi
+    if (selectedAge !== 'all' && q.age !== selectedAge) return false;
+
+    // 3. Kiểm tra bộ lọc độ khó
+    if (selectedDiff !== 'all' && String(q.diff) !== selectedDiff) return false;
+
+    // 4. Kiểm tra bộ lọc chủ đề
+    if (selectedTopic !== 'all' && q.topic !== selectedTopic) return false;
+
+    return true;
+  });
 }
 
 function updatePoolCountDisplay() {
@@ -1479,11 +1874,56 @@ function updatePoolCountDisplay() {
   const sizeVal = document.getElementById('quiz-size').value;
   const requested = sizeVal === 'all' ? pool.length : parseInt(sizeVal);
   const textElem = document.getElementById('pool-count-text');
+  const sourceSummaryElem = document.getElementById('source-summary-text');
+  const sourceSummaryBox = document.getElementById('source-summary-banner');
+  const btnStart = document.querySelector('.btn-start');
+
+  // Đếm tổng số câu thuộc các nguồn đang chọn
+  const totalInSelectedSources = MASTER_POOL.filter(q => {
+    const qSrc = q.source || "Khác";
+    for (let s of selectedSources) {
+      if (s === "Khác" && (qSrc === "Khác" || qSrc === "Khác (Kho câu hỏi cũ)")) return true;
+      if (qSrc === s) return true;
+    }
+    return false;
+  }).length;
+
+  // XỬ LÝ KHI NGƯỜI DÙNG BỎ CHỌN TẤT CẢ NGUỒN (0 nguồn)
+  if (selectedSources.size === 0) {
+    if (sourceSummaryBox) {
+      sourceSummaryBox.className = 'source-status-summary warning';
+    }
+    if (sourceSummaryElem) {
+      sourceSummaryElem.textContent = '⚠️ Bé hoặc phụ huynh vui lòng chọn ít nhất 1 nguồn đề thi để bắt đầu!';
+    }
+    if (textElem) {
+      textElem.textContent = 'Chưa có câu hỏi nào sẵn sàng vì chưa có nguồn đề thi nào được chọn.';
+    }
+    if (btnStart) {
+      btnStart.disabled = true;
+      btnStart.classList.add('disabled-btn');
+    }
+    return;
+  }
+
+  // CÓ CHỌN NGUỒN HỢP LỆ
+  if (sourceSummaryBox) {
+    sourceSummaryBox.className = 'source-status-summary';
+  }
+  if (sourceSummaryElem) {
+    sourceSummaryElem.textContent = `Đang chọn: ${totalInSelectedSources} câu hỏi khả dụng từ ${selectedSources.size} nguồn đề thi.`;
+  }
+  if (btnStart) {
+    btnStart.disabled = false;
+    btnStart.classList.remove('disabled-btn');
+  }
 
   if (pool.length >= requested) {
-    textElem.textContent = `Bộ lọc hiện có ${pool.length} câu phù hợp. Đảm bảo chọn đủ ${requested} câu cho bé!`;
+    textElem.textContent = `Bộ lọc hiện có ${pool.length} câu phù hợp. Đảm bảo chọn đủ ${requested} câu cho lượt thi này!`;
+  } else if (pool.length > 0) {
+    textElem.textContent = `Bộ lọc có ${pool.length} câu. Chế độ thông minh (Smart Fallback) sẽ bổ sung thêm ${requested - pool.length} câu liên quan cùng nguồn để bé làm đủ ${requested} câu!`;
   } else {
-    textElem.textContent = `Bộ lọc có ${pool.length} câu. Chế độ thông minh (Smart Fallback) sẽ bổ sung thêm ${requested - pool.length} câu liên quan để bé làm đủ ${requested} câu!`;
+    textElem.textContent = `Không có câu nào khớp với tất cả bộ lọc tuổi/chủ đề hiện tại. Hãy mở rộng chủ đề hoặc độ tuổi!`;
   }
 }
 
@@ -1499,8 +1939,22 @@ function startQuiz() {
   // SMART FALLBACK
   if (pool.length < targetCount && sizeVal !== 'all') {
     const needed = targetCount - pool.length;
-    const fallbackPool = ALL_QUESTIONS.filter(q => !pool.includes(q));
-    const bonus = [...fallbackPool].sort(() => Math.random() - 0.5).slice(0, needed);
+    // Ưu tiên fallback từ các câu cùng nguồn đã chọn
+    let fallbackCandidates = MASTER_POOL.filter(q => {
+      if (pool.includes(q)) return false;
+      const qSrc = q.source || "Khác";
+      for (let s of selectedSources) {
+        if (s === "Khác" && (qSrc === "Khác" || qSrc === "Khác (Kho câu hỏi cũ)")) return true;
+        if (qSrc === s) return true;
+      }
+      return false;
+    });
+    // Nếu vẫn không đủ, mở rộng từ toàn bộ MASTER_POOL
+    if (fallbackCandidates.length < needed) {
+      const extraCandidates = MASTER_POOL.filter(q => !pool.includes(q) && !fallbackCandidates.includes(q));
+      fallbackCandidates = [...fallbackCandidates, ...extraCandidates];
+    }
+    const bonus = [...fallbackCandidates].sort(() => Math.random() - 0.5).slice(0, needed);
     pool = [...pool, ...bonus];
   }
 
@@ -1553,6 +2007,10 @@ function displayQuestion() {
   const isLast = (currentIndex === total - 1);
 
   document.getElementById('question-number').textContent = `Câu ${currentIndex + 1} / ${total}`;
+  const badgeSource = document.getElementById('badge-source');
+  if (badgeSource) {
+    badgeSource.innerHTML = `${getSourceIcon(q.source)} Nguồn: ${q.source || 'Khoa học'}`;
+  }
   document.getElementById('badge-topic-age').textContent = `${q.topic} • Độ tuổi ${q.age} • Mức ${q.diff}`;
   document.getElementById('question-text').textContent = q.q;
 
