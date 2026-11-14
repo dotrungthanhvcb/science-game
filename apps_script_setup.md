@@ -1,54 +1,151 @@
-# 📝 Hướng Dẫn Cài Đặt Google Apps Script Để Tự Động Lưu Kết Quả Thi
+# 📝 Hướng Dẫn Cập Nhật Google Apps Script (Hỗ Trợ Tài Khoản & Bảng Vàng)
 
 Hệ thống đã **tạo sẵn file Google Sheets** mang tên **`Ket_Qua_Thi_Khoa_Hoc`** ngay bên trong thư mục Google Drive của bạn:
 - **Link trực tiếp mở file Google Sheets:**  
   👉 **[https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit](https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit)**
 - **ID File Sheets:** `1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc`
-- **Thư mục chứa:** [Google Drive Folder ID: `1CLlOjOjtK5Hohdqq-6hv9OBZZhaqmc49`](https://drive.google.com/drive/u/0/folders/1CLlOjOjtK5Hohdqq-6hv9OBZZhaqmc49)
 
 ---
 
-## BƯỚC 1: Mở Google Apps Script
+## ⚡ Các Bước Cập Nhật Script Mới (Chỉ mất 30 giây):
 
 1. Mở file Google Sheets trên: [Link mở Sheets](https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit)
-2. Trên thanh menu của Google Sheets, chọn **`Tiện ích mở rộng` (Extensions)** > Chọn **`Apps Script`**.
-   *(Hoặc truy cập trực tiếp: [script.google.com](https://script.google.com) rồi tạo dự án mới).*
-
----
-
-## BƯỚC 2: Dán Mã Nguồn Google Apps Script
-
-1. Xóa toàn bộ nội dung mẫu có sẵn trong file `Mã.gs` (Code.gs).
-2. Sao chép và dán toàn bộ đoạn code dưới đây vào:
+2. Trên thanh menu, chọn **Tiện ích mở rộng** (*Extensions*) ➔ Chọn **Apps Script**.
+3. Xóa hết code cũ và dán toàn bộ đoạn code mới dưới đây vào:
 
 ```javascript
 /**
- * 🎓 GOOGLE APPS SCRIPT - TỰ ĐỘNG LƯU KẾT QUẢ THI KHOA HỌC
+ * 🎓 GOOGLE APPS SCRIPT - TỰ ĐỘNG LƯU KẾT QUẢ & QUẢN LÝ TÀI KHOẢN HỌC SINH
  * File Google Sheets mục tiêu: Ket_Qua_Thi_Khoa_Hoc
  * Link mở trực tiếp: https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit
  */
 
 const TARGET_SPREADSHEET_ID = "1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc";
 
-/**
- * Xử lý yêu cầu POST gửi từ Game web (Vercel / Localhost)
- */
+function getOrCreateSheet(spreadsheet, sheetName, headers) {
+  let sheet = spreadsheet.getSheetByName(sheetName);
+  if (!sheet) {
+    sheet = spreadsheet.insertSheet(sheetName);
+    if (headers && headers.length > 0) {
+      sheet.appendRow(headers);
+    }
+  }
+  return sheet;
+}
+
+function doGet(e) {
+  try {
+    const action = (e && e.parameter && e.parameter.action) ? e.parameter.action : "";
+    const spreadsheet = SpreadsheetApp.openById(TARGET_SPREADSHEET_ID);
+
+    if (action === "getLeaderboard") {
+      const accountSheet = getOrCreateSheet(spreadsheet, "Tai_Khoan", [
+        "Thời gian đăng ký", "Tên đăng nhập", "Mã PIN", "Họ tên bé", "Lớp", "Số bài thi", "Điểm cao nhất", "Huy hiệu"
+      ]);
+      const data = accountSheet.getDataRange().getValues();
+      const players = [];
+      for (let i = 1; i < data.length; i++) {
+        const row = data[i];
+        if (row[1]) {
+          players.push({
+            username: String(row[1]),
+            name: String(row[3] || row[1]),
+            studentClass: String(row[4] || "Lớp 2"),
+            totalTests: Number(row[5] || 0),
+            highestScore: Number(row[6] || 0),
+            badge: String(row[7] || "⭐")
+          });
+        }
+      }
+      players.sort((a, b) => b.highestScore - a.highestScore || b.totalTests - a.totalTests);
+
+      return ContentService.createTextOutput(JSON.stringify({
+        status: "success",
+        leaderboard: players.slice(0, 25)
+      })).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    return ContentService.createTextOutput(
+      "✅ Google Apps Script Web App đang hoạt động bình thường!\n" +
+      "File Google Sheets kết quả: https://docs.google.com/spreadsheets/d/" + TARGET_SPREADSHEET_ID + "/edit"
+    );
+  } catch (err) {
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: err.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
 function doPost(e) {
   try {
     let payload = {};
     if (e && e.postData && e.postData.contents) {
-      try {
-        payload = JSON.parse(e.postData.contents);
-      } catch (parseErr) {
-        payload = e.parameter || {};
-      }
+      try { payload = JSON.parse(e.postData.contents); } catch (err) { payload = e.parameter || {}; }
     } else if (e && e.parameter) {
       payload = e.parameter;
     }
 
+    const action = payload.action || "submitScore";
     const spreadsheet = SpreadsheetApp.openById(TARGET_SPREADSHEET_ID);
-    const sheet = spreadsheet.getActiveSheet();
+    const accountSheet = getOrCreateSheet(spreadsheet, "Tai_Khoan", [
+      "Thời gian đăng ký", "Tên đăng nhập", "Mã PIN", "Họ tên bé", "Lớp", "Số bài thi", "Điểm cao nhất", "Huy hiệu"
+    ]);
 
+    // 1. ĐĂNG KÝ TÀI KHOẢN MỚI
+    if (action === "register") {
+      const username = String(payload.username || "").trim().toLowerCase();
+      const pin = String(payload.pin || "").trim();
+      const studentName = String(payload.studentName || "").trim() || "Bé Khoa Học";
+      const studentClass = String(payload.studentClass || "Lớp 2").trim();
+
+      if (!username || !pin) {
+        return ContentService.createTextOutput(JSON.stringify({
+          status: "error", message: "Vui lòng nhập Tên đăng nhập và Mã PIN!"
+        })).setMimeType(ContentService.MimeType.JSON);
+      }
+
+      const data = accountSheet.getDataRange().getValues();
+      for (let i = 1; i < data.length; i++) {
+        if (String(data[i][1]).trim().toLowerCase() === username) {
+          return ContentService.createTextOutput(JSON.stringify({
+            status: "error", message: "Tên đăng nhập [" + username + "] đã có bạn dùng rồi!"
+          })).setMimeType(ContentService.MimeType.JSON);
+        }
+      }
+
+      accountSheet.appendRow([new Date().toLocaleString("vi-VN"), username, pin, studentName, studentClass, 0, 0, "🌱 Tân Binh"]);
+      return ContentService.createTextOutput(JSON.stringify({
+        status: "success", message: "Tạo tài khoản thành công!",
+        user: { username, studentName, studentClass, totalTests: 0, highestScore: 0, badge: "🌱 Tân Binh" }
+      })).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    // 2. ĐĂNG NHẬP
+    if (action === "login") {
+      const username = String(payload.username || "").trim().toLowerCase();
+      const pin = String(payload.pin || "").trim();
+      const data = accountSheet.getDataRange().getValues();
+      for (let i = 1; i < data.length; i++) {
+        if (String(data[i][1]).trim().toLowerCase() === username && String(data[i][2]).trim() === pin) {
+          return ContentService.createTextOutput(JSON.stringify({
+            status: "success",
+            user: {
+              username: String(data[i][1]),
+              studentName: String(data[i][3]),
+              studentClass: String(data[i][4]),
+              totalTests: Number(data[i][5] || 0),
+              highestScore: Number(data[i][6] || 0),
+              badge: String(data[i][7] || "⭐")
+            }
+          })).setMimeType(ContentService.MimeType.JSON);
+        }
+      }
+      return ContentService.createTextOutput(JSON.stringify({
+        status: "error", message: "Sai Tên đăng nhập hoặc Mã PIN rồi bé ơi!"
+      })).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    // 3. LƯU KẾT QUẢ THI
+    const resultSheet = spreadsheet.getSheets()[0];
     const timestamp = payload.timestamp || new Date().toLocaleString("vi-VN");
     const studentName = payload.studentName || "Học sinh";
     const studentClass = payload.studentClass || "Chưa nhập";
@@ -58,70 +155,51 @@ function doPost(e) {
     const wrongCount = payload.wrongCount !== undefined ? payload.wrongCount : "";
     const score = payload.score || "";
     const duration = payload.duration || "";
+    const username = String(payload.username || "").trim().toLowerCase();
 
-    // Ghi dòng dữ liệu mới vào Google Sheets
-    sheet.appendRow([
-      timestamp,
-      studentName,
-      studentClass,
-      sources,
-      totalQuestions,
-      correctCount,
-      wrongCount,
-      score,
-      duration
-    ]);
+    // Chống trùng lặp
+    const existingData = resultSheet.getDataRange().getValues();
+    let isDuplicate = false;
+    for (let i = 1; i < existingData.length; i++) {
+      if (String(existingData[i][0]).trim() === String(timestamp).trim() &&
+          String(existingData[i][1]).trim() === String(studentName).trim() &&
+          String(existingData[i][7]).trim() === String(score).trim()) {
+        isDuplicate = true;
+        break;
+      }
+    }
 
-    return ContentService.createTextOutput(JSON.stringify({
-      status: "success",
-      message: "Đã lưu kết quả thi thành công!",
-      timestamp: timestamp,
-      studentName: studentName
-    })).setMimeType(ContentService.MimeType.JSON);
+    if (!isDuplicate) {
+      resultSheet.appendRow([timestamp, studentName, studentClass, sources, totalQuestions, correctCount, wrongCount, score, duration]);
+      
+      if (username) {
+        const accData = accountSheet.getDataRange().getValues();
+        let numScore = parseFloat(String(score).split("/")[0]) || 0;
+        for (let i = 1; i < accData.length; i++) {
+          if (String(accData[i][1]).trim().toLowerCase() === username) {
+            const currentTests = Number(accData[i][5] || 0) + 1;
+            const currentHigh = Math.max(Number(accData[i][6] || 0), numScore);
+            let badge = "🌱 Tân Binh";
+            if (currentHigh >= 9.5) badge = "👑 Đại Kiện Tướng";
+            else if (currentHigh >= 8.5) badge = "🥇 Học Sinh Xuất Sắc";
+            else if (currentHigh >= 7.0) badge = "🥈 Ong Chăm Chỉ";
 
+            accountSheet.getRange(i + 1, 6).setValue(currentTests);
+            accountSheet.getRange(i + 1, 7).setValue(currentHigh);
+            accountSheet.getRange(i + 1, 8).setValue(badge);
+            break;
+          }
+        }
+      }
+    }
+
+    return ContentService.createTextOutput(JSON.stringify({ status: "success" })).setMimeType(ContentService.MimeType.JSON);
   } catch (error) {
-    return ContentService.createTextOutput(JSON.stringify({
-      status: "error",
-      message: error.toString()
-    })).setMimeType(ContentService.MimeType.JSON);
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: error.toString() })).setMimeType(ContentService.MimeType.JSON);
   }
-}
-
-/**
- * Xử lý kiểm tra GET kiểm tra trạng thái hoạt động của Web App
- */
-function doGet(e) {
-  return ContentService.createTextOutput(
-    "✅ Google Apps Script Web App đang hoạt động bình thường!\n" +
-    "File Google Sheets kết quả: https://docs.google.com/spreadsheets/d/" + TARGET_SPREADSHEET_ID + "/edit"
-  );
 }
 ```
 
-3. Bấm biểu tượng 💾 **Lưu dự án** (Save project) hoặc nhấn tổ hợp phím `Ctrl + S` (hoặc `Cmd + S` trên Mac).
-
----
-
-## BƯỚC 3: Triển Khai (Deploy) Dưới Dạng Web App
-
-1. Ở góc trên bên phải, bấm vào nút màu xanh **`Triển khai` (Deploy)** > Chọn **`Tùy chọn triển khai mới...` (New deployment)**.
-2. Bấm vào biểu tượng bánh răng ⚙️ bên cạnh dòng *Chọn loại* (Select type) > Chọn **`Ứng dụng web` (Web app)**.
-3. Thiết lập 3 mục sau (bắt buộc đúng cấu hình):
-   - **Mô tả (Description):** `V1 - Lưu kết quả thi Khoa Học`
-   - **Thực thi dưới dạng (Execute as):** Chọn **`Tôi` (Me / email của bạn)**
-   - **Người có quyền truy cập (Who has access):** Chọn **`Bất kỳ ai` (Anyone)**
-     *(Để trang web game trên Vercel có thể gửi dữ liệu điểm về Google Drive mà không bị lỗi cấp quyền).*
-4. Bấm nút **`Triển khai` (Deploy)**.
-5. Google sẽ hiện hộp thoại yêu cầu cấp quyền:
-   - Bấm **`Ủy quyền truy cập` (Authorize access)** > Chọn tài khoản Google của bạn.
-   - Nếu thấy cảnh báo *"Google chưa xác minh ứng dụng này"*, bấm vào liên kết nhỏ **`Nâng cao` (Advanced)** ở góc dưới bên trái > Chọn **`Đi tới Dự án không có tiêu đề (không an toàn)`**.
-   - Bấm **`Cho phép` (Allow)**.
-6. Sau khi hoàn tất, sao chép chuỗi **URL ứng dụng web (Web App URL)**. Nó có dạng:
-   `https://script.google.com/macros/s/AKfycbx.../exec`
-
----
-
-## BƯỚC 4: Dán URL Vào Game
-
-Bạn dán đường link URL vừa sao chép ở Bước 3 vào ô **`🌐 Google Apps Script URL (Lưu Sheets):`** ở màn hình bắt đầu của Game (hệ thống sẽ lưu vĩnh viễn trong máy).
-Từ giờ, mỗi khi học sinh nộp bài thi, kết quả sẽ tự động được ghi thành 1 dòng mới vào file Google Sheets này!
+4. Bấm **Triển khai** (*Deploy*) ➔ Chọn **Quản lý bản triển khai** (*Manage deployments*).
+5. Bấm vào biểu tượng **Chiếc bút chì ✏️** ➔ Chọn **Phiên bản mới** (*New version*) ➔ Bấm **Triển khai** (*Deploy*).
+*(Giữ nguyên quyền: Thực thi dưới dạng **Tôi** & Ai có quyền truy cập **Bất kỳ ai**).*
