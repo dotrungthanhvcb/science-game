@@ -174,19 +174,39 @@ function doPost(e) {
     }
 
     if (!isDuplicate) {
-      // Ghi đủ 10 cột chuẩn: Thời gian nộp bài, Tên học sinh, Lớp, Ngôn ngữ, Nguồn đề thi, Tổng số câu, Số câu đúng, Số câu sai, Điểm số, Thời gian làm bài
-      resultSheet.appendRow([
-        timestamp,
-        studentName,
-        studentClass,
-        language,
-        sources,
-        totalQuestions,
-        correctCount,
-        wrongCount,
-        score,
-        duration
-      ]);
+      // TỰ ĐỘNG KHỚP CỘT CHUẨN XÁC THEO TÊN TIÊU ĐỀ (KHÔNG BAO GIỜ BỊ LỆCH CỘT)
+      const lastCol = Math.max(resultSheet.getLastColumn(), 10);
+      const headers = resultSheet.getRange(1, 1, 1, lastCol).getDisplayValues()[0];
+      const rowData = [];
+
+      headers.forEach(h => {
+        const col = String(h).trim().toLowerCase();
+        if (col.includes("thời gian nộp") || col.includes("ngày giờ") || col === "timestamp") {
+          rowData.push(timestamp);
+        } else if (col.includes("tên") || col.includes("học sinh") || col === "studentname") {
+          rowData.push(studentName);
+        } else if (col.includes("lớp") || col === "class") {
+          rowData.push(studentClass);
+        } else if (col.includes("ngôn ngữ") || col === "language") {
+          rowData.push(language);
+        } else if (col.includes("nguồn") || col === "sources") {
+          rowData.push(sources);
+        } else if (col.includes("tổng") || col === "total") {
+          rowData.push(totalQuestions);
+        } else if (col.includes("đúng") || col === "correct") {
+          rowData.push(correctCount);
+        } else if (col.includes("sai") || col === "wrong") {
+          rowData.push(wrongCount);
+        } else if (col.includes("điểm") || col === "score") {
+          rowData.push(score);
+        } else if (col.includes("thời gian làm") || col.includes("duration")) {
+          rowData.push(duration);
+        } else {
+          rowData.push("");
+        }
+      });
+
+      resultSheet.appendRow(rowData);
 
       if (username) {
         const accData = accountSheet.getDataRange().getDisplayValues();

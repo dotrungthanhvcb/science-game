@@ -4472,44 +4472,6 @@ function fireConfetti() {
     setTimeout(() => c.remove(), 3200);
   }
 }
-
-function sendDataToAppsScript(total, correct, pct, seconds) {
-  const scriptUrl = document.getElementById('apps-script-url').value.trim();
-  const statusElem = document.getElementById('sync-status');
-  if (!scriptUrl) return;
-
-  statusElem.textContent = '⏳ Đang đồng bộ kết quả lên Google Drive / Sheets...';
-
-  const payload = {
-    action: 'saveResult',
-    data: {
-      datetime: new Date().toLocaleString('vi-VN'),
-      session: 'SES_' + Date.now(),
-      name: document.getElementById('user-name').value || 'Bé',
-      topic: selectedTopic + ' (' + selectedAge + ')',
-      total: total,
-      correct: correct,
-      wrong: total - correct,
-      pct: pct,
-      time: (seconds / 60).toFixed(1),
-      wrongIds: wrongList.map(q => q.id).join(', ')
-    }
-  };
-
-  fetch(scriptUrl, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  })
-  .then(() => {
-    statusElem.textContent = '✅ Đã gửi kết quả thành công vào Google Sheets của bạn!';
-    statusElem.style.color = 'var(--success)';
-  })
-  .catch(err => {
-    statusElem.textContent = '⚠️ Lỗi gửi dữ liệu lên Google Sheets: ' + err.message;
-  });
-}
 </script>
 </body>
 </html>

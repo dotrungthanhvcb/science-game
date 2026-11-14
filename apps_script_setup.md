@@ -1,14 +1,18 @@
-# 📝 Hướng Dẫn Cập Nhật Google Apps Script (Hỗ Trợ Ngôn Ngữ & Chống Trùng Lặp Tuyệt Đối)
+# 📝 Hướng Dẫn Cập Nhật Google Apps Script (Tự Động Khớp Cột & Chống Trùng Lặp Tuyệt Đối)
 
-Code mới đã được chuẩn hóa với **10 cột kết quả (Bao gồm trường Ngôn ngữ)** và **thuật toán getDisplayValues() chống duplicate 100%**.
+File Google Sheets của bạn đã được dọn dẹp sạch sẽ và chuẩn hóa đúng 10 cột:
+- **Link mở trực tiếp:** [https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit](https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit)
+
+Đoạn mã dưới đây sử dụng **thuật toán Dynamic Column Mapping** tự động dò tìm tên tiêu đề của từng cột, đảm bảo:
+- Cột `Ngôn ngữ` luôn nhận đúng ngôn ngữ (`Tiếng Việt`, `Song ngữ Anh - Việt`, `Tiếng Anh`).
+- Cột `Nguồn đề thi`, `Tổng số câu`, `Số câu đúng`, `Số câu sai`, `Điểm số`, `Thời gian làm bài` luôn khớp 100%, **không bao giờ bị lệch cột**.
+- Chống trùng lặp tuyệt đối, bỏ qua hoàn toàn các dòng trống/dữ liệu rác.
 
 ```javascript
 /**
  * 🎓 GOOGLE APPS SCRIPT - TỰ ĐỘNG LƯU KẾT QUẢ & QUẢN LÝ TÀI KHOẢN HỌC SINH
- * 
  * File Google Sheets mục tiêu: Ket_Qua_Thi_Khoa_Hoc
  * Link mở trực tiếp: https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit
- * ID File: 1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc
  */
 
 const TARGET_SPREADSHEET_ID = "1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc";
@@ -135,13 +139,12 @@ function doPost(e) {
       })).setMimeType(ContentService.MimeType.JSON);
     }
 
-    // 3. LƯU KẾT QUẢ THI
+    // 3. LƯU KẾT QUẢ THI (TỰ ĐỘNG KHỚP THEO TÊN TIÊU ĐỀ CỘT)
     const resultSheet = spreadsheet.getSheets()[0];
     const timestamp = String(payload.timestamp || new Date().toLocaleString("vi-VN")).trim();
     const studentName = String(payload.studentName || "Học sinh").trim();
     const studentClass = String(payload.studentClass || "Lớp 2").trim();
     
-    // Xử lý Ngôn ngữ
     let language = "Tiếng Việt";
     if (payload.language === "bilingual" || payload.language === "Song ngữ Anh - Việt") {
       language = "Song ngữ Anh - Việt";
@@ -160,7 +163,7 @@ function doPost(e) {
     const username = String(payload.username || "").trim().toLowerCase();
 
     // Bỏ qua nếu dòng rỗng hoặc không có điểm số thực tế
-    if (!score || score === "" || totalQuestions === "" || studentName === "Học sinh" && !score) {
+    if (!score || score === "" || totalQuestions === "" || (studentName === "Học sinh" && !score)) {
       return ContentService.createTextOutput(JSON.stringify({
         status: "skipped", message: "Bỏ qua dòng trống hoặc dữ liệu thử nghiệm."
       })).setMimeType(ContentService.MimeType.JSON);
@@ -179,19 +182,39 @@ function doPost(e) {
     }
 
     if (!isDuplicate) {
-      // Ghi đủ 10 cột chuẩn: Thời gian nộp bài, Tên học sinh, Lớp, Ngôn ngữ, Nguồn đề thi, Tổng số câu, Số câu đúng, Số câu sai, Điểm số, Thời gian làm bài
-      resultSheet.appendRow([
-        timestamp,
-        studentName,
-        studentClass,
-        language,
-        sources,
-        totalQuestions,
-        correctCount,
-        wrongCount,
-        score,
-        duration
-      ]);
+      // TỰ ĐỘNG KHỚP CỘT CHUẨN XÁC THEO TÊN TIÊU ĐỀ
+      const lastCol = Math.max(resultSheet.getLastColumn(), 10);
+      const headers = resultSheet.getRange(1, 1, 1, lastCol).getDisplayValues()[0];
+      const rowData = [];
+
+      headers.forEach(h => {
+        const col = String(h).trim().toLowerCase();
+        if (col.includes("thời gian nộp") || col.includes("ngày giờ") || col === "timestamp") {
+          rowData.push(timestamp);
+        } else if (col.includes("tên") || col.includes("học sinh") || col === "studentname") {
+          rowData.push(studentName);
+        } else if (col.includes("lớp") || col === "class") {
+          rowData.push(studentClass);
+        } else if (col.includes("ngôn ngữ") || col === "language") {
+          rowData.push(language);
+        } else if (col.includes("nguồn") || col === "sources") {
+          rowData.push(sources);
+        } else if (col.includes("tổng") || col === "total") {
+          rowData.push(totalQuestions);
+        } else if (col.includes("đúng") || col === "correct") {
+          rowData.push(correctCount);
+        } else if (col.includes("sai") || col === "wrong") {
+          rowData.push(wrongCount);
+        } else if (col.includes("điểm") || col === "score") {
+          rowData.push(score);
+        } else if (col.includes("thời gian làm") || col.includes("duration")) {
+          rowData.push(duration);
+        } else {
+          rowData.push("");
+        }
+      });
+
+      resultSheet.appendRow(rowData);
 
       if (username) {
         const accData = accountSheet.getDataRange().getDisplayValues();
@@ -224,5 +247,12 @@ function doPost(e) {
       .setMimeType(ContentService.MimeType.JSON);
   }
 }
-
 ```
+
+---
+
+## ⚡ Hướng Dẫn Cập Nhật Trong 30 Giây:
+1. Mở file [Ket_Qua_Thi_Khoa_Hoc](https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit) ➔ Chọn menu **Tiện ích mở rộng** (*Extensions*) ➔ **Apps Script**.
+2. Dán đoạn code trên vào và bấm biểu tượng 💾 **Lưu dự án**.
+3. Bấm **Triển khai** (*Deploy*) ➔ **Quản lý bản triển khai** (*Manage deployments*).
+4. Bấm vào biểu tượng **Chiếc bút chì ✏️** ➔ Chọn **Phiên bản mới** (*New version*) ➔ Bấm **Triển khai** (*Deploy*).
