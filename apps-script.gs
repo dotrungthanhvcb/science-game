@@ -1,257 +1,133 @@
 /**
- * 🎓 Science Quiz - Google Apps Script
- * Kết nối game HTML Quiz với Google Sheets
+ * 🎓 GOOGLE APPS SCRIPT - TỰ ĐỘNG LƯU KẾT QUẢ THI KHOA HỌC
  * 
- * CÁCH SỬ DỤNG:
- * 1. Mở Google Sheets đã tạo
- * 2. Vào Extensions > Apps Script
- * 3. Dán toàn bộ code này vào editor
- * 4. Thay SPREADSHEET_ID bên dưới bằng ID thực của Sheets
- * 5. Click Deploy > New deployment > Web App
- *    - Execute as: Me
- *    - Who has access: Anyone
- * 6. Copy Web App URL và dán vào game HTML
+ * Thư mục Google Drive mục tiêu:
+ * https://drive.google.com/drive/u/0/folders/1CLlOjOjtK5Hohdqq-6hv9OBZZhaqmc49
+ * ID Thư mục: 1CLlOjOjtK5Hohdqq-6hv9OBZZhaqmc49
+ * Tên file Google Sheets: Ket_Qua_Thi_Khoa_Hoc
  */
 
-// ═══════════════════════════════════════
-// CẤU HÌNH — Thay bằng Spreadsheet ID thực
-// ═══════════════════════════════════════
-const SPREADSHEET_ID = 'THAY_BANG_SPREADSHEET_ID_THUC';
+const TARGET_FOLDER_ID = "1CLlOjOjtK5Hohdqq-6hv9OBZZhaqmc49";
+const SPREADSHEET_NAME = "Ket_Qua_Thi_Khoa_Hoc";
 
-const SHEET_QUESTIONS = 'Ngân Hàng Câu Hỏi';
-const SHEET_LOG       = 'Nhật Ký Luyện Tập';
-const SHEET_WRONG     = 'Câu Hỏi Sai';
-
-// ═══════════════════════════════════════
-// HANDLER CHÍNH — xử lý GET và POST
-// ═══════════════════════════════════════
-function doGet(e) {
-  const action = e.parameter.action;
-
-  if (action === 'getQuestions') {
-    return getQuestions(e);
-  }
-
-  // Default: trả về trang test
-  return ContentService.createTextOutput(JSON.stringify({ status: 'ok', message: 'Science Quiz API hoạt động!' }))
-    .setMimeType(ContentService.MimeType.JSON);
-}
-
+/**
+ * Xử lý yêu cầu POST gửi từ Game web (Vercel / Localhost)
+ */
 function doPost(e) {
   try {
-    const payload = JSON.parse(e.postData.contents);
-    const action = payload.action;
-
-    if (action === 'saveResult') {
-      return saveResult(payload.data);
-    }
-    if (action === 'saveWrongQuestion') {
-      return saveWrongQuestion(payload.data);
-    }
-
-    return jsonResponse({ ok: false, error: 'Unknown action' });
-  } catch (err) {
-    return jsonResponse({ ok: false, error: err.toString() });
-  }
-}
-
-// ═══════════════════════════════════════
-// LẤY CÂU HỎI từ Google Sheets
-// ═══════════════════════════════════════
-function getQuestions(e) {
-  try {
-    const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
-    const sheet = ss.getSheetByName(SHEET_QUESTIONS);
-    const data = sheet.getDataRange().getValues();
-
-    if (data.length <= 1) {
-      return jsonResponse({ questions: [], total: 0 });
+    let payload = {};
+    if (e && e.postData && e.postData.contents) {
+      try {
+        payload = JSON.parse(e.postData.contents);
+      } catch (parseErr) {
+        payload = e.parameter || {};
+      }
+    } else if (e && e.parameter) {
+      payload = e.parameter;
     }
 
-    // Header: ID, Chủ Đề, Chủ Đề Con, Câu Hỏi, Loại, A, B, C, D, Đáp Án Đúng, Độ Khó, Giải Thích, Nguồn
-    const questions = data.slice(1).map(row => ({
-      id:      row[0]  || '',
-      topic:   row[1]  || '',
-      sub:     row[2]  || '',
-      q:       row[3]  || '',
-      type:    row[4]  || 'MC',
-      a:       row[5]  || '',
-      b:       row[6]  || '',
-      c:       row[7]  || '',
-      d:       row[8]  || '',
-      ans:     row[9]  || '',
-      diff:    row[10] || 1,
-      explain: row[11] || '',
-      source:  row[12] || '',
-    })).filter(q => q.q && q.ans); // lọc các hàng trống
+    const sheet = getOrCreateSpreadsheet();
 
-    return jsonResponse({ questions, total: questions.length });
-  } catch (err) {
-    return jsonResponse({ error: err.toString() });
-  }
-}
+    const timestamp = payload.timestamp || new Date().toLocaleString("vi-VN");
+    const studentName = payload.studentName || "Học sinh";
+    const studentClass = payload.studentClass || "Chưa nhập";
+    const sources = payload.sources || "Tất cả nguồn";
+    const totalQuestions = payload.totalQuestions !== undefined ? payload.totalQuestions : "";
+    const correctCount = payload.correctCount !== undefined ? payload.correctCount : "";
+    const wrongCount = payload.wrongCount !== undefined ? payload.wrongCount : "";
+    const score = payload.score || "";
+    const duration = payload.duration || "";
 
-// ═══════════════════════════════════════
-// LƯU KẾT QUẢ vào Nhật Ký Luyện Tập
-// ═══════════════════════════════════════
-function saveResult(data) {
-  try {
-    const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
-    const sheet = ss.getSheetByName(SHEET_LOG);
-
+    // Ghi dòng dữ liệu mới vào Google Sheets
     sheet.appendRow([
-      data.datetime,   // Ngày Giờ
-      data.session,    // Phiên ID
-      data.name,       // Tên Bé
-      data.topic,      // Chủ Đề
-      data.total,      // Tổng Câu
-      data.correct,    // Đúng
-      data.wrong,      // Sai
-      data.pct,        // Điểm %
-      data.time,       // Thời Gian (phút)
-      data.wrongIds,   // Câu Sai (IDs)
+      timestamp,
+      studentName,
+      studentClass,
+      sources,
+      totalQuestions,
+      correctCount,
+      wrongCount,
+      score,
+      duration
     ]);
 
-    // Cập nhật Dashboard tự động
-    updateDashboard(ss, data);
+    // Trả về JSON thông báo thành công
+    return ContentService.createTextOutput(JSON.stringify({
+      status: "success",
+      message: "Đã lưu kết quả thi thành công!",
+      timestamp: timestamp,
+      studentName: studentName
+    })).setMimeType(ContentService.MimeType.JSON);
 
-    return jsonResponse({ ok: true, message: 'Đã lưu kết quả!' });
-  } catch (err) {
-    return jsonResponse({ ok: false, error: err.toString() });
+  } catch (error) {
+    return ContentService.createTextOutput(JSON.stringify({
+      status: "error",
+      message: error.toString()
+    })).setMimeType(ContentService.MimeType.JSON);
   }
 }
 
-// ═══════════════════════════════════════
-// LƯU CÂU HỎI SAI để ôn lại
-// ═══════════════════════════════════════
-function saveWrongQuestion(data) {
-  try {
-    const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
-    const sheet = ss.getSheetByName(SHEET_WRONG);
+/**
+ * Xử lý yêu cầu GET kiểm tra trạng thái hoạt động của Web App
+ */
+function doGet(e) {
+  return ContentService.createTextOutput(
+    "✅ Google Apps Script Web App đang hoạt động bình thường!\n" +
+    "Sẵn sàng nhận kết quả thi Khoa Học từ web game."
+  );
+}
 
-    sheet.appendRow([
-      data.datetime,
-      data.questionId,
-      data.questionText,
-      data.userAnswer,
-      data.correctAnswer,
-    ]);
+/**
+ * Tự động tìm hoặc tạo mới file Google Sheets 'Ket_Qua_Thi_Khoa_Hoc'
+ * nằm chính xác bên trong thư mục Google Drive có ID 1CLlOjOjtK5Hohdqq-6hv9OBZZhaqmc49
+ */
+function getOrCreateSpreadsheet() {
+  const folder = DriveApp.getFolderById(TARGET_FOLDER_ID);
+  const files = folder.getFilesByName(SPREADSHEET_NAME);
+  let spreadsheet;
 
-    return jsonResponse({ ok: true });
-  } catch (err) {
-    return jsonResponse({ ok: false, error: err.toString() });
+  if (files.hasNext()) {
+    spreadsheet = SpreadsheetApp.open(files.next());
+  } else {
+    // Tạo file Google Sheets mới ngay bên trong thư mục đích
+    spreadsheet = SpreadsheetApp.create(SPREADSHEET_NAME);
+    const file = DriveApp.getFileById(spreadsheet.getId());
+    folder.addFile(file);
+    DriveApp.getRootFolder().removeFile(file);
   }
-}
 
-// ═══════════════════════════════════════
-// CẬP NHẬT DASHBOARD
-// ═══════════════════════════════════════
-function updateDashboard(ss, latestData) {
-  try {
-    const logSheet = ss.getSheetByName(SHEET_LOG);
-    const dashSheet = ss.getSheetByName('Dashboard');
-
-    if (!dashSheet) return;
-
-    const logData = logSheet.getDataRange().getValues();
-    if (logData.length <= 1) return;
-
-    const rows = logData.slice(1); // bỏ header
-    const totalSessions = rows.length;
-    const totalQuestions = rows.reduce((s, r) => s + (parseInt(r[4]) || 0), 0);
-    const avgScore = rows.reduce((s, r) => s + (parseFloat(r[7]) || 0), 0) / totalSessions;
-    const totalCorrect = rows.reduce((s, r) => s + (parseInt(r[5]) || 0), 0);
-
-    // Thống kê theo chủ đề
-    const topicStats = {};
-    rows.forEach(r => {
-      const topics = (r[3] || '').split(',');
-      const pct = parseFloat(r[7]) || 0;
-      topics.forEach(t => {
-        t = t.trim();
-        if (!t) return;
-        if (!topicStats[t]) topicStats[t] = { sum: 0, count: 0 };
-        topicStats[t].sum += pct;
-        topicStats[t].count++;
-      });
-    });
-
-    // Ghi vào Dashboard
-    dashSheet.getRange('B3').setValue(totalSessions);
-    dashSheet.getRange('B4').setValue(totalQuestions);
-    dashSheet.getRange('B5').setValue(avgScore.toFixed(1));
-    dashSheet.getRange('B6').setValue(totalCorrect);
-
-    // Phân tích điểm yếu/mạnh theo chủ đề
-    const topicRows = Object.entries(topicStats)
-      .map(([topic, stat]) => [topic, (stat.sum / stat.count).toFixed(1) + '%', stat.count + ' phiên'])
-      .sort((a, b) => parseFloat(a[1]) - parseFloat(b[1])); // sắp xếp điểm thấp lên trên
-
-    if (topicRows.length > 0) {
-      dashSheet.getRange('A9').setValue('📊 Điểm Trung Bình Theo Chủ Đề (thấp nhất lên đầu)');
-      dashSheet.getRange('A10:C10').setValues([['Chủ Đề', 'Điểm TB', 'Số Phiên']]);
-      dashSheet.getRange(11, 1, topicRows.length, 3).setValues(topicRows);
-    }
-
-    // Phiên mới nhất
-    dashSheet.getRange('A17').setValue('📅 Phiên Học Gần Nhất');
-    dashSheet.getRange('B18').setValue(latestData.datetime);
-    dashSheet.getRange('B19').setValue(`${latestData.correct}/${latestData.total} câu đúng (${latestData.pct}%)`);
-    dashSheet.getRange('B20').setValue(latestData.topic);
-
-  } catch (err) {
-    console.log('Dashboard update error:', err);
-  }
-}
-
-// ═══════════════════════════════════════
-// HELPER
-// ═══════════════════════════════════════
-function jsonResponse(obj) {
-  return ContentService
-    .createTextOutput(JSON.stringify(obj))
-    .setMimeType(ContentService.MimeType.JSON);
-}
-
-// ═══════════════════════════════════════
-// SETUP: Tạo header sheets tự động
-// ═══════════════════════════════════════
-function setupSheets() {
-  const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
-
-  // Ngân Hàng Câu Hỏi header
-  let sheet = ss.getSheetByName(SHEET_QUESTIONS);
-  if (!sheet) sheet = ss.insertSheet(SHEET_QUESTIONS);
+  let sheet = spreadsheet.getActiveSheet();
+  
+  // Khởi tạo dòng tiêu đề nếu sheet còn trống
   if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['ID','Chủ Đề','Chủ Đề Con','Câu Hỏi','Loại','Đáp Án A','Đáp Án B','Đáp Án C','Đáp Án D','Đáp Án Đúng','Độ Khó','Giải Thích','Nguồn']);
-    sheet.getRange(1, 1, 1, 13).setBackground('#4285F4').setFontColor('#FFFFFF').setFontWeight('bold');
+    const headers = [
+      "Thời gian nộp bài",
+      "Tên học sinh",
+      "Lớp",
+      "Nguồn đề thi",
+      "Tổng số câu",
+      "Số câu đúng",
+      "Số câu sai",
+      "Điểm số",
+      "Thời gian làm bài"
+    ];
+
+    sheet.appendRow(headers);
+
+    // Định dạng giao diện tiêu đề đẹp mắt
+    const headerRange = sheet.getRange(1, 1, 1, headers.length);
+    headerRange.setBackground("#4361EE")
+               .setFontColor("#FFFFFF")
+               .setFontWeight("bold")
+               .setFontSize(11)
+               .setHorizontalAlignment("center");
+    
+    sheet.setFrozenRows(1);
+    sheet.setRowHeight(1, 35);
+
+    // Căn giữa các cột số liệu
+    sheet.getRange(2, 5, 1000, 5).setHorizontalAlignment("center");
   }
 
-  // Nhật Ký header
-  sheet = ss.getSheetByName(SHEET_LOG);
-  if (!sheet) sheet = ss.insertSheet(SHEET_LOG);
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['Ngày Giờ','Phiên ID','Tên Bé','Chủ Đề','Tổng Câu','Đúng','Sai','Điểm %','Thời Gian (phút)','Câu Sai (IDs)']);
-    sheet.getRange(1, 1, 1, 10).setBackground('#34A853').setFontColor('#FFFFFF').setFontWeight('bold');
-  }
-
-  // Câu Hỏi Sai header
-  sheet = ss.getSheetByName(SHEET_WRONG);
-  if (!sheet) sheet = ss.insertSheet(SHEET_WRONG);
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['Ngày','Câu Hỏi ID','Câu Hỏi','Đáp Án Bé Chọn','Đáp Án Đúng']);
-    sheet.getRange(1, 1, 1, 5).setBackground('#EA4335').setFontColor('#FFFFFF').setFontWeight('bold');
-  }
-
-  // Dashboard header
-  sheet = ss.getSheetByName('Dashboard');
-  if (!sheet) sheet = ss.insertSheet('Dashboard');
-  sheet.getRange('A1').setValue('📊 DASHBOARD TIẾN BỘ ÔN LUYỆN');
-  sheet.getRange('A1').setFontSize(16).setFontWeight('bold').setFontColor('#4285F4');
-  sheet.getRange('A3').setValue('Tổng phiên học');
-  sheet.getRange('A4').setValue('Tổng câu đã làm');
-  sheet.getRange('A5').setValue('Điểm TB (%)');
-  sheet.getRange('A6').setValue('Tổng câu đúng');
-
-  SpreadsheetApp.getUi().alert('✅ Setup hoàn thành! Các sheet đã được tạo.');
+  return sheet;
 }
