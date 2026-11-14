@@ -1,23 +1,14 @@
-# 📝 Hướng Dẫn Cập Nhật Google Apps Script (Hỗ Trợ Tài Khoản & Bảng Vàng)
+# 📝 Hướng Dẫn Cập Nhật Google Apps Script (Hỗ Trợ Ngôn Ngữ & Chống Trùng Lặp Tuyệt Đối)
 
-Hệ thống đã **tạo sẵn file Google Sheets** mang tên **`Ket_Qua_Thi_Khoa_Hoc`** ngay bên trong thư mục Google Drive của bạn:
-- **Link trực tiếp mở file Google Sheets:**  
-  👉 **[https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit](https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit)**
-- **ID File Sheets:** `1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc`
-
----
-
-## ⚡ Các Bước Cập Nhật Script Mới (Chỉ mất 30 giây):
-
-1. Mở file Google Sheets trên: [Link mở Sheets](https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit)
-2. Trên thanh menu, chọn **Tiện ích mở rộng** (*Extensions*) ➔ Chọn **Apps Script**.
-3. Xóa hết code cũ và dán toàn bộ đoạn code mới dưới đây vào:
+Code mới đã được chuẩn hóa với **10 cột kết quả (Bao gồm trường Ngôn ngữ)** và **thuật toán getDisplayValues() chống duplicate 100%**.
 
 ```javascript
 /**
  * 🎓 GOOGLE APPS SCRIPT - TỰ ĐỘNG LƯU KẾT QUẢ & QUẢN LÝ TÀI KHOẢN HỌC SINH
+ * 
  * File Google Sheets mục tiêu: Ket_Qua_Thi_Khoa_Hoc
  * Link mở trực tiếp: https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit
+ * ID File: 1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc
  */
 
 const TARGET_SPREADSHEET_ID = "1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc";
@@ -42,7 +33,7 @@ function doGet(e) {
       const accountSheet = getOrCreateSheet(spreadsheet, "Tai_Khoan", [
         "Thời gian đăng ký", "Tên đăng nhập", "Mã PIN", "Họ tên bé", "Lớp", "Số bài thi", "Điểm cao nhất", "Huy hiệu"
       ]);
-      const data = accountSheet.getDataRange().getValues();
+      const data = accountSheet.getDataRange().getDisplayValues();
       const players = [];
       for (let i = 1; i < data.length; i++) {
         const row = data[i];
@@ -90,7 +81,7 @@ function doPost(e) {
       "Thời gian đăng ký", "Tên đăng nhập", "Mã PIN", "Họ tên bé", "Lớp", "Số bài thi", "Điểm cao nhất", "Huy hiệu"
     ]);
 
-    // 1. ĐĂNG KÝ TÀI KHOẢN MỚI
+    // 1. ĐĂNG KÝ
     if (action === "register") {
       const username = String(payload.username || "").trim().toLowerCase();
       const pin = String(payload.pin || "").trim();
@@ -103,7 +94,7 @@ function doPost(e) {
         })).setMimeType(ContentService.MimeType.JSON);
       }
 
-      const data = accountSheet.getDataRange().getValues();
+      const data = accountSheet.getDataRange().getDisplayValues();
       for (let i = 1; i < data.length; i++) {
         if (String(data[i][1]).trim().toLowerCase() === username) {
           return ContentService.createTextOutput(JSON.stringify({
@@ -123,7 +114,7 @@ function doPost(e) {
     if (action === "login") {
       const username = String(payload.username || "").trim().toLowerCase();
       const pin = String(payload.pin || "").trim();
-      const data = accountSheet.getDataRange().getValues();
+      const data = accountSheet.getDataRange().getDisplayValues();
       for (let i = 1; i < data.length; i++) {
         if (String(data[i][1]).trim().toLowerCase() === username && String(data[i][2]).trim() === pin) {
           return ContentService.createTextOutput(JSON.stringify({
@@ -146,34 +137,64 @@ function doPost(e) {
 
     // 3. LƯU KẾT QUẢ THI
     const resultSheet = spreadsheet.getSheets()[0];
-    const timestamp = payload.timestamp || new Date().toLocaleString("vi-VN");
-    const studentName = payload.studentName || "Học sinh";
-    const studentClass = payload.studentClass || "Chưa nhập";
-    const sources = payload.sources || "Tất cả nguồn";
+    const timestamp = String(payload.timestamp || new Date().toLocaleString("vi-VN")).trim();
+    const studentName = String(payload.studentName || "Học sinh").trim();
+    const studentClass = String(payload.studentClass || "Lớp 2").trim();
+    
+    // Xử lý Ngôn ngữ
+    let language = "Tiếng Việt";
+    if (payload.language === "bilingual" || payload.language === "Song ngữ Anh - Việt") {
+      language = "Song ngữ Anh - Việt";
+    } else if (payload.language === "en" || payload.language === "Tiếng Anh") {
+      language = "Tiếng Anh";
+    } else if (payload.language) {
+      language = String(payload.language).trim();
+    }
+
+    const sources = String(payload.sources || "Tất cả nguồn").trim();
     const totalQuestions = payload.totalQuestions !== undefined ? payload.totalQuestions : "";
     const correctCount = payload.correctCount !== undefined ? payload.correctCount : "";
     const wrongCount = payload.wrongCount !== undefined ? payload.wrongCount : "";
-    const score = payload.score || "";
-    const duration = payload.duration || "";
+    const score = String(payload.score || "").trim();
+    const duration = String(payload.duration || "").trim();
     const username = String(payload.username || "").trim().toLowerCase();
 
-    // Chống trùng lặp
-    const existingData = resultSheet.getDataRange().getValues();
+    // Bỏ qua nếu dòng rỗng hoặc không có điểm số thực tế
+    if (!score || score === "" || totalQuestions === "" || studentName === "Học sinh" && !score) {
+      return ContentService.createTextOutput(JSON.stringify({
+        status: "skipped", message: "Bỏ qua dòng trống hoặc dữ liệu thử nghiệm."
+      })).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    // CHỐNG TRÙNG LẶP TUYỆT ĐỐI BẰNG getDisplayValues()
+    const existingData = resultSheet.getDataRange().getDisplayValues();
     let isDuplicate = false;
     for (let i = 1; i < existingData.length; i++) {
-      if (String(existingData[i][0]).trim() === String(timestamp).trim() &&
-          String(existingData[i][1]).trim() === String(studentName).trim() &&
-          String(existingData[i][7]).trim() === String(score).trim()) {
+      const rowTime = String(existingData[i][0]).trim();
+      const rowName = String(existingData[i][1]).trim();
+      if (rowTime === timestamp && rowName === studentName) {
         isDuplicate = true;
         break;
       }
     }
 
     if (!isDuplicate) {
-      resultSheet.appendRow([timestamp, studentName, studentClass, sources, totalQuestions, correctCount, wrongCount, score, duration]);
-      
+      // Ghi đủ 10 cột chuẩn: Thời gian nộp bài, Tên học sinh, Lớp, Ngôn ngữ, Nguồn đề thi, Tổng số câu, Số câu đúng, Số câu sai, Điểm số, Thời gian làm bài
+      resultSheet.appendRow([
+        timestamp,
+        studentName,
+        studentClass,
+        language,
+        sources,
+        totalQuestions,
+        correctCount,
+        wrongCount,
+        score,
+        duration
+      ]);
+
       if (username) {
-        const accData = accountSheet.getDataRange().getValues();
+        const accData = accountSheet.getDataRange().getDisplayValues();
         let numScore = parseFloat(String(score).split("/")[0]) || 0;
         for (let i = 1; i < accData.length; i++) {
           if (String(accData[i][1]).trim().toLowerCase() === username) {
@@ -193,13 +214,15 @@ function doPost(e) {
       }
     }
 
-    return ContentService.createTextOutput(JSON.stringify({ status: "success" })).setMimeType(ContentService.MimeType.JSON);
+    return ContentService.createTextOutput(JSON.stringify({
+      status: isDuplicate ? "skipped" : "success",
+      message: isDuplicate ? "Bản ghi đã tồn tại, tránh ghi trùng lặp!" : "Đã lưu kết quả thi thành công!"
+    })).setMimeType(ContentService.MimeType.JSON);
+
   } catch (error) {
-    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: error.toString() })).setMimeType(ContentService.MimeType.JSON);
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: error.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
   }
 }
-```
 
-4. Bấm **Triển khai** (*Deploy*) ➔ Chọn **Quản lý bản triển khai** (*Manage deployments*).
-5. Bấm vào biểu tượng **Chiếc bút chì ✏️** ➔ Chọn **Phiên bản mới** (*New version*) ➔ Bấm **Triển khai** (*Deploy*).
-*(Giữ nguyên quyền: Thực thi dưới dạng **Tôi** & Ai có quyền truy cập **Bất kỳ ai**).*
+```

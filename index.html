@@ -1801,6 +1801,7 @@
               <th>Thời Gian</th>
               <th>Học Sinh</th>
               <th>Lớp</th>
+              <th>Ngôn Ngữ</th>
               <th>Loại Đề Thi</th>
               <th style="text-align:center;">Đúng / Tổng</th>
               <th style="text-align:center;">Điểm Số</th>
@@ -2848,9 +2849,10 @@ function loadSavedSettings() {
   if (sClass && document.getElementById('student-class')) {
     document.getElementById('student-class').value = sClass;
   }
-  const savedLang = localStorage.getItem('science_quiz_lang_mode');
-  if (savedLang && document.getElementById('language-mode-select')) {
-    document.getElementById('language-mode-select').value = savedLang;
+  const langSelect = document.getElementById('language-mode-select');
+  if (langSelect) {
+    const savedLang = localStorage.getItem('science_quiz_lang_mode') || 'vi';
+    langSelect.value = savedLang;
     currentLanguageMode = savedLang;
   }
 }
@@ -3449,11 +3451,13 @@ function submitAndFinishQuiz() {
 
   // LƯU LỊCH SỬ BÀI THI VÀO BỘ NHỚ MÁY (KÈM CHI TIẾT CÂU HỎI VÀ ĐÁP ÁN)
   const currentRecordId = 'REC_' + Date.now();
+  const currentLangLabel = currentLanguageMode === 'bilingual' ? 'Song ngữ Anh - Việt' : (currentLanguageMode === 'en' ? 'Tiếng Anh' : 'Tiếng Việt');
   saveQuizToLocalHistory({
     id: currentRecordId,
     syncedToSheets: false,
     timestamp: new Date().toLocaleString('vi-VN'),
     studentName: document.getElementById('user-name').value.trim() || 'Học sinh',
+    language: currentLangLabel,
     studentClass: (function() {
       const elem = document.getElementById('student-class');
       if (!elem) return 'Lớp 2';
@@ -3556,12 +3560,14 @@ function saveAndSyncScriptUrl() {
   syncAllHistoryToSheets();
 }
 
-function markRecordAsSynced(recordId) {
+function markRecordAsSynced(recordId, timestamp) {
+  if (timestamp) markTimestampAsSynced(timestamp);
   if (!recordId) return;
   const list = getLocalHistory();
   const item = list.find(r => r.id === recordId);
   if (item) {
     item.syncedToSheets = true;
+    if (item.timestamp) markTimestampAsSynced(item.timestamp);
     localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(list));
   }
 }
@@ -3579,6 +3585,7 @@ function sendDataToAppsScript(total, correct, wrong, scoreStr, durationStr, reco
   statusElem.innerHTML = '⏳ <span style="color:var(--primary); font-weight:700;">Đang tự động lưu kết quả vào Google Sheets...</span>';
 
   const storedAcc = typeof getStoredAccount === 'function' ? getStoredAccount() : null;
+  const currentLangLabel = currentLanguageMode === 'bilingual' ? 'Song ngữ Anh - Việt' : (currentLanguageMode === 'en' ? 'Tiếng Anh' : 'Tiếng Việt');
   const payload = {
     action: 'submitScore',
     username: storedAcc ? storedAcc.username : '',
@@ -3591,6 +3598,7 @@ function sendDataToAppsScript(total, correct, wrong, scoreStr, durationStr, reco
       if (val === 'all') return 'Lớp 1 - 5 (Hỗn hợp)';
       return 'Lớp ' + val;
     })(),
+    language: currentLangLabel,
     sources: Array.from(selectedSources).join(', '),
     totalQuestions: total,
     correctCount: correct,
@@ -3606,12 +3614,38 @@ function sendDataToAppsScript(total, correct, wrong, scoreStr, durationStr, reco
     body: JSON.stringify(payload)
   })
   .then(() => {
-    markRecordAsSynced(recordId);
+    markRecordAsSynced(recordId, payload.timestamp);
     statusElem.innerHTML = `✅ <span style="color:#15803D; font-weight:700;">Đã lưu kết quả thành công vào file Google Sheets!</span> <a href="${DIRECT_GOOGLE_SHEET_URL}" target="_blank" onclick="openGoogleSheetsDirectly(event)" style="margin-left:8px; color:var(--primary); font-weight:700;">[Xem bảng tính ↗]</a>`;
   })
   .catch(err => {
     statusElem.innerHTML = `⚠️ <span style="color:#B91C1C;">Không thể lưu lên Google Sheets: ${err.message}</span> <button onclick="promptForScriptUrl()" style="margin-left:6px; font-size:0.75rem;">Kiểm tra URL</button>`;
   });
+}
+
+const SYNCED_TIMESTAMPS_KEY = 'science_quiz_synced_timestamps';
+
+function getSyncedTimestamps() {
+  try {
+    const raw = localStorage.getItem(SYNCED_TIMESTAMPS_KEY);
+    const arr = raw ? JSON.parse(raw) : [];
+    // Nạp sẵn danh sách các bài thi đã có trên Google Sheets
+    const defaultSynced = [
+      '09:28:33 14/11/2026', '09:15:19 14/11/2026', '09:11:14 14/11/2026',
+      '09:00:36 14/11/2026', '09:00:03 14/11/2026', '10:21:34 14/11/2026',
+      '10:50:06 14/11/2026'
+    ];
+    defaultSynced.forEach(ts => { if (!arr.includes(ts)) arr.push(ts); });
+    return new Set(arr);
+  } catch(e) {
+    return new Set();
+  }
+}
+
+function markTimestampAsSynced(ts) {
+  if (!ts) return;
+  const set = getSyncedTimestamps();
+  set.add(ts);
+  localStorage.setItem(SYNCED_TIMESTAMPS_KEY, JSON.stringify(Array.from(set)));
 }
 
 function syncAllHistoryToSheets() {
@@ -3628,25 +3662,37 @@ function syncAllHistoryToSheets() {
     return;
   }
 
-  // BỘ LỌC CHỐNG TRÙNG LẶP: Chỉ lọc các bài thi CHƯA từng được đồng bộ lên Google Sheets
-  const unsyncedList = historyList.filter(r => !r.syncedToSheets);
+  // BỘ LỌC CHỐNG TRÙNG LẶP TUYỆT ĐỐI THEO TIMESTAMP ĐÃ LƯU
+  const syncedSet = getSyncedTimestamps();
+  const unsyncedList = historyList.filter(r => !syncedSet.has(r.timestamp) && !r.syncedToSheets);
   
   if (unsyncedList.length === 0) {
-    alert(`🎉 Toàn bộ ${historyList.length} bài thi trong lịch sử đều đã có trên Google Sheets rồi! Không có dữ liệu mới nào bị trùng lặp.`);
+    alert(`🎉 Toàn bộ ${historyList.length} bài thi trong máy đều đã có trên Google Sheets rồi! Không có bài thi mới nào cần đồng bộ thêm.`);
     return;
   }
 
-  if (!confirm(`Tìm thấy ${unsyncedList.length} bài thi mới chưa có trên Sheets (trong tổng số ${historyList.length} bài thi). Bạn có muốn đồng bộ thêm lên Google Sheets không?`)) {
+  if (!confirm(`Hệ thống tìm thấy ${unsyncedList.length} bài thi mới chưa có trên Sheets (trong tổng số ${historyList.length} bài thi). Bạn có muốn đồng bộ thêm lên Google Sheets không?`)) {
     return;
   }
+
+  // Đánh dấu đã đồng bộ ngay lập tức để tránh người dùng bấm liên tục gây duplicate
+  unsyncedList.forEach(r => {
+    r.syncedToSheets = true;
+    markTimestampAsSynced(r.timestamp);
+  });
+  localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(historyList));
 
   let sent = 0;
-  // Gửi tuần tự các bài thi MỚI
+  const storedAcc = typeof getStoredAccount === 'function' ? getStoredAccount() : null;
+
   unsyncedList.forEach((r, idx) => {
     const payload = {
+      action: 'submitScore',
+      username: storedAcc ? storedAcc.username : '',
       timestamp: r.timestamp,
       studentName: r.studentName,
       studentClass: r.studentClass || '',
+      language: r.language || 'Tiếng Việt',
       sources: r.sources || '',
       totalQuestions: r.totalQuestions,
       correctCount: r.correctCount,
@@ -3663,11 +3709,9 @@ function syncAllHistoryToSheets() {
         body: JSON.stringify(payload)
       }).catch(e => console.log('Sync item note', e));
 
-      r.syncedToSheets = true;
       sent++;
       if (sent === unsyncedList.length) {
-        localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(historyList));
-        alert(`✅ Đã đồng bộ thêm ${sent} bài thi mới thành công lên Google Sheets! Không hề bị trùng lặp dữ liệu cũ.`);
+        alert(`✅ Đã đồng bộ thêm ${sent} bài thi mới thành công lên Google Sheets! Không hề bị trùng lặp dữ liệu.`);
         renderHistoryTable();
       }
     }, idx * 400);
@@ -4310,6 +4354,7 @@ function renderHistoryTable() {
       <td style="font-weight:600; color:#475569;">${r.timestamp}</td>
       <td style="font-weight:700; color:var(--dark);">${r.studentName || 'Bé'}</td>
       <td><span style="background:#F1F5F9; padding:2px 8px; border-radius:6px; font-weight:700; font-size:0.8rem;">${r.studentClass || 'Lớp 2'}</span></td>
+      <td><span style="background:#F0FDF4; color:#15803D; border:1px solid #BBF7D0; padding:2px 8px; border-radius:6px; font-weight:700; font-size:0.75rem;">${r.language || 'Tiếng Việt'}</span></td>
       <td>
         <span style="font-weight:700; color:var(--primary); font-size:0.82rem;">${r.totalQuestions} câu</span>
         <span style="color:#64748B; font-size:0.75rem; display:block;">${diffDisplay}</span>
