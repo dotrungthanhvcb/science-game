@@ -37,7 +37,24 @@ function doPost(e) {
     const score = payload.score || "";
     const duration = payload.duration || "";
 
-    // Ghi dòng dữ liệu mới vào Google Sheets
+    // BỘ LỌC CHỐNG TRÙNG LẶP (DEDUPLICATION):
+    // Kiểm tra xem bài thi này (cùng Thời gian + Tên học sinh + Điểm số) đã có trong Sheets chưa
+    const existingData = sheet.getDataRange().getValues();
+    for (let i = 1; i < existingData.length; i++) {
+      const rowTime = String(existingData[i][0]).trim();
+      const rowName = String(existingData[i][1]).trim();
+      const rowScore = String(existingData[i][7]).trim();
+      if (rowTime === String(timestamp).trim() && rowName === String(studentName).trim() && rowScore === String(score).trim()) {
+        return ContentService.createTextOutput(JSON.stringify({
+          status: "skipped",
+          message: "Bản ghi bài thi đã tồn tại trong Google Sheets, bỏ qua để tránh trùng lặp!",
+          timestamp: timestamp,
+          studentName: studentName
+        })).setMimeType(ContentService.MimeType.JSON);
+      }
+    }
+
+    // Ghi dòng dữ liệu mới vào Google Sheets nếu chưa có
     sheet.appendRow([
       timestamp,
       studentName,

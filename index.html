@@ -3275,8 +3275,10 @@ function submitAndFinishQuiz() {
   if (resDescElem) resDescElem.textContent = desc;
 
   // LƯU LỊCH SỬ BÀI THI VÀO BỘ NHỚ MÁY (KÈM CHI TIẾT CÂU HỎI VÀ ĐÁP ÁN)
+  const currentRecordId = 'REC_' + Date.now();
   saveQuizToLocalHistory({
-    id: 'REC_' + Date.now(),
+    id: currentRecordId,
+    syncedToSheets: false,
     timestamp: new Date().toLocaleString('vi-VN'),
     studentName: document.getElementById('user-name').value.trim() || 'Học sinh',
     studentClass: (function() {
@@ -3322,7 +3324,7 @@ function submitAndFinishQuiz() {
   showScreen('result-screen');
 
   // 5. TỰ ĐỘNG GỬI KẾT QUẢ VỀ GOOGLE SHEETS
-  sendDataToAppsScript(total, correctCount, wrongCount, `${score10}/10 (${pct}%)`, timeStr);
+  sendDataToAppsScript(total, correctCount, wrongCount, `${score10}/10 (${pct}%)`, timeStr, currentRecordId);
 }
 
 function finishQuiz() {
@@ -3381,7 +3383,17 @@ function saveAndSyncScriptUrl() {
   syncAllHistoryToSheets();
 }
 
-function sendDataToAppsScript(total, correct, wrong, scoreStr, durationStr) {
+function markRecordAsSynced(recordId) {
+  if (!recordId) return;
+  const list = getLocalHistory();
+  const item = list.find(r => r.id === recordId);
+  if (item) {
+    item.syncedToSheets = true;
+    localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(list));
+  }
+}
+
+function sendDataToAppsScript(total, correct, wrong, scoreStr, durationStr, recordId) {
   const scriptUrl = document.getElementById('apps-script-url') ? document.getElementById('apps-script-url').value.trim() : (typeof GOOGLE_SCRIPT_URL !== 'undefined' ? GOOGLE_SCRIPT_URL : '');
   const statusElem = document.getElementById('sync-status');
   if (!statusElem) return;
@@ -3418,6 +3430,7 @@ function sendDataToAppsScript(total, correct, wrong, scoreStr, durationStr) {
     body: JSON.stringify(payload)
   })
   .then(() => {
+    markRecordAsSynced(recordId);
     statusElem.innerHTML = `✅ <span style="color:#15803D; font-weight:700;">Đã lưu kết quả thành công vào file Google Sheets!</span> <a href="${DIRECT_GOOGLE_SHEET_URL}" target="_blank" onclick="openGoogleSheetsDirectly(event)" style="margin-left:8px; color:var(--primary); font-weight:700;">[Xem bảng tính ↗]</a>`;
   })
   .catch(err => {
@@ -3439,13 +3452,21 @@ function syncAllHistoryToSheets() {
     return;
   }
 
-  if (!confirm(`Bạn có muốn gửi toàn bộ ${historyList.length} lượt thi trong lịch sử lên file Google Sheets không?`)) {
+  // BỘ LỌC CHỐNG TRÙNG LẶP: Chỉ lọc các bài thi CHƯA từng được đồng bộ lên Google Sheets
+  const unsyncedList = historyList.filter(r => !r.syncedToSheets);
+  
+  if (unsyncedList.length === 0) {
+    alert(`🎉 Toàn bộ ${historyList.length} bài thi trong lịch sử đều đã có trên Google Sheets rồi! Không có dữ liệu mới nào bị trùng lặp.`);
+    return;
+  }
+
+  if (!confirm(`Tìm thấy ${unsyncedList.length} bài thi mới chưa có trên Sheets (trong tổng số ${historyList.length} bài thi). Bạn có muốn đồng bộ thêm lên Google Sheets không?`)) {
     return;
   }
 
   let sent = 0;
-  // Gửi tuần tự các lượt thi
-  historyList.forEach((r, idx) => {
+  // Gửi tuần tự các bài thi MỚI
+  unsyncedList.forEach((r, idx) => {
     const payload = {
       timestamp: r.timestamp,
       studentName: r.studentName,
@@ -3466,9 +3487,12 @@ function syncAllHistoryToSheets() {
         body: JSON.stringify(payload)
       }).catch(e => console.log('Sync item note', e));
 
+      r.syncedToSheets = true;
       sent++;
-      if (sent === historyList.length) {
-        alert(`✅ Đã gửi thành công ${sent} bài thi lên Google Sheets! Bạn hãy mở file Sheets để xem nhé.`);
+      if (sent === unsyncedList.length) {
+        localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(historyList));
+        alert(`✅ Đã đồng bộ thêm ${sent} bài thi mới thành công lên Google Sheets! Không hề bị trùng lặp dữ liệu cũ.`);
+        renderHistoryTable();
       }
     }, idx * 400);
   });
