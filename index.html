@@ -1522,10 +1522,18 @@
 
       <div class="config-row">
         <label>🌐 Google Apps Script URL (Lưu Sheets):</label>
-        <input type="text" id="apps-script-url" placeholder="https://script.google.com/macros/s/...">
-        <div style="font-size:0.8rem; margin-top:4px;">
+        <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:6px;">
+          <input type="text" id="apps-script-url" placeholder="https://script.google.com/macros/s/.../exec" style="flex:1; min-width:220px;" oninput="localStorage.setItem('science_quiz_script_url', this.value.trim())">
+          <button type="button" onclick="saveScriptUrlAndSyncFromHome()" style="background:linear-gradient(135deg, #4361EE, #3A0CA3); color:white; border:none; padding:10px 14px; border-radius:10px; font-weight:800; cursor:pointer; font-size:0.85rem; display:inline-flex; align-items:center; gap:6px; white-space:nowrap; box-shadow:0 2px 8px rgba(67, 97, 238, 0.3);">
+            💾 Lưu & Đồng bộ ngay
+          </button>
+        </div>
+        <div style="font-size:0.8rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px;">
           <a href="https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit" target="_blank" onclick="openGoogleSheetsDirectly(event)" style="color:var(--primary); font-weight:700; text-decoration:none;">
-            📂 Bấm vào đây để mở thư mục Google Drive chứa file Google Sheets kết quả ↗
+            📄 Mở file Google Sheets trực tiếp ↗
+          </a>
+          <a href="javascript:void(0)" onclick="promptForScriptUrl()" style="color:#4F46E5; font-weight:700; text-decoration:underline;">
+            ❓ Xem hướng dẫn 3 bước lấy URL
           </a>
         </div>
       </div>
@@ -1652,7 +1660,8 @@
       <div class="action-row-buttons">
         <button class="btn-secondary" onclick="replayMistakes()" id="btn-replay-wrong">🔄 Ôn lại câu sai</button>
         <button class="btn-secondary" onclick="openHistoryScreen()">📊 Xem Lịch Sử</button>
-        <a href="https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit" target="_blank" onclick="openGoogleSheetsDirectly(event)" class="btn-secondary" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:6px; background:#F0FDF4; color:#15803D; border-color:#86EFAC;">📄 Mở Google Sheets ↗</a>
+        <button class="btn-secondary" onclick="syncAllHistoryToSheets()" style="background:#EEF2FF; color:var(--primary); border-color:#C7D2FE; font-weight:800; display:inline-flex; align-items:center; justify-content:center; gap:6px;">🔄 Đồng bộ lên Sheets</button>
+        <a href="https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit" target="_blank" onclick="openGoogleSheetsDirectly(event)" class="btn-secondary" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:6px; background:#F0FDF4; color:#15803D; border-color:#86EFAC;">📄 Mở File Google Sheets ↗</a>
         <button class="btn-primary-action" onclick="backToHome()">🏠 Về Trang Chủ</button>
       </div>
     </div>
@@ -1834,8 +1843,11 @@
       <button onclick="closeConnectScriptModal()" style="background:#F1F5F9; border:none; width:30px; height:30px; border-radius:50%; font-size:16px; font-weight:bold; cursor:pointer; color:#64748B;">✕</button>
     </div>
 
-    <div style="font-size:0.88rem; color:#475569; line-height:1.5; margin-bottom:14px;">
-      Để tự động lưu kết quả thi vào file Google Sheets <strong>"Ket_Qua_Thi_Khoa_Hoc"</strong> của bạn, hãy dán <strong>Web App URL</strong> (có dạng <code>https://script.google.com/macros/s/.../exec</code>) vào ô bên dưới:
+    <div style="font-size:0.86rem; color:#475569; line-height:1.5; margin-bottom:12px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:10px; padding:12px;">
+      <div style="font-weight:700; color:var(--dark); margin-bottom:6px;">📌 3 Bước đơn giản để lấy URL:</div>
+      <div style="margin-bottom:4px;"><strong>1.</strong> Mở file <a href="https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit" target="_blank" onclick="openGoogleSheetsDirectly(event)" style="color:var(--primary); font-weight:700;">Google Sheets này ↗</a> ➔ Chọn menu <strong>Tiện ích mở rộng</strong> ➔ <strong>Apps Script</strong>.</div>
+      <div style="margin-bottom:4px;"><strong>2.</strong> Dán code xử lý vào ➔ Bấm nút màu xanh <strong>Triển khai (Deploy)</strong> ở góc trên bên phải ➔ Chọn <strong>Tùy chọn triển khai mới (New deployment)</strong> ➔ Loại: <strong>Ứng dụng web</strong> ➔ Quyền truy cập: <strong>Bất kỳ ai (Anyone)</strong> ➔ Bấm <strong>Triển khai</strong>.</div>
+      <div><strong>3.</strong> Sao chép đường link <strong>Web App URL</strong> (kết thúc bằng <code>/exec</code>) và dán vào ô dưới đây rồi bấm <strong>Lưu & Đồng bộ ngay</strong>!</div>
     </div>
 
     <div style="margin-bottom:14px;">
@@ -3178,6 +3190,17 @@ function promptForScriptUrl() {
 function closeConnectScriptModal() {
   const modal = document.getElementById('modal-connect-script');
   if (modal) modal.classList.remove('active');
+}
+
+function saveScriptUrlAndSyncFromHome() {
+  const input = document.getElementById("apps-script-url");
+  const url = input ? input.value.trim() : "";
+  if (!url) {
+    promptForScriptUrl();
+    return;
+  }
+  localStorage.setItem("science_quiz_script_url", url);
+  syncAllHistoryToSheets();
 }
 
 function saveAndSyncScriptUrl() {
