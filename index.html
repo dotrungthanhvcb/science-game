@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900;1000&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
@@ -1688,6 +1691,177 @@
     border-radius: 16px;
     padding: 12px 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  }
+
+
+  /* =======================================================================
+     KHAN ACADEMY KIDS DESIGN LANGUAGE (VIBRANT, PLAYFUL, ROUNDED & FRIENDLY)
+     ======================================================================= */
+  * { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif; 
+  }
+
+  h1, h2, h3, h4, .btn-start, .section-title, .home-card-header, .welcome-title, .home-mascot-name {
+    font-family: 'Fredoka', 'Nunito', sans-serif !important;
+  }
+
+  body {
+    background: linear-gradient(180deg, #BAE6FD 0%, #E0F2FE 25%, #F0FDF4 65%, #FEF9C3 100%) !important;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: clamp(10px, 2vw, 24px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: #1E293B;
+  }
+
+  /* KHAN KIDS APP HEADER */
+  .app-header {
+    background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%) !important;
+    border-radius: 24px !important;
+    padding: 12px 20px !important;
+    box-shadow: 0 8px 24px rgba(2, 132, 199, 0.25), 0 2px 6px rgba(0,0,0,0.06) !important;
+    border: 3px solid rgba(255, 255, 255, 0.4) !important;
+    margin-bottom: 18px !important;
+  }
+  .header-titles h1 {
+    font-family: 'Fredoka', sans-serif !important;
+    font-size: clamp(1.4rem, 3.2vw, 2rem) !important;
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.15) !important;
+    letter-spacing: 0.5px;
+  }
+  .header-titles p {
+    color: #E0F2FE !important;
+    font-weight: 700 !important;
+    font-size: 0.88rem !important;
+  }
+
+  /* KHAN KIDS CLOUD CARDS */
+  .screen, .welcome-card, .quiz-card, .history-container {
+    background: #FFFFFF !important;
+    border-radius: 28px !important;
+    border: 3px solid #E0F2FE !important;
+    box-shadow: 0 12px 36px rgba(14, 165, 233, 0.12), 0 2px 8px rgba(0,0,0,0.04) !important;
+    padding: clamp(16px, 2.5vw, 28px) !important;
+  }
+
+  /* KHAN KIDS CHUNKY 3D BUTTONS */
+  .btn-start {
+    background: #10B981 !important;
+    color: white !important;
+    border: 2.5px solid #059669 !important;
+    border-bottom: 6px solid #047857 !important;
+    border-radius: 9999px !important;
+    font-family: 'Fredoka', sans-serif !important;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    padding: 14px 32px !important;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35) !important;
+    cursor: pointer !important;
+    transition: all 0.12s ease !important;
+    letter-spacing: 0.5px;
+  }
+  .btn-start:hover {
+    background: #059669 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(16, 185, 129, 0.4) !important;
+  }
+  .btn-start:active {
+    transform: translateY(4px) !important;
+    border-bottom-width: 2px !important;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3) !important;
+  }
+
+  /* NAVIGATION PILL BUTTONS */
+  .btn-nav-history {
+    border-radius: 9999px !important;
+    font-weight: 800 !important;
+    border: 2px solid rgba(255,255,255,0.6) !important;
+    border-bottom: 3.5px solid rgba(0,0,0,0.15) !important;
+    padding: 7px 14px !important;
+    transition: all 0.15s ease !important;
+    font-size: 0.82rem !important;
+  }
+  .btn-nav-history:active {
+    transform: translateY(2px) !important;
+    border-bottom-width: 1.5px !important;
+  }
+
+  /* QUIZ CHOICE OPTIONS (KHAN KIDS CHUNKY CARDS) */
+  .choice-option {
+    border-radius: 20px !important;
+    border: 2.5px solid #E2E8F0 !important;
+    border-bottom: 5px solid #CBD5E1 !important;
+    background: #FFFFFF !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    padding: 14px 18px !important;
+    transition: all 0.15s ease !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
+  }
+  .choice-option:hover {
+    border-color: #38BDF8 !important;
+    background: #F0F9FF !important;
+    transform: translateY(-2px);
+  }
+  .choice-option.selected {
+    border-color: #0284C7 !important;
+    border-bottom-color: #0369A1 !important;
+    background: #E0F2FE !important;
+    color: #0369A1 !important;
+  }
+  .choice-letter {
+    background: #E0F2FE !important;
+    color: #0284C7 !important;
+    border-radius: 12px !important;
+    font-family: 'Fredoka', sans-serif !important;
+    font-weight: 700 !important;
+  }
+  .choice-option.selected .choice-letter {
+    background: #0284C7 !important;
+    color: white !important;
+  }
+
+  /* HERO MASCOT CARD (HOME SCREEN) */
+  .home-hero-card {
+    background: linear-gradient(135deg, #E0F2FE 0%, #F0F9FF 100%) !important;
+    border: 2.5px solid #BAE6FD !important;
+    border-radius: 24px !important;
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.08) !important;
+  }
+  .home-card {
+    border-radius: 22px !important;
+    border: 2.5px solid #E2E8F0 !important;
+  }
+  .home-card-header {
+    background: #F8FAFC !important;
+    font-family: 'Fredoka', sans-serif !important;
+    font-size: 1.05rem !important;
+    color: #0F172A !important;
+  }
+  .home-pill {
+    border-radius: 9999px !important;
+    font-weight: 800 !important;
+    border-bottom: 3.5px solid #CBD5E1 !important;
+  }
+  .home-pill.active {
+    background: #0284C7 !important;
+    border-color: #0284C7 !important;
+    border-bottom-color: #0369A1 !important;
+    color: white !important;
+  }
+  .topic-pill {
+    border-radius: 16px !important;
+    font-weight: 800 !important;
+  }
+  .topic-pill.selected {
+    background: #0284C7 !important;
+    color: white !important;
   }
 
 </style>
@@ -4399,7 +4573,7 @@ function submitLogin() {
     return;
   }
 
-  // KIỂM TRA ĐẶC QUYỀN ADMIN (MẬT KHẨU 11081993)
+  // 1. KIỂM TRA ĐẶC QUYỀN ADMIN (MẬT KHẨU 11081993)
   if (username === 'admin' && pin === '11081993') {
     const adminAcc = {
       username: 'admin',
@@ -4415,43 +4589,58 @@ function submitLogin() {
     updateHeaderAuthDisplay();
     updateAdminHeaderUI();
     closeAuthModal();
-    alert('👑 Đăng nhập Quản Trị Viên (Admin) thành công! Bạn có quyền xem toàn bộ lịch sử thi và quản lý danh sách học sinh.');
+    alert('👑 Đăng nhập Quản Trị Viên (Admin) thành công! Bạn có quyền xem toàn bộ lịch sử và quản lý học sinh.');
     return;
   }
 
-  // Kiểm tra tài khoản đã lưu trên máy
-  const currentAcc = getStoredAccount();
-  if (currentAcc && currentAcc.username.toLowerCase() === username && currentAcc.pin === pin) {
-    updateHeaderAuthDisplay();
-    updateAdminHeaderUI();
-    closeAuthModal();
-    alert(`Chào mừng bé ${currentAcc.studentName || username} đã quay trở lại! ⭐`);
-    return;
-  }
+  // 2. TÌM TÀI KHOẢN ĐÃ CÓ TRONG LOCALSTORAGE HOẶC TRONG DANH SÁCH USER
+  const allUsers = (typeof getAllUsersAggregated === 'function') ? getAllUsersAggregated() : [];
+  const foundUser = allUsers.find(u => u.username.toLowerCase() === username);
 
-  // Nếu nhập mới hoặc đăng nhập trên máy bạn
+  const localSaved = getStoredAccount();
+  let studentFullName = (localSaved && localSaved.username === username && localSaved.studentName) ? localSaved.studentName : (foundUser ? foundUser.name : username);
+  let studentClass = (foundUser && foundUser.studentClass) ? foundUser.studentClass : 'Lớp 2';
+
   const newAcc = {
     username: username,
     pin: pin,
-    studentName: username,
-    studentClass: 'Lớp 2',
-    totalTests: 0,
-    highestScore: 0,
-    badge: '⭐'
+    studentName: studentFullName,
+    studentClass: studentClass,
+    role: 'student',
+    totalTests: foundUser ? foundUser.totalTests : 0,
+    highestScore: foundUser ? foundUser.highestScore : 0,
+    badge: foundUser ? foundUser.badge : '⭐'
   };
+
   localStorage.setItem(ACCOUNT_STORAGE_KEY, JSON.stringify(newAcc));
   updateHeaderAuthDisplay();
+  updateAdminHeaderUI();
   closeAuthModal();
 
-  alert(`Đã đăng nhập tài khoản [@${username}] thành công!`);
+  alert(`🎉 Chào mừng bé [${newAcc.studentName}] (@${username}) đã đăng nhập thành công!`);
 
+  // Đồng bộ từ Cloud qua GET (trả về đúng profile từ Google Sheets)
   if (scriptUrl) {
-    fetch(scriptUrl, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify({ action: 'login', username: username, pin: pin })
-    }).catch(e => console.log('Login cloud note', e));
+    fetch(`${scriptUrl}?action=login&username=${encodeURIComponent(username)}&pin=${encodeURIComponent(pin)}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.user) {
+          const updated = {
+            ...newAcc,
+            studentName: data.user.studentName || newAcc.studentName,
+            studentClass: data.user.studentClass || newAcc.studentClass,
+            totalTests: data.user.totalTests || newAcc.totalTests,
+            highestScore: data.user.highestScore || newAcc.highestScore,
+            badge: data.user.badge || newAcc.badge
+          };
+          localStorage.setItem(ACCOUNT_STORAGE_KEY, JSON.stringify(updated));
+          updateHeaderAuthDisplay();
+        }
+      })
+      .catch(err => console.log('Login fetch note', err));
+
+    // Đồng bộ ngay lịch sử bài thi của bé từ Sheets
+    fetchHistoryFromCloud();
   }
 }
 
@@ -4845,6 +5034,48 @@ function saveQuizToLocalHistory(record) {
 function openHistoryScreen() {
   renderHistoryTable();
   showScreen('history-screen');
+  if (typeof fetchHistoryFromCloud === 'function') {
+    fetchHistoryFromCloud();
+  }
+}
+
+
+// TỰ ĐỘNG KÉO KẾT QUẢ THI TỪ GOOGLE SHEETS VỀ MÁY
+function fetchHistoryFromCloud() {
+  const scriptUrl = document.getElementById('apps-script-url') ? document.getElementById('apps-script-url').value.trim() : (typeof GOOGLE_SCRIPT_URL !== 'undefined' ? GOOGLE_SCRIPT_URL : '');
+  if (!scriptUrl) return;
+
+  fetch(`${scriptUrl}?action=getResults`)
+    .then(res => res.json())
+    .then(data => {
+      if (data && data.results && data.results.length > 0) {
+        const localList = getLocalHistory();
+        let addedCount = 0;
+        data.results.forEach(cloudItem => {
+          const exists = localList.some(loc => 
+            (loc.quizId && loc.quizId === cloudItem.quizId) || 
+            (loc.timestamp && loc.timestamp === cloudItem.timestamp && loc.studentName === cloudItem.studentName)
+          );
+          if (!exists) {
+            localList.push(cloudItem);
+            addedCount++;
+          }
+        });
+        if (addedCount > 0) {
+          localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(localList));
+          renderHistoryTable();
+        }
+      }
+    })
+    .catch(err => console.log('Fetch cloud results note', err));
+}
+
+function normalizeStringForMatch(str) {
+  if (!str) return '';
+  return str.toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]/g, '');
 }
 
 function renderHistoryTable() {
@@ -4862,11 +5093,11 @@ function renderHistoryTable() {
     if (roleBanner) {
       roleBanner.innerHTML = `
         <div class="admin-badge-banner">
-          <span style="font-size:1.25rem;">👑</span>
+          <span style="font-size:1.35rem;">👑</span>
           <div style="flex:1;">
-            <strong>QUYỀN QUẢN TRỊ VIÊN:</strong> Bạn đang xem TOÀN BỘ lịch sử bài thi và thống kê của tất cả học sinh.
+            <strong>QUYỀN QUẢN TRỊ VIÊN:</strong> Bạn đang xem TOÀN BỘ lịch sử bài thi và thống kê của tất cả học sinh trong hệ thống.
           </div>
-          <button onclick="openUserManagementModal()" class="btn-source-action" style="background:#B91C1C; color:white; border:none; padding:4px 10px; font-weight:800; font-size:0.75rem;">
+          <button onclick="openUserManagementModal()" class="btn-source-action" style="background:#B91C1C; color:white; border:none; padding:5px 12px; font-weight:800; font-size:0.78rem; border-radius:8px;">
             👥 Quản Lý User
           </button>
         </div>
@@ -4888,46 +5119,62 @@ function renderHistoryTable() {
       historyList = allHistory;
     }
   } else if (acc && acc.username) {
-    // 👤 HỌC SINH THƯỜNG: CHỈ XEM BÀI THI CỦA CHÍNH MÌNH
+    // 👤 HỌC SINH ĐĂNG NHẬP: THUẬT TOÁN SO KHỚP THÔNG MINH ĐA CHIỀU
     if (roleBanner) {
       roleBanner.innerHTML = `
         <div class="student-badge-banner">
-          <span style="font-size:1.25rem;">👤</span>
-          <div>
-            <strong>HỒ SƠ BÉ: ${acc.studentName || acc.username} (${acc.studentClass || 'Lớp 2'})</strong> • Bạn chỉ được xem kết quả và thống kê bài thi của chính mình.
+          <span style="font-size:1.35rem;">👤</span>
+          <div style="flex:1;">
+            <strong>HỒ SƠ BÉ: ${acc.studentName || acc.username} (${acc.studentClass || 'Lớp 2'})</strong> • Đang hiển thị kết quả ôn luyện của riêng bạn.
           </div>
+          <button onclick="fetchHistoryFromCloud()" class="btn-source-action" style="background:white; color:#1E40AF; border-color:#BFDBFE; font-size:0.75rem; padding:4px 10px; font-weight:800; border-radius:8px;" title="Tải thêm bài thi từ Google Sheets về máy">
+            🔄 Đồng bộ từ Cloud
+          </button>
         </div>
       `;
     }
     if (studentSelect) studentSelect.style.display = 'none';
 
-    const myUser = (acc.username || '').toLowerCase();
-    const myName = (acc.studentName || '').toLowerCase();
+    const myUserNorm = normalizeStringForMatch(acc.username);
+    const myNameNorm = normalizeStringForMatch(acc.studentName);
+
     historyList = allHistory.filter(r => {
-      const rUser = (r.username || '').toLowerCase();
-      const rName = (r.studentName || '').toLowerCase();
-      return (rUser && rUser === myUser) || (rName && rName === myName) || (myName && rName.includes(myName));
+      const rUserNorm = normalizeStringForMatch(r.username);
+      const rNameNorm = normalizeStringForMatch(r.studentName);
+
+      // 1. Trùng chính xác username hoặc studentName
+      if (rUserNorm && rUserNorm === myUserNorm) return true;
+      if (rNameNorm && rNameNorm === myNameNorm) return true;
+
+      // 2. Trùng chuỗi không dấu (ví dụ "nathoi" khớp "Na thối", "Bé Na" khớp "Na thối")
+      if (myUserNorm && (rNameNorm.includes(myUserNorm) || myUserNorm.includes(rNameNorm))) return true;
+      if (myNameNorm && (rNameNorm.includes(myNameNorm) || myNameNorm.includes(rNameNorm))) return true;
+
+      // 3. Nếu bài thi được làm trên chính thiết bị này của tài khoản
+      if (r.username && r.username === acc.username) return true;
+
+      return false;
     });
+
   } else {
-    // 🔒 CHẾ ĐỘ KHÁCH: BẢO MẬT TUYỆT ĐỐI - KHÔNG CHO PHÉP XEM BÀI THI CỦA CÁC BẠN KHÁC
+    // 🔒 CHẾ ĐỘ KHÁCH: BẢO MẬT TUYỆT ĐỐI
     if (roleBanner) {
       roleBanner.innerHTML = `
         <div class="guest-badge-banner">
           <div>
-            🔒 <strong>CHẾ ĐỘ KHÁCH (GUEST):</strong> Bạn cần đăng nhập để xem kết quả và bảng thống kê bài thi cá nhân.
+            🔒 <strong>CHẾ ĐỘ KHÁCH (GUEST):</strong> Bạn cần đăng nhập để xem lịch sử bài thi và bảng thống kê cá nhân của mình.
           </div>
-          <button onclick="openAuthModal()" class="btn-source-action" style="background:linear-gradient(135deg, #4361EE, #3A0CA3); color:white; border:none; font-weight:800; font-size:0.8rem; padding:6px 14px; border-radius:8px; box-shadow:0 2px 8px rgba(67, 97, 238, 0.3);">
+          <button onclick="openAuthModal()" class="btn-source-action" style="background:linear-gradient(135deg, #0284C7, #0369A1); color:white; border:none; font-weight:800; font-size:0.8rem; padding:6px 14px; border-radius:8px; box-shadow:0 2px 8px rgba(2, 132, 199, 0.3);">
             👤 Đăng Nhập Ngay
           </button>
         </div>
       `;
     }
     if (studentSelect) studentSelect.style.display = 'none';
-    // Khách chỉ được xem bài thi ẩn danh trong phiên này, TUYỆT ĐỐI không xem bài của học sinh khác
     historyList = allHistory.filter(r => !r.username && r.studentName === 'Học sinh');
   }
 
-  // 2. BỘ LỌC TÌM KIẾM, SỐ CÂU, ĐỘ KHÓ, MỨC ĐIỂM
+  // BỘ LỌC TÌM KIẾM, SỐ CÂU, ĐỘ KHÓ, MỨC ĐIỂM
   const searchInput = document.getElementById('history-search');
   const filterSize = document.getElementById('history-filter-size');
   const filterDiff = document.getElementById('history-filter-diff');
@@ -4938,14 +5185,14 @@ function renderHistoryTable() {
   const diffVal = filterDiff ? filterDiff.value : 'all';
   const levelVal = filterLevel ? filterLevel.value : 'all';
 
-  // Cập nhật Dashboard tổng quan (THEO PHÂN QUYỀN ĐÃ LỌC)
+  // Cập nhật Dashboard tổng quan
   const totalTests = historyList.length;
   document.getElementById('hist-total-tests').textContent = totalTests;
 
   if (totalTests > 0) {
-    const sumScore = historyList.reduce((acc, r) => acc + (r.score10 || 0), 0);
+    const sumScore = historyList.reduce((accItem, r) => accItem + (r.score10 || 0), 0);
     const avgScore = (sumScore / totalTests).toFixed(1);
-    const sumPct = historyList.reduce((acc, r) => acc + (r.pct || 0), 0);
+    const sumPct = historyList.reduce((accItem, r) => accItem + (r.pct || 0), 0);
     const avgPct = Math.round(sumPct / totalTests);
     const maxScore = Math.max(...historyList.map(r => r.score10 || 0)).toFixed(1);
 
@@ -4997,14 +5244,34 @@ function renderHistoryTable() {
         <div style="font-size:0.88rem; max-width:480px; margin:0 auto 16px auto; color:#64748B; line-height:1.45;">
           Để bảo vệ quyền riêng tư, học sinh chỉ xem được bài thi của chính mình, và Quản trị viên (Admin) mới có quyền xem toàn bộ danh sách.
         </div>
-        <button onclick="openAuthModal()" class="btn-source-action" style="background:linear-gradient(135deg, #4361EE, #3A0CA3); color:white; border:none; padding:10px 22px; font-weight:800; border-radius:10px; font-size:0.88rem; cursor:pointer; box-shadow:0 2px 8px rgba(67, 97, 238, 0.3);">
+        <button onclick="openAuthModal()" class="btn-source-action" style="background:linear-gradient(135deg, #0284C7, #0369A1); color:white; border:none; padding:10px 22px; font-weight:800; border-radius:9999px; font-size:0.88rem; cursor:pointer; box-shadow:0 2px 8px rgba(2, 132, 199, 0.3);">
           👤 Đăng Nhập Tài Khoản Ngay
         </button>
       </td></tr>`;
       return;
     }
+
+    if (acc && acc.username && !isAdm) {
+      tbody.innerHTML = `<tr><td colspan="11" style="text-align:center; padding:32px 20px; color:#64748B;">
+        <div style="font-size:2rem; margin-bottom:6px;">📝</div>
+        <div style="font-weight:800; color:var(--dark); font-size:1rem; margin-bottom:6px;">Chưa Tìm Thấy Bài Thi Khớp Với Tên [${acc.studentName || acc.username}]</div>
+        <div style="font-size:0.85rem; max-width:480px; margin:0 auto 14px auto; color:#64748B;">
+          Nếu bạn đã làm bài thi trước khi tạo tài khoản (ví dụ tên "Na thối" hoặc "Bố Na"), hãy bấm nút bên dưới để đồng bộ từ Google Sheets hoặc cập nhật lại tên hiển thị nhé!
+        </div>
+        <div style="display:flex; justify-content:center; gap:8px; flex-wrap:wrap;">
+          <button onclick="fetchHistoryFromCloud()" class="btn-source-action" style="background:#0284C7; color:white; border:none; padding:8px 16px; border-radius:9999px; font-weight:800;">
+            🔄 Tải Lại Từ Google Sheets
+          </button>
+          <button onclick="promptLinkPastTests()" class="btn-source-action" style="background:#F0FDF4; color:#15803D; border-color:#86EFAC; padding:8px 16px; border-radius:9999px; font-weight:800;">
+            ✏️ Liên Kết Tên Bài Thi Cũ
+          </button>
+        </div>
+      </td></tr>`;
+      return;
+    }
+
     tbody.innerHTML = `<tr><td colspan="11" style="text-align:center; padding:24px; color:#64748B;">
-      ${totalTests === 0 ? 'Chưa có bài thi nào thuộc tài khoản này. Hãy bắt đầu một bài thi nhé!' : 'Không tìm thấy kết quả nào khớp với bộ lọc tìm kiếm.'}
+      Không tìm thấy kết quả nào khớp với bộ lọc tìm kiếm.
     </td></tr>`;
     return;
   }
@@ -5038,13 +5305,27 @@ function renderHistoryTable() {
       <td style="text-align:center;"><span class="score-badge ${badgeClass}">${r.score10}/10 (${r.pct}%)</span></td>
       <td style="text-align:center; font-weight:600; color:#64748B; white-space:nowrap;">⏱️ ${r.duration || '00:00'}</td>
       <td style="text-align:center;">
-        <button class="btn-source-action" onclick="viewHistoryDetail('${r.id}')" style="background:#EEF2FF; color:var(--primary); border-color:#C7D2FE; font-size:0.78rem; padding:4px 10px; font-weight:800; white-space:nowrap;">
+        <button class="btn-source-action" onclick="viewHistoryDetail('${r.id}')" style="background:#E0F2FE; color:#0284C7; border-color:#BAE6FD; font-size:0.78rem; padding:4px 10px; font-weight:800; white-space:nowrap; border-radius:9999px;">
           🔍 Xem lại
         </button>
       </td>
     `;
     tbody.appendChild(tr);
   });
+}
+
+function promptLinkPastTests() {
+  const acc = getStoredAccount();
+  if (!acc) return;
+  const currentName = acc.studentName || acc.username;
+  const newName = prompt(`Nhập Tên hoặc Biệt danh bạn đã dùng khi làm bài thi trước đây (hiện tại là "${currentName}"):`, currentName);
+  if (newName && newName.trim()) {
+    acc.studentName = newName.trim();
+    localStorage.setItem(ACCOUNT_STORAGE_KEY, JSON.stringify(acc));
+    updateHeaderAuthDisplay();
+    renderHistoryTable();
+    alert(`✅ Đã cập nhật tên bé thành "${newName.trim()}"! Hệ thống đang tải lại danh sách bài thi của bé.`);
+  }
 }
 
 function viewHistoryDetail(recordId) {
