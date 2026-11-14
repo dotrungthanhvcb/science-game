@@ -1798,7 +1798,9 @@
         <table class="history-table">
           <thead>
             <tr>
-              <th>Thời Gian</th>
+              <th style="white-space:nowrap;">Mã ID</th>
+              <th style="white-space:nowrap;">Ngày Thi</th>
+              <th style="white-space:nowrap;">Giờ Thi</th>
               <th>Học Sinh</th>
               <th>Lớp</th>
               <th>Ngôn Ngữ</th>
@@ -1806,7 +1808,7 @@
               <th style="text-align:center;">Đúng / Tổng</th>
               <th style="text-align:center;">Điểm Số</th>
               <th style="text-align:center;">Thời Gian</th>
-              <th style="text-align:center;">Xem Lại Bài</th>
+              <th style="text-align:center;">Xem Lại</th>
             </tr>
           </thead>
           <tbody id="history-table-body">
@@ -2507,6 +2509,13 @@ let isPaused = false;
 let userAnswersMap = {}; // Lưu { [qId]: { chosenKey, chosenText } }
 let isQuizSubmitted = false; // Đã nộp bài hay chưa (khóa bài làm khi true)
 
+// SESSION TRACKING VARIABLES (LƯU CHÍNH XÁC ID, NGÀY, GIỜ, NGÔN NGỮ KHI BẮT ĐẦU BÀI THI)
+let currentSessionQuizId = '';
+let currentSessionDate = '';
+let currentSessionTime = '';
+let currentSessionLanguageMode = 'vi';
+let currentSessionLangLabel = 'Tiếng Việt';
+
 // REVIEW STATE
 let reviewFilter = 'all';
 let reviewMode = 'list';
@@ -2973,6 +2982,20 @@ function updatePoolCountDisplay() {
 // =========================================================================
 function startQuiz() {
   saveSettings();
+
+  // Khóa thông tin bài thi tại thời điểm bắt đầu
+  const now = new Date();
+  currentSessionDate = now.toLocaleDateString('vi-VN');
+  currentSessionTime = now.toLocaleTimeString('vi-VN');
+  currentSessionQuizId = 'QUIZ-' + currentSessionTime.replace(/[:]/g, '');
+
+  const langSelect = document.getElementById('language-mode-select');
+  if (langSelect) {
+    currentLanguageMode = langSelect.value;
+  }
+  currentSessionLanguageMode = currentLanguageMode;
+  currentSessionLangLabel = currentLanguageMode === 'bilingual' ? 'Song ngữ Anh - Việt' : (currentLanguageMode === 'en' ? 'Tiếng Anh' : 'Tiếng Việt');
+
   let pool = getFilteredPool();
   const sizeVal = document.getElementById('quiz-size').value;
   const targetCount = sizeVal === 'all' ? pool.length : parseInt(sizeVal);
@@ -3450,14 +3473,16 @@ function submitAndFinishQuiz() {
   if (resDescElem) resDescElem.textContent = desc;
 
   // LƯU LỊCH SỬ BÀI THI VÀO BỘ NHỚ MÁY (KÈM CHI TIẾT CÂU HỎI VÀ ĐÁP ÁN)
-  const currentRecordId = 'REC_' + Date.now();
-  const currentLangLabel = currentLanguageMode === 'bilingual' ? 'Song ngữ Anh - Việt' : (currentLanguageMode === 'en' ? 'Tiếng Anh' : 'Tiếng Việt');
+  const currentRecordId = currentSessionQuizId || ('QUIZ-' + Date.now());
   saveQuizToLocalHistory({
     id: currentRecordId,
+    quizId: currentSessionQuizId,
+    quizDate: currentSessionDate,
+    quizTime: currentSessionTime,
     syncedToSheets: false,
-    timestamp: new Date().toLocaleString('vi-VN'),
+    timestamp: `${currentSessionTime} ${currentSessionDate}`,
     studentName: document.getElementById('user-name').value.trim() || 'Học sinh',
-    language: currentLangLabel,
+    language: currentSessionLangLabel,
     studentClass: (function() {
       const elem = document.getElementById('student-class');
       if (!elem) return 'Lớp 2';
@@ -3585,11 +3610,18 @@ function sendDataToAppsScript(total, correct, wrong, scoreStr, durationStr, reco
   statusElem.innerHTML = '⏳ <span style="color:var(--primary); font-weight:700;">Đang tự động lưu kết quả vào Google Sheets...</span>';
 
   const storedAcc = typeof getStoredAccount === 'function' ? getStoredAccount() : null;
-  const currentLangLabel = currentLanguageMode === 'bilingual' ? 'Song ngữ Anh - Việt' : (currentLanguageMode === 'en' ? 'Tiếng Anh' : 'Tiếng Việt');
+  const qDate = currentSessionDate || new Date().toLocaleDateString('vi-VN');
+  const qTime = currentSessionTime || new Date().toLocaleTimeString('vi-VN');
+  const qId = currentSessionQuizId || ('QUIZ-' + qTime.replace(/[:]/g, ''));
+  const qLang = currentSessionLangLabel || (currentLanguageMode === 'bilingual' ? 'Song ngữ Anh - Việt' : (currentLanguageMode === 'en' ? 'Tiếng Anh' : 'Tiếng Việt'));
+
   const payload = {
     action: 'submitScore',
+    quizId: qId,
+    quizDate: qDate,
+    quizTime: qTime,
     username: storedAcc ? storedAcc.username : '',
-    timestamp: new Date().toLocaleString('vi-VN'),
+    timestamp: `${qTime} ${qDate}`,
     studentName: document.getElementById('user-name') ? document.getElementById('user-name').value.trim() : 'Học sinh',
     studentClass: (function() {
       const elem = document.getElementById('student-class');
@@ -3598,7 +3630,7 @@ function sendDataToAppsScript(total, correct, wrong, scoreStr, durationStr, reco
       if (val === 'all') return 'Lớp 1 - 5 (Hỗn hợp)';
       return 'Lớp ' + val;
     })(),
-    language: currentLangLabel,
+    language: qLang,
     sources: Array.from(selectedSources).join(', '),
     totalQuestions: total,
     correctCount: correct,
@@ -3686,8 +3718,16 @@ function syncAllHistoryToSheets() {
   const storedAcc = typeof getStoredAccount === 'function' ? getStoredAccount() : null;
 
   unsyncedList.forEach((r, idx) => {
+    const parts = (r.timestamp || "").split(" ");
+    const qTime = r.quizTime || (parts.length >= 2 ? parts[0] : new Date().toLocaleTimeString("vi-VN"));
+    const qDate = r.quizDate || (parts.length >= 2 ? parts[1] : new Date().toLocaleDateString("vi-VN"));
+    const qId = r.quizId || r.id || ("QUIZ-" + qTime.replace(/[:]/g, ""));
+
     const payload = {
       action: 'submitScore',
+      quizId: qId,
+      quizDate: qDate,
+      quizTime: qTime,
       username: storedAcc ? storedAcc.username : '',
       timestamp: r.timestamp,
       studentName: r.studentName,
@@ -4243,7 +4283,36 @@ const HISTORY_STORAGE_KEY = 'science_quiz_history_records';
 function getLocalHistory() {
   try {
     const raw = localStorage.getItem(HISTORY_STORAGE_KEY);
-    return raw ? JSON.parse(raw) : [];
+    let list = raw ? JSON.parse(raw) : [];
+    let changed = false;
+    list.forEach(r => {
+      // Tự động phân tách Ngày, Giờ và Mã ID nếu chưa có
+      if (r.timestamp && (!r.quizDate || !r.quizTime || !r.quizId)) {
+        const parts = String(r.timestamp).split(' ');
+        if (parts.length >= 2) {
+          if (!r.quizTime) r.quizTime = parts[0];
+          if (!r.quizDate) r.quizDate = parts[1];
+        }
+        if (!r.quizId) {
+          const t = r.quizTime || (parts.length >= 2 ? parts[0] : '');
+          r.quizId = 'QUIZ-' + t.replace(/[:]/g, '');
+        }
+        changed = true;
+      }
+      // Khắc phục các bản ghi lịch sử đặc biệt theo yêu cầu người dùng
+      if (r.timestamp && r.timestamp.includes('10:50:06') && r.language !== 'Tiếng Anh') {
+        r.language = 'Tiếng Anh';
+        changed = true;
+      }
+      if (r.timestamp && r.timestamp.includes('11:00:20') && r.language !== 'Song ngữ Anh - Việt') {
+        r.language = 'Song ngữ Anh - Việt';
+        changed = true;
+      }
+    });
+    if (changed) {
+      localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(list));
+    }
+    return list;
   } catch(e) {
     return [];
   }
@@ -4335,7 +4404,7 @@ function renderHistoryTable() {
   tbody.innerHTML = '';
 
   if (filtered.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding:24px; color:#64748B;">
+    tbody.innerHTML = `<tr><td colspan="11" style="text-align:center; padding:24px; color:#64748B;">
       ${totalTests === 0 ? 'Chưa có lượt thi nào được ghi lại. Hãy bắt đầu một bài thi đầu tiên nhé!' : 'Không tìm thấy kết quả nào khớp với bộ lọc tìm kiếm.'}
     </td></tr>`;
     return;
@@ -4350,21 +4419,28 @@ function renderHistoryTable() {
 
     const diffDisplay = r.diffText || (r.diffVal === '1' ? 'Mức 1: Dễ' : (r.diffVal === '2' ? 'Mức 2: Vừa' : (r.diffVal === '3' ? 'Mức 3: Khó' : 'Hỗn hợp')));
 
+    const parts = (r.timestamp || "").split(" ");
+    const rowTime = r.quizTime || (parts.length >= 2 ? parts[0] : "");
+    const rowDate = r.quizDate || (parts.length >= 2 ? parts[1] : r.timestamp || "");
+    const rowId = r.quizId || r.id || (rowTime ? "QUIZ-" + rowTime.replace(/[:]/g, "") : "QUIZ");
+
     tr.innerHTML = `
-      <td style="font-weight:600; color:#475569;">${r.timestamp}</td>
+      <td><span style="font-family:monospace; font-weight:700; color:var(--primary); font-size:0.75rem; background:#EEF2FF; padding:2px 6px; border-radius:4px;">${rowId}</span></td>
+      <td style="font-weight:600; color:#334155; white-space:nowrap;">${rowDate}</td>
+      <td style="font-weight:600; color:#64748B; white-space:nowrap;">${rowTime}</td>
       <td style="font-weight:700; color:var(--dark);">${r.studentName || 'Bé'}</td>
       <td><span style="background:#F1F5F9; padding:2px 8px; border-radius:6px; font-weight:700; font-size:0.8rem;">${r.studentClass || 'Lớp 2'}</span></td>
-      <td><span style="background:#F0FDF4; color:#15803D; border:1px solid #BBF7D0; padding:2px 8px; border-radius:6px; font-weight:700; font-size:0.75rem;">${r.language || 'Tiếng Việt'}</span></td>
+      <td><span style="background:${r.language === 'Tiếng Anh' ? '#F0F9FF' : (r.language === 'Song ngữ Anh - Việt' ? '#FAF5FF' : '#F0FDF4')}; color:${r.language === 'Tiếng Anh' ? '#0369A1' : (r.language === 'Song ngữ Anh - Việt' ? '#7E22CE' : '#15803D')}; border:1px solid ${r.language === 'Tiếng Anh' ? '#BAE6FD' : (r.language === 'Song ngữ Anh - Việt' ? '#E9D5FF' : '#BBF7D0')}; padding:2px 8px; border-radius:6px; font-weight:700; font-size:0.75rem;">${r.language || 'Tiếng Việt'}</span></td>
       <td>
         <span style="font-weight:700; color:var(--primary); font-size:0.82rem;">${r.totalQuestions} câu</span>
         <span style="color:#64748B; font-size:0.75rem; display:block;">${diffDisplay}</span>
       </td>
       <td style="text-align:center; font-weight:700;"><span style="color:#15803D;">${r.correctCount}</span> / ${r.totalQuestions}</td>
       <td style="text-align:center;"><span class="score-badge ${badgeClass}">${r.score10}/10 (${r.pct}%)</span></td>
-      <td style="text-align:center; font-weight:600; color:#64748B;">⏱️ ${r.duration || '00:00'}</td>
+      <td style="text-align:center; font-weight:600; color:#64748B; white-space:nowrap;">⏱️ ${r.duration || '00:00'}</td>
       <td style="text-align:center;">
-        <button class="btn-source-action" onclick="viewHistoryDetail('${r.id}')" style="background:#EEF2FF; color:var(--primary); border-color:#C7D2FE; font-size:0.78rem; padding:4px 10px; font-weight:800;">
-          🔍 Xem bài làm
+        <button class="btn-source-action" onclick="viewHistoryDetail('${r.id}')" style="background:#EEF2FF; color:var(--primary); border-color:#C7D2FE; font-size:0.78rem; padding:4px 10px; font-weight:800; white-space:nowrap;">
+          🔍 Xem lại
         </button>
       </td>
     `;
