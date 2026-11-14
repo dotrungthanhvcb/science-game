@@ -1459,6 +1459,237 @@
     margin-top: 2px;
   }
 
+
+  /* =======================================================================
+     GIAO DIỆN HOME SCREEN HIỆN ĐẠI & GỌN GÀNG (2 CỘT + MASCOT HERO CARD)
+     ======================================================================= */
+  .home-hero-card {
+    background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+    border: 1.5px solid #C7D2FE;
+    border-radius: 18px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 14px rgba(67, 97, 238, 0.08);
+    flex-wrap: wrap;
+  }
+  .home-mascot-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    background: white;
+    padding: 10px 16px;
+    border-radius: 14px;
+    border: 1.5px solid #C7D2FE;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
+    flex: 1;
+    min-width: 280px;
+  }
+  .home-mascot-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+    box-shadow: 0 6px 16px rgba(67, 97, 238, 0.15);
+  }
+  .home-mascot-avatar {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    animation: floatMascot 2.5s ease-in-out infinite;
+  }
+  .home-mascot-info {
+    flex: 1;
+  }
+  .home-mascot-name {
+    font-size: 1.05rem;
+    font-weight: 900;
+    color: var(--primary);
+  }
+  .btn-change-mascot {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #4361EE;
+    background: #EEF2FF;
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 1px solid #C7D2FE;
+  }
+  .home-mascot-title {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #64748B;
+  }
+  .home-mascot-speech {
+    font-size: 0.8rem;
+    color: #334155;
+    font-weight: 600;
+    margin-top: 3px;
+    line-height: 1.35;
+  }
+
+  .home-profile-quick {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .home-quick-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .home-quick-field label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #475569;
+    text-transform: uppercase;
+  }
+  .home-quick-field input, .home-quick-field select {
+    padding: 7px 10px;
+    border-radius: 10px;
+    border: 1.5px solid #CBD5E1;
+    font-size: 0.85rem;
+    font-weight: 700;
+    outline: none;
+    background: white;
+  }
+  .home-quick-field input:focus, .home-quick-field select:focus {
+    border-color: var(--primary);
+  }
+
+  /* 2-COLUMN MAIN GRID */
+  .home-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  @media (max-width: 820px) {
+    .home-main-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .home-card {
+    background: white;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .home-card-header {
+    background: #F8FAFC;
+    padding: 10px 14px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--dark);
+    border-bottom: 1.5px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .home-form-body {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .config-row-compact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .config-row-compact label {
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: #334155;
+    flex: 1;
+  }
+  .config-row-compact select {
+    flex: 1.2;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1.5px solid #CBD5E1;
+    font-size: 0.82rem;
+    font-weight: 600;
+    outline: none;
+    background: white;
+  }
+  .home-pills-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .home-pill {
+    flex: 1;
+    min-width: 70px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1.5px solid #E2E8F0;
+    background: #F8FAFC;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+  }
+  .home-pill:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .home-pill.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    box-shadow: 0 2px 6px rgba(67, 97, 238, 0.3);
+  }
+
+  .topics-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+    gap: 6px;
+  }
+  .topics-grid-compact .topic-pill {
+    padding: 6px 8px;
+    font-size: 0.76rem;
+    border-radius: 8px;
+  }
+
+  /* ACCORDION SHEETS */
+  .home-sheets-accordion {
+    border: 1.5px dashed #CBD5E1;
+    border-radius: 10px;
+    padding: 8px 12px;
+    background: #FAFAFA;
+    margin-top: 4px;
+  }
+  .home-sheets-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #475569;
+  }
+  .home-action-bar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    background: white;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  }
+
 </style>
 </head>
 <body>
@@ -1682,145 +1913,159 @@
        1. HOME SCREEN (MÀN HÌNH CHỌN BÀI THI)
        ===================================================================== -->
   <div class="quiz-card screen" id="home-screen">
-    <!-- ĐỘ TUỔI -->
-    <div class="section-title">👶 1. Chọn Độ Tuổi</div>
-    <div class="chip-grid">
-      <div class="filter-chip selected" onclick="selectAge('all', this)">
-        <div class="chip-title">🌟 Tất cả</div>
-        <div class="chip-desc">Toàn bộ ngân hàng</div>
-      </div>
-      <div class="filter-chip" onclick="selectAge('6-7', this)">
-        <div class="chip-title">🌱 6 - 7 tuổi</div>
-        <div class="chip-desc">Cơ bản, trực quan</div>
-      </div>
-      <div class="filter-chip" onclick="selectAge('7-8', this)">
-        <div class="chip-title">🌿 7 - 8 tuổi</div>
-        <div class="chip-desc">Tư duy, mở rộng</div>
-      </div>
-      <div class="filter-chip" onclick="selectAge('8-9', this)">
-        <div class="chip-title">🚀 8 - 9 tuổi</div>
-        <div class="chip-desc">Ôn thi học bổng</div>
-      </div>
-    </div>
-
-    <!-- ĐỘ KHÓ RIÊNG BIỆT -->
-    <div class="section-title">🎚️ 2. Chọn Độ Khó Câu Hỏi</div>
-    <div class="chip-grid">
-      <div class="filter-chip selected" onclick="selectDiff('all', this)">
-        <div class="chip-title">🌟 Hỗn hợp</div>
-        <div class="chip-desc">Tất cả các mức</div>
-      </div>
-      <div class="filter-chip" onclick="selectDiff('1', this)">
-        <div class="chip-title">⭐ Mức 1: Dễ</div>
-        <div class="chip-desc">Nhận biết thực tế</div>
-      </div>
-      <div class="filter-chip" onclick="selectDiff('2', this)">
-        <div class="chip-title">⭐⭐ Mức 2: Vừa</div>
-        <div class="chip-desc">Hiểu hiện tượng</div>
-      </div>
-      <div class="filter-chip" onclick="selectDiff('3', this)">
-        <div class="chip-title">⭐⭐⭐ Mức 3: Khó</div>
-        <div class="chip-desc">Đề thi học bổng</div>
-      </div>
-    </div>
-
-    <!-- CHỦ ĐỀ -->
-    <div class="section-title">📚 3. Chọn Chủ Đề Ôn Luyện</div>
-    <div class="topics-grid" id="topics-list"></div>
-
-    <!-- CẤU HÌNH & TỈ LỆ ÔN TẬP -->
-    <div class="section-title">⚙️ 4. Tùy Chọn Luyện Tập & Số Câu</div>
-    <div class="config-box">
-      <div class="config-row">
-        <label>🔢 Số lượng câu mỗi lượt thi:</label>
-        <select id="quiz-size" onchange="updatePoolCountDisplay()">
-          <option value="5">5 câu (Khởi động nhanh)</option>
-          <option value="10">10 câu (Nhanh 5-7 phút)</option>
-          <option value="15" selected>15 câu (Chuẩn thi)</option>
-          <option value="20">20 câu (Thử thách)</option>
-          <option value="25">25 câu (Thi nâng cao)</option>
-          <option value="30">30 câu (Mô phỏng bài thi học bổng)</option>
-          <option value="50">50 câu (Đại hội tri thức)</option>
-          <option value="all">Toàn bộ câu có trong bộ lọc</option>
-        </select>
-      </div>
-
-      <div class="config-row">
-        <label>🧠 Chế độ lặp lại ghi nhớ:</label>
-        <select id="review-ratio" onchange="updatePoolCountDisplay()">
-          <option value="random" selected>🎲 Ngẫu nhiên chuẩn</option>
-          <option value="mistakes">🔄 Ưu tiên câu bé từng làm sai (50% sai + 50% mới)</option>
-          <option value="unseen">🆕 Chỉ câu chưa từng làm (100% câu mới)</option>
-          <option value="reviewed">🔁 Củng cố trí nhớ (100% câu đã từng làm)</option>
-        </select>
-      </div>
-
-      <div class="config-row">
-        <label>👤 Tên bé ôn tập:</label>
-        <input type="text" id="user-name" placeholder="Bé Minh" value="Bé Yêu">
-      </div>
-
-      <div class="config-row">
-        <label>🏫 Chọn Lớp học để ôn tập sát trình độ:</label>
-        <select id="student-class" onchange="onClassGradeChange()">
-          <option value="all">🌟 Tất cả các lớp (Lớp 1 - 5 tổng hợp)</option>
-          <option value="1">🎒 Lớp 1 (Kiến thức nhận biết cơ bản - 6 tuổi)</option>
-          <option value="2" selected>🌱 Lớp 2 (Quan sát & Khám phá - 7 tuổi)</option>
-          <option value="3">🌿 Lớp 3 (Khoa học thường thức - 8 tuổi)</option>
-          <option value="4">🔬 Lớp 4 (Vật chất & Năng lượng - 9 tuổi)</option>
-          <option value="5">🚀 Lớp 5 (Hệ thống Khoa học chuẩn - 10 tuổi)</option>
-          <option value="6">🏆 Lớp 6 (Nâng cao & Ôn thi học bổng)</option>
-        </select>
-      </div>
-
-      <div class="config-row">
-        <label>📚 Nguồn đề thi mục tiêu:</label>
-        <select id="target-source-select" onchange="onTargetSourceDropdownChange()">
-          <option value="all" selected>🌟 Tất cả các nguồn (Kết hợp đa dạng 500 câu)</option>
-          <option value="Trạng Nguyên & Violympic">🏆 Trạng Nguyên & Violympic (Phản xạ tư duy nhanh)</option>
-          <option value="SGK Việt Nam (GDPT 2018)">📗 SGK Việt Nam (GDPT 2018) (Chuẩn bộ mới Kết nối/Chân trời)</option>
-          <option value="Kangaroo Khoa học (IKSC)">🦘 Kangaroo Khoa học (IKSC) (Tư duy logic thực tế)</option>
-          <option value="IXL & Khan Academy">🌐 IXL & Khan Academy (Khoa học chuẩn quốc tế)</option>
-          <option value="National Geographic Kids">🦁 National Geographic Kids (Thế giới kỳ thú & Vũ trụ)</option>
-          <option value="Khác">🧩 Khác (Kho câu hỏi mở rộng)</option>
-        </select>
-      </div>
-
-      <div class="config-row">
-        <label>🌐 Chế độ ngôn ngữ đề thi:</label>
-        <select id="language-mode-select" onchange="onLanguageModeChange()">
-          <option value="vi" selected>🇻🇳 Tiếng Việt (Chuẩn)</option>
-          <option value="bilingual">🌐 Song ngữ Anh - Việt (Bilingual: English + Tiếng Việt)</option>
-          <option value="en">🇬🇧 Tiếng Anh (English Only)</option>
-        </select>
-      </div>
-
-      <div class="config-row">
-        <label>🌐 Google Apps Script URL (Lưu Sheets):</label>
-        <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:6px;">
-          <input type="text" id="apps-script-url" placeholder="https://script.google.com/macros/s/.../exec" style="flex:1; min-width:220px;" oninput="localStorage.setItem('science_quiz_script_url', this.value.trim())">
-          <button type="button" onclick="saveScriptUrlAndSyncFromHome()" style="background:linear-gradient(135deg, #4361EE, #3A0CA3); color:white; border:none; padding:10px 14px; border-radius:10px; font-weight:800; cursor:pointer; font-size:0.85rem; display:inline-flex; align-items:center; gap:6px; white-space:nowrap; box-shadow:0 2px 8px rgba(67, 97, 238, 0.3);">
-            💾 Lưu & Đồng bộ ngay
-          </button>
+    <!-- KHỐI 1: BẠN ĐỒNG HÀNH KHOA HỌC & HỒ SƠ NHANH CỦA BÉ -->
+    <div class="home-hero-card">
+      <div class="home-mascot-card" onclick="openMascotPickerModal()" title="Bấm để chọn Bạn đồng hành khoa học yêu thích!">
+        <div class="home-mascot-avatar" id="home-mascot-svg-wrap"></div>
+        <div class="home-mascot-info">
+          <div style="display:flex; align-items:center; gap:6px;">
+            <span class="home-mascot-name" id="home-mascot-name">Giáo Sư Cú Vọ</span>
+            <span class="btn-change-mascot">Đổi bạn ▾</span>
+          </div>
+          <div class="home-mascot-title" id="home-mascot-title">Bác Học Thông Thái</div>
+          <div class="home-mascot-speech" id="home-mascot-speech">"Chào bạn! Cùng tớ chinh phục đỉnh cao khoa học hôm nay nhé! 🚀"</div>
         </div>
-        <div style="font-size:0.8rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px;">
-          <a href="https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit" target="_blank" onclick="openGoogleSheetsDirectly(event)" style="color:var(--primary); font-weight:700; text-decoration:none;">
-            📄 Mở file Google Sheets trực tiếp ↗
-          </a>
-          <a href="javascript:void(0)" onclick="promptForScriptUrl()" style="color:#4F46E5; font-weight:700; text-decoration:underline;">
-            ❓ Xem hướng dẫn 3 bước lấy URL
-          </a>
+      </div>
+
+      <div class="home-profile-quick">
+        <div class="home-quick-field">
+          <label>👤 Tên bé:</label>
+          <input type="text" id="user-name" placeholder="Bé Yêu" value="Bé Yêu" style="width:120px;">
+        </div>
+        <div class="home-quick-field">
+          <label>🏫 Khối lớp:</label>
+          <select id="student-class" onchange="onClassGradeChange()">
+            <option value="all">🌟 Tất cả (Lớp 1-5)</option>
+            <option value="1">🎒 Lớp 1 (6t)</option>
+            <option value="2" selected>🌱 Lớp 2 (7t)</option>
+            <option value="3">🌿 Lớp 3 (8t)</option>
+            <option value="4">🔬 Lớp 4 (9t)</option>
+            <option value="5">🚀 Lớp 5 (10t)</option>
+            <option value="6">🏆 Lớp 6 (Nâng cao)</option>
+          </select>
+        </div>
+        <div class="home-quick-field">
+          <label>🌐 Ngôn ngữ:</label>
+          <select id="language-mode-select" onchange="onLanguageModeChange()">
+            <option value="vi" selected>🇻🇳 Tiếng Việt</option>
+            <option value="bilingual">🌐 Song ngữ Anh-Việt</option>
+            <option value="en">🇬🇧 Tiếng Anh</option>
+          </select>
         </div>
       </div>
     </div>
 
-    <!-- THÔNG BÁO SỐ CÂU KHẢ DỤNG (FIX BUG CHỌN 15 RA 5) -->
-    <div class="pool-status-banner" id="pool-count-banner">
-      <span>💡</span>
-      <span id="pool-count-text">Đang có 100 câu hỏi sẵn sàng cho lượt thi này.</span>
+    <!-- KHỐI 2: 2 CỘT GỌN GÀNG -->
+    <div class="home-main-grid">
+      <!-- CỘT 1: CẤU HÌNH ĐỀ THI -->
+      <div class="home-card">
+        <div class="home-card-header">
+          <span>⚙️</span>
+          <span>1. Quy Cách Đề Thi</span>
+        </div>
+        <div class="home-form-body">
+          <div class="config-row-compact">
+            <label>🔢 Số lượng câu:</label>
+            <select id="quiz-size" onchange="updatePoolCountDisplay()">
+              <option value="5">5 câu (Khởi động)</option>
+              <option value="10">10 câu (Nhanh)</option>
+              <option value="15" selected>15 câu (Chuẩn thi)</option>
+              <option value="20">20 câu (Thử thách)</option>
+              <option value="25">25 câu (Nâng cao)</option>
+              <option value="30">30 câu (Mô phỏng thi)</option>
+              <option value="50">50 câu (Đại hội tri thức)</option>
+              <option value="all">Toàn bộ câu có</option>
+            </select>
+          </div>
+
+          <div class="config-row-compact">
+            <label>📚 Nguồn đề thi:</label>
+            <select id="target-source-select" onchange="onTargetSourceDropdownChange()">
+              <option value="all" selected>🌟 Tất cả nguồn (Đa dạng 500 câu)</option>
+              <option value="Trạng Nguyên & Violympic">🏆 Trạng Nguyên & Violympic</option>
+              <option value="SGK Việt Nam (GDPT 2018)">📗 SGK Việt Nam (GDPT 2018)</option>
+              <option value="Kangaroo Khoa học (IKSC)">🦘 Kangaroo Khoa học (IKSC)</option>
+              <option value="IXL & Khan Academy">🌐 IXL & Khan Academy</option>
+              <option value="National Geographic Kids">🦁 National Geographic Kids</option>
+              <option value="Khác">🧩 Khác (Mở rộng)</option>
+            </select>
+          </div>
+
+          <div class="config-row-compact">
+            <label>🧠 Chế độ lặp lại:</label>
+            <select id="review-ratio" onchange="updatePoolCountDisplay()">
+              <option value="random" selected>🎲 Ngẫu nhiên chuẩn</option>
+              <option value="mistakes">🔄 Ưu tiên câu từng làm sai</option>
+              <option value="unseen">🆕 Chỉ câu chưa từng làm</option>
+              <option value="reviewed">🔁 Củng cố trí nhớ</option>
+            </select>
+          </div>
+
+          <div style="margin-top: 6px;">
+            <label style="font-size:0.82rem; font-weight:800; color:var(--dark); display:block; margin-bottom:6px;">🎚️ Độ khó câu hỏi:</label>
+            <div class="home-pills-row">
+              <button type="button" class="home-pill active" onclick="selectDiff('all', this)">🌟 Hỗn hợp</button>
+              <button type="button" class="home-pill" onclick="selectDiff('1', this)">⭐ Dễ</button>
+              <button type="button" class="home-pill" onclick="selectDiff('2', this)">⭐⭐ Vừa</button>
+              <button type="button" class="home-pill" onclick="selectDiff('3', this)">⭐⭐⭐ Khó</button>
+            </div>
+          </div>
+
+          <!-- KẾT NỐI SHEETS THU GỌN -->
+          <div class="home-sheets-accordion">
+            <div class="home-sheets-toggle" onclick="toggleSheetsAccordion()">
+              <span>🔗 Kết nối Google Sheets</span>
+              <span id="sheets-toggle-icon">▾</span>
+            </div>
+            <div id="home-sheets-content" style="display:none; margin-top:8px;">
+              <div style="display:flex; gap:6px; align-items:center;">
+                <input type="text" id="apps-script-url" placeholder="URL Google Apps Script..." style="flex:1; font-size:0.8rem; padding:6px 10px; border-radius:6px; border:1px solid #CBD5E1;" oninput="localStorage.setItem('science_quiz_script_url', this.value.trim())">
+                <button type="button" onclick="saveScriptUrlAndSyncFromHome()" style="background:var(--primary); color:white; border:none; padding:7px 12px; border-radius:6px; font-weight:700; cursor:pointer; font-size:0.75rem; white-space:nowrap;">
+                  💾 Lưu & Đồng Bộ
+                </button>
+              </div>
+              <div style="display:flex; justify-content:space-between; margin-top:6px; font-size:0.75rem;">
+                <a href="https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit" target="_blank" onclick="openGoogleSheetsDirectly(event)" style="color:var(--primary); font-weight:700; text-decoration:none;">📄 Mở Google Sheets ↗</a>
+                <a href="javascript:void(0)" onclick="promptForScriptUrl()" style="color:#6366F1; text-decoration:underline;">❓ Hướng dẫn kết nối</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CỘT 2: CHỦ ĐỀ & ĐỘ TUỔI -->
+      <div class="home-card">
+        <div class="home-card-header">
+          <span>📚</span>
+          <span>2. Chủ Đề & Độ Tuổi</span>
+        </div>
+        <div class="home-form-body">
+          <div>
+            <label style="font-size:0.82rem; font-weight:800; color:var(--dark); display:block; margin-bottom:6px;">👶 Phù hợp lứa tuổi:</label>
+            <div class="home-pills-row">
+              <button type="button" class="home-pill active" onclick="selectAge('all', this)">🌟 Tất cả</button>
+              <button type="button" class="home-pill" onclick="selectAge('6-7', this)">🌱 6 - 7 tuổi</button>
+              <button type="button" class="home-pill" onclick="selectAge('7-8', this)">🌿 7 - 8 tuổi</button>
+              <button type="button" class="home-pill" onclick="selectAge('8-9', this)">🚀 8 - 9 tuổi</button>
+            </div>
+          </div>
+
+          <div style="margin-top: 6px;">
+            <label style="font-size:0.82rem; font-weight:800; color:var(--dark); display:block; margin-bottom:6px;">🔬 Chọn chủ đề ôn luyện:</label>
+            <div class="topics-grid-compact" id="topics-list"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <button class="btn-start" onclick="startQuiz()">🚀 BẮT ĐẦU ÔN LUYỆN</button>
+    <!-- KHỐI 3: THANH BẮT ĐẦU -->
+    <div class="home-action-bar">
+      <div class="pool-status-banner" id="pool-count-banner" style="margin-bottom:0; flex:1;">
+        <span>💡</span>
+        <span id="pool-count-text">Đang có 100 câu hỏi sẵn sàng cho lượt thi này.</span>
+      </div>
+      <button class="btn-start" onclick="startQuiz()" style="margin-top:0; min-width:240px;">🚀 BẮT ĐẦU ÔN LUYỆN</button>
+    </div>
   </div>
 
   <!-- =====================================================================
@@ -1943,7 +2188,7 @@
           <button class="btn-source-action" onclick="syncAllHistoryToSheets()" style="background:#EEF2FF; color:var(--primary); border-color:#C7D2FE; font-weight:800; display:inline-flex; align-items:center; gap:6px;">🔄 Đồng bộ lên Sheets</button>
           <a href="https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit" target="_blank" onclick="openGoogleSheetsDirectly(event)" class="btn-source-action" style="background:#F0FDF4; color:#15803D; border-color:#86EFAC; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">📄 Mở File Google Sheets ↗</a>
           <button class="btn-source-action" onclick="showScreen('home-screen')" style="font-weight:700;">🏠 Về Trang Chủ</button>
-          <button class="btn-source-action" onclick="clearHistoryData()" style="color:#B91C1C; border-color:#FCA5A5;">🗑️ Xóa Lịch Sử</button>
+          
         </div>
       </div>
 
@@ -4234,49 +4479,64 @@ function closeLeaderboardModal() {
 function fetchLeaderboardFromCloud() {
   const listElem = document.getElementById('lead-players-list');
   if (listElem) {
-    listElem.innerHTML = '<div style="text-align:center; padding:30px; color:#64748B;">⏳ Đang cập nhật bảng vàng từ Google Sheets...</div>';
+    listElem.innerHTML = '<div style="text-align:center; padding:30px; color:#64748B;">⏳ Đang tải bảng vàng từ kết quả thi thực tế...</div>';
   }
 
   const scriptUrl = document.getElementById('apps-script-url') ? document.getElementById('apps-script-url').value.trim() : (typeof GOOGLE_SCRIPT_URL !== 'undefined' ? GOOGLE_SCRIPT_URL : '');
   
-  // Tổng hợp dữ liệu từ Lịch sử máy + Mẫu dữ liệu phong phú để hiển thị ngay
+  // Tổng hợp dữ liệu THỰC TẾ từ Lịch sử làm bài (TUYỆT ĐỐI KHÔNG DÙNG DỮ LIỆU MẪU / RÁC)
   const localHist = getLocalHistory();
   const playerMap = {};
 
-  // Tổng hợp từ lịch sử thực tế trong máy
+  // Chỉ lấy học sinh có tên thực tế, không lấy tên rác
   localHist.forEach(r => {
-    const key = r.studentName || 'Học sinh';
-    if (!playerMap[key]) {
-      playerMap[key] = {
-        name: key,
-        studentClass: r.studentClass || 'Lớp 2',
-        totalTests: 0,
-        highestScore: 0,
-        badge: '🌱 Tân Binh'
-      };
-    }
-    playerMap[key].totalTests++;
-    playerMap[key].highestScore = Math.max(playerMap[key].highestScore, r.score10 || 0);
-  });
-
-  // Bổ sung các bạn học sinh mẫu thi đua nếu ít dữ liệu
-  const sampleFriends = [
-    { name: "Bé Minh Nam", studentClass: "Lớp 2", totalTests: 8, highestScore: 10.0, badge: "👑 Đại Kiện Tướng" },
-    { name: "Bảo Ngọc", studentClass: "Lớp 3", totalTests: 6, highestScore: 9.5, badge: "🥇 Học Sinh Xuất Sắc" },
-    { name: "Tuấn Khang", studentClass: "Lớp 2", totalTests: 5, highestScore: 9.0, badge: "🥇 Học Sinh Xuất Sắc" },
-    { name: "Gia Hưng", studentClass: "Lớp 4", totalTests: 7, highestScore: 8.5, badge: "🥈 Ong Chăm Chỉ" },
-    { name: "Mai Anh", studentClass: "Lớp 1", totalTests: 4, highestScore: 8.0, badge: "🥈 Ong Chăm Chỉ" }
-  ];
-
-  sampleFriends.forEach(f => {
-    if (!playerMap[f.name]) {
-      playerMap[f.name] = f;
+    const name = (r.studentName || '').trim();
+    if (name && name !== 'Học sinh' && name !== 'Quản Trị Viên (Admin)') {
+      if (!playerMap[name]) {
+        playerMap[name] = {
+          name: name,
+          studentClass: r.studentClass || 'Lớp 2',
+          totalTests: 0,
+          highestScore: 0,
+          badge: '🌱 Tân Binh'
+        };
+      }
+      playerMap[name].totalTests++;
+      const s = parseFloat(String(r.score10 || r.score || '0').split('/')[0]) || 0;
+      playerMap[name].highestScore = Math.max(playerMap[name].highestScore, s);
+      if (playerMap[name].highestScore >= 9.5) playerMap[name].badge = '👑 Đại Kiện Tướng';
+      else if (playerMap[name].highestScore >= 8.5) playerMap[name].badge = '🥇 Học Sinh Xuất Sắc';
+      else if (playerMap[name].highestScore >= 7.0) playerMap[name].badge = '🥈 Ong Chăm Chỉ';
     }
   });
 
   cachedLeaderboard = Object.values(playerMap);
   cachedLeaderboard.sort((a, b) => b.highestScore - a.highestScore || b.totalTests - a.totalTests);
   renderLeaderboardList(cachedLeaderboard);
+
+  // Cập nhật thêm từ cloud nếu có mạng
+  if (scriptUrl) {
+    fetch(`${scriptUrl}?action=getLeaderboard`)
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.leaderboard && data.leaderboard.length > 0) {
+          data.leaderboard.forEach(p => {
+            if (p.name && p.name !== 'Học sinh' && p.name !== 'Quản Trị Viên (Admin)') {
+              if (!playerMap[p.name]) {
+                playerMap[p.name] = p;
+              } else {
+                playerMap[p.name].totalTests = Math.max(playerMap[p.name].totalTests, p.totalTests || 0);
+                playerMap[p.name].highestScore = Math.max(playerMap[p.name].highestScore, p.highestScore || 0);
+              }
+            }
+          });
+          cachedLeaderboard = Object.values(playerMap);
+          cachedLeaderboard.sort((a, b) => b.highestScore - a.highestScore || b.totalTests - a.totalTests);
+          renderLeaderboardList(cachedLeaderboard);
+        }
+      })
+      .catch(err => console.log('Leaderboard cloud note', err));
+  }
 }
 
 function filterLeaderboardView() {
@@ -4649,21 +4909,22 @@ function renderHistoryTable() {
       return (rUser && rUser === myUser) || (rName && rName === myName) || (myName && rName.includes(myName));
     });
   } else {
-    // ⚠️ CHẾ ĐỘ KHÁCH
+    // 🔒 CHẾ ĐỘ KHÁCH: BẢO MẬT TUYỆT ĐỐI - KHÔNG CHO PHÉP XEM BÀI THI CỦA CÁC BẠN KHÁC
     if (roleBanner) {
       roleBanner.innerHTML = `
         <div class="guest-badge-banner">
           <div>
-            ⚠️ <strong>CHẾ ĐỘ KHÁCH:</strong> Đang xem bài thi làm trên thiết bị này. <button onclick="openAuthModal()" style="border:none; background:transparent; color:#B45309; text-decoration:underline; font-weight:800; cursor:pointer;">Đăng nhập ngay</button> để lưu giữ huy hiệu và thành tích riêng của bé!
+            🔒 <strong>CHẾ ĐỘ KHÁCH (GUEST):</strong> Bạn cần đăng nhập để xem kết quả và bảng thống kê bài thi cá nhân.
           </div>
-          <button onclick="openAuthModal()" class="btn-source-action" style="background:#FEF3C7; color:#B45309; border-color:#FDE68A; font-weight:800; font-size:0.75rem;">
-            👤 Đăng Nhập
+          <button onclick="openAuthModal()" class="btn-source-action" style="background:linear-gradient(135deg, #4361EE, #3A0CA3); color:white; border:none; font-weight:800; font-size:0.8rem; padding:6px 14px; border-radius:8px; box-shadow:0 2px 8px rgba(67, 97, 238, 0.3);">
+            👤 Đăng Nhập Ngay
           </button>
         </div>
       `;
     }
     if (studentSelect) studentSelect.style.display = 'none';
-    historyList = allHistory;
+    // Khách chỉ được xem bài thi ẩn danh trong phiên này, TUYỆT ĐỐI không xem bài của học sinh khác
+    historyList = allHistory.filter(r => !r.username && r.studentName === 'Học sinh');
   }
 
   // 2. BỘ LỌC TÌM KIẾM, SỐ CÂU, ĐỘ KHÓ, MỨC ĐIỂM
@@ -4729,6 +4990,19 @@ function renderHistoryTable() {
   tbody.innerHTML = '';
 
   if (filtered.length === 0) {
+    if (!isAdm && (!acc || !acc.username)) {
+      tbody.innerHTML = `<tr><td colspan="11" style="text-align:center; padding:36px 20px; color:#64748B;">
+        <div style="font-size:2.2rem; margin-bottom:8px;">🔒</div>
+        <div style="font-weight:800; color:var(--dark); font-size:1.05rem; margin-bottom:6px;">Chế Độ Khách - Chưa Có Quyền Xem Lịch Sử Học Sinh</div>
+        <div style="font-size:0.88rem; max-width:480px; margin:0 auto 16px auto; color:#64748B; line-height:1.45;">
+          Để bảo vệ quyền riêng tư, học sinh chỉ xem được bài thi của chính mình, và Quản trị viên (Admin) mới có quyền xem toàn bộ danh sách.
+        </div>
+        <button onclick="openAuthModal()" class="btn-source-action" style="background:linear-gradient(135deg, #4361EE, #3A0CA3); color:white; border:none; padding:10px 22px; font-weight:800; border-radius:10px; font-size:0.88rem; cursor:pointer; box-shadow:0 2px 8px rgba(67, 97, 238, 0.3);">
+          👤 Đăng Nhập Tài Khoản Ngay
+        </button>
+      </td></tr>`;
+      return;
+    }
     tbody.innerHTML = `<tr><td colspan="11" style="text-align:center; padding:24px; color:#64748B;">
       ${totalTests === 0 ? 'Chưa có bài thi nào thuộc tài khoản này. Hãy bắt đầu một bài thi nhé!' : 'Không tìm thấy kết quả nào khớp với bộ lọc tìm kiếm.'}
     </td></tr>`;
@@ -5127,11 +5401,22 @@ function onMascotClick() {
 
 function updateAllMascotsUI() {
   const m = MASCOTS.find(x => x.id === currentMascotId) || MASCOTS[0];
+  
+  // 1. Welcome screen
   const welcomeSvgWrap = document.getElementById('welcome-mascot-svg-wrap');
   if (welcomeSvgWrap) welcomeSvgWrap.innerHTML = renderMascotSvg(m.id, 75);
   const welcomeName = document.getElementById('welcome-mascot-name');
   if (welcomeName) welcomeName.textContent = m.name;
 
+  // 2. Home screen (Mascot ngay trên Menu Home)
+  const homeSvgWrap = document.getElementById('home-mascot-svg-wrap');
+  if (homeSvgWrap) homeSvgWrap.innerHTML = renderMascotSvg(m.id, 58);
+  const homeName = document.getElementById('home-mascot-name');
+  if (homeName) homeName.textContent = m.name;
+  const homeTitle = document.getElementById('home-mascot-title');
+  if (homeTitle) homeTitle.textContent = m.title;
+
+  // 3. Quiz screen
   const quizSvgWrap = document.getElementById('quiz-mascot-svg-wrap');
   if (quizSvgWrap) quizSvgWrap.innerHTML = renderMascotSvg(m.id, 52);
 }
@@ -5366,6 +5651,35 @@ function fetchUsersFromCloud() {
       }
     })
     .catch(err => console.log('Fetch cloud users note', err));
+}
+
+
+
+function toggleSheetsAccordion() {
+  const content = document.getElementById('home-sheets-content');
+  const icon = document.getElementById('sheets-toggle-icon');
+  if (!content) return;
+  const isHidden = (content.style.display === 'none' || !content.style.display);
+  content.style.display = isHidden ? 'block' : 'none';
+  if (icon) icon.textContent = isHidden ? '▴' : '▾';
+}
+
+function selectAge(age, elem) {
+  selectedAge = age;
+  if (elem && elem.parentElement) {
+    elem.parentElement.querySelectorAll('.home-pill, .filter-chip').forEach(c => c.classList.remove('active', 'selected'));
+    elem.classList.add('active', 'selected');
+  }
+  updatePoolCountDisplay();
+}
+
+function selectDiff(diff, elem) {
+  selectedDiff = diff;
+  if (elem && elem.parentElement) {
+    elem.parentElement.querySelectorAll('.home-pill, .filter-chip').forEach(c => c.classList.remove('active', 'selected'));
+    elem.classList.add('active', 'selected');
+  }
+  updatePoolCountDisplay();
 }
 
 </script>
