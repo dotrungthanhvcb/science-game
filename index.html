@@ -2782,13 +2782,198 @@
     }
   }
 
+
+  /* =========================================================================
+     KHÔI PHỤC BỐ CỤC XẾP DỌC CHUẨN & CHỐNG ÉP BẸP MÀN HÌNH
+     ========================================================================= */
+  html, body {
+    width: 100% !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #FFF6ED !important;
+    color: #1C2038 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    overflow-x: hidden !important;
+  }
+
+  /* LỚP NỀN HỌA TIẾT TOÀN MÀN HÌNH (FIXED INSET-0 Z-0 TÁCH BIỆT) */
+  .background-decorations {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    overflow: hidden !important;
+  }
+  .deco-corner {
+    position: absolute !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    width: 280px !important;
+    height: 280px !important;
+  }
+  .deco-tl { top: 0 !important; left: 0 !important; }
+  .deco-bl { bottom: 0 !important; left: 0 !important; }
+  .deco-tr { top: 0 !important; right: 0 !important; }
+  .deco-br { bottom: 0 !important; right: 0 !important; }
+  .deco-blob-svg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+  }
+  .deco-items {
+    position: relative !important;
+    z-index: 1 !important;
+    padding: 10px !important;
+  }
+
+  /* KHUNG CHỨA TOÀN TRANG (FLEX-DIRECTION COLUMN, CĂN GIỮA) */
+  .app-layout {
+    width: 100% !important;
+    max-width: 1140px !important;
+    margin: 0 auto !important;
+    padding: 16px 20px 40px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    position: relative !important;
+    z-index: 10 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* THANH HEADER TRÊN CÙNG TRẢI DÀI THEO CHIỀU NGANG */
+  .app-header {
+    width: 100% !important;
+    max-width: 1140px !important;
+    margin: 0 0 20px 0 !important;
+    background: #FFFFFF !important;
+    border: 2px solid #F5D6C6 !important;
+    border-bottom: 5px solid #E2A68C !important;
+    border-radius: 9999px !important;
+    padding: 10px 24px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-shadow: 0 6px 20px rgba(28, 32, 56, 0.08) !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  /* KHU VỰC NỘI DUNG CHÍNH (XẾP DỌC BÊN DƯỚI HEADER) */
+  .main-content-area {
+    width: 100% !important;
+    max-width: 1060px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    position: relative !important;
+    z-index: 10 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* KHUNG BÀI THI & TRANG CHỦ (.quiz-card) */
+  .quiz-card {
+    width: 100% !important;
+    max-width: 1060px !important;
+    background: #FFFFFF !important;
+    border-radius: 28px !important;
+    border: 3px solid #F5D6C6 !important;
+    box-shadow: 0 16px 40px rgba(28, 32, 56, 0.1) !important;
+    padding: clamp(20px, 2.5vw, 36px) !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+  }
+
+  .screen {
+    display: none !important;
+    width: 100% !important;
+  }
+  .screen.active {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* GRID NGUỒN CÂU HỎI TRÊN MÀN HOME */
+  .source-chips-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  /* ĐỒNG HỒ ĐẾM GIỜ NẰM THẲNG 1 HÀNG */
+  .timer-pill {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+    background: #FFF8EB !important;
+    color: #D97706 !important;
+    border: 2px solid #FCD34D !important;
+    border-bottom: 4px solid #F59E0B !important;
+    border-radius: 9999px !important;
+    padding: 8px 18px !important;
+    font-weight: 800 !important;
+    font-size: 1rem !important;
+    letter-spacing: 0.05em !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* CHỐNG VỠ CHỮ TRÊN CÁC NÚT ĐÁP ÁN (TUYỆT ĐỐI KHÔNG CẮT ĐÔI TỪ) */
+  .choice-option, .choice-text-inner, .question-title, button {
+    word-break: break-words !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    hyphens: manual !important;
+  }
+
+  /* RESPONSIVE TRÊN MOBILE */
+  @media (max-width: 900px) {
+    .deco-corner {
+      transform: scale(0.65);
+      opacity: 0.3;
+    }
+    .deco-tl { transform-origin: top left; }
+    .deco-tr { transform-origin: top right; }
+    .deco-bl { transform-origin: bottom left; }
+    .deco-br { transform-origin: bottom right; }
+    .app-header {
+      border-radius: 20px !important;
+      padding: 12px 16px !important;
+      gap: 10px !important;
+      flex-wrap: wrap !important;
+    }
+  }
+  @media (max-width: 640px) {
+    .deco-corner {
+      display: none !important;
+    }
+    .app-layout {
+      padding: 8px 10px 24px !important;
+    }
+  }
+
 </style>
 </head>
 <body>
-
-<div class="main-wrapper">
   <!-- =====================================================================
-       HỆ THỐNG HỌA TIẾT NỀN CHUẨN MẪU THIẾT KẾ GỐC (STUDY & PLAY)
+       HỆ THỐNG HỌA TIẾT NỀN CHUẨN MẪU THIẾT KẾ GỐC (FIXED INSET-0 Z-0)
        ===================================================================== -->
   <div class="background-decorations" aria-hidden="true">
     <!-- GÓC TRÊN TRÁI: Kẹo mút xoắn hồng trắng, nơ đỏ, các ngôi sao -->
@@ -2887,17 +3072,12 @@
 
         <!-- Tên lửa không gian sắc nét đầy đủ cánh và lửa đuôi -->
         <svg width="125" height="125" viewBox="0 0 120 120" fill="none" class="animate-float-slow" style="transform: rotate(-10deg); margin-left:auto;">
-          <!-- Lửa đuôi tên lửa -->
           <path d="M78 78 Q92 108 104 110 Q92 95 86 85 Z" fill="#EF4444"/>
           <path d="M72 74 Q85 102 96 106 Q84 90 78 80 Z" fill="#F59E0B"/>
-          <!-- Cánh tên lửa -->
           <polygon points="42,50 20,68 40,74" fill="#8B5CF6" stroke="#7C3AED" stroke-width="2"/>
           <polygon points="70,22 88,44 82,64" fill="#8B5CF6" stroke="#7C3AED" stroke-width="2"/>
-          <!-- Thân tên lửa -->
           <path d="M76 18 C56 24 38 42 36 68 L68 68 C68 48 86 30 76 18 Z" fill="#06B6D4" stroke="#0891B2" stroke-width="2.5" transform="rotate(45 55 55)"/>
-          <!-- Mũi đỏ -->
           <polygon points="30,12 42,26 18,36" fill="#EF4444" stroke="#DC2626" stroke-width="2"/>
-          <!-- Cửa sổ tròn -->
           <circle cx="52" cy="52" r="10" fill="#1E293B" stroke="#E2E8F0" stroke-width="2.5"/>
           <circle cx="55" cy="49" r="2.5" fill="#FFFFFF"/>
         </svg>
@@ -2959,6 +3139,13 @@
       </div>
     </div>
   </div>
+  <div class="app-layout">
+
+
+<!-- =====================================================================
+       HỆ THỐNG HỌA TIẾT NỀN CHUẨN MẪU THIẾT KẾ GỐC (STUDY & PLAY)
+       ===================================================================== -->
+  
 
   <header class="app-header">
     <div class="template-logo" onclick="showScreen('welcome-screen')" title="Về Màn hình Chào mừng">
@@ -3006,6 +3193,13 @@
       </div>
     </div>
   </header>
+
+    <!-- KHU VỰC NỘI DUNG CHÍNH (XẾP DỌC BÊN DƯỚI HEADER) -->
+    <main class=\"main-content-area\">
+    </main>
+  </div>
+
+
 
     
   <!-- =====================================================================
@@ -3082,8 +3276,6 @@
         <button class="btn-modal-cancel" onclick="closeUserManagementModal()">Đóng</button>
       </div>
     </div>
-  </div>
-
   <!-- =====================================================================
        MODAL: CHỌN BẠN ĐỒNG HÀNH KHOA HỌC (CHESSKID STYLE)
        ===================================================================== -->
@@ -3113,19 +3305,9 @@
   </div>
 
   <!-- =====================================================================
-       0. WELCOME SCREEN (MÀN HÌNH CHÀO MỪNG - BẤM BẮT ĐẦU MỚI VÀO HOME)
-       ===================================================================== -->
-  <div class="screen active" id="welcome-screen">
-    <div class="template-hero-box">
-      <!-- CÁC HỌA TIẾT NỀN ĐÃ ĐƯỢC CHUYỂN THÀNH BACKGROUND-DECORATIONS ĐẦY ĐỦ Ở LAYER CHUNG -->
-      </div>
-    </div>
-  </div>
-
-  <!-- =====================================================================
        1. HOME SCREEN (MÀN HÌNH CHỌN BÀI THI)
        ===================================================================== -->
-  <div class="quiz-card screen" id="home-screen">
+  <div class="quiz-card screen active" id="home-screen">
     <!-- KHỐI 1: BẠN ĐỒNG HÀNH KHOA HỌC & HỒ SƠ NHANH CỦA BÉ -->
     <div class="home-hero-card">
       <div class="home-mascot-card" onclick="openMascotPickerModal()" title="Bấm để chọn Bạn đồng hành khoa học yêu thích!">
@@ -3204,6 +3386,16 @@
             </select>
           </div>
 
+                    <!-- BỘ LỌC CHỌN 1 HOẶC NHIỀU NGUỒN CÂU HỎI KÈM SỐ LƯỢNG KHẢ DỤNG -->
+          <div style="margin-top: 10px; margin-bottom: 10px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <label style="font-size:0.88rem; font-weight:800; color:#1C2038;">📚 Nguồn học liệu (Chọn 1 hoặc nhiều nguồn):</label>
+              <button type="button" onclick="selectAllSources()" style="background:#FCECE4; color:#1C2038; border:1px solid #F5D6C6; font-size:0.75rem; font-weight:800; padding:4px 10px; border-radius:9999px; cursor:pointer;">
+                ✓ Chọn tất cả
+              </button>
+            </div>
+            <div id="source-chips-container" class="source-chips-grid"></div>
+          </div>
           <div class="config-row-compact">
             <label>🧠 Chế độ lặp lại:</label>
             <select id="review-ratio" onchange="updatePoolCountDisplay()">
@@ -4167,7 +4359,13 @@ function toggleSource(sourceId) {
 }
 
 function selectAllSources(isSelectAll) {
-  if (isSelectAll) {
+  if (isSelectAll === undefined) {
+    if (selectedSources.size === SOURCE_CONFIG.length) {
+      selectedSources.clear();
+    } else {
+      SOURCE_CONFIG.forEach(s => selectedSources.add(s.id));
+    }
+  } else if (isSelectAll) {
     SOURCE_CONFIG.forEach(s => selectedSources.add(s.id));
   } else {
     selectedSources.clear();
@@ -4197,52 +4395,71 @@ const TOPIC_CONFIG = [
 // VECTOR SVG FALLBACK MINH HỌA THEO 7 CHỦ ĐỀ KHOA HỌC (100% KHÔNG BAO GIỜ VỠ ẢNH)
 // =========================================================================
 function getTopicSvg(topic) {
-  let bgGradient = '#4361EE';
+  let c1 = '#4361EE';
+  let c2 = '#4CC9F0';
   let iconEmoji = '🔬';
   let title = 'Khoa Học Vui';
+  let subtitle = 'Đấu Trường Khoa Học Tiểu Học';
 
   if (topic === 'Động Vật') {
-    bgGradient = 'linear-gradient(135deg, #FF6B6B 0%, #FFA07A 100%)';
+    c1 = '#FF5E62';
+    c2 = '#FFA07A';
     iconEmoji = '🦁';
     title = 'Thế Giới Động Vật';
+    subtitle = 'Tập tính, thức ăn & sinh thái tự nhiên';
   } else if (topic === 'Thực Vật') {
-    bgGradient = 'linear-gradient(135deg, #10B981 0%, #059669 100%)';
+    c1 = '#10B981';
+    c2 = '#059669';
     iconEmoji = '🌿';
     title = 'Thế Giới Thực Vật';
+    subtitle = 'Cây xanh, quang hợp & các loài hoa';
   } else if (topic === 'Vũ Trụ & Thời Tiết') {
-    bgGradient = 'linear-gradient(135deg, #3A0CA3 0%, #4361EE 100%)';
-    iconEmoji = '🌍';
+    c1 = '#3A0CA3';
+    c2 = '#4361EE';
+    iconEmoji = '🚀';
     title = 'Vũ Trụ & Thời Tiết';
+    subtitle = 'Hệ Mặt Trời, các vì sao & khí hậu';
   } else if (topic === 'Cơ Thể Người') {
-    bgGradient = 'linear-gradient(135deg, #EF4444 0%, #F43F5E 100%)';
+    c1 = '#E11D48';
+    c2 = '#F43F5E';
     iconEmoji = '🫀';
     title = 'Cơ Thể Người & Sức Khỏe';
+    subtitle = 'Các giác quan, dinh dưỡng & bảo vệ sức khỏe';
   } else if (topic === 'Địa Lý Việt Nam') {
-    bgGradient = 'linear-gradient(135deg, #0284C7 0%, #06B6D4 100%)';
+    c1 = '#0284C7';
+    c2 = '#06B6D4';
     iconEmoji = '🗺️';
     title = 'Địa Lý Non Sông Việt Nam';
+    subtitle = 'Sông ngòi, đồi núi & các miền di sản';
   } else if (topic === 'Lịch Sử & Văn Hóa') {
-    bgGradient = 'linear-gradient(135deg, #D97706 0%, #F59E0B 100%)';
+    c1 = '#D97706';
+    c2 = '#F59E0B';
     iconEmoji = '📜';
     title = 'Lịch Sử & Văn Hóa';
+    subtitle = 'Danh nhân, phát minh & cội nguồn lịch sử';
   } else if (topic === 'Vật Chất & Hiện Tượng') {
-    bgGradient = 'linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%)';
-    iconEmoji = '🧲';
-    title = 'Vật Chất & Hiện Tượng';
+    c1 = '#7C3AED';
+    c2 = '#A855F7';
+    iconEmoji = '⚡';
+    title = 'Vật Lý & Năng Lượng';
+    subtitle = 'Ánh sáng, âm thanh, nam châm & lực';
   }
+
+  const gradId = 'grad_' + Math.abs((topic || 'all').split('').reduce((a,b)=>{a=((a<<5)-a)+b.charCodeAt(0);return a&a},0));
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340" viewBox="0 0 600 340">
     <defs>
-      <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:#4361EE;stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#4CC9F0;stop-opacity:1" />
+      <linearGradient id="${gradId}" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:${c1};stop-opacity:1" />
+        <stop offset="100%" style="stop-color:${c2};stop-opacity:1" />
       </linearGradient>
     </defs>
-    <rect width="100%" height="100%" fill="url(#grad)" rx="16"/>
-    <circle cx="300" cy="140" r="75" fill="rgba(255,255,255,0.2)"/>
-    <text x="50%" y="165" font-size="70" text-anchor="middle" dominant-baseline="middle">${iconEmoji}</text>
-    <text x="50%" y="260" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="22" fill="#FFFFFF" text-anchor="middle">${title}</text>
-    <text x="50%" y="295" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="14" fill="rgba(255,255,255,0.85)" text-anchor="middle">Đấu Trường Khoa Học 1.000 Câu • Antigravity</text>
+    <rect width="100%" height="100%" fill="url(#${gradId})" rx="20"/>
+    <circle cx="300" cy="130" r="75" fill="rgba(255,255,255,0.22)"/>
+    <circle cx="300" cy="130" r="88" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="50%" y="155" font-size="70" text-anchor="middle" dominant-baseline="middle">${iconEmoji}</text>
+    <text x="50%" y="248" font-family="'Nunito', sans-serif" font-weight="900" font-size="24" fill="#FFFFFF" text-anchor="middle">${title}</text>
+    <text x="50%" y="284" font-family="'Nunito', sans-serif" font-weight="700" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">${subtitle}</text>
   </svg>`;
 
   return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
@@ -4573,6 +4790,8 @@ window.onload = function() {
   updateHeaderAuthDisplay();
   updateAdminHeaderUI();
   updateAllMascotsUI();
+  showScreen("home-screen");
+  refreshLucideIcons();
 };
 
 function renderTopics() {
