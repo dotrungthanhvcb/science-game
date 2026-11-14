@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+
+  <!-- 1. TAILWIND CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. GOOGLE FONT NUNITO (HỖ TRỢ TIẾNG VIỆT CHUẨN) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900;1000&display=swap" rel="stylesheet">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
-<script src="questions_500.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- 3. LUCIDE ICONS CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- 4. CANVAS CONFETTI CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script src="questions_500.js"></script>
 <script src="questions.js"></script>
 <title>🔬 Khoa Học Vui - Đấu Trường Nhí 100 Câu</title>
 <style>
@@ -2213,6 +2222,387 @@
     }
   }
 
+
+  /* =========================================================================
+     TACTILE 3D BUTTONS & FONT OVERRIDES (DUOLINGO STYLE & NUNITO ENFORCEMENT)
+     ========================================================================= */
+  *, body, button, input, select, textarea, div, p, span, h1, h2, h3, h4, h5, h6, a, label {
+    font-family: 'Nunito', sans-serif !important;
+  }
+
+  /* Duolingo Tactile 3D Buttons Base */
+  .btn-3d-base, 
+  .template-btn-pill, 
+  .template-btn-dark, 
+  .btn-start, 
+  .btn-next-step, 
+  .btn-highlight, 
+  .btn-secondary, 
+  .btn-primary-action, 
+  .btn-source-action, 
+  .btn-check-sa, 
+  .control-btn, 
+  .choice-option, 
+  .source-toggle-chip {
+    transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.12s ease, 
+                border-bottom-width 0.12s ease, 
+                background-color 0.15s ease,
+                border-color 0.15s ease !important;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+
+  /* 1. Nút Read More / Bắt đầu ở Hero (Peach Cream) */
+  .template-btn-pill {
+    background: #FCECE4 !important;
+    color: #1C2038 !important;
+    border: 2px solid #F5D6C6 !important;
+    border-bottom: 5px solid #E2A68C !important;
+    border-radius: 9999px !important;
+    font-weight: 800 !important;
+    min-height: 48px !important;
+    height: auto !important;
+    padding: 12px 28px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  .template-btn-pill:hover {
+    background: #FFF4EE !important;
+    transform: translateY(-2px) !important;
+    border-bottom-width: 6px !important;
+  }
+  .template-btn-pill:active {
+    transform: translateY(4px) !important;
+    border-bottom-width: 1px !important;
+  }
+
+  /* 2. Nút Dark Slate (Template Action) */
+  .template-btn-dark, .btn-primary-action {
+    background: #1C2038 !important;
+    color: #FFFFFF !important;
+    border: 2px solid #141729 !important;
+    border-bottom: 5px solid #0D0F1B !important;
+    border-radius: 9999px !important;
+    font-weight: 800 !important;
+    min-height: 48px !important;
+    height: auto !important;
+    padding: 12px 28px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  .template-btn-dark:hover, .btn-primary-action:hover {
+    background: #2D3357 !important;
+    transform: translateY(-2px) !important;
+    border-bottom-width: 6px !important;
+  }
+  .template-btn-dark:active, .btn-primary-action:active {
+    transform: translateY(4px) !important;
+    border-bottom-width: 1px !important;
+  }
+
+  /* 3. Nút BẮT ĐẦU ÔN LUYỆN (Green 3D Button) */
+  .btn-start {
+    background: #10B981 !important;
+    color: #FFFFFF !important;
+    border: 2px solid #059669 !important;
+    border-bottom: 5px solid #047857 !important;
+    border-radius: 18px !important;
+    font-weight: 900 !important;
+    font-size: 1.1rem !important;
+    min-height: 56px !important;
+    height: auto !important;
+    padding: 14px 32px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+  .btn-start:hover {
+    background: #059669 !important;
+    transform: translateY(-2px) !important;
+    border-bottom-width: 6px !important;
+    box-shadow: 0 10px 24px rgba(16, 185, 129, 0.35) !important;
+  }
+  .btn-start:active {
+    transform: translateY(4px) !important;
+    border-bottom-width: 1px !important;
+  }
+
+  /* 4. Nút CÂU TIẾP THEO (Dark 3D Button) */
+  .btn-next-step {
+    background: #1C2038 !important;
+    color: #FFFFFF !important;
+    border: 2px solid #141729 !important;
+    border-bottom: 5px solid #0D0F1B !important;
+    border-radius: 16px !important;
+    font-weight: 800 !important;
+    font-size: 1.05rem !important;
+    min-height: 52px !important;
+    height: auto !important;
+    padding: 14px 28px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 14px !important;
+  }
+  .btn-next-step:hover {
+    background: #2D3357 !important;
+    transform: translateY(-2px) !important;
+    border-bottom-width: 6px !important;
+  }
+  .btn-next-step:active {
+    transform: translateY(4px) !important;
+    border-bottom-width: 1px !important;
+  }
+
+  /* 5. Nút NỔI BẬT / XEM LẠI BÀI (Blue 3D Button) */
+  .btn-highlight {
+    background: #3B82F6 !important;
+    color: #FFFFFF !important;
+    border: 2px solid #2563EB !important;
+    border-bottom: 5px solid #1D4ED8 !important;
+    border-radius: 16px !important;
+    font-weight: 800 !important;
+    min-height: 52px !important;
+    height: auto !important;
+    padding: 14px 28px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+  .btn-highlight:hover {
+    background: #2563EB !important;
+    transform: translateY(-2px) !important;
+    border-bottom-width: 6px !important;
+    box-shadow: 0 10px 24px rgba(59, 130, 246, 0.35) !important;
+  }
+  .btn-highlight:active {
+    transform: translateY(4px) !important;
+    border-bottom-width: 1px !important;
+  }
+
+  /* 6. Nút SECONDARY (Peach / Neutral 3D Button) */
+  .btn-secondary {
+    background: #FCECE4 !important;
+    color: #1C2038 !important;
+    border: 2px solid #F5D6C6 !important;
+    border-bottom: 5px solid #E2A68C !important;
+    border-radius: 16px !important;
+    font-weight: 800 !important;
+    min-height: 48px !important;
+    height: auto !important;
+    padding: 12px 22px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  .btn-secondary:hover {
+    background: #FFF4EE !important;
+    transform: translateY(-2px) !important;
+    border-bottom-width: 6px !important;
+  }
+  .btn-secondary:active {
+    transform: translateY(4px) !important;
+    border-bottom-width: 1px !important;
+  }
+
+  /* 7. NÚT CHỌN ĐÁP ÁN (CHOICE OPTIONS A/B/C/D) - DUOLINGO 3D TACTILE */
+  .choice-option {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    min-height: 64px !important;
+    height: auto !important;
+    padding: 14px 20px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.45 !important;
+    border-radius: 18px !important;
+    background: #FFFFFF !important;
+    border: 2px solid #F0D5C5 !important;
+    border-bottom: 5px solid #D8B7A4 !important;
+    color: #1C2038 !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+    position: relative !important;
+    width: 100% !important;
+  }
+  .choice-option:hover:not(:disabled) {
+    border-color: #E76F51 !important;
+    border-bottom: 6px solid #C4573B !important;
+    background: #FFFDFB !important;
+    transform: translateY(-2px) !important;
+  }
+  .choice-option:active:not(:disabled) {
+    transform: translateY(4px) !important;
+    border-bottom-width: 1px !important;
+  }
+  .choice-option.selected {
+    border-color: #1C2038 !important;
+    border-bottom: 5px solid #0F1222 !important;
+    background: #FCECE4 !important;
+    color: #1C2038 !important;
+    transform: scale(1.02) !important;
+    box-shadow: 0 8px 24px rgba(28, 32, 56, 0.14) !important;
+  }
+  .choice-letter {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    border-radius: 12px !important;
+    background: #FCECE4 !important;
+    color: #1C2038 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 900 !important;
+    font-size: 1.05rem !important;
+    transition: all 0.15s ease !important;
+    flex-shrink: 0 !important;
+  }
+  .choice-option.selected .choice-letter {
+    background: #1C2038 !important;
+    color: #FFFFFF !important;
+  }
+  .choice-text-inner {
+    flex: 1 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.45 !important;
+  }
+  .choice-check-icon {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #10B981 !important;
+    opacity: 0 !important;
+    transform: scale(0.4) !important;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    flex-shrink: 0 !important;
+  }
+  .choice-option.selected .choice-check-icon {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+  }
+
+  /* 8. NGUỒN ĐỀ THI (SOURCE TOGGLE CHIP) */
+  .source-toggle-chip {
+    background: #FFFFFF !important;
+    border: 2px solid #EFE4DC !important;
+    border-bottom: 5px solid #D5C2B6 !important;
+    border-radius: 18px !important;
+    padding: 14px 16px !important;
+    min-height: 84px !important;
+    height: auto !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+  .source-toggle-chip:hover {
+    border-color: #E76F51 !important;
+    border-bottom: 6px solid #C4573B !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(231, 111, 81, 0.12) !important;
+  }
+  .source-toggle-chip:active {
+    transform: translateY(4px) !important;
+    border-bottom-width: 1px !important;
+  }
+  .source-toggle-chip.selected {
+    border-color: #1C2038 !important;
+    border-bottom: 5px solid #0F1222 !important;
+    background: #FFFDF9 !important;
+    box-shadow: 0 8px 24px rgba(28, 32, 56, 0.14) !important;
+  }
+
+  /* 9. NÚT ĐIỀU KHIỂN TRONG BÀI THI (CONTROL BTN) */
+  .control-btn {
+    background: #FFFFFF !important;
+    border: 2px solid #E2E8F0 !important;
+    border-bottom: 4px solid #CBD5E1 !important;
+    border-radius: 12px !important;
+    padding: 8px 14px !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+  .control-btn:hover {
+    transform: translateY(-1px) !important;
+    border-bottom-width: 5px !important;
+  }
+  .control-btn:active {
+    transform: translateY(3px) !important;
+    border-bottom-width: 1px !important;
+  }
+
+  /* 10. ANIMATIONS (TRANSITIONS & FLOATING) */
+  @keyframes questionFadeSlide {
+    0% {
+      opacity: 0;
+      transform: translateY(18px) scale(0.985);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  .animate-question {
+    animation: questionFadeSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes floatSlow {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-12px) rotate(3deg);
+    }
+  }
+  @keyframes floatAlt {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(10px) rotate(-3deg);
+    }
+  }
+  .template-deco:nth-child(odd) {
+    animation: floatSlow 6s ease-in-out infinite;
+  }
+  .template-deco:nth-child(even) {
+    animation: floatAlt 7.5s ease-in-out infinite;
+  }
+
 </style>
 </head>
 <body>
@@ -2220,28 +2610,45 @@
 <div class="main-wrapper">
   <header class="app-header">
     <div class="template-logo" onclick="showScreen('welcome-screen')" title="Về Màn hình Chào mừng">
-      <span>🔬</span>
+      <div style="width:38px; height:38px; border-radius:50%; background:#FCECE4; display:flex; align-items:center; justify-content:center; color:#E76F51; flex-shrink:0;">
+        <i data-lucide="microscope" style="width:22px; height:22px; stroke-width:2.5;"></i>
+      </div>
       <span>KHOA HỌC NHÍ</span>
     </div>
 
     <nav class="template-nav-links">
-      <a href="javascript:void(0)" onclick="showScreen('home-screen')" class="template-nav-item active">Trang Chủ</a>
-      <a href="javascript:void(0)" onclick="openLeaderboardModal()" class="template-nav-item">Bảng Vàng 🏆</a>
-      <a href="javascript:void(0)" onclick="openHistoryScreen()" class="template-nav-item">Lịch Sử 📊</a>
-      <a href="javascript:void(0)" onclick="openUserManagementModal()" class="template-nav-item" id="nav-item-user-mgmt">Quản Lý 👥</a>
-      <a href="javascript:void(0)" onclick="shareGameLink()" class="template-nav-item">Mời Bạn 📤</a>
+      <a href="javascript:void(0)" onclick="showScreen('home-screen')" class="template-nav-item active" style="display:inline-flex; align-items:center; gap:6px;">
+        <i data-lucide="home" style="width:16px; height:16px; stroke-width:2.5;"></i>
+        <span>Trang Chủ</span>
+      </a>
+      <a href="javascript:void(0)" onclick="openLeaderboardModal()" class="template-nav-item" style="display:inline-flex; align-items:center; gap:6px;">
+        <i data-lucide="award" style="width:16px; height:16px; stroke-width:2.5;"></i>
+        <span>Bảng Vàng</span>
+      </a>
+      <a href="javascript:void(0)" onclick="openHistoryScreen()" class="template-nav-item" style="display:inline-flex; align-items:center; gap:6px;">
+        <i data-lucide="bar-chart-2" style="width:16px; height:16px; stroke-width:2.5;"></i>
+        <span>Lịch Sử</span>
+      </a>
+      <a href="javascript:void(0)" onclick="openUserManagementModal()" class="template-nav-item" id="nav-item-user-mgmt" style="display:inline-flex; align-items:center; gap:6px;">
+        <i data-lucide="users" style="width:16px; height:16px; stroke-width:2.5;"></i>
+        <span>Quản Lý</span>
+      </a>
+      <a href="javascript:void(0)" onclick="shareGameLink()" class="template-nav-item" style="display:inline-flex; align-items:center; gap:6px;">
+        <i data-lucide="share-2" style="width:16px; height:16px; stroke-width:2.5;"></i>
+        <span>Mời Bạn</span>
+      </a>
     </nav>
 
     <div class="template-header-circles">
       <!-- NÚT BẬT TẮT NHẠC NỀN -->
       <button class="header-circle-btn" id="music-btn" onclick="toggleMusic()" title="Bật/Tắt nhạc nền tập trung">
-        <span id="music-icon">🎵</span>
+        <span id="music-icon"><i data-lucide="volume-2" style="width:18px; height:18px; stroke-width:2.5;"></i></span>
       </button>
 
       <!-- NÚT TÀI KHOẢN HỌC SINH -->
       <div id="header-auth-container">
         <button class="header-circle-btn" onclick="openAuthModal()" title="Đăng nhập tài khoản">
-          <span>👤</span>
+          <i data-lucide="user" style="width:18px; height:18px; stroke-width:2.5;"></i>
         </button>
       </div>
     </div>
@@ -2423,10 +2830,12 @@
 
       <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-bottom: 28px;">
         <button class="template-btn-pill" onclick="showScreen('home-screen')">
-          Read More &gt;
+          <span>Vào Phòng Thi</span>
+          <i data-lucide="arrow-right" style="width:18px; height:18px; stroke-width:2.5;"></i>
         </button>
         <button class="template-btn-dark" onclick="openHistoryScreen()">
-          📊 Xem Lịch Sử
+          <i data-lucide="bar-chart-2" style="width:18px; height:18px; stroke-width:2.5;"></i>
+          <span>Xem Lịch Sử</span>
         </button>
       </div>
 
@@ -2596,7 +3005,7 @@
         <span>💡</span>
         <span id="pool-count-text">Đang có 100 câu hỏi sẵn sàng cho lượt thi này.</span>
       </div>
-      <button class="btn-start" onclick="startQuiz()" style="margin-top:0; min-width:240px;">🚀 BẮT ĐẦU ÔN LUYỆN</button>
+      <button class="btn-start" onclick="startQuiz()" style="margin-top:0; min-width:240px;"><i data-lucide="rocket" style="width:24px; height:24px; stroke-width:2.5;"></i> <span>BẮT ĐẦU ÔN LUYỆN</span></button>
     </div>
   </div>
 
@@ -2607,11 +3016,23 @@
     <!-- THANH TIẾN ĐỘ & ĐIỀU KHIỂN TRÊN CÙNG -->
     <div class="quiz-top-bar">
       <div class="top-left-controls">
-        <button class="control-btn" onclick="pauseQuiz()">⏸️ Tạm dừng</button>
-        <button class="control-btn" onclick="openReviewBeforeSubmit()" style="background:#EEF2FF; color:var(--primary); font-weight:700; border:1.5px solid #C7D2FE;">📋 Xem lại bài</button>
-        <button class="control-btn" onclick="askQuitQuiz()">🚪 Thoát</button>
+        <button class="control-btn" onclick="pauseQuiz()">
+          <i data-lucide="pause" style="width:16px; height:16px; stroke-width:2.5;"></i>
+          <span>Tạm dừng</span>
+        </button>
+        <button class="control-btn" onclick="openReviewBeforeSubmit()" style="background:#EEF2FF; color:var(--primary); font-weight:700; border:1.5px solid #C7D2FE;">
+          <i data-lucide="list-checks" style="width:16px; height:16px; stroke-width:2.5;"></i>
+          <span>Xem lại bài</span>
+        </button>
+        <button class="control-btn" onclick="askQuitQuiz()">
+          <i data-lucide="log-out" style="width:16px; height:16px; stroke-width:2.5;"></i>
+          <span>Thoát</span>
+        </button>
       </div>
-      <div class="timer-pill" id="quiz-timer">⏱ 00:00</div>
+      <div class="timer-pill" id="quiz-timer">
+        <i data-lucide="clock" style="width:16px; height:16px; stroke-width:2.5;"></i>
+        <span id="timer-text">00:00</span>
+      </div>
     </div>
 
     <div class="progress-track">
@@ -2691,13 +3112,31 @@
     </div>
 
     <div class="action-buttons">
-      <button class="btn-highlight" onclick="openReviewScreen()">🔍 Xem lại chi tiết toàn bộ bài làm</button>
+      <button class="btn-highlight" onclick="openReviewScreen()">
+        <i data-lucide="eye" style="width:20px; height:20px; stroke-width:2.5;"></i>
+        <span>Xem lại chi tiết toàn bộ bài làm</span>
+      </button>
       <div class="action-row-buttons">
-        <button class="btn-secondary" onclick="replayMistakes()" id="btn-replay-wrong">🔄 Ôn lại câu sai</button>
-        <button class="btn-secondary" onclick="openHistoryScreen()">📊 Xem Lịch Sử</button>
-        <button class="btn-secondary" onclick="syncAllHistoryToSheets()" style="background:#EEF2FF; color:var(--primary); border-color:#C7D2FE; font-weight:800; display:inline-flex; align-items:center; justify-content:center; gap:6px;">🔄 Đồng bộ lên Sheets</button>
-        <a href="https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit" target="_blank" onclick="openGoogleSheetsDirectly(event)" class="btn-secondary" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:6px; background:#F0FDF4; color:#15803D; border-color:#86EFAC;">📄 Mở File Google Sheets ↗</a>
-        <button class="btn-primary-action" onclick="backToHome()">🏠 Về Trang Chủ</button>
+        <button class="btn-secondary" onclick="replayMistakes()" id="btn-replay-wrong">
+          <i data-lucide="rotate-ccw" style="width:18px; height:18px; stroke-width:2.5;"></i>
+          <span>Ôn lại câu sai</span>
+        </button>
+        <button class="btn-secondary" onclick="openHistoryScreen()">
+          <i data-lucide="bar-chart-2" style="width:18px; height:18px; stroke-width:2.5;"></i>
+          <span>Xem Lịch Sử</span>
+        </button>
+        <button class="btn-secondary" onclick="syncAllHistoryToSheets()" style="background:#EEF2FF; color:var(--primary); border-color:#C7D2FE; font-weight:800; display:inline-flex; align-items:center; justify-content:center; gap:6px;">
+          <i data-lucide="cloud" style="width:18px; height:18px; stroke-width:2.5;"></i>
+          <span>Đồng bộ lên Sheets</span>
+        </button>
+        <a href="https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit" target="_blank" onclick="openGoogleSheetsDirectly(event)" class="btn-secondary" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:6px; background:#F0FDF4; color:#15803D; border-color:#86EFAC;">
+          <i data-lucide="file-spreadsheet" style="width:18px; height:18px; stroke-width:2.5;"></i>
+          <span>Mở File Google Sheets ↗</span>
+        </a>
+        <button class="btn-primary-action" onclick="backToHome()">
+          <i data-lucide="home" style="width:18px; height:18px; stroke-width:2.5;"></i>
+          <span>Về Trang Chủ</span>
+        </button>
       </div>
     </div>
 
@@ -3112,11 +3551,13 @@
       <span style="color:#64748B; display:flex; align-items:center; gap:4px;">⚪ Chưa làm</span>
     </div>
     <div class="modal-actions" style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-      <button class="modal-btn-cancel" onclick="closeQuickNavModal()" style="flex:1; min-width:160px; font-weight:700;">
-        ← Tiếp tục làm bài
+      <button class="modal-btn-cancel" onclick="closeQuickNavModal()" style="flex:1; min-width:160px; font-weight:700; display:inline-flex; align-items:center; justify-content:center; gap:8px;">
+        <i data-lucide="arrow-left" style="width:18px; height:18px; stroke-width:2.5;"></i>
+        <span>Tiếp tục làm bài</span>
       </button>
-      <button class="modal-btn-confirm" onclick="submitAndFinishQuiz()" style="background:linear-gradient(135deg, #10B981, #059669); font-weight:800; flex:1; min-width:180px; box-shadow:0 4px 14px rgba(16,185,129,0.35);">
-        🚀 Nộp bài & Xem điểm
+      <button class="modal-btn-confirm" onclick="submitAndFinishQuiz()" style="background:linear-gradient(135deg, #10B981, #059669); font-weight:800; flex:1; min-width:180px; box-shadow:0 4px 14px rgba(16,185,129,0.35); display:inline-flex; align-items:center; justify-content:center; gap:8px;">
+        <i data-lucide="send" style="width:18px; height:18px; stroke-width:2.5;"></i>
+        <span>Nộp bài & Xem điểm</span>
       </button>
     </div>
   </div>
@@ -3144,6 +3585,13 @@
 </div>
 
 <script>
+
+function refreshLucideIcons() {
+  if (typeof lucide !== 'undefined' && lucide.createIcons) {
+    lucide.createIcons();
+  }
+}
+
 // CẤU HÌNH GOOGLE APPS SCRIPT WEB APP URL
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyyT944fR-MlgPv8jhlmbn86gUsJskjwz64Xiei-_gnkcO2CzTuH14yOaneJ-Tfdyjrsg/exec";
 
@@ -3152,12 +3600,60 @@ const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyyT944fR-Mlg
 // HỆ THỐNG QUẢN LÝ MASTER POOL & 5 NGUỒN HỌC LIỆU CHUẨN + KHÁC
 // =========================================================================
 const SOURCE_CONFIG = [
-  { id: "SGK Việt Nam (GDPT 2018)", name: "SGK Việt Nam (GDPT 2018)", icon: "📗", desc: "Môn TN&XH & Khoa học (Lớp 1-5)", defaultSelected: true },
-  { id: "Trạng Nguyên & Violympic", name: "Trạng Nguyên & Violympic", icon: "🏆", desc: "Câu ngắn gọn, phản xạ tư duy nhanh", defaultSelected: true },
-  { id: "Kangaroo Khoa học (IKSC)", name: "Kangaroo Khoa học (IKSC)", icon: "🦘", desc: "Tư duy quan sát, logic thực tế", defaultSelected: true },
-  { id: "IXL & Khan Academy", name: "IXL & Khan Academy", icon: "🌐", desc: "Phân loại khoa học chuẩn quốc tế", defaultSelected: true },
-  { id: "National Geographic Kids", name: "National Geographic Kids", icon: "🦁", desc: "Fun facts, thiên nhiên kỳ thú & vũ trụ", defaultSelected: true },
-  { id: "Khác", name: "Khác (Kho câu hỏi cũ)", icon: "📦", desc: "Ngân hàng câu hỏi trước đây", defaultSelected: false }
+  { 
+    id: "SGK Việt Nam (GDPT 2018)", 
+    name: "SGK Việt Nam (GDPT 2018)", 
+    lucide: "book-open", 
+    pastelBg: "#D1FAE5", 
+    iconColor: "#059669", 
+    desc: "Môn TN&XH & Khoa học (Lớp 1-5)", 
+    defaultSelected: true 
+  },
+  { 
+    id: "Trạng Nguyên & Violympic", 
+    name: "Trạng Nguyên & Violympic", 
+    lucide: "award", 
+    pastelBg: "#FEF3C7", 
+    iconColor: "#D97706", 
+    desc: "Câu ngắn gọn, phản xạ tư duy nhanh", 
+    defaultSelected: true 
+  },
+  { 
+    id: "Kangaroo Khoa học (IKSC)", 
+    name: "Kangaroo Khoa học (IKSC)", 
+    lucide: "compass", 
+    pastelBg: "#FFEDD5", 
+    iconColor: "#EA580C", 
+    desc: "Tư duy quan sát, logic thực tế", 
+    defaultSelected: true 
+  },
+  { 
+    id: "IXL & Khan Academy", 
+    name: "IXL & Khan Academy", 
+    lucide: "globe", 
+    pastelBg: "#DBEAFE", 
+    iconColor: "#2563EB", 
+    desc: "Phân loại khoa học chuẩn quốc tế", 
+    defaultSelected: true 
+  },
+  { 
+    id: "National Geographic Kids", 
+    name: "National Geographic Kids", 
+    lucide: "sparkles", 
+    pastelBg: "#CCFBF1", 
+    iconColor: "#0D9488", 
+    desc: "Fun facts, thiên nhiên kỳ thú & vũ trụ", 
+    defaultSelected: true 
+  },
+  { 
+    id: "Khác", 
+    name: "Khác (Kho câu hỏi cũ)", 
+    lucide: "package", 
+    pastelBg: "#F3E8FF", 
+    iconColor: "#7C3AED", 
+    desc: "Ngân hàng câu hỏi trước đây", 
+    defaultSelected: false 
+  }
 ];
 
 let selectedSources = new Set([
@@ -3171,13 +3667,13 @@ let selectedSources = new Set([
 let MASTER_POOL = [];
 
 function getSourceIcon(sourceName) {
-  if (!sourceName) return '💡';
-  if (sourceName.includes('SGK')) return '📗';
-  if (sourceName.includes('Trạng Nguyên') || sourceName.includes('Violympic')) return '🏆';
-  if (sourceName.includes('Kangaroo') || sourceName.includes('IKSC')) return '🦘';
-  if (sourceName.includes('IXL') || sourceName.includes('Khan')) return '🌐';
-  if (sourceName.includes('National') || sourceName.includes('Geographic')) return '🦁';
-  return '📦';
+  if (!sourceName) return '<i data-lucide="lightbulb" style="width:16px; height:16px; display:inline-block; vertical-align:middle; margin-right:4px;"></i>';
+  if (sourceName.includes('SGK')) return '<i data-lucide="book-open" style="width:16px; height:16px; display:inline-block; vertical-align:middle; margin-right:4px;"></i>';
+  if (sourceName.includes('Trạng Nguyên') || sourceName.includes('Violympic')) return '<i data-lucide="award" style="width:16px; height:16px; display:inline-block; vertical-align:middle; margin-right:4px;"></i>';
+  if (sourceName.includes('Kangaroo') || sourceName.includes('IKSC')) return '<i data-lucide="compass" style="width:16px; height:16px; display:inline-block; vertical-align:middle; margin-right:4px;"></i>';
+  if (sourceName.includes('IXL') || sourceName.includes('Khan')) return '<i data-lucide="globe" style="width:16px; height:16px; display:inline-block; vertical-align:middle; margin-right:4px;"></i>';
+  if (sourceName.includes('National') || sourceName.includes('Geographic')) return '<i data-lucide="sparkles" style="width:16px; height:16px; display:inline-block; vertical-align:middle; margin-right:4px;"></i>';
+  return '<i data-lucide="package" style="width:16px; height:16px; display:inline-block; vertical-align:middle; margin-right:4px;"></i>';
 }
 
 function normalizeQuestion(q, defaultSource) {
@@ -3353,7 +3849,6 @@ function renderSourceChips() {
   container.innerHTML = '';
 
   SOURCE_CONFIG.forEach(src => {
-    // Đếm số câu hỏi của nguồn này trong MASTER_POOL
     const count = MASTER_POOL.filter(q => {
       if (src.id === "Khác") {
         return q.source === "Khác" || !q.source || q.source === "Khác (Kho câu hỏi cũ)";
@@ -3367,21 +3862,26 @@ function renderSourceChips() {
     chip.onclick = () => toggleSource(src.id);
 
     chip.innerHTML = `
-      <div class="source-chip-top">
-        <div class="source-chip-icon-title">
-          <span class="source-chip-icon">${src.icon}</span>
-          <span class="source-chip-title">${src.name}</span>
+      <div class="source-chip-top" style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+        <div class="source-chip-icon-title" style="display:flex; align-items:center; gap:12px;">
+          <div style="width:44px; height:44px; border-radius:50%; background:${src.pastelBg}; color:${src.iconColor}; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+            <i data-lucide="${src.lucide}" style="width:24px; height:24px; stroke-width:2.5;"></i>
+          </div>
+          <div style="font-weight:800; font-size:0.96rem; color:#1C2038;">${src.name}</div>
         </div>
-        <span class="source-chip-badge">${count} câu</span>
+        <span class="source-chip-badge" style="background:#FCECE4; color:#1C2038; font-weight:800; font-size:0.75rem; padding:4px 10px; border-radius:9999px; white-space:nowrap;">${count} câu</span>
       </div>
-      <div class="source-chip-desc">${src.desc}</div>
-      <div class="source-chip-checkbox-row">
-        <div class="source-checkbox-indicator">${isSelected ? '✓' : ''}</div>
+      <div class="source-chip-desc" style="font-size:0.82rem; color:#64748B; line-height:1.45; margin-top:8px;">${src.desc}</div>
+      <div class="source-chip-checkbox-row" style="display:flex; justify-content:flex-end; margin-top:8px;">
+        <div class="source-checkbox-indicator" style="width:24px; height:24px; border-radius:7px; display:flex; align-items:center; justify-content:center; background:${isSelected ? '#10B981' : '#F1F5F9'}; color:white; font-size:0.85rem; font-weight:900;">
+          ${isSelected ? '<i data-lucide="check" style="width:16px; height:16px; stroke-width:3;"></i>' : ''}
+        </div>
       </div>
     `;
     container.appendChild(chip);
   });
   syncTargetSourceDropdown();
+  refreshLucideIcons();
 }
 
 function toggleSource(sourceId) {
@@ -3410,14 +3910,14 @@ function selectAllSources(isSelectAll) {
 // Ngân hàng 1.000 câu hỏi đã được nạp tự động từ questions.js
 
 const TOPIC_CONFIG = [
-  { id: 'all', name: 'Tất Cả', icon: '🌟' },
-  { id: 'Động Vật', name: 'Động Vật', icon: '🦁' },
-  { id: 'Thực Vật', name: 'Thực Vật', icon: '🌿' },
-  { id: 'Vũ Trụ & Thời Tiết', name: 'Vũ Trụ & Thời Tiết', icon: '🌍' },
-  { id: 'Cơ Thể Người', name: 'Cơ Thể Người', icon: '🫀' },
-  { id: 'Địa Lý Việt Nam', name: 'Địa Lý VN', icon: '🗺️' },
-  { id: 'Lịch Sử & Văn Hóa', name: 'Lịch Sử & Văn Hóa', icon: '📜' },
-  { id: 'Vật Chất & Hiện Tượng', name: 'Vật Lý & Năng Lượng', icon: '🧲' }
+  { id: 'all', name: 'Tất Cả', lucide: 'sparkles' },
+  { id: 'Động Vật', name: 'Động Vật', lucide: 'paw-print' },
+  { id: 'Thực Vật', name: 'Thực Vật', lucide: 'sprout' },
+  { id: 'Vũ Trụ & Thời Tiết', name: 'Vũ Trụ & Thời Tiết', lucide: 'rocket' },
+  { id: 'Cơ Thể Người', name: 'Cơ Thể Người', lucide: 'heart-pulse' },
+  { id: 'Địa Lý Việt Nam', name: 'Địa Lý VN', lucide: 'map-pin' },
+  { id: 'Lịch Sử & Văn Hóa', name: 'Lịch Sử & Văn Hóa', lucide: 'landmark' },
+  { id: 'Vật Chất & Hiện Tượng', name: 'Vật Lý & Năng Lượng', lucide: 'atom' }
 ];
 
 
@@ -3804,14 +4304,21 @@ window.onload = function() {
 
 function renderTopics() {
   const container = document.getElementById('topics-list');
+  if (!container) return;
   container.innerHTML = '';
   TOPIC_CONFIG.forEach(t => {
     const pill = document.createElement('div');
     pill.className = `topic-pill ${t.id === selectedTopic ? 'selected' : ''}`;
     pill.onclick = () => selectTopic(t.id, pill);
-    pill.innerHTML = `<span class="icon">${t.icon}</span><span>${t.name}</span>`;
+    pill.innerHTML = `
+      <span class="icon" style="display:inline-flex; align-items:center; justify-content:center;">
+        <i data-lucide="${t.lucide}" style="width:18px; height:18px; stroke-width:2.5;"></i>
+      </span>
+      <span>${t.name}</span>
+    `;
     container.appendChild(pill);
   });
+  refreshLucideIcons();
 }
 
 function selectAge(age, elem) {
@@ -4126,13 +4633,21 @@ function displayQuestion() {
 
   // Đổi chữ nút theo trạng thái câu cuối cùng
   if (isLast) {
-    btnNext.innerHTML = '📋 Xem lại & Nộp bài';
+    btnNext.innerHTML = '<i data-lucide="list-checks" style="width:18px; height:18px; stroke-width:2.5;"></i> <span>Xem lại & Nộp bài</span>';
     btnNext.classList.add('btn-last-step');
     btnNext.onclick = openReviewBeforeSubmit;
   } else {
-    btnNext.innerHTML = 'Câu tiếp theo ➔';
+    btnNext.innerHTML = '<span>Câu tiếp theo</span> <i data-lucide="arrow-right" style="width:18px; height:18px; stroke-width:2.5;"></i>';
     btnNext.classList.remove('btn-last-step');
     btnNext.onclick = goNextQuestion;
+  }
+
+  // KÍCH HOẠT HIỆU ỨNG CHUYỂN CẢNH MƯỢT MÀ CHO CÂU HỎI MỚI (FADE-IN + SLIDE-UP 0.35s)
+  const quizGrid = document.querySelector('quiz-layout-grid') || document.getElementById('quiz-screen');
+  if (quizGrid) {
+    quizGrid.classList.remove('animate-question');
+    void quizGrid.offsetWidth;
+    quizGrid.classList.add('animate-question');
   }
 
   if (q.type === 'MC') {
@@ -4144,6 +4659,8 @@ function displayQuestion() {
     document.getElementById('sa-box').style.display = 'block';
     setupShortAnswer(q);
   }
+
+  refreshLucideIcons();
 }
 
 function renderMultipleChoice(q) {
@@ -4161,34 +4678,34 @@ function renderMultipleChoice(q) {
   options.forEach(opt => {
     if (!opt.text) return;
     const btn = document.createElement('button');
-    btn.className = 'choice-option';
+    btn.className = 'choice-option' + (currentSelection === opt.key ? ' selected' : '');
     
-    // Nếu câu này đã được chọn -> Highlight bằng màu trung tính xanh dương
-    if (currentSelection === opt.key) {
-      btn.classList.add('selected');
-    }
-
     let choiceContent = '';
     if (currentLanguageMode === 'bilingual') {
       const optIdx = ['A','B','C','D'].indexOf(opt.key);
       const enText = (q.options_en && q.options_en[optIdx]) || (q[opt.key.toLowerCase() + '_en']) || opt.text;
       const viText = opt.text;
       choiceContent = `
-        <div style="text-align:left; flex:1;">
-          <div style="font-weight:700; color:var(--dark); font-size:0.95rem; line-height:1.35;">${enText}</div>
-          <div style="font-size:0.85rem; color:#64748B; font-weight:500; margin-top:2px;">${viText}</div>
+        <div class="choice-text-inner">
+          <div style="font-weight:800; color:var(--dark); font-size:1rem; line-height:1.4;">${enText}</div>
+          <div style="font-size:0.9rem; color:#64748B; font-weight:600; margin-top:2px; line-height:1.4;">${viText}</div>
         </div>
       `;
     } else if (currentLanguageMode === 'en') {
       const optIdx = ['A','B','C','D'].indexOf(opt.key);
       const enText = (q.options_en && q.options_en[optIdx]) || (q[opt.key.toLowerCase() + '_en']) || opt.text;
-      choiceContent = `<span>${enText}</span>`;
+      choiceContent = `<div class="choice-text-inner" style="font-weight:700; font-size:0.98rem; line-height:1.4;">${enText}</div>`;
     } else {
-      choiceContent = `<span>${opt.text}</span>`;
+      choiceContent = `<div class="choice-text-inner" style="font-weight:700; font-size:0.98rem; line-height:1.4;">${opt.text}</div>`;
     }
-    btn.innerHTML = `<span class="choice-letter">${opt.key}</span>${choiceContent}`;
+    btn.innerHTML = `
+      <span class="choice-letter">${opt.key}</span>
+      ${choiceContent}
+      <span class="choice-check-icon">
+        <i data-lucide="check-circle-2" style="width:24px; height:24px; stroke-width:2.5;"></i>
+      </span>
+    `;
     
-    // Nếu bài chưa nộp thì luôn cho phép click / đổi đáp án
     if (!isQuizSubmitted) {
       btn.onclick = () => handleChoiceSelect(opt.key, opt.text, btn);
     } else {
@@ -4197,6 +4714,7 @@ function renderMultipleChoice(q) {
     
     container.appendChild(btn);
   });
+  refreshLucideIcons();
 }
 
 function handleChoiceSelect(chosenKey, chosenText, chosenBtn) {
@@ -4275,6 +4793,7 @@ function goNextQuestion() {
 // POPUP XEM LẠI CÁC CÂU VỪA LÀM (TRƯỚC KHI NỘP BÀI) - ẨN 100% ĐÚNG/SAI
 // =========================================================================
 function openReviewBeforeSubmit() {
+  refreshLucideIcons();
   closeConfirmSubmitModal();
   renderQuickNavGrid();
   document.getElementById('modal-quick-nav').classList.add('active');
@@ -4423,13 +4942,17 @@ function submitAndFinishQuiz() {
   let title = '';
   let desc = '';
 
+  // TỰ ĐỘNG BẮN PHÁO HOA KHI ĐẠT TỪ 50% ĐIỂM TRỞ LÊN
+  if (pct >= 50) {
+    fireConfetti();
+  }
+
   if (pct >= 90) {
     // 9.0 - 10.0: Xuất sắc
     stars = '⭐⭐⭐';
     icon = '🏆';
     title = 'Xuất sắc tuyệt đối!';
     desc = `Bé đạt ${score10}/10 điểm (${correctCount}/${total} câu)! Tư duy khoa học và phản xạ cực kỳ vượt trội!`;
-    fireConfetti();
     playSound('correct');
     setMascotMood('finished', 'Bé đạt điểm xuất sắc tuyệt đối luôn, Bo Bo tự hào về bé quá! 🏆');
   } else if (pct >= 80) {
@@ -4438,7 +4961,6 @@ function submitAndFinishQuiz() {
     icon = '🎉';
     title = 'Làm bài rất tốt!';
     desc = `Bé đạt ${score10}/10 điểm (${correctCount}/${total} câu)! Bé nắm rất vững kiến thức, chỉ cần cẩn thận một vài câu nữa là đạt điểm tối đa!`;
-    fireConfetti();
     playSound('correct');
     setMascotMood('finished', 'Bé làm bài rất tốt! Cùng giữ vững phong độ này nhé! 🎉');
   } else if (pct >= 65) {
@@ -5144,6 +5666,7 @@ function renderLeaderboardList(players) {
   });
 
   listElem.innerHTML = html;
+  refreshLucideIcons();
 }
 
 // TÍNH NĂNG CHIA SẺ LINK GAME CHO BẠN BÈ
@@ -5172,6 +5695,7 @@ function copyToClipboard(text) {
 
 
 function openReviewScreen() {
+  refreshLucideIcons();
   reviewFilter = 'all';
   reviewMode = 'list';
   reviewCardIndex = 0;
@@ -5670,6 +6194,7 @@ function renderHistoryTable() {
     `;
     tbody.appendChild(tr);
   });
+  refreshLucideIcons();
 }
 
 function promptLinkPastTests() {
@@ -5757,33 +6282,39 @@ function clearHistoryData() {
 
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.add('active');
+  }
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  refreshLucideIcons();
 }
 
 function startTimer() {
   clearInterval(timerInterval);
-  const timerElem = document.getElementById('quiz-timer');
+  const timerElem = document.getElementById('timer-text');
   timerInterval = setInterval(() => {
     if (!isPaused) {
       elapsedSeconds++;
       const m = Math.floor(elapsedSeconds / 60);
       const s = elapsedSeconds % 60;
-      timerElem.textContent = `⏱ ${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+      if (timerElem) {
+        timerElem.textContent = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+      } else {
+        const fullTimer = document.getElementById('quiz-timer');
+        if (fullTimer) fullTimer.textContent = `⏱ ${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+      }
     }
   }, 1000);
 }
 
 function fireConfetti() {
-  const colors = ['#4361EE', '#3A0CA3', '#7209B7', '#2EC4B6', '#FF9F1C', '#E71D36'];
-  for (let i = 0; i < 60; i++) {
-    const c = document.createElement('div');
-    c.className = 'confetti';
-    c.style.left = Math.random() * 100 + 'vw';
-    c.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-    c.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
-    document.body.appendChild(c);
-    setTimeout(() => c.remove(), 3200);
+  if (typeof confetti === 'function') {
+    confetti({
+      particleCount: 120,
+      spread: 80,
+      origin: { y: 0.6 }
+    });
   }
 }
 
@@ -6265,6 +6796,7 @@ function renderUserManagementTable() {
     `;
     tbody.appendChild(tr);
   });
+  refreshLucideIcons();
 }
 
 function viewStudentHistoryFromMgmt(studentName) {
@@ -6320,6 +6852,11 @@ function selectDiff(diff, elem) {
   }
   updatePoolCountDisplay();
 }
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  refreshLucideIcons();
+});
 
 </script>
 </body>
