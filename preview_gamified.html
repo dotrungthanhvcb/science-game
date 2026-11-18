@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Preview UI - Đấu Trường Khoa Học (Gamified Template)</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Nunito & Fredoka -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    * {
+      font-family: 'Nunito', sans-serif !important;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .font-fredoka {
+      font-family: 'Fredoka', 'Nunito', sans-serif !important;
+    }
+
+    /* TACTILE 3D BUTTONS (PHONG CÁCH DUOLINGO / GAMIFIED TEMPLATE) */
+    .btn-3d {
+      position: relative;
+      transition: all 0.1s ease;
+      user-select: none;
+      cursor: pointer;
+    }
+    .btn-3d:active {
+      transform: translateY(4px);
+    }
+
+    /* Màu Vàng Chủ Đạo của Template */
+    .btn-3d-yellow {
+      background-color: #FFC01D;
+      color: #1F2937;
+      border: 2px solid #E59F00;
+      border-bottom: 5px solid #BC6F00;
+      border-radius: 9999px;
+      font-weight: 800;
+    }
+    .btn-3d-yellow:hover {
+      background-color: #FFC933;
+    }
+    .btn-3d-yellow:active {
+      border-bottom-width: 1px;
+      margin-top: 4px;
+    }
+
+    /* Màu Xanh Lá */
+    .btn-3d-green {
+      background-color: #10B981;
+      color: #FFFFFF;
+      border: 2px solid #059669;
+      border-bottom: 5px solid #047857;
+      border-radius: 9999px;
+      font-weight: 800;
+    }
+    .btn-3d-green:active {
+      border-bottom-width: 1px;
+      margin-top: 4px;
+    }
+
+    /* Màu Tím Gamified */
+    .btn-3d-purple {
+      background-color: #8B5CF6;
+      color: #FFFFFF;
+      border: 2px solid #7C3AED;
+      border-bottom: 5px solid #5B21B6;
+      border-radius: 9999px;
+      font-weight: 800;
+    }
+    .btn-3d-purple:active {
+      border-bottom-width: 1px;
+      margin-top: 4px;
+    }
+
+    /* Thẻ Đáp Án Trắc Nghiệm 3D */
+    .option-card-3d {
+      background: #FFFFFF;
+      border: 2px solid #E5E7EB;
+      border-bottom: 5px solid #CBD5E1;
+      border-radius: 20px;
+      transition: all 0.12s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+    .option-card-3d:hover {
+      border-color: #C084FC;
+      background-color: #FAF5FF;
+      transform: translateY(-2px);
+      border-bottom-width: 6px;
+    }
+    .option-card-3d:active {
+      transform: translateY(3px);
+      border-bottom-width: 2px;
+    }
+    .option-card-3d.selected {
+      border-color: #8B5CF6;
+      background-color: #F3E8FF;
+      border-bottom: 5px solid #6D28D9;
+      color: #5B21B6;
+    }
+    .option-card-3d.correct {
+      border-color: #10B981 !important;
+      background-color: #ECFDF5 !important;
+      border-bottom: 5px solid #047857 !important;
+      color: #065F46 !important;
+    }
+    .option-card-3d.wrong {
+      border-color: #EF4444 !important;
+      background-color: #FEF2F2 !important;
+      border-bottom: 5px solid #991B1B !important;
+      color: #991B1B !important;
+    }
+
+    /* Thẻ Mô Đun Chủ Đề Khoa Học */
+    .module-card {
+      background: #FFFFFF;
+      border: 2px solid #EDE9FE;
+      border-bottom: 5px solid #DDD6FE;
+      border-radius: 24px;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .module-card:hover {
+      transform: translateY(-3px);
+      border-color: #A78BFA;
+      box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.2);
+    }
+    .module-card:active {
+      transform: translateY(2px);
+      border-bottom-width: 2px;
+    }
+
+    /* Khung giả lập iPhone */
+    .iphone-shell {
+      width: 390px;
+      height: 844px;
+      max-height: calc(100vh - 80px);
+      border: 12px solid #1E1B4B;
+      border-radius: 48px;
+      box-shadow: 0 25px 60px -15px rgba(30, 27, 75, 0.35), 0 0 0 1px rgba(0,0,0,0.05);
+      position: relative;
+      overflow: hidden;
+      background: #F8F5FF;
+    }
+
+    /* Dynamic Island / Notch */
+    .iphone-notch {
+      width: 120px;
+      height: 28px;
+      background: #1E1B4B;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+      z-index: 50;
+    }
+
+    /* Thanh Điều Hướng Dưới Cùng (Bottom Navigation) */
+    .bottom-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #94A3B8;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .bottom-nav-item.active {
+      color: #8B5CF6;
+      transform: translateY(-2px);
+    }
+    .bottom-nav-item.active .nav-icon-wrap {
+      background-color: #F3E8FF;
+      color: #7C3AED;
+      border-radius: 14px;
+    }
+
+    /* Scrollbar ẩn */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 min-h-screen text-slate-800 flex flex-col items-center">
+
+  <!-- TOP CONTROL BAR: THANH ĐIỀU KHIỂN PREVIEW & CHUYỂN MÀN HÌNH -->
+  <header class="w-full bg-slate-800/95 backdrop-blur border-b border-slate-700 text-white px-4 py-3 sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Logo & Tiêu đề -->
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">🔬</span>
+        <div>
+          <div class="font-fredoka font-bold text-base text-yellow-400 tracking-wide flex items-center gap-2">
+            SCIENCE GAME FOR NA
+            <span class="text-xs bg-purple-500/30 text-purple-300 border border-purple-400/40 px-2 py-0.5 rounded-full">Gamified Figma Template</span>
+          </div>
+          <div class="text-xs text-slate-400">Xem trước trực quan 6 màn hình với dữ liệu thật</div>
+        </div>
+      </div>
+
+      <!-- Quick Screen Switcher Tabs -->
+      <nav class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
+        <button onclick="switchScreen('screen-home')" class="screen-tab px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-purple-600 text-white" data-screen="screen-home">
+          <i data-lucide="home" style="width:14px; height:14px;"></i> 1. Trang Chủ
+        </button>
+        <button onclick="switchScreen('screen-modules')" class="screen-tab px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-slate-700 text-slate-300 hover:text-white" data-screen="screen-modules">
+          <i data-lucide="layout-grid" style="width:14px; height:14px;"></i> 2. 6 Chủ Đề
+        </button>
+        <button onclick="switchScreen('screen-level')" class="screen-tab px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-slate-700 text-slate-300 hover:text-white" data-screen="screen-level">
+          <i data-lucide="play-circle" style="width:14px; height:14px;"></i> 3. Chuẩn Bị Thi
+        </button>
+        <button onclick="switchScreen('screen-quiz')" class="screen-tab px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-slate-700 text-slate-300 hover:text-white" data-screen="screen-quiz">
+          <i data-lucide="help-circle" style="width:14px; height:14px;"></i> 4. Phòng Thi
+        </button>
+        <button onclick="switchScreen('screen-result')" class="screen-tab px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-slate-700 text-slate-300 hover:text-white" data-screen="screen-result">
+          <i data-lucide="award" style="width:14px; height:14px;"></i> 5. Ăn Mừng
+        </button>
+        <button onclick="switchScreen('screen-leaderboard')" class="screen-tab px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-slate-700 text-slate-300 hover:text-white" data-screen="screen-leaderboard">
+          <i data-lucide="trophy" style="width:14px; height:14px;"></i> 6. Bảng Vàng
+        </button>
+        <button onclick="switchScreen('screen-profile')" class="screen-tab px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-slate-700 text-slate-300 hover:text-white" data-screen="screen-profile">
+          <i data-lucide="user" style="width:14px; height:14px;"></i> 7. Hồ Sơ
+        </button>
+      </nav>
+
+      <!-- View Mode Toggle: Mobile Simulator vs Full Desktop Width -->
+      <div class="flex items-center gap-2">
+        <button onclick="toggleViewMode()" id="view-mode-btn" class="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 border border-slate-600 transition" title="Chuyển chế độ xem">
+          <i data-lucide="smartphone" style="width:14px; height:14px;"></i>
+          <span id="view-mode-text">Mở Rộng Desktop</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN PREVIEW CONTAINER -->
+  <main class="w-full flex-1 flex items-center justify-center p-4">
+    
+    <div id="app-shell" class="iphone-shell flex flex-col transition-all duration-300">
+      
+      <!-- Dynamic Notch (Ẩn khi ở chế độ Desktop) -->
+      <div id="phone-notch" class="iphone-notch"></div>
+
+      <!-- GAMIFIED TOP STATUS BAR: Stats (❤️ Tim, 🔥 Streak, 🪙 Điểm, 🎵 Nhạc) -->
+      <div class="w-full bg-white border-b-2 border-purple-100 px-4 pt-8 pb-3 flex items-center justify-between shrink-0 select-none shadow-sm z-20">
+        
+        <!-- Left: Streak & Lives -->
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-1 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-full text-xs font-black text-amber-600" title="Chuỗi ngày học liên tục">
+            <span>🔥</span>
+            <span>5</span>
+          </div>
+          <div class="flex items-center gap-1 bg-rose-50 border border-rose-200 px-2.5 py-1 rounded-full text-xs font-black text-rose-600" title="Lượt tim thử thách">
+            <span>❤️</span>
+            <span id="header-lives">5</span>
+          </div>
+          <div class="flex items-center gap-1 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full text-xs font-black text-emerald-600" title="Điểm sao tích lũy">
+            <span>⭐</span>
+            <span id="header-stars">120</span>
+          </div>
+        </div>
+
+        <!-- Right: Audio & Mascot Badge -->
+        <div class="flex items-center gap-2">
+          <button onclick="toggleSoundFx()" id="audio-toggle-btn" class="w-8 h-8 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-200 transition" title="Bật/Tắt âm thanh">
+            <i data-lucide="volume-2" style="width:16px; height:16px;"></i>
+          </button>
+          
+          <div class="flex items-center gap-1.5 bg-purple-50 border border-purple-200 pl-1.5 pr-2.5 py-0.5 rounded-full cursor-pointer hover:bg-purple-100 transition" onclick="switchScreen('screen-profile')" title="Bé Na - Giáo Sư Cú Vọ">
+            <span class="text-base">🦉</span>
+            <span class="text-xs font-black text-purple-700">Bé Na</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SCREENS VIEWPORT (Cuộn mượt mà bên trong màn hình) -->
+      <div class="flex-1 overflow-y-auto no-scrollbar relative p-4 bg-[#F8F5FF]" id="screens-viewport">
+
+        <!-- ===================================================================
+             MÀN HÌNH 1: TRANG CHỦ (HOME - ID 8:117 TỪ FIGMA)
+             =================================================================== -->
+        <div id="screen-home" class="screen-view flex flex-col gap-4">
+          
+          <!-- Banner Chào Mừng & Mục Tiêu Hôm Nay -->
+          <div class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-3xl p-5 relative overflow-hidden shadow-md">
+            <div class="relative z-10">
+              <span class="inline-block bg-white/20 text-white text-[11px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider mb-2">Thử Thách Hằng Ngày</span>
+              <h2 class="font-fredoka text-xl font-bold leading-tight">Khám Phá Bí Mật<br>Thế Giới Tự Nhiên! 🌍</h2>
+              <p class="text-xs text-purple-100 mt-1 mb-4">Hoàn thành 1 bài thi để nhận 20 ⭐ và bảo vệ chuỗi 5 ngày!</p>
+              
+              <button onclick="switchScreen('screen-level')" class="btn-3d btn-3d-yellow px-5 py-2.5 text-xs inline-flex items-center gap-2 shadow-sm">
+                <i data-lucide="play" style="width:14px; height:14px; fill:currentColor;"></i>
+                <span>CHƠI NGAY HÔM NAY</span>
+              </button>
+            </div>
+            
+            <!-- Mascot Illustration Floating -->
+            <div class="absolute -right-4 -bottom-4 text-7xl select-none opacity-90 drop-shadow-md">
+              🦉
+            </div>
+          </div>
+
+          <!-- Lộ Trình Màn Chơi (Progress Map Card) -->
+          <div class="bg-white rounded-3xl p-4 border-2 border-purple-100 shadow-sm flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">LỘ TRÌNH HIỆN TẠI</div>
+                <div class="font-fredoka font-bold text-base text-purple-900">Unit 1: Động Vật & Thực Vật</div>
+              </div>
+              <span class="text-xs font-black text-purple-600 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-100">3 / 6 Màn</span>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden p-0.5 border border-slate-200">
+              <div class="bg-gradient-to-r from-amber-400 to-yellow-400 h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
+            </div>
+
+            <!-- Quick Start Cards -->
+            <div class="grid grid-cols-2 gap-2.5 pt-1">
+              <div onclick="startQuizWithTopic('Thế Giới Động Vật')" class="p-3 bg-amber-50 border-2 border-amber-200 rounded-2xl cursor-pointer hover:bg-amber-100 transition flex items-center gap-3">
+                <span class="text-2xl">🦁</span>
+                <div>
+                  <div class="text-xs font-black text-amber-900 leading-tight">Động Vật</div>
+                  <div class="text-[10px] text-amber-700 font-bold">120 Câu Hỏi</div>
+                </div>
+              </div>
+
+              <div onclick="startQuizWithTopic('Vũ Trụ & Thời Tiết')" class="p-3 bg-indigo-50 border-2 border-indigo-200 rounded-2xl cursor-pointer hover:bg-indigo-100 transition flex items-center gap-3">
+                <span class="text-2xl">🚀</span>
+                <div>
+                  <div class="text-xs font-black text-indigo-900 leading-tight">Vũ Trụ</div>
+                  <div class="text-[10px] text-indigo-700 font-bold">95 Câu Hỏi</div>
+                </div>
+              </div>
+            </div>
+
+            <button onclick="switchScreen('screen-modules')" class="w-full py-2.5 rounded-2xl bg-purple-50 hover:bg-purple-100 text-purple-700 font-bold text-xs flex items-center justify-center gap-1.5 transition border border-purple-200">
+              <span>Xem Tất Cả 6 Chủ Đề Khoa Học</span>
+              <i data-lucide="chevron-right" style="width:14px; height:14px;"></i>
+            </button>
+          </div>
+
+          <!-- Mini Bảng Vàng Hôm Nay -->
+          <div class="bg-white rounded-3xl p-4 border-2 border-purple-100 shadow-sm flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-amber-100 text-amber-700 font-fredoka font-bold text-lg flex items-center justify-center">
+                🏆
+              </div>
+              <div>
+                <div class="text-[11px] font-bold text-slate-400">HẠNG CỦA BẠN</div>
+                <div class="font-fredoka font-bold text-sm text-slate-800">Top 3 • 120 Điểm</div>
+              </div>
+            </div>
+            <button onclick="switchScreen('screen-leaderboard')" class="text-xs font-extrabold text-purple-600 hover:text-purple-800">
+              Chi tiết →
+            </button>
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================================
+             MÀN HÌNH 2: 6 CHỦ ĐỀ KHOA HỌC (MODULE COURSE - ID 6:2149 TỪ FIGMA)
+             =================================================================== -->
+        <div id="screen-modules" class="screen-view hidden flex flex-col gap-3">
+          
+          <div class="flex items-center justify-between px-1">
+            <div>
+              <h2 class="font-fredoka text-xl font-bold text-purple-950">Chủ Đề Khoa Học</h2>
+              <p class="text-xs text-slate-500">Bộ đề chuẩn 1.000 câu theo SGK & Cambridge</p>
+            </div>
+            <span class="text-xs font-black bg-yellow-400 text-slate-900 px-3 py-1 rounded-full shadow-sm">6 Chủ Đề</span>
+          </div>
+
+          <!-- Danh Sách 6 Thẻ Chủ Đề -->
+          <div class="flex flex-col gap-2.5">
+            
+            <!-- 1. Thế Giới Động Vật -->
+            <div onclick="prepareTopic('Thế Giới Động Vật', '🦁', 'from-amber-400 to-orange-500')" class="module-card p-3.5 flex items-center justify-between">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-amber-100 border border-amber-200 flex items-center justify-center text-2xl shadow-inner">
+                  🦁
+                </div>
+                <div>
+                  <div class="font-fredoka font-bold text-sm text-slate-900">Thế Giới Động Vật</div>
+                  <div class="text-[11px] text-slate-500 font-semibold">Tập tính, môi trường sống, loài quý hiếm</div>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="text-[10px] font-extrabold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">150 Câu</span>
+                    <span class="text-[10px] font-extrabold text-emerald-600 flex items-center gap-0.5">✓ Đã mở khóa</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center shrink-0">
+                <i data-lucide="play" style="width:14px; height:14px; fill:currentColor;"></i>
+              </div>
+            </div>
+
+            <!-- 2. Thực Vật & Tự Nhiên -->
+            <div onclick="prepareTopic('Thực Vật & Tự Nhiên', '🌿', 'from-emerald-400 to-green-600')" class="module-card p-3.5 flex items-center justify-between">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-100 border border-emerald-200 flex items-center justify-center text-2xl shadow-inner">
+                  🌿
+                </div>
+                <div>
+                  <div class="font-fredoka font-bold text-sm text-slate-900">Thực Vật & Tự Nhiên</div>
+                  <div class="text-[11px] text-slate-500 font-semibold">Quang hợp, hạt mầm, rừng nguyên sinh</div>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="text-[10px] font-extrabold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">120 Câu</span>
+                    <span class="text-[10px] font-extrabold text-emerald-600 flex items-center gap-0.5">✓ Đã mở khóa</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center shrink-0">
+                <i data-lucide="play" style="width:14px; height:14px; fill:currentColor;"></i>
+              </div>
+            </div>
+
+            <!-- 3. Vũ Trụ & Thời Tiết -->
+            <div onclick="prepareTopic('Vũ Trụ & Thời Tiết', '🚀', 'from-blue-500 to-indigo-600')" class="module-card p-3.5 flex items-center justify-between">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-indigo-100 border border-indigo-200 flex items-center justify-center text-2xl shadow-inner">
+                  🚀
+                </div>
+                <div>
+                  <div class="font-fredoka font-bold text-sm text-slate-900">Vũ Trụ & Thời Tiết</div>
+                  <div class="text-[11px] text-slate-500 font-semibold">Hệ Mặt Trời, các chòm sao, khí hậu</div>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="text-[10px] font-extrabold bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded-full">180 Câu</span>
+                    <span class="text-[10px] font-extrabold text-emerald-600 flex items-center gap-0.5">✓ Đã mở khóa</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center shrink-0">
+                <i data-lucide="play" style="width:14px; height:14px; fill:currentColor;"></i>
+              </div>
+            </div>
+
+            <!-- 4. Cơ Thể Người & Sức Khỏe -->
+            <div onclick="prepareTopic('Cơ Thể Người', '🫀', 'from-rose-400 to-red-500')" class="module-card p-3.5 flex items-center justify-between">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-rose-100 border border-rose-200 flex items-center justify-center text-2xl shadow-inner">
+                  🫀
+                </div>
+                <div>
+                  <div class="font-fredoka font-bold text-sm text-slate-900">Cơ Thể Người & Sức Khỏe</div>
+                  <div class="text-[11px] text-slate-500 font-semibold">5 giác quan, tim mạch, dinh dưỡng sạch</div>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="text-[10px] font-extrabold bg-rose-100 text-rose-800 px-2 py-0.5 rounded-full">140 Câu</span>
+                    <span class="text-[10px] font-extrabold text-emerald-600 flex items-center gap-0.5">✓ Đã mở khóa</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center shrink-0">
+                <i data-lucide="play" style="width:14px; height:14px; fill:currentColor;"></i>
+              </div>
+            </div>
+
+            <!-- 5. Địa Lý Non Sông Việt Nam -->
+            <div onclick="prepareTopic('Địa Lý Việt Nam', '🗺️', 'from-teal-400 to-cyan-600')" class="module-card p-3.5 flex items-center justify-between">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-cyan-100 border border-cyan-200 flex items-center justify-center text-2xl shadow-inner">
+                  🗺️
+                </div>
+                <div>
+                  <div class="font-fredoka font-bold text-sm text-slate-900">Địa Lý Non Sông Việt Nam</div>
+                  <div class="text-[11px] text-slate-500 font-semibold">Sông Hồng, Tây Nguyên, biển đảo quê hương</div>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="text-[10px] font-extrabold bg-cyan-100 text-cyan-800 px-2 py-0.5 rounded-full">160 Câu</span>
+                    <span class="text-[10px] font-extrabold text-emerald-600 flex items-center gap-0.5">✓ Đã mở khóa</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center shrink-0">
+                <i data-lucide="play" style="width:14px; height:14px; fill:currentColor;"></i>
+              </div>
+            </div>
+
+            <!-- 6. Vật Chất & Năng Lượng -->
+            <div onclick="prepareTopic('Vật Chất & Hiện Tượng', '⚡', 'from-violet-400 to-purple-600')" class="module-card p-3.5 flex items-center justify-between">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-purple-100 border border-purple-200 flex items-center justify-center text-2xl shadow-inner">
+                  ⚡
+                </div>
+                <div>
+                  <div class="font-fredoka font-bold text-sm text-slate-900">Vật Chất & Năng Lượng</div>
+                  <div class="text-[11px] text-slate-500 font-semibold">Ánh sáng, nam châm, điện năng & lực hút</div>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="text-[10px] font-extrabold bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full">150 Câu</span>
+                    <span class="text-[10px] font-extrabold text-emerald-600 flex items-center gap-0.5">✓ Đã mở khóa</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center shrink-0">
+                <i data-lucide="play" style="width:14px; height:14px; fill:currentColor;"></i>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================================
+             MÀN HÌNH 3: CHUẨN BỊ THI (FLOW CHART LEVEL - ID 3:1391 TỪ FIGMA)
+             =================================================================== -->
+        <div id="screen-level" class="screen-view hidden flex flex-col gap-4">
+          
+          <button onclick="switchScreen('screen-modules')" class="self-start text-xs font-bold text-purple-700 flex items-center gap-1 hover:underline">
+            <i data-lucide="arrow-left" style="width:14px; height:14px;"></i> Quay lại danh mục
+          </button>
+
+          <!-- Card Header Chủ Đề Đã Chọn -->
+          <div class="bg-gradient-to-br from-purple-700 via-indigo-700 to-purple-900 text-white rounded-3xl p-6 text-center relative overflow-hidden shadow-md">
+            <div class="w-20 h-20 mx-auto rounded-3xl bg-white/20 backdrop-blur border border-white/30 flex items-center justify-center text-4xl shadow-lg mb-3" id="level-topic-icon">
+              🦁
+            </div>
+            <h2 class="font-fredoka font-bold text-2xl" id="level-topic-title">Thế Giới Động Vật</h2>
+            <p class="text-xs text-purple-200 mt-1">Thử thách trí tuệ tự nhiên • Đấu trường 1.000 câu</p>
+          </div>
+
+          <!-- Thông Số Lượt Thi: Thời Gian & Số Câu -->
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-white rounded-2xl p-4 border-2 border-purple-100 text-center shadow-sm">
+              <div class="text-[11px] font-bold text-slate-400 uppercase">THỜI GIAN</div>
+              <div class="font-fredoka font-bold text-2xl text-purple-900 mt-1">10 Phút</div>
+              <div class="text-[10px] text-slate-500 font-semibold">Đếm ngược tự động</div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-4 border-2 border-purple-100 text-center shadow-sm">
+              <div class="text-[11px] font-bold text-slate-400 uppercase">SỐ CÂU HỎI</div>
+              <div class="font-fredoka font-bold text-2xl text-purple-900 mt-1">10 Câu</div>
+              <div class="text-[10px] text-slate-500 font-semibold">Trắc nghiệm 4 đáp án</div>
+            </div>
+          </div>
+
+          <!-- Lựa Chọn Ngôn Ngữ Thi (Tiếng Việt / Song Ngữ / English) -->
+          <div class="bg-white rounded-2xl p-4 border-2 border-purple-100 shadow-sm flex flex-col gap-2.5">
+            <label class="text-xs font-black text-slate-700 uppercase tracking-wide">CHỌN NGÔN NGỮ ĐỀ THI</label>
+            <div class="grid grid-cols-3 gap-2" id="lang-selector">
+              <button onclick="selectLang('vi')" id="lang-btn-vi" class="py-2.5 px-2 rounded-xl border-2 text-xs font-black transition border-purple-600 bg-purple-50 text-purple-900">
+                🇻🇳 Tiếng Việt
+              </button>
+              <button onclick="selectLang('bilingual')" id="lang-btn-bilingual" class="py-2.5 px-2 rounded-xl border-2 text-xs font-black transition border-slate-200 bg-white text-slate-600 hover:bg-slate-50">
+                🌐 Song Ngữ
+              </button>
+              <button onclick="selectLang('en')" id="lang-btn-en" class="py-2.5 px-2 rounded-xl border-2 text-xs font-black transition border-slate-200 bg-white text-slate-600 hover:bg-slate-50">
+                🇬🇧 English
+              </button>
+            </div>
+          </div>
+
+          <!-- Nút 3D Bắt Đầu To Bản -->
+          <div class="pt-2">
+            <button onclick="startQuizNow()" class="btn-3d btn-3d-yellow w-full py-4 text-base tracking-wider flex items-center justify-center gap-2 shadow-lg">
+              <i data-lucide="zap" style="width:20px; height:20px; fill:currentColor;"></i>
+              <span>BẮT ĐẦU THI NGAY! 🚀</span>
+            </button>
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================================
+             MÀN HÌNH 4: PHÒNG THI TRẮC NGHIỆM (QUESTION CARD - ID 2:156 TỪ FIGMA)
+             =================================================================== -->
+        <div id="screen-quiz" class="screen-view hidden flex flex-col gap-4">
+          
+          <!-- Top Bar: Nút Thoát ✕, Tiến Trình Câu, Đồng Hồ Đếm Giờ -->
+          <div class="flex items-center justify-between gap-3 shrink-0">
+            <button onclick="confirmExitQuiz()" class="w-9 h-9 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-slate-100 transition shadow-sm" title="Thoát phòng thi">
+              <i data-lucide="x" style="width:18px; height:18px; stroke-width:3;"></i>
+            </button>
+
+            <!-- Thanh Tiến Trình -->
+            <div class="flex-1 bg-slate-200 h-3.5 rounded-full overflow-hidden p-0.5 border border-slate-300">
+              <div id="quiz-progress-bar" class="bg-gradient-to-r from-emerald-400 to-green-500 h-full rounded-full transition-all duration-300" style="width: 30%;"></div>
+            </div>
+
+            <!-- Đồng Hồ -->
+            <div class="bg-white border-2 border-purple-200 px-3 py-1 rounded-full text-xs font-black text-purple-900 flex items-center gap-1.5 shadow-sm">
+              <i data-lucide="clock" style="width:14px; height:14px; stroke-width:2.5;"></i>
+              <span id="quiz-countdown">09:45</span>
+            </div>
+          </div>
+
+          <!-- Số Thứ Tự & Chủ Đề -->
+          <div class="flex items-center justify-between px-1 text-xs">
+            <span class="font-black text-purple-700 bg-purple-100 px-3 py-1 rounded-full">Câu hỏi 3 / 10</span>
+            <span class="font-bold text-slate-500">🦁 Thế Giới Động Vật</span>
+          </div>
+
+          <!-- Thẻ Câu Hỏi Chính -->
+          <div class="bg-white rounded-3xl p-5 border-2 border-purple-100 shadow-sm flex flex-col gap-3">
+            <h3 class="font-fredoka text-lg font-bold text-slate-900 leading-snug" id="quiz-question-text">
+              Để bảo vệ cơ thể khỏi bị lạnh vào mùa đông khắc nghiệt, loài gấu Bắc Cực có đặc điểm nào dưới đây?
+            </h3>
+            <div class="text-xs text-slate-500 font-semibold italic border-t border-slate-100 pt-2" id="quiz-question-en">
+              To protect its body from severe cold in winter, what special feature does a polar bear have?
+            </div>
+          </div>
+
+          <!-- 4 Thẻ Đáp Án A, B, C, D (Tactile 3D Cards) -->
+          <div class="flex flex-col gap-2.5" id="options-container">
+            
+            <div onclick="selectOption(0)" class="option-card-3d p-3.5 flex items-center gap-3" data-idx="0">
+              <span class="w-8 h-8 rounded-xl bg-purple-100 text-purple-800 font-fredoka font-bold text-sm flex items-center justify-center shrink-0">A</span>
+              <div class="text-xs font-bold leading-snug">Lớp mỡ rất dày và bộ lông trắng không thấm nước</div>
+            </div>
+
+            <div onclick="selectOption(1)" class="option-card-3d p-3.5 flex items-center gap-3" data-idx="1">
+              <span class="w-8 h-8 rounded-xl bg-purple-100 text-purple-800 font-fredoka font-bold text-sm flex items-center justify-center shrink-0">B</span>
+              <div class="text-xs font-bold leading-snug">Rụng hết lông để di chuyển nhanh hơn</div>
+            </div>
+
+            <div onclick="selectOption(2)" class="option-card-3d p-3.5 flex items-center gap-3" data-idx="2">
+              <span class="w-8 h-8 rounded-xl bg-purple-100 text-purple-800 font-fredoka font-bold text-sm flex items-center justify-center shrink-0">C</span>
+              <div class="text-xs font-bold leading-snug">Ngâm mình liên tục dưới dòng nước băng lạnh buốt</div>
+            </div>
+
+            <div onclick="selectOption(3)" class="option-card-3d p-3.5 flex items-center gap-3" data-idx="3">
+              <span class="w-8 h-8 rounded-xl bg-purple-100 text-purple-800 font-fredoka font-bold text-sm flex items-center justify-center shrink-0">D</span>
+              <div class="text-xs font-bold leading-snug">Chỉ ngủ trên các mỏm đá nhọn ngoài biển khơi</div>
+            </div>
+
+          </div>
+
+          <!-- Khung Giải Thích Sau Khi Trả Lời (Feedback Card) -->
+          <div id="quiz-feedback-box" class="hidden p-3.5 rounded-2xl bg-emerald-50 border-2 border-emerald-300 text-xs text-emerald-900">
+            <div class="font-black flex items-center gap-1.5 mb-1 text-emerald-700">
+              <span>💡 GIẢI THÍCH KHOA HỌC:</span>
+            </div>
+            <div>Gấu Bắc Cực có lớp mỡ dày tới 10cm cùng 2 lớp lông đặc biệt giúp giữ nhiệt tối đa giữa nhiệt độ âm 40 độ C.</div>
+          </div>
+
+          <!-- Nút Tiếp Theo (Sticky Bottom Button) -->
+          <div class="pt-2">
+            <button onclick="nextQuestion()" id="quiz-next-btn" class="btn-3d btn-3d-yellow w-full py-3.5 text-sm tracking-wider flex items-center justify-center gap-2 shadow-md">
+              <span>TIẾP THEO</span>
+              <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
+            </button>
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================================
+             MÀN HÌNH 5: ĂN MỪNG KẾT QUẢ (LESSON COMPLETED - ID 6:2923 TỪ FIGMA)
+             =================================================================== -->
+        <div id="screen-result" class="screen-view hidden flex flex-col items-center justify-center text-center gap-4 py-4">
+          
+          <!-- Animated Trophy / Mascot Badge -->
+          <div class="relative">
+            <div class="w-28 h-28 rounded-full bg-gradient-to-tr from-yellow-300 via-amber-400 to-yellow-500 border-4 border-white shadow-xl flex items-center justify-center text-6xl animate-bounce">
+              🏆
+            </div>
+            <div class="absolute -bottom-2 bg-purple-900 text-yellow-300 font-fredoka text-xs font-black px-4 py-1 rounded-full border-2 border-yellow-400 shadow">
+              HOÀN THÀNH XUẤT SẮC!
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-fredoka text-2xl font-bold text-purple-950 mt-2">Bé Na Đã Về Đích! 🎉</h2>
+            <p class="text-xs text-slate-500 mt-1">Chúc mừng bé đã tích lũy thêm 30 sao kinh nghiệm!</p>
+          </div>
+
+          <!-- Lưới Thống Kê Kết Quả -->
+          <div class="w-full grid grid-cols-3 gap-2.5 mt-2">
+            
+            <div class="bg-white rounded-2xl p-3 border-2 border-purple-100 shadow-sm">
+              <div class="text-[10px] font-bold text-slate-400 uppercase">ĐIỂM SỐ</div>
+              <div class="font-fredoka text-2xl font-bold text-purple-700 mt-0.5">100</div>
+              <div class="text-[9px] text-emerald-600 font-extrabold">Tuyệt đối ⭐</div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-3 border-2 border-purple-100 shadow-sm">
+              <div class="text-[10px] font-bold text-slate-400 uppercase">ĐỘ CHÍNH XÁC</div>
+              <div class="font-fredoka text-2xl font-bold text-emerald-600 mt-0.5">10/10</div>
+              <div class="text-[9px] text-slate-500 font-bold">100% đúng</div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-3 border-2 border-purple-100 shadow-sm">
+              <div class="text-[10px] font-bold text-slate-400 uppercase">THỜI GIAN</div>
+              <div class="font-fredoka text-2xl font-bold text-indigo-600 mt-0.5">04:12</div>
+              <div class="text-[9px] text-slate-500 font-bold">Phút:giây</div>
+            </div>
+
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="w-full flex flex-col gap-2.5 mt-2">
+            <button onclick="triggerConfettiExplosion()" class="btn-3d btn-3d-yellow w-full py-3.5 text-xs font-black tracking-wide flex items-center justify-center gap-2">
+              <span>BẮN PHÁO HOA ĂN MỪNG 🎊</span>
+            </button>
+
+            <button onclick="switchScreen('screen-leaderboard')" class="btn-3d btn-3d-purple w-full py-3.5 text-xs font-black tracking-wide flex items-center justify-center gap-2">
+              <i data-lucide="trophy" style="width:16px; height:16px;"></i>
+              <span>XEM BẢNG VÀNG DANH DỰ</span>
+            </button>
+
+            <button onclick="switchScreen('screen-home')" class="w-full py-3 text-xs font-bold text-slate-500 hover:text-slate-800 transition">
+              Quay về Trang Chủ
+            </button>
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================================
+             MÀN HÌNH 6: BẢNG VÀNG DANH DỰ (SCORE DASHBOARD - ID 3:863 TỪ FIGMA)
+             =================================================================== -->
+        <div id="screen-leaderboard" class="screen-view hidden flex flex-col gap-4">
+          
+          <div class="text-center">
+            <h2 class="font-fredoka text-2xl font-bold text-purple-950">Bảng Vàng Danh Dự</h2>
+            <p class="text-xs text-slate-500">Các nhà khoa học nhí xuất sắc nhất tuần này</p>
+          </div>
+
+          <!-- Bục Vinh Quang Top 1, Top 2, Top 3 (Podium) -->
+          <div class="flex items-end justify-center gap-2 pt-6 pb-2">
+            
+            <!-- Hạng 2: Bạc -->
+            <div class="flex flex-col items-center">
+              <div class="w-12 h-12 rounded-full border-2 border-slate-300 bg-slate-100 flex items-center justify-center text-xl shadow mb-1">
+                🦖
+              </div>
+              <div class="text-[11px] font-black text-slate-700">Minh Trí</div>
+              <div class="text-[10px] font-bold text-purple-700">95 Điểm</div>
+              <div class="w-20 h-16 rounded-t-2xl bg-gradient-to-t from-slate-300 to-slate-200 border-t-2 border-x-2 border-slate-300 flex items-center justify-center text-lg font-black text-slate-600 shadow-inner">
+                🥈
+              </div>
+            </div>
+
+            <!-- Hạng 1: Vàng (Cao nhất) -->
+            <div class="flex flex-col items-center -mt-4">
+              <div class="relative">
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-sm">👑</span>
+                <div class="w-14 h-14 rounded-full border-2 border-amber-400 bg-amber-100 flex items-center justify-center text-2xl shadow-lg mb-1 ring-4 ring-amber-300/40">
+                  🦉
+                </div>
+              </div>
+              <div class="text-xs font-black text-amber-900">Bé Na</div>
+              <div class="text-[10px] font-bold text-purple-700">100 Điểm</div>
+              <div class="w-24 h-24 rounded-t-2xl bg-gradient-to-t from-amber-400 to-yellow-300 border-t-2 border-x-2 border-yellow-400 flex items-center justify-center text-2xl font-black text-amber-900 shadow-md">
+                🥇
+              </div>
+            </div>
+
+            <!-- Hạng 3: Đồng -->
+            <div class="flex flex-col items-center">
+              <div class="w-12 h-12 rounded-full border-2 border-amber-700 bg-amber-50 flex items-center justify-center text-xl shadow mb-1">
+                🦁
+              </div>
+              <div class="text-[11px] font-black text-slate-700">Gia Hân</div>
+              <div class="text-[10px] font-bold text-purple-700">90 Điểm</div>
+              <div class="w-20 h-12 rounded-t-2xl bg-gradient-to-t from-amber-700/30 to-amber-600/20 border-t-2 border-x-2 border-amber-600/30 flex items-center justify-center text-lg font-black text-amber-800 shadow-inner">
+                🥉
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Danh Sách Bảng Xếp Hạng Top 4, 5, 6... -->
+          <div class="bg-white rounded-3xl p-3 border-2 border-purple-100 shadow-sm flex flex-col gap-2">
+            
+            <div class="flex items-center justify-between p-2.5 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="flex items-center gap-3">
+                <span class="w-6 text-center font-fredoka font-black text-slate-500 text-sm">4</span>
+                <span class="text-xl">🐰</span>
+                <div>
+                  <div class="text-xs font-black text-slate-800">Bảo An</div>
+                  <div class="text-[10px] text-slate-400 font-semibold">14/11/2026 • 05:20</div>
+                </div>
+              </div>
+              <span class="text-xs font-black text-purple-700 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200">85 Điểm</span>
+            </div>
+
+            <div class="flex items-center justify-between p-2.5 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="flex items-center gap-3">
+                <span class="w-6 text-center font-fredoka font-black text-slate-500 text-sm">5</span>
+                <span class="text-xl">🐻</span>
+                <div>
+                  <div class="text-xs font-black text-slate-800">Đức Anh</div>
+                  <div class="text-[10px] text-slate-400 font-semibold">13/11/2026 • 06:10</div>
+                </div>
+              </div>
+              <span class="text-xs font-black text-purple-700 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200">80 Điểm</span>
+            </div>
+
+          </div>
+
+          <!-- Thẻ Cố Định Hạng Của Bạn Ở Dưới Cùng (Chuẩn Template Figma) -->
+          <div class="p-3 bg-purple-900 text-white rounded-2xl flex items-center justify-between shadow-md">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-yellow-400 text-slate-900 font-black flex items-center justify-center text-xs">
+                #1
+              </div>
+              <div>
+                <div class="text-[10px] text-purple-200 uppercase font-bold">HẠNG CỦA BẠN</div>
+                <div class="text-xs font-black text-white">Bé Na (Thanh Do Trung)</div>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="text-sm font-black text-yellow-300">100 Điểm</div>
+              <div class="text-[9px] text-purple-200">Kỷ lục tuần</div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================================
+             MÀN HÌNH 7: HỒ SƠ & LỊCH SỬ THI (PROFILE - ID 8:542 TỪ FIGMA)
+             =================================================================== -->
+        <div id="screen-profile" class="screen-view hidden flex flex-col gap-4">
+          
+          <!-- Profile Card -->
+          <div class="bg-white rounded-3xl p-5 border-2 border-purple-100 shadow-sm text-center relative overflow-hidden">
+            <div class="w-20 h-20 mx-auto rounded-full bg-purple-100 border-4 border-purple-200 flex items-center justify-center text-4xl shadow-inner mb-2">
+              🦉
+            </div>
+            <h3 class="font-fredoka text-lg font-bold text-slate-900">Bé Na</h3>
+            <p class="text-xs text-slate-500 font-semibold">dotrungthanhhust@gmail.com</p>
+            <span class="inline-block mt-2 text-[10px] font-black bg-purple-100 text-purple-800 px-3 py-1 rounded-full border border-purple-200">
+              Nhà Thám Hiểm Cấp 3 🌟
+            </span>
+          </div>
+
+          <!-- Lịch Sử Các Bài Thi Đã Làm (Phân Tách Ngày, Giờ, Ngôn Ngữ) -->
+          <div class="flex flex-col gap-2.5">
+            <div class="flex items-center justify-between px-1">
+              <h4 class="font-fredoka text-sm font-bold text-slate-800">Lịch Sử Thi Gần Đây</h4>
+              <span class="text-xs font-bold text-purple-600">3 Lần Thi</span>
+            </div>
+
+            <!-- Bài 1 -->
+            <div class="bg-white rounded-2xl p-3 border-2 border-purple-100 shadow-sm flex items-center justify-between">
+              <div>
+                <div class="text-xs font-black text-slate-800">🦁 Thế Giới Động Vật</div>
+                <div class="text-[10px] text-slate-500 flex items-center gap-2 mt-0.5">
+                  <span>📅 14/11/2026</span>
+                  <span>⏰ 11:00:20</span>
+                  <span class="bg-purple-100 text-purple-800 px-1.5 py-0.2 rounded font-bold">Song Ngữ</span>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="text-xs font-black text-emerald-600">100 / 100</span>
+                <div class="text-[10px] text-slate-400">04:12</div>
+              </div>
+            </div>
+
+            <!-- Bài 2 -->
+            <div class="bg-white rounded-2xl p-3 border-2 border-purple-100 shadow-sm flex items-center justify-between">
+              <div>
+                <div class="text-xs font-black text-slate-800">🚀 Vũ Trụ & Thời Tiết</div>
+                <div class="text-[10px] text-slate-500 flex items-center gap-2 mt-0.5">
+                  <span>📅 14/11/2026</span>
+                  <span>⏰ 10:50:06</span>
+                  <span class="bg-blue-100 text-blue-800 px-1.5 py-0.2 rounded font-bold">English</span>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="text-xs font-black text-emerald-600">90 / 100</span>
+                <div class="text-[10px] text-slate-400">05:30</div>
+              </div>
+            </div>
+
+            <!-- Bài 3 -->
+            <div class="bg-white rounded-2xl p-3 border-2 border-purple-100 shadow-sm flex items-center justify-between">
+              <div>
+                <div class="text-xs font-black text-slate-800">🫀 Cơ Thể Người & Sức Khỏe</div>
+                <div class="text-[10px] text-slate-500 flex items-center gap-2 mt-0.5">
+                  <span>📅 13/11/2026</span>
+                  <span>⏰ 19:15:00</span>
+                  <span class="bg-amber-100 text-amber-800 px-1.5 py-0.2 rounded font-bold">Tiếng Việt</span>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="text-xs font-black text-emerald-600">80 / 100</span>
+                <div class="text-[10px] text-slate-400">06:05</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Phân Quyền Quản Trị Viên (Admin Section) -->
+          <div class="bg-slate-100 rounded-2xl p-3 border border-slate-200">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i data-lucide="shield-check" style="width:16px; height:16px; color:#475569;"></i>
+                <span class="text-xs font-black text-slate-700">Tài khoản Admin</span>
+              </div>
+              <span class="text-[10px] bg-slate-200 text-slate-600 font-bold px-2 py-0.5 rounded-full">admin (11081993)</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">Được phép xem toàn bộ lịch sử thi và quản lý danh sách học sinh.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- BOTTOM NAVIGATION BAR (CHUẨN NAV BAR TỪ TEMPLATE FIGMA) -->
+      <footer class="w-full bg-white border-t-2 border-purple-100 px-6 py-2.5 flex items-center justify-between shrink-0 select-none shadow-lg z-20">
+        
+        <!-- 1. Trang Chủ -->
+        <div onclick="switchScreen('screen-home')" class="bottom-nav-item active" data-screen="screen-home">
+          <div class="nav-icon-wrap p-1.5">
+            <i data-lucide="home" style="width:20px; height:20px;"></i>
+          </div>
+          <span>Trang Chủ</span>
+        </div>
+
+        <!-- 2. Chủ Đề -->
+        <div onclick="switchScreen('screen-modules')" class="bottom-nav-item" data-screen="screen-modules">
+          <div class="nav-icon-wrap p-1.5">
+            <i data-lucide="layout-grid" style="width:20px; height:20px;"></i>
+          </div>
+          <span>Chủ Đề</span>
+        </div>
+
+        <!-- 3. Bảng Vàng -->
+        <div onclick="switchScreen('screen-leaderboard')" class="bottom-nav-item" data-screen="screen-leaderboard">
+          <div class="nav-icon-wrap p-1.5">
+            <i data-lucide="trophy" style="width:20px; height:20px;"></i>
+          </div>
+          <span>Bảng Vàng</span>
+        </div>
+
+        <!-- 4. Hồ Sơ -->
+        <div onclick="switchScreen('screen-profile')" class="bottom-nav-item" data-screen="screen-profile">
+          <div class="nav-icon-wrap p-1.5">
+            <i data-lucide="user" style="width:20px; height:20px;"></i>
+          </div>
+          <span>Hồ Sơ</span>
+        </div>
+
+      </footer>
+
+    </div>
+
+  </main>
+
+  <!-- JAVASCRIPT LOGIC TƯƠNG TÁC PREVIEW -->
+  <script>
+    // State quản lý
+    let currentActiveScreen = 'screen-home';
+    let currentSelectedLang = 'vi';
+    let isDesktopMode = false;
+    let selectedOptionIndex = null;
+    let soundEnabled = true;
+
+    // Web Audio Synthesizer (Hiệu ứng âm thanh vui nhộn khi bấm nút)
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
+
+    function playTone(freq, type = 'sine', duration = 0.12) {
+      if (!soundEnabled) return;
+      try {
+        if (!audioCtx) audioCtx = new AudioCtx();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch(e) {}
+    }
+
+    function toggleSoundFx() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById('audio-toggle-btn');
+      if (soundEnabled) {
+        btn.innerHTML = '<i data-lucide="volume-2" style="width:16px; height:16px;"></i>';
+        btn.classList.remove('bg-rose-100', 'text-rose-600');
+        playTone(520, 'sine', 0.1);
+      } else {
+        btn.innerHTML = '<i data-lucide="volume-x" style="width:16px; height:16px;"></i>';
+        btn.classList.add('bg-rose-100', 'text-rose-600');
+      }
+      lucide.createIcons();
+    }
+
+    // Chuyển màn hình
+    function switchScreen(screenId) {
+      playTone(440, 'triangle', 0.08);
+
+      // Ẩn tất cả screens
+      document.querySelectorAll('.screen-view').forEach(el => el.classList.add('hidden'));
+      const target = document.getElementById(screenId);
+      if (target) target.classList.remove('hidden');
+
+      currentActiveScreen = screenId;
+
+      // Update Top Switcher Tabs
+      document.querySelectorAll('.screen-tab').forEach(tab => {
+        if (tab.getAttribute('data-screen') === screenId) {
+          tab.classList.remove('bg-slate-700', 'text-slate-300');
+          tab.classList.add('bg-purple-600', 'text-white');
+        } else {
+          tab.classList.add('bg-slate-700', 'text-slate-300');
+          tab.classList.remove('bg-purple-600', 'text-white');
+        }
+      });
+
+      // Update Bottom Nav Bar
+      document.querySelectorAll('.bottom-nav-item').forEach(item => {
+        if (item.getAttribute('data-screen') === screenId) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+
+      // Cuộn lên đầu
+      const viewport = document.getElementById('screens-viewport');
+      if (viewport) viewport.scrollTop = 0;
+
+      // Trigger pháo hoa nếu là màn hình ăn mừng
+      if (screenId === 'screen-result') {
+        setTimeout(triggerConfettiExplosion, 200);
+      }
+    }
+
+    // Chuẩn bị vào thi từ danh mục chủ đề
+    function prepareTopic(title, emoji, grad) {
+      document.getElementById('level-topic-title').textContent = title;
+      document.getElementById('level-topic-icon').textContent = emoji;
+      switchScreen('screen-level');
+    }
+
+    function startQuizWithTopic(title) {
+      prepareTopic(title, '🦁', 'from-amber-400 to-orange-500');
+    }
+
+    function selectLang(lang) {
+      currentSelectedLang = lang;
+      playTone(500, 'sine', 0.06);
+      ['vi', 'bilingual', 'en'].forEach(l => {
+        const btn = document.getElementById('lang-btn-' + l);
+        if (l === lang) {
+          btn.className = "py-2.5 px-2 rounded-xl border-2 text-xs font-black transition border-purple-600 bg-purple-50 text-purple-900";
+        } else {
+          btn.className = "py-2.5 px-2 rounded-xl border-2 text-xs font-black transition border-slate-200 bg-white text-slate-600 hover:bg-slate-50";
+        }
+      });
+    }
+
+    function startQuizNow() {
+      playTone(660, 'sine', 0.15);
+      selectedOptionIndex = null;
+      document.getElementById('quiz-feedback-box').classList.add('hidden');
+      document.querySelectorAll('.option-card-3d').forEach(el => {
+        el.className = 'option-card-3d p-3.5 flex items-center gap-3';
+      });
+      switchScreen('screen-quiz');
+    }
+
+    // Chọn đáp án trắc nghiệm
+    function selectOption(idx) {
+      selectedOptionIndex = idx;
+      const cards = document.querySelectorAll('.option-card-3d');
+      
+      cards.forEach((c, i) => {
+        c.className = 'option-card-3d p-3.5 flex items-center gap-3';
+        if (i === idx) {
+          if (idx === 0) {
+            // Đúng
+            playTone(880, 'sine', 0.18);
+            c.classList.add('correct');
+            document.getElementById('quiz-feedback-box').classList.remove('hidden');
+          } else {
+            // Sai
+            playTone(240, 'sawtooth', 0.18);
+            c.classList.add('wrong');
+            document.getElementById('quiz-feedback-box').classList.remove('hidden');
+          }
+        }
+      });
+    }
+
+    function nextQuestion() {
+      playTone(550, 'triangle', 0.1);
+      // Giả lập chuyển tiếp sang màn hình hoàn thành
+      switchScreen('screen-result');
+    }
+
+    function confirmExitQuiz() {
+      if (confirm('Bé có chắc chắn muốn tạm dừng bài thi và quay về Trang Chủ không?')) {
+        switchScreen('screen-home');
+      }
+    }
+
+    // Chuyển đổi khung điện thoại sang full màn hình
+    function toggleViewMode() {
+      isDesktopMode = !isDesktopMode;
+      const shell = document.getElementById('app-shell');
+      const notch = document.getElementById('phone-notch');
+      const text = document.getElementById('view-mode-text');
+
+      if (isDesktopMode) {
+        shell.className = "w-full max-w-4xl h-[85vh] rounded-3xl border-4 border-slate-700 bg-[#F8F5FF] shadow-2xl flex flex-col relative overflow-hidden transition-all duration-300";
+        notch.classList.add('hidden');
+        text.textContent = "Chế Độ Mobile (iPhone)";
+      } else {
+        shell.className = "iphone-shell flex flex-col transition-all duration-300";
+        notch.classList.remove('hidden');
+        text.textContent = "Mở Rộng Desktop";
+      }
+      playTone(400, 'sine', 0.08);
+    }
+
+    // Hiệu ứng pháo hoa Confetti
+    function triggerConfettiExplosion() {
+      playTone(750, 'sine', 0.2);
+      try {
+        confetti({
+          particleCount: 80,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#FFC01D', '#8B5CF6', '#10B981', '#EF4444', '#3B82F6']
+        });
+      } catch(e) {}
+    }
+
+    window.onload = function() {
+      lucide.createIcons();
+    };
+  </script>
+</body>
+</html>
