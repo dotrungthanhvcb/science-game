@@ -4573,6 +4573,7 @@
         </div>
       </div>
       <div class="result-stars" id="res-stars">⭐⭐⭐</div>
+      <span id="res-icon" style="display:none;">🏆</span>
       <p id="res-desc" style="color:var(--text-muted); font-size:0.88rem; margin-top:4px;">Bé đã hoàn thành xuất sắc bài thi hôm nay!</p>
     </div>
 
@@ -7350,11 +7351,14 @@ function submitAndFinishQuiz() {
   const timeStr = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 
   // 4. Hiển thị lên màn hình kết quả (result-screen)
-  document.getElementById('res-score').textContent = `${score10}/10 (${pct}%)`;
-  document.getElementById('res-correct').textContent = `${correctCount}/${total}`;
+  const resScoreElem = document.getElementById('res-score');
+  if (resScoreElem) resScoreElem.textContent = `${score10}/10 (${pct}%)`;
+  const resCorrectElem = document.getElementById('res-correct');
+  if (resCorrectElem) resCorrectElem.textContent = `${correctCount}/${total}`;
   const resWrongElem = document.getElementById('res-wrong');
   if (resWrongElem) resWrongElem.textContent = `${wrongCount}/${total}`;
-  document.getElementById('res-time').textContent = timeStr;
+  const resTimeElem = document.getElementById('res-time');
+  if (resTimeElem) resTimeElem.textContent = timeStr;
 
   // THANG ĐÁNH GIÁ 5 BẬC SƯ PHẠM CHUẨN XÁC
   let stars = '⭐';
@@ -7421,9 +7425,12 @@ function submitAndFinishQuiz() {
     setMascotMood('sad', isEn ? `Do not worry! Review the explanations and take another try! 💪` : `Lượt này chưa đạt điểm trung bình rồi, nhưng không sao, hãy xem giải thích để hiểu bài rồi thi lại nhé! 💪`);
   }
 
-  document.getElementById('res-stars').textContent = stars;
-  document.getElementById('res-icon').textContent = icon;
-  document.getElementById('res-title').textContent = title;
+  const resStarsElem = document.getElementById('res-stars');
+  if (resStarsElem) resStarsElem.textContent = stars;
+  const resIconElem = document.getElementById('res-icon');
+  if (resIconElem) resIconElem.textContent = icon;
+  const resTitleElem = document.getElementById('res-title');
+  if (resTitleElem) resTitleElem.textContent = title;
   const resDescElem = document.getElementById('res-desc');
   if (resDescElem) resDescElem.textContent = desc;
 
