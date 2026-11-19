@@ -3245,14 +3245,15 @@
       line-height: 1.3 !important;
     }
     .question-img-card {
-      max-height: 130px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      background: #F8FAFC !important;
+      max-height: 180px !important;
       border-radius: 16px !important;
       overflow: hidden !important;
-      border: 1px solid #E2E8F0 !important;
+    }
+    .question-img-card.hidden,
+    .question-img-card[style*="display: none"],
+    #q-img-wrap.hidden,
+    #q-img-wrap[style*="display: none"] {
+      display: none !important;
     }
     .question-img-card img {
       max-height: 120px !important;
@@ -4256,7 +4257,7 @@
       <summary class="font-baloo font-bold text-sm text-slate-800 cursor-pointer flex items-center justify-between select-none">
         <span class="flex items-center gap-2">
           <span>⚙️</span>
-          <span>Tùy Chỉnh Quy Cách Đề Thi & Kết Nối Google Sheets</span>
+          <span id="home-config-summary-text">Tùy Chỉnh Quy Cách Đề Thi & Kết Nối Google Sheets</span>
         </span>
         <span class="text-xs text-cyan-600 font-bold">Mở rộng ▾</span>
       </summary>
@@ -4421,8 +4422,8 @@
             <h2 class="font-baloo text-lg md:text-xl font-bold leading-snug text-white text-center md:text-left" id="question-text">
               Đang tải nội dung câu hỏi...
             </h2>
-            <div class="question-img-card mt-2 rounded-2xl overflow-hidden border border-indigo-700/50 bg-slate-900/60 max-w-sm mx-auto" id="q-img-wrap" style="display:none;">
-              <img id="question-img" src="" alt="Minh họa" style="width:100%; max-height:200px; object-fit:contain; display:block; margin:0 auto;">
+            <div class="question-img-card mt-2 rounded-2xl overflow-hidden border border-indigo-700/50 bg-slate-900/60 max-w-sm mx-auto hidden" id="q-img-wrap" style="display:none !important;">
+              <img id="question-img" src="" alt="" style="width:100%; max-height:200px; object-fit:contain; display:block; margin:0 auto;">
             </div>
           </div>
           
@@ -5005,9 +5006,9 @@
 <div class="modal-overlay" id="modal-quick-nav">
   <div class="modal-box" style="max-width: 580px;">
     <div class="modal-icon">📋</div>
-    <div class="modal-title">Xem Lại Các Câu Vừa Làm</div>
+    <div class="modal-title" id="quick-nav-modal-title">Xem Lại Các Câu Vừa Làm</div>
     <div class="modal-desc" style="margin-bottom:8px;">
-      Bé bấm vào câu bất kỳ để xem lại đề bài hoặc sửa đáp án nếu muốn. Khi đã chắc chắn, bấm <strong>"Nộp bài & Xem điểm"</strong> nhé!
+      <span id="quick-nav-modal-desc">Bé bấm vào câu bất kỳ để xem lại đề bài hoặc sửa đáp án nếu muốn. Khi đã chắc chắn, bấm <strong>"Nộp bài & Xem điểm"</strong> nhé!</span>
     </div>
     <div style="background:#EEF2FF; border:1px solid #C7D2FE; border-radius:12px; padding:10px 14px; margin: 10px 0; font-size:14px; color:#1E40AF; font-weight:700;" id="quick-nav-status-text">
       📊 Đã làm: 0/0 câu
@@ -5020,11 +5021,11 @@
     <div class="modal-actions" style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
       <button class="modal-btn-cancel" onclick="closeQuickNavModal()" style="flex:1; min-width:160px; font-weight:700; display:inline-flex; align-items:center; justify-content:center; gap:8px;">
         <i data-lucide="arrow-left" style="width:18px; height:18px; stroke-width:2.5;"></i>
-        <span>Tiếp tục làm bài</span>
+        <span id="quick-nav-cancel-text">Tiếp tục làm bài</span>
       </button>
       <button class="modal-btn-confirm" onclick="submitAndFinishQuiz()" style="background:linear-gradient(135deg, #10B981, #059669); font-weight:800; flex:1; min-width:180px; box-shadow:0 4px 14px rgba(16,185,129,0.35); display:inline-flex; align-items:center; justify-content:center; gap:8px;">
         <i data-lucide="send" style="width:18px; height:18px; stroke-width:2.5;"></i>
-        <span>Nộp bài & Xem điểm</span>
+        <span id="quick-nav-submit-text">Nộp bài & Xem điểm</span>
       </button>
     </div>
   </div>
@@ -5056,6 +5057,36 @@
 </div>
 
 <script>
+
+// =========================================================================
+// BILINGUAL EN/VI TOPIC & SOURCE DICTIONARIES
+// =========================================================================
+const TOPIC_EN_MAP = {
+  'Động Vật': 'Animal Kingdom',
+  'Thực Vật': 'Plants & Nature',
+  'Vũ Trụ & Thời Tiết': 'Space & Weather',
+  'Cơ Thể Người': 'Human Body & Health',
+  'Con người & Sức khỏe': 'Human Body & Health',
+  'Địa Lý Việt Nam': 'Geography & Earth',
+  'Lịch Sử & Văn Hóa': 'History & Culture',
+  'Vật Chất & Hiện Tượng': 'Matter & Physics',
+  'Vật chất & Năng lượng': 'Matter & Energy',
+  'Vật lý & Năng lượng': 'Physics & Energy',
+  'Thực vật & Động vật': 'Plants & Animals',
+  'Trái Đất & Bầu trời': 'Earth & Sky'
+};
+
+const SOURCE_EN_MAP = {
+  'SGK Việt Nam (GDPT 2018)': 'National Curriculum (MOET)',
+  'SGK Việt Nam': 'National Curriculum (MOET)',
+  'Trạng Nguyên & Violympic': 'National Science Olympiad',
+  'Kangaroo Khoa học (IKSC)': 'IKSC Kangaroo Science',
+  'IXL & Khan Academy Khoa học': 'IXL & Khan Science',
+  'IXL & Khan Academy': 'IXL & Khan Science',
+  'National Geographic Kids': 'NatGeo Kids',
+  'Khác': 'General Science'
+};
+
 
 function refreshLucideIcons() {
   if (typeof lucide !== 'undefined' && lucide.createIcons) {
@@ -5344,6 +5375,53 @@ function renderSourceChips() {
     container.appendChild(chip);
   });
   syncTargetSourceDropdown();
+  
+  // Home Exam Config Details
+  const homeCfgSumm = document.getElementById('home-config-summary-text');
+  if (homeCfgSumm) homeCfgSumm.textContent = isEn ? 'Exam Settings & Google Sheets Sync' : 'Tùy Chỉnh Quy Cách Đề Thi & Kết Nối Google Sheets';
+
+  const homeCfgBadge = document.getElementById('home-config-badge');
+  if (homeCfgBadge) homeCfgBadge.textContent = isEn ? 'Expand ▾' : 'Mở rộng ▾';
+
+  const lblQuizSize = document.getElementById('label-quiz-size');
+  if (lblQuizSize) lblQuizSize.textContent = isEn ? '🔢 Number of Questions:' : '🔢 Số lượng câu hỏi:';
+
+  const lblQuizSrc = document.getElementById('label-quiz-source');
+  if (lblQuizSrc) lblQuizSrc.textContent = isEn ? '📚 Question Sources:' : '📚 Nguồn đề thi:';
+
+  const lblQuizRatio = document.getElementById('label-quiz-ratio');
+  if (lblQuizRatio) lblQuizRatio.textContent = isEn ? '🧠 Review Mode:' : '🧠 Chế độ lặp lại:';
+
+  const lblQuizDiff = document.getElementById('label-quiz-diff');
+  if (lblQuizDiff) lblQuizDiff.textContent = isEn ? '🎚️ Question Difficulty:' : '🎚️ Độ khó câu hỏi:';
+
+  const lblQuizAge = document.getElementById('label-quiz-age');
+  if (lblQuizAge) lblQuizAge.textContent = isEn ? '👶 Target Age:' : '👶 Phù hợp lứa tuổi:';
+
+  // Review Screen Buttons
+  const btnViewList = document.getElementById('btn-view-list-text');
+  if (btnViewList) btnViewList.textContent = isEn ? '📑 List View' : '📑 Dạng danh sách';
+  const btnViewCard = document.getElementById('btn-view-card-text');
+  if (btnViewCard) btnViewCard.textContent = isEn ? '🃏 Card View' : '🃏 Từng câu một';
+  const btnBackScore = document.getElementById('btn-back-score-text');
+  if (btnBackScore) btnBackScore.textContent = isEn ? '⬅️ Back to Score' : '⬅️ Quay lại bảng điểm';
+  const btnCardPrev = document.getElementById('btn-card-prev-text');
+  if (btnCardPrev) btnCardPrev.textContent = isEn ? '⬅️ Previous' : '⬅️ Câu trước';
+  const btnCardNext = document.getElementById('btn-card-next-text');
+  if (btnCardNext) btnCardNext.textContent = isEn ? 'Next ➡️' : 'Câu sau ➡️';
+
+  // Quick Nav Modal
+  const qNavTitle = document.getElementById('quick-nav-modal-title');
+  if (qNavTitle) qNavTitle.textContent = isEn ? 'Review Your Answers' : 'Xem Lại Các Câu Vừa Làm';
+  const qNavDesc = document.getElementById('quick-nav-modal-desc');
+  if (qNavDesc) qNavDesc.innerHTML = isEn 
+    ? 'Click any question to review or edit your answers. When ready, click <strong>"Submit & Score"</strong>!' 
+    : 'Bé bấm vào câu bất kỳ để xem lại đề bài hoặc sửa đáp án nếu muốn. Khi đã chắc chắn, bấm <strong>"Nộp bài & Xem điểm"</strong> nhé!';
+  const qNavCancel = document.getElementById('quick-nav-cancel-text');
+  if (qNavCancel) qNavCancel.textContent = isEn ? 'Back to Quiz' : 'Tiếp tục làm bài';
+  const qNavSubmit = document.getElementById('quick-nav-submit-text');
+  if (qNavSubmit) qNavSubmit.textContent = isEn ? 'Submit & Score' : 'Nộp bài & Xem điểm';
+
   refreshLucideIcons();
 }
 
@@ -5784,6 +5862,53 @@ function renderTopics() {
     `;
     container.appendChild(pill);
   });
+  
+  // Home Exam Config Details
+  const homeCfgSumm = document.getElementById('home-config-summary-text');
+  if (homeCfgSumm) homeCfgSumm.textContent = isEn ? 'Exam Settings & Google Sheets Sync' : 'Tùy Chỉnh Quy Cách Đề Thi & Kết Nối Google Sheets';
+
+  const homeCfgBadge = document.getElementById('home-config-badge');
+  if (homeCfgBadge) homeCfgBadge.textContent = isEn ? 'Expand ▾' : 'Mở rộng ▾';
+
+  const lblQuizSize = document.getElementById('label-quiz-size');
+  if (lblQuizSize) lblQuizSize.textContent = isEn ? '🔢 Number of Questions:' : '🔢 Số lượng câu hỏi:';
+
+  const lblQuizSrc = document.getElementById('label-quiz-source');
+  if (lblQuizSrc) lblQuizSrc.textContent = isEn ? '📚 Question Sources:' : '📚 Nguồn đề thi:';
+
+  const lblQuizRatio = document.getElementById('label-quiz-ratio');
+  if (lblQuizRatio) lblQuizRatio.textContent = isEn ? '🧠 Review Mode:' : '🧠 Chế độ lặp lại:';
+
+  const lblQuizDiff = document.getElementById('label-quiz-diff');
+  if (lblQuizDiff) lblQuizDiff.textContent = isEn ? '🎚️ Question Difficulty:' : '🎚️ Độ khó câu hỏi:';
+
+  const lblQuizAge = document.getElementById('label-quiz-age');
+  if (lblQuizAge) lblQuizAge.textContent = isEn ? '👶 Target Age:' : '👶 Phù hợp lứa tuổi:';
+
+  // Review Screen Buttons
+  const btnViewList = document.getElementById('btn-view-list-text');
+  if (btnViewList) btnViewList.textContent = isEn ? '📑 List View' : '📑 Dạng danh sách';
+  const btnViewCard = document.getElementById('btn-view-card-text');
+  if (btnViewCard) btnViewCard.textContent = isEn ? '🃏 Card View' : '🃏 Từng câu một';
+  const btnBackScore = document.getElementById('btn-back-score-text');
+  if (btnBackScore) btnBackScore.textContent = isEn ? '⬅️ Back to Score' : '⬅️ Quay lại bảng điểm';
+  const btnCardPrev = document.getElementById('btn-card-prev-text');
+  if (btnCardPrev) btnCardPrev.textContent = isEn ? '⬅️ Previous' : '⬅️ Câu trước';
+  const btnCardNext = document.getElementById('btn-card-next-text');
+  if (btnCardNext) btnCardNext.textContent = isEn ? 'Next ➡️' : 'Câu sau ➡️';
+
+  // Quick Nav Modal
+  const qNavTitle = document.getElementById('quick-nav-modal-title');
+  if (qNavTitle) qNavTitle.textContent = isEn ? 'Review Your Answers' : 'Xem Lại Các Câu Vừa Làm';
+  const qNavDesc = document.getElementById('quick-nav-modal-desc');
+  if (qNavDesc) qNavDesc.innerHTML = isEn 
+    ? 'Click any question to review or edit your answers. When ready, click <strong>"Submit & Score"</strong>!' 
+    : 'Bé bấm vào câu bất kỳ để xem lại đề bài hoặc sửa đáp án nếu muốn. Khi đã chắc chắn, bấm <strong>"Nộp bài & Xem điểm"</strong> nhé!';
+  const qNavCancel = document.getElementById('quick-nav-cancel-text');
+  if (qNavCancel) qNavCancel.textContent = isEn ? 'Back to Quiz' : 'Tiếp tục làm bài';
+  const qNavSubmit = document.getElementById('quick-nav-submit-text');
+  if (qNavSubmit) qNavSubmit.textContent = isEn ? 'Submit & Score' : 'Nộp bài & Xem điểm';
+
   refreshLucideIcons();
 }
 
@@ -5959,6 +6084,53 @@ function renderTopicLabCards(lang) {
     `;
   });
   container.innerHTML = html;
+  
+  // Home Exam Config Details
+  const homeCfgSumm = document.getElementById('home-config-summary-text');
+  if (homeCfgSumm) homeCfgSumm.textContent = isEn ? 'Exam Settings & Google Sheets Sync' : 'Tùy Chỉnh Quy Cách Đề Thi & Kết Nối Google Sheets';
+
+  const homeCfgBadge = document.getElementById('home-config-badge');
+  if (homeCfgBadge) homeCfgBadge.textContent = isEn ? 'Expand ▾' : 'Mở rộng ▾';
+
+  const lblQuizSize = document.getElementById('label-quiz-size');
+  if (lblQuizSize) lblQuizSize.textContent = isEn ? '🔢 Number of Questions:' : '🔢 Số lượng câu hỏi:';
+
+  const lblQuizSrc = document.getElementById('label-quiz-source');
+  if (lblQuizSrc) lblQuizSrc.textContent = isEn ? '📚 Question Sources:' : '📚 Nguồn đề thi:';
+
+  const lblQuizRatio = document.getElementById('label-quiz-ratio');
+  if (lblQuizRatio) lblQuizRatio.textContent = isEn ? '🧠 Review Mode:' : '🧠 Chế độ lặp lại:';
+
+  const lblQuizDiff = document.getElementById('label-quiz-diff');
+  if (lblQuizDiff) lblQuizDiff.textContent = isEn ? '🎚️ Question Difficulty:' : '🎚️ Độ khó câu hỏi:';
+
+  const lblQuizAge = document.getElementById('label-quiz-age');
+  if (lblQuizAge) lblQuizAge.textContent = isEn ? '👶 Target Age:' : '👶 Phù hợp lứa tuổi:';
+
+  // Review Screen Buttons
+  const btnViewList = document.getElementById('btn-view-list-text');
+  if (btnViewList) btnViewList.textContent = isEn ? '📑 List View' : '📑 Dạng danh sách';
+  const btnViewCard = document.getElementById('btn-view-card-text');
+  if (btnViewCard) btnViewCard.textContent = isEn ? '🃏 Card View' : '🃏 Từng câu một';
+  const btnBackScore = document.getElementById('btn-back-score-text');
+  if (btnBackScore) btnBackScore.textContent = isEn ? '⬅️ Back to Score' : '⬅️ Quay lại bảng điểm';
+  const btnCardPrev = document.getElementById('btn-card-prev-text');
+  if (btnCardPrev) btnCardPrev.textContent = isEn ? '⬅️ Previous' : '⬅️ Câu trước';
+  const btnCardNext = document.getElementById('btn-card-next-text');
+  if (btnCardNext) btnCardNext.textContent = isEn ? 'Next ➡️' : 'Câu sau ➡️';
+
+  // Quick Nav Modal
+  const qNavTitle = document.getElementById('quick-nav-modal-title');
+  if (qNavTitle) qNavTitle.textContent = isEn ? 'Review Your Answers' : 'Xem Lại Các Câu Vừa Làm';
+  const qNavDesc = document.getElementById('quick-nav-modal-desc');
+  if (qNavDesc) qNavDesc.innerHTML = isEn 
+    ? 'Click any question to review or edit your answers. When ready, click <strong>"Submit & Score"</strong>!' 
+    : 'Bé bấm vào câu bất kỳ để xem lại đề bài hoặc sửa đáp án nếu muốn. Khi đã chắc chắn, bấm <strong>"Nộp bài & Xem điểm"</strong> nhé!';
+  const qNavCancel = document.getElementById('quick-nav-cancel-text');
+  if (qNavCancel) qNavCancel.textContent = isEn ? 'Back to Quiz' : 'Tiếp tục làm bài';
+  const qNavSubmit = document.getElementById('quick-nav-submit-text');
+  if (qNavSubmit) qNavSubmit.textContent = isEn ? 'Submit & Score' : 'Nộp bài & Xem điểm';
+
   refreshLucideIcons();
 }
 
@@ -6219,6 +6391,53 @@ function applyLanguageToUI(lang) {
     displayQuestion();
   }
 
+  
+  // Home Exam Config Details
+  const homeCfgSumm = document.getElementById('home-config-summary-text');
+  if (homeCfgSumm) homeCfgSumm.textContent = isEn ? 'Exam Settings & Google Sheets Sync' : 'Tùy Chỉnh Quy Cách Đề Thi & Kết Nối Google Sheets';
+
+  const homeCfgBadge = document.getElementById('home-config-badge');
+  if (homeCfgBadge) homeCfgBadge.textContent = isEn ? 'Expand ▾' : 'Mở rộng ▾';
+
+  const lblQuizSize = document.getElementById('label-quiz-size');
+  if (lblQuizSize) lblQuizSize.textContent = isEn ? '🔢 Number of Questions:' : '🔢 Số lượng câu hỏi:';
+
+  const lblQuizSrc = document.getElementById('label-quiz-source');
+  if (lblQuizSrc) lblQuizSrc.textContent = isEn ? '📚 Question Sources:' : '📚 Nguồn đề thi:';
+
+  const lblQuizRatio = document.getElementById('label-quiz-ratio');
+  if (lblQuizRatio) lblQuizRatio.textContent = isEn ? '🧠 Review Mode:' : '🧠 Chế độ lặp lại:';
+
+  const lblQuizDiff = document.getElementById('label-quiz-diff');
+  if (lblQuizDiff) lblQuizDiff.textContent = isEn ? '🎚️ Question Difficulty:' : '🎚️ Độ khó câu hỏi:';
+
+  const lblQuizAge = document.getElementById('label-quiz-age');
+  if (lblQuizAge) lblQuizAge.textContent = isEn ? '👶 Target Age:' : '👶 Phù hợp lứa tuổi:';
+
+  // Review Screen Buttons
+  const btnViewList = document.getElementById('btn-view-list-text');
+  if (btnViewList) btnViewList.textContent = isEn ? '📑 List View' : '📑 Dạng danh sách';
+  const btnViewCard = document.getElementById('btn-view-card-text');
+  if (btnViewCard) btnViewCard.textContent = isEn ? '🃏 Card View' : '🃏 Từng câu một';
+  const btnBackScore = document.getElementById('btn-back-score-text');
+  if (btnBackScore) btnBackScore.textContent = isEn ? '⬅️ Back to Score' : '⬅️ Quay lại bảng điểm';
+  const btnCardPrev = document.getElementById('btn-card-prev-text');
+  if (btnCardPrev) btnCardPrev.textContent = isEn ? '⬅️ Previous' : '⬅️ Câu trước';
+  const btnCardNext = document.getElementById('btn-card-next-text');
+  if (btnCardNext) btnCardNext.textContent = isEn ? 'Next ➡️' : 'Câu sau ➡️';
+
+  // Quick Nav Modal
+  const qNavTitle = document.getElementById('quick-nav-modal-title');
+  if (qNavTitle) qNavTitle.textContent = isEn ? 'Review Your Answers' : 'Xem Lại Các Câu Vừa Làm';
+  const qNavDesc = document.getElementById('quick-nav-modal-desc');
+  if (qNavDesc) qNavDesc.innerHTML = isEn 
+    ? 'Click any question to review or edit your answers. When ready, click <strong>"Submit & Score"</strong>!' 
+    : 'Bé bấm vào câu bất kỳ để xem lại đề bài hoặc sửa đáp án nếu muốn. Khi đã chắc chắn, bấm <strong>"Nộp bài & Xem điểm"</strong> nhé!';
+  const qNavCancel = document.getElementById('quick-nav-cancel-text');
+  if (qNavCancel) qNavCancel.textContent = isEn ? 'Back to Quiz' : 'Tiếp tục làm bài';
+  const qNavSubmit = document.getElementById('quick-nav-submit-text');
+  if (qNavSubmit) qNavSubmit.textContent = isEn ? 'Submit & Score' : 'Nộp bài & Xem điểm';
+
   refreshLucideIcons();
 }
 
@@ -6474,35 +6693,14 @@ function displayQuestion() {
   const qNumPrefix = isEn ? 'Question' : 'Câu';
   document.getElementById('question-number').textContent = `${qNumPrefix} ${currentIndex + 1} / ${total} 🚀`;
 
-  const sourceEnMap = {
-    'SGK Việt Nam (GDPT 2018)': 'National Curriculum (MOET)',
-    'SGK Việt Nam': 'National Curriculum (MOET)',
-    'Trạng Nguyên & Violympic': 'National Science Olympiad',
-    'Kangaroo Khoa học (IKSC)': 'IKSC Kangaroo Science',
-    'IXL & Khan Academy Khoa học': 'IXL & Khan Science',
-    'IXL & Khan Academy': 'IXL & Khan Science',
-    'National Geographic Kids': 'NatGeo Kids',
-    'Khác': 'General Science'
-  };
-
   const badgeSource = document.getElementById('badge-source');
   if (badgeSource) {
     const rawSrc = q.source || 'Khoa học';
-    const srcName = isEn ? (sourceEnMap[rawSrc] || rawSrc) : rawSrc;
+    const srcName = isEn ? (SOURCE_EN_MAP[rawSrc] || rawSrc) : rawSrc;
     badgeSource.innerHTML = `${getSourceIcon(q.source)} ${isEn ? 'Source' : 'Nguồn'}: ${srcName}`;
   }
 
-  const topicEnMap = {
-    'Động Vật': 'Animal Kingdom',
-    'Thực Vật': 'Plants & Nature',
-    'Vũ Trụ & Thời Tiết': 'Space & Solar System',
-    'Cơ Thể Người': 'Human Body & Health',
-    'Con người & Sức khỏe': 'Human Body & Health',
-    'Địa Lý Việt Nam': 'Geography & Earth',
-    'Lịch Sử & Văn Hóa': 'History & Culture',
-    'Vật Chất & Hiện Tượng': 'Physics & Matter'
-  };
-  const topicText = isEn ? (topicEnMap[q.topic] || q.topic) : q.topic;
+  const topicText = isEn ? (TOPIC_EN_MAP[q.topic] || q.topic) : q.topic;
   const gradeText = isEn ? (q.grade ? `Grade ${q.grade}` : (q.age ? `Grade ${q.age}` : 'Elementary')) : (q.grade ? `Lớp ${q.grade}` : (q.age ? `Lớp ${q.age}` : 'Tiểu học'));
   const diffText = isEn ? `Level ${q.diff}` : `Mức ${q.diff}`;
   document.getElementById('badge-topic-age').textContent = `${topicText} • ${gradeText} • ${diffText}`;
@@ -6532,19 +6730,26 @@ function displayQuestion() {
     qTextElem.innerHTML = `<div style="font-size:1.18rem; font-weight:800; color:#FFFFFF; line-height:1.45; text-shadow:0 1px 3px rgba(0,0,0,0.5);">${q.q}</div>`;
   }
 
-  // Chỉ hiển thị ảnh minh họa khi câu hỏi thực sự có trường img hợp lệ
+  // Chỉ hiển thị ảnh minh họa khi câu hỏi thực sự có trường img hợp lệ và load thành công
   const imgElem = document.getElementById('question-img');
   const imgWrap = document.getElementById('q-img-wrap');
   if (imgElem && imgWrap) {
-    if (q.img && q.img.trim()) {
+    imgWrap.style.setProperty('display', 'none', 'important');
+    imgWrap.classList.add('hidden');
+    imgElem.src = '';
+
+    if (q.img && typeof q.img === 'string' && q.img.trim().length > 5 && (q.img.startsWith('http://') || q.img.startsWith('https://') || q.img.startsWith('data:image/'))) {
+      const cleanUrl = q.img.trim();
+      imgElem.onload = function() {
+        imgWrap.style.setProperty('display', 'block', 'important');
+        imgWrap.classList.remove('hidden');
+      };
       imgElem.onerror = function() {
         this.onerror = null;
-        imgWrap.style.display = 'none';
+        imgWrap.style.setProperty('display', 'none', 'important');
+        imgWrap.classList.add('hidden');
       };
-      imgElem.src = q.img;
-      imgWrap.style.display = 'block';
-    } else {
-      imgWrap.style.display = 'none';
+      imgElem.src = cleanUrl;
     }
   }
 
@@ -6600,6 +6805,53 @@ function displayQuestion() {
     setupShortAnswer(q);
   }
 
+  
+  // Home Exam Config Details
+  const homeCfgSumm = document.getElementById('home-config-summary-text');
+  if (homeCfgSumm) homeCfgSumm.textContent = isEn ? 'Exam Settings & Google Sheets Sync' : 'Tùy Chỉnh Quy Cách Đề Thi & Kết Nối Google Sheets';
+
+  const homeCfgBadge = document.getElementById('home-config-badge');
+  if (homeCfgBadge) homeCfgBadge.textContent = isEn ? 'Expand ▾' : 'Mở rộng ▾';
+
+  const lblQuizSize = document.getElementById('label-quiz-size');
+  if (lblQuizSize) lblQuizSize.textContent = isEn ? '🔢 Number of Questions:' : '🔢 Số lượng câu hỏi:';
+
+  const lblQuizSrc = document.getElementById('label-quiz-source');
+  if (lblQuizSrc) lblQuizSrc.textContent = isEn ? '📚 Question Sources:' : '📚 Nguồn đề thi:';
+
+  const lblQuizRatio = document.getElementById('label-quiz-ratio');
+  if (lblQuizRatio) lblQuizRatio.textContent = isEn ? '🧠 Review Mode:' : '🧠 Chế độ lặp lại:';
+
+  const lblQuizDiff = document.getElementById('label-quiz-diff');
+  if (lblQuizDiff) lblQuizDiff.textContent = isEn ? '🎚️ Question Difficulty:' : '🎚️ Độ khó câu hỏi:';
+
+  const lblQuizAge = document.getElementById('label-quiz-age');
+  if (lblQuizAge) lblQuizAge.textContent = isEn ? '👶 Target Age:' : '👶 Phù hợp lứa tuổi:';
+
+  // Review Screen Buttons
+  const btnViewList = document.getElementById('btn-view-list-text');
+  if (btnViewList) btnViewList.textContent = isEn ? '📑 List View' : '📑 Dạng danh sách';
+  const btnViewCard = document.getElementById('btn-view-card-text');
+  if (btnViewCard) btnViewCard.textContent = isEn ? '🃏 Card View' : '🃏 Từng câu một';
+  const btnBackScore = document.getElementById('btn-back-score-text');
+  if (btnBackScore) btnBackScore.textContent = isEn ? '⬅️ Back to Score' : '⬅️ Quay lại bảng điểm';
+  const btnCardPrev = document.getElementById('btn-card-prev-text');
+  if (btnCardPrev) btnCardPrev.textContent = isEn ? '⬅️ Previous' : '⬅️ Câu trước';
+  const btnCardNext = document.getElementById('btn-card-next-text');
+  if (btnCardNext) btnCardNext.textContent = isEn ? 'Next ➡️' : 'Câu sau ➡️';
+
+  // Quick Nav Modal
+  const qNavTitle = document.getElementById('quick-nav-modal-title');
+  if (qNavTitle) qNavTitle.textContent = isEn ? 'Review Your Answers' : 'Xem Lại Các Câu Vừa Làm';
+  const qNavDesc = document.getElementById('quick-nav-modal-desc');
+  if (qNavDesc) qNavDesc.innerHTML = isEn 
+    ? 'Click any question to review or edit your answers. When ready, click <strong>"Submit & Score"</strong>!' 
+    : 'Bé bấm vào câu bất kỳ để xem lại đề bài hoặc sửa đáp án nếu muốn. Khi đã chắc chắn, bấm <strong>"Nộp bài & Xem điểm"</strong> nhé!';
+  const qNavCancel = document.getElementById('quick-nav-cancel-text');
+  if (qNavCancel) qNavCancel.textContent = isEn ? 'Back to Quiz' : 'Tiếp tục làm bài';
+  const qNavSubmit = document.getElementById('quick-nav-submit-text');
+  if (qNavSubmit) qNavSubmit.textContent = isEn ? 'Submit & Score' : 'Nộp bài & Xem điểm';
+
   refreshLucideIcons();
 }
 
@@ -6654,6 +6906,53 @@ function renderMultipleChoice(q) {
     
     container.appendChild(btn);
   });
+  
+  // Home Exam Config Details
+  const homeCfgSumm = document.getElementById('home-config-summary-text');
+  if (homeCfgSumm) homeCfgSumm.textContent = isEn ? 'Exam Settings & Google Sheets Sync' : 'Tùy Chỉnh Quy Cách Đề Thi & Kết Nối Google Sheets';
+
+  const homeCfgBadge = document.getElementById('home-config-badge');
+  if (homeCfgBadge) homeCfgBadge.textContent = isEn ? 'Expand ▾' : 'Mở rộng ▾';
+
+  const lblQuizSize = document.getElementById('label-quiz-size');
+  if (lblQuizSize) lblQuizSize.textContent = isEn ? '🔢 Number of Questions:' : '🔢 Số lượng câu hỏi:';
+
+  const lblQuizSrc = document.getElementById('label-quiz-source');
+  if (lblQuizSrc) lblQuizSrc.textContent = isEn ? '📚 Question Sources:' : '📚 Nguồn đề thi:';
+
+  const lblQuizRatio = document.getElementById('label-quiz-ratio');
+  if (lblQuizRatio) lblQuizRatio.textContent = isEn ? '🧠 Review Mode:' : '🧠 Chế độ lặp lại:';
+
+  const lblQuizDiff = document.getElementById('label-quiz-diff');
+  if (lblQuizDiff) lblQuizDiff.textContent = isEn ? '🎚️ Question Difficulty:' : '🎚️ Độ khó câu hỏi:';
+
+  const lblQuizAge = document.getElementById('label-quiz-age');
+  if (lblQuizAge) lblQuizAge.textContent = isEn ? '👶 Target Age:' : '👶 Phù hợp lứa tuổi:';
+
+  // Review Screen Buttons
+  const btnViewList = document.getElementById('btn-view-list-text');
+  if (btnViewList) btnViewList.textContent = isEn ? '📑 List View' : '📑 Dạng danh sách';
+  const btnViewCard = document.getElementById('btn-view-card-text');
+  if (btnViewCard) btnViewCard.textContent = isEn ? '🃏 Card View' : '🃏 Từng câu một';
+  const btnBackScore = document.getElementById('btn-back-score-text');
+  if (btnBackScore) btnBackScore.textContent = isEn ? '⬅️ Back to Score' : '⬅️ Quay lại bảng điểm';
+  const btnCardPrev = document.getElementById('btn-card-prev-text');
+  if (btnCardPrev) btnCardPrev.textContent = isEn ? '⬅️ Previous' : '⬅️ Câu trước';
+  const btnCardNext = document.getElementById('btn-card-next-text');
+  if (btnCardNext) btnCardNext.textContent = isEn ? 'Next ➡️' : 'Câu sau ➡️';
+
+  // Quick Nav Modal
+  const qNavTitle = document.getElementById('quick-nav-modal-title');
+  if (qNavTitle) qNavTitle.textContent = isEn ? 'Review Your Answers' : 'Xem Lại Các Câu Vừa Làm';
+  const qNavDesc = document.getElementById('quick-nav-modal-desc');
+  if (qNavDesc) qNavDesc.innerHTML = isEn 
+    ? 'Click any question to review or edit your answers. When ready, click <strong>"Submit & Score"</strong>!' 
+    : 'Bé bấm vào câu bất kỳ để xem lại đề bài hoặc sửa đáp án nếu muốn. Khi đã chắc chắn, bấm <strong>"Nộp bài & Xem điểm"</strong> nhé!';
+  const qNavCancel = document.getElementById('quick-nav-cancel-text');
+  if (qNavCancel) qNavCancel.textContent = isEn ? 'Back to Quiz' : 'Tiếp tục làm bài';
+  const qNavSubmit = document.getElementById('quick-nav-submit-text');
+  if (qNavSubmit) qNavSubmit.textContent = isEn ? 'Submit & Score' : 'Nộp bài & Xem điểm';
+
   refreshLucideIcons();
 }
 
@@ -7883,20 +8182,20 @@ function renderListReview() {
 
     card.innerHTML = `
       <div class="review-card-header">
-        <span>Câu ${idx + 1} (${q.topic} - Mức ${q.diff})</span>
+        <span>${currentLanguageMode === 'en' ? 'Question' : 'Câu'} ${idx + 1} (${(currentLanguageMode === 'en' ? TOPIC_EN_MAP[q.topic] : q.topic) || q.topic} - ${currentLanguageMode === 'en' ? 'Level' : 'Mức'} ${q.diff})</span>
         <span style="color:${item.isCorrect ? 'var(--success)' : 'var(--danger)'};">
-          ${item.isCorrect ? '✅ Đúng' : '❌ Chưa đúng'}
+          ${item.isCorrect ? (currentLanguageMode === 'en' ? '✅ Correct' : '✅ Đúng') : (currentLanguageMode === 'en' ? '❌ Incorrect' : '❌ Chưa đúng')}
         </span>
       </div>
       <div class="review-q-text">
         ${currentLanguageMode === 'bilingual' ? `<div style="font-weight:800; margin-bottom:4px;">${q.q_en || q.q}</div><div style="font-size:0.92em; color:#475569;">${q.q}</div>` : (currentLanguageMode === 'en' ? (q.q_en || q.q) : q.q)}
       </div>
       <div class="review-answers-box">
-        <div><strong>Bé đã chọn:</strong> <span style="color:${item.isCorrect ? 'var(--success)' : 'var(--danger)'}; font-weight:700;">${item.userAnswerText}</span></div>
-        ${!item.isCorrect ? `<div style="margin-top:4px;"><strong>Đáp án đúng:</strong> <span style="color:var(--success); font-weight:700;">${getCorrectAnswerText(q)}</span></div>` : ''}
+        <div><strong>${currentLanguageMode === 'en' ? 'Your choice:' : 'Bé đã chọn:'}</strong> <span style="color:${item.isCorrect ? 'var(--success)' : 'var(--danger)'}; font-weight:700;">${item.userAnswerText}</span></div>
+        ${!item.isCorrect ? `<div style="margin-top:4px;"><strong>${currentLanguageMode === 'en' ? 'Correct answer:' : 'Đáp án đúng:'}</strong> <span style="color:var(--success); font-weight:700;">${getCorrectAnswerText(q)}</span></div>` : ''}
       </div>
       <div class="review-explain-box">
-        <strong>💡 Giải thích:</strong> ${currentLanguageMode === 'bilingual' ? `<div><em>${q.explain_en || q.explain}</em></div><div style="margin-top:3px;">${q.explain}</div>` : (currentLanguageMode === 'en' ? (q.explain_en || q.explain) : q.explain)}
+        <strong>💡 ${currentLanguageMode === 'en' ? 'Explanation:' : 'Giải thích:'}</strong> ${currentLanguageMode === 'bilingual' ? `<div><em>${q.explain_en || q.explain}</em></div><div style="margin-top:3px;">${q.explain}</div>` : (currentLanguageMode === 'en' ? (q.explain_en || q.explain) : q.explain)}
       </div>
     `;
     container.appendChild(card);
@@ -7919,19 +8218,19 @@ function renderCardReview() {
   container.className = `review-item-card ${item.isCorrect ? 'is-correct' : 'is-wrong'}`;
   container.innerHTML = `
     <div class="review-card-header">
-      <span>${q.topic} • Độ tuổi ${q.age} • Mức ${q.diff}</span>
+      <span>${(currentLanguageMode === 'en' ? TOPIC_EN_MAP[q.topic] : q.topic) || q.topic} • ${currentLanguageMode === 'en' ? 'Age ' + q.age : 'Độ tuổi ' + q.age} • ${currentLanguageMode === 'en' ? 'Level ' + q.diff : 'Mức ' + q.diff}</span>
       <span style="color:${item.isCorrect ? 'var(--success)' : 'var(--danger)'};">
-        ${item.isCorrect ? '✅ Trả lời Đúng' : '❌ Trả lời Sai'}
+        ${item.isCorrect ? (currentLanguageMode === 'en' ? '✅ Correct Answer' : '✅ Trả lời Đúng') : (currentLanguageMode === 'en' ? '❌ Incorrect Answer' : '❌ Trả lời Sai')}
       </span>
     </div>
     ${q.img ? `<div class="question-img-card" style="margin-bottom:10px; height:140px;"><img src="${q.img}"></div>` : ''}
     <div class="review-q-text">${q.q}</div>
     <div class="review-answers-box">
-      <div><strong>Bé chọn:</strong> <span style="color:${item.isCorrect ? 'var(--success)' : 'var(--danger)'}; font-weight:700;">${item.userAnswerText}</span></div>
-      ${!item.isCorrect ? `<div style="margin-top:4px;"><strong>Đáp án đúng:</strong> <span style="color:var(--success); font-weight:700;">${getCorrectAnswerText(q)}</span></div>` : ''}
+      <div><strong>${currentLanguageMode === 'en' ? 'Your choice:' : 'Bé chọn:'}</strong> <span style="color:${item.isCorrect ? 'var(--success)' : 'var(--danger)'}; font-weight:700;">${item.userAnswerText}</span></div>
+      ${!item.isCorrect ? `<div style="margin-top:4px;"><strong>${currentLanguageMode === 'en' ? 'Correct answer:' : 'Đáp án đúng:'}</strong> <span style="color:var(--success); font-weight:700;">${getCorrectAnswerText(q)}</span></div>` : ''}
     </div>
     <div class="review-explain-box">
-      <strong>💡 Vì sao lại thế nhỉ?</strong><br>${q.explain}
+      <strong>💡 ${currentLanguageMode === 'en' ? 'Science Explanation:' : 'Vì sao lại thế nhỉ?'}</strong><br>${q.explain}
     </div>
   `;
 }
@@ -7945,11 +8244,16 @@ function navCardReview(direction) {
 }
 
 function getCorrectAnswerText(q) {
+  const isEn = (currentLanguageMode === 'en');
   if (q.type === 'MC') {
-    if (q.ans === 'A') return `A. ${q.a}`;
-    if (q.ans === 'B') return `B. ${q.b}`;
-    if (q.ans === 'C') return `C. ${q.c}`;
-    if (q.ans === 'D') return `D. ${q.d}`;
+    const textA = isEn ? (q.a_en || q.a) : q.a;
+    const textB = isEn ? (q.b_en || q.b) : q.b;
+    const textC = isEn ? (q.c_en || q.c) : q.c;
+    const textD = isEn ? (q.d_en || q.d) : q.d;
+    if (q.ans === 'A') return `A. ${textA}`;
+    if (q.ans === 'B') return `B. ${textB}`;
+    if (q.ans === 'C') return `C. ${textC}`;
+    if (q.ans === 'D') return `D. ${textD}`;
   }
   return q.ans.split('|')[0];
 }
@@ -8313,6 +8617,53 @@ function renderHistoryTable() {
     `;
     tbody.appendChild(tr);
   });
+  
+  // Home Exam Config Details
+  const homeCfgSumm = document.getElementById('home-config-summary-text');
+  if (homeCfgSumm) homeCfgSumm.textContent = isEn ? 'Exam Settings & Google Sheets Sync' : 'Tùy Chỉnh Quy Cách Đề Thi & Kết Nối Google Sheets';
+
+  const homeCfgBadge = document.getElementById('home-config-badge');
+  if (homeCfgBadge) homeCfgBadge.textContent = isEn ? 'Expand ▾' : 'Mở rộng ▾';
+
+  const lblQuizSize = document.getElementById('label-quiz-size');
+  if (lblQuizSize) lblQuizSize.textContent = isEn ? '🔢 Number of Questions:' : '🔢 Số lượng câu hỏi:';
+
+  const lblQuizSrc = document.getElementById('label-quiz-source');
+  if (lblQuizSrc) lblQuizSrc.textContent = isEn ? '📚 Question Sources:' : '📚 Nguồn đề thi:';
+
+  const lblQuizRatio = document.getElementById('label-quiz-ratio');
+  if (lblQuizRatio) lblQuizRatio.textContent = isEn ? '🧠 Review Mode:' : '🧠 Chế độ lặp lại:';
+
+  const lblQuizDiff = document.getElementById('label-quiz-diff');
+  if (lblQuizDiff) lblQuizDiff.textContent = isEn ? '🎚️ Question Difficulty:' : '🎚️ Độ khó câu hỏi:';
+
+  const lblQuizAge = document.getElementById('label-quiz-age');
+  if (lblQuizAge) lblQuizAge.textContent = isEn ? '👶 Target Age:' : '👶 Phù hợp lứa tuổi:';
+
+  // Review Screen Buttons
+  const btnViewList = document.getElementById('btn-view-list-text');
+  if (btnViewList) btnViewList.textContent = isEn ? '📑 List View' : '📑 Dạng danh sách';
+  const btnViewCard = document.getElementById('btn-view-card-text');
+  if (btnViewCard) btnViewCard.textContent = isEn ? '🃏 Card View' : '🃏 Từng câu một';
+  const btnBackScore = document.getElementById('btn-back-score-text');
+  if (btnBackScore) btnBackScore.textContent = isEn ? '⬅️ Back to Score' : '⬅️ Quay lại bảng điểm';
+  const btnCardPrev = document.getElementById('btn-card-prev-text');
+  if (btnCardPrev) btnCardPrev.textContent = isEn ? '⬅️ Previous' : '⬅️ Câu trước';
+  const btnCardNext = document.getElementById('btn-card-next-text');
+  if (btnCardNext) btnCardNext.textContent = isEn ? 'Next ➡️' : 'Câu sau ➡️';
+
+  // Quick Nav Modal
+  const qNavTitle = document.getElementById('quick-nav-modal-title');
+  if (qNavTitle) qNavTitle.textContent = isEn ? 'Review Your Answers' : 'Xem Lại Các Câu Vừa Làm';
+  const qNavDesc = document.getElementById('quick-nav-modal-desc');
+  if (qNavDesc) qNavDesc.innerHTML = isEn 
+    ? 'Click any question to review or edit your answers. When ready, click <strong>"Submit & Score"</strong>!' 
+    : 'Bé bấm vào câu bất kỳ để xem lại đề bài hoặc sửa đáp án nếu muốn. Khi đã chắc chắn, bấm <strong>"Nộp bài & Xem điểm"</strong> nhé!';
+  const qNavCancel = document.getElementById('quick-nav-cancel-text');
+  if (qNavCancel) qNavCancel.textContent = isEn ? 'Back to Quiz' : 'Tiếp tục làm bài';
+  const qNavSubmit = document.getElementById('quick-nav-submit-text');
+  if (qNavSubmit) qNavSubmit.textContent = isEn ? 'Submit & Score' : 'Nộp bài & Xem điểm';
+
   refreshLucideIcons();
 }
 
@@ -8369,16 +8720,16 @@ function viewHistoryDetail(recordId) {
         <div class="review-card-header">
           <span>Câu ${item.index} (${item.topic} - Mức ${item.diff}) ${item.source ? `<span style="font-size:0.75rem; background:#F1F5F9; color:#475569; padding:2px 6px; border-radius:6px; margin-left:6px;">${item.source}</span>` : ''}</span>
           <span style="color:${item.isCorrect ? 'var(--success)' : 'var(--danger)'}; font-weight:800;">
-            ${item.isCorrect ? '✅ Đúng' : '❌ Chưa đúng'}
+            ${item.isCorrect ? (currentLanguageMode === 'en' ? '✅ Correct' : '✅ Đúng') : (currentLanguageMode === 'en' ? '❌ Incorrect' : '❌ Chưa đúng')}
           </span>
         </div>
         <div class="review-q-text">${item.qText}</div>
         <div class="review-answers-box">
-          <div><strong>Bé đã chọn:</strong> <span style="color:${item.isCorrect ? 'var(--success)' : 'var(--danger)'}; font-weight:700;">${item.userAnswerText}</span></div>
-          ${!item.isCorrect ? `<div style="margin-top:4px;"><strong>Đáp án đúng:</strong> <span style="color:var(--success); font-weight:700;">${item.correctAnswerText}</span></div>` : ''}
+          <div><strong>${currentLanguageMode === 'en' ? 'Your choice:' : 'Bé đã chọn:'}</strong> <span style="color:${item.isCorrect ? 'var(--success)' : 'var(--danger)'}; font-weight:700;">${item.userAnswerText}</span></div>
+          ${!item.isCorrect ? `<div style="margin-top:4px;"><strong>${currentLanguageMode === 'en' ? 'Correct answer:' : 'Đáp án đúng:'}</strong> <span style="color:var(--success); font-weight:700;">${item.correctAnswerText}</span></div>` : ''}
         </div>
         <div class="review-explain-box">
-          <strong>💡 Giải thích:</strong> ${item.explain || 'Không có giải thích chi tiết.'}
+          <strong>💡 ${currentLanguageMode === 'en' ? 'Explanation:' : 'Giải thích:'}</strong> ${item.explain || 'Không có giải thích chi tiết.'}
         </div>
       `;
       listElem.appendChild(card);
@@ -8449,6 +8800,53 @@ function showScreen(id) {
     setActiveNavTab('quiz');
   }
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  
+  // Home Exam Config Details
+  const homeCfgSumm = document.getElementById('home-config-summary-text');
+  if (homeCfgSumm) homeCfgSumm.textContent = isEn ? 'Exam Settings & Google Sheets Sync' : 'Tùy Chỉnh Quy Cách Đề Thi & Kết Nối Google Sheets';
+
+  const homeCfgBadge = document.getElementById('home-config-badge');
+  if (homeCfgBadge) homeCfgBadge.textContent = isEn ? 'Expand ▾' : 'Mở rộng ▾';
+
+  const lblQuizSize = document.getElementById('label-quiz-size');
+  if (lblQuizSize) lblQuizSize.textContent = isEn ? '🔢 Number of Questions:' : '🔢 Số lượng câu hỏi:';
+
+  const lblQuizSrc = document.getElementById('label-quiz-source');
+  if (lblQuizSrc) lblQuizSrc.textContent = isEn ? '📚 Question Sources:' : '📚 Nguồn đề thi:';
+
+  const lblQuizRatio = document.getElementById('label-quiz-ratio');
+  if (lblQuizRatio) lblQuizRatio.textContent = isEn ? '🧠 Review Mode:' : '🧠 Chế độ lặp lại:';
+
+  const lblQuizDiff = document.getElementById('label-quiz-diff');
+  if (lblQuizDiff) lblQuizDiff.textContent = isEn ? '🎚️ Question Difficulty:' : '🎚️ Độ khó câu hỏi:';
+
+  const lblQuizAge = document.getElementById('label-quiz-age');
+  if (lblQuizAge) lblQuizAge.textContent = isEn ? '👶 Target Age:' : '👶 Phù hợp lứa tuổi:';
+
+  // Review Screen Buttons
+  const btnViewList = document.getElementById('btn-view-list-text');
+  if (btnViewList) btnViewList.textContent = isEn ? '📑 List View' : '📑 Dạng danh sách';
+  const btnViewCard = document.getElementById('btn-view-card-text');
+  if (btnViewCard) btnViewCard.textContent = isEn ? '🃏 Card View' : '🃏 Từng câu một';
+  const btnBackScore = document.getElementById('btn-back-score-text');
+  if (btnBackScore) btnBackScore.textContent = isEn ? '⬅️ Back to Score' : '⬅️ Quay lại bảng điểm';
+  const btnCardPrev = document.getElementById('btn-card-prev-text');
+  if (btnCardPrev) btnCardPrev.textContent = isEn ? '⬅️ Previous' : '⬅️ Câu trước';
+  const btnCardNext = document.getElementById('btn-card-next-text');
+  if (btnCardNext) btnCardNext.textContent = isEn ? 'Next ➡️' : 'Câu sau ➡️';
+
+  // Quick Nav Modal
+  const qNavTitle = document.getElementById('quick-nav-modal-title');
+  if (qNavTitle) qNavTitle.textContent = isEn ? 'Review Your Answers' : 'Xem Lại Các Câu Vừa Làm';
+  const qNavDesc = document.getElementById('quick-nav-modal-desc');
+  if (qNavDesc) qNavDesc.innerHTML = isEn 
+    ? 'Click any question to review or edit your answers. When ready, click <strong>"Submit & Score"</strong>!' 
+    : 'Bé bấm vào câu bất kỳ để xem lại đề bài hoặc sửa đáp án nếu muốn. Khi đã chắc chắn, bấm <strong>"Nộp bài & Xem điểm"</strong> nhé!';
+  const qNavCancel = document.getElementById('quick-nav-cancel-text');
+  if (qNavCancel) qNavCancel.textContent = isEn ? 'Back to Quiz' : 'Tiếp tục làm bài';
+  const qNavSubmit = document.getElementById('quick-nav-submit-text');
+  if (qNavSubmit) qNavSubmit.textContent = isEn ? 'Submit & Score' : 'Nộp bài & Xem điểm';
+
   refreshLucideIcons();
 }
 
@@ -9063,6 +9461,53 @@ function renderUserManagementTable() {
     `;
     tbody.appendChild(tr);
   });
+  
+  // Home Exam Config Details
+  const homeCfgSumm = document.getElementById('home-config-summary-text');
+  if (homeCfgSumm) homeCfgSumm.textContent = isEn ? 'Exam Settings & Google Sheets Sync' : 'Tùy Chỉnh Quy Cách Đề Thi & Kết Nối Google Sheets';
+
+  const homeCfgBadge = document.getElementById('home-config-badge');
+  if (homeCfgBadge) homeCfgBadge.textContent = isEn ? 'Expand ▾' : 'Mở rộng ▾';
+
+  const lblQuizSize = document.getElementById('label-quiz-size');
+  if (lblQuizSize) lblQuizSize.textContent = isEn ? '🔢 Number of Questions:' : '🔢 Số lượng câu hỏi:';
+
+  const lblQuizSrc = document.getElementById('label-quiz-source');
+  if (lblQuizSrc) lblQuizSrc.textContent = isEn ? '📚 Question Sources:' : '📚 Nguồn đề thi:';
+
+  const lblQuizRatio = document.getElementById('label-quiz-ratio');
+  if (lblQuizRatio) lblQuizRatio.textContent = isEn ? '🧠 Review Mode:' : '🧠 Chế độ lặp lại:';
+
+  const lblQuizDiff = document.getElementById('label-quiz-diff');
+  if (lblQuizDiff) lblQuizDiff.textContent = isEn ? '🎚️ Question Difficulty:' : '🎚️ Độ khó câu hỏi:';
+
+  const lblQuizAge = document.getElementById('label-quiz-age');
+  if (lblQuizAge) lblQuizAge.textContent = isEn ? '👶 Target Age:' : '👶 Phù hợp lứa tuổi:';
+
+  // Review Screen Buttons
+  const btnViewList = document.getElementById('btn-view-list-text');
+  if (btnViewList) btnViewList.textContent = isEn ? '📑 List View' : '📑 Dạng danh sách';
+  const btnViewCard = document.getElementById('btn-view-card-text');
+  if (btnViewCard) btnViewCard.textContent = isEn ? '🃏 Card View' : '🃏 Từng câu một';
+  const btnBackScore = document.getElementById('btn-back-score-text');
+  if (btnBackScore) btnBackScore.textContent = isEn ? '⬅️ Back to Score' : '⬅️ Quay lại bảng điểm';
+  const btnCardPrev = document.getElementById('btn-card-prev-text');
+  if (btnCardPrev) btnCardPrev.textContent = isEn ? '⬅️ Previous' : '⬅️ Câu trước';
+  const btnCardNext = document.getElementById('btn-card-next-text');
+  if (btnCardNext) btnCardNext.textContent = isEn ? 'Next ➡️' : 'Câu sau ➡️';
+
+  // Quick Nav Modal
+  const qNavTitle = document.getElementById('quick-nav-modal-title');
+  if (qNavTitle) qNavTitle.textContent = isEn ? 'Review Your Answers' : 'Xem Lại Các Câu Vừa Làm';
+  const qNavDesc = document.getElementById('quick-nav-modal-desc');
+  if (qNavDesc) qNavDesc.innerHTML = isEn 
+    ? 'Click any question to review or edit your answers. When ready, click <strong>"Submit & Score"</strong>!' 
+    : 'Bé bấm vào câu bất kỳ để xem lại đề bài hoặc sửa đáp án nếu muốn. Khi đã chắc chắn, bấm <strong>"Nộp bài & Xem điểm"</strong> nhé!';
+  const qNavCancel = document.getElementById('quick-nav-cancel-text');
+  if (qNavCancel) qNavCancel.textContent = isEn ? 'Back to Quiz' : 'Tiếp tục làm bài';
+  const qNavSubmit = document.getElementById('quick-nav-submit-text');
+  if (qNavSubmit) qNavSubmit.textContent = isEn ? 'Submit & Score' : 'Nộp bài & Xem điểm';
+
   refreshLucideIcons();
 }
 
@@ -9122,6 +9567,53 @@ function selectDiff(diff, elem) {
 
 
 window.addEventListener('DOMContentLoaded', () => {
+  
+  // Home Exam Config Details
+  const homeCfgSumm = document.getElementById('home-config-summary-text');
+  if (homeCfgSumm) homeCfgSumm.textContent = isEn ? 'Exam Settings & Google Sheets Sync' : 'Tùy Chỉnh Quy Cách Đề Thi & Kết Nối Google Sheets';
+
+  const homeCfgBadge = document.getElementById('home-config-badge');
+  if (homeCfgBadge) homeCfgBadge.textContent = isEn ? 'Expand ▾' : 'Mở rộng ▾';
+
+  const lblQuizSize = document.getElementById('label-quiz-size');
+  if (lblQuizSize) lblQuizSize.textContent = isEn ? '🔢 Number of Questions:' : '🔢 Số lượng câu hỏi:';
+
+  const lblQuizSrc = document.getElementById('label-quiz-source');
+  if (lblQuizSrc) lblQuizSrc.textContent = isEn ? '📚 Question Sources:' : '📚 Nguồn đề thi:';
+
+  const lblQuizRatio = document.getElementById('label-quiz-ratio');
+  if (lblQuizRatio) lblQuizRatio.textContent = isEn ? '🧠 Review Mode:' : '🧠 Chế độ lặp lại:';
+
+  const lblQuizDiff = document.getElementById('label-quiz-diff');
+  if (lblQuizDiff) lblQuizDiff.textContent = isEn ? '🎚️ Question Difficulty:' : '🎚️ Độ khó câu hỏi:';
+
+  const lblQuizAge = document.getElementById('label-quiz-age');
+  if (lblQuizAge) lblQuizAge.textContent = isEn ? '👶 Target Age:' : '👶 Phù hợp lứa tuổi:';
+
+  // Review Screen Buttons
+  const btnViewList = document.getElementById('btn-view-list-text');
+  if (btnViewList) btnViewList.textContent = isEn ? '📑 List View' : '📑 Dạng danh sách';
+  const btnViewCard = document.getElementById('btn-view-card-text');
+  if (btnViewCard) btnViewCard.textContent = isEn ? '🃏 Card View' : '🃏 Từng câu một';
+  const btnBackScore = document.getElementById('btn-back-score-text');
+  if (btnBackScore) btnBackScore.textContent = isEn ? '⬅️ Back to Score' : '⬅️ Quay lại bảng điểm';
+  const btnCardPrev = document.getElementById('btn-card-prev-text');
+  if (btnCardPrev) btnCardPrev.textContent = isEn ? '⬅️ Previous' : '⬅️ Câu trước';
+  const btnCardNext = document.getElementById('btn-card-next-text');
+  if (btnCardNext) btnCardNext.textContent = isEn ? 'Next ➡️' : 'Câu sau ➡️';
+
+  // Quick Nav Modal
+  const qNavTitle = document.getElementById('quick-nav-modal-title');
+  if (qNavTitle) qNavTitle.textContent = isEn ? 'Review Your Answers' : 'Xem Lại Các Câu Vừa Làm';
+  const qNavDesc = document.getElementById('quick-nav-modal-desc');
+  if (qNavDesc) qNavDesc.innerHTML = isEn 
+    ? 'Click any question to review or edit your answers. When ready, click <strong>"Submit & Score"</strong>!' 
+    : 'Bé bấm vào câu bất kỳ để xem lại đề bài hoặc sửa đáp án nếu muốn. Khi đã chắc chắn, bấm <strong>"Nộp bài & Xem điểm"</strong> nhé!';
+  const qNavCancel = document.getElementById('quick-nav-cancel-text');
+  if (qNavCancel) qNavCancel.textContent = isEn ? 'Back to Quiz' : 'Tiếp tục làm bài';
+  const qNavSubmit = document.getElementById('quick-nav-submit-text');
+  if (qNavSubmit) qNavSubmit.textContent = isEn ? 'Submit & Score' : 'Nộp bài & Xem điểm';
+
   refreshLucideIcons();
 });
 
