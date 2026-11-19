@@ -572,14 +572,20 @@
   .modal-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(4px);
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 9999;
-    padding: 20px;
+    z-index: 99999 !important;
+    padding: 16px;
+    overflow-y: auto;
   }
-  .modal-overlay.active { display: flex; }
+  .modal-overlay.active {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 
   .modal-box {
     background: white;
@@ -4485,6 +4491,12 @@
             <span id="btn-next-text">TIẾP TỤC HÀNH TRÌNH</span>
             <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
           </button>
+          <div class="text-center mt-2.5" id="quiz-pre-review-wrap" style="display:none;">
+            <button type="button" class="text-xs font-bold text-slate-500 hover:text-cyan-700 transition inline-flex items-center gap-1 cursor-pointer bg-transparent border-0" onclick="openReviewBeforeSubmit()">
+              <i data-lucide="clipboard-list" style="width:14px; height:14px;"></i>
+              <span id="quiz-pre-review-text">🔍 Xem lại các câu vừa làm trước khi nộp</span>
+            </button>
+          </div>
         </div>
 
       </div>
@@ -5142,11 +5154,11 @@
     <div class="flex flex-col gap-2.5">
       <!-- Row 1: Review Wrong Questions (If wrong > 0) + Review All -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="modal-review-actions-row">
-        <button type="button" class="btn-3d btn-3d-rose py-2.5 px-3 text-xs font-black shadow-sm flex items-center justify-center gap-1.5" id="btn-modal-review-wrong" onclick="openReviewScreen('wrong', 'list')">
+        <button type="button" class="btn-3d btn-3d-rose py-2.5 px-3 text-xs font-black shadow-sm flex items-center justify-center gap-1.5" id="btn-modal-review-wrong" onclick="openWrongReviewFromModal()">
           <i data-lucide="alert-circle" style="width:15px; height:15px;"></i>
           <span id="btn-modal-review-wrong-text">❌ Xem Lại Câu Sai</span>
         </button>
-        <button type="button" class="btn-3d btn-3d-cyan py-2.5 px-3 text-xs font-black shadow-sm flex items-center justify-center gap-1.5" id="btn-modal-review-all" onclick="openReviewScreen('all', 'list')">
+        <button type="button" class="btn-3d btn-3d-cyan py-2.5 px-3 text-xs font-black shadow-sm flex items-center justify-center gap-1.5" id="btn-modal-review-all" onclick="openAllReviewFromModal()">
           <i data-lucide="list-checks" style="width:15px; height:15px;"></i>
           <span id="btn-modal-review-all-text">📑 Xem Toàn Bộ Bài Làm</span>
         </button>
@@ -5154,7 +5166,7 @@
 
       <!-- Row 2: Card Mode Quick Review + Play Again / Replay Mistakes -->
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-        <button type="button" class="btn-3d py-2 px-2.5 text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 flex items-center justify-center gap-1" onclick="openReviewScreen(wrongList.length > 0 ? 'wrong' : 'all', 'card')" title="Xem chi tiết từng câu dạng thẻ lật">
+        <button type="button" class="btn-3d py-2 px-2.5 text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 flex items-center justify-center gap-1" onclick="openCardReviewFromModal()" title="Xem chi tiết từng câu dạng thẻ lật">
           <i data-lucide="layers" style="width:14px; height:14px;"></i>
           <span id="btn-modal-card-mode-text">🃏 Từng câu một</span>
         </button>
@@ -6492,6 +6504,9 @@ function applyLanguageToUI(lang) {
   const btnModalBackHome = document.getElementById('btn-modal-back-home-text');
   if (btnModalBackHome) btnModalBackHome.textContent = isEn ? 'Close & View Detailed Scorecard ➔' : 'Đóng & Xem Bảng Điểm Chi Tiết ➔';
 
+  const quizPreRevText = document.getElementById('quiz-pre-review-text');
+  if (quizPreRevText) quizPreRevText.textContent = isEn ? '🔍 Review answers before submitting' : '🔍 Xem lại các câu vừa làm trước khi nộp';
+
   // Review Screen
   const revScreenTitle = document.getElementById('rev-screen-title');
   if (revScreenTitle) revScreenTitle.textContent = isEn ? 'Answer Review & Explanations' : 'Xem Lại Chi Tiết Bài Làm';
@@ -7009,16 +7024,25 @@ function displayQuestion() {
 
       if (isLast) {
         btnNext.innerHTML = isEn 
-          ? '<i data-lucide="list-checks" style="width:18px; height:18px; stroke-width:2.5;"></i> <span id="btn-next-text">Review & Submit</span>'
-          : '<i data-lucide="list-checks" style="width:18px; height:18px; stroke-width:2.5;"></i> <span id="btn-next-text">Xem lại & Nộp bài</span>';
-        btnNext.classList.add('btn-last-step');
-        btnNext.onclick = openReviewBeforeSubmit;
+          ? '<i data-lucide="send" style="width:18px; height:18px; stroke-width:2.5;"></i> <span id="btn-next-text">Submit & View Results 🚀</span>'
+          : '<i data-lucide="send" style="width:18px; height:18px; stroke-width:2.5;"></i> <span id="btn-next-text">Nộp Bài & Xem Điểm 🚀</span>';
+        btnNext.className = 'btn-3d btn-3d-emerald w-full py-3.5 text-sm font-black flex items-center justify-center gap-2 shadow-xl cursor-pointer btn-last-step visible';
+        btnNext.onclick = submitAndFinishQuiz;
+        const preRev = document.getElementById('quiz-pre-review-wrap');
+        if (preRev) preRev.style.display = 'block';
       } else {
         btnNext.innerHTML = isEn
           ? '<span id="btn-next-text">Next Question</span> <i data-lucide="arrow-right" style="width:18px; height:18px; stroke-width:2.5;"></i>'
           : '<span id="btn-next-text">Câu tiếp theo</span> <i data-lucide="arrow-right" style="width:18px; height:18px; stroke-width:2.5;"></i>';
-        btnNext.classList.remove('btn-last-step');
+        btnNext.className = 'btn-3d btn-3d-cyan w-full py-3.5 text-sm font-black flex items-center justify-center gap-2 shadow-xl cursor-pointer';
+        if (userAnswersMap && userAnswersMap[q.id]) {
+          btnNext.classList.add('visible');
+        } else {
+          btnNext.classList.remove('visible');
+        }
         btnNext.onclick = goNextQuestion;
+        const preRev = document.getElementById('quiz-pre-review-wrap');
+        if (preRev) preRev.style.display = 'none';
       }
     }
 
@@ -7174,15 +7198,14 @@ function submitShortAnswer() {
 
 function goNextQuestion() {
   if (currentIndex === currentDeck.length - 1) {
-    // Là câu cuối cùng -> Mở màn hình xem lại trước khi nộp
-    openReviewBeforeSubmit();
+    submitAndFinishQuiz();
     return;
   }
   currentIndex++;
   if (currentIndex < currentDeck.length) {
     displayQuestion();
   } else {
-    openReviewBeforeSubmit();
+    submitAndFinishQuiz();
   }
 }
 
@@ -7477,9 +7500,7 @@ function submitAndFinishQuiz() {
   sendDataToAppsScript(total, correctCount, wrongCount, `${score10}/10 (${pct}%)`, timeStr, currentRecordId);
 
   // 6. POPUP BÁO KẾT QUẢ BÀI THI RÕ RÀNG NGAY KHI NỘP BÀI (RESULT POPUP MODAL)
-  setTimeout(() => {
-    openQuizResultModal();
-  }, 220);
+  openQuizResultModal();
 }
 
 
@@ -7489,8 +7510,9 @@ function submitAndFinishQuiz() {
 function openQuizResultModal() {
   const modal = document.getElementById('modal-quiz-result');
   if (!modal) return;
-  refreshLucideIcons();
+  modal.style.display = 'flex';
   modal.classList.add('active');
+  refreshLucideIcons();
   const isEn = (currentLanguageMode === 'en');
   
   // Tag
@@ -7531,9 +7553,11 @@ function openQuizResultModal() {
   const modalResStars = document.getElementById('modal-res-stars');
   const modalResIcon = document.getElementById('modal-res-icon');
   const modalSpeech = document.getElementById('modal-mascot-speech');
+  const modalAvatar = document.getElementById('modal-mascot-avatar');
 
-  const m = (typeof MASCOTS !== 'undefined') ? (MASCOTS.find(x => x.id === currentMascotId) || MASCOTS[0]) : { name: 'Giáo Sư Cú Vọ', name_en: 'Prof. Owl' };
+  const m = (typeof MASCOTS !== 'undefined') ? (MASCOTS.find(x => x.id === currentMascotId) || MASCOTS[0]) : { name: 'Giáo Sư Cú Vọ', name_en: 'Prof. Owl', avatar: '🦉' };
   const mName = isEn ? (m.name_en || m.name) : m.name;
+  if (modalAvatar && m.avatar) modalAvatar.textContent = m.avatar;
 
   if (pct >= 90) {
     if (modalResIcon) modalResIcon.textContent = '🏆';
@@ -7596,7 +7620,27 @@ function openQuizResultModal() {
 
 function closeQuizResultModal() {
   const modal = document.getElementById('modal-quiz-result');
-  if (modal) modal.classList.remove('active');
+  if (modal) {
+    modal.style.display = 'none';
+    modal.classList.remove('active');
+  }
+  showScreen('result-screen');
+}
+
+function openWrongReviewFromModal() {
+  closeQuizResultModal();
+  openReviewScreen('wrong', 'list');
+}
+
+function openAllReviewFromModal() {
+  closeQuizResultModal();
+  openReviewScreen('all', 'list');
+}
+
+function openCardReviewFromModal() {
+  closeQuizResultModal();
+  const filter = (wrongList && wrongList.length > 0) ? 'wrong' : 'all';
+  openReviewScreen(filter, 'card');
 }
 
 function replayMistakesFromModal() {
