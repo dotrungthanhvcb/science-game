@@ -6578,7 +6578,7 @@ function displayQuestion() {
     }
 
     // 7. Mascot Cheer Dialogue & Hint Tracker
-    currentHintStep = 0;
+    currentHintStep = -1;
     lastHintQuestionId = q ? q.id : null;
     setMascotMood('thinking', isEn 
       ? (isLast ? 'This is the final question! Review carefully when done! 🌟' : `Let\'s explore question ${currentIndex + 1} together! Tap me if you need a clue! 💡`)
@@ -6639,6 +6639,71 @@ function displayQuestion() {
   } catch (err) {
     console.error('displayQuestion error handled:', err);
   }
+}
+
+function renderMultipleChoice(q) {
+  const container = document.getElementById('choices-list');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const isEn = (currentLanguageMode === 'en');
+  const isBi = (currentLanguageMode === 'bilingual');
+
+  const options = [
+    { key: 'A', text: q.a, text_en: q.a_en },
+    { key: 'B', text: q.b, text_en: q.b_en },
+    { key: 'C', text: q.c, text_en: q.c_en },
+    { key: 'D', text: q.d, text_en: q.d_en }
+  ];
+
+  // If question has options array instead of a, b, c, d
+  if ((!q.a || !q.b) && Array.isArray(q.options)) {
+    ['A', 'B', 'C', 'D'].forEach((k, idx) => {
+      if (q.options[idx]) options[idx].text = q.options[idx];
+      if (Array.isArray(q.options_en) && q.options_en[idx]) options[idx].text_en = q.options_en[idx];
+    });
+  }
+
+  const currentSelection = (userAnswersMap && userAnswersMap[q.id]) ? userAnswersMap[q.id].chosenKey : null;
+
+  options.forEach((opt, idx) => {
+    const viText = opt.text || (Array.isArray(q.options) ? q.options[idx] : '');
+    const enText = opt.text_en || (Array.isArray(q.options_en) ? q.options_en[idx] : '') || viText;
+    if (!viText && !enText) return;
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'choice-option w-full select-none';
+    btn.setAttribute('data-choice-key', opt.key);
+
+    if (currentSelection === opt.key) {
+      btn.classList.add('selected');
+    }
+
+    let choiceInnerHtml = '';
+    if (isBi) {
+      choiceInnerHtml = `
+        <div style="text-align:left; flex:1;">
+          <div style="font-weight:800; color:#0F172A; font-size:0.95rem; line-height:1.35;">${enText}</div>
+          <div style="font-size:0.85rem; color:#0284C7; font-weight:700; margin-top:2px;">${viText}</div>
+        </div>
+      `;
+    } else if (isEn) {
+      choiceInnerHtml = `<span style="text-align:left; flex:1; font-weight:700; color:#0F172A; font-size:0.95rem;">${enText}</span>`;
+    } else {
+      choiceInnerHtml = `<span style="text-align:left; flex:1; font-weight:700; color:#0F172A; font-size:0.95rem;">${viText}</span>`;
+    }
+
+    btn.innerHTML = `<span class="choice-letter font-baloo">${opt.key}</span>${choiceInnerHtml}`;
+
+    if (!isQuizSubmitted) {
+      btn.onclick = () => handleChoiceSelect(opt.key, isEn ? enText : viText, btn);
+    } else {
+      btn.disabled = true;
+    }
+
+    container.appendChild(btn);
+  });
 }
 
 function handleChoiceSelect(chosenKey, chosenText, chosenBtn) {
@@ -8865,8 +8930,21 @@ const SCIENCE_FACTS = [
   "Bé có biết: Chim ruồi là loài chim duy nhất có thể bay lùi về phía sau! 🐦"
 ];
 
-let currentHintStep = 0;
+let currentHintStep = -1;
 let lastHintQuestionId = null;
+
+function getIncorrectOption(q) {
+  const keys = ['A', 'B', 'C', 'D'];
+  const correctKey = (q.ans || '').trim().toUpperCase();
+  const wrongKeys = keys.filter(k => k !== correctKey && (q[k.toLowerCase()] || (Array.isArray(q.options) && q.options[keys.indexOf(k)])));
+  if (wrongKeys.length === 0) return null;
+  // Pick first wrong key
+  const chosenKey = wrongKeys[0];
+  const idx = keys.indexOf(chosenKey);
+  const textVi = q[chosenKey.toLowerCase()] || (Array.isArray(q.options) ? q.options[idx] : '');
+  const textEn = (q[chosenKey.toLowerCase() + '_en']) || (Array.isArray(q.options_en) ? q.options_en[idx] : textVi);
+  return { key: chosenKey, text: textVi, text_en: textEn };
+}
 
 function onMascotClick() {
   playKidSound('click');
@@ -8884,21 +8962,20 @@ function onMascotClick() {
   if (isQuizActive && currentDeck[currentIndex]) {
     const q = currentDeck[currentIndex];
     
-    // Reset hint cycle if on a new question
+    // Cycle hint step for this question
     if (lastHintQuestionId !== q.id) {
       lastHintQuestionId = q.id;
       currentHintStep = 0;
     } else {
-      currentHintStep = (currentHintStep + 1) % 3;
+      currentHintStep = (currentHintStep + 1) % 2;
     }
 
     const expVi = q.explain || 'Bé hãy đọc kỹ từng phương án và liên hệ với các hiện tượng thực tế trong tự nhiên nhé!';
     const expEn = q.explain_en || q.explain || 'Read each option carefully and connect with natural everyday science phenomena!';
-    const topicVi = q.topic || 'Khoa học';
-    const topicEn = (typeof TOPIC_EN_MAP !== 'undefined' && TOPIC_EN_MAP[q.topic]) ? TOPIC_EN_MAP[q.topic] : topicVi;
+    const wrongOpt = getIncorrectOption(q);
 
-    if (currentHintStep === 0) {
-      // Step 1: Core scientific explanation / clue for the active question
+    if (currentHintStep === 0 || !wrongOpt) {
+      // Gợi ý 1: Thực sự hữu ích - Giải thích nguyên lý khoa học của câu hỏi hiện tại
       if (isBi) {
         bubble.innerHTML = `<strong>💡 ${mName} mách bạn / Clue:</strong><br><div style="color:#0369a1; font-weight:700; margin-bottom:4px;">${expVi} 🔍</div><div style="color:#64748b; font-size:0.75rem;">${expEn}</div>`;
       } else if (isEn) {
@@ -8906,23 +8983,14 @@ function onMascotClick() {
       } else {
         bubble.innerHTML = `<strong>💡 ${mName} mách bạn:</strong><br>${expVi} 🔍`;
       }
-    } else if (currentHintStep === 1) {
-      // Step 2: Topic & deduction hint
-      if (isBi) {
-        bubble.innerHTML = `<strong>💡 ${mName} gợi ý / Tip:</strong><br><div style="color:#0369a1; font-weight:700; margin-bottom:4px;">Chủ đề <strong>${topicVi}</strong>: Đọc kỹ 4 phương án, loại trừ các đáp án trái với tự nhiên nhé! 🌿</div><div style="color:#64748b; font-size:0.75rem;">Topic <strong>${topicEn}</strong>: Read options and eliminate illogical ones! 🌿</div>`;
-      } else if (isEn) {
-        bubble.innerHTML = `<strong>💡 ${mName}'s Extra Tip:</strong><br>Topic <strong>${topicEn}</strong>: Read all 4 choices and eliminate the ones that contradict natural science! 🌿`;
-      } else {
-        bubble.innerHTML = `<strong>💡 ${mName} gợi ý thêm:</strong><br>Câu hỏi thuộc chủ đề <strong>${topicVi}</strong>. Bé hãy đọc kỹ 4 phương án và loại trừ ngay các đáp án vô lý nhé! 🌿`;
-      }
     } else {
-      // Step 3: Cheering & encouragement
+      // Gợi ý 2: Thực sự hữu ích - Loại trừ 1 phương án sai cụ thể (50/50 clue)
       if (isBi) {
-        bubble.innerHTML = `<strong>💡 ${mName} cổ vũ / Cheer:</strong><br><div style="color:#0369a1; font-weight:700; margin-bottom:4px;">Bé làm rất tốt! Cứ tự tin và bình tĩnh suy nghĩ là chọn đúng ngay! 🚀</div><div style="color:#64748b; font-size:0.75rem;">You are doing awesome, stay calm and you will ace it! 🚀</div>`;
+        bubble.innerHTML = `<strong>💡 ${mName} loại trừ đáp án sai / Clue:</strong><br><div style="color:#0369a1; font-weight:700; margin-bottom:4px;">Phương án <strong>[${wrongOpt.key}] - ${wrongOpt.text}</strong> là chưa chính xác! 🎯 Hãy tập trung vào các lựa chọn còn lại nhé!</div><div style="color:#64748b; font-size:0.75rem;">Option <strong>[${wrongOpt.key}] - ${wrongOpt.text_en}</strong> is incorrect! 🎯</div>`;
       } else if (isEn) {
-        bubble.innerHTML = `<strong>💡 ${mName} is cheering for you:</strong><br>You are doing awesome, stay confident and you will ace it! 🚀`;
+        bubble.innerHTML = `<strong>💡 ${mName}'s 50/50 Clue:</strong><br>Option <strong>[${wrongOpt.key}] - ${wrongOpt.text_en}</strong> is incorrect! 🎯 Focus on the remaining choices!`;
       } else {
-        bubble.innerHTML = `<strong>💡 ${mName} cổ vũ bé:</strong><br>Bé làm rất tốt, cứ tự tin và bình tĩnh suy nghĩ là chọn đúng ngay! 🚀`;
+        bubble.innerHTML = `<strong>💡 ${mName} mách bạn loại trừ đáp án sai:</strong><br>Phương án <strong>[${wrongOpt.key}] - ${wrongOpt.text}</strong> là chưa chính xác đâu bé nhé! 🎯 Hãy tập trung vào các lựa chọn còn lại nè!`;
       }
     }
   } else {
