@@ -3766,7 +3766,7 @@
           <span>BÉ NA SCIENCE LAB</span>
           <span class="text-[9px] bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 px-2 py-0.5 rounded-full font-black uppercase">Figma AI</span>
         </div>
-        <div class="text-[11px] text-slate-400">Phòng Thí Nghiệm & Thám Hiểm Khoa Học Kỳ Thú</div>
+        <div class="text-[11px] text-slate-400" id="header-tagline">Phòng Thí Nghiệm & Thám Hiểm Khoa Học Kỳ Thú</div>
       </div>
     </div>
 
@@ -3809,7 +3809,7 @@
       <!-- BẬT/TẮT NHẠC NỀN -->
       <button type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-slate-200 transition" id="music-btn" onclick="toggleMusic()" title="Bật/Tắt nhạc">
         <i data-lucide="volume-x" style="width:14px; height:14px;"></i>
-        <span>Nhạc</span>
+        <span id="music-btn-text">Nhạc</span>
       </button>
 
       <!-- BẠN ĐỒNG HÀNH & PROFILE -->
@@ -4071,7 +4071,7 @@
         <div class="home-mascot-info">
           <div class="flex items-center gap-2">
             <span class="font-baloo font-bold text-sm text-slate-900" id="home-mascot-name">Giáo Sư Cú Vọ</span>
-            <span class="text-[10px] bg-cyan-100 text-cyan-800 font-extrabold px-2 py-0.5 rounded-full">Đổi bạn ▾</span>
+            <span class="text-[10px] bg-cyan-100 text-cyan-800 font-extrabold px-2 py-0.5 rounded-full" id="home-mascot-change-badge">Đổi bạn ▾</span>
           </div>
           <div class="text-[11px] text-cyan-600 font-bold" id="home-mascot-title">Bác Học Thông Thái</div>
           <div class="text-xs text-slate-500 italic mt-0.5" id="home-mascot-speech">"Chào bạn! Cùng tớ chinh phục đỉnh cao khoa học hôm nay nhé! 🚀"</div>
@@ -4080,11 +4080,11 @@
 
       <div class="home-profile-quick flex items-center gap-3 flex-wrap">
         <div class="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-xl">
-          <label class="text-xs font-bold text-slate-600">👤 Tên bé:</label>
+          <label class="text-xs font-bold text-slate-600" id="label-user-name">👤 Tên bé:</label>
           <input type="text" id="user-name" placeholder="Bé Yêu" value="Bé Yêu" style="width:95px; background:transparent; font-weight:700; font-size:12px; outline:none; border:none;">
         </div>
         <div class="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-xl">
-          <label class="text-xs font-bold text-slate-600">🏫 Lớp:</label>
+          <label class="text-xs font-bold text-slate-600" id="label-student-class">🏫 Lớp:</label>
           <select id="student-class" onchange="onClassGradeChange()" style="background:transparent; font-weight:700; font-size:12px; outline:none; border:none; cursor:pointer;">
             <option value="all">🌟 Tất cả (Lớp 1-5)</option>
             <option value="1">🎒 Lớp 1 (6t)</option>
@@ -4096,7 +4096,7 @@
           </select>
         </div>
         <div class="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-xl">
-          <label class="text-xs font-bold text-slate-600">🌐 Ngôn ngữ:</label>
+          <label class="text-xs font-bold text-slate-600" id="label-lang-mode">🌐 Ngôn ngữ:</label>
           <select id="language-mode-select" onchange="onLanguageModeChange()" style="background:transparent; font-weight:700; font-size:12px; outline:none; border:none; cursor:pointer;">
             <option value="vi" selected>🇻🇳 Tiếng Việt</option>
             <option value="bilingual">🌐 Song ngữ Anh-Việt</option>
@@ -4111,9 +4111,9 @@
       <div class="flex items-center justify-between mb-2">
         <h3 class="font-baloo font-bold text-base text-slate-900 flex items-center gap-2">
           <span>🔬</span>
-          <span>Chọn Phòng Thí Nghiệm & Bắt Đầu</span>
+          <span id="home-section-title">Chọn Phòng Thí Nghiệm & Bắt Đầu</span>
         </h3>
-        <span class="text-xs font-bold text-cyan-600">6 Labs Đã Sẵn Sàng</span>
+        <span class="text-xs font-bold text-cyan-600" id="home-section-sub">6 Labs Đã Sẵn Sàng</span>
       </div>
       <div id="lab-filter-pills-container" class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
         <button type="button" onclick="filterLabPills('all', this)" class="lab-filter-pill px-3.5 py-1.5 rounded-full text-xs font-black bg-cyan-600 text-white shadow-sm shrink-0 cursor-pointer transition">Tất Cả Labs</button>
@@ -4362,13 +4362,13 @@
     <div class="flex items-center justify-between gap-3 mb-4 shrink-0 flex-wrap">
       
       <div class="flex items-center gap-2">
-        <button type="button" onclick="askQuitQuiz()" class="px-3.5 py-1.5 rounded-full bg-rose-50 border-2 border-rose-300 hover:bg-rose-100 text-rose-700 text-xs font-black flex items-center gap-1.5 shadow-xs transition cursor-pointer" title="Dừng bài thi để về Trang Chủ">
+        <button type="button" onclick="askQuitQuiz()" id="btn-quiz-quit" class="px-3.5 py-1.5 rounded-full bg-rose-50 border-2 border-rose-300 hover:bg-rose-100 text-rose-700 text-xs font-black flex items-center gap-1.5 shadow-xs transition cursor-pointer" title="Dừng bài thi để về Trang Chủ">
           <i data-lucide="log-out" style="width:14px; height:14px; stroke-width:2.5;"></i>
-          <span>Thoát</span>
+          <span id="quiz-quit-text">Thoát</span>
         </button>
-        <button type="button" onclick="pauseQuiz()" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-100 shadow-sm transition flex items-center gap-1">
+        <button type="button" onclick="pauseQuiz()" id="btn-quiz-pause" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-100 shadow-sm transition flex items-center gap-1">
           <i data-lucide="pause" style="width:14px; height:14px;"></i>
-          <span>Tạm dừng</span>
+          <span id="quiz-pause-text">Tạm dừng</span>
         </button>
       </div>
 
@@ -4389,7 +4389,7 @@
     </div>
 
     <!-- MISSION BADGE ROW & XP -->
-    <div class="flex items-center justify-between px-1 mb-3">
+    <div class="flex items-center justify-between px-1 mb-3.5">
       <div class="flex items-center gap-2 flex-wrap">
         <span class="text-[11px] font-black bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full border border-indigo-200 flex items-center gap-1.5" id="badge-topic-age">
           <span>🚀</span> <span>Vũ Trụ & Thời Tiết</span>
@@ -4398,60 +4398,120 @@
           📗 SGK Việt Nam
         </span>
       </div>
-      <span class="text-xs font-extrabold text-amber-600 flex items-center gap-1 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200">
+      <span class="text-xs font-extrabold text-amber-600 flex items-center gap-1 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200" id="badge-xp">
         <span>⭐</span> +20 XP
       </span>
     </div>
 
-    <!-- DEEP COSMIC QUESTION CARD (FIGMA AI SCREEN 2 QUESTION CARD) -->
-    <div class="bg-gradient-to-b from-indigo-950 to-slate-900 text-white rounded-3xl p-5 md:p-6 border-2 border-indigo-800/60 shadow-xl relative overflow-hidden mb-4">
-      <div class="relative z-10 flex flex-col gap-3">
-        <!-- Huy hiệu thể loại ở chính giữa thẻ -->
-        <div class="flex items-center justify-center text-center">
-          <span id="mission-badge-tag" class="inline-flex items-center justify-center text-[11px] font-black tracking-wider text-cyan-300 bg-cyan-950/80 border border-cyan-400/40 px-3.5 py-1 rounded-full uppercase shadow-xs">
-            ✨ THÁM HIỂM KHOA HỌC • CÂU HỎI TRẮC NGHIỆM ✨
-          </span>
+    <!-- 2-COLUMN RESPONSIVE LAYOUT (QUESTION & CHOICES ON LEFT, COMPANION MASCOT ON RIGHT) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+
+      <!-- LEFT / MAIN COLUMN (lg:col-span-8): QUESTION CARD, 4 CHOICES, EXPLANATION, NEXT BUTTON -->
+      <div class="lg:col-span-8 flex flex-col gap-3.5 order-2 lg:order-1">
+
+        <!-- DEEP COSMIC QUESTION CARD (FIGMA AI SCREEN 2 QUESTION CARD) -->
+        <div class="bg-gradient-to-b from-indigo-950 to-slate-900 text-white rounded-3xl p-5 md:p-6 border-2 border-indigo-800/60 shadow-xl relative overflow-hidden">
+          <div class="relative z-10 flex flex-col gap-3">
+            <!-- Huy hiệu thể loại ở chính giữa thẻ -->
+            <div class="flex items-center justify-center text-center">
+              <span id="mission-badge-tag" class="inline-flex items-center justify-center text-[11px] font-black tracking-wider text-cyan-300 bg-cyan-950/80 border border-cyan-400/40 px-3.5 py-1 rounded-full uppercase shadow-xs">
+                ✨ THÁM HIỂM KHOA HỌC • CÂU HỎI TRẮC NGHIỆM ✨
+              </span>
+            </div>
+            <h2 class="font-baloo text-lg md:text-xl font-bold leading-snug text-white text-center md:text-left" id="question-text">
+              Đang tải nội dung câu hỏi...
+            </h2>
+            <div class="question-img-card mt-2 rounded-2xl overflow-hidden border border-indigo-700/50 bg-slate-900/60 max-w-sm mx-auto" id="q-img-wrap" style="display:none;">
+              <img id="question-img" src="" alt="Minh họa" style="width:100%; max-height:200px; object-fit:contain; display:block; margin:0 auto;">
+            </div>
+          </div>
+          
+          <!-- Watermark Saturn Icon -->
+          <div class="absolute -right-4 -bottom-4 text-7xl opacity-20 pointer-events-none select-none">
+            🪐
+          </div>
         </div>
-        <h2 class="font-baloo text-lg md:text-xl font-bold leading-snug text-white text-center md:text-left" id="question-text">
-          Đang tải nội dung câu hỏi...
-        </h2>
-        <div class="question-img-card mt-2 rounded-2xl overflow-hidden border border-indigo-700/50 bg-slate-900/60 max-w-sm mx-auto" id="q-img-wrap" style="display:none;">
-          <img id="question-img" src="" alt="Minh họa" style="width:100%; max-height:200px; object-fit:contain; display:block; margin:0 auto;">
+
+        <!-- 4 TACTILE 3D OPTION CARDS (A, B, C, D) -->
+        <div class="flex flex-col gap-2.5" id="choices-list">
+          <!-- Render động qua renderMultipleChoice(q) -->
+        </div>
+
+        <!-- TỰ LUẬN (SA BOX) -->
+        <div class="sa-box bg-white p-4 rounded-2xl border-2 border-slate-200" id="sa-box" style="display:none;">
+          <input type="text" class="sa-input w-full p-3 rounded-xl border border-slate-300 font-bold text-sm mb-2" id="sa-input-field" placeholder="Gõ câu trả lời của bé vào đây..." autocomplete="off">
+          <button type="button" class="btn-3d btn-3d-cyan px-4 py-2 text-xs font-bold" id="btn-sa-submit" onclick="submitShortAnswer()">Kiểm tra đáp án</button>
+        </div>
+
+        <!-- GIẢI THÍCH KHOA HỌC (💡 SỰ THẬT KHOA HỌC) -->
+        <div class="explanation-card bg-amber-50/90 border-2 border-amber-300 rounded-2xl p-4 text-xs font-medium text-amber-950 shadow-sm" id="explanation-card" style="display:none;"></div>
+
+        <!-- BOTTOM ACTION BUTTON (TIẾP TỤC HÀNH TRÌNH / NEXT QUESTION) -->
+        <div class="pt-2 w-full">
+          <button type="button" class="btn-3d btn-3d-cyan w-full py-3.5 text-sm font-black flex items-center justify-center gap-2 shadow-xl cursor-pointer" id="btn-next" onclick="goNextQuestion()">
+            <span id="btn-next-text">TIẾP TỤC HÀNH TRÌNH</span>
+            <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- RIGHT / SIDE COLUMN (lg:col-span-4): MASCOT COMPANION DEDICATED PANEL (BÊN CẠNH) -->
+      <div class="lg:col-span-4 order-1 lg:order-2">
+        <div class="sticky top-20 bg-gradient-to-br from-white via-cyan-50/30 to-indigo-50/30 border-2 border-cyan-200/80 rounded-3xl p-4 md:p-5 shadow-lg flex flex-col gap-3.5">
+          
+          <!-- Header pill bạn đồng hành -->
+          <div class="flex items-center justify-between pb-1 border-b border-cyan-100">
+            <span class="text-[10px] font-black uppercase tracking-wider text-cyan-800 bg-cyan-100 px-2.5 py-0.5 rounded-full" id="quiz-companion-label">
+              🌟 BẠN ĐỒNG HÀNH
+            </span>
+            <span class="text-[10px] font-bold text-slate-500 flex items-center gap-1 cursor-pointer hover:text-cyan-700 transition" onclick="openMascotPickerModal()" id="quiz-change-mascot-btn" title="Bấm để chọn bạn đồng hành khác">
+              <span>Đổi bạn</span> <span>▾</span>
+            </span>
+          </div>
+
+          <!-- Avatar & Mascot Info -->
+          <div class="flex items-center gap-3.5 cursor-pointer select-none" onclick="onMascotClick()" title="Bấm vào bạn đồng hành để nghe lời động viên!">
+            <div id="quiz-mascot-svg-wrap" class="w-16 h-16 rounded-2xl bg-white border-2 border-cyan-300 shadow-md flex items-center justify-center text-4xl shrink-0 animate-mascot-float">
+              🦉
+            </div>
+            <div>
+              <div class="font-baloo font-bold text-base text-slate-900 leading-tight" id="quiz-mascot-name">
+                Giáo Sư Cú Vọ
+              </div>
+              <div class="text-[11px] font-extrabold text-cyan-600 mt-0.5" id="quiz-mascot-role">
+                Bác Học Thông Thái
+              </div>
+              <div class="text-[10px] text-slate-400 font-semibold flex items-center gap-1 mt-0.5" id="quiz-mascot-tap-hint">
+                <span>👆 Bấm vào tớ để nghe mách nước!</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Speech Bubble -->
+          <div class="relative bg-white border-2 border-cyan-200 rounded-2xl p-3.5 shadow-sm">
+            <div class="text-xs text-slate-700 font-bold leading-relaxed" id="mascot-speech">
+              Bé đọc kỹ câu hỏi nhé, chúng mình cùng nhau đạt điểm 10 nào! 🌟
+            </div>
+            <!-- Bubble Arrow pointing up towards avatar -->
+            <div class="absolute -top-2 left-6 w-3 h-3 bg-white border-t-2 border-l-2 border-cyan-200 rotate-45"></div>
+          </div>
+
+          <!-- Live Mission Metrics (Streak & Star XP) -->
+          <div class="grid grid-cols-2 gap-2 pt-1 border-t border-cyan-100">
+            <div class="bg-cyan-50/80 rounded-xl p-2 text-center border border-cyan-100">
+              <div class="text-[10px] font-bold text-cyan-800" id="quiz-stat-combo-label">🔥 Chuỗi đúng</div>
+              <div class="font-baloo font-black text-sm text-cyan-700" id="quiz-mascot-streak-count">0 Liên tiếp</div>
+            </div>
+            <div class="bg-amber-50/80 rounded-xl p-2 text-center border border-amber-100">
+              <div class="text-[10px] font-bold text-amber-800" id="quiz-stat-score-label">⭐ Sao tích lũy</div>
+              <div class="font-baloo font-black text-sm text-amber-600" id="quiz-mascot-score-count">+0 XP</div>
+            </div>
+          </div>
+
         </div>
       </div>
-      
-      <!-- Watermark Saturn Icon -->
-      <div class="absolute -right-4 -bottom-4 text-7xl opacity-20 pointer-events-none select-none">
-        🪐
-      </div>
-    </div>
 
-    <!-- 4 TACTILE 3D OPTION CARDS (A, B, C, D) -->
-    <div class="flex flex-col gap-2.5 mb-4" id="choices-list">
-      <!-- Render động qua renderMultipleChoice(q) -->
-    </div>
-
-    <!-- TỰ LUẬN (SA BOX) -->
-    <div class="sa-box bg-white p-4 rounded-2xl border-2 border-slate-200 mb-4" id="sa-box" style="display:none;">
-      <input type="text" class="sa-input w-full p-3 rounded-xl border border-slate-300 font-bold text-sm mb-2" id="sa-input-field" placeholder="Gõ câu trả lời của bé vào đây..." autocomplete="off">
-      <button type="button" class="btn-3d btn-3d-cyan px-4 py-2 text-xs font-bold" onclick="submitShortAnswer()">Kiểm tra đáp án</button>
-    </div>
-
-    <!-- MASCOT COMPANION LIVE DIALOGUE -->
-    <div class="flex items-center gap-3 bg-white border border-slate-200 rounded-2xl p-3 mb-4 shadow-sm cursor-pointer select-none" onclick="onMascotClick()" title="Bấm vào tớ để nghe bạn đồng hành cổ vũ!">
-      <div id="quiz-mascot-svg-wrap" class="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center text-2xl shrink-0 animate-mascot-float">🦉</div>
-      <div class="text-xs text-slate-700 font-bold flex-1" id="mascot-speech">Bé đọc kỹ câu hỏi nhé, chúng mình cùng nhau đạt điểm 10 nào! 🌟</div>
-    </div>
-
-    <!-- GIẢI THÍCH KHOA HỌC (💡 SỰ THẬT KHOA HỌC) -->
-    <div class="explanation-card bg-amber-50/90 border-2 border-amber-300 rounded-2xl p-4 mb-4 text-xs font-medium text-amber-950 shadow-sm" id="explanation-card" style="display:none;"></div>
-
-    <!-- BOTTOM ACTION BUTTON (KHÔNG STICKY ĐÈ LÊN ĐÁP ÁN D) -->
-    <div class="mt-6 mb-2 w-full">
-      <button type="button" class="btn-3d btn-3d-cyan w-full py-3.5 text-sm font-black flex items-center justify-center gap-2 shadow-xl cursor-pointer" id="btn-next" onclick="goNextQuestion()">
-        <span>TIẾP TỤC HÀNH TRÌNH</span>
-        <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
-      </button>
     </div>
 
   </div>
@@ -4474,19 +4534,19 @@
     <div class="summary-stats">
       <div>
         <div class="summary-stat-val" id="res-score" style="color:var(--primary);">0/10</div>
-        <div class="summary-stat-lbl">ĐIỂM SỐ</div>
+        <div class="summary-stat-lbl" id="stat-score-lbl">ĐIỂM SỐ</div>
       </div>
       <div>
         <div class="summary-stat-val" id="res-correct" style="color:var(--success);">0</div>
-        <div class="summary-stat-lbl">CÂU ĐÚNG ✅</div>
+        <div class="summary-stat-lbl" id="stat-correct-lbl">CÂU ĐÚNG ✅</div>
       </div>
       <div>
         <div class="summary-stat-val" id="res-wrong" style="color:#EF4444;">0</div>
-        <div class="summary-stat-lbl">CÂU SAI ❌</div>
+        <div class="summary-stat-lbl" id="stat-wrong-lbl">CÂU SAI ❌</div>
       </div>
       <div>
         <div class="summary-stat-val" id="res-time" style="color:var(--warning);">00:00</div>
-        <div class="summary-stat-lbl">THỜI GIAN ⏱️</div>
+        <div class="summary-stat-lbl" id="stat-time-lbl">THỜI GIAN ⏱️</div>
       </div>
     </div>
 
@@ -4494,21 +4554,21 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
         <button type="button" class="btn-3d btn-3d-cyan py-3 px-4 text-xs font-black shadow-md flex items-center justify-center gap-2" onclick="openReviewScreen()">
           <i data-lucide="eye" style="width:16px; height:16px;"></i>
-          <span>XEM LẠI CHI TIẾT BÀI LÀM</span>
+          <span id="btn-review-detail-text">XEM LẠI CHI TIẾT BÀI LÀM</span>
         </button>
         <button type="button" class="btn-3d btn-3d-amber py-3 px-4 text-xs font-black shadow-md flex items-center justify-center gap-2" onclick="openLeaderboardModal()">
           <i data-lucide="trophy" style="width:16px; height:16px;"></i>
-          <span>XEM BẢNG SAO TUẦN NÀY 🌟</span>
+          <span id="btn-view-stars-text">XEM BẢNG SAO TUẦN NÀY 🌟</span>
         </button>
       </div>
 
       <div class="flex items-center justify-center gap-2 flex-wrap">
         <button type="button" class="btn-3d btn-3d-purple py-2 px-3.5 text-xs font-bold" onclick="replayMistakes()" id="btn-replay-wrong">
           <i data-lucide="rotate-ccw" style="width:14px; height:14px;"></i>
-          <span>Ôn lại câu sai</span>
+          <span id="btn-replay-wrong-text">Ôn lại câu sai</span>
         </button>
         <button type="button" class="btn-3d py-2 px-3.5 text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50" onclick="launchFireworks()" title="Bắn pháo hoa ăn mừng">
-          <span>🎊 Bắn Pháo Hoa</span>
+          <span id="lead-fireworks-btn-text">🎊 Bắn Pháo Hoa</span>
         </button>
         <button type="button" class="btn-3d py-2 px-3.5 text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50" onclick="openHistoryScreen()">
           <i data-lucide="bar-chart-2" style="width:14px; height:14px;"></i>
@@ -4848,11 +4908,11 @@
     <!-- Top Modal Header -->
     <div class="flex items-center justify-between pb-3 border-b border-slate-200 shrink-0">
       <div>
-        <div class="font-baloo font-bold text-lg md:text-xl text-slate-900 flex items-center gap-2 leading-tight">
+        <div class="font-baloo font-bold text-lg md:text-xl text-slate-900 flex items-center gap-2 leading-tight" id="lead-title">
           <span>Bảng Sao Tuần Này</span>
           <span class="text-amber-500 animate-bounce">🌟</span>
         </div>
-        <div class="text-xs text-slate-500 font-medium">Top nhà thám hiểm nhí xuất sắc nhất tuần</div>
+        <div class="text-xs text-slate-500 font-medium" id="lead-sub">Top nhà thám hiểm nhí xuất sắc nhất tuần</div>
       </div>
       <button type="button" onclick="closeLeaderboardModal()" class="w-8 h-8 rounded-full bg-slate-200 text-slate-700 hover:bg-slate-300 font-black flex items-center justify-center transition">✕</button>
     </div>
@@ -4860,7 +4920,7 @@
     <!-- Filter & Fireworks Quick Bar -->
     <div class="flex items-center justify-between py-2.5 gap-2 flex-wrap shrink-0">
       <div class="flex items-center gap-2">
-        <span class="text-xs font-bold text-slate-600">Lọc:</span>
+        <span class="text-xs font-bold text-slate-600" id="lead-filter-label">Lọc:</span>
         <select id="lead-filter-class" onchange="filterLeaderboardView()" class="px-2.5 py-1 bg-white border border-slate-300 rounded-xl text-xs font-bold text-slate-800 outline-none">
           <option value="all">🌟 Tất cả các lớp</option>
           <option value="Lớp 1">🎒 Lớp 1</option>
@@ -4874,7 +4934,7 @@
 
       <div class="flex items-center gap-2">
         <button type="button" class="btn-3d btn-3d-amber px-3 py-1.5 text-xs font-black inline-flex items-center gap-1.5 shadow" onclick="launchFireworks()" title="Bắn pháo hoa ăn mừng">
-          <span>🎊 Bắn Pháo Hoa</span>
+          <span id="lead-fireworks-btn-text">🎊 Bắn Pháo Hoa</span>
         </button>
         <button type="button" class="px-2.5 py-1.5 bg-white border border-slate-200 hover:bg-slate-100 rounded-xl text-xs font-bold text-slate-700 transition" onclick="fetchLeaderboardFromCloud()">
           🔄
@@ -4894,19 +4954,19 @@
           #1
         </div>
         <div>
-          <div class="text-[9px] text-indigo-300 uppercase font-black tracking-wider">VỊ TRÍ CỦA BẠN</div>
+          <div class="text-[9px] text-indigo-300 uppercase font-black tracking-wider" id="lead-user-rank-label">VỊ TRÍ CỦA BẠN</div>
           <div class="text-xs font-black text-white" id="lead-current-user-name">Bé Na (Thanh Do Trung)</div>
         </div>
       </div>
       <div class="text-right">
         <div class="text-sm font-baloo font-black text-amber-300" id="lead-current-user-stars">2,450 ⭐</div>
-        <div class="text-[9px] text-indigo-300 font-bold">Kỷ Lục Tuần Này</div>
+        <div class="text-[9px] text-indigo-300 font-bold" id="lead-user-record-label">Kỷ Lục Tuần Này</div>
       </div>
     </div>
 
     <!-- GRAND CELEBRATION BUTTON -->
     <button type="button" onclick="launchFireworks()" class="btn-3d btn-3d-amber w-full py-2.5 text-xs font-black mt-2 shrink-0 flex items-center justify-center gap-2">
-      <span>BẮN PHÁO HOA ĂN MỪNG 🎊</span>
+      <span id="lead-grand-fireworks-text">BẮN PHÁO HOA ĂN MỪNG 🎊</span>
     </button>
 
   </div>
@@ -4973,22 +5033,22 @@
 <div class="modal-overlay" id="modal-pause">
   <div class="modal-box">
     <div class="modal-icon">⏸️</div>
-    <div class="modal-title">Đang Tạm Dừng Bài Thi</div>
-    <div class="modal-desc">Đồng hồ đã đóng băng. Bé hãy nghỉ ngơi chớp mắt, uống một ngụm nước rồi cùng Bo Bo tiếp tục nhé!</div>
-    <button class="modal-btn-confirm" onclick="resumeQuiz()">▶️ Tiếp tục làm bài</button>
+    <div class="modal-title" id="pause-modal-title">Đang Tạm Dừng Bài Thi</div>
+    <div class="modal-desc" id="pause-modal-desc">Đồng hồ đã đóng băng. Bé hãy nghỉ ngơi chớp mắt, uống một ngụm nước rồi cùng Bo Bo tiếp tục nhé!</div>
+    <button class="modal-btn-confirm" id="pause-modal-resume" onclick="resumeQuiz()">▶️ Tiếp tục làm bài</button>
   </div>
 </div>
 
 <div class="modal-overlay" id="modal-quit">
   <div class="modal-box text-center p-6 bg-white rounded-3xl border-4 border-slate-800 shadow-2xl max-w-sm">
     <div class="text-4xl mb-2 animate-bounce">🚪</div>
-    <div class="font-baloo font-bold text-xl text-slate-900 mb-2">Dừng Bài Thi?</div>
-    <div class="text-xs text-slate-600 font-medium mb-5 leading-relaxed">Bé có chắc muốn dừng bài thám hiểm này để về Trang Chủ không? Điểm số lượt thi này sẽ không được lưu nếu thoát ngang.</div>
+    <div class="font-baloo font-bold text-xl text-slate-900 mb-2" id="quit-modal-title">Dừng Bài Thi?</div>
+    <div class="text-xs text-slate-600 font-medium mb-5 leading-relaxed" id="quit-modal-desc">Bé có chắc muốn dừng bài thám hiểm này để về Trang Chủ không? Điểm số lượt thi này sẽ không được lưu nếu thoát ngang.</div>
     <div class="flex items-center justify-center gap-3">
-      <button type="button" class="btn-3d px-4 py-2.5 rounded-full text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 transition" onclick="closeQuitModal()">
+      <button type="button" class="btn-3d px-4 py-2.5 rounded-full text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 transition" onclick="closeQuitModal()" id="quit-modal-cancel">
         Tiếp tục làm
       </button>
-      <button type="button" class="btn-3d px-5 py-2.5 rounded-full text-xs font-black bg-rose-600 hover:bg-rose-700 text-white shadow-md transition" onclick="confirmQuit()">
+      <button type="button" class="btn-3d px-5 py-2.5 rounded-full text-xs font-black bg-rose-600 hover:bg-rose-700 text-white shadow-md transition" onclick="confirmQuit()" id="quit-modal-confirm">
         Đồng ý thoát ➔
       </button>
     </div>
@@ -5703,6 +5763,7 @@ window.onload = function() {
   loadSavedSettings();
   updatePoolCountDisplay();
   updateHeaderAuthDisplay();
+  if (typeof updatePoolCount === "function") updatePoolCount();
   updateAdminHeaderUI();
   updateAllMascotsUI();
 };
@@ -5942,7 +6003,29 @@ function applyLanguageToUI(lang) {
 
   const isEn = (lang === 'en');
 
-  // 1. Update Home Screen (Hero Banner, Topic Cards, Filter Pills, Action Button)
+  // 1. Header Elements
+  const headerTagline = document.getElementById('header-tagline');
+  if (headerTagline) headerTagline.textContent = isEn ? 'Junior Science Lab & Explorations' : 'Phòng Thí Nghiệm & Thám Hiểm Khoa Học Kỳ Thú';
+
+  const navHome = document.querySelector('#nav-item-home span');
+  if (navHome) navHome.textContent = isEn ? '1. Topics · Lab' : '1. Topics · Lab';
+
+  const navQuiz = document.querySelector('#nav-item-quiz span');
+  if (navQuiz) navQuiz.textContent = isEn ? '2. Quiz · Space' : '2. Quiz · Space';
+
+  const navLeaderboard = document.querySelector('#nav-item-leaderboard span');
+  if (navLeaderboard) navLeaderboard.textContent = isEn ? '3. Stars · Weekly 🌟' : '3. Stars · Bảng Sao 🌟';
+
+  const navHistory = document.querySelector('#nav-item-history span');
+  if (navHistory) navHistory.textContent = isEn ? 'History' : 'Lịch Sử';
+
+  const navUserMgmt = document.querySelector('#nav-item-user-mgmt span');
+  if (navUserMgmt) navUserMgmt.textContent = isEn ? 'Admin' : 'Quản Lý';
+
+  const musicBtnText = document.getElementById('music-btn-text');
+  if (musicBtnText) musicBtnText.textContent = isEn ? 'Music' : 'Nhạc';
+
+  // 2. Home Screen
   const heroTag = document.getElementById('hero-tag');
   if (heroTag) heroTag.textContent = isEn ? '🔬 SCIENCE LABORATORY' : '🔬 PHÒNG THÍ NGHIỆM KHOA HỌC';
   
@@ -5958,33 +6041,182 @@ function applyLanguageToUI(lang) {
   const heroStarsBtn = document.getElementById('hero-stars-btn');
   if (heroStarsBtn) heroStarsBtn.textContent = isEn ? 'View Stars Board 🌟' : 'Xem Bảng Sao 🌟';
 
+  // Home Mascot Card
+  const homeMascotBadge = document.getElementById('home-mascot-change-badge');
+  if (homeMascotBadge) homeMascotBadge.textContent = isEn ? 'Change ▾' : 'Đổi bạn ▾';
+
+  // Home Quick Profile Form Labels
+  const labelName = document.getElementById('label-user-name');
+  if (labelName) labelName.textContent = isEn ? '👤 Name:' : '👤 Tên bé:';
+  const labelClass = document.getElementById('label-student-class');
+  if (labelClass) labelClass.textContent = isEn ? '🏫 Grade:' : '🏫 Lớp:';
+  const labelLang = document.getElementById('label-lang-mode');
+  if (labelLang) labelLang.textContent = isEn ? '🌐 Mode:' : '🌐 Chế độ:';
+
+  // Update language mode select options
+  const langModeSelect = document.getElementById('language-mode-select');
+  if (langModeSelect) {
+    const opts = langModeSelect.options;
+    for (let i = 0; i < opts.length; i++) {
+      if (opts[i].value === 'vi') opts[i].textContent = isEn ? '🇻🇳 Vietnamese' : '🇻🇳 Tiếng Việt';
+      else if (opts[i].value === 'bilingual') opts[i].textContent = isEn ? '🌐 Bilingual (En - Vi)' : '🌐 Song ngữ Anh-Việt';
+      else if (opts[i].value === 'en') opts[i].textContent = isEn ? '🇬🇧 English' : '🇬🇧 Tiếng Anh';
+    }
+  }
+
+  // Update student class select options
+  const classSelect = document.getElementById('student-class');
+  if (classSelect) {
+    const opts = classSelect.options;
+    for (let i = 0; i < opts.length; i++) {
+      const val = opts[i].value;
+      if (val === 'all') {
+        opts[i].textContent = isEn ? '🌟 All Grades' : '🌟 Tất cả các lớp';
+      } else {
+        const num = val.replace(/[^0-9]/g, '');
+        opts[i].textContent = isEn ? `🎒 Grade ${num || val}` : `🎒 Lớp ${num || val}`;
+      }
+    }
+  }
+
+  // Home Section Headers
+  const sectionTitle = document.getElementById('home-section-title');
+  if (sectionTitle) sectionTitle.textContent = isEn ? 'SELECT LABORATORY & START' : 'CHỌN PHÒNG THÍ NGHIỆM & BẮT ĐẦU';
+  const sectionSub = document.getElementById('home-section-sub');
+  if (sectionSub) sectionSub.textContent = isEn ? '6 Labs Ready' : '6 Labs Đã Sẵn Sàng';
+  const filterLabel = document.getElementById('home-filter-label');
+  if (filterLabel) filterLabel.textContent = isEn ? 'Filter topics:' : 'Lọc chủ đề:';
+
   const homeStartBtn = document.getElementById('home-start-btn-text');
-  if (homeStartBtn) homeStartBtn.textContent = isEn ? 'START SCIENCE EXPLORATION 🚀' : 'BẮT ĐẦU THÁM HIỂM KHOA HỌC';
-
-  // Update navigation tabs
-  const navLeaderboard = document.querySelector('#nav-item-leaderboard span');
-  if (navLeaderboard) navLeaderboard.textContent = isEn ? '3. Stars · Weekly 🌟' : '3. Stars · Bảng Sao 🌟';
-
-  const navHistory = document.querySelector('#nav-item-history span');
-  if (navHistory) navHistory.textContent = isEn ? 'History' : 'Lịch Sử';
-
-  const navUserMgmt = document.querySelector('#nav-item-user-mgmt span');
-  if (navUserMgmt) navUserMgmt.textContent = isEn ? 'Admin' : 'Quản Lý';
+  if (homeStartBtn) homeStartBtn.textContent = isEn ? 'START SCIENCE EXPLORATION 🚀' : 'BẮT ĐẦU THÁM HIỂM KHOA HỌC 🚀';
 
   // Render cards and pills in selected language
   renderTopicLabCards(lang);
   renderFilterPills(lang);
+  updateAllMascotsUI();
+  updateHeaderAuthDisplay();
+  if (typeof updatePoolCount === "function") updatePoolCount();
 
-  // 2. If Quiz is currently active, immediately re-render question & mission header
-  const quizScreen = document.getElementById('quiz-screen');
-  if (quizScreen && quizScreen.classList.contains('active') && typeof currentDeck !== 'undefined' && currentDeck && currentDeck.length > 0 && !isQuizSubmitted) {
-    displayQuestion();
-  }
+  // 3. Quiz Screen Top Buttons & Badges
+  const quizQuitText = document.getElementById('quiz-quit-text');
+  if (quizQuitText) quizQuitText.textContent = isEn ? 'Quit' : 'Thoát';
 
-  // 3. Update Mission Badge Tag
+  const quizPauseText = document.getElementById('quiz-pause-text');
+  if (quizPauseText) quizPauseText.textContent = isEn ? 'Pause' : 'Tạm dừng';
+
   const missionTag = document.getElementById('mission-badge-tag');
   if (missionTag) {
     missionTag.textContent = isEn ? '✨ SCIENCE EXPLORER • MULTIPLE CHOICE QUESTION ✨' : '✨ THÁM HIỂM KHOA HỌC • CÂU HỎI TRẮC NGHIỆM ✨';
+  }
+
+  // Quiz Side Mascot Companion Panel
+  const compLabel = document.getElementById('quiz-companion-label');
+  if (compLabel) compLabel.textContent = isEn ? '🌟 COMPANION BUDDY' : '🌟 BẠN ĐỒNG HÀNH';
+
+  const compChangeBtn = document.getElementById('quiz-change-mascot-btn');
+  if (compChangeBtn) compChangeBtn.innerHTML = isEn ? '<span>Change</span> <span>▾</span>' : '<span>Đổi bạn</span> <span>▾</span>';
+
+  const compTapHint = document.getElementById('quiz-mascot-tap-hint');
+  if (compTapHint) compTapHint.innerHTML = isEn ? '<span>👆 Tap me for a hint!</span>' : '<span>👆 Bấm vào tớ để nghe mách nước!</span>';
+
+  const statCombo = document.getElementById('quiz-stat-combo-label');
+  if (statCombo) statCombo.textContent = isEn ? '🔥 Streak' : '🔥 Chuỗi đúng';
+
+  const statScore = document.getElementById('quiz-stat-score-label');
+  if (statScore) statScore.textContent = isEn ? '⭐ Star XP' : '⭐ Sao tích lũy';
+
+  // SA Box
+  const saInput = document.getElementById('sa-input-field');
+  if (saInput) saInput.placeholder = isEn ? 'Type your answer here...' : 'Gõ câu trả lời của bé vào đây...';
+  const btnSaSubmit = document.getElementById('btn-sa-submit');
+  if (btnSaSubmit) btnSaSubmit.textContent = isEn ? 'Check Answer' : 'Kiểm tra đáp án';
+
+  // 4. Modals: Quit, Pause, Leaderboard
+  const quitTitle = document.getElementById('quit-modal-title');
+  if (quitTitle) quitTitle.textContent = isEn ? 'Quit Mission?' : 'Dừng Bài Thi?';
+  const quitDesc = document.getElementById('quit-modal-desc');
+  if (quitDesc) quitDesc.textContent = isEn 
+    ? 'Are you sure you want to stop this mission and return to Home? In-progress results will not be saved.' 
+    : 'Bé có chắc muốn dừng bài thám hiểm này để về Trang Chủ không? Điểm số lượt thi này sẽ không được lưu nếu thoát ngang.';
+  const quitCancel = document.getElementById('quit-modal-cancel');
+  if (quitCancel) quitCancel.textContent = isEn ? 'Keep Playing' : 'Tiếp tục làm';
+  const quitConfirm = document.getElementById('quit-modal-confirm');
+  if (quitConfirm) quitConfirm.textContent = isEn ? 'Quit to Home ➔' : 'Đồng ý thoát ➔';
+
+  const pauseTitle = document.getElementById('pause-modal-title');
+  if (pauseTitle) pauseTitle.textContent = isEn ? 'Mission Paused' : 'Đang Tạm Dừng Bài Thi';
+  const pauseDesc = document.getElementById('pause-modal-desc');
+  if (pauseDesc) pauseDesc.textContent = isEn 
+    ? 'Timer is paused! Take a short break, drink some water, and resume when ready!' 
+    : 'Đồng hồ đã đóng băng. Bé hãy nghỉ ngơi chớp mắt, uống một ngụm nước rồi cùng bạn đồng hành tiếp tục nhé!';
+  const pauseResume = document.getElementById('pause-modal-resume');
+  if (pauseResume) pauseResume.textContent = isEn ? '▶️ Resume Mission' : '▶️ Tiếp tục làm bài';
+
+  // Leaderboard Modal
+  const leadTitle = document.getElementById('lead-title');
+  if (leadTitle) leadTitle.innerHTML = isEn ? '<span>Weekly Stars Hall</span> <span class="text-amber-500 animate-bounce">🌟</span>' : '<span>Bảng Sao Tuần Này</span> <span class="text-amber-500 animate-bounce">🌟</span>';
+  const leadSub = document.getElementById('lead-sub');
+  if (leadSub) leadSub.textContent = isEn ? 'Top performing junior explorers of the week' : 'Top nhà thám hiểm nhí xuất sắc nhất tuần';
+  const leadFilterLbl = document.getElementById('lead-filter-label');
+  if (leadFilterLbl) leadFilterLbl.textContent = isEn ? 'Filter:' : 'Lọc:';
+
+  const leadFilterClass = document.getElementById('lead-filter-class');
+  if (leadFilterClass) {
+    const opts = leadFilterClass.options;
+    for (let i = 0; i < opts.length; i++) {
+      const val = opts[i].value;
+      if (val === 'all') {
+        opts[i].textContent = isEn ? '🌟 All Grades' : '🌟 Tất cả các lớp';
+      } else {
+        const num = val.replace(/[^0-9]/g, '');
+        opts[i].textContent = isEn ? `🎒 Grade ${num || val}` : `🎒 Lớp ${num || val}`;
+      }
+    }
+  }
+
+  const leadFwBtn = document.getElementById('lead-fireworks-btn-text');
+  if (leadFwBtn) leadFwBtn.textContent = isEn ? '🎊 Celebrate 🎆' : '🎊 Bắn Pháo Hoa';
+
+  const leadRankLbl = document.getElementById('lead-user-rank-label');
+  if (leadRankLbl) leadRankLbl.textContent = isEn ? 'YOUR RANK' : 'VỊ TRÍ CỦA BẠN';
+
+  const leadRecordLbl = document.getElementById('lead-user-record-label');
+  if (leadRecordLbl) leadRecordLbl.textContent = isEn ? 'Weekly Record' : 'Kỷ Lục Tuần Này';
+
+  const leadGrandBtn = document.getElementById('lead-grand-fireworks-text');
+  if (leadGrandBtn) leadGrandBtn.textContent = isEn ? 'CELEBRATE WITH FIREWORKS 🎊' : 'BẮN PHÁO HOA ĂN MỪNG 🎊';
+
+  // Leaderboard re-render if open
+  const leadModal = document.getElementById('modal-leaderboard');
+  if (leadModal && leadModal.classList.contains('active')) {
+    filterLeaderboardView();
+  }
+
+  // 5. Result Screen
+  const resTitle = document.getElementById('res-title');
+  if (resTitle && (resTitle.textContent === 'Bé Làm Tốt Lắm!' || resTitle.textContent === 'Great Job Explorer!')) {
+    resTitle.textContent = isEn ? 'Great Job Explorer!' : 'Bé Làm Tốt Lắm!';
+  }
+  const statScoreLbl = document.getElementById('stat-score-lbl');
+  if (statScoreLbl) statScoreLbl.textContent = isEn ? 'SCORE' : 'ĐIỂM SỐ';
+  const statCorrectLbl = document.getElementById('stat-correct-lbl');
+  if (statCorrectLbl) statCorrectLbl.textContent = isEn ? 'CORRECT ✅' : 'CÂU ĐÚNG ✅';
+  const statWrongLbl = document.getElementById('stat-wrong-lbl');
+  if (statWrongLbl) statWrongLbl.textContent = isEn ? 'WRONG ❌' : 'CÂU SAI ❌';
+  const statTimeLbl = document.getElementById('stat-time-lbl');
+  if (statTimeLbl) statTimeLbl.textContent = isEn ? 'TIME ⏱️' : 'THỜI GIAN ⏱️';
+
+  const btnReviewDetail = document.getElementById('btn-review-detail-text');
+  if (btnReviewDetail) btnReviewDetail.textContent = isEn ? 'REVIEW QUIZ ANSWERS' : 'XEM LẠI CHI TIẾT BÀI LÀM';
+  const btnViewStars = document.getElementById('btn-view-stars-text');
+  if (btnViewStars) btnViewStars.textContent = isEn ? 'VIEW STARS HALL 🌟' : 'XEM BẢNG SAO TUẦN NÀY 🌟';
+  const btnReplayWrong = document.getElementById('btn-replay-wrong-text');
+  if (btnReplayWrong) btnReplayWrong.textContent = isEn ? 'Practice Wrong Answers' : 'Ôn lại câu sai';
+
+  // 6. If Quiz is currently active, immediately re-render question & mission header
+  const quizScreen = document.getElementById('quiz-screen');
+  if (quizScreen && quizScreen.classList.contains('active') && typeof currentDeck !== 'undefined' && currentDeck && currentDeck.length > 0 && !isQuizSubmitted) {
+    displayQuestion();
   }
 
   refreshLucideIcons();
@@ -6004,6 +6236,7 @@ function onLanguageModeChange() {
 
 function loadSavedSettings() {
   updateHeaderAuthDisplay();
+  if (typeof updatePoolCount === "function") updatePoolCount();
   const url = localStorage.getItem('science_quiz_script_url');
   if (url) {
     document.getElementById('apps-script-url').value = url;
@@ -6126,12 +6359,19 @@ function updatePoolCountDisplay() {
     btnStart.classList.remove('disabled-btn');
   }
 
+  const isEn = (currentLanguageMode === 'en');
   if (pool.length >= requested) {
-    textElem.textContent = `Bộ lọc hiện có ${pool.length} câu phù hợp. Đảm bảo chọn đủ ${requested} câu cho lượt thi này!`;
+    textElem.textContent = isEn 
+      ? `Filters matched ${pool.length} questions. Ready with ${requested} questions for this mission!`
+      : `Bộ lọc hiện có ${pool.length} câu phù hợp. Đảm bảo chọn đủ ${requested} câu cho lượt thi này!`;
   } else if (pool.length > 0) {
-    textElem.textContent = `Bộ lọc có ${pool.length} câu. Chế độ thông minh (Smart Fallback) sẽ bổ sung thêm ${requested - pool.length} câu liên quan cùng nguồn để bé làm đủ ${requested} câu!`;
+    textElem.textContent = isEn
+      ? `Filters matched ${pool.length} questions. Smart Fallback will add ${requested - pool.length} questions to reach ${requested}!`
+      : `Bộ lọc có ${pool.length} câu. Chế độ thông minh (Smart Fallback) sẽ bổ sung thêm ${requested - pool.length} câu liên quan cùng nguồn để bé làm đủ ${requested} câu!`;
   } else {
-    textElem.textContent = `Không có câu nào khớp với tất cả bộ lọc tuổi/chủ đề hiện tại. Hãy mở rộng chủ đề hoặc độ tuổi!`;
+    textElem.textContent = isEn
+      ? `No questions match all current filters. Please broaden your topic or grade selection!`
+      : `Không có câu nào khớp với tất cả bộ lọc tuổi/chủ đề hiện tại. Hãy mở rộng chủ đề hoặc độ tuổi!`;
   }
 }
 
@@ -6234,25 +6474,50 @@ function displayQuestion() {
   const qNumPrefix = isEn ? 'Question' : 'Câu';
   document.getElementById('question-number').textContent = `${qNumPrefix} ${currentIndex + 1} / ${total} 🚀`;
 
+  const sourceEnMap = {
+    'SGK Việt Nam (GDPT 2018)': 'National Curriculum (MOET)',
+    'SGK Việt Nam': 'National Curriculum (MOET)',
+    'Trạng Nguyên & Violympic': 'National Science Olympiad',
+    'Kangaroo Khoa học (IKSC)': 'IKSC Kangaroo Science',
+    'IXL & Khan Academy Khoa học': 'IXL & Khan Science',
+    'IXL & Khan Academy': 'IXL & Khan Science',
+    'National Geographic Kids': 'NatGeo Kids',
+    'Khác': 'General Science'
+  };
+
   const badgeSource = document.getElementById('badge-source');
   if (badgeSource) {
-    const srcName = isEn ? (q.source === 'Khác' ? 'General' : q.source) : (q.source || 'Khoa học');
+    const rawSrc = q.source || 'Khoa học';
+    const srcName = isEn ? (sourceEnMap[rawSrc] || rawSrc) : rawSrc;
     badgeSource.innerHTML = `${getSourceIcon(q.source)} ${isEn ? 'Source' : 'Nguồn'}: ${srcName}`;
   }
 
   const topicEnMap = {
-    'Động Vật': 'Animals',
-    'Thực Vật': 'Plants',
-    'Vũ Trụ & Thời Tiết': 'Space & Weather',
-    'Cơ Thể Người': 'Human Body',
-    'Địa Lý Việt Nam': 'Geography',
+    'Động Vật': 'Animal Kingdom',
+    'Thực Vật': 'Plants & Nature',
+    'Vũ Trụ & Thời Tiết': 'Space & Solar System',
+    'Cơ Thể Người': 'Human Body & Health',
+    'Con người & Sức khỏe': 'Human Body & Health',
+    'Địa Lý Việt Nam': 'Geography & Earth',
+    'Lịch Sử & Văn Hóa': 'History & Culture',
     'Vật Chất & Hiện Tượng': 'Physics & Matter'
   };
   const topicText = isEn ? (topicEnMap[q.topic] || q.topic) : q.topic;
-  const gradeText = isEn ? (q.grade ? `Grade ${q.grade}` : q.age) : (q.grade ? `Lớp ${q.grade}` : q.age);
+  const gradeText = isEn ? (q.grade ? `Grade ${q.grade}` : (q.age ? `Grade ${q.age}` : 'Elementary')) : (q.grade ? `Lớp ${q.grade}` : (q.age ? `Lớp ${q.age}` : 'Tiểu học'));
   const diffText = isEn ? `Level ${q.diff}` : `Mức ${q.diff}`;
   document.getElementById('badge-topic-age').textContent = `${topicText} • ${gradeText} • ${diffText}`;
-  
+
+  // Cập nhật chỉ số tương tác thời gian thực trên panel bạn đồng hành bên cạnh
+  const answeredCount = Object.keys(userAnswersMap).length;
+  const streakCountElem = document.getElementById('quiz-mascot-streak-count');
+  if (streakCountElem) {
+    streakCountElem.textContent = isEn ? `${answeredCount} Done` : `${answeredCount} Đã làm`;
+  }
+  const scoreCountElem = document.getElementById('quiz-mascot-score-count');
+  if (scoreCountElem) {
+    scoreCountElem.textContent = `+${answeredCount * 20} XP`;
+  }
+
   const qTextElem = document.getElementById('question-text');
   if (currentLanguageMode === 'bilingual') {
     const enText = q.q_en || q.question_en || q.q;
@@ -6284,7 +6549,7 @@ function displayQuestion() {
   }
 
   // Mascot động viên
-  setMascotMood('thinking', isLast ? 'Bé ơi, đây là câu cuối cùng rồi! Làm xong bé kiểm tra lại nhé!' : `Bé ơi, cùng trả lời câu ${currentIndex + 1} nào!`);
+  setMascotMood('thinking', isEn ? (isLast ? 'This is the final question! Review carefully when done! 🌟' : `Let\'s explore question ${currentIndex + 1} together! 🚀`) : (isLast ? 'Bé ơi, đây là câu cuối cùng rồi! Làm xong bé kiểm tra lại nhé!' : `Bé ơi, cùng trả lời câu ${currentIndex + 1} nào!`));
 
   const pct = (currentIndex / total) * 100;
   document.getElementById('progress-fill').style.width = pct + '%';
@@ -6305,14 +6570,14 @@ function displayQuestion() {
   // Đổi chữ nút theo trạng thái câu cuối cùng
   if (isLast) {
     btnNext.innerHTML = isEn 
-      ? '<i data-lucide="list-checks" style="width:18px; height:18px; stroke-width:2.5;"></i> <span>Review & Submit</span>'
-      : '<i data-lucide="list-checks" style="width:18px; height:18px; stroke-width:2.5;"></i> <span>Xem lại & Nộp bài</span>';
+      ? '<i data-lucide="list-checks" style="width:18px; height:18px; stroke-width:2.5;"></i> <span id="btn-next-text">Review & Submit</span>'
+      : '<i data-lucide="list-checks" style="width:18px; height:18px; stroke-width:2.5;"></i> <span id="btn-next-text">Xem lại & Nộp bài</span>';
     btnNext.classList.add('btn-last-step');
     btnNext.onclick = openReviewBeforeSubmit;
   } else {
     btnNext.innerHTML = isEn
-      ? '<span>Next Question</span> <i data-lucide="arrow-right" style="width:18px; height:18px; stroke-width:2.5;"></i>'
-      : '<span>Câu tiếp theo</span> <i data-lucide="arrow-right" style="width:18px; height:18px; stroke-width:2.5;"></i>';
+      ? '<span id="btn-next-text">Next Question</span> <i data-lucide="arrow-right" style="width:18px; height:18px; stroke-width:2.5;"></i>'
+      : '<span id="btn-next-text">Câu tiếp theo</span> <i data-lucide="arrow-right" style="width:18px; height:18px; stroke-width:2.5;"></i>';
     btnNext.classList.remove('btn-last-step');
     btnNext.onclick = goNextQuestion;
   }
@@ -6410,7 +6675,13 @@ function handleChoiceSelect(chosenKey, chosenText, chosenBtn) {
 
   // Hiệu ứng âm thanh click vui tươi
   playSound('click');
-  setMascotMood('happy', `Bé đã chọn [${chosenKey}]! Bé có thể đổi đáp án khác hoặc bấm "Câu tiếp theo" nhé.`);
+  const isEn = (currentLanguageMode === 'en');
+  setMascotMood('happy', isEn ? `You selected [${chosenKey}]! You can change it or click Next Question. 🌟` : `Bé đã chọn [${chosenKey}]! Bé có thể đổi đáp án khác hoặc bấm "Câu tiếp theo" nhé.`);
+  const answeredCount = Object.keys(userAnswersMap).length;
+  const streakCountElem = document.getElementById('quiz-mascot-streak-count');
+  if (streakCountElem) streakCountElem.textContent = isEn ? `${answeredCount} Done` : `${answeredCount} Đã làm`;
+  const scoreCountElem = document.getElementById('quiz-mascot-score-count');
+  if (scoreCountElem) scoreCountElem.textContent = `+${answeredCount * 20} XP`;
 
   // Luôn hiển thị nút tiếp theo sau khi chọn
   const btnNext = document.getElementById('btn-next');
@@ -6984,7 +7255,9 @@ function updateHeaderAuthDisplay() {
     const badgeColor = isAdm ? '#991B1B' : 'var(--primary)';
     const badgeBorder = isAdm ? '#FECACA' : '#C7D2FE';
     const avatarIcon = isAdm ? '👑' : '🦁';
-    const tagText = isAdm ? 'Admin' : (acc.studentClass || 'Lớp 2');
+    const isEn = (currentLanguageMode === 'en');
+    let rawClass = acc.studentClass || 'Lớp 2';
+    const tagText = isAdm ? 'Admin' : (isEn ? rawClass.replace('Lớp ', 'Grade ') : rawClass);
     const tagBg = isAdm ? '#DC2626' : 'var(--primary)';
 
     const studentDisplay = acc.studentName || acc.username;
@@ -7104,6 +7377,7 @@ function submitRegister() {
   };
   localStorage.setItem(ACCOUNT_STORAGE_KEY, JSON.stringify(newAcc));
   updateHeaderAuthDisplay();
+  if (typeof updatePoolCount === "function") updatePoolCount();
   closeAuthModal();
 
   alert(`🎉 Chúc mừng bé ${fullname} đã tạo tài khoản [@${username}] thành công! Bắt đầu ôn thi nào!`);
@@ -7143,6 +7417,7 @@ function submitLogin() {
     };
     localStorage.setItem(ACCOUNT_STORAGE_KEY, JSON.stringify(adminAcc));
     updateHeaderAuthDisplay();
+  if (typeof updatePoolCount === "function") updatePoolCount();
     updateAdminHeaderUI();
     closeAuthModal();
     alert('👑 Đăng nhập Quản Trị Viên (Admin) thành công! Bạn có quyền xem toàn bộ lịch sử và quản lý học sinh.');
@@ -7170,6 +7445,7 @@ function submitLogin() {
 
   localStorage.setItem(ACCOUNT_STORAGE_KEY, JSON.stringify(newAcc));
   updateHeaderAuthDisplay();
+  if (typeof updatePoolCount === "function") updatePoolCount();
   updateAdminHeaderUI();
   closeAuthModal();
 
@@ -7191,6 +7467,7 @@ function submitLogin() {
           };
           localStorage.setItem(ACCOUNT_STORAGE_KEY, JSON.stringify(updated));
           updateHeaderAuthDisplay();
+  if (typeof updatePoolCount === "function") updatePoolCount();
         }
       })
       .catch(err => console.log('Login fetch note', err));
@@ -7204,6 +7481,7 @@ function logoutAccount() {
   if (confirm('Bé có chắc muốn đăng xuất khỏi tài khoản này không?')) {
     localStorage.removeItem(ACCOUNT_STORAGE_KEY);
     updateHeaderAuthDisplay();
+  if (typeof updatePoolCount === "function") updatePoolCount();
     closeAuthModal();
     alert('Đã đăng xuất! Bé hiện đang ở chế độ Khách (Guest).');
   }
@@ -7441,12 +7719,12 @@ function renderLeaderboardList(players) {
           </div>
           <div class="podium-2nd w-full h-16 flex flex-col items-center justify-center text-white font-baloo font-black shadow-md">
             <span class="text-base">2</span>
-            <span class="text-[9px] opacity-90">Á QUÂN</span>
+            <span class="text-[9px] opacity-90">${isEn ? 'RUNNER-UP' : 'Á QUÂN'}</span>
           </div>
         </div>
 
         <!-- HẠNG 1: VÀNG (QUÁN QUÂN) -->
-        <div class="flex flex-col items-center w-28 -mt-4 cursor-pointer" onclick="launchFireworks()" title="Bấm vào Quán quân để bắn pháo hoa ăn mừng!">
+        <div class="flex flex-col items-center w-28 -mt-4 cursor-pointer" onclick="launchFireworks()" title="${isEn ? 'Tap Champion to launch celebratory fireworks!' : 'Bấm vào Quán quân để bắn pháo hoa ăn mừng!'}">
           <div class="relative">
             <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 text-base animate-bounce">👑</span>
             <div class="w-14 h-14 rounded-full border-3 border-amber-400 bg-amber-100 flex items-center justify-center text-2xl mb-1 shadow-lg ring-4 ring-amber-300/40">
@@ -7461,7 +7739,7 @@ function renderLeaderboardList(players) {
           </div>
           <div class="podium-1st w-full h-24 flex flex-col items-center justify-center text-slate-950 font-baloo font-black shadow-xl">
             <span class="text-xl">1</span>
-            <span class="text-[10px] tracking-wider font-extrabold">QUÁN QUÂN</span>
+            <span class="text-[10px] tracking-wider font-extrabold">${isEn ? 'CHAMPION' : 'QUÁN QUÂN'}</span>
           </div>
         </div>
 
@@ -7478,7 +7756,7 @@ function renderLeaderboardList(players) {
           </div>
           <div class="podium-3rd w-full h-12 flex flex-col items-center justify-center text-white font-baloo font-black shadow-md">
             <span class="text-sm">3</span>
-            <span class="text-[9px] opacity-90">QUÝ QUÂN</span>
+            <span class="text-[9px] opacity-90">${isEn ? '3RD PLACE' : 'QUÝ QUÂN'}</span>
           </div>
         </div>
 
@@ -8047,6 +8325,7 @@ function promptLinkPastTests() {
     acc.studentName = newName.trim();
     localStorage.setItem(ACCOUNT_STORAGE_KEY, JSON.stringify(acc));
     updateHeaderAuthDisplay();
+  if (typeof updatePoolCount === "function") updatePoolCount();
     renderHistoryTable();
     alert(`✅ Đã cập nhật tên bé thành "${newName.trim()}"! Hệ thống đang tải lại danh sách bài thi của bé.`);
   }
@@ -8209,43 +8488,71 @@ const MASCOTS = [
   {
     id: 'hoot',
     name: 'Giáo Sư Cú Vọ',
+    name_en: 'Wise Professor Owl',
     title: 'Bác Học Thông Thái',
+    title_en: 'Wise Scholar',
     color: '#4361EE',
     desc: 'Bậc thầy lý luận khoa học, luôn yêu thích hiện tượng tự nhiên và giải thích chi tiết!',
+    desc_en: 'Master of science logic, natural phenomena and crystal-clear explanations!',
     avatar: '🦉'
   },
   {
     id: 'robosci',
     name: 'Bé Rô-Bốt Sci-Bot',
+    name_en: 'Sci-Bot AI',
     title: 'Siêu Trí Tuệ AI',
+    title_en: 'AI Super Mind',
     color: '#06D6A0',
     desc: 'Người bạn công nghệ đáng yêu với đôi mắt LED biểu cảm và ăng-ten bắt sóng!',
+    desc_en: 'Adorable high-tech buddy with expressive LED eyes and smart antenna!',
     avatar: '🤖'
   },
   {
     id: 'dino',
     name: 'Khủng Long Dino',
+    name_en: 'Dino Explorer',
     title: 'Thám Hiểm Sinh Thái',
+    title_en: 'Eco Explorer',
     color: '#10B981',
     desc: 'Chú khủng long mũ tai bèo dũng cảm, am hiểu muôn loài động thực vật trên Trái Đất!',
+    desc_en: 'Brave explorer dino with deep knowledge of Earth\'s plants and wildlife!',
     avatar: '🦖'
   },
   {
     id: 'astrocat',
     name: 'Mèo Kitty Astro',
+    name_en: 'Astro Kitty',
     title: 'Phi Hành Gia Vũ Trụ',
+    title_en: 'Space Astronaut',
     color: '#8B5CF6',
     desc: 'Cô mèo du hành vũ trụ, thích ngắm các hành tinh, Mặt Trời và dải ngân hà rực rỡ!',
+    desc_en: 'Galaxy voyager kitty fascinated by planets, the Sun, and starry nebulae!',
     avatar: '🐱'
   },
   {
     id: 'foxie',
     name: 'Cáo Nhỏ Foxie',
+    name_en: 'Foxie Detective',
     title: 'Thám Tử Khoa Học',
+    title_en: 'Science Detective',
     color: '#F97316',
     desc: 'Nhanh nhẹn, mắt sáng, luôn mang theo kính lúp để quan sát các thí nghiệm kỳ thú!',
+    desc_en: 'Sharp and quick-witted detective, always carrying a magnifier for fun discoveries!',
     avatar: '🦊'
   }
+];
+
+const SCIENCE_FACTS_EN = [
+  "Did you know: A shrimp\'s heart is actually located in its head! 🦐",
+  "Did you know: Octopuses have 3 hearts and their blood is royal blue! 🐙",
+  "Did you know: The Sun is about 1,300,000 times larger than planet Earth! ☀️",
+  "Did you know: Kangaroos cannot walk backwards due to their tail and muscular legs! 🦘",
+  "Did you know: Bamboo can grow almost 1 meter (35 inches) in a single day! 🎋",
+  "Did you know: Honeybees flap their wings 200 times per second to fly! 🐝",
+  "Did you know: The world\'s largest waterfall is actually deep under the ocean! 🌊",
+  "Did you know: Venus is the hottest planet in the Solar System, not Mercury! 🪐",
+  "Did you know: Polar bears have black skin underneath their white fur to trap heat! 🐻‍❄️",
+  "Did you know: Hummingbirds are the only birds that can fly backwards and upside down! 🐦"
 ];
 
 let currentMascotId = localStorage.getItem('science_quiz_mascot_id') || 'hoot';
@@ -8444,48 +8751,110 @@ const SCIENCE_FACTS = [
 
 function onMascotClick() {
   playKidSound('click');
-  const fact = SCIENCE_FACTS[Math.floor(Math.random() * SCIENCE_FACTS.length)];
+  const isEn = (currentLanguageMode === 'en');
+  const facts = isEn ? SCIENCE_FACTS_EN : SCIENCE_FACTS;
+  const fact = facts[Math.floor(Math.random() * facts.length)];
   const m = MASCOTS.find(x => x.id === currentMascotId) || MASCOTS[0];
+  const mName = isEn ? (m.name_en || m.name) : m.name;
   const bubble = document.getElementById('mascot-speech');
   if (bubble) {
-    bubble.innerHTML = `<strong>💡 ${m.name} mách bạn:</strong><br>${fact}`;
+    bubble.innerHTML = isEn 
+      ? `<strong>💡 ${mName} tip:</strong><br>${fact}`
+      : `<strong>💡 ${mName} mách bạn:</strong><br>${fact}`;
+  }
+}
+
+function setMascotMood(mood, customText) {
+  const bubble = document.getElementById('mascot-speech');
+  const mouth = document.getElementById('mascot-mouth');
+  if (!bubble) return;
+  const isEn = (currentLanguageMode === 'en');
+
+  if (mouth) {
+    if (mood === 'thinking') mouth.setAttribute('d', 'M42 62 Q50 68 58 62');
+    else if (mood === 'happy' || mood === 'selected') mouth.setAttribute('d', 'M40 60 Q50 70 60 60');
+    else if (mood === 'finished') mouth.setAttribute('d', 'M38 58 Q50 78 62 58');
+  }
+
+  if (mood === 'thinking') {
+    bubble.textContent = customText || (isEn ? 'Read carefully, I know you can do it! 🌟' : 'Bé đọc kỹ câu hỏi nhé, Bo Bo tin bé làm được! 🌟');
+  } else if (mood === 'selected' || (mood === 'happy' && !isQuizSubmitted)) {
+    const neutralVI = [
+      'Đã ghi nhận đáp án! Bé có thể sửa lại hoặc sang câu tiếp theo nhé. 📝',
+      'Lựa chọn đã được lưu! Bé hãy tự tin làm tiếp câu sau nào. 🌟',
+      'Bé đã chọn xong! Cứ bình tĩnh suy nghĩ và tiếp tục nhé. 🚀',
+      'Câu trả lời đã lưu tạm thời. Nộp bài xong mới biết kết quả bé nhé! 💡'
+    ];
+    const neutralEN = [
+      'Answer recorded! You can change it or move to the next question. 📝',
+      'Choice saved! Stay confident for the next question. 🌟',
+      'Choice recorded! Keep calm and continue your mission. 🚀',
+      'Answer saved temporarily. Score will be revealed upon submit! 💡'
+    ];
+    const msgs = isEn ? neutralEN : neutralVI;
+    bubble.textContent = customText || msgs[Math.floor(Math.random() * msgs.length)];
+  } else if (mood === 'finished') {
+    bubble.textContent = customText || (isEn ? 'Congratulations on finishing the quiz! Check out your score! 🎉' : 'Chúc mừng bé đã hoàn thành bài thi! Cùng xem điểm số nào! 🎉');
+  } else {
+    if (customText) bubble.textContent = customText;
   }
 }
 
 function updateAllMascotsUI() {
   const m = MASCOTS.find(x => x.id === currentMascotId) || MASCOTS[0];
+  const isEn = (currentLanguageMode === 'en');
   
+  const mName = isEn ? (m.name_en || m.name) : m.name;
+  const mTitle = isEn ? (m.title_en || m.title) : m.title;
+
   // 0. Header Bar Mascot Pill (ISSUE 4: Luôn hiện diện rõ ràng trên Header)
   const headerMascotAvatar = document.getElementById('header-mascot-avatar');
   if (headerMascotAvatar) headerMascotAvatar.textContent = m.avatar || '🦉';
   const headerMascotName = document.getElementById('header-mascot-name');
-  if (headerMascotName) headerMascotName.textContent = m.name.replace('Giáo Sư ', '').replace('Bé ', '');
+  if (headerMascotName) {
+    const shortName = isEn 
+      ? (m.name_en ? m.name_en.replace('Wise Professor ', '').replace('Dr. ', '') : m.name)
+      : m.name.replace('Giáo Sư ', '').replace('Bé ', '');
+    headerMascotName.textContent = shortName;
+  }
 
   // 1. Welcome screen
   const welcomeSvgWrap = document.getElementById('welcome-mascot-svg-wrap');
   if (welcomeSvgWrap) welcomeSvgWrap.innerHTML = renderMascotSvg(m.id, 42);
   const welcomeName = document.getElementById('welcome-mascot-name');
-  if (welcomeName) welcomeName.textContent = m.name;
+  if (welcomeName) welcomeName.textContent = mName;
 
   // 2. Home screen (Mascot sinh động kèm lời thoại cổ vũ)
   const homeSvgWrap = document.getElementById('home-mascot-svg-wrap');
   if (homeSvgWrap) homeSvgWrap.innerHTML = renderMascotSvg(m.id, 58, 'cheer');
   const homeName = document.getElementById('home-mascot-name');
-  if (homeName) homeName.textContent = m.name;
+  if (homeName) homeName.textContent = mName;
   const homeTitle = document.getElementById('home-mascot-title');
-  if (homeTitle) homeTitle.textContent = m.title;
+  if (homeTitle) homeTitle.textContent = mTitle;
   const homeSpeech = document.getElementById('home-mascot-speech');
-  if (homeSpeech) homeSpeech.textContent = `"Chào bạn! Hôm nay tớ cùng bạn sẵn sàng chinh phục Đấu Trường Khoa Học nhé! 🚀"`;
+  if (homeSpeech) {
+    homeSpeech.textContent = isEn 
+      ? `"Hi there! I am ready to explore fascinating science with you today! 🚀"`
+      : `"Chào bạn! Hôm nay tớ cùng bạn sẵn sàng chinh phục Đấu Trường Khoa Học nhé! 🚀"`;
+  }
 
-  // 3. Quiz screen (Mascot to bản 64px, tương tác theo từng câu)
+  // 3. Quiz screen (Mascot to bản 64px ở BÊN CẠNH câu hỏi, tương tác theo từng câu)
   const quizSvgWrap = document.getElementById('quiz-mascot-svg-wrap');
   if (quizSvgWrap) quizSvgWrap.innerHTML = renderMascotSvg(m.id, 64);
+  const quizMascotName = document.getElementById('quiz-mascot-name');
+  if (quizMascotName) quizMascotName.textContent = mName;
+  const quizMascotRole = document.getElementById('quiz-mascot-role');
+  if (quizMascotRole) quizMascotRole.textContent = mTitle;
 
   // 4. Result screen (Mascot nhảy múa ăn mừng cúp vàng)
   const resSvgWrap = document.getElementById('result-mascot-svg-wrap');
   if (resSvgWrap) resSvgWrap.innerHTML = renderMascotSvg(m.id, 72, 'cheer');
   const resSpeech = document.getElementById('result-mascot-speech');
-  if (resSpeech) resSpeech.textContent = `"Tuyệt vời quá bạn ơi! Tớ rất tự hào vì chúng mình đã hoàn thành xuất sắc bài thi này! 🎉"`;
+  if (resSpeech) {
+    resSpeech.textContent = isEn
+      ? `"Awesome job my friend! I am so proud of our wonderful science adventure! 🎉"`
+      : `"Tuyệt vời quá bạn ơi! Tớ rất tự hào vì chúng mình đã hoàn thành xuất sắc bài thi này! 🎉"`;
+  }
 }
 
 function openMascotPickerModal() {
@@ -8561,6 +8930,7 @@ function openUserManagementModal() {
       };
       localStorage.setItem(ACCOUNT_STORAGE_KEY, JSON.stringify(adminAcc));
       updateHeaderAuthDisplay();
+  if (typeof updatePoolCount === "function") updatePoolCount();
       updateAdminHeaderUI();
       alert('✅ Xác thực Admin thành công! Chào mừng Quản trị viên.');
     } else {
