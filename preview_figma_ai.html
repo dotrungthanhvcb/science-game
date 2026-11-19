@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Figma AI Template - Science Game for Na</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Baloo 2 (Bouncy Cute Headings) & Be Vietnam Pro (Clean High-Legibility Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    * {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    .font-baloo {
+      font-family: 'Baloo 2', 'Be Vietnam Pro', cursive, sans-serif !important;
+      letter-spacing: -0.015em;
+    }
+
+    /* TACTILE 3D BUTTONS (FIGMA AI STYLE) */
+    .btn-3d {
+      position: relative;
+      transition: all 0.12s ease;
+      user-select: none;
+      cursor: pointer;
+    }
+    .btn-3d:active {
+      transform: translateY(3px);
+    }
+
+    .btn-3d-cyan {
+      background: linear-gradient(180deg, #06B6D4 0%, #0891B2 100%);
+      color: #FFFFFF;
+      border: 2px solid #0E7490;
+      border-bottom: 5px solid #155E75;
+      border-radius: 9999px;
+      font-weight: 800;
+    }
+    .btn-3d-cyan:hover {
+      filter: brightness(1.06);
+    }
+    .btn-3d-cyan:active {
+      border-bottom-width: 1px;
+      margin-top: 4px;
+    }
+
+    .btn-3d-amber {
+      background: linear-gradient(180deg, #F59E0B 0%, #D97706 100%);
+      color: #FFFFFF;
+      border: 2px solid #B45309;
+      border-bottom: 5px solid #92400E;
+      border-radius: 9999px;
+      font-weight: 800;
+    }
+    .btn-3d-amber:hover {
+      filter: brightness(1.06);
+    }
+    .btn-3d-amber:active {
+      border-bottom-width: 1px;
+      margin-top: 4px;
+    }
+
+    .btn-3d-purple {
+      background: linear-gradient(180deg, #8B5CF6 0%, #7C3AED 100%);
+      color: #FFFFFF;
+      border: 2px solid #6D28D9;
+      border-bottom: 5px solid #5B21B6;
+      border-radius: 9999px;
+      font-weight: 800;
+    }
+    .btn-3d-purple:hover {
+      filter: brightness(1.06);
+    }
+    .btn-3d-purple:active {
+      border-bottom-width: 1px;
+      margin-top: 4px;
+    }
+
+    /* OPTION CARDS (3D TACTILE SELECTION) */
+    .option-card-figma {
+      background: #FFFFFF;
+      border: 2px solid #E2E8F0;
+      border-bottom: 5px solid #CBD5E1;
+      border-radius: 20px;
+      transition: all 0.12s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+    .option-card-figma:hover {
+      border-color: #38BDF8;
+      background: #F0F9FF;
+      transform: translateY(-2px);
+      border-bottom-width: 6px;
+    }
+    .option-card-figma:active {
+      transform: translateY(3px);
+      border-bottom-width: 2px;
+    }
+    .option-card-figma.correct {
+      border-color: #10B981 !important;
+      background: #ECFDF5 !important;
+      border-bottom: 5px solid #047857 !important;
+      color: #065F46 !important;
+    }
+    .option-card-figma.wrong {
+      border-color: #EF4444 !important;
+      background: #FEF2F2 !important;
+      border-bottom: 5px solid #B91C1C !important;
+      color: #991B1B !important;
+    }
+
+    /* TOPIC LAB CARD */
+    .topic-lab-card {
+      background: #FFFFFF;
+      border: 2px solid #F1F5F9;
+      border-bottom: 4px solid #E2E8F0;
+      border-radius: 24px;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .topic-lab-card:hover {
+      transform: translateY(-3px);
+      border-color: #38BDF8;
+      box-shadow: 0 12px 24px -6px rgba(14, 165, 233, 0.15);
+    }
+    .topic-lab-card:active {
+      transform: translateY(2px);
+      border-bottom-width: 2px;
+    }
+
+    /* PHONE SHELL */
+    .iphone-shell {
+      width: 395px;
+      height: 844px;
+      max-height: calc(100vh - 80px);
+      border: 12px solid #0F172A;
+      border-radius: 50px;
+      box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.4), 0 0 0 1px rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+      background: #F8FAFC;
+    }
+
+    .iphone-notch {
+      width: 124px;
+      height: 28px;
+      background: #0F172A;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+      z-index: 50;
+    }
+
+    /* PODIUM ANIMATION */
+    .podium-1st {
+      background: linear-gradient(180deg, #FDE047 0%, #F59E0B 100%);
+      border-top: 3px solid #FEF08A;
+      box-shadow: inset 0 2px 4px rgba(255,255,255,0.4);
+    }
+    .podium-2nd {
+      background: linear-gradient(180deg, #E2E8F0 0%, #94A3B8 100%);
+      border-top: 3px solid #F8FAFC;
+    }
+    .podium-3rd {
+      background: linear-gradient(180deg, #FED7AA 0%, #EA580C 100%);
+      border-top: 3px solid #FFEDD5;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 min-h-screen text-slate-800 flex flex-col items-center">
+
+  <!-- TOP BAR: SELECT 3 FIGMA AI SCREENS & LANGUAGE SWITCHER -->
+  <header class="w-full bg-slate-900/90 backdrop-blur border-b border-slate-800 text-white px-4 py-3 sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Brand & Source Indicator -->
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-500 flex items-center justify-center text-xl shadow-md">
+          ✨
+        </div>
+        <div>
+          <div class="font-baloo font-bold text-base text-cyan-400 tracking-wide flex items-center gap-2">
+            FIGMA AI TEMPLATE PREVIEW
+            <span class="text-[10px] bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 px-2 py-0.5 rounded-full font-black uppercase">3 Màn Hình AI</span>
+          </div>
+          <div class="text-xs text-slate-400">Bản chuẩn theo 3 Frame Figma AI • Đẹp hoàn mỹ về Typography & UI</div>
+        </div>
+      </div>
+
+      <!-- Quick Screen Switcher: Exactly the 3 Frames from Figma AI -->
+      <nav class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+        <button onclick="switchScreen('frame-topics')" class="screen-tab px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-cyan-600 text-white shadow" data-frame="frame-topics">
+          <i data-lucide="flask-conical" style="width:14px; height:14px;"></i>
+          <span>1. Topics · Science lab</span>
+        </button>
+
+        <button onclick="switchScreen('frame-quiz')" class="screen-tab px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-slate-800 text-slate-300 hover:text-white" data-frame="frame-quiz">
+          <i data-lucide="rocket" style="width:14px; height:14px;"></i>
+          <span>2. Quiz · Space explorer</span>
+        </button>
+
+        <button onclick="switchScreen('frame-leaderboard')" class="screen-tab px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-slate-800 text-slate-300 hover:text-white" data-frame="frame-leaderboard">
+          <i data-lucide="trophy" style="width:14px; height:14px;"></i>
+          <span>3. Leaderboard · Weekly stars</span>
+        </button>
+      </nav>
+
+      <!-- Language & Device View Controls -->
+      <div class="flex items-center gap-2.5">
+        <!-- VI / EN Switcher -->
+        <div class="flex items-center bg-slate-950 p-0.5 rounded-xl border border-slate-700 text-xs shadow-inner">
+          <button onclick="toggleLang('vi')" id="lang-btn-vi" class="px-2.5 py-1 rounded-lg font-black transition bg-cyan-600 text-white shadow-sm flex items-center gap-1">
+            <span>🇻🇳</span> <span>Tiếng Việt</span>
+          </button>
+          <button onclick="toggleLang('en')" id="lang-btn-en" class="px-2.5 py-1 rounded-lg font-black transition text-slate-400 hover:text-white flex items-center gap-1">
+            <span>🇬🇧</span> <span>English</span>
+          </button>
+        </div>
+
+        <!-- Desktop Expand Mode -->
+        <button onclick="toggleDesktopMode()" id="view-mode-btn" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 border border-slate-700 transition" title="Chuyển chế độ xem">
+          <i data-lucide="smartphone" style="width:14px; height:14px;"></i>
+          <span id="view-mode-text">Mở Rộng Desktop</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN PREVIEW WRAPPER -->
+  <main class="w-full flex-1 flex items-center justify-center p-4">
+    
+    <div id="device-shell" class="iphone-shell flex flex-col transition-all duration-300">
+      
+      <!-- Notch (Mobile only) -->
+      <div id="notch-bar" class="iphone-notch"></div>
+
+      <!-- GAMIFIED TOP LAB BAR: Player, Streak, Stars, Audio -->
+      <div class="w-full bg-white border-b border-slate-200 px-4 pt-8 pb-3 flex items-center justify-between shrink-0 select-none shadow-sm z-20">
+        
+        <!-- Player Level Badge -->
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-500 border-2 border-white shadow flex items-center justify-center text-sm">
+            🦉
+          </div>
+          <div>
+            <div class="font-baloo font-bold text-xs text-slate-900 leading-tight flex items-center gap-1">
+              <span>Bé Na</span>
+              <span class="text-[9px] bg-cyan-100 text-cyan-800 font-extrabold px-1.5 py-0.2 rounded-full">Lv.3</span>
+            </div>
+            <div class="text-[10px] text-slate-500 font-bold" id="badge-role">Nhà Khoa Học Nhí</div>
+          </div>
+        </div>
+
+        <!-- Streak, Stars, Audio -->
+        <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full text-xs font-black text-amber-600">
+            <span>🔥</span>
+            <span>5</span>
+          </div>
+
+          <div class="flex items-center gap-1 bg-cyan-50 border border-cyan-200 px-2.5 py-0.5 rounded-full text-xs font-black text-cyan-700">
+            <span>⭐</span>
+            <span id="star-count">2,450</span>
+          </div>
+
+          <button onclick="toggleAudio()" id="audio-btn" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-slate-200 transition" title="Bật/Tắt âm">
+            <i data-lucide="volume-2" style="width:14px; height:14px;"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- SCREENS VIEWPORT -->
+      <div class="flex-1 overflow-y-auto no-scrollbar relative p-4 bg-[#F8FAFC]" id="viewport-container">
+
+        <!-- ===================================================================
+             FRAME 1: Topics · Science lab (Figma AI Screen 1)
+             =================================================================== -->
+        <div id="frame-topics" class="screen-frame flex flex-col gap-4">
+          
+          <!-- Science Lab Hero Banner -->
+          <div class="bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-700 text-white rounded-3xl p-5 relative overflow-hidden shadow-lg">
+            <div class="relative z-10">
+              <span class="inline-block bg-white/20 backdrop-blur text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider mb-2" id="hero-tag">
+                🔬 PHÒNG THÍ NGHIỆM KHOA HỌC
+              </span>
+              <h2 class="font-baloo text-xl font-bold leading-tight" id="hero-title">
+                Sẵn Sàng Thám Hiểm<br>Khoa Học Kỳ Thú! ⚡
+              </h2>
+              <p class="text-xs text-cyan-100 mt-1 mb-4" id="hero-desc">
+                Hoàn thành các phòng Lab để thu thập đủ 1.000 ngôi sao kiến thức!
+              </p>
+
+              <button onclick="switchScreen('frame-quiz')" class="btn-3d btn-3d-amber px-5 py-2.5 text-xs inline-flex items-center gap-2 shadow-md">
+                <i data-lucide="play" style="width:14px; height:14px; fill:currentColor;"></i>
+                <span id="hero-start-btn">VÀO PHÒNG THI NGAY</span>
+              </button>
+            </div>
+
+            <!-- Floating Lab Illustration -->
+            <div class="absolute -right-3 -bottom-3 text-7xl select-none opacity-85 drop-shadow">
+              🧪
+            </div>
+          </div>
+
+          <!-- Lab Filter Pills -->
+          <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+            <button class="px-3.5 py-1.5 rounded-full text-xs font-black bg-cyan-600 text-white shadow-sm shrink-0">Tất Cả Labs</button>
+            <button class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 shrink-0">🦁 Động Vật</button>
+            <button class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 shrink-0">🚀 Vũ Trụ</button>
+            <button class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 shrink-0">🫀 Sức Khỏe</button>
+          </div>
+
+          <!-- 6 Topics Science Lab Cards (Grid layout) -->
+          <div class="flex flex-col gap-2.5">
+            
+            <!-- Lab 1: Thế Giới Động Vật -->
+            <div onclick="switchScreen('frame-quiz')" class="topic-lab-card p-3.5 flex items-center justify-between">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-amber-100 border border-amber-200 flex items-center justify-center text-2xl shadow-inner">
+                  🦁
+                </div>
+                <div>
+                  <div class="font-baloo font-bold text-sm text-slate-900 leading-snug">Thế Giới Động Vật</div>
+                  <div class="text-[11px] text-slate-500 font-medium">Tập tính sinh thái, chuỗi thức ăn, loài quý hiếm</div>
+                  <div class="flex items-center gap-2 mt-1.5">
+                    <span class="text-[10px] font-extrabold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">150 Câu</span>
+                    <span class="text-[10px] font-extrabold text-emerald-600">● 85% Tiến độ</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center shrink-0">
+                <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
+              </div>
+            </div>
+
+            <!-- Lab 2: Vũ Trụ & Thời Tiết (Space Explorer) -->
+            <div onclick="switchScreen('frame-quiz')" class="topic-lab-card p-3.5 flex items-center justify-between border-cyan-200 bg-cyan-50/30">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-indigo-100 border border-indigo-200 flex items-center justify-center text-2xl shadow-inner">
+                  🚀
+                </div>
+                <div>
+                  <div class="font-baloo font-bold text-sm text-indigo-950 leading-snug flex items-center gap-1.5">
+                    <span>Vũ Trụ & Thời Tiết</span>
+                    <span class="text-[9px] bg-indigo-600 text-white font-black px-1.5 py-0.2 rounded-full uppercase">Hot</span>
+                  </div>
+                  <div class="text-[11px] text-slate-500 font-medium">Hệ Mặt Trời, hành tinh đỏ, khí hậu Trái Đất</div>
+                  <div class="flex items-center gap-2 mt-1.5">
+                    <span class="text-[10px] font-extrabold bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded-full">180 Câu</span>
+                    <span class="text-[10px] font-extrabold text-cyan-600">● Sẵn sàng thi</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                <i data-lucide="play" style="width:14px; height:14px; fill:currentColor;"></i>
+              </div>
+            </div>
+
+            <!-- Lab 3: Thực Vật & Tự Nhiên -->
+            <div onclick="switchScreen('frame-quiz')" class="topic-lab-card p-3.5 flex items-center justify-between">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-100 border border-emerald-200 flex items-center justify-center text-2xl shadow-inner">
+                  🌿
+                </div>
+                <div>
+                  <div class="font-baloo font-bold text-sm text-slate-900 leading-snug">Thực Vật & Tự Nhiên</div>
+                  <div class="text-[11px] text-slate-500 font-medium">Diệp lục quang hợp, hạt mầm, rừng xanh</div>
+                  <div class="flex items-center gap-2 mt-1.5">
+                    <span class="text-[10px] font-extrabold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">120 Câu</span>
+                    <span class="text-[10px] font-extrabold text-emerald-600">✓ Đã mở</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center shrink-0">
+                <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
+              </div>
+            </div>
+
+            <!-- Lab 4: Cơ Thể Người & Sức Khỏe -->
+            <div onclick="switchScreen('frame-quiz')" class="topic-lab-card p-3.5 flex items-center justify-between">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-rose-100 border border-rose-200 flex items-center justify-center text-2xl shadow-inner">
+                  🫀
+                </div>
+                <div>
+                  <div class="font-baloo font-bold text-sm text-slate-900 leading-snug">Cơ Thể Người & Y Sinh</div>
+                  <div class="text-[11px] text-slate-500 font-medium">5 giác quan, tuần hoàn máu & thói quen lành mạnh</div>
+                  <div class="flex items-center gap-2 mt-1.5">
+                    <span class="text-[10px] font-extrabold bg-rose-100 text-rose-800 px-2 py-0.5 rounded-full">140 Câu</span>
+                    <span class="text-[10px] font-extrabold text-emerald-600">✓ Đã mở</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center shrink-0">
+                <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
+              </div>
+            </div>
+
+            <!-- Lab 5: Địa Lý Non Sông Việt Nam -->
+            <div onclick="switchScreen('frame-quiz')" class="topic-lab-card p-3.5 flex items-center justify-between">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-teal-100 border border-teal-200 flex items-center justify-center text-2xl shadow-inner">
+                  🗺️
+                </div>
+                <div>
+                  <div class="font-baloo font-bold text-sm text-slate-900 leading-snug">Địa Lý Non Sông Việt Nam</div>
+                  <div class="text-[11px] text-slate-500 font-medium">Sông Hồng, dãy Trường Sơn, danh lam thắng cảnh</div>
+                  <div class="flex items-center gap-2 mt-1.5">
+                    <span class="text-[10px] font-extrabold bg-teal-100 text-teal-800 px-2 py-0.5 rounded-full">160 Câu</span>
+                    <span class="text-[10px] font-extrabold text-emerald-600">✓ Đã mở</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center shrink-0">
+                <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
+              </div>
+            </div>
+
+            <!-- Lab 6: Vật Chất & Năng Lượng -->
+            <div onclick="switchScreen('frame-quiz')" class="topic-lab-card p-3.5 flex items-center justify-between">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-purple-100 border border-purple-200 flex items-center justify-center text-2xl shadow-inner">
+                  ⚡
+                </div>
+                <div>
+                  <div class="font-baloo font-bold text-sm text-slate-900 leading-snug">Vật Chất & Hiện Tượng</div>
+                  <div class="text-[11px] text-slate-500 font-medium">Âm thanh, ánh sáng, nam châm & chuyển động</div>
+                  <div class="flex items-center gap-2 mt-1.5">
+                    <span class="text-[10px] font-extrabold bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full">150 Câu</span>
+                    <span class="text-[10px] font-extrabold text-emerald-600">✓ Đã mở</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center shrink-0">
+                <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================================
+             FRAME 2: Quiz · Space explorer (Figma AI Screen 2)
+             =================================================================== -->
+        <div id="frame-quiz" class="screen-frame hidden flex flex-col gap-4">
+          
+          <!-- Top Mission Header -->
+          <div class="flex items-center justify-between gap-3 shrink-0">
+            <button onclick="switchScreen('frame-topics')" class="w-9 h-9 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 shadow-sm" title="Quay lại Lab">
+              <i data-lucide="x" style="width:18px; height:18px; stroke-width:3;"></i>
+            </button>
+
+            <!-- Rocket Progress Bar -->
+            <div class="flex-1 flex items-center gap-2">
+              <div class="flex-1 bg-slate-200 h-3 rounded-full overflow-hidden p-0.5 border border-slate-300">
+                <div class="bg-gradient-to-r from-cyan-400 to-indigo-600 h-full rounded-full transition-all duration-300" style="width: 30%;"></div>
+              </div>
+              <span class="text-xs font-black text-slate-600 font-baloo">3/10 🚀</span>
+            </div>
+
+            <!-- Timer Countdown -->
+            <div class="bg-white border-2 border-indigo-200 px-3 py-1 rounded-full text-xs font-black text-indigo-900 flex items-center gap-1.5 shadow-sm">
+              <i data-lucide="clock" style="width:14px; height:14px; stroke-width:2.5;"></i>
+              <span>08:45</span>
+            </div>
+          </div>
+
+          <!-- Space Mission Category Tag -->
+          <div class="flex items-center justify-between px-1">
+            <span class="text-[11px] font-black bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full border border-indigo-200 flex items-center gap-1.5">
+              <span>🚀</span> <span>Vũ Trụ & Thời Tiết</span>
+            </span>
+            <span class="text-xs font-extrabold text-amber-600 flex items-center gap-1">
+              <span>⭐</span> +20 XP
+            </span>
+          </div>
+
+          <!-- Space Question Card (Giao diện vũ trụ sắc nét) -->
+          <div class="bg-gradient-to-b from-indigo-950 to-slate-900 text-white rounded-3xl p-5 border-2 border-indigo-800/60 shadow-xl relative overflow-hidden">
+            <div class="relative z-10 flex flex-col gap-2.5">
+              <span class="text-[10px] font-black tracking-widest text-cyan-400 uppercase">CÂU HỎI THÁM HIỂM #3</span>
+              <h3 class="font-baloo text-lg font-bold leading-snug text-white" id="quiz-title">
+                Hành tinh nào trong Hệ Mặt Trời được mệnh danh là "Hành tinh Đỏ" do bề mặt có nhiều oxit sắt?
+              </h3>
+              <p class="text-xs text-indigo-200 font-medium italic border-t border-indigo-800/80 pt-2" id="quiz-sub">
+                Which planet in our Solar System is known as the "Red Planet" due to iron oxide on its surface?
+              </p>
+            </div>
+            
+            <div class="absolute -right-4 -bottom-4 text-6xl opacity-20 pointer-events-none">
+              🪐
+            </div>
+          </div>
+
+          <!-- 4 Multiple Choice Options (A, B, C, D) -->
+          <div class="flex flex-col gap-2.5" id="space-options-list">
+            
+            <div onclick="pickOption(0)" class="option-card-figma p-3.5 flex items-center gap-3.5" data-opt="0">
+              <span class="w-8 h-8 rounded-xl bg-slate-100 text-slate-700 font-baloo font-bold text-sm flex items-center justify-center shrink-0 border border-slate-200">A</span>
+              <div class="text-xs font-bold leading-snug">Sao Kim (Venus)</div>
+            </div>
+
+            <div onclick="pickOption(1)" class="option-card-figma p-3.5 flex items-center gap-3.5" data-opt="1">
+              <span class="w-8 h-8 rounded-xl bg-cyan-100 text-cyan-800 font-baloo font-bold text-sm flex items-center justify-center shrink-0 border border-cyan-200">B</span>
+              <div class="text-xs font-bold leading-snug">Sao Hỏa (Mars)</div>
+            </div>
+
+            <div onclick="pickOption(2)" class="option-card-figma p-3.5 flex items-center gap-3.5" data-opt="2">
+              <span class="w-8 h-8 rounded-xl bg-slate-100 text-slate-700 font-baloo font-bold text-sm flex items-center justify-center shrink-0 border border-slate-200">C</span>
+              <div class="text-xs font-bold leading-snug">Sao Mộc (Jupiter)</div>
+            </div>
+
+            <div onclick="pickOption(3)" class="option-card-figma p-3.5 flex items-center gap-3.5" data-opt="3">
+              <span class="w-8 h-8 rounded-xl bg-slate-100 text-slate-700 font-baloo font-bold text-sm flex items-center justify-center shrink-0 border border-slate-200">D</span>
+              <div class="text-xs font-bold leading-snug">Sao Thủy (Mercury)</div>
+            </div>
+
+          </div>
+
+          <!-- Explanation Drawer -->
+          <div id="explanation-box" class="hidden p-4 rounded-2xl bg-emerald-50 border-2 border-emerald-300 text-xs text-emerald-950 shadow-sm animate-fadeIn">
+            <div class="font-baloo font-bold flex items-center gap-1.5 mb-1 text-emerald-800 text-sm">
+              <span>💡 SỰ THẬT VŨ TRỤ:</span>
+            </div>
+            <div class="leading-relaxed font-medium">
+              Chính xác! Bề mặt Sao Hỏa được bao phủ bởi một lớp bụi rỉ sét (oxit sắt) dày đặc, phản chiếu ánh sáng mặt trời tạo thành màu đỏ cam rực rỡ đặc trưng.
+            </div>
+          </div>
+
+          <!-- Continue Action Button -->
+          <div class="pt-1">
+            <button onclick="switchScreen('frame-leaderboard')" class="btn-3d btn-3d-cyan w-full py-4 text-sm tracking-wider flex items-center justify-center gap-2 shadow-lg">
+              <span>TIẾP TỤC HÀNH TRÌNH</span>
+              <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
+            </button>
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================================
+             FRAME 3: Leaderboard · Weekly stars (Figma AI Screen 3)
+             =================================================================== -->
+        <div id="frame-leaderboard" class="screen-frame hidden flex flex-col gap-4">
+          
+          <!-- Screen Header -->
+          <div class="text-center">
+            <h2 class="font-baloo text-2xl font-bold text-slate-900 leading-tight flex items-center justify-center gap-2" id="leaderboard-heading">
+              <span>Bảng Sao Tuần Này</span>
+              <span class="text-amber-500">🌟</span>
+            </h2>
+            <p class="text-xs text-slate-500 mt-0.5" id="leaderboard-subheading">Top nhà thám hiểm nhí xuất sắc nhất tuần</p>
+          </div>
+
+          <!-- Period Toggle -->
+          <div class="flex items-center justify-center gap-2">
+            <div class="bg-slate-200 p-1 rounded-2xl flex items-center text-xs font-black shadow-inner">
+              <button class="px-4 py-1.5 rounded-xl bg-white text-indigo-950 shadow-sm transition">Tuần Này</button>
+              <button class="px-4 py-1.5 rounded-xl text-slate-600 hover:text-slate-900 transition">Tháng Này</button>
+            </div>
+          </div>
+
+          <!-- PODIUM TOP 1, 2, 3 (BỤC VINH QUANG FIGMA AI CHUẨN ĐẸP) -->
+          <div class="flex items-end justify-center gap-2.5 pt-5 pb-1">
+            
+            <!-- Hạng 2: Bạc -->
+            <div class="flex flex-col items-center">
+              <div class="w-12 h-12 rounded-full border-2 border-slate-300 bg-slate-100 flex items-center justify-center text-xl shadow mb-1.5">
+                🦖
+              </div>
+              <div class="font-baloo font-bold text-xs text-slate-800">Minh Trí</div>
+              <div class="text-[10px] font-extrabold text-cyan-700">2,150 ⭐</div>
+              <div class="w-20 h-16 rounded-t-2xl podium-2nd flex flex-col items-center justify-center text-white font-baloo font-bold shadow-md">
+                <span class="text-xl">🥈</span>
+                <span class="text-[10px]">#2</span>
+              </div>
+            </div>
+
+            <!-- Hạng 1: Vàng (Cao nhất) -->
+            <div class="flex flex-col items-center -mt-5">
+              <div class="relative">
+                <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 text-base">👑</span>
+                <div class="w-14 h-14 rounded-full border-2 border-amber-400 bg-amber-100 flex items-center justify-center text-2xl shadow-lg mb-1.5 ring-4 ring-amber-300/40">
+                  🦉
+                </div>
+              </div>
+              <div class="font-baloo font-bold text-sm text-amber-950">Bé Na</div>
+              <div class="text-[10px] font-black text-amber-700">2,450 ⭐</div>
+              <div class="w-24 h-24 rounded-t-2xl podium-1st flex flex-col items-center justify-center text-slate-900 font-baloo font-black shadow-lg">
+                <span class="text-2xl">🥇</span>
+                <span class="text-xs">QUÁN QUÂN</span>
+              </div>
+            </div>
+
+            <!-- Hạng 3: Đồng -->
+            <div class="flex flex-col items-center">
+              <div class="w-12 h-12 rounded-full border-2 border-amber-600 bg-amber-50 flex items-center justify-center text-xl shadow mb-1.5">
+                🦁
+              </div>
+              <div class="font-baloo font-bold text-xs text-slate-800">Gia Hân</div>
+              <div class="text-[10px] font-extrabold text-cyan-700">1,980 ⭐</div>
+              <div class="w-20 h-12 rounded-t-2xl podium-3rd flex flex-col items-center justify-center text-white font-baloo font-bold shadow-md">
+                <span class="text-lg">🥉</span>
+                <span class="text-[10px]">#3</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Leaderboard Ranked List (Hạng 4, 5, 6) -->
+          <div class="bg-white rounded-3xl p-3 border-2 border-slate-100 shadow-sm flex flex-col gap-2">
+            
+            <div class="flex items-center justify-between p-2.5 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="flex items-center gap-3">
+                <span class="w-6 text-center font-baloo font-black text-slate-400 text-sm">4</span>
+                <span class="text-xl">🐰</span>
+                <div>
+                  <div class="text-xs font-bold text-slate-800">Bảo An</div>
+                  <div class="text-[10px] text-slate-400 font-medium">Lớp 3A • Trường Vinschool</div>
+                </div>
+              </div>
+              <span class="text-xs font-black text-slate-700 bg-white border border-slate-200 px-2.5 py-1 rounded-full shadow-2xs">1,850 ⭐</span>
+            </div>
+
+            <div class="flex items-center justify-between p-2.5 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="flex items-center gap-3">
+                <span class="w-6 text-center font-baloo font-black text-slate-400 text-sm">5</span>
+                <span class="text-xl">🐻</span>
+                <div>
+                  <div class="text-xs font-bold text-slate-800">Đức Anh</div>
+                  <div class="text-[10px] text-slate-400 font-medium">Lớp 3B • Trường Archimedes</div>
+                </div>
+              </div>
+              <span class="text-xs font-black text-slate-700 bg-white border border-slate-200 px-2.5 py-1 rounded-full shadow-2xs">1,720 ⭐</span>
+            </div>
+
+            <div class="flex items-center justify-between p-2.5 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="flex items-center gap-3">
+                <span class="w-6 text-center font-baloo font-black text-slate-400 text-sm">6</span>
+                <span class="text-xl">🦊</span>
+                <div>
+                  <div class="text-xs font-bold text-slate-800">Mai Chi</div>
+                  <div class="text-[10px] text-slate-400 font-medium">Lớp 2C • Hà Nội</div>
+                </div>
+              </div>
+              <span class="text-xs font-black text-slate-700 bg-white border border-slate-200 px-2.5 py-1 rounded-full shadow-2xs">1,600 ⭐</span>
+            </div>
+
+          </div>
+
+          <!-- Sticky Current User Card at Bottom -->
+          <div class="p-3.5 bg-gradient-to-r from-indigo-900 to-slate-900 text-white rounded-2xl flex items-center justify-between shadow-lg border border-indigo-700/50">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-amber-400 text-slate-950 font-baloo font-black flex items-center justify-center text-xs shadow">
+                #1
+              </div>
+              <div>
+                <div class="text-[9px] text-indigo-300 uppercase font-black tracking-wider">VỊ TRÍ CỦA BẠN</div>
+                <div class="text-xs font-black text-white">Bé Na (Thanh Do Trung)</div>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="text-sm font-baloo font-black text-amber-300">2,450 ⭐</div>
+              <div class="text-[9px] text-indigo-300 font-bold">Kỷ Lục Tuần Này</div>
+            </div>
+          </div>
+
+          <!-- Confetti Button -->
+          <button onclick="triggerConfetti()" class="btn-3d btn-3d-amber w-full py-3 text-xs font-black flex items-center justify-center gap-2">
+            <span>BẮN PHÁO HOA ĂN MỪNG 🎊</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- BOTTOM NAVIGATION: 3 FIGMA AI TABS -->
+      <footer class="w-full bg-white border-t border-slate-200 px-8 py-2.5 flex items-center justify-between shrink-0 select-none shadow-lg z-20">
+        
+        <!-- Tab 1 -->
+        <div onclick="switchScreen('frame-topics')" class="flex flex-col items-center gap-1 cursor-pointer transition text-cyan-600 font-bold text-[11px]" id="nav-topics">
+          <div class="p-1 rounded-xl bg-cyan-50">
+            <i data-lucide="flask-conical" style="width:18px; height:18px;"></i>
+          </div>
+          <span>Phòng Lab</span>
+        </div>
+
+        <!-- Tab 2 -->
+        <div onclick="switchScreen('frame-quiz')" class="flex flex-col items-center gap-1 cursor-pointer transition text-slate-400 hover:text-slate-700 font-bold text-[11px]" id="nav-quiz">
+          <div class="p-1 rounded-xl">
+            <i data-lucide="rocket" style="width:18px; height:18px;"></i>
+          </div>
+          <span>Thám Hiểm</span>
+        </div>
+
+        <!-- Tab 3 -->
+        <div onclick="switchScreen('frame-leaderboard')" class="flex flex-col items-center gap-1 cursor-pointer transition text-slate-400 hover:text-slate-700 font-bold text-[11px]" id="nav-leaderboard">
+          <div class="p-1 rounded-xl">
+            <i data-lucide="trophy" style="width:18px; height:18px;"></i>
+          </div>
+          <span>Bảng Sao</span>
+        </div>
+
+      </footer>
+
+    </div>
+
+  </main>
+
+  <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+  <script>
+    let activeFrame = 'frame-topics';
+    let currentLanguage = 'vi';
+    let isDesktop = false;
+    let audioOn = true;
+
+    // Web Audio Synthesizer
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    let audioContext = null;
+
+    function playBeep(freq, duration = 0.1, type = 'sine') {
+      if (!audioOn) return;
+      try {
+        if (!audioContext) audioContext = new AudioCtx();
+        if (audioContext.state === 'suspended') audioContext.resume();
+        const osc = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioContext.currentTime);
+        gain.gain.setValueAtTime(0.12, audioContext.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioContext.destination);
+        osc.start();
+        osc.stop(audioContext.currentTime + duration);
+      } catch(e) {}
+    }
+
+    function toggleAudio() {
+      audioOn = !audioOn;
+      const btn = document.getElementById('audio-btn');
+      if (audioOn) {
+        btn.innerHTML = '<i data-lucide="volume-2" style="width:14px; height:14px;"></i>';
+        btn.classList.remove('bg-rose-100', 'text-rose-600');
+        playBeep(520, 0.1);
+      } else {
+        btn.innerHTML = '<i data-lucide="volume-x" style="width:14px; height:14px;"></i>';
+        btn.classList.add('bg-rose-100', 'text-rose-600');
+      }
+      lucide.createIcons();
+    }
+
+    // Switch between the 3 Figma AI Frames
+    function switchScreen(frameId) {
+      playBeep(440, 0.08, 'triangle');
+      document.querySelectorAll('.screen-frame').forEach(el => el.classList.add('hidden'));
+      const target = document.getElementById(frameId);
+      if (target) target.classList.remove('hidden');
+
+      activeFrame = frameId;
+
+      // Update Top Tabs
+      document.querySelectorAll('.screen-tab').forEach(tab => {
+        if (tab.getAttribute('data-frame') === frameId) {
+          tab.classList.remove('bg-slate-800', 'text-slate-300');
+          tab.classList.add('bg-cyan-600', 'text-white');
+        } else {
+          tab.classList.add('bg-slate-800', 'text-slate-300');
+          tab.classList.remove('bg-cyan-600', 'text-white');
+        }
+      });
+
+      // Update Bottom Nav
+      const navMap = {
+        'frame-topics': 'nav-topics',
+        'frame-quiz': 'nav-quiz',
+        'frame-leaderboard': 'nav-leaderboard'
+      };
+      ['nav-topics', 'nav-quiz', 'nav-leaderboard'].forEach(id => {
+        const item = document.getElementById(id);
+        if (item) {
+          if (id === navMap[frameId]) {
+            item.className = 'flex flex-col items-center gap-1 cursor-pointer transition text-cyan-600 font-bold text-[11px]';
+            item.querySelector('div').className = 'p-1 rounded-xl bg-cyan-50';
+          } else {
+            item.className = 'flex flex-col items-center gap-1 cursor-pointer transition text-slate-400 hover:text-slate-700 font-bold text-[11px]';
+            item.querySelector('div').className = 'p-1 rounded-xl';
+          }
+        }
+      });
+
+      const viewport = document.getElementById('viewport-container');
+      if (viewport) viewport.scrollTop = 0;
+
+      if (frameId === 'frame-leaderboard') {
+        setTimeout(triggerConfetti, 250);
+      }
+    }
+
+    // Interactive Quiz Selection
+    function pickOption(idx) {
+      const cards = document.querySelectorAll('.option-card-figma');
+      cards.forEach((c, i) => {
+        c.className = 'option-card-figma p-3.5 flex items-center gap-3.5';
+        if (i === idx) {
+          if (idx === 1) { // Option B is correct (Sao Hỏa / Mars)
+            playBeep(880, 0.2, 'sine');
+            c.classList.add('correct');
+            document.getElementById('explanation-box').classList.remove('hidden');
+          } else {
+            playBeep(220, 0.2, 'sawtooth');
+            c.classList.add('wrong');
+            document.getElementById('explanation-box').classList.remove('hidden');
+          }
+        }
+      });
+    }
+
+    // Toggle Mobile Simulator vs Full Desktop
+    function toggleDesktopMode() {
+      isDesktop = !isDesktop;
+      const shell = document.getElementById('device-shell');
+      const notch = document.getElementById('notch-bar');
+      const text = document.getElementById('view-mode-text');
+
+      if (isDesktop) {
+        shell.className = "w-full max-w-4xl h-[85vh] rounded-3xl border-4 border-slate-800 bg-[#F8FAFC] shadow-2xl flex flex-col relative overflow-hidden transition-all duration-300";
+        notch.classList.add('hidden');
+        text.textContent = "Chế Độ Mobile (iPhone)";
+      } else {
+        shell.className = "iphone-shell flex flex-col transition-all duration-300";
+        notch.classList.remove('hidden');
+        text.textContent = "Mở Rộng Desktop";
+      }
+      playBeep(480, 0.08);
+    }
+
+    // Confetti
+    function triggerConfetti() {
+      playBeep(700, 0.15);
+      try {
+        confetti({
+          particleCount: 75,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#06B6D4', '#F59E0B', '#8B5CF6', '#10B981', '#EC4899']
+        });
+      } catch(e) {}
+    }
+
+    // Bilingual Content Dictionary
+    const DICT = {
+      vi: {
+        role: 'Nhà Khoa Học Nhí',
+        heroTag: '🔬 PHÒNG THÍ NGHIỆM KHOA HỌC',
+        heroTitle: 'Sẵn Sàng Thám Hiểm<br>Khoa Học Kỳ Thú! ⚡',
+        heroDesc: 'Hoàn thành các phòng Lab để thu thập đủ 1.000 ngôi sao kiến thức!',
+        heroBtn: 'VÀO PHÒNG THI NGAY',
+        quizTitle: 'Hành tinh nào trong Hệ Mặt Trời được mệnh danh là "Hành tinh Đỏ" do bề mặt có nhiều oxit sắt?',
+        quizSub: 'Which planet in our Solar System is known as the "Red Planet" due to iron oxide on its surface?',
+        leaderHeading: 'Bảng Sao Tuần Này',
+        leaderSub: 'Top nhà thám hiểm nhí xuất sắc nhất tuần'
+      },
+      en: {
+        role: 'Junior Scientist',
+        heroTag: '🔬 SCIENCE LABORATORY',
+        heroTitle: 'Ready to Explore<br>Fascinating Science! ⚡',
+        heroDesc: 'Complete lab missions to gather all 1,000 knowledge stars!',
+        heroBtn: 'ENTER MISSION NOW',
+        quizTitle: 'Which planet in our Solar System is known as the "Red Planet" due to iron oxide covering its surface?',
+        quizSub: 'Hành tinh nào trong Hệ Mặt Trời được mệnh danh là "Hành tinh Đỏ"?',
+        leaderHeading: 'Weekly Stars Hall',
+        leaderSub: 'Top performing junior explorers of the week'
+      }
+    };
+
+    function toggleLang(lang) {
+      currentLanguage = lang;
+      playBeep(550, 0.08);
+      const btnVi = document.getElementById('lang-btn-vi');
+      const btnEn = document.getElementById('lang-btn-en');
+      if (lang === 'vi') {
+        btnVi.className = 'px-2.5 py-1 rounded-lg font-black transition bg-cyan-600 text-white shadow-sm flex items-center gap-1';
+        btnEn.className = 'px-2.5 py-1 rounded-lg font-black transition text-slate-400 hover:text-white flex items-center gap-1';
+      } else {
+        btnEn.className = 'px-2.5 py-1 rounded-lg font-black transition bg-cyan-600 text-white shadow-sm flex items-center gap-1';
+        btnVi.className = 'px-2.5 py-1 rounded-lg font-black transition text-slate-400 hover:text-white flex items-center gap-1';
+      }
+
+      const d = DICT[lang];
+      document.getElementById('badge-role').textContent = d.role;
+      document.getElementById('hero-tag').textContent = d.heroTag;
+      document.getElementById('hero-title').innerHTML = d.heroTitle;
+      document.getElementById('hero-desc').textContent = d.heroDesc;
+      document.getElementById('hero-start-btn').textContent = d.heroBtn;
+      document.getElementById('quiz-title').textContent = d.quizTitle;
+      document.getElementById('quiz-sub').textContent = d.quizSub;
+      document.getElementById('leaderboard-heading').innerHTML = `<span>${d.leaderHeading}</span> <span class="text-amber-500">🌟</span>`;
+      document.getElementById('leaderboard-subheading').textContent = d.leaderSub;
+    }
+
+    window.onload = function() {
+      lucide.createIcons();
+    };
+  </script>
+</body>
+</html>
