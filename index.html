@@ -4362,8 +4362,9 @@
     <div class="flex items-center justify-between gap-3 mb-4 shrink-0 flex-wrap">
       
       <div class="flex items-center gap-2">
-        <button type="button" onclick="askQuitQuiz()" class="w-9 h-9 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 shadow-sm transition" title="Quay lại Phòng Lab">
-          <i data-lucide="x" style="width:18px; height:18px; stroke-width:3;"></i>
+        <button type="button" onclick="askQuitQuiz()" class="px-3.5 py-1.5 rounded-full bg-rose-50 border-2 border-rose-300 hover:bg-rose-100 text-rose-700 text-xs font-black flex items-center gap-1.5 shadow-xs transition cursor-pointer" title="Dừng bài thi để về Trang Chủ">
+          <i data-lucide="log-out" style="width:14px; height:14px; stroke-width:2.5;"></i>
+          <span>Thoát</span>
         </button>
         <button type="button" onclick="pauseQuiz()" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-100 shadow-sm transition flex items-center gap-1">
           <i data-lucide="pause" style="width:14px; height:14px;"></i>
@@ -4404,13 +4405,18 @@
 
     <!-- DEEP COSMIC QUESTION CARD (FIGMA AI SCREEN 2 QUESTION CARD) -->
     <div class="bg-gradient-to-b from-indigo-950 to-slate-900 text-white rounded-3xl p-5 md:p-6 border-2 border-indigo-800/60 shadow-xl relative overflow-hidden mb-4">
-      <div class="relative z-10 flex flex-col gap-2.5">
-        <span class="text-[10px] font-black tracking-widest text-cyan-400 uppercase">THÁM HIỂM KHOA HỌC • CÂU HỎI TRẮC NGHIỆM</span>
-        <h2 class="font-baloo text-lg md:text-xl font-bold leading-snug text-white" id="question-text">
+      <div class="relative z-10 flex flex-col gap-3">
+        <!-- Huy hiệu thể loại ở chính giữa thẻ -->
+        <div class="flex items-center justify-center text-center">
+          <span class="inline-flex items-center justify-center text-[11px] font-black tracking-wider text-cyan-300 bg-cyan-950/80 border border-cyan-400/40 px-3.5 py-1 rounded-full uppercase shadow-xs">
+            ✨ THÁM HIỂM KHOA HỌC • CÂU HỎI TRẮC NGHIỆM ✨
+          </span>
+        </div>
+        <h2 class="font-baloo text-lg md:text-xl font-bold leading-snug text-white text-center md:text-left" id="question-text">
           Đang tải nội dung câu hỏi...
         </h2>
-        <div class="question-img-card mt-2 rounded-2xl overflow-hidden border border-indigo-700/50 bg-slate-900/60 max-w-sm" id="q-img-wrap" style="display:none;">
-          <img id="question-img" src="" alt="Minh họa" style="width:100%; max-height:220px; object-fit:contain; display:block; margin:0 auto;">
+        <div class="question-img-card mt-2 rounded-2xl overflow-hidden border border-indigo-700/50 bg-slate-900/60 max-w-sm mx-auto" id="q-img-wrap" style="display:none;">
+          <img id="question-img" src="" alt="Minh họa" style="width:100%; max-height:200px; object-fit:contain; display:block; margin:0 auto;">
         </div>
       </div>
       
@@ -4440,9 +4446,9 @@
     <!-- GIẢI THÍCH KHOA HỌC (💡 SỰ THẬT KHOA HỌC) -->
     <div class="explanation-card bg-amber-50/90 border-2 border-amber-300 rounded-2xl p-4 mb-4 text-xs font-medium text-amber-950 shadow-sm" id="explanation-card" style="display:none;"></div>
 
-    <!-- BOTTOM ACTION BUTTON -->
-    <div class="sticky bottom-2 z-20">
-      <button type="button" class="btn-3d btn-3d-cyan w-full py-3.5 text-sm font-black flex items-center justify-center gap-2 shadow-xl" id="btn-next" onclick="goNextQuestion()">
+    <!-- BOTTOM ACTION BUTTON (KHÔNG STICKY ĐÈ LÊN ĐÁP ÁN D) -->
+    <div class="mt-6 mb-2 w-full">
+      <button type="button" class="btn-3d btn-3d-cyan w-full py-3.5 text-sm font-black flex items-center justify-center gap-2 shadow-xl cursor-pointer" id="btn-next" onclick="goNextQuestion()">
         <span>TIẾP TỤC HÀNH TRÌNH</span>
         <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
       </button>
@@ -4974,13 +4980,17 @@
 </div>
 
 <div class="modal-overlay" id="modal-quit">
-  <div class="modal-box">
-    <div class="modal-icon">🚪</div>
-    <div class="modal-title">Dừng Bài Thi?</div>
-    <div class="modal-desc">Bé có chắc muốn rời khỏi lượt ôn này không? Kết quả hiện tại sẽ không được lưu nếu thoát ngang.</div>
-    <div class="modal-actions">
-      <button class="modal-btn-cancel" onclick="closeQuitModal()">Tiếp tục làm</button>
-      <button class="modal-btn-confirm" style="background:var(--danger);" onclick="confirmQuit()">Đồng ý thoát</button>
+  <div class="modal-box text-center p-6 bg-white rounded-3xl border-4 border-slate-800 shadow-2xl max-w-sm">
+    <div class="text-4xl mb-2 animate-bounce">🚪</div>
+    <div class="font-baloo font-bold text-xl text-slate-900 mb-2">Dừng Bài Thi?</div>
+    <div class="text-xs text-slate-600 font-medium mb-5 leading-relaxed">Bé có chắc muốn dừng bài thám hiểm này để về Trang Chủ không? Điểm số lượt thi này sẽ không được lưu nếu thoát ngang.</div>
+    <div class="flex items-center justify-center gap-3">
+      <button type="button" class="btn-3d px-4 py-2.5 rounded-full text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 transition" onclick="closeQuitModal()">
+        Tiếp tục làm
+      </button>
+      <button type="button" class="btn-3d px-5 py-2.5 rounded-full text-xs font-black bg-rose-600 hover:bg-rose-700 text-white shadow-md transition" onclick="confirmQuit()">
+        Đồng ý thoát ➔
+      </button>
     </div>
   </div>
 </div>
@@ -5992,28 +6002,30 @@ function displayQuestion() {
     const enText = q.q_en || q.question_en || q.q;
     const viText = q.q;
     qTextElem.innerHTML = `
-      <div style="font-size:1.15rem; font-weight:800; color:var(--dark); line-height:1.45; margin-bottom:8px;">${enText}</div>
-      <div style="font-size:0.95rem; color:#475569; font-weight:600; line-height:1.45; border-top:1.5px dashed #E2E8F0; padding-top:8px;">${viText}</div>
+      <div style="font-size:1.18rem; font-weight:800; color:#FFFFFF; line-height:1.45; margin-bottom:8px; text-shadow:0 1px 3px rgba(0,0,0,0.5);">${enText}</div>
+      <div style="font-size:1.02rem; color:#7DD3FC; font-weight:700; line-height:1.45; border-top:1px dashed rgba(255,255,255,0.25); padding-top:8px;">${viText}</div>
     `;
   } else if (currentLanguageMode === 'en') {
-    qTextElem.textContent = q.q_en || q.question_en || q.q;
+    qTextElem.innerHTML = `<div style="font-size:1.18rem; font-weight:800; color:#FFFFFF; line-height:1.45; text-shadow:0 1px 3px rgba(0,0,0,0.5);">${q.q_en || q.question_en || q.q}</div>`;
   } else {
-    qTextElem.textContent = q.q;
+    qTextElem.innerHTML = `<div style="font-size:1.18rem; font-weight:800; color:#FFFFFF; line-height:1.45; text-shadow:0 1px 3px rgba(0,0,0,0.5);">${q.q}</div>`;
   }
 
-  // Xử lý ảnh minh họa thông minh + Fallback SVG chuyên biệt theo chủ đề khi lỗi
+  // Chỉ hiển thị ảnh minh họa khi câu hỏi thực sự có trường img hợp lệ
   const imgElem = document.getElementById('question-img');
   const imgWrap = document.getElementById('q-img-wrap');
-  imgElem.onerror = function() {
-    this.onerror = null;
-    this.src = getTopicSvg(q.topic);
-  };
-  if (q.img) {
-    imgElem.src = q.img;
-  } else {
-    imgElem.src = getTopicSvg(q.topic);
+  if (imgElem && imgWrap) {
+    if (q.img && q.img.trim()) {
+      imgElem.onerror = function() {
+        this.onerror = null;
+        imgWrap.style.display = 'none';
+      };
+      imgElem.src = q.img;
+      imgWrap.style.display = 'block';
+    } else {
+      imgWrap.style.display = 'none';
+    }
   }
-  imgWrap.style.display = 'block';
 
   // Mascot động viên
   setMascotMood('thinking', isLast ? 'Bé ơi, đây là câu cuối cùng rồi! Làm xong bé kiểm tra lại nhé!' : `Bé ơi, cùng trả lời câu ${currentIndex + 1} nào!`);
@@ -7030,6 +7042,36 @@ function toggleLang(lang) {
       btnVi.className = 'px-2.5 py-1 rounded-lg font-black transition text-slate-400 hover:text-white flex items-center gap-1';
     }
   }
+  playSound('click');
+}
+
+
+// =========================================================================
+// THOÁT BÀI THI & HỘP THOẠI XÁC NHẬN (CONFIRM BOX)
+// =========================================================================
+function askQuitQuiz() {
+  const modal = document.getElementById('modal-quit');
+  if (modal) {
+    modal.classList.add('active');
+  } else {
+    if (confirm("Bé có chắc muốn dừng bài thi để về Trang Chủ không? Kết quả hiện tại sẽ không được lưu.")) {
+      confirmQuit();
+    }
+  }
+  playSound('click');
+}
+
+function closeQuitModal() {
+  const modal = document.getElementById('modal-quit');
+  if (modal) modal.classList.remove('active');
+  playSound('click');
+}
+
+function confirmQuit() {
+  closeQuitModal();
+  clearInterval(timerInterval);
+  isQuizSubmitted = true;
+  showScreen('home-screen');
   playSound('click');
 }
 
