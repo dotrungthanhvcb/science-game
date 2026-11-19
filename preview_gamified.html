@@ -11,7 +11,7 @@
   <!-- Google Fonts: Nunito & Fredoka -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -21,11 +21,14 @@
 
   <style>
     * {
-      font-family: 'Nunito', sans-serif !important;
+      font-family: 'Be Vietnam Pro', sans-serif;
       -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
-    .font-fredoka {
-      font-family: 'Fredoka', 'Nunito', sans-serif !important;
+    .font-fredoka, .font-heading {
+      font-family: 'Baloo 2', 'Be Vietnam Pro', cursive, sans-serif !important;
+      letter-spacing: -0.01em;
     }
 
     /* TACTILE 3D BUTTONS (PHONG CÁCH DUOLINGO / GAMIFIED TEMPLATE) */
@@ -244,8 +247,17 @@
         </button>
       </nav>
 
-      <!-- View Mode Toggle: Mobile Simulator vs Full Desktop Width -->
-      <div class="flex items-center gap-2">
+      <!-- Language Switcher & View Mode Toggle -->
+      <div class="flex items-center gap-2.5">
+        <div class="flex items-center bg-slate-900/80 p-0.5 rounded-xl border border-slate-600 text-xs shadow-inner">
+          <button onclick="setAppLanguage('vi')" id="lang-toggle-vi" class="px-2.5 py-1 rounded-lg font-black transition bg-purple-600 text-white shadow-sm flex items-center gap-1">
+            <span>🇻🇳</span> <span>Tiếng Việt</span>
+          </button>
+          <button onclick="setAppLanguage('en')" id="lang-toggle-en" class="px-2.5 py-1 rounded-lg font-black transition text-slate-300 hover:text-white flex items-center gap-1">
+            <span>🇬🇧</span> <span>English</span>
+          </button>
+        </div>
+
         <button onclick="toggleViewMode()" id="view-mode-btn" class="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 border border-slate-600 transition" title="Chuyển chế độ xem">
           <i data-lucide="smartphone" style="width:14px; height:14px;"></i>
           <span id="view-mode-text">Mở Rộng Desktop</span>
@@ -308,12 +320,12 @@
           <div class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-3xl p-5 relative overflow-hidden shadow-md">
             <div class="relative z-10">
               <span class="inline-block bg-white/20 text-white text-[11px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider mb-2">Thử Thách Hằng Ngày</span>
-              <h2 class="font-fredoka text-xl font-bold leading-tight">Khám Phá Bí Mật<br>Thế Giới Tự Nhiên! 🌍</h2>
-              <p class="text-xs text-purple-100 mt-1 mb-4">Hoàn thành 1 bài thi để nhận 20 ⭐ và bảo vệ chuỗi 5 ngày!</p>
+              <h2 id="home-hero-title" class="font-fredoka text-xl font-bold leading-tight">Khám Phá Bí Mật<br>Thế Giới Tự Nhiên! 🌍</h2>
+              <p id="home-hero-desc" class="text-xs text-purple-100 mt-1 mb-4">Hoàn thành 1 bài thi để nhận 20 ⭐ và bảo vệ chuỗi 5 ngày!</p>
               
               <button onclick="switchScreen('screen-level')" class="btn-3d btn-3d-yellow px-5 py-2.5 text-xs inline-flex items-center gap-2 shadow-sm">
                 <i data-lucide="play" style="width:14px; height:14px; fill:currentColor;"></i>
-                <span>CHƠI NGAY HÔM NAY</span>
+                <span id="home-play-btn-text">CHƠI NGAY HÔM NAY</span>
               </button>
             </div>
             
@@ -627,22 +639,22 @@
             
             <div onclick="selectOption(0)" class="option-card-3d p-3.5 flex items-center gap-3" data-idx="0">
               <span class="w-8 h-8 rounded-xl bg-purple-100 text-purple-800 font-fredoka font-bold text-sm flex items-center justify-center shrink-0">A</span>
-              <div class="text-xs font-bold leading-snug">Lớp mỡ rất dày và bộ lông trắng không thấm nước</div>
+              <div id="opt-text-0" class="text-xs font-bold leading-snug">Lớp mỡ rất dày và bộ lông trắng không thấm nước</div>
             </div>
 
             <div onclick="selectOption(1)" class="option-card-3d p-3.5 flex items-center gap-3" data-idx="1">
               <span class="w-8 h-8 rounded-xl bg-purple-100 text-purple-800 font-fredoka font-bold text-sm flex items-center justify-center shrink-0">B</span>
-              <div class="text-xs font-bold leading-snug">Rụng hết lông để di chuyển nhanh hơn</div>
+              <div id="opt-text-1" class="text-xs font-bold leading-snug">Rụng hết lông để di chuyển nhanh hơn</div>
             </div>
 
             <div onclick="selectOption(2)" class="option-card-3d p-3.5 flex items-center gap-3" data-idx="2">
               <span class="w-8 h-8 rounded-xl bg-purple-100 text-purple-800 font-fredoka font-bold text-sm flex items-center justify-center shrink-0">C</span>
-              <div class="text-xs font-bold leading-snug">Ngâm mình liên tục dưới dòng nước băng lạnh buốt</div>
+              <div id="opt-text-2" class="text-xs font-bold leading-snug">Ngâm mình liên tục dưới dòng nước băng lạnh buốt</div>
             </div>
 
             <div onclick="selectOption(3)" class="option-card-3d p-3.5 flex items-center gap-3" data-idx="3">
               <span class="w-8 h-8 rounded-xl bg-purple-100 text-purple-800 font-fredoka font-bold text-sm flex items-center justify-center shrink-0">D</span>
-              <div class="text-xs font-bold leading-snug">Chỉ ngủ trên các mỏm đá nhọn ngoài biển khơi</div>
+              <div id="opt-text-3" class="text-xs font-bold leading-snug">Chỉ ngủ trên các mỏm đá nhọn ngoài biển khơi</div>
             </div>
 
           </div>
@@ -658,7 +670,7 @@
           <!-- Nút Tiếp Theo (Sticky Bottom Button) -->
           <div class="pt-2">
             <button onclick="nextQuestion()" id="quiz-next-btn" class="btn-3d btn-3d-yellow w-full py-3.5 text-sm tracking-wider flex items-center justify-center gap-2 shadow-md">
-              <span>TIẾP THEO</span>
+              <span id="quiz-next-text">TIẾP THEO</span>
               <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
             </button>
           </div>
@@ -682,8 +694,8 @@
           </div>
 
           <div>
-            <h2 class="font-fredoka text-2xl font-bold text-purple-950 mt-2">Bé Na Đã Về Đích! 🎉</h2>
-            <p class="text-xs text-slate-500 mt-1">Chúc mừng bé đã tích lũy thêm 30 sao kinh nghiệm!</p>
+            <h2 id="finished-title" class="font-fredoka text-2xl font-bold text-purple-950 mt-2">Bé Na Đã Về Đích! 🎉</h2>
+            <p id="finished-desc" class="text-xs text-slate-500 mt-1">Chúc mừng bé đã tích lũy thêm 30 sao kinh nghiệm!</p>
           </div>
 
           <!-- Lưới Thống Kê Kết Quả -->
@@ -734,8 +746,8 @@
         <div id="screen-leaderboard" class="screen-view hidden flex flex-col gap-4">
           
           <div class="text-center">
-            <h2 class="font-fredoka text-2xl font-bold text-purple-950">Bảng Vàng Danh Dự</h2>
-            <p class="text-xs text-slate-500">Các nhà khoa học nhí xuất sắc nhất tuần này</p>
+            <h2 id="leaderboard-title" class="font-fredoka text-2xl font-bold text-purple-950">Bảng Vàng Danh Dự</h2>
+            <p id="leaderboard-desc" class="text-xs text-slate-500">Các nhà khoa học nhí xuất sắc nhất tuần này</p>
           </div>
 
           <!-- Bục Vinh Quang Top 1, Top 2, Top 3 (Podium) -->
@@ -972,6 +984,187 @@
     let soundEnabled = true;
 
     // Web Audio Synthesizer (Hiệu ứng âm thanh vui nhộn khi bấm nút)
+    
+    // =========================================================================
+    // SONG NGỮ TIẾNG VIỆT (FONT BALOO 2) & ENGLISH CHUẨN
+    // =========================================================================
+    let currentAppLang = 'vi';
+
+    const I18N = {
+      vi: {
+        dailyChallenge: 'Thử Thách Hằng Ngày',
+        homeHeroTitle: 'Khám Phá Bí Mật<br>Thế Giới Tự Nhiên! 🌍',
+        homeHeroDesc: 'Hoàn thành 1 bài thi để nhận 20 ⭐ và bảo vệ chuỗi 5 ngày!',
+        homePlayBtn: 'CHƠI NGAY HÔM NAY',
+        currentUnitLabel: 'LỘ TRÌNH HIỆN TẠI',
+        currentUnitTitle: 'Unit 1: Động Vật & Thực Vật',
+        unitProgress: '3 / 6 Màn',
+        animalCardTitle: 'Động Vật',
+        animalCardSub: '120 Câu Hỏi',
+        spaceCardTitle: 'Vũ Trụ',
+        spaceCardSub: '95 Câu Hỏi',
+        viewAllTopicsBtn: 'Xem Tất Cả 6 Chủ Đề Khoa Học',
+        yourRankLabel: 'HẠNG CỦA BẠN',
+        yourRankValue: 'Top 3 • 120 Điểm',
+        detailsLink: 'Chi tiết →',
+        modulesTitle: 'Chủ Đề Khoa Học',
+        modulesDesc: 'Bộ đề chuẩn 1.000 câu theo SGK & Cambridge',
+        modulesCount: '6 Chủ Đề',
+        backToTopics: 'Quay lại danh mục',
+        prepSubtitle: 'Thử thách trí tuệ tự nhiên • Đấu trường 1.000 câu',
+        durationLabel: 'THỜI GIAN',
+        durationVal: '10 Phút',
+        durationDesc: 'Đếm ngược tự động',
+        questionsLabel: 'SỐ CÂU HỎI',
+        questionsVal: '10 Câu',
+        questionsDesc: 'Trắc nghiệm 4 đáp án',
+        selectLangLabel: 'CHỌN NGÔN NGỮ ĐỀ THI',
+        startQuizBtn: 'BẮT ĐẦU THI NGAY! 🚀',
+        quizQuestionTitle: 'Để bảo vệ cơ thể khỏi bị lạnh vào mùa đông khắc nghiệt, loài gấu Bắc Cực có đặc điểm nào dưới đây?',
+        quizQuestionSub: 'To protect its body from severe cold in winter, what special feature does a polar bear have?',
+        optA: 'Lớp mỡ rất dày và bộ lông trắng không thấm nước',
+        optB: 'Rụng hết lông để di chuyển nhanh hơn',
+        optC: 'Ngâm mình liên tục dưới dòng nước băng lạnh buốt',
+        optD: 'Chỉ ngủ trên các mỏm đá nhọn ngoài biển khơi',
+        feedbackTitle: '💡 GIẢI THÍCH KHOA HỌC:',
+        feedbackText: 'Gấu Bắc Cực có lớp mỡ dày tới 10cm cùng 2 lớp lông đặc biệt giúp giữ nhiệt tối đa giữa nhiệt độ âm 40 độ C.',
+        continueBtn: 'TIẾP THEO',
+        finishedBadge: 'HOÀN THÀNH XUẤT SẮC!',
+        finishedTitle: 'Bé Na Đã Về Đích! 🎉',
+        finishedDesc: 'Chúc mừng bé đã tích lũy thêm 30 sao kinh nghiệm!',
+        scoreLabel: 'ĐIỂM SỐ',
+        scoreSub: 'Tuyệt đối ⭐',
+        accuracyLabel: 'ĐỘ CHÍNH XÁC',
+        accuracySub: '100% đúng',
+        timeLabel: 'THỜI GIAN',
+        timeSub: 'Phút:giây',
+        confettiBtn: 'BẮN PHÁO HOA ĂN MỪNG 🎊',
+        leaderboardBtn: 'XEM BẢNG VÀNG DANH DỰ',
+        backHomeBtn: 'Quay về Trang Chủ',
+        leaderboardTitle: 'Bảng Vàng Danh Dự',
+        leaderboardDesc: 'Các nhà khoa học nhí xuất sắc nhất tuần này',
+        pointsUnit: 'Điểm',
+        yourRankCardLabel: 'HẠNG CỦA BẠN',
+        recordSub: 'Kỷ lục tuần',
+        profileSub: 'Nhà Thám Hiểm Cấp 3 🌟',
+        historyTitle: 'Lịch Sử Thi Gần Đây',
+        historyCount: '3 Lần Thi',
+        adminTitle: 'Tài khoản Admin',
+        adminDesc: 'Được phép xem toàn bộ lịch sử thi và quản lý danh sách học sinh.',
+        navHome: 'Trang Chủ',
+        navTopics: 'Chủ Đề',
+        navLeaderboard: 'Bảng Vàng',
+        navProfile: 'Hồ Sơ'
+      },
+      en: {
+        dailyChallenge: 'DAILY CHALLENGE',
+        homeHeroTitle: 'Discover Secrets<br>of the Natural World! 🌍',
+        homeHeroDesc: 'Complete 1 quiz to earn 20 ⭐ and protect your 5-day streak!',
+        homePlayBtn: 'PLAY TODAY',
+        currentUnitLabel: 'CURRENT UNIT',
+        currentUnitTitle: 'Unit 1: Animals & Plants',
+        unitProgress: '3 / 6 Lessons',
+        animalCardTitle: 'Animals',
+        animalCardSub: '120 Questions',
+        spaceCardTitle: 'Universe',
+        spaceCardSub: '95 Questions',
+        viewAllTopicsBtn: 'View All 6 Science Topics',
+        yourRankLabel: 'YOUR RANK',
+        yourRankValue: 'Top 3 • 120 Points',
+        detailsLink: 'Details →',
+        modulesTitle: 'Science Topics',
+        modulesDesc: '1,000 Standard Questions from Cambridge & Curriculum',
+        modulesCount: '6 Modules',
+        backToTopics: 'Back to topics',
+        prepSubtitle: 'Science intelligence arena • 1,000 Questions',
+        durationLabel: 'DURATION',
+        durationVal: '10 Mins',
+        durationDesc: 'Auto countdown timer',
+        questionsLabel: 'QUESTIONS',
+        questionsVal: '10 Questions',
+        questionsDesc: '4 Multiple-choice options',
+        selectLangLabel: 'SELECT QUIZ LANGUAGE',
+        startQuizBtn: 'START QUIZ NOW! 🚀',
+        quizQuestionTitle: 'To protect its body from severe cold in winter, what special adaptation does a polar bear have?',
+        quizQuestionSub: 'Để bảo vệ cơ thể khỏi bị lạnh vào mùa đông, gấu Bắc Cực có đặc điểm gì?',
+        optA: 'A very thick layer of blubber and dense waterproof fur',
+        optB: 'Sheds all its fur to run much faster',
+        optC: 'Submerges continuously in freezing water',
+        optD: 'Sleeps only on sharp rocks far out at sea',
+        feedbackTitle: '💡 SCIENTIFIC FACT:',
+        feedbackText: 'Polar bears have up to 10cm of insulating blubber and two layers of fur that trap heat in minus 40°C arctic winds.',
+        continueBtn: 'CONTINUE',
+        finishedBadge: 'OUTSTANDING FINISH!',
+        finishedTitle: 'Na Completed the Mission! 🎉',
+        finishedDesc: 'Congratulations! You earned 30 extra Experience Stars!',
+        scoreLabel: 'SCORE',
+        scoreSub: 'Perfect ⭐',
+        accuracyLabel: 'ACCURACY',
+        accuracySub: '100% correct',
+        timeLabel: 'TIME TAKEN',
+        timeSub: 'Mins:secs',
+        confettiBtn: 'CELEBRATE WITH CONFETTI 🎊',
+        leaderboardBtn: 'VIEW LEADERBOARD',
+        backHomeBtn: 'Back to Home Screen',
+        leaderboardTitle: 'Hall of Fame',
+        leaderboardDesc: 'Top performing junior scientists of the week',
+        pointsUnit: 'Pts',
+        yourRankCardLabel: 'YOUR RANK',
+        recordSub: 'Weekly record',
+        profileSub: 'Junior Explorer Level 3 🌟',
+        historyTitle: 'Recent Quiz History',
+        historyCount: '3 Attempts',
+        adminTitle: 'Administrator Account',
+        adminDesc: 'Authorized to view all quiz histories and manage student accounts.',
+        navHome: 'Home',
+        navTopics: 'Topics',
+        navLeaderboard: 'Ranking',
+        navProfile: 'Profile'
+      }
+    };
+
+    function setAppLanguage(lang) {
+      currentAppLang = lang;
+      playTone(520, 'sine', 0.08);
+
+      // Update switcher buttons
+      const btnVi = document.getElementById('lang-toggle-vi');
+      const btnEn = document.getElementById('lang-toggle-en');
+      if (lang === 'vi') {
+        btnVi.className = 'px-2.5 py-1 rounded-lg font-black transition bg-purple-600 text-white shadow-sm flex items-center gap-1';
+        btnEn.className = 'px-2.5 py-1 rounded-lg font-black transition text-slate-300 hover:text-white flex items-center gap-1';
+      } else {
+        btnEn.className = 'px-2.5 py-1 rounded-lg font-black transition bg-purple-600 text-white shadow-sm flex items-center gap-1';
+        btnVi.className = 'px-2.5 py-1 rounded-lg font-black transition text-slate-300 hover:text-white flex items-center gap-1';
+      }
+
+      const dict = I18N[lang];
+
+      // Update text elements safely by selector or ID
+      const safeText = (id, val, isHtml=false) => {
+        const el = document.getElementById(id);
+        if (el) {
+          if (isHtml) el.innerHTML = val;
+          else el.textContent = val;
+        }
+      };
+
+      safeText('home-hero-title', dict.homeHeroTitle, true);
+      safeText('home-hero-desc', dict.homeHeroDesc);
+      safeText('home-play-btn-text', dict.homePlayBtn);
+      safeText('quiz-question-text', dict.quizQuestionTitle);
+      safeText('quiz-question-en', dict.quizQuestionSub);
+      safeText('opt-text-0', dict.optA);
+      safeText('opt-text-1', dict.optB);
+      safeText('opt-text-2', dict.optC);
+      safeText('opt-text-3', dict.optD);
+      safeText('finished-title', dict.finishedTitle);
+      safeText('finished-desc', dict.finishedDesc);
+      safeText('leaderboard-title', dict.leaderboardTitle);
+      safeText('leaderboard-desc', dict.leaderboardDesc);
+      safeText('quiz-next-text', dict.continueBtn);
+    }
+
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
     let audioCtx = null;
 
