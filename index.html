@@ -4471,7 +4471,7 @@
           </div>
 
           <!-- Avatar & Mascot Info -->
-          <div class="flex items-center gap-3.5 cursor-pointer select-none" onclick="onMascotClick()" title="Bấm vào bạn đồng hành để nghe lời động viên!">
+          <div class="flex items-center gap-3.5 cursor-pointer select-none" onclick="onMascotClick()" title="Bấm vào bạn đồng hành để nghe mách nước!">
             <div id="quiz-mascot-svg-wrap" class="w-16 h-16 rounded-2xl bg-white border-2 border-cyan-300 shadow-md flex items-center justify-center text-4xl shrink-0 animate-mascot-float">
               🦉
             </div>
@@ -4482,14 +4482,14 @@
               <div class="text-[11px] font-extrabold text-cyan-600 mt-0.5" id="quiz-mascot-role">
                 Bác Học Thông Thái
               </div>
-              <div class="text-[10px] text-slate-400 font-semibold flex items-center gap-1 mt-0.5" id="quiz-mascot-tap-hint">
-                <span>👆 Bấm vào tớ để nghe mách nước!</span>
+              <div class="text-[10px] text-cyan-700 bg-cyan-50 border border-cyan-200 px-2.5 py-0.5 rounded-full inline-flex items-center gap-1 mt-1 font-bold cursor-pointer hover:bg-cyan-100 transition shadow-xs" id="quiz-mascot-tap-hint">
+                <span>💡 Bấm vào tớ để nghe mách nước!</span>
               </div>
             </div>
           </div>
 
           <!-- Interactive Speech Bubble -->
-          <div class="relative bg-white border-2 border-cyan-200 rounded-2xl p-3.5 shadow-sm">
+          <div class="relative bg-white border-2 border-cyan-200 rounded-2xl p-3.5 shadow-sm cursor-pointer hover:border-cyan-400 transition" onclick="onMascotClick()" title="Bấm để nghe mách nước!">
             <div class="text-xs text-slate-700 font-bold leading-relaxed" id="mascot-speech">
               Bé đọc kỹ câu hỏi nhé, chúng mình cùng nhau đạt điểm 10 nào! 🌟
             </div>
@@ -5034,7 +5034,7 @@
   <div class="modal-box">
     <div class="modal-icon">⏸️</div>
     <div class="modal-title" id="pause-modal-title">Đang Tạm Dừng Bài Thi</div>
-    <div class="modal-desc" id="pause-modal-desc">Đồng hồ đã đóng băng. Bé hãy nghỉ ngơi chớp mắt, uống một ngụm nước rồi cùng Bo Bo tiếp tục nhé!</div>
+    <div class="modal-desc" id="pause-modal-desc">Đồng hồ đã đóng băng. Bé hãy nghỉ ngơi chớp mắt, uống một ngụm nước rồi cùng bạn đồng hành tiếp tục nhé!</div>
     <button class="modal-btn-confirm" id="pause-modal-resume" onclick="resumeQuiz()">▶️ Tiếp tục làm bài</button>
   </div>
 </div>
@@ -5729,38 +5729,8 @@ function playSound(type) {
 }
 
 // =========================================================================
-// MASCOT BO BO REACTION
+// MASCOT COMPANION INTERACTION (Defined in MASCOT SECTION below)
 // =========================================================================
-// =========================================================================
-// LINH VẬT BO BO - ĐỒNG HÀNH TRUNG TÍNH (KHÔNG LỘ ĐÚNG/SAI TRƯỚC KHI NỘP)
-// =========================================================================
-function setMascotMood(mood, customText) {
-  const bubble = document.getElementById('mascot-speech');
-  const mouth = document.getElementById('mascot-mouth');
-  if (!bubble || !mouth) return;
-
-  if (mood === 'thinking') {
-    mouth.setAttribute('d', 'M42 62 Q50 68 58 62');
-    bubble.textContent = customText || 'Bé đọc kỹ câu hỏi nhé, Bo Bo tin bé làm được! 🌟';
-  } else if (mood === 'selected' || (mood === 'happy' && !isQuizSubmitted)) {
-    // Khi đang làm bài thi: Phản hồi trung tính ghi nhận lựa chọn, KHÔNG lộ đúng/sai
-    mouth.setAttribute('d', 'M40 60 Q50 70 60 60');
-    const neutralMessages = [
-      'Đã ghi nhận đáp án! Bé có thể sửa lại hoặc sang câu tiếp theo nhé. 📝',
-      'Lựa chọn đã được lưu! Bé hãy tự tin làm tiếp câu sau nào. 🌟',
-      'Bé đã chọn xong! Cứ bình tĩnh suy nghĩ và tiếp tục nhé. 🚀',
-      'Câu trả lời đã lưu tạm thời. Nộp bài xong mới biết kết quả bé nhé! 💡'
-    ];
-    bubble.textContent = customText || neutralMessages[Math.floor(Math.random() * neutralMessages.length)];
-  } else if (mood === 'finished') {
-    // Sau khi đã nộp bài chính thức
-    mouth.setAttribute('d', 'M38 58 Q50 78 62 58');
-    bubble.textContent = customText || 'Chúc mừng bé đã hoàn thành bài thi hôm nay! 🎉';
-  } else if (mood === 'sad') {
-    mouth.setAttribute('d', 'M42 68 Q50 60 58 68');
-    bubble.textContent = customText || 'Đừng nản lòng nhé, xem giải thích chi tiết để hiểu sâu hơn nè! 💪';
-  }
-}
 
 // =========================================================================
 // LOCAL STORAGE STATS
@@ -6166,7 +6136,7 @@ function applyLanguageToUI(lang) {
   if (compChangeBtn) compChangeBtn.innerHTML = isEn ? '<span>Change</span> <span>▾</span>' : '<span>Đổi bạn</span> <span>▾</span>';
 
   const compTapHint = document.getElementById('quiz-mascot-tap-hint');
-  if (compTapHint) compTapHint.innerHTML = isEn ? '<span>👆 Tap me for a hint!</span>' : '<span>👆 Bấm vào tớ để nghe mách nước!</span>';
+  if (compTapHint) compTapHint.innerHTML = isEn ? '<span>💡 Tap me for a hint!</span>' : '<span>💡 Bấm vào tớ để nghe mách nước!</span>';
 
   const statCombo = document.getElementById('quiz-stat-combo-label');
   if (statCombo) statCombo.textContent = isEn ? '🔥 Streak' : '🔥 Chuỗi đúng';
@@ -6607,10 +6577,12 @@ function displayQuestion() {
       }
     }
 
-    // 7. Mascot Cheer Dialogue
+    // 7. Mascot Cheer Dialogue & Hint Tracker
+    currentHintStep = 0;
+    lastHintQuestionId = q ? q.id : null;
     setMascotMood('thinking', isEn 
-      ? (isLast ? 'This is the final question! Review carefully when done! 🌟' : `Let\'s explore question ${currentIndex + 1} together! 🚀`)
-      : (isLast ? 'Bé ơi, đây là câu cuối cùng rồi! Làm xong bé kiểm tra lại nhé!' : `Bé ơi, cùng trả lời câu ${currentIndex + 1} nào!`));
+      ? (isLast ? 'This is the final question! Review carefully when done! 🌟' : `Let\'s explore question ${currentIndex + 1} together! Tap me if you need a clue! 💡`)
+      : (isLast ? 'Bé ơi, đây là câu cuối cùng rồi! Làm xong bé kiểm tra lại nhé!' : `Bé ơi, cùng trả lời câu ${currentIndex + 1} nào! Cần mách nước cứ bấm vào tớ nhé! 💡`));
 
     // 8. Progress Fill
     const pct = total > 0 ? (currentIndex / total) * 100 : 0;
@@ -6905,44 +6877,58 @@ function submitAndFinishQuiz() {
     launchFireworks();
   }
 
+  const isEn = (currentLanguageMode === 'en');
+  const m = (typeof MASCOTS !== 'undefined') ? (MASCOTS.find(x => x.id === currentMascotId) || MASCOTS[0]) : { name: 'Giáo Sư Cú Vọ', name_en: 'Prof. Owl' };
+  const mName = isEn ? (m.name_en || m.name) : m.name;
+
   if (pct >= 90) {
     // 9.0 - 10.0: Xuất sắc
     stars = '⭐⭐⭐';
     icon = '🏆';
-    title = 'Xuất sắc tuyệt đối!';
-    desc = `Bé đạt ${score10}/10 điểm (${correctCount}/${total} câu)! Tư duy khoa học và phản xạ cực kỳ vượt trội!`;
+    title = isEn ? 'Absolute Perfection!' : 'Xuất sắc tuyệt đối!';
+    desc = isEn 
+      ? `You scored ${score10}/10 points (${correctCount}/${total} questions)! Outstanding scientific thinking and reflexes!`
+      : `Bé đạt ${score10}/10 điểm (${correctCount}/${total} câu)! Tư duy khoa học và phản xạ cực kỳ vượt trội!`;
     playSound('correct');
-    setMascotMood('finished', 'Bé đạt điểm xuất sắc tuyệt đối luôn, Bo Bo tự hào về bé quá! 🏆');
+    setMascotMood('finished', isEn ? `Outstanding score! ${mName} is so proud of you! 🏆` : `Bé đạt điểm xuất sắc tuyệt đối luôn, ${mName} tự hào về bé quá! 🏆`);
   } else if (pct >= 80) {
     // 8.0 - 8.9: Rất tốt
     stars = '⭐⭐';
     icon = '🎉';
-    title = 'Làm bài rất tốt!';
-    desc = `Bé đạt ${score10}/10 điểm (${correctCount}/${total} câu)! Bé nắm rất vững kiến thức, chỉ cần cẩn thận một vài câu nữa là đạt điểm tối đa!`;
+    title = isEn ? 'Great Job!' : 'Làm bài rất tốt!';
+    desc = isEn
+      ? `You scored ${score10}/10 points (${correctCount}/${total} questions)! You have a solid grasp of science concepts!`
+      : `Bé đạt ${score10}/10 điểm (${correctCount}/${total} câu)! Bé nắm rất vững kiến thức, chỉ cần cẩn thận một vài câu nữa là đạt điểm tối đa!`;
     playSound('correct');
-    setMascotMood('finished', 'Bé làm bài rất tốt! Cùng giữ vững phong độ này nhé! 🎉');
+    setMascotMood('finished', isEn ? `Great performance! Keep up the good work! 🎉` : `Bé làm bài rất tốt! Cùng giữ vững phong độ này nhé! 🎉`);
   } else if (pct >= 65) {
     // 6.5 - 7.9: Khá tốt
     stars = '⭐';
     icon = '👍';
-    title = 'Kết quả Khá tốt!';
-    desc = `Bé đạt ${score10}/10 điểm (${correctCount}/${total} câu), trên mức trung bình. Hãy xem lại phần giải thích các câu sai để nhớ sâu hơn nhé!`;
+    title = isEn ? 'Good Effort!' : 'Kết quả Khá tốt!';
+    desc = isEn
+      ? `You scored ${score10}/10 points (${correctCount}/${total} questions), above average. Review explanations to learn even more!`
+      : `Bé đạt ${score10}/10 điểm (${correctCount}/${total} câu), trên mức trung bình. Hãy xem lại phần giải thích các câu sai để nhớ sâu hơn nhé!`;
     playSound('correct');
-    setMascotMood('finished', 'Bé đạt kết quả khá tốt trên trung bình rồi đó! Xem lại câu sai để tiến bộ nha! 👍');
+    setMascotMood('finished', isEn ? `Good job! Review incorrect answers to improve further! 👍` : `Bé đạt kết quả khá tốt trên trung bình rồi đó! Xem lại câu sai để tiến bộ nha! 👍`);
   } else if (pct >= 50) {
     // 5.0 - 6.4: Trung bình (Cần cố gắng, không khen quá mức)
     stars = '🌱';
     icon = '📖';
-    title = 'Mức Trung Bình - Cần ôn luyện thêm!';
-    desc = `Bé đạt ${score10}/10 điểm (${correctCount}/${total} câu). Bé đã đạt mức trung bình, nhưng cần xem kỹ lời giải thích của các câu sai để hiểu bài hơn nhé!`;
-    setMascotMood('finished', 'Bé mới đạt mức trung bình thôi nè, hãy xem kỹ lời giải thích chi tiết để ôn lại nhé! 📖');
+    title = isEn ? 'Fair Score - Keep Practicing!' : 'Mức Trung Bình - Cần ôn luyện thêm!';
+    desc = isEn
+      ? `You scored ${score10}/10 points (${correctCount}/${total} questions). Review explanations of missed questions to understand better!`
+      : `Bé đạt ${score10}/10 điểm (${correctCount}/${total} câu). Bé đã đạt mức trung bình, nhưng cần xem kỹ lời giải thích của các câu sai để hiểu bài hơn nhé!`;
+    setMascotMood('finished', isEn ? `Fair score! Review the detailed answers to brush up! 📖` : `Bé mới đạt mức trung bình thôi nè, hãy xem kỹ lời giải thích chi tiết để ôn lại nhé! 📖`);
   } else {
     // Dưới 50% (< 5.0): Chưa đạt
     stars = '💪';
     icon = '⚡';
-    title = 'Chưa đạt yêu cầu - Đừng nản lòng nhé!';
-    desc = `Bé đạt ${score10}/10 điểm (${correctCount}/${total} câu, chưa đạt mức trung bình). Đừng buồn nhé, hãy bấm "Xem lại chi tiết" để học lại đáp án đúng và thi lại lượt mới nào!`;
-    setMascotMood('sad', 'Lượt này chưa đạt điểm trung bình rồi, nhưng không sao, hãy xem giải thích để hiểu bài rồi thi lại nhé! 💪');
+    title = isEn ? 'Needs Practice - Never Give Up!' : 'Chưa đạt yêu cầu - Đừng nản lòng nhé!';
+    desc = isEn
+      ? `You scored ${score10}/10 points (${correctCount}/${total} questions). Click "Review Explanations" to master the concepts and try again!`
+      : `Bé đạt ${score10}/10 điểm (${correctCount}/${total} câu, chưa đạt mức trung bình). Đừng buồn nhé, hãy bấm "Xem lại chi tiết" để học lại đáp án đúng và thi lại lượt mới nào!`;
+    setMascotMood('sad', isEn ? `Do not worry! Review the explanations and take another try! 💪` : `Lượt này chưa đạt điểm trung bình rồi, nhưng không sao, hãy xem giải thích để hiểu bài rồi thi lại nhé! 💪`);
   }
 
   document.getElementById('res-stars').textContent = stars;
@@ -8879,19 +8865,81 @@ const SCIENCE_FACTS = [
   "Bé có biết: Chim ruồi là loài chim duy nhất có thể bay lùi về phía sau! 🐦"
 ];
 
+let currentHintStep = 0;
+let lastHintQuestionId = null;
+
 function onMascotClick() {
   playKidSound('click');
   const isEn = (currentLanguageMode === 'en');
-  const facts = isEn ? SCIENCE_FACTS_EN : SCIENCE_FACTS;
-  const fact = facts[Math.floor(Math.random() * facts.length)];
-  const m = MASCOTS.find(x => x.id === currentMascotId) || MASCOTS[0];
+  const isBi = (currentLanguageMode === 'bilingual');
+  const m = (typeof MASCOTS !== 'undefined') ? (MASCOTS.find(x => x.id === currentMascotId) || MASCOTS[0]) : { name: 'Giáo Sư Cú Vọ', name_en: 'Prof. Owl' };
   const mName = isEn ? (m.name_en || m.name) : m.name;
   const bubble = document.getElementById('mascot-speech');
-  if (bubble) {
+  if (!bubble) return;
+
+  // Check if we are currently in an active quiz
+  const quizScreen = document.getElementById('quiz-screen');
+  const isQuizActive = quizScreen && quizScreen.classList.contains('active') && typeof currentDeck !== 'undefined' && currentDeck && currentDeck.length > 0;
+
+  if (isQuizActive && currentDeck[currentIndex]) {
+    const q = currentDeck[currentIndex];
+    
+    // Reset hint cycle if on a new question
+    if (lastHintQuestionId !== q.id) {
+      lastHintQuestionId = q.id;
+      currentHintStep = 0;
+    } else {
+      currentHintStep = (currentHintStep + 1) % 3;
+    }
+
+    const expVi = q.explain || 'Bé hãy đọc kỹ từng phương án và liên hệ với các hiện tượng thực tế trong tự nhiên nhé!';
+    const expEn = q.explain_en || q.explain || 'Read each option carefully and connect with natural everyday science phenomena!';
+    const topicVi = q.topic || 'Khoa học';
+    const topicEn = (typeof TOPIC_EN_MAP !== 'undefined' && TOPIC_EN_MAP[q.topic]) ? TOPIC_EN_MAP[q.topic] : topicVi;
+
+    if (currentHintStep === 0) {
+      // Step 1: Core scientific explanation / clue for the active question
+      if (isBi) {
+        bubble.innerHTML = `<strong>💡 ${mName} mách bạn / Clue:</strong><br><div style="color:#0369a1; font-weight:700; margin-bottom:4px;">${expVi} 🔍</div><div style="color:#64748b; font-size:0.75rem;">${expEn}</div>`;
+      } else if (isEn) {
+        bubble.innerHTML = `<strong>💡 ${mName}'s Clue:</strong><br>${expEn} 🔍`;
+      } else {
+        bubble.innerHTML = `<strong>💡 ${mName} mách bạn:</strong><br>${expVi} 🔍`;
+      }
+    } else if (currentHintStep === 1) {
+      // Step 2: Topic & deduction hint
+      if (isBi) {
+        bubble.innerHTML = `<strong>💡 ${mName} gợi ý / Tip:</strong><br><div style="color:#0369a1; font-weight:700; margin-bottom:4px;">Chủ đề <strong>${topicVi}</strong>: Đọc kỹ 4 phương án, loại trừ các đáp án trái với tự nhiên nhé! 🌿</div><div style="color:#64748b; font-size:0.75rem;">Topic <strong>${topicEn}</strong>: Read options and eliminate illogical ones! 🌿</div>`;
+      } else if (isEn) {
+        bubble.innerHTML = `<strong>💡 ${mName}'s Extra Tip:</strong><br>Topic <strong>${topicEn}</strong>: Read all 4 choices and eliminate the ones that contradict natural science! 🌿`;
+      } else {
+        bubble.innerHTML = `<strong>💡 ${mName} gợi ý thêm:</strong><br>Câu hỏi thuộc chủ đề <strong>${topicVi}</strong>. Bé hãy đọc kỹ 4 phương án và loại trừ ngay các đáp án vô lý nhé! 🌿`;
+      }
+    } else {
+      // Step 3: Cheering & encouragement
+      if (isBi) {
+        bubble.innerHTML = `<strong>💡 ${mName} cổ vũ / Cheer:</strong><br><div style="color:#0369a1; font-weight:700; margin-bottom:4px;">Bé làm rất tốt! Cứ tự tin và bình tĩnh suy nghĩ là chọn đúng ngay! 🚀</div><div style="color:#64748b; font-size:0.75rem;">You are doing awesome, stay calm and you will ace it! 🚀</div>`;
+      } else if (isEn) {
+        bubble.innerHTML = `<strong>💡 ${mName} is cheering for you:</strong><br>You are doing awesome, stay confident and you will ace it! 🚀`;
+      } else {
+        bubble.innerHTML = `<strong>💡 ${mName} cổ vũ bé:</strong><br>Bé làm rất tốt, cứ tự tin và bình tĩnh suy nghĩ là chọn đúng ngay! 🚀`;
+      }
+    }
+  } else {
+    // Outside active quiz: Fun science facts
+    const facts = isEn ? SCIENCE_FACTS_EN : SCIENCE_FACTS;
+    const fact = facts[Math.floor(Math.random() * facts.length)];
     bubble.innerHTML = isEn 
       ? `<strong>💡 ${mName} tip:</strong><br>${fact}`
       : `<strong>💡 ${mName} mách bạn:</strong><br>${fact}`;
   }
+
+  // Animation pop on the speech bubble to highlight the clue
+  bubble.style.transition = 'transform 0.15s ease';
+  bubble.style.transform = 'scale(1.03)';
+  setTimeout(() => {
+    if (bubble) bubble.style.transform = 'scale(1)';
+  }, 150);
 }
 
 function setMascotMood(mood, customText) {
@@ -8899,6 +8947,8 @@ function setMascotMood(mood, customText) {
   const mouth = document.getElementById('mascot-mouth');
   if (!bubble) return;
   const isEn = (currentLanguageMode === 'en');
+  const m = (typeof MASCOTS !== 'undefined') ? (MASCOTS.find(x => x.id === currentMascotId) || MASCOTS[0]) : { name: 'Giáo Sư Cú Vọ', name_en: 'Prof. Owl' };
+  const mName = isEn ? (m.name_en || m.name) : m.name;
 
   if (mouth) {
     if (mood === 'thinking') mouth.setAttribute('d', 'M42 62 Q50 68 58 62');
@@ -8906,8 +8956,14 @@ function setMascotMood(mood, customText) {
     else if (mood === 'finished') mouth.setAttribute('d', 'M38 58 Q50 78 62 58');
   }
 
+  const renderText = (str) => {
+    if (str.includes('<')) bubble.innerHTML = str;
+    else bubble.textContent = str;
+  };
+
   if (mood === 'thinking') {
-    bubble.textContent = customText || (isEn ? 'Read carefully, I know you can do it! 🌟' : 'Bé đọc kỹ câu hỏi nhé, Bo Bo tin bé làm được! 🌟');
+    const defaultTxt = isEn ? `Read carefully, ${mName} knows you can do it! 🌟` : `Bé đọc kỹ câu hỏi nhé, ${mName} tin bé làm được! 🌟`;
+    renderText(customText || defaultTxt);
   } else if (mood === 'selected' || (mood === 'happy' && !isQuizSubmitted)) {
     const neutralVI = [
       'Đã ghi nhận đáp án! Bé có thể sửa lại hoặc sang câu tiếp theo nhé. 📝',
@@ -8922,11 +8978,15 @@ function setMascotMood(mood, customText) {
       'Answer saved temporarily. Score will be revealed upon submit! 💡'
     ];
     const msgs = isEn ? neutralEN : neutralVI;
-    bubble.textContent = customText || msgs[Math.floor(Math.random() * msgs.length)];
+    renderText(customText || msgs[Math.floor(Math.random() * msgs.length)]);
   } else if (mood === 'finished') {
-    bubble.textContent = customText || (isEn ? 'Congratulations on finishing the quiz! Check out your score! 🎉' : 'Chúc mừng bé đã hoàn thành bài thi! Cùng xem điểm số nào! 🎉');
+    const defaultTxt = isEn ? `Congratulations on finishing the quiz! ${mName} is so proud of you! 🎉` : `Chúc mừng bé đã hoàn thành bài thi! ${mName} tự hào về bé quá! 🎉`;
+    renderText(customText || defaultTxt);
+  } else if (mood === 'sad') {
+    const defaultTxt = isEn ? 'Do not worry! Review the explanations to understand more and try again! 💪' : 'Đừng nản lòng nhé, xem giải thích chi tiết để hiểu sâu hơn nè! 💪';
+    renderText(customText || defaultTxt);
   } else {
-    if (customText) bubble.textContent = customText;
+    if (customText) renderText(customText);
   }
 }
 
