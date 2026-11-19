@@ -5076,11 +5076,17 @@
 const TOPIC_EN_MAP = {
   'Động Vật': 'Animal Kingdom',
   'Thực Vật': 'Plants & Nature',
-  'Vũ Trụ & Thời Tiết': 'Space & Weather',
+  'Vũ Trụ & Bầu Trời': 'Space & Astronomy',
+  'Vũ Trụ & Thời Tiết': 'Space & Astronomy',
+  'Vũ Trụ': 'Space & Astronomy',
   'Cơ Thể Người': 'Human Body & Health',
   'Con người & Sức khỏe': 'Human Body & Health',
+  'Sức Khỏe': 'Human Body & Health',
+  'Địa Lý': 'Geography & Earth',
   'Địa Lý Việt Nam': 'Geography & Earth',
+  'Địa Lý & Trái Đất': 'Geography & Earth',
   'Lịch Sử & Văn Hóa': 'History & Culture',
+  'Vật Chất & Năng Lượng': 'Matter & Energy',
   'Vật Chất & Hiện Tượng': 'Matter & Physics',
   'Vật chất & Năng lượng': 'Matter & Energy',
   'Vật lý & Năng lượng': 'Physics & Energy',
@@ -5238,6 +5244,7 @@ function normalizeQuestion(q, defaultSource) {
     ans: ansLetter,
     source: sourceName,
     topic: q.topic || "Khác",
+    curriculum_topic: q.curriculum_topic || q.topic || "Khác",
     sub: q.sub || "",
     age: age,
     diff: diffNum,
@@ -5248,6 +5255,36 @@ function normalizeQuestion(q, defaultSource) {
     img: q.img || "",
     type: q.type || "MC"
   };
+}
+
+
+// =========================================================================
+// HELPER SO KHỚP CHỦ ĐỀ THÔNG MINH (BILINGUAL & ALIAS MATCHING)
+// =========================================================================
+function isTopicMatch(qTopic, filterTopic) {
+  if (!filterTopic || filterTopic === 'all') return true;
+  if (!qTopic) return false;
+  if (qTopic === filterTopic) return true;
+  
+  const geoTerms = ['Địa Lý', 'Địa Lý Việt Nam', 'Địa Lý & Trái Đất', 'Địa Lý VN', 'Geography'];
+  const spaceTerms = ['Vũ Trụ & Bầu Trời', 'Vũ Trụ & Thời Tiết', 'Vũ Trụ', 'Space'];
+  const healthTerms = ['Cơ Thể Người', 'Con người & Sức khỏe', 'Sức Khỏe', 'Health'];
+  const physicsTerms = ['Vật Chất & Năng Lượng', 'Vật Chất & Hiện Tượng', 'Vật chất & Năng lượng', 'Vật lý & Năng lượng', 'Physics', 'Matter'];
+  const plantTerms = ['Thực Vật', 'Plants'];
+  const animalTerms = ['Động Vật', 'Animals'];
+
+  if (geoTerms.includes(filterTopic)) return geoTerms.includes(qTopic);
+  if (spaceTerms.includes(filterTopic)) return spaceTerms.includes(qTopic);
+  if (healthTerms.includes(filterTopic)) return healthTerms.includes(qTopic);
+  if (physicsTerms.includes(filterTopic)) return physicsTerms.includes(qTopic);
+  if (plantTerms.includes(filterTopic)) return plantTerms.includes(qTopic);
+  if (animalTerms.includes(filterTopic)) return animalTerms.includes(qTopic);
+
+  // If user filtered by broad MOET curriculum topic
+  if (filterTopic === 'Trái Đất & Bầu trời') return geoTerms.includes(qTopic) || spaceTerms.includes(qTopic) || qTopic === 'Trái Đất & Bầu trời';
+  if (filterTopic === 'Thực vật & Động vật') return plantTerms.includes(qTopic) || animalTerms.includes(qTopic) || qTopic === 'Thực vật & Động vật';
+
+  return false;
 }
 
 function initMasterPool() {
@@ -5416,14 +5453,13 @@ function selectAllSources(isSelectAll) {
 // Ngân hàng 1.000 câu hỏi đã được nạp tự động từ questions.js
 
 const TOPIC_CONFIG = [
-  { id: 'all', name: 'Tất Cả', lucide: 'sparkles' },
-  { id: 'Động Vật', name: 'Động Vật', lucide: 'paw-print' },
-  { id: 'Thực Vật', name: 'Thực Vật', lucide: 'sprout' },
-  { id: 'Vũ Trụ & Thời Tiết', name: 'Vũ Trụ & Thời Tiết', lucide: 'rocket' },
-  { id: 'Cơ Thể Người', name: 'Cơ Thể Người', lucide: 'heart-pulse' },
-  { id: 'Địa Lý Việt Nam', name: 'Địa Lý VN', lucide: 'map-pin' },
-  { id: 'Lịch Sử & Văn Hóa', name: 'Lịch Sử & Văn Hóa', lucide: 'landmark' },
-  { id: 'Vật Chất & Hiện Tượng', name: 'Vật Lý & Năng Lượng', lucide: 'atom' }
+  { id: 'all', name: 'Tất Cả', name_en: 'All Topics', lucide: 'sparkles' },
+  { id: 'Địa Lý', name: 'Địa Lý & Trái Đất', name_en: 'Geography', lucide: 'map-pin' },
+  { id: 'Vũ Trụ & Bầu Trời', name: 'Vũ Trụ & Thiên Văn', name_en: 'Space', lucide: 'rocket' },
+  { id: 'Động Vật', name: 'Động Vật', name_en: 'Animals', lucide: 'paw-print' },
+  { id: 'Thực Vật', name: 'Thực Vật', name_en: 'Plants', lucide: 'sprout' },
+  { id: 'Cơ Thể Người', name: 'Cơ Thể Người', name_en: 'Human Body', lucide: 'heart-pulse' },
+  { id: 'Vật Chất & Năng Lượng', name: 'Vật Lý & Năng Lượng', name_en: 'Physics', lucide: 'atom' }
 ];
 
 
@@ -5443,26 +5479,26 @@ function getTopicSvg(topic) {
     bgGradient = 'linear-gradient(135deg, #10B981 0%, #059669 100%)';
     iconEmoji = '🌿';
     title = 'Thế Giới Thực Vật';
-  } else if (topic === 'Vũ Trụ & Thời Tiết') {
+  } else if (topic === 'Vũ Trụ & Bầu Trời' || topic === 'Vũ Trụ & Thời Tiết' || topic === 'Vũ Trụ') {
     bgGradient = 'linear-gradient(135deg, #3A0CA3 0%, #4361EE 100%)';
-    iconEmoji = '🌍';
-    title = 'Vũ Trụ & Thời Tiết';
-  } else if (topic === 'Cơ Thể Người') {
+    iconEmoji = '🚀';
+    title = 'Vũ Trụ & Bầu Trời';
+  } else if (topic === 'Cơ Thể Người' || topic === 'Con người & Sức khỏe') {
     bgGradient = 'linear-gradient(135deg, #EF4444 0%, #F43F5E 100%)';
     iconEmoji = '🫀';
     title = 'Cơ Thể Người & Sức Khỏe';
-  } else if (topic === 'Địa Lý Việt Nam') {
+  } else if (topic === 'Địa Lý' || topic === 'Địa Lý Việt Nam' || topic === 'Địa Lý & Trái Đất') {
     bgGradient = 'linear-gradient(135deg, #0284C7 0%, #06B6D4 100%)';
     iconEmoji = '🗺️';
-    title = 'Địa Lý Non Sông Việt Nam';
+    title = 'Địa Lý & Trái Đất';
   } else if (topic === 'Lịch Sử & Văn Hóa') {
     bgGradient = 'linear-gradient(135deg, #D97706 0%, #F59E0B 100%)';
     iconEmoji = '📜';
     title = 'Lịch Sử & Văn Hóa';
-  } else if (topic === 'Vật Chất & Hiện Tượng') {
+  } else if (topic === 'Vật Chất & Năng Lượng' || topic === 'Vật Chất & Hiện Tượng' || topic === 'Vật chất & Năng lượng') {
     bgGradient = 'linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%)';
-    iconEmoji = '🧲';
-    title = 'Vật Chất & Hiện Tượng';
+    iconEmoji = '⚡';
+    title = 'Vật Chất & Năng Lượng';
   }
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340" viewBox="0 0 600 340">
@@ -5781,19 +5817,21 @@ window.onload = function() {
   updateAllMascotsUI();
 };
 
-function renderTopics() {
+function renderTopics(lang) {
   const container = document.getElementById('topics-list');
   if (!container) return;
+  const isEn = (lang === 'en' || currentLanguageMode === 'en');
   container.innerHTML = '';
   TOPIC_CONFIG.forEach(t => {
     const pill = document.createElement('div');
     pill.className = `topic-pill ${t.id === selectedTopic ? 'selected' : ''}`;
     pill.onclick = () => selectTopic(t.id, pill);
+    const displayName = isEn ? (t.name_en || t.name) : t.name;
     pill.innerHTML = `
       <span class="icon" style="display:inline-flex; align-items:center; justify-content:center;">
         <i data-lucide="${t.lucide}" style="width:18px; height:18px; stroke-width:2.5;"></i>
       </span>
-      <span>${t.name}</span>
+      <span>${displayName}</span>
     `;
     container.appendChild(pill);
   });
@@ -5836,34 +5874,49 @@ function selectTopic(topicId, elem) {
 
 const LAB_CARDS_DATA = [
   {
+    topic: 'Địa Lý',
+    icon: '🗺️',
+    iconBg: 'bg-teal-100 border-teal-200',
+    title_vi: 'Địa Lý & Trái Đất',
+    title_en: 'Geography & Earth',
+    desc_vi: 'Bản đồ, sông ngòi, núi non, đại dương & khí hậu',
+    desc_en: 'Maps, rivers, mountains, oceans & climate',
+    count_vi: '77 Câu',
+    count_en: '77 Questions',
+    status_vi: '● Sẵn sàng thi',
+    status_en: '● Ready to play',
+    statusClass: 'text-cyan-600',
+    badgeBg: 'bg-teal-100 text-teal-800'
+  },
+  {
+    topic: 'Vũ Trụ & Bầu Trời',
+    icon: '🚀',
+    iconBg: 'bg-indigo-100 border-indigo-200',
+    title_vi: 'Vũ Trụ & Thiên Văn',
+    title_en: 'Space & Astronomy',
+    desc_vi: 'Hệ Mặt Trời, sao Hỏa, các hành tinh & thiên hà',
+    desc_en: 'Planets, Mars, Sun & galaxy mysteries',
+    count_vi: '49 Câu',
+    count_en: '49 Questions',
+    status_vi: '● Sẵn sàng thi',
+    status_en: '● Ready to play',
+    statusClass: 'text-cyan-600',
+    badgeBg: 'bg-indigo-100 text-indigo-800'
+  },
+  {
     topic: 'Động Vật',
     icon: '🦁',
     iconBg: 'bg-amber-100 border-amber-200',
     title_vi: 'Thế Giới Động Vật',
     title_en: 'Animal Kingdom',
-    desc_vi: 'Động vật hoang dã, côn trùng, tập tính',
-    desc_en: 'Wild animals, insects, habitats & habits',
-    count_vi: '180 Câu',
-    count_en: '180 Questions',
+    desc_vi: 'Động vật có vú, chim muông & côn trùng',
+    desc_en: 'Mammals, birds, insects & wildlife',
+    count_vi: '106 Câu',
+    count_en: '106 Questions',
     status_vi: '● Sẵn sàng thi',
     status_en: '● Ready to play',
     statusClass: 'text-cyan-600',
     badgeBg: 'bg-amber-100 text-amber-800'
-  },
-  {
-    topic: 'Vũ Trụ & Thời Tiết',
-    icon: '🚀',
-    iconBg: 'bg-indigo-100 border-indigo-200',
-    title_vi: 'Vũ Trụ & Thời Tiết',
-    title_en: 'Space & Solar System',
-    desc_vi: 'Hệ Mặt Trời, sao Hỏa, các hành tinh',
-    desc_en: 'Planets, Mars, Sun & galaxy mysteries',
-    count_vi: '180 Câu',
-    count_en: '180 Questions',
-    status_vi: '● Sẵn sàng thi',
-    status_en: '● Ready to play',
-    statusClass: 'text-cyan-600',
-    badgeBg: 'bg-indigo-100 text-indigo-800'
   },
   {
     topic: 'Thực Vật',
@@ -5871,10 +5924,10 @@ const LAB_CARDS_DATA = [
     iconBg: 'bg-emerald-100 border-emerald-200',
     title_vi: 'Thực Vật & Tự Nhiên',
     title_en: 'Plants & Nature',
-    desc_vi: 'Quang hợp, hạt mầm, rừng xanh',
+    desc_vi: 'Quang hợp, hạt mầm, rừng xanh & muôn hoa',
     desc_en: 'Photosynthesis, seeds, forests & flora',
-    count_vi: '120 Câu',
-    count_en: '120 Questions',
+    count_vi: '46 Câu',
+    count_en: '46 Questions',
     status_vi: '✓ Đã mở',
     status_en: '✓ Unlocked',
     statusClass: 'text-emerald-600',
@@ -5884,42 +5937,27 @@ const LAB_CARDS_DATA = [
     topic: 'Cơ Thể Người',
     icon: '🫀',
     iconBg: 'bg-rose-100 border-rose-200',
-    title_vi: 'Cơ Thể Người & Y Sinh',
+    title_vi: 'Cơ Thể Người & Sức Khỏe',
     title_en: 'Human Body & Health',
-    desc_vi: '5 giác quan, tuần hoàn máu & sức khỏe',
-    desc_en: '5 senses, blood circulation & biology',
-    count_vi: '140 Câu',
-    count_en: '140 Questions',
+    desc_vi: '5 giác quan, tuần hoàn máu & dinh dưỡng',
+    desc_en: '5 senses, organs, blood & nutrition',
+    count_vi: '103 Câu',
+    count_en: '103 Questions',
     status_vi: '✓ Đã mở',
     status_en: '✓ Unlocked',
     statusClass: 'text-emerald-600',
     badgeBg: 'bg-rose-100 text-rose-800'
   },
   {
-    topic: 'Địa Lý Việt Nam',
-    icon: '🗺️',
-    iconBg: 'bg-teal-100 border-teal-200',
-    title_vi: 'Địa Lý Non Sông VN',
-    title_en: 'Vietnam Geography',
-    desc_vi: 'Sông Hồng, Trường Sơn, danh lam thắng cảnh',
-    desc_en: 'Red River, Truong Son range, landscapes',
-    count_vi: '160 Câu',
-    count_en: '160 Questions',
-    status_vi: '✓ Đã mở',
-    status_en: '✓ Unlocked',
-    statusClass: 'text-emerald-600',
-    badgeBg: 'bg-teal-100 text-teal-800'
-  },
-  {
-    topic: 'Vật Chất & Hiện Tượng',
+    topic: 'Vật Chất & Năng Lượng',
     icon: '⚡',
     iconBg: 'bg-purple-100 border-purple-200',
-    title_vi: 'Vật Chất & Hiện Tượng',
-    title_en: 'Matter & Physics',
+    title_vi: 'Vật Chất & Năng Lượng',
+    title_en: 'Matter & Energy',
     desc_vi: 'Âm thanh, ánh sáng, nam châm & chuyển động',
     desc_en: 'Sound, light, magnetism & motion',
-    count_vi: '150 Câu',
-    count_en: '150 Questions',
+    count_vi: '119 Câu',
+    count_en: '119 Questions',
     status_vi: '✓ Đã mở',
     status_en: '✓ Unlocked',
     statusClass: 'text-emerald-600',
@@ -5929,12 +5967,12 @@ const LAB_CARDS_DATA = [
 
 const FILTER_PILLS = [
   { id: 'all', vi: 'Tất Cả Labs', en: 'All Labs' },
+  { id: 'Địa Lý', vi: '🗺️ Địa Lý', en: '🗺️ Geography' },
+  { id: 'Vũ Trụ & Bầu Trời', vi: '🚀 Vũ Trụ', en: '🚀 Space' },
   { id: 'Động Vật', vi: '🦁 Động Vật', en: '🦁 Animals' },
-  { id: 'Vũ Trụ & Thời Tiết', vi: '🚀 Vũ Trụ', en: '🚀 Space' },
   { id: 'Thực Vật', vi: '🌿 Thực Vật', en: '🌿 Plants' },
   { id: 'Cơ Thể Người', vi: '🫀 Sức Khỏe', en: '🫀 Health' },
-  { id: 'Địa Lý Việt Nam', vi: '🗺️ Địa Lý', en: '🗺️ Geography' },
-  { id: 'Vật Chất & Hiện Tượng', vi: '⚡ Vật Chất', en: '⚡ Physics' }
+  { id: 'Vật Chất & Năng Lượng', vi: '⚡ Vật Chất', en: '⚡ Physics' }
 ];
 
 function renderTopicLabCards(lang) {
@@ -5947,7 +5985,7 @@ function renderTopicLabCards(lang) {
     const desc = isEn ? c.desc_en : c.desc_vi;
     const count = isEn ? c.count_en : c.count_vi;
     const status = isEn ? c.status_en : c.status_vi;
-    const isReady = (c.topic === 'Động Vật' || c.topic === 'Vũ Trụ & Thời Tiết');
+    const isReady = (c.topic === 'Địa Lý' || c.topic === 'Động Vật' || c.topic === 'Vũ Trụ & Bầu Trời');
     const playBtn = isReady 
       ? `<div class="w-9 h-9 rounded-full bg-cyan-600 text-white flex items-center justify-center shrink-0 shadow-sm hover:scale-105 transition"><i data-lucide="play" style="width:14px; height:14px; fill:currentColor;"></i></div>`
       : `<div class="w-9 h-9 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center shrink-0 hover:scale-105 transition"><i data-lucide="arrow-right" style="width:15px; height:15px;"></i></div>`;
@@ -6124,6 +6162,7 @@ function applyLanguageToUI(lang) {
 
   // Render cards and pills in selected language
   renderTopicLabCards(lang);
+  renderTopics(lang);
   renderFilterPills(lang);
   updateAllMascotsUI();
   updateHeaderAuthDisplay();
@@ -6425,8 +6464,8 @@ function getFilteredPool() {
     // 3. Kiểm tra bộ lọc độ khó
     if (selectedDiff !== 'all' && String(q.diff) !== selectedDiff) return false;
 
-    // 4. Kiểm tra bộ lọc chủ đề
-    if (selectedTopic !== 'all' && q.topic !== selectedTopic) return false;
+    // 4. Kiểm tra bộ lọc chủ đề (hỗ trợ so khớp đa tầng)
+    if (selectedTopic !== 'all' && !isTopicMatch(q.topic, selectedTopic)) return false;
 
     return true;
   });
@@ -6530,15 +6569,28 @@ function startQuiz() {
   // SMART FALLBACK
   if (pool.length < targetCount && sizeVal !== 'all') {
     const needed = targetCount - pool.length;
-    let fallbackCandidates = MASTER_POOL.filter(q => {
-      if (pool.includes(q)) return false;
-      const qSrc = q.source || "Khác";
-      for (let s of selectedSources) {
-        if (s === "Khác" && (qSrc === "Khác" || qSrc === "Khác (Kho câu hỏi cũ)")) return true;
-        if (qSrc === s) return true;
-      }
-      return false;
-    });
+    let fallbackCandidates = [];
+    // 1. Ưu tiên giữ đúng chủ đề người dùng đã chọn từ MASTER_POOL (nới lỏng grade/diff)
+    if (selectedTopic !== 'all') {
+      fallbackCandidates = MASTER_POOL.filter(q => {
+        if (pool.includes(q)) return false;
+        return isTopicMatch(q.topic, selectedTopic);
+      });
+    }
+    // 2. Nếu vẫn chưa đủ, lấy thêm từ cùng nguồn
+    if (fallbackCandidates.length < needed) {
+      const sourceCandidates = MASTER_POOL.filter(q => {
+        if (pool.includes(q) || fallbackCandidates.includes(q)) return false;
+        const qSrc = q.source || "Khác";
+        for (let s of selectedSources) {
+          if (s === "Khác" && (qSrc === "Khác" || qSrc === "Khác (Kho câu hỏi cũ)")) return true;
+          if (qSrc === s) return true;
+        }
+        return false;
+      });
+      fallbackCandidates = [...fallbackCandidates, ...sourceCandidates];
+    }
+    // 3. Nếu vẫn chưa đủ, lấy thêm từ MASTER_POOL
     if (fallbackCandidates.length < needed) {
       const extraCandidates = MASTER_POOL.filter(q => !pool.includes(q) && !fallbackCandidates.includes(q));
       fallbackCandidates = [...fallbackCandidates, ...extraCandidates];
@@ -7726,7 +7778,7 @@ function filterLabPills(topicId, btnElem) {
   selectedTopic = topicId;
   document.querySelectorAll('.topic-lab-card').forEach(card => {
     const cardTopic = card.getAttribute('data-topic');
-    if (topicId === 'all' || cardTopic === topicId || (cardTopic && cardTopic.includes(topicId))) {
+    if (topicId === 'all' || isTopicMatch(cardTopic, topicId)) {
       card.style.display = 'flex';
     } else {
       card.style.display = 'none';

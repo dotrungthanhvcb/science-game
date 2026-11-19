@@ -17,7 +17,7 @@ window.QUESTIONS_500 = [
     "d": "Tắm rửa sạch sẽ hàng ngày và thay quần áo sạch",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -35,7 +35,8 @@ window.QUESTIONS_500 = [
       "No need to wash your face",
       "Take a shower every day and change into clean clothes"
     ],
-    "explain_en": "Bathing daily with soap helps clean sweat and disease-causing bacteria."
+    "explain_en": "Bathing daily with soap helps clean sweat and disease-causing bacteria.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK002",
@@ -54,7 +55,7 @@ window.QUESTIONS_500 = [
     "d": "Càng gần càng tốt",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -72,7 +73,8 @@ window.QUESTIONS_500 = [
       "About 1 meter",
       "The closer the better"
     ],
-    "explain_en": "A distance of 25-30 cm helps prevent eye fatigue and prevents school myopia."
+    "explain_en": "A distance of 25-30 cm helps prevent eye fatigue and prevents school myopia.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK003",
@@ -91,7 +93,7 @@ window.QUESTIONS_500 = [
     "d": "Môi",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -109,7 +111,8 @@ window.QUESTIONS_500 = [
       "Gums",
       "Lips"
     ],
-    "explain_en": "Teeth are responsible for biting, tearing and crushing food to help the stomach digest easily."
+    "explain_en": "Teeth are responsible for biting, tearing and crushing food to help the stomach digest easily.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK004",
@@ -128,7 +131,7 @@ window.QUESTIONS_500 = [
     "d": "Chỉ súc miệng nước ngọt",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -146,7 +149,8 @@ window.QUESTIONS_500 = [
       "After eating and before going to bed at night",
       "Only rinse your mouth with fresh water"
     ],
-    "explain_en": "Brushing your teeth at least twice a day helps remove leftover food plaque that causes tooth decay."
+    "explain_en": "Brushing your teeth at least twice a day helps remove leftover food plaque that causes tooth decay.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK005",
@@ -165,7 +169,7 @@ window.QUESTIONS_500 = [
     "d": "Cơ quan thần kinh",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -183,7 +187,8 @@ window.QUESTIONS_500 = [
       "Respiratory organs (nose, trachea, lungs)",
       "Nervous organ"
     ],
-    "explain_en": "The respiratory system takes oxygen from the air into the body and expels carbon dioxide out."
+    "explain_en": "The respiratory system takes oxygen from the air into the body and expels carbon dioxide out.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK006",
@@ -202,7 +207,7 @@ window.QUESTIONS_500 = [
     "d": "Nhịp tim đập nhanh hơn và thở gấp hơn",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -220,7 +225,8 @@ window.QUESTIONS_500 = [
       "Stop breathing completely",
       "Heart beats faster and breathing becomes more rapid"
     ],
-    "explain_en": "When exercising vigorously, muscles need more oxygen and energy, so the heart beats faster."
+    "explain_en": "When exercising vigorously, muscles need more oxygen and energy, so the heart beats faster.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK007",
@@ -239,7 +245,7 @@ window.QUESTIONS_500 = [
     "d": "Tim và mạch máu",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 2,
@@ -257,7 +263,8 @@ window.QUESTIONS_500 = [
       "Skeleton and muscular system",
       "Heart and blood vessels"
     ],
-    "explain_en": "The skeleton provides support, and the muscles contract and help the body move and move."
+    "explain_en": "The skeleton provides support, and the muscles contract and help the body move and move.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK008",
@@ -276,7 +283,7 @@ window.QUESTIONS_500 = [
     "d": "Ăn uống đủ chất, tập thể dục thường xuyên và ngồi học đúng tư thế",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -294,7 +301,8 @@ window.QUESTIONS_500 = [
       "Skip breakfast",
       "Eat enough food, exercise regularly and study with the correct posture"
     ],
-    "explain_en": "Balanced nutrition combined with outdoor exercise helps strengthen bones and increase height."
+    "explain_en": "Balanced nutrition combined with outdoor exercise helps strengthen bones and increase height.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK009",
@@ -313,7 +321,7 @@ window.QUESTIONS_500 = [
     "d": "Hai quả thận, hai ống dẫn tiểu, bóng đái và ống đái",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -331,7 +339,8 @@ window.QUESTIONS_500 = [
       "Liver and gall",
       "Two kidneys, two urinary ducts, urinary bladder and urinary tract"
     ],
-    "explain_en": "The kidneys filter waste in the blood to form urine, which is carried to the urinary bladder before being excreted."
+    "explain_en": "The kidneys filter waste in the blood to form urine, which is carried to the urinary bladder before being excreted.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK010",
@@ -350,7 +359,7 @@ window.QUESTIONS_500 = [
     "d": "Lồng ngực",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -368,7 +377,8 @@ window.QUESTIONS_500 = [
       "Spinal bones",
       "Chest"
     ],
-    "explain_en": "The hard bone skull protects the brain - the center that controls all body activities."
+    "explain_en": "The hard bone skull protects the brain - the center that controls all body activities.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK011",
@@ -387,7 +397,7 @@ window.QUESTIONS_500 = [
     "d": "Chỉ cần ngủ 2 tiếng",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -405,7 +415,8 @@ window.QUESTIONS_500 = [
       "Sleep 15 hours all day",
       "Just need 2 hours of sleep"
     ],
-    "explain_en": "Enough sleep helps the brain rest, restore energy and develop intelligence."
+    "explain_en": "Enough sleep helps the brain rest, restore energy and develop intelligence.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK012",
@@ -424,7 +435,7 @@ window.QUESTIONS_500 = [
     "d": "Lấy tay quẹt mũi rồi quẹt vào bàn",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -442,7 +453,8 @@ window.QUESTIONS_500 = [
       "Use a tissue or your elbow to cover your mouth and nose",
       "Use your hand to wipe your nose and then wipe it on the table"
     ],
-    "explain_en": "Covering your mouth with a tissue or your elbow helps prevent droplets containing bacteria from spreading."
+    "explain_en": "Covering your mouth with a tissue or your elbow helps prevent droplets containing bacteria from spreading.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK013",
@@ -461,7 +473,7 @@ window.QUESTIONS_500 = [
     "d": "Chơi đùa gần bờ vực nước sâu",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -479,7 +491,8 @@ window.QUESTIONS_500 = [
       "Do not arbitrarily invite each other to bathe in rivers, lakes, or ponds without adult supervision",
       "Play near the edge of deep water"
     ],
-    "explain_en": "Only swim in a safe place with a life preserver and under the supervision of an adult who knows how to swim."
+    "explain_en": "Only swim in a safe place with a life preserver and under the supervision of an adult who knows how to swim.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK014",
@@ -498,7 +511,7 @@ window.QUESTIONS_500 = [
     "d": "Đội mũ bảo hiểm đạt chuẩn và cài quai đúng cách",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -516,7 +529,8 @@ window.QUESTIONS_500 = [
       "No team needed",
       "Wear a standard helmet and install the straps properly"
     ],
-    "explain_en": "Wearing a helmet helps reduce head injuries in the event of a traffic collision."
+    "explain_en": "Wearing a helmet helps reduce head injuries in the event of a traffic collision.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK015",
@@ -535,7 +549,7 @@ window.QUESTIONS_500 = [
     "d": "Tích trữ rác thải ẩm ướt",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -553,7 +567,8 @@ window.QUESTIONS_500 = [
       "Water plenty of standing water around the house",
       "Store wet waste"
     ],
-    "explain_en": "Eliminate places where mosquitoes lay eggs by turning over jars and releasing fish to kill larvae."
+    "explain_en": "Eliminate places where mosquitoes lay eggs by turning over jars and releasing fish to kill larvae.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK016",
@@ -572,7 +587,7 @@ window.QUESTIONS_500 = [
     "d": "Chỉ có hoa và quả",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -590,7 +605,8 @@ window.QUESTIONS_500 = [
       "Only wood body",
       "Only flowers and fruit"
     ],
-    "explain_en": "Each part of a tree performs a separate function to help the tree grow."
+    "explain_en": "Each part of a tree performs a separate function to help the tree grow.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK017",
@@ -609,7 +625,7 @@ window.QUESTIONS_500 = [
     "d": "Hấp thụ ánh sáng mặt trời",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -627,7 +643,8 @@ window.QUESTIONS_500 = [
       "Absorbs water and minerals from the soil and helps plants adhere firmly",
       "Absorb sunlight"
     ],
-    "explain_en": "The roots penetrate deeply into the soil, absorbing water to feed the tree and keeping the trunk from falling."
+    "explain_en": "The roots penetrate deeply into the soil, absorbing water to feed the tree and keeping the trunk from falling.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK018",
@@ -646,7 +663,7 @@ window.QUESTIONS_500 = [
     "d": "Chất đường",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -664,7 +681,8 @@ window.QUESTIONS_500 = [
       "Iron",
       "Sugar"
     ],
-    "explain_en": "Chlorophyll in leaves helps absorb sunlight energy for photosynthesis."
+    "explain_en": "Chlorophyll in leaves helps absorb sunlight energy for photosynthesis.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK019",
@@ -683,7 +701,7 @@ window.QUESTIONS_500 = [
     "d": "Cây hành lá",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -701,7 +719,8 @@ window.QUESTIONS_500 = [
       "Eagle tree",
       "Green onion"
     ],
-    "explain_en": "Almond trees and Poinciana trees have large, strong tap roots that firmly cling to deep soil to prevent storms."
+    "explain_en": "Almond trees and Poinciana trees have large, strong tap roots that firmly cling to deep soil to prevent storms.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK020",
@@ -720,7 +739,7 @@ window.QUESTIONS_500 = [
     "d": "Rễ thở",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -738,7 +757,8 @@ window.QUESTIONS_500 = [
       "Pile roots",
       "Roots breathe"
     ],
-    "explain_en": "Rice and corn plants have root clusters that grow evenly from the base of the stem to help absorb nutrients from the topsoil."
+    "explain_en": "Rice and corn plants have root clusters that grow evenly from the base of the stem to help absorb nutrients from the topsoil.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK021",
@@ -757,7 +777,7 @@ window.QUESTIONS_500 = [
     "d": "Con Vịt",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -775,7 +795,8 @@ window.QUESTIONS_500 = [
       "Dog",
       "Duck"
     ],
-    "explain_en": "Dogs, cats, cows, and pigs are animals of the Mammal class, giving birth to babies and breastfeeding their young."
+    "explain_en": "Dogs, cats, cows, and pigs are animals of the Mammal class, giving birth to babies and breastfeeding their young.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK022",
@@ -794,7 +815,7 @@ window.QUESTIONS_500 = [
     "d": "Con Lợn",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -812,7 +833,8 @@ window.QUESTIONS_500 = [
       "Pigeon",
       "Pig"
     ],
-    "explain_en": "Birds and poultry such as pigeons, chickens, and ducks all lay eggs and then hatch them into chicks."
+    "explain_en": "Birds and poultry such as pigeons, chickens, and ducks all lay eggs and then hatch them into chicks.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK023",
@@ -831,7 +853,7 @@ window.QUESTIONS_500 = [
     "d": "4 phần: Đầu, cổ, ngực, bụng",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -849,7 +871,8 @@ window.QUESTIONS_500 = [
       "3 parts: Head, thorax and abdomen",
       "4 parts: Head, neck, chest, abdomen"
     ],
-    "explain_en": "Insects have a body divided into 3 parts (head, thorax, abdomen) and usually have 6 legs in the thorax."
+    "explain_en": "Insects have a body divided into 3 parts (head, thorax, abdomen) and usually have 6 legs in the thorax.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK024",
@@ -868,7 +891,7 @@ window.QUESTIONS_500 = [
     "d": "Con Ong mật",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -886,7 +909,8 @@ window.QUESTIONS_500 = [
       "Mosquito",
       "Honey Bee"
     ],
-    "explain_en": "Honey bees fly to collect nectar from flowers, carrying pollen from flower to flower to help the plant produce fruit."
+    "explain_en": "Honey bees fly to collect nectar from flowers, carrying pollen from flower to flower to help the plant produce fruit.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK025",
@@ -905,7 +929,7 @@ window.QUESTIONS_500 = [
     "d": "Mang cá",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -923,7 +947,8 @@ window.QUESTIONS_500 = [
       "Lungs",
       "Fish gills"
     ],
-    "explain_en": "Water flowing through the gill slit helps the gill leaves absorb oxygen dissolved in the water for the fish to breathe."
+    "explain_en": "Water flowing through the gill slit helps the gill leaves absorb oxygen dissolved in the water for the fish to breathe.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK026",
@@ -942,7 +967,7 @@ window.QUESTIONS_500 = [
     "d": "Con Gà trống",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -960,7 +985,8 @@ window.QUESTIONS_500 = [
       "Sparrow",
       "The Rooster"
     ],
-    "explain_en": "The duck's feet have paddle-like membranes that help the duck propel the water and swim very quickly."
+    "explain_en": "The duck's feet have paddle-like membranes that help the duck propel the water and swim very quickly.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK027",
@@ -979,7 +1005,7 @@ window.QUESTIONS_500 = [
     "d": "Cây phát ra tiếng còi",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -997,7 +1023,8 @@ window.QUESTIONS_500 = [
       "The leaves immediately close",
       "The tree makes a whistle sound"
     ],
-    "explain_en": "This is a defense reaction due to rapid changes in water pressure at the leaf petiole joints."
+    "explain_en": "This is a defense reaction due to rapid changes in water pressure at the leaf petiole joints.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK028",
@@ -1016,7 +1043,7 @@ window.QUESTIONS_500 = [
     "d": "Để lấy lông thú may áo",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -1034,7 +1061,8 @@ window.QUESTIONS_500 = [
       "For keeping in captivity indoors",
       "To use fur to make clothes"
     ],
-    "explain_en": "Each living species has an important link in maintaining the sustainability of nature."
+    "explain_en": "Each living species has an important link in maintaining the sustainability of nature.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK029",
@@ -1053,7 +1081,7 @@ window.QUESTIONS_500 = [
     "d": "Làm đất bị khô cằn",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -1071,7 +1099,8 @@ window.QUESTIONS_500 = [
       "Loose soil and increase soil fertility",
       "Makes the land dry"
     ],
-    "explain_en": "Earthworms burrow to make the soil aerated and worm compost is an organic fertilizer rich in nutrients."
+    "explain_en": "Earthworms burrow to make the soil aerated and worm compost is an organic fertilizer rich in nutrients.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK030",
@@ -1090,7 +1119,7 @@ window.QUESTIONS_500 = [
     "d": "Nước, chất khoáng, không khí và ánh sáng mặt trời",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -1108,7 +1137,8 @@ window.QUESTIONS_500 = [
       "No light needed",
       "Water, minerals, air and sunlight"
     ],
-    "explain_en": "Without water or sunlight, plants will wilt and cannot photosynthesize."
+    "explain_en": "Without water or sunlight, plants will wilt and cannot photosynthesize.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK031",
@@ -1127,7 +1157,7 @@ window.QUESTIONS_500 = [
     "d": "Mọc ở hướng Bắc, lặn ở hướng Nam",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -1145,7 +1175,8 @@ window.QUESTIONS_500 = [
       "Rising in the East, setting in the West",
       "Rising in the North, setting in the South"
     ],
-    "explain_en": "The Earth rotates from West to East, so we see the Sun rise in the East and set in the West."
+    "explain_en": "The Earth rotates from West to East, so we see the Sun rise in the East and set in the West.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK032",
@@ -1164,7 +1195,7 @@ window.QUESTIONS_500 = [
     "d": "Do Mặt Trăng che khuất",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -1182,7 +1213,8 @@ window.QUESTIONS_500 = [
       "Because the Earth rotates around its axis",
       "Because the Moon obscures it"
     ],
-    "explain_en": "The half of the Earth illuminated by the Sun is day, the half facing darkness is night."
+    "explain_en": "The half of the Earth illuminated by the Sun is day, the half facing darkness is night.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK033",
@@ -1201,7 +1233,7 @@ window.QUESTIONS_500 = [
     "d": "Chỉ có thể rắn",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -1219,7 +1251,8 @@ window.QUESTIONS_500 = [
       "3 states: solid, liquid and gas",
       "Can only be solid"
     ],
-    "explain_en": "Ice is a solid, water is a liquid, and steam is a gas."
+    "explain_en": "Ice is a solid, water is a liquid, and steam is a gas.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK034",
@@ -1238,7 +1271,7 @@ window.QUESTIONS_500 = [
     "d": "Nắng -> Gió -> Tuyết",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -1256,7 +1289,8 @@ window.QUESTIONS_500 = [
       "Freeze -> Boil -> Pour into the sea",
       "Sun -> Wind -> Snow"
     ],
-    "explain_en": "Water vapor rises high and cools, condensing into clouds, and heavy water drops fall as rain."
+    "explain_en": "Water vapor rises high and cools, condensing into clouds, and heavy water drops fall as rain.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK035",
@@ -1275,7 +1309,7 @@ window.QUESTIONS_500 = [
     "d": "Sự chuyển động của không khí từ nơi áp cao đến nơi áp thấp",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -1293,7 +1327,8 @@ window.QUESTIONS_500 = [
       "Because the Earth flutters its wings",
       "The movement of air from high pressure areas to low pressure areas"
     ],
-    "explain_en": "The air in different hot and cold areas creates a pressure difference that creates a blowing wind."
+    "explain_en": "The air in different hot and cold areas creates a pressure difference that creates a blowing wind.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK036",
@@ -1312,7 +1347,7 @@ window.QUESTIONS_500 = [
     "d": "Gió hiu hiu thổi nhẹ",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -1330,7 +1365,8 @@ window.QUESTIONS_500 = [
       "Dark clouds gathered, the wind blew strongly and lightning flashed",
       "The wind blew gently"
     ],
-    "explain_en": "When you see dark clouds and gusts of wind, you need to quickly find a safe shelter."
+    "explain_en": "When you see dark clouds and gusts of wind, you need to quickly find a safe shelter.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK037",
@@ -1349,7 +1385,7 @@ window.QUESTIONS_500 = [
     "d": "Vào ban đêm không trăng",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -1367,7 +1403,8 @@ window.QUESTIONS_500 = [
       "After the summer showers, the sun shines",
       "At night there is no moon"
     ],
-    "explain_en": "Sunlight is refracted and dispersed through suspended raindrops creating 7 rainbow colors."
+    "explain_en": "Sunlight is refracted and dispersed through suspended raindrops creating 7 rainbow colors.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK038",
@@ -1386,7 +1423,7 @@ window.QUESTIONS_500 = [
     "d": "Hình lưỡi liềm khuyết",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -1404,7 +1441,8 @@ window.QUESTIONS_500 = [
       "Star shape",
       "Crescent shape"
     ],
-    "explain_en": "On the full moon night, the entire illuminated half of the Moon turns directly towards the Earth."
+    "explain_en": "On the full moon night, the entire illuminated half of the Moon turns directly towards the Earth.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK039",
@@ -1423,7 +1461,7 @@ window.QUESTIONS_500 = [
     "d": "Hình chữ S",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -1441,7 +1479,8 @@ window.QUESTIONS_500 = [
       "O-shaped",
       "S-shaped"
     ],
-    "explain_en": "The strip of land along the Vietnamese river curves in a soft S shape stretching along the coast of the East Sea."
+    "explain_en": "The strip of land along the Vietnamese river curves in a soft S shape stretching along the coast of the East Sea.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK040",
@@ -1460,7 +1499,7 @@ window.QUESTIONS_500 = [
     "d": "Thành phố Hải Phòng",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -1478,7 +1517,8 @@ window.QUESTIONS_500 = [
       "Da Nang City",
       "Hai Phong city"
     ],
-    "explain_en": "Hanoi is the heart of the country with thousands of years of heroic cultural history."
+    "explain_en": "Hanoi is the heart of the country with thousands of years of heroic cultural history.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK041",
@@ -1497,7 +1537,7 @@ window.QUESTIONS_500 = [
     "d": "Có mùi thơm hoa hồng",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -1515,7 +1555,8 @@ window.QUESTIONS_500 = [
       "Green in color, sweet and cool taste",
       "Has a rose scent"
     ],
-    "explain_en": "Pure water is colorless, odorless, tasteless, flows from high to low and dissolves salt and sugar."
+    "explain_en": "Pure water is colorless, odorless, tasteless, flows from high to low and dissolves salt and sugar.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK042",
@@ -1534,7 +1575,7 @@ window.QUESTIONS_500 = [
     "d": "Dầu ăn",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -1552,7 +1593,8 @@ window.QUESTIONS_500 = [
       "Stone gravel",
       "Cooking oil"
     ],
-    "explain_en": "Sugar and salt dissolve to form a clear solution, while undissolved sand and gravel settle to the bottom."
+    "explain_en": "Sugar and salt dissolve to form a clear solution, while undissolved sand and gravel settle to the bottom.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK043",
@@ -1571,7 +1613,7 @@ window.QUESTIONS_500 = [
     "d": "Dầu ăn",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -1589,7 +1631,8 @@ window.QUESTIONS_500 = [
       "Table salt",
       "Cooking oil"
     ],
-    "explain_en": "Cooking oil is lighter than water and is non-polar so it does not dissolve and always floats as a scum on the water surface."
+    "explain_en": "Cooking oil is lighter than water and is non-polar so it does not dissolve and always floats as a scum on the water surface.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK044",
@@ -1608,7 +1651,7 @@ window.QUESTIONS_500 = [
     "d": "Có vị ngọt ngào",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 2,
@@ -1626,7 +1669,8 @@ window.QUESTIONS_500 = [
       "Has a square shape",
       "Has a sweet taste"
     ],
-    "explain_en": "Air is transparent and invisible, can be compressed or expanded, and is everywhere."
+    "explain_en": "Air is transparent and invisible, can be compressed or expanded, and is everywhere.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK045",
@@ -1645,7 +1689,7 @@ window.QUESTIONS_500 = [
     "d": "Mặt nước hồ phẳng lặng",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -1663,7 +1707,8 @@ window.QUESTIONS_500 = [
       "The mirror",
       "The lake water surface is calm"
     ],
-    "explain_en": "The Sun is a self-luminous star, while the Moon and mirrors only reflect incoming light."
+    "explain_en": "The Sun is a self-luminous star, while the Moon and mirrors only reflect incoming light.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK046",
@@ -1682,7 +1727,7 @@ window.QUESTIONS_500 = [
     "d": "Đường thẳng",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -1700,7 +1745,8 @@ window.QUESTIONS_500 = [
       "Circle",
       "Straight line"
     ],
-    "explain_en": "Light always travels in a straight line, so we can see straight rows of trees easily."
+    "explain_en": "Light always travels in a straight line, so we can see straight rows of trees easily.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK047",
@@ -1719,7 +1765,7 @@ window.QUESTIONS_500 = [
     "d": "Bóng tối ở khắp mọi nơi",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -1737,7 +1783,8 @@ window.QUESTIONS_500 = [
       "In front of the light source",
       "Darkness is everywhere"
     ],
-    "explain_en": "Obstructions prevent light from passing through, the area behind does not receive light, creating darkness."
+    "explain_en": "Obstructions prevent light from passing through, the area behind does not receive light, creating darkness.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK048",
@@ -1756,7 +1803,7 @@ window.QUESTIONS_500 = [
     "d": "Vật thể dao động rung rinh",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -1774,7 +1821,8 @@ window.QUESTIONS_500 = [
       "Molten object",
       "The object vibrates and vibrates"
     ],
-    "explain_en": "When we pluck guitar strings or hit drums, they vibrate and emit sound waves."
+    "explain_en": "When we pluck guitar strings or hit drums, they vibrate and emit sound waves.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK049",
@@ -1793,7 +1841,7 @@ window.QUESTIONS_500 = [
     "d": "Chỉ truyền dưới nước",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -1811,7 +1859,8 @@ window.QUESTIONS_500 = [
       "Solids, liquids and gases",
       "Only transmitted underwater"
     ],
-    "explain_en": "Sound travels fastest through solids (like steel, soil), slowest through gases."
+    "explain_en": "Sound travels fastest through solids (like steel, soil), slowest through gases.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK050",
@@ -1830,7 +1879,7 @@ window.QUESTIONS_500 = [
     "d": "Kim loại nhôm, đồng, sắt",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -1848,7 +1897,8 @@ window.QUESTIONS_500 = [
       "Wool fabric",
       "Aluminum, copper, iron metals"
     ],
-    "explain_en": "Metal conducts heat quickly, so it is used to make pots and pans to cook food that boils quickly."
+    "explain_en": "Metal conducts heat quickly, so it is used to make pots and pans to cook food that boils quickly.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK051",
@@ -1867,7 +1917,7 @@ window.QUESTIONS_500 = [
     "d": "50 độ C",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -1885,7 +1935,8 @@ window.QUESTIONS_500 = [
       "0 degrees Celsius",
       "50 degrees Celsius"
     ],
-    "explain_en": "At a pressure of 1 atmosphere, pure water boils and evaporates violently at 100 degrees Celsius."
+    "explain_en": "At a pressure of 1 atmosphere, pure water boils and evaporates violently at 100 degrees Celsius.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK052",
@@ -1904,7 +1955,7 @@ window.QUESTIONS_500 = [
     "d": "10 độ C",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -1922,7 +1973,8 @@ window.QUESTIONS_500 = [
       "-50 degrees Celsius",
       "10 degrees Celsius"
     ],
-    "explain_en": "The 0 degree Celsius mark is the freezing temperature of liquid water into solid ice crystals."
+    "explain_en": "The 0 degree Celsius mark is the freezing temperature of liquid water into solid ice crystals.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK053",
@@ -1941,7 +1993,7 @@ window.QUESTIONS_500 = [
     "d": "Khí Heli",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -1959,7 +2011,8 @@ window.QUESTIONS_500 = [
       "Nitrogen gas",
       "Helium gas"
     ],
-    "explain_en": "Oxygen makes up about 21% of air volume, maintaining life, breathing and combustion."
+    "explain_en": "Oxygen makes up about 21% of air volume, maintaining life, breathing and combustion.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK054",
@@ -1978,7 +2031,7 @@ window.QUESTIONS_500 = [
     "d": "Ngắt cầu dao điện tổng ngay lập tức",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -1996,7 +2049,8 @@ window.QUESTIONS_500 = [
       "Pour water on the fire",
       "Turn off the main circuit breaker immediately"
     ],
-    "explain_en": "Water conducts electricity and is dangerous to death. You need to turn off the power first and then use a specialized fire extinguisher."
+    "explain_en": "Water conducts electricity and is dangerous to death. You need to turn off the power first and then use a specialized fire extinguisher.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK055",
@@ -2015,7 +2069,7 @@ window.QUESTIONS_500 = [
     "d": "Nhựa, cao su và thủy tinh",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -2033,7 +2087,8 @@ window.QUESTIONS_500 = [
       "Salt water",
       "Plastic, rubber and glass"
     ],
-    "explain_en": "Plastic and rubber do not allow electricity to pass through, so they are used as sheaths for electrical wires."
+    "explain_en": "Plastic and rubber do not allow electricity to pass through, so they are used as sheaths for electrical wires.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK056",
@@ -2052,7 +2107,7 @@ window.QUESTIONS_500 = [
     "d": "Khi mạch điện được nối kín hoàn chỉnh",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -2070,7 +2125,8 @@ window.QUESTIONS_500 = [
       "When the electrical circuit is broken",
       "When the electrical circuit is completely sealed"
     ],
-    "explain_en": "Current can only flow through a closed circuit continuously from the anode through the light bulb to the cathode."
+    "explain_en": "Current can only flow through a closed circuit continuously from the anode through the light bulb to the cathode.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK057",
@@ -2089,7 +2145,7 @@ window.QUESTIONS_500 = [
     "d": "Khí đốt tự nhiên",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -2107,7 +2163,8 @@ window.QUESTIONS_500 = [
       "Solar energy and wind energy",
       "Natural gas"
     ],
-    "explain_en": "Solar, wind and tidal energy are continuously renewable naturally and do not cause pollution."
+    "explain_en": "Solar, wind and tidal energy are continuously renewable naturally and do not cause pollution.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK058",
@@ -2126,7 +2183,7 @@ window.QUESTIONS_500 = [
     "d": "Sức gió",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -2144,7 +2201,8 @@ window.QUESTIONS_500 = [
       "Sunlight",
       "Wind power"
     ],
-    "explain_en": "Fossil fuels are formed from dead organisms buried for millions of years and need to be used sparingly."
+    "explain_en": "Fossil fuels are formed from dead organisms buried for millions of years and need to be used sparingly.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK059",
@@ -2163,7 +2221,7 @@ window.QUESTIONS_500 = [
     "d": "Thạch cao",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -2181,7 +2239,8 @@ window.QUESTIONS_500 = [
       "Clay",
       "Plaster"
     ],
-    "explain_en": "Cement mortar binds the bricks together to create solid walls."
+    "explain_en": "Cement mortar binds the bricks together to create solid walls.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK060",
@@ -2200,7 +2259,7 @@ window.QUESTIONS_500 = [
     "d": "Màu trắng bạc, nhẹ, dẫn điện dẫn nhiệt tốt và không bị rỉ sét",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -2218,7 +2277,8 @@ window.QUESTIONS_500 = [
       "Very brittle and easy to break",
       "Silver white, lightweight, good electrical and thermal conductivity and does not rust"
     ],
-    "explain_en": "Aluminum is light and durable, so it is used to make airplane covers, aluminum pots and pans, and window frames."
+    "explain_en": "Aluminum is light and durable, so it is used to make airplane covers, aluminum pots and pans, and window frames.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK061",
@@ -2237,7 +2297,7 @@ window.QUESTIONS_500 = [
     "d": "Làm phấn viết bảng",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -2255,7 +2315,8 @@ window.QUESTIONS_500 = [
       "Make electrical wire cores",
       "Make blackboard chalk"
     ],
-    "explain_en": "Copper conducts electricity very well and is easy to bend into long fibers to make household electrical wire cores."
+    "explain_en": "Copper conducts electricity very well and is easy to bend into long fibers to make household electrical wire cores.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK062",
@@ -2274,7 +2335,7 @@ window.QUESTIONS_500 = [
     "d": "Xé một tờ giấy thành nhiều mảnh nhỏ",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -2292,7 +2353,8 @@ window.QUESTIONS_500 = [
       "Iron nails exposed to moist air rust into a new brown substance",
       "Tear a sheet of paper into small pieces"
     ],
-    "explain_en": "A chemical change is a change from one substance to another with completely new properties."
+    "explain_en": "A chemical change is a change from one substance to another with completely new properties.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK063",
@@ -2311,7 +2373,7 @@ window.QUESTIONS_500 = [
     "d": "Đinh sắt bị rỉ sét",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -2329,7 +2391,8 @@ window.QUESTIONS_500 = [
       "Ice cubes melt into liquid water",
       "Iron nails are rusted"
     ],
-    "explain_en": "Physical changes only change state, shape or size without creating new substances."
+    "explain_en": "Physical changes only change state, shape or size without creating new substances.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK064",
@@ -2348,7 +2411,7 @@ window.QUESTIONS_500 = [
     "d": "Để làm nồi nặng hơn",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -2366,7 +2429,8 @@ window.QUESTIONS_500 = [
       "Keep the pot insulated",
       "To make the pot heavier"
     ],
-    "explain_en": "Metal conducts heat well, helping to transfer heat quickly from the fire to the food."
+    "explain_en": "Metal conducts heat well, helping to transfer heat quickly from the fire to the food.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK065",
@@ -2385,7 +2449,7 @@ window.QUESTIONS_500 = [
     "d": "Mở cửa tủ lạnh thật lâu",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -2403,7 +2467,8 @@ window.QUESTIONS_500 = [
       "Turn off lights and electrical equipment when leaving the room",
       "Open the refrigerator door for a long time"
     ],
-    "explain_en": "Turning off the power when not in use not only saves electricity bills but also reduces greenhouse gas emissions for the environment."
+    "explain_en": "Turning off the power when not in use not only saves electricity bills but also reduces greenhouse gas emissions for the environment.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "SGK066",
@@ -2422,7 +2487,7 @@ window.QUESTIONS_500 = [
     "d": "Vỏ thân cây",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -2440,7 +2505,8 @@ window.QUESTIONS_500 = [
       "Leaves (thanks to chlorophyll)",
       "Tree trunk bark"
     ],
-    "explain_en": "Leaves absorb sunlight to synthesize organic matter to feed the plant and release oxygen."
+    "explain_en": "Leaves absorb sunlight to synthesize organic matter to feed the plant and release oxygen.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK067",
@@ -2459,7 +2525,7 @@ window.QUESTIONS_500 = [
     "d": "Hấp thụ khí cacbonic (CO2) và nhả ra khí oxy (O2)",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -2477,7 +2543,8 @@ window.QUESTIONS_500 = [
       "Absorbs nitrogen gas and releases gas",
       "Absorb carbon dioxide (CO2) and release oxygen (O2)"
     ],
-    "explain_en": "Thanks to photosynthesis and the release of oxygen, trees are known as 'the green lungs of the Earth'."
+    "explain_en": "Thanks to photosynthesis and the release of oxygen, trees are known as 'the green lungs of the Earth'.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK068",
@@ -2496,7 +2563,7 @@ window.QUESTIONS_500 = [
     "d": "Cây tự phát sáng",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -2514,7 +2581,8 @@ window.QUESTIONS_500 = [
       "The tree continues to photosynthesize",
       "The tree glows on its own"
     ],
-    "explain_en": "Because plants breathe to get oxygen at night, you should not leave too many potted plants in a closed bedroom."
+    "explain_en": "Because plants breathe to get oxygen at night, you should not leave too many potted plants in a closed bedroom.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK069",
@@ -2533,7 +2601,7 @@ window.QUESTIONS_500 = [
     "d": "Rễ và thân cành",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -2551,7 +2619,8 @@ window.QUESTIONS_500 = [
       "Calyx, petals (corolla), stamens and pistil",
       "Roots and branches"
     ],
-    "explain_en": "Stamens are male reproductive organs that produce pollen, pistils are female reproductive organs that contain ovules."
+    "explain_en": "Stamens are male reproductive organs that produce pollen, pistils are female reproductive organs that contain ovules.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK070",
@@ -2570,7 +2639,7 @@ window.QUESTIONS_500 = [
     "d": "Gai nhọn",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -2588,7 +2657,8 @@ window.QUESTIONS_500 = [
       "New tree branches",
       "Sharp spikes"
     ],
-    "explain_en": "The ovule transforms into a seed carrying new life, and the ovary thickens to form delicious fruit flesh."
+    "explain_en": "The ovule transforms into a seed carrying new life, and the ovary thickens to form delicious fruit flesh.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK071",
@@ -2607,7 +2677,7 @@ window.QUESTIONS_500 = [
     "d": "Chỉ cần bóng tối",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -2625,7 +2695,8 @@ window.QUESTIONS_500 = [
       "Enough water, air and appropriate temperature",
       "Just darkness"
     ],
-    "explain_en": "The seeds absorb water, swell, take in oxygen and need warm soil temperatures for the embryo to germinate."
+    "explain_en": "The seeds absorb water, swell, take in oxygen and need warm soil temperatures for the embryo to germinate.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK072",
@@ -2644,7 +2715,7 @@ window.QUESTIONS_500 = [
     "d": "Tự phân đôi cơ thể",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -2662,7 +2733,8 @@ window.QUESTIONS_500 = [
       "Lay eggs at the bottom of the water",
       "Self-dividing body"
     ],
-    "explain_en": "Animals such as buffaloes, cows, tigers, elephants, and dolphins all become pregnant, give birth, and breastfeed their babies."
+    "explain_en": "Animals such as buffaloes, cows, tigers, elephants, and dolphins all become pregnant, give birth, and breastfeed their babies.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK073",
@@ -2681,7 +2753,7 @@ window.QUESTIONS_500 = [
     "d": "Trứng -> Sâu bướm (ấu trùng) -> Nhộng trong kén -> Bướm trưởng thành",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -2699,7 +2771,8 @@ window.QUESTIONS_500 = [
       "Egg -> Baby Butterfly -> Adult Butterfly",
       "Egg -> Caterpillar (larva) -> Pupa in cocoon -> Adult butterfly"
     ],
-    "explain_en": "This is a completely miraculous metamorphosis phenomenon of insects in the natural world."
+    "explain_en": "This is a completely miraculous metamorphosis phenomenon of insects in the natural world.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK074",
@@ -2718,7 +2791,7 @@ window.QUESTIONS_500 = [
     "d": "Đẻ con trực tiếp",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -2736,7 +2809,8 @@ window.QUESTIONS_500 = [
       "Egg -> Tadpole (breathes through gills) -> Baby frog -> Adult frog",
       "Give birth directly"
     ],
-    "explain_en": "Tadpoles live underwater and breathe through gills. When they grow up, they lose their tails, grow four legs, and breathe through their lungs and skin."
+    "explain_en": "Tadpoles live underwater and breathe through gills. When they grow up, they lose their tails, grow four legs, and breathe through their lungs and skin.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK075",
@@ -2755,7 +2829,7 @@ window.QUESTIONS_500 = [
     "d": "Con người",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -2773,7 +2847,8 @@ window.QUESTIONS_500 = [
       "Bacteria decompose",
       "Human"
     ],
-    "explain_en": "Green plants make their own organic matter from solar energy, which is the initial food source for herbivores."
+    "explain_en": "Green plants make their own organic matter from solar energy, which is the initial food source for herbivores.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK076",
@@ -2792,7 +2867,7 @@ window.QUESTIONS_500 = [
     "d": "Động vật ăn thịt tiêu thụ châu chấu",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -2810,7 +2885,8 @@ window.QUESTIONS_500 = [
       "Organisms that decompose grass",
       "Predators consume grasshoppers"
     ],
-    "explain_en": "Field frogs are carnivores (insect eaters), and are the link in controlling the number of grasshoppers that destroy crops."
+    "explain_en": "Field frogs are carnivores (insect eaters), and are the link in controlling the number of grasshoppers that destroy crops.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK077",
@@ -2829,7 +2905,7 @@ window.QUESTIONS_500 = [
     "d": "Cây rừng làm trời mưa to hơn",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -2847,7 +2923,8 @@ window.QUESTIONS_500 = [
       "Forests have no effect on water retention",
       "Forest trees make it rain harder"
     ],
-    "explain_en": "Loss of watershed forests causes rainwater to pour straight down steep mountain slopes, creating flash floods and devastating landslides."
+    "explain_en": "Loss of watershed forests causes rainwater to pour straight down steep mountain slopes, creating flash floods and devastating landslides.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK078",
@@ -2866,7 +2943,7 @@ window.QUESTIONS_500 = [
     "d": "Đội hình hình chữ V",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -2884,7 +2961,8 @@ window.QUESTIONS_500 = [
       "Circle formation",
       "V-shaped formation"
     ],
-    "explain_en": "The V-shaped formation helps the birds flying behind take advantage of the airflow from the leading bird's wings."
+    "explain_en": "The V-shaped formation helps the birds flying behind take advantage of the airflow from the leading bird's wings.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK079",
@@ -2903,7 +2981,7 @@ window.QUESTIONS_500 = [
     "d": "Mực ống đại dương",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -2921,7 +2999,8 @@ window.QUESTIONS_500 = [
       "Blue whale",
       "Ocean squid"
     ],
-    "explain_en": "Blue whales are marine mammals, not gill-breathing fish."
+    "explain_en": "Blue whales are marine mammals, not gill-breathing fish.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK080",
@@ -2940,7 +3019,7 @@ window.QUESTIONS_500 = [
     "d": "Giảm tiêu hao năng lượng khi thời tiết giá rét khan hiếm thức ăn",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -2958,7 +3037,8 @@ window.QUESTIONS_500 = [
       "Because my eyes are tired",
       "Reduce energy consumption when food is scarce in cold weather"
     ],
-    "explain_en": "When hibernating, the bear's body temperature and heart rate drop sharply, helping it survive thanks to its accumulated fat layer."
+    "explain_en": "When hibernating, the bear's body temperature and heart rate drop sharply, helping it survive thanks to its accumulated fat layer.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK081",
@@ -2977,7 +3057,7 @@ window.QUESTIONS_500 = [
     "d": "Đới khí hậu nhiệt đới gió mùa",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 5,
@@ -2995,7 +3075,8 @@ window.QUESTIONS_500 = [
       "The cold zone is icy all year round",
       "Tropical monsoon climate zone"
     ],
-    "explain_en": "The humid tropical monsoon climate brings abundant rainfall and lush greenery in all seasons."
+    "explain_en": "The humid tropical monsoon climate brings abundant rainfall and lush greenery in all seasons.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK082",
@@ -3014,7 +3095,7 @@ window.QUESTIONS_500 = [
     "d": "Đồng bằng ven biển miền Trung",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -3032,7 +3113,8 @@ window.QUESTIONS_500 = [
       "Thanh Nghe Tinh Delta",
       "Central coastal plain"
     ],
-    "explain_en": "The Mekong Delta, deposited by alluvium from the Tien and Hau rivers, is the largest granary in our country."
+    "explain_en": "The Mekong Delta, deposited by alluvium from the Tien and Hau rivers, is the largest granary in our country.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK083",
@@ -3051,7 +3133,7 @@ window.QUESTIONS_500 = [
     "d": "Sông Hồng",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -3069,7 +3151,8 @@ window.QUESTIONS_500 = [
       "Cau River",
       "Red River"
     ],
-    "explain_en": "The Red River is associated with the Red River civilization and a thousand-year-old solid dyke system."
+    "explain_en": "The Red River is associated with the Red River civilization and a thousand-year-old solid dyke system.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK084",
@@ -3088,7 +3171,7 @@ window.QUESTIONS_500 = [
     "d": "Đỉnh Tây Côn Lĩnh",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -3106,7 +3189,8 @@ window.QUESTIONS_500 = [
       "Fansipan Peak (Lao Cai)",
       "Tay Con Linh peak"
     ],
-    "explain_en": "Fansipan belongs to the majestic Hoang Lien Son range, known as the 'Roof of Indochina'."
+    "explain_en": "Fansipan belongs to the majestic Hoang Lien Son range, known as the 'Roof of Indochina'.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK085",
@@ -3125,7 +3209,7 @@ window.QUESTIONS_500 = [
     "d": "Việt Nam",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -3143,7 +3227,8 @@ window.QUESTIONS_500 = [
       "Malaysia",
       "Vietnam"
     ],
-    "explain_en": "Hoang Sa and Truong Sa are an inseparable part of the sacred and sacred territory of the Vietnamese Fatherland."
+    "explain_en": "Hoang Sa and Truong Sa are an inseparable part of the sacred and sacred territory of the Vietnamese Fatherland.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK086",
@@ -3162,7 +3247,7 @@ window.QUESTIONS_500 = [
     "d": "Ăn nhiều bánh kẹo",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -3180,7 +3265,8 @@ window.QUESTIONS_500 = [
       "Drink lots of fresh water",
       "Eat lots of candy"
     ],
-    "explain_en": "Iodine is an essential micronutrient for the thyroid and brain development of children."
+    "explain_en": "Iodine is an essential micronutrient for the thyroid and brain development of children.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK087",
@@ -3199,7 +3285,7 @@ window.QUESTIONS_500 = [
     "d": "Dí sát mắt vào sách",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -3217,7 +3303,8 @@ window.QUESTIONS_500 = [
       "Lying in bed reading a book",
       "Close your eyes to the book"
     ],
-    "explain_en": "Implementing the 20-20-20 eye rest rule helps keep your eyes bright, healthy and clear."
+    "explain_en": "Implementing the 20-20-20 eye rest rule helps keep your eyes bright, healthy and clear.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK088",
@@ -3236,7 +3323,7 @@ window.QUESTIONS_500 = [
     "d": "Làm sâu răng",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -3254,7 +3341,8 @@ window.QUESTIONS_500 = [
       "Causes hair loss",
       "Tooth decay"
     ],
-    "explain_en": "Eating bland and frugal helps protect the kidneys and keeps the cardiovascular system healthy and durable."
+    "explain_en": "Eating bland and frugal helps protect the kidneys and keeps the cardiovascular system healthy and durable.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK089",
@@ -3273,7 +3361,7 @@ window.QUESTIONS_500 = [
     "d": "Từ 30 đến 40 tuổi",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -3291,7 +3379,8 @@ window.QUESTIONS_500 = [
       "From 60 years old or older",
       "From 30 to 40 years old"
     ],
-    "explain_en": "Puberty marks a leap in physical development, height and physiological changes."
+    "explain_en": "Puberty marks a leap in physical development, height and physiological changes.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK090",
@@ -3310,7 +3399,7 @@ window.QUESTIONS_500 = [
     "d": "Nhịn ăn giảm cân quá mức",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 5,
@@ -3328,7 +3417,8 @@ window.QUESTIONS_500 = [
       "Inferiority hides fear",
       "Fasting to lose excessive weight"
     ],
-    "explain_en": "Correct understanding of body changes helps children become confident and healthy adults."
+    "explain_en": "Correct understanding of body changes helps children become confident and healthy adults.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK091",
@@ -3347,7 +3437,7 @@ window.QUESTIONS_500 = [
     "d": "Bệnh cận thị",
     "ans": "A",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -3365,7 +3455,8 @@ window.QUESTIONS_500 = [
       "Tooth decay",
       "Nearsightedness"
     ],
-    "explain_en": "Aedes mosquitoes transmit the Dengue virus that causes dengue fever, so larvae need to be actively eliminated."
+    "explain_en": "Aedes mosquitoes transmit the Dengue virus that causes dengue fever, so larvae need to be actively eliminated.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK092",
@@ -3384,7 +3475,7 @@ window.QUESTIONS_500 = [
     "d": "Bệnh gãy xương",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -3402,7 +3493,8 @@ window.QUESTIONS_500 = [
       "Gastrointestinal diseases such as cholera, dysentery, diarrhea",
       "Fracture disease"
     ],
-    "explain_en": "Flies carry millions of bacteria on their leg hairs that contaminate food, so the cage and table should be covered tightly."
+    "explain_en": "Flies carry millions of bacteria on their leg hairs that contaminate food, so the cage and table should be covered tightly.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK093",
@@ -3421,7 +3513,7 @@ window.QUESTIONS_500 = [
     "d": "Ăn chín, uống sôi, không ăn thức ăn ôi thiu",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -3439,7 +3531,8 @@ window.QUESTIONS_500 = [
       "Eating food that has been left out for a long time stinks",
       "Eat cooked food, drink boiled food, do not eat spoiled food"
     ],
-    "explain_en": "Boiling temperature of 100 degrees Celsius helps kill most harmful bacteria in food."
+    "explain_en": "Boiling temperature of 100 degrees Celsius helps kill most harmful bacteria in food.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "SGK094",
@@ -3458,7 +3551,7 @@ window.QUESTIONS_500 = [
     "d": "Ở hoa",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -3476,7 +3569,8 @@ window.QUESTIONS_500 = [
       "The roots swell into tubers",
       "In flowers"
     ],
-    "explain_en": "Plant roots accumulate a lot of starch and swell into tubers that provide food for humans."
+    "explain_en": "Plant roots accumulate a lot of starch and swell into tubers that provide food for humans.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK095",
@@ -3495,7 +3589,7 @@ window.QUESTIONS_500 = [
     "d": "Thân cây phình to dưới đất (thân củ)",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -3513,7 +3607,8 @@ window.QUESTIONS_500 = [
       "Pile roots",
       "Stems swell underground (tubers)"
     ],
-    "explain_en": "Potatoes are underground stems that swell underground. The nodes on the tubers can sprout into new plants."
+    "explain_en": "Potatoes are underground stems that swell underground. The nodes on the tubers can sprout into new plants.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK096",
@@ -3532,7 +3627,7 @@ window.QUESTIONS_500 = [
     "d": "Hoa hồng",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -3550,7 +3645,8 @@ window.QUESTIONS_500 = [
       "Chrysanthemum",
       "Rose"
     ],
-    "explain_en": "The lotus flower rising from the mud, emitting a fragrant scent, is a symbol of the purity of the nation."
+    "explain_en": "The lotus flower rising from the mud, emitting a fragrant scent, is a symbol of the purity of the nation.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "SGK097",
@@ -3569,7 +3665,7 @@ window.QUESTIONS_500 = [
     "d": "Mùa Đông lạnh và mùa Hè",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -3587,7 +3683,8 @@ window.QUESTIONS_500 = [
       "Spring and Fall",
       "Cold Winter and Summer"
     ],
-    "explain_en": "The South is warm and sunny all year round, with only two distinct rainy and dry seasons."
+    "explain_en": "The South is warm and sunny all year round, with only two distinct rainy and dry seasons.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK098",
@@ -3606,7 +3703,7 @@ window.QUESTIONS_500 = [
     "d": "Mùa Nắng và mùa Bão",
     "ans": "B",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -3624,7 +3721,8 @@ window.QUESTIONS_500 = [
       "Flood season and Drought season",
       "Sunny season and Storm season"
     ],
-    "explain_en": "The North has 4 seasons with cold winters, Northeast monsoons and wet drizzle springs."
+    "explain_en": "The North has 4 seasons with cold winters, Northeast monsoons and wet drizzle springs.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK099",
@@ -3643,7 +3741,7 @@ window.QUESTIONS_500 = [
     "d": "Trời trở lạnh buốt, hanh khô vào đầu đông và mưa phùn se lạnh cuối đông",
     "ans": "D",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -3661,7 +3759,8 @@ window.QUESTIONS_500 = [
       "It was scorching hot",
       "The weather becomes cold and dry in early winter and chilly drizzle in late winter"
     ],
-    "explain_en": "The Northeast monsoon brings cold air masses from the northern continent."
+    "explain_en": "The Northeast monsoon brings cold air masses from the northern continent.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "SGK100",
@@ -3680,7 +3779,7 @@ window.QUESTIONS_500 = [
     "d": "Đốt rác nilông trong sân trường",
     "ans": "C",
     "source": "SGK Việt Nam (GDPT 2018)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -3698,7 +3797,8 @@ window.QUESTIONS_500 = [
       "Plant and take care of flower beds and trees, do not throw trash indiscriminately",
       "Burning plastic waste in the school yard"
     ],
-    "explain_en": "Photosynthetic trees absorb dirt and create shade for the shady school yard."
+    "explain_en": "Photosynthetic trees absorb dirt and create shade for the shady school yard.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN001",
@@ -3717,7 +3817,7 @@ window.QUESTIONS_500 = [
     "d": "Đôi bàn tay",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -3735,7 +3835,8 @@ window.QUESTIONS_500 = [
       "Stomach",
       "Hands"
     ],
-    "explain_en": "The heart contracts rhythmically, pumping blood to nourish the body throughout a person's life."
+    "explain_en": "The heart contracts rhythmically, pumping blood to nourish the body throughout a person's life.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN002",
@@ -3754,7 +3855,7 @@ window.QUESTIONS_500 = [
     "d": "Đôi mắt",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -3772,7 +3873,8 @@ window.QUESTIONS_500 = [
       "The nose",
       "Eyes"
     ],
-    "explain_en": "Eyes are visual organs that help humans observe and feel the brilliant world."
+    "explain_en": "Eyes are visual organs that help humans observe and feel the brilliant world.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN003",
@@ -3791,7 +3893,7 @@ window.QUESTIONS_500 = [
     "d": "Chất đường",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -3809,7 +3911,8 @@ window.QUESTIONS_500 = [
       "Protein",
       "Sugar"
     ],
-    "explain_en": "Protein is the main ingredient to create new cells to help the body grow."
+    "explain_en": "Protein is the main ingredient to create new cells to help the body grow.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN004",
@@ -3828,7 +3931,7 @@ window.QUESTIONS_500 = [
     "d": "Vitamin B1",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 2,
@@ -3846,7 +3949,8 @@ window.QUESTIONS_500 = [
       "Vitamin E",
       "Vitamin B1"
     ],
-    "explain_en": "Sunbathing early helps the body synthesize vitamin D to support maximum calcium absorption."
+    "explain_en": "Sunbathing early helps the body synthesize vitamin D to support maximum calcium absorption.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN005",
@@ -3865,7 +3969,7 @@ window.QUESTIONS_500 = [
     "d": "Bạch cầu",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -3883,7 +3987,8 @@ window.QUESTIONS_500 = [
       "Red blood cells",
       "White blood cells"
     ],
-    "explain_en": "Adhesive platelets form plugs and release clotting factors."
+    "explain_en": "Adhesive platelets form plugs and release clotting factors.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN006",
@@ -3902,7 +4007,7 @@ window.QUESTIONS_500 = [
     "d": "Hồng cầu",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -3920,7 +4025,8 @@ window.QUESTIONS_500 = [
       "White blood cells",
       "Red blood cells"
     ],
-    "explain_en": "White blood cells swallow and destroy invading foreign microorganisms to protect the body."
+    "explain_en": "White blood cells swallow and destroy invading foreign microorganisms to protect the body.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN007",
@@ -3939,7 +4045,7 @@ window.QUESTIONS_500 = [
     "d": "40 chiếc",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -3957,7 +4063,8 @@ window.QUESTIONS_500 = [
       "32 teeth",
       "40 pcs"
     ],
-    "explain_en": "The complete permanent tooth set includes 32 teeth divided into incisors, canines, and jaws."
+    "explain_en": "The complete permanent tooth set includes 32 teeth divided into incisors, canines, and jaws.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN008",
@@ -3976,7 +4083,7 @@ window.QUESTIONS_500 = [
     "d": "32 chiếc",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -3994,7 +4101,8 @@ window.QUESTIONS_500 = [
       "10 pcs",
       "32 pieces"
     ],
-    "explain_en": "A set of 20 baby teeth helps your baby learn to chew food in the first years of life."
+    "explain_en": "A set of 20 baby teeth helps your baby learn to chew food in the first years of life.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN009",
@@ -4013,7 +4121,7 @@ window.QUESTIONS_500 = [
     "d": "Khí Nitơ (khoảng 78%)",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -4031,7 +4139,8 @@ window.QUESTIONS_500 = [
       "Carbon dioxide (0.04%)",
       "Nitrogen gas (about 78%)"
     ],
-    "explain_en": "Nitrogen gas makes up nearly 4/5 of the volume of air, reducing the powerful oxidizing properties of oxygen."
+    "explain_en": "Nitrogen gas makes up nearly 4/5 of the volume of air, reducing the powerful oxidizing properties of oxygen.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN010",
@@ -4050,7 +4159,7 @@ window.QUESTIONS_500 = [
     "d": "Axit axetic (giấm)",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -4068,7 +4177,8 @@ window.QUESTIONS_500 = [
       "Sulfuric acid",
       "Acetic acid (vinegar)"
     ],
-    "explain_en": "Stomach juice contains concentrated HCl acid that helps break down food and activate digestive enzymes."
+    "explain_en": "Stomach juice contains concentrated HCl acid that helps break down food and activate digestive enzymes.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN011",
@@ -4087,7 +4197,7 @@ window.QUESTIONS_500 = [
     "d": "Dạ dày",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -4105,7 +4215,8 @@ window.QUESTIONS_500 = [
       "Liver",
       "Stomach"
     ],
-    "explain_en": "The liver is a giant chemical factory that detoxifies and produces bile that digests fats."
+    "explain_en": "The liver is a giant chemical factory that detoxifies and produces bile that digests fats.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN012",
@@ -4124,7 +4235,7 @@ window.QUESTIONS_500 = [
     "d": "Tạo ra giọng nói",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -4142,7 +4253,8 @@ window.QUESTIONS_500 = [
       "Filters waste in the blood to form urine",
       "Create a voice"
     ],
-    "explain_en": "Every day the kidneys filter hundreds of liters of blood to help balance the amount of water and mineral salts."
+    "explain_en": "Every day the kidneys filter hundreds of liters of blood to help balance the amount of water and mineral salts.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN013",
@@ -4161,7 +4273,7 @@ window.QUESTIONS_500 = [
     "d": "Ngồi học thẳng lưng",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -4179,7 +4291,8 @@ window.QUESTIONS_500 = [
       "Studying with crooked ribs, hunched back, and carrying a school bag that's too heavy on one side",
       "Sit and study with your back straight"
     ],
-    "explain_en": "Sitting in the wrong posture for a long time causes the vertebrae to bend misaligned, causing hunchback and scoliosis."
+    "explain_en": "Sitting in the wrong posture for a long time causes the vertebrae to bend misaligned, causing hunchback and scoliosis.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN014",
@@ -4198,7 +4311,7 @@ window.QUESTIONS_500 = [
     "d": "Xoa dầu gió cay vào vết bỏng",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -4216,7 +4329,8 @@ window.QUESTIONS_500 = [
       "Apply fish sauce or toothpaste",
       "Rub peppermint oil on the burn"
     ],
-    "explain_en": "Rinsing with cool water helps quickly cool down the damaged area and reduce the depth of the burn."
+    "explain_en": "Rinsing with cool water helps quickly cool down the damaged area and reduce the depth of the burn.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN015",
@@ -4235,7 +4349,7 @@ window.QUESTIONS_500 = [
     "d": "Chỉ khoảng 10%",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -4253,7 +4367,8 @@ window.QUESTIONS_500 = [
       "About 30%",
       "Only about 10%"
     ],
-    "explain_en": "Water is the main solvent component of blood, cells and body fluids."
+    "explain_en": "Water is the main solvent component of blood, cells and body fluids.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN016",
@@ -4272,7 +4387,7 @@ window.QUESTIONS_500 = [
     "d": "Tế bào niêm mạc ruột",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -4290,7 +4405,8 @@ window.QUESTIONS_500 = [
       "Skin epidermal cells",
       "Intestinal mucosa cells"
     ],
-    "explain_en": "Once nerve cells are damaged or die, it is very difficult to recover and regenerate."
+    "explain_en": "Once nerve cells are damaged or die, it is very difficult to recover and regenerate.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN017",
@@ -4309,7 +4425,7 @@ window.QUESTIONS_500 = [
     "d": "Bộ xương",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -4327,7 +4443,8 @@ window.QUESTIONS_500 = [
       "The brain",
       "Skeleton"
     ],
-    "explain_en": "The skin has a surface area of about 1.5 - 2 square meters, protecting the entire body."
+    "explain_en": "The skin has a surface area of about 1.5 - 2 square meters, protecting the entire body.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN018",
@@ -4346,7 +4463,7 @@ window.QUESTIONS_500 = [
     "d": "Chất diệp lục",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -4364,7 +4481,8 @@ window.QUESTIONS_500 = [
       "Melanin pigment",
       "Chlorophyll"
     ],
-    "explain_en": "Melanin helps protect skin cells from the dangerous harmful effects of ultraviolet rays from the sun."
+    "explain_en": "Melanin helps protect skin cells from the dangerous harmful effects of ultraviolet rays from the sun.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN019",
@@ -4383,7 +4501,7 @@ window.QUESTIONS_500 = [
     "d": "Giác mạc",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -4401,7 +4519,8 @@ window.QUESTIONS_500 = [
       "Vitreous body",
       "Cornea"
     ],
-    "explain_en": "The retina contains millions of photoreceptors that receive light and transmit signals to the brain."
+    "explain_en": "The retina contains millions of photoreceptors that receive light and transmit signals to the brain.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN020",
@@ -4420,7 +4539,7 @@ window.QUESTIONS_500 = [
     "d": "Dùng tay bẩn bốc đồ ăn",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -4438,7 +4557,8 @@ window.QUESTIONS_500 = [
       "Eat raw, unwashed vegetables",
       "Use dirty hands to handle food"
     ],
-    "explain_en": "Clean hand hygiene prevents helminth eggs from sand and soil from entering the mouth."
+    "explain_en": "Clean hand hygiene prevents helminth eggs from sand and soil from entering the mouth.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN021",
@@ -4457,7 +4577,7 @@ window.QUESTIONS_500 = [
     "d": "Thịt bò nướng",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -4475,7 +4595,8 @@ window.QUESTIONS_500 = [
       "Fried lard",
       "Grilled beef"
     ],
-    "explain_en": "Vegetables and fruits contain a lot of fiber to help stimulate bowel movements for easy digestion."
+    "explain_en": "Vegetables and fruits contain a lot of fiber to help stimulate bowel movements for easy digestion.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN022",
@@ -4494,7 +4615,7 @@ window.QUESTIONS_500 = [
     "d": "Chất đạm",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -4512,7 +4633,8 @@ window.QUESTIONS_500 = [
       "Fiber",
       "Protein"
     ],
-    "explain_en": "Fat stores energy under the skin like a warm heat pad for the body."
+    "explain_en": "Fat stores energy under the skin like a warm heat pad for the body.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN023",
@@ -4531,7 +4653,7 @@ window.QUESTIONS_500 = [
     "d": "Để làm cơ thể nặng hơn",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -4549,7 +4671,8 @@ window.QUESTIONS_500 = [
       "To excrete sugar out",
       "To make the body heavier"
     ],
-    "explain_en": "Sweating is a smart self-regulating mechanism to prevent the body from overheating."
+    "explain_en": "Sweating is a smart self-regulating mechanism to prevent the body from overheating.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN024",
@@ -4568,7 +4691,7 @@ window.QUESTIONS_500 = [
     "d": "Vành tai ngoài",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -4586,7 +4709,8 @@ window.QUESTIONS_500 = [
       "External ear canal",
       "Outer ear"
     ],
-    "explain_en": "The cochlea contains hair cells that convert vibrations into electrical nerve impulses that are sent to the brain."
+    "explain_en": "The cochlea contains hair cells that convert vibrations into electrical nerve impulses that are sent to the brain.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN025",
@@ -4605,7 +4729,7 @@ window.QUESTIONS_500 = [
     "d": "Hoàn toàn khác biệt, không ai trùng với ai trên toàn thế giới",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -4623,7 +4747,8 @@ window.QUESTIONS_500 = [
       "Everyone is exactly the same",
       "Completely different, no one is the same in the whole world"
     ],
-    "explain_en": "Fingerprints are the unique identification characteristics of each individual throughout their lives."
+    "explain_en": "Fingerprints are the unique identification characteristics of each individual throughout their lives.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "TN026",
@@ -4642,7 +4767,7 @@ window.QUESTIONS_500 = [
     "d": "Thiên nga",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -4660,7 +4785,8 @@ window.QUESTIONS_500 = [
       "Seagulls",
       "Swan"
     ],
-    "explain_en": "The penguin's wings transform into paddle fins that help it dive deep to catch fish under sea ice."
+    "explain_en": "The penguin's wings transform into paddle fins that help it dive deep to catch fish under sea ice.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN027",
@@ -4679,7 +4805,7 @@ window.QUESTIONS_500 = [
     "d": "Công",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -4697,7 +4823,8 @@ window.QUESTIONS_500 = [
       "Eagle",
       "Cong"
     ],
-    "explain_en": "Ostriches have long, muscular legs that help them run at speeds of up to 70 km/h."
+    "explain_en": "Ostriches have long, muscular legs that help them run at speeds of up to 70 km/h.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN028",
@@ -4716,7 +4843,7 @@ window.QUESTIONS_500 = [
     "d": "Báo săn (Cheetah)",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -4734,7 +4861,8 @@ window.QUESTIONS_500 = [
       "Zebra",
       "Cheetah"
     ],
-    "explain_en": "Cheetahs have a flexible, spring-like spine that helps them quickly accelerate to catch prey."
+    "explain_en": "Cheetahs have a flexible, spring-like spine that helps them quickly accelerate to catch prey.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN029",
@@ -4753,7 +4881,7 @@ window.QUESTIONS_500 = [
     "d": "Kangaroo (Chuột túi)",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -4771,7 +4899,8 @@ window.QUESTIONS_500 = [
       "Koala bear",
       "Kangaroo (Kangaroo)"
     ],
-    "explain_en": "The baby kangaroo is born tiny, then crawls into its mother's pouch and sucks milk from its nipple, growing bigger."
+    "explain_en": "The baby kangaroo is born tiny, then crawls into its mother's pouch and sucks milk from its nipple, growing bigger.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN030",
@@ -4790,7 +4919,7 @@ window.QUESTIONS_500 = [
     "d": "Tắc kè hoa",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -4808,7 +4937,8 @@ window.QUESTIONS_500 = [
       "Stone turtle",
       "Chameleon"
     ],
-    "explain_en": "Chameleons change their skin color thanks to special pigment cells that help blend into the branches and leaves."
+    "explain_en": "Chameleons change their skin color thanks to special pigment cells that help blend into the branches and leaves.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN031",
@@ -4827,7 +4957,7 @@ window.QUESTIONS_500 = [
     "d": "Cắn đứt tay kẻ thù",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -4845,7 +4975,8 @@ window.QUESTIONS_500 = [
       "Cut off his own tail as a diversion and then escaped",
       "Bite off your enemy's hand"
     ],
-    "explain_en": "The broken tail still struggles to distract the predator, then the gecko grows a new tail."
+    "explain_en": "The broken tail still struggles to distract the predator, then the gecko grows a new tail.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN032",
@@ -4864,7 +4995,7 @@ window.QUESTIONS_500 = [
     "d": "Bọ rùa",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -4882,7 +5013,8 @@ window.QUESTIONS_500 = [
       "Cicadas",
       "Ladybug"
     ],
-    "explain_en": "Fireflies emit natural cold light thanks to a chemical reaction between luciferin and enzymes."
+    "explain_en": "Fireflies emit natural cold light thanks to a chemical reaction between luciferin and enzymes.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN033",
@@ -4901,7 +5033,7 @@ window.QUESTIONS_500 = [
     "d": "Chim gõ kiến",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -4919,7 +5051,8 @@ window.QUESTIONS_500 = [
       "Owl",
       "Woodpecker"
     ],
-    "explain_en": "Owls have super hearing and special wing feathers that fly completely without making a sound."
+    "explain_en": "Owls have super hearing and special wing feathers that fly completely without making a sound.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN034",
@@ -4938,7 +5071,7 @@ window.QUESTIONS_500 = [
     "d": "Tu hú",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -4956,7 +5089,8 @@ window.QUESTIONS_500 = [
       "Vulture",
       "Howl"
     ],
-    "explain_en": "Woodpeckers heal trees by catching wood-destroying insects."
+    "explain_en": "Woodpeckers heal trees by catching wood-destroying insects.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN035",
@@ -4975,7 +5109,7 @@ window.QUESTIONS_500 = [
     "d": "Chim ruồi (Hummingbird)",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -4993,7 +5127,8 @@ window.QUESTIONS_500 = [
       "Deep bird",
       "Hummingbird"
     ],
-    "explain_en": "Hummingbirds can hover in one place like a helicopter to suck nectar from flowers."
+    "explain_en": "Hummingbirds can hover in one place like a helicopter to suck nectar from flowers.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN036",
@@ -5012,7 +5147,7 @@ window.QUESTIONS_500 = [
     "d": "Chim bồ câu",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -5030,7 +5165,8 @@ window.QUESTIONS_500 = [
       "Dragonfly",
       "Pigeon"
     ],
-    "explain_en": "Bats give birth and breastfeed their babies. Bat wings are skin membranes connecting the fingers."
+    "explain_en": "Bats give birth and breastfeed their babies. Bat wings are skin membranes connecting the fingers.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN037",
@@ -5049,7 +5185,7 @@ window.QUESTIONS_500 = [
     "d": "Lười",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -5067,7 +5203,8 @@ window.QUESTIONS_500 = [
       "Koala bear",
       "Lazy"
     ],
-    "explain_en": "Koalas sleep a lot to save energy and digest low-nutrient eucalyptus leaves."
+    "explain_en": "Koalas sleep a lot to save energy and digest low-nutrient eucalyptus leaves.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN038",
@@ -5086,7 +5223,7 @@ window.QUESTIONS_500 = [
     "d": "Để thu hút chim đậu",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -5104,7 +5241,8 @@ window.QUESTIONS_500 = [
       "For better photosynthesis",
       "To attract perching birds"
     ],
-    "explain_en": "Leaves turn into spines to help cactus plants not lose water under the harsh desert sun."
+    "explain_en": "Leaves turn into spines to help cactus plants not lose water under the harsh desert sun.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN039",
@@ -5123,7 +5261,7 @@ window.QUESTIONS_500 = [
     "d": "Chất đạm (Nitơ)",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 4,
@@ -5141,7 +5279,8 @@ window.QUESTIONS_500 = [
       "Drinking water",
       "Protein (Nitrogen)"
     ],
-    "explain_en": "Pitcher plants live in nutrient-poor swamp soil, so insects must be trapped to supplement protein."
+    "explain_en": "Pitcher plants live in nutrient-poor swamp soil, so insects must be trapped to supplement protein.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN040",
@@ -5160,7 +5299,7 @@ window.QUESTIONS_500 = [
     "d": "Tính hướng nước",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -5178,7 +5317,8 @@ window.QUESTIONS_500 = [
       "Thermal directionality",
       "Calculate water direction"
     ],
-    "explain_en": "The light direction characteristic helps sunflowers receive maximum solar energy."
+    "explain_en": "The light direction characteristic helps sunflowers receive maximum solar energy.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN041",
@@ -5197,7 +5337,7 @@ window.QUESTIONS_500 = [
     "d": "Bọ hung",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -5215,7 +5355,8 @@ window.QUESTIONS_500 = [
       "Locust",
       "Scarab beetle"
     ],
-    "explain_en": "Scarab beetles are the strongest athletes on the planet in terms of body weight."
+    "explain_en": "Scarab beetles are the strongest athletes on the planet in terms of body weight.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN042",
@@ -5234,7 +5375,7 @@ window.QUESTIONS_500 = [
     "d": "Cá ngựa",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -5252,7 +5393,8 @@ window.QUESTIONS_500 = [
       "Sea star",
       "Seahorse"
     ],
-    "explain_en": "Male seahorses have a brood pouch in front of their abdomen that receives eggs from the female for fertilization and pregnancy."
+    "explain_en": "Male seahorses have a brood pouch in front of their abdomen that receives eggs from the female for fertilization and pregnancy.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN043",
@@ -5271,7 +5413,7 @@ window.QUESTIONS_500 = [
     "d": "Mực ống",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -5289,7 +5431,8 @@ window.QUESTIONS_500 = [
       "Snail",
       "Squid"
     ],
-    "explain_en": "Octopuses are very intelligent and have the ability to change their camouflage color to blend into the coral reef in 1 second."
+    "explain_en": "Octopuses are very intelligent and have the ability to change their camouflage color to blend into the coral reef in 1 second.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN044",
@@ -5308,7 +5451,7 @@ window.QUESTIONS_500 = [
     "d": "Không khí (oxy)",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -5326,7 +5469,8 @@ window.QUESTIONS_500 = [
       "Water",
       "Air (oxygen)"
     ],
-    "explain_en": "Seeds buried in dark soil still germinate well when there is enough water, air and suitable humidity."
+    "explain_en": "Seeds buried in dark soil still germinate well when there is enough water, air and suitable humidity.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN045",
@@ -5345,7 +5489,7 @@ window.QUESTIONS_500 = [
     "d": "Cuống lá phồng xốp chứa nhiều không khí",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -5363,7 +5507,8 @@ window.QUESTIONS_500 = [
       "Leaves have flying wings",
       "The leaf stalks are spongy and contain a lot of air"
     ],
-    "explain_en": "Water hyacinth's leaf stalks are swollen and spongy like swimming buoys, lifting the entire plant above the water."
+    "explain_en": "Water hyacinth's leaf stalks are swollen and spongy like swimming buoys, lifting the entire plant above the water.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN046",
@@ -5382,7 +5527,7 @@ window.QUESTIONS_500 = [
     "d": "Lá bàng",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -5400,7 +5545,8 @@ window.QUESTIONS_500 = [
       "Mulberry leaves",
       "Almond leaves"
     ],
-    "explain_en": "Silkworms eat fresh mulberry leaves and then wrap themselves in precious silk cocoons."
+    "explain_en": "Silkworms eat fresh mulberry leaves and then wrap themselves in precious silk cocoons.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN047",
@@ -5419,7 +5565,7 @@ window.QUESTIONS_500 = [
     "d": "Con Ruồi",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -5437,7 +5583,8 @@ window.QUESTIONS_500 = [
       "Ant",
       "The Fly"
     ],
-    "explain_en": "Ants are insects with extraordinary muscle strength and a great spirit of solidarity."
+    "explain_en": "Ants are insects with extraordinary muscle strength and a great spirit of solidarity.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN048",
@@ -5456,7 +5603,7 @@ window.QUESTIONS_500 = [
     "d": "Vì cây bị sâu ăn hết lá",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -5474,7 +5621,8 @@ window.QUESTIONS_500 = [
       "To beautify the land",
       "Because the leaves were eaten by worms"
     ],
-    "explain_en": "In winter, the ground freezes and the roots cannot absorb water, and the leaves drop to help the plant avoid dehydration and wither."
+    "explain_en": "In winter, the ground freezes and the roots cannot absorb water, and the leaves drop to help the plant avoid dehydration and wither.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN049",
@@ -5493,7 +5641,7 @@ window.QUESTIONS_500 = [
     "d": "Rễ củ",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -5511,7 +5659,8 @@ window.QUESTIONS_500 = [
       "Pile roots",
       "Roots"
     ],
-    "explain_en": "Secondary roots planted in the ground help support large branches and absorb more moisture from the air."
+    "explain_en": "Secondary roots planted in the ground help support large branches and absorb more moisture from the air.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN050",
@@ -5530,7 +5679,7 @@ window.QUESTIONS_500 = [
     "d": "Cá sấu",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -5548,7 +5697,8 @@ window.QUESTIONS_500 = [
       "Reticulated python",
       "Crocodile"
     ],
-    "explain_en": "Crocodiles are dangerous swamp predators with a deadly twisting bite."
+    "explain_en": "Crocodiles are dangerous swamp predators with a deadly twisting bite.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "TN051",
@@ -5567,7 +5717,7 @@ window.QUESTIONS_500 = [
     "d": "Sao Thủy",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -5585,7 +5735,8 @@ window.QUESTIONS_500 = [
       "Mars",
       "Mercury"
     ],
-    "explain_en": "Mars has a brick-orange red surface and is a prime target for human exploration."
+    "explain_en": "Mars has a brick-orange red surface and is a prime target for human exploration.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN052",
@@ -5604,7 +5755,7 @@ window.QUESTIONS_500 = [
     "d": "Sao Mộc",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -5622,7 +5773,8 @@ window.QUESTIONS_500 = [
       "Saturn",
       "Jupiter"
     ],
-    "explain_en": "Jupiter is a giant gas planet, with a volume of more than 1,300 Earths."
+    "explain_en": "Jupiter is a giant gas planet, with a volume of more than 1,300 Earths.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN053",
@@ -5641,7 +5793,7 @@ window.QUESTIONS_500 = [
     "d": "Sao Thủy",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -5659,7 +5811,8 @@ window.QUESTIONS_500 = [
       "Jupiter",
       "Mercury"
     ],
-    "explain_en": "Saturn's rings consist of millions of ice sheets and dust particles orbiting the planet's equator."
+    "explain_en": "Saturn's rings consist of millions of ice sheets and dust particles orbiting the planet's equator.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN054",
@@ -5678,7 +5831,7 @@ window.QUESTIONS_500 = [
     "d": "Khoảng 100 năm",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -5696,7 +5849,8 @@ window.QUESTIONS_500 = [
       "About 10 years",
       "About 100 years"
     ],
-    "explain_en": "The last time Halley's Comet appeared was in 1986, and is expected to return in 2061."
+    "explain_en": "The last time Halley's Comet appeared was in 1986, and is expected to return in 2061.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN055",
@@ -5715,7 +5869,7 @@ window.QUESTIONS_500 = [
     "d": "Thủy triều",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -5733,7 +5887,8 @@ window.QUESTIONS_500 = [
       "Shooting star",
       "Tide"
     ],
-    "explain_en": "When a total solar eclipse occurs, the daytime sky darkens like sunset."
+    "explain_en": "When a total solar eclipse occurs, the daytime sky darkens like sunset.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN056",
@@ -5752,7 +5907,7 @@ window.QUESTIONS_500 = [
     "d": "Nguyệt thực",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -5770,7 +5925,8 @@ window.QUESTIONS_500 = [
       "Eclipse",
       "Lunar eclipse"
     ],
-    "explain_en": "A total lunar eclipse turns the Moon a mysterious copper-red color, so it is also called a 'blood moon'."
+    "explain_en": "A total lunar eclipse turns the Moon a mysterious copper-red color, so it is also called a 'blood moon'.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN057",
@@ -5789,7 +5945,7 @@ window.QUESTIONS_500 = [
     "d": "Sao Mộc",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -5807,7 +5963,8 @@ window.QUESTIONS_500 = [
       "Mars",
       "Jupiter"
     ],
-    "explain_en": "The Moon's gravitational force pulls ocean water towards it, creating tides."
+    "explain_en": "The Moon's gravitational force pulls ocean water towards it, creating tides.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN058",
@@ -5826,7 +5983,7 @@ window.QUESTIONS_500 = [
     "d": "Khoảng 8 phút 20 giây",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -5844,7 +6001,8 @@ window.QUESTIONS_500 = [
       "About 1 second",
       "About 8 minutes 20 seconds"
     ],
-    "explain_en": "Even though light travels extremely fast (300,000 km/s), a distance of 150 million km still takes more than 8 minutes."
+    "explain_en": "Even though light travels extremely fast (300,000 km/s), a distance of 150 million km still takes more than 8 minutes.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN059",
@@ -5863,7 +6021,7 @@ window.QUESTIONS_500 = [
     "d": "Do thủy triều",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -5881,7 +6039,8 @@ window.QUESTIONS_500 = [
       "Because the Earth's axis is tilted and the Earth moves around the Sun",
       "Due to the tide"
     ],
-    "explain_en": "The axis is tilted at 23.5 degrees, causing the two hemispheres to receive different amounts of heat during the year."
+    "explain_en": "The axis is tilted at 23.5 degrees, causing the two hemispheres to receive different amounts of heat during the year.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN060",
@@ -5900,7 +6059,7 @@ window.QUESTIONS_500 = [
     "d": "Có 370 ngày",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -5918,7 +6077,8 @@ window.QUESTIONS_500 = [
       "There are 360 days",
       "There are 370 days"
     ],
-    "explain_en": "Every 4 years there is a leap year to make up for the balance of 6 hours each year the Earth orbits the Sun."
+    "explain_en": "Every 4 years there is a leap year to make up for the balance of 6 hours each year the Earth orbits the Sun.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN061",
@@ -5937,7 +6097,7 @@ window.QUESTIONS_500 = [
     "d": "Vòng Cực Nam",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -5955,7 +6115,8 @@ window.QUESTIONS_500 = [
       "Equator Road",
       "Southern Polar Circle"
     ],
-    "explain_en": "The equatorial region receives the most sunlight all year round, so it has a hot and humid climate."
+    "explain_en": "The equatorial region receives the most sunlight all year round, so it has a hot and humid climate.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN062",
@@ -5974,7 +6135,7 @@ window.QUESTIONS_500 = [
     "d": "Tầng Đối lưu",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -5992,7 +6153,8 @@ window.QUESTIONS_500 = [
       "Thermosphere",
       "Troposphere"
     ],
-    "explain_en": "The ozone layer absorbs most of the dangerous UV rays emitted from the Sun."
+    "explain_en": "The ozone layer absorbs most of the dangerous UV rays emitted from the Sun.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN063",
@@ -6011,7 +6173,7 @@ window.QUESTIONS_500 = [
     "d": "Hướng Bắc (và hướng Nam)",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -6029,7 +6191,8 @@ window.QUESTIONS_500 = [
       "Direction of sunrise",
       "North (and South)"
     ],
-    "explain_en": "The compass needle is oriented according to the Earth's huge natural magnetic field."
+    "explain_en": "The compass needle is oriented according to the Earth's huge natural magnetic field.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN064",
@@ -6048,7 +6211,7 @@ window.QUESTIONS_500 = [
     "d": "Vì vận tốc ánh sáng nhanh hơn rất nhiều so với vận tốc âm thanh",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -6066,7 +6229,8 @@ window.QUESTIONS_500 = [
       "Because the eyes see faster than the ears hear",
       "Because the speed of light is much faster than the speed of sound"
     ],
-    "explain_en": "Light travels 300,000 km/s (visible), sound only travels 340 m/s in air."
+    "explain_en": "Light travels 300,000 km/s (visible), sound only travels 340 m/s in air.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN065",
@@ -6085,7 +6249,7 @@ window.QUESTIONS_500 = [
     "d": "Chạy vào trú mưa dưới gốc cây to cao đứng đơn độc giữa đồng trống",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -6103,7 +6267,8 @@ window.QUESTIONS_500 = [
       "Enter the house and close the windows",
       "Run to shelter from the rain under a tall tree standing alone in the middle of an empty field"
     ],
-    "explain_en": "A large lonely tree acts as a natural lightning rod, making it vulnerable to lightning and transmitting electricity to the ground."
+    "explain_en": "A large lonely tree acts as a natural lightning rod, making it vulnerable to lightning and transmitting electricity to the ground.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN066",
@@ -6122,7 +6287,7 @@ window.QUESTIONS_500 = [
     "d": "Thiên hà hình elip",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -6140,7 +6305,8 @@ window.QUESTIONS_500 = [
       "Irregular galaxy",
       "Elliptical galaxy"
     ],
-    "explain_en": "The Milky Way contains hundreds of billions of sparkling stars orbiting the center of the galaxy."
+    "explain_en": "The Milky Way contains hundreds of billions of sparkling stars orbiting the center of the galaxy.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN067",
@@ -6159,7 +6325,7 @@ window.QUESTIONS_500 = [
     "d": "Yuri Gagarin",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -6177,7 +6343,8 @@ window.QUESTIONS_500 = [
       "Buzz Aldrin",
       "Yuri Gagarin"
     ],
-    "explain_en": "Neil Armstrong exclaimed: 'That's one small step for man, one giant leap for mankind.'"
+    "explain_en": "Neil Armstrong exclaimed: 'That's one small step for man, one giant leap for mankind.'",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN068",
@@ -6196,7 +6363,7 @@ window.QUESTIONS_500 = [
     "d": "Trung tướng Phạm Tuân",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -6214,7 +6381,8 @@ window.QUESTIONS_500 = [
       "Nguyen Van Cu",
       "Lieutenant General Pham Tuan"
     ],
-    "explain_en": "Pham Tuan flew into outer space on the Soyuz 37 with a Soviet astronaut."
+    "explain_en": "Pham Tuan flew into outer space on the Soyuz 37 with a Soviet astronaut.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN069",
@@ -6233,7 +6401,7 @@ window.QUESTIONS_500 = [
     "d": "Dòng hải lưu",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -6251,7 +6419,8 @@ window.QUESTIONS_500 = [
       "Tides (High tide and low tide)",
       "Ocean currents"
     ],
-    "explain_en": "Tides help fishermen go to sea and were used by Ngo Quyen to defeat the Southern Han army."
+    "explain_en": "Tides help fishermen go to sea and were used by Ngo Quyen to defeat the Southern Han army.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN070",
@@ -6270,7 +6439,7 @@ window.QUESTIONS_500 = [
     "d": "Khí Heli",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -6288,7 +6457,8 @@ window.QUESTIONS_500 = [
       "Nitrogen gas",
       "Helium gas"
     ],
-    "explain_en": "CO2 from car exhaust and factories traps radiant heat, causing polar ice caps to melt and sea levels to rise."
+    "explain_en": "CO2 from car exhaust and factories traps radiant heat, causing polar ice caps to melt and sea levels to rise.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN071",
@@ -6307,7 +6477,7 @@ window.QUESTIONS_500 = [
     "d": "Nhiệt kế",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -6325,7 +6495,8 @@ window.QUESTIONS_500 = [
       "Hygrometer",
       "Thermometer"
     ],
-    "explain_en": "Thermometers contain mercury or red alcohol that expands with air temperature."
+    "explain_en": "Thermometers contain mercury or red alcohol that expands with air temperature.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN072",
@@ -6344,7 +6515,7 @@ window.QUESTIONS_500 = [
     "d": "Nơi sấm sét dữ dội nhất",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -6362,7 +6533,8 @@ window.QUESTIONS_500 = [
       "Where the wind gusts are strongest",
       "Where the thunder is most intense"
     ],
-    "explain_en": "Around the eye of the storm there was a fierce storm, but right in the middle of the eye the wind was calm."
+    "explain_en": "Around the eye of the storm there was a fierce storm, but right in the middle of the eye the wind was calm.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN073",
@@ -6381,7 +6553,7 @@ window.QUESTIONS_500 = [
     "d": "Gió heo may",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -6399,7 +6571,8 @@ window.QUESTIONS_500 = [
       "Tornado (Waterspout)",
       "Lucky wind"
     ],
-    "explain_en": "Tornadoes have terrible destructive power and can lift cars and houses."
+    "explain_en": "Tornadoes have terrible destructive power and can lift cars and houses.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN074",
@@ -6418,7 +6591,7 @@ window.QUESTIONS_500 = [
     "d": "Do tàu thủy chạy nhanh",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -6436,7 +6609,8 @@ window.QUESTIONS_500 = [
       "Strong earthquakes or volcanic eruptions at the bottom of the ocean",
       "Because ships run fast"
     ],
-    "explain_en": "Earthquakes deform the seabed, pushing the water mass to rise into wave walls that destroy the shore."
+    "explain_en": "Earthquakes deform the seabed, pushing the water mass to rise into wave walls that destroy the shore.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN075",
@@ -6455,7 +6629,7 @@ window.QUESTIONS_500 = [
     "d": "Do hiện tượng tán xạ ánh sáng mặt trời qua các phân tử khí quyển",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -6473,7 +6647,8 @@ window.QUESTIONS_500 = [
       "Because the air is blue",
       "Due to the phenomenon of sunlight scattering through atmospheric molecules"
     ],
-    "explain_en": "Short wavelength blue light is most strongly scattered by gas molecules, making the sky blue."
+    "explain_en": "Short wavelength blue light is most strongly scattered by gas molecules, making the sky blue.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "TN076",
@@ -6492,7 +6667,7 @@ window.QUESTIONS_500 = [
     "d": "Hiện tượng ngưng tụ",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -6510,7 +6685,8 @@ window.QUESTIONS_500 = [
       "Evaporation phenomenon",
       "Condensation phenomenon"
     ],
-    "explain_en": "Liquid water left in the freezer turns into ice cubes, a phenomenon of freezing."
+    "explain_en": "Liquid water left in the freezer turns into ice cubes, a phenomenon of freezing.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN077",
@@ -6529,7 +6705,7 @@ window.QUESTIONS_500 = [
     "d": "Hiện tượng ngưng kết",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -6547,7 +6723,8 @@ window.QUESTIONS_500 = [
       "Melting phenomenon",
       "Agglutination phenomenon"
     ],
-    "explain_en": "Ice cubes left outdoors melt into liquid water, a melting phenomenon."
+    "explain_en": "Ice cubes left outdoors melt into liquid water, a melting phenomenon.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN078",
@@ -6566,7 +6743,7 @@ window.QUESTIONS_500 = [
     "d": "Hiện tượng bay hơi của nước",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -6584,7 +6761,8 @@ window.QUESTIONS_500 = [
       "Condensation phenomenon",
       "The phenomenon of evaporation of water"
     ],
-    "explain_en": "The water in the fabric fibers evaporates into the air, making the clothes dry and fragrant."
+    "explain_en": "The water in the fabric fibers evaporates into the air, making the clothes dry and fragrant.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN079",
@@ -6603,7 +6781,7 @@ window.QUESTIONS_500 = [
     "d": "Do nồi bị thủng",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 2,
@@ -6621,7 +6799,8 @@ window.QUESTIONS_500 = [
       "The rising steam meets the cold lid and condenses into water drops",
       "Because the pot was punctured"
     ],
-    "explain_en": "Water vapor changes from a gas back to a liquid when exposed to cold, called condensation."
+    "explain_en": "Water vapor changes from a gas back to a liquid when exposed to cold, called condensation.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN080",
@@ -6640,7 +6819,7 @@ window.QUESTIONS_500 = [
     "d": "Có hình dạng cố định như hòn đá",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -6658,7 +6837,8 @@ window.QUESTIONS_500 = [
       "There is no defined volume",
       "Has a fixed shape like a stone"
     ],
-    "explain_en": "If you pour water into a cup, it will look like a cup, if you pour it into a bottle, it will look like a bottle."
+    "explain_en": "If you pour water into a cup, it will look like a cup, if you pour it into a bottle, it will look like a bottle.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN081",
@@ -6677,7 +6857,7 @@ window.QUESTIONS_500 = [
     "d": "Có hình dạng và thể tích xác định",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -6695,7 +6875,8 @@ window.QUESTIONS_500 = [
       "Shape changes according to container",
       "Has a definite shape and volume"
     ],
-    "explain_en": "The tightly bonded solid molecules keep the object in a fixed shape."
+    "explain_en": "The tightly bonded solid molecules keep the object in a fixed shape.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN082",
@@ -6714,7 +6895,7 @@ window.QUESTIONS_500 = [
     "d": "Chìm xuống đáy",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -6732,7 +6913,8 @@ window.QUESTIONS_500 = [
       "Tough",
       "Sink to the bottom"
     ],
-    "explain_en": "Gases spread freely and can be compressed easily."
+    "explain_en": "Gases spread freely and can be compressed easily.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN083",
@@ -6751,7 +6933,7 @@ window.QUESTIONS_500 = [
     "d": "Vì gỗ biết bơi",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -6769,7 +6951,8 @@ window.QUESTIONS_500 = [
       "Because iron nails are afraid of water",
       "Because wood can swim"
     ],
-    "explain_en": "Whether an object floats or sinks depends on the density of the object compared to the density of the liquid."
+    "explain_en": "Whether an object floats or sinks depends on the density of the object compared to the density of the liquid.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN084",
@@ -6788,7 +6971,7 @@ window.QUESTIONS_500 = [
     "d": "Cực To và Cực Nhỏ",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -6806,7 +6989,8 @@ window.QUESTIONS_500 = [
       "The East Pole and the West Pole",
       "Extremely Large and Extremely Small"
     ],
-    "explain_en": "Two poles with the same name repel each other, two poles with different names attract each other tightly."
+    "explain_en": "Two poles with the same name repel each other, two poles with different names attract each other tightly.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN085",
@@ -6825,7 +7009,7 @@ window.QUESTIONS_500 = [
     "d": "Gỗ khô, nhựa xốp",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -6843,7 +7027,8 @@ window.QUESTIONS_500 = [
       "Glass, rubber",
       "Dry wood, foam plastic"
     ],
-    "explain_en": "Magnets create a magnetic field that attracts metals with magnetic properties such as iron and steel."
+    "explain_en": "Magnets create a magnetic field that attracts metals with magnetic properties such as iron and steel.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN086",
@@ -6862,7 +7047,7 @@ window.QUESTIONS_500 = [
     "d": "Cao su cách điện",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -6880,7 +7065,8 @@ window.QUESTIONS_500 = [
       "Copper and aluminum metals",
       "Insulating rubber"
     ],
-    "explain_en": "Copper and aluminum have free-moving electrons that help conduct electricity quickly."
+    "explain_en": "Copper and aluminum have free-moving electrons that help conduct electricity quickly.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN087",
@@ -6899,7 +7085,7 @@ window.QUESTIONS_500 = [
     "d": "Để cầm êm tay hơn",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -6917,7 +7103,8 @@ window.QUESTIONS_500 = [
       "Make the pliers more beautiful",
       "For a more comfortable grip"
     ],
-    "explain_en": "Plastic is a safe insulator that prevents electric current from flowing through the human body."
+    "explain_en": "Plastic is a safe insulator that prevents electric current from flowing through the human body.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN088",
@@ -6936,7 +7123,7 @@ window.QUESTIONS_500 = [
     "d": "Thước kẻ bị dính keo",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -6954,7 +7141,8 @@ window.QUESTIONS_500 = [
       "The ruler turns into a magnet",
       "The ruler is stuck with glue"
     ],
-    "explain_en": "Rubbing causes electrons to move, creating a static charge that attracts light objects."
+    "explain_en": "Rubbing causes electrons to move, creating a static charge that attracts light objects.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN089",
@@ -6973,7 +7161,7 @@ window.QUESTIONS_500 = [
     "d": "Lớp chân không ở giữa hai lớp vỏ ngăn cản sự truyền nhiệt",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -6991,7 +7179,8 @@ window.QUESTIONS_500 = [
       "Thanks to the rock inside",
       "The vacuum layer between the two shells prevents heat transfer"
     ],
-    "explain_en": "A vacuum has no matter, so heat cannot escape by conduction or convection."
+    "explain_en": "A vacuum has no matter, so heat cannot escape by conduction or convection.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN090",
@@ -7010,7 +7199,7 @@ window.QUESTIONS_500 = [
     "d": "Hỗn hợp chất rắn",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -7028,7 +7217,8 @@ window.QUESTIONS_500 = [
       "Sugar water solution",
       "Solid mixture"
     ],
-    "explain_en": "Sugar is the solute, water is the solvent, sugar water is a homogeneous solution."
+    "explain_en": "Sugar is the solute, water is the solvent, sugar water is a homogeneous solution.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN091",
@@ -7047,7 +7237,7 @@ window.QUESTIONS_500 = [
     "d": "Vôi bột",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -7065,7 +7255,8 @@ window.QUESTIONS_500 = [
       "Cane sugar",
       "Lime powder"
     ],
-    "explain_en": "Rainwater erodes soil and rocks, carrying salt into rivers and accumulating in the ocean."
+    "explain_en": "Rainwater erodes soil and rocks, carrying salt into rivers and accumulating in the ocean.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN092",
@@ -7084,7 +7275,7 @@ window.QUESTIONS_500 = [
     "d": "Kính râm",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -7102,7 +7293,8 @@ window.QUESTIONS_500 = [
       "Handheld magnifying glass",
       "Sunglasses"
     ],
-    "explain_en": "A magnifying glass focuses light to help magnify details of ants and leaf veins."
+    "explain_en": "A magnifying glass focuses light to help magnify details of ants and leaf veins.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN093",
@@ -7121,7 +7313,7 @@ window.QUESTIONS_500 = [
     "d": "Lăng kính đổi màu",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -7139,7 +7331,8 @@ window.QUESTIONS_500 = [
       "Convex lens",
       "Prism changes color"
     ],
-    "explain_en": "The calm water surface reflects light, creating a poetic image of the moon shadow at the bottom of the water."
+    "explain_en": "The calm water surface reflects light, creating a poetic image of the moon shadow at the bottom of the water.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN094",
@@ -7158,7 +7351,7 @@ window.QUESTIONS_500 = [
     "d": "Để thu hút ong bướm",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -7176,7 +7369,8 @@ window.QUESTIONS_500 = [
       "Because white shirts are heavier",
       "To attract bees and butterflies"
     ],
-    "explain_en": "Black absorbs strong radiant heat causing heat, white reflects heat better."
+    "explain_en": "Black absorbs strong radiant heat causing heat, white reflects heat better.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN095",
@@ -7195,7 +7389,7 @@ window.QUESTIONS_500 = [
     "d": "Làm sôi nước sông",
     "ans": "C",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -7213,7 +7407,8 @@ window.QUESTIONS_500 = [
       "Rotates a turbine connected to a generator",
       "Boil river water"
     ],
-    "explain_en": "The potential energy of the high water flow is converted into kinetic energy to rotate the turbine, generating electricity."
+    "explain_en": "The potential energy of the high water flow is converted into kinetic energy to rotate the turbine, generating electricity.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN096",
@@ -7232,7 +7427,7 @@ window.QUESTIONS_500 = [
     "d": "Thomas Edison",
     "ans": "D",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -7250,7 +7445,8 @@ window.QUESTIONS_500 = [
       "Albert Einstein",
       "Thomas Edison"
     ],
-    "explain_en": "Edison tested thousands of materials before finding the durable tungsten filament."
+    "explain_en": "Edison tested thousands of materials before finding the durable tungsten filament.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN097",
@@ -7269,7 +7465,7 @@ window.QUESTIONS_500 = [
     "d": "Vỏ bóng tự vá lành",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -7287,7 +7483,8 @@ window.QUESTIONS_500 = [
       "Because boiling water attracts bubbles",
       "The bladder heals itself"
     ],
-    "explain_en": "The gas expands due to heat very quickly, creating pressure that pushes the round dent back up."
+    "explain_en": "The gas expands due to heat very quickly, creating pressure that pushes the round dent back up.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN098",
@@ -7306,7 +7503,7 @@ window.QUESTIONS_500 = [
     "d": "Để thoát nước mưa",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -7324,7 +7521,8 @@ window.QUESTIONS_500 = [
       "Let the train run loudly",
       "To drain rainwater"
     ],
-    "explain_en": "The solid expands when heated, and the expansion joint prevents dangerous rail bending forces."
+    "explain_en": "The solid expands when heated, and the expansion joint prevents dangerous rail bending forces.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN099",
@@ -7343,7 +7541,7 @@ window.QUESTIONS_500 = [
     "d": "Trong chân không",
     "ans": "A",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -7361,7 +7559,8 @@ window.QUESTIONS_500 = [
       "Gas (air)",
       "In a vacuum"
     ],
-    "explain_en": "Solid molecules are closely packed together, helping to transmit vibration waves many times faster than gases."
+    "explain_en": "Solid molecules are closely packed together, helping to transmit vibration waves many times faster than gases.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "TN100",
@@ -7380,7 +7579,7 @@ window.QUESTIONS_500 = [
     "d": "Truyền rất nhanh",
     "ans": "B",
     "source": "Trạng Nguyên & Violympic",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -7398,7 +7597,8 @@ window.QUESTIONS_500 = [
       "Broadcast louder",
       "Transmits very quickly"
     ],
-    "explain_en": "Sound needs an elastic material medium to propagate, a vacuum has no molecules."
+    "explain_en": "Sound needs an elastic material medium to propagate, a vacuum has no molecules.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK001",
@@ -7417,7 +7617,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -7435,7 +7635,8 @@ window.QUESTIONS_500 = [
       "Pot 2",
       "Pot 3"
     ],
-    "explain_en": "Green plants need both sunlight and water to photosynthesize and maintain life."
+    "explain_en": "Green plants need both sunlight and water to photosynthesize and maintain life.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK002",
@@ -7454,7 +7655,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -7472,7 +7673,8 @@ window.QUESTIONS_500 = [
       "The chestnuts completely dissolved in the soil",
       "The land there turned into desert sand"
     ],
-    "explain_en": "Squirrels' behavior of burying seeds unintentionally helps forest trees spread and grow more seedlings."
+    "explain_en": "Squirrels' behavior of burying seeds unintentionally helps forest trees spread and grow more seedlings.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK003",
@@ -7491,7 +7693,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -7509,7 +7711,8 @@ window.QUESTIONS_500 = [
       "Help birds fly high into the sky",
       "Helps birds sleep for 6 months"
     ],
-    "explain_en": "The thick layer of fat and waterproof feathers are great heat-retaining weapons for penguins."
+    "explain_en": "The thick layer of fat and waterproof feathers are great heat-retaining weapons for penguins.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK004",
@@ -7528,7 +7731,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -7546,7 +7749,8 @@ window.QUESTIONS_500 = [
       "The water bottle turns white",
       "White chrysanthemum petals gradually turn red"
     ],
-    "explain_en": "The stem absorbs red water and conducts it to the flower petals, proving that the xylem vessels conduct water from the bottom up."
+    "explain_en": "The stem absorbs red water and conducts it to the flower petals, proving that the xylem vessels conduct water from the bottom up.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK005",
@@ -7565,7 +7769,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -7583,7 +7787,8 @@ window.QUESTIONS_500 = [
       "Helps ducks push water like oars when swimming",
       "Help the duck climb tall trees"
     ],
-    "explain_en": "Webbed feet are a perfect adaptation for swimming and pushing water in waterfowl."
+    "explain_en": "Webbed feet are a perfect adaptation for swimming and pushing water in waterfowl.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK006",
@@ -7602,7 +7807,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -7620,7 +7825,8 @@ window.QUESTIONS_500 = [
       "Horse",
       "Cat"
     ],
-    "explain_en": "Dogs cannot retract their claws when walking, so their footprints are always clearly marked with claw marks, unlike cats."
+    "explain_en": "Dogs cannot retract their claws when walking, so their footprints are always clearly marked with claw marks, unlike cats.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK007",
@@ -7639,7 +7845,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -7657,7 +7863,8 @@ window.QUESTIONS_500 = [
       "Breathe cold air",
       "Thanks to the food brought by the young"
     ],
-    "explain_en": "Hibernation helps bears save energy by gradually burning stored fat."
+    "explain_en": "Hibernation helps bears save energy by gradually burning stored fat.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK008",
@@ -7676,7 +7883,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -7694,7 +7901,8 @@ window.QUESTIONS_500 = [
       "The flower buds close tightly when morning comes",
       "Flower buds only face North"
     ],
-    "explain_en": "Heliotropism helps plants capture maximum sunlight for growth."
+    "explain_en": "Heliotropism helps plants capture maximum sunlight for growth.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK009",
@@ -7713,7 +7921,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -7731,7 +7939,8 @@ window.QUESTIONS_500 = [
       "Minimize evaporation and protect yourself",
       "Helps plants absorb more rainwater"
     ],
-    "explain_en": "Leaves turn into spines to help reduce the area exposed to hot, dry air, preventing water loss."
+    "explain_en": "Leaves turn into spines to help reduce the area exposed to hot, dry air, preventing water loss.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK010",
@@ -7750,7 +7959,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -7768,7 +7977,8 @@ window.QUESTIONS_500 = [
       "Snail urine",
       "Mucus helps snails move smoothly and protects their bodies"
     ],
-    "explain_en": "The mucus reduces friction and prevents damage when snails crawl over rough surfaces."
+    "explain_en": "The mucus reduces friction and prevents damage when snails crawl over rough surfaces.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK011",
@@ -7787,7 +7997,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -7805,7 +8015,8 @@ window.QUESTIONS_500 = [
       "The dragonfly sat still and did not move",
       "Dragonflies fly close to the ground"
     ],
-    "explain_en": "Increased air humidity wets the insects' thin wings, causing them to fly low to the ground."
+    "explain_en": "Increased air humidity wets the insects' thin wings, causing them to fly low to the ground.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK012",
@@ -7824,7 +8035,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -7842,7 +8053,8 @@ window.QUESTIONS_500 = [
       "Periodic molt",
       "Skin discoloration disease"
     ],
-    "explain_en": "Camouflage helps geckos avoid predators and easily ambush prey."
+    "explain_en": "Camouflage helps geckos avoid predators and easily ambush prey.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK013",
@@ -7861,7 +8073,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -7879,7 +8091,8 @@ window.QUESTIONS_500 = [
       "Number of branches and leaves of the tree",
       "Amount of water the plant drank"
     ],
-    "explain_en": "Each tree ring corresponds to an annual growth cycle of the tree trunk."
+    "explain_en": "Each tree ring corresponds to an annual growth cycle of the tree trunk.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK014",
@@ -7898,7 +8111,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -7916,7 +8129,8 @@ window.QUESTIONS_500 = [
       "Owls have a sense of smell to smell chestnuts",
       "The owl's eyes emit flashlight beams"
     ],
-    "explain_en": "The structure of large eyes that catch light and asymmetrical ears help owls accurately determine the location of their prey."
+    "explain_en": "The structure of large eyes that catch light and asymmetrical ears help owls accurately determine the location of their prey.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK015",
@@ -7935,7 +8149,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -7953,7 +8167,8 @@ window.QUESTIONS_500 = [
       "Explode yourself and shoot particles",
       "Dispersed by clinging to animal fur"
     ],
-    "explain_en": "The lightweight parachute structure helps dandelion seeds fly everywhere with the wind."
+    "explain_en": "The lightweight parachute structure helps dandelion seeds fly everywhere with the wind.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK016",
@@ -7972,7 +8187,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -7990,7 +8205,8 @@ window.QUESTIONS_500 = [
       "Only metal coins",
       "All four objects sink"
     ],
-    "explain_en": "Objects with a density less than water (styrofoam, cork wood) will float, objects heavier than water (metal) will sink."
+    "explain_en": "Objects with a density less than water (styrofoam, cork wood) will float, objects heavier than water (metal) will sink.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK017",
@@ -8009,7 +8225,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -8027,7 +8243,8 @@ window.QUESTIONS_500 = [
       "Sea water is always frozen",
       "Sand absorbs heat faster than sea water"
     ],
-    "explain_en": "Sand has a small specific heat capacity so it heats up very quickly in sunlight, while water heats up more slowly."
+    "explain_en": "Sand has a small specific heat capacity so it heats up very quickly in sunlight, while water heats up more slowly.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK018",
@@ -8046,7 +8263,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -8064,7 +8281,8 @@ window.QUESTIONS_500 = [
       "Metal conducts heat well to cook food, plastic insulates to avoid burning your hands",
       "Plastic conducts heat faster than metal"
     ],
-    "explain_en": "Metal conducts heat well to help transfer heat quickly, while the heat-insulating plastic handle protects the handle."
+    "explain_en": "Metal conducts heat well to help transfer heat quickly, while the heat-insulating plastic handle protects the handle.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK019",
@@ -8083,7 +8301,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -8101,7 +8319,8 @@ window.QUESTIONS_500 = [
       "Because the metal spoon is deformed",
       "Due to the glass cup walls vibrating (oscillating)"
     ],
-    "explain_en": "All sounds are created from the vibrations of objects impacting the surrounding air."
+    "explain_en": "All sounds are created from the vibrations of objects impacting the surrounding air.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK020",
@@ -8120,7 +8339,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -8138,7 +8357,8 @@ window.QUESTIONS_500 = [
       "Straight line",
       "Spiral loop"
     ],
-    "explain_en": "In a transparent and homogeneous medium, light always travels in a straight line."
+    "explain_en": "In a transparent and homogeneous medium, light always travels in a straight line.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK021",
@@ -8157,7 +8377,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -8175,7 +8395,8 @@ window.QUESTIONS_500 = [
       "Because the Earth's magnetic field attracts the ball",
       "Because balloons are lighter than air"
     ],
-    "explain_en": "According to the reaction principle: air escaping strongly from the back will push the ball forward."
+    "explain_en": "According to the reaction principle: air escaping strongly from the back will push the ball forward.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK022",
@@ -8194,7 +8415,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -8212,7 +8433,8 @@ window.QUESTIONS_500 = [
       "The ant is smaller than life size",
       "The ant turns purple"
     ],
-    "explain_en": "The converging lens of a magnifying glass creates a magnified virtual image that helps observe small objects in more detail."
+    "explain_en": "The converging lens of a magnifying glass creates a magnified virtual image that helps observe small objects in more detail.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK023",
@@ -8231,7 +8453,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -8249,7 +8471,8 @@ window.QUESTIONS_500 = [
       "The ruler attracts scraps of paper",
       "The piece of paper turned into a drop of water"
     ],
-    "explain_en": "The phenomenon of electricity caused by rubbing causes the plastic ruler to become electrically charged and capable of attracting light objects."
+    "explain_en": "The phenomenon of electricity caused by rubbing causes the plastic ruler to become electrically charged and capable of attracting light objects.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK024",
@@ -8268,7 +8491,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -8286,7 +8509,8 @@ window.QUESTIONS_500 = [
       "Mesh bag made of wire",
       "Sealed foam box"
     ],
-    "explain_en": "Styrofoam contains many tiny air bubbles which are extremely poor conductors of heat (good insulation), preventing heat from transferring to the stone."
+    "explain_en": "Styrofoam contains many tiny air bubbles which are extremely poor conductors of heat (good insulation), preventing heat from transferring to the stone.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK025",
@@ -8305,7 +8529,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -8323,7 +8547,8 @@ window.QUESTIONS_500 = [
       "Strongly ring the car bell",
       "Step on the pedal quickly"
     ],
-    "explain_en": "The brake pads press tightly against the wheel rim, creating sliding friction that hinders the wheel's rotation."
+    "explain_en": "The brake pads press tightly against the wheel rim, creating sliding friction that hinders the wheel's rotation.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK026",
@@ -8342,7 +8567,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -8360,7 +8585,8 @@ window.QUESTIONS_500 = [
       "Dissolve completely disappears",
       "Sinks to the bottom of the cup"
     ],
-    "explain_en": "Cooking oil is lighter than water and insoluble in water, so it floats to form a layer on the surface."
+    "explain_en": "Cooking oil is lighter than water and insoluble in water, so it floats to form a layer on the surface.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK027",
@@ -8379,7 +8605,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -8397,7 +8623,8 @@ window.QUESTIONS_500 = [
       "The whirling never stops",
       "One end points to the North, the other end points to the South"
     ],
-    "explain_en": "The Earth's magnetic field causes the north pole of the magnet to point towards the magnetic north pole and the south pole towards the south magnetic pole."
+    "explain_en": "The Earth's magnetic field causes the north pole of the magnet to point towards the magnetic north pole and the south pole towards the south magnetic pole.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK028",
@@ -8416,7 +8643,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -8434,7 +8661,8 @@ window.QUESTIONS_500 = [
       "Light dispersion phenomenon",
       "Light reflection phenomenon"
     ],
-    "explain_en": "The flat water surface acts like a flat mirror, reflecting light rays from the surrounding landscape."
+    "explain_en": "The flat water surface acts like a flat mirror, reflecting light rays from the surrounding landscape.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK029",
@@ -8453,7 +8681,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -8471,7 +8699,8 @@ window.QUESTIONS_500 = [
       "Makes tires look cooler and more beautiful",
       "Helps the car run and make a funny noise"
     ],
-    "explain_en": "The tread lines increase friction between the wheel and the road surface, ensuring safety when braking."
+    "explain_en": "The tread lines increase friction between the wheel and the road surface, ensuring safety when braking.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK030",
@@ -8490,7 +8719,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "hard",
     "diff": 3,
     "grade": 3,
@@ -8508,7 +8737,8 @@ window.QUESTIONS_500 = [
       "Magnetic attraction from the tongue",
       "The straw contracts on its own"
     ],
-    "explain_en": "When all the air in the tube is sucked out, the pressure in the tube decreases, atmospheric pressure forces the milk to rise."
+    "explain_en": "When all the air in the tube is sucked out, the pressure in the tube decreases, atmospheric pressure forces the milk to rise.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK031",
@@ -8527,7 +8757,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -8545,7 +8775,8 @@ window.QUESTIONS_500 = [
       "Five-pointed star shape",
       "Full bright circle (Full Moon)"
     ],
-    "explain_en": "On a full moon day, the illuminated half of the Moon points perfectly straight towards the Earth."
+    "explain_en": "On a full moon day, the illuminated half of the Moon points perfectly straight towards the Earth.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK032",
@@ -8564,7 +8795,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -8582,7 +8813,8 @@ window.QUESTIONS_500 = [
       "The shadow is the shortest and is right under the baby's feet",
       "The shadow disappeared and flew into the sky"
     ],
-    "explain_en": "At noon, the Sun is highest overhead, so the shadow of an object cast on the ground is shortest."
+    "explain_en": "At noon, the Sun is highest overhead, so the shadow of an object cast on the ground is shortest.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK033",
@@ -8601,7 +8833,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -8619,7 +8851,8 @@ window.QUESTIONS_500 = [
       "North direction",
       "East direction"
     ],
-    "explain_en": "The Sun rises in the East, when you look East, your back is West."
+    "explain_en": "The Sun rises in the East, when you look East, your back is West.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK034",
@@ -8638,7 +8871,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -8656,7 +8889,8 @@ window.QUESTIONS_500 = [
       "At midnight it was dark",
       "On cloudy days, prepare for a big storm"
     ],
-    "explain_en": "Tiny raindrops in the air refract and reflect sunlight to form a 7-color rainbow."
+    "explain_en": "Tiny raindrops in the air refract and reflect sunlight to form a 7-color rainbow.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK035",
@@ -8675,7 +8909,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -8693,7 +8927,8 @@ window.QUESTIONS_500 = [
       "To welcome fishing tourists",
       "To attract fish to swim closer"
     ],
-    "explain_en": "The lighthouse sends out light signals that scan dozens of nautical miles to help orient ships at night."
+    "explain_en": "The lighthouse sends out light signals that scan dozens of nautical miles to help orient ships at night.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK036",
@@ -8712,7 +8947,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -8730,7 +8965,8 @@ window.QUESTIONS_500 = [
       "North (in the Northern Hemisphere)",
       "South direction"
     ],
-    "explain_en": "In the Northern Hemisphere, the North receives less direct sunlight, so it is wetter, and moss adapts to grow lushly."
+    "explain_en": "In the Northern Hemisphere, the North receives less direct sunlight, so it is wetter, and moss adapts to grow lushly.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK037",
@@ -8749,7 +8985,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -8767,7 +9003,8 @@ window.QUESTIONS_500 = [
       "Flowing into the heart of the Sun",
       "Large seas and oceans"
     ],
-    "explain_en": "Under the effect of gravity, the water always flows down from the high mountains downstream and into the sea."
+    "explain_en": "Under the effect of gravity, the water always flows down from the high mountains downstream and into the sea.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK038",
@@ -8786,7 +9023,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -8804,7 +9041,8 @@ window.QUESTIONS_500 = [
       "Comet shooting stars",
       "Mars"
     ],
-    "explain_en": "The Moon's gravity pulls ocean water masses toward it, creating the phenomenon of tides."
+    "explain_en": "The Moon's gravity pulls ocean water masses toward it, creating the phenomenon of tides.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK039",
@@ -8823,7 +9061,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -8841,7 +9079,8 @@ window.QUESTIONS_500 = [
       "Smoke from distant forest fires",
       "Tiny drops of condensed water float near the ground"
     ],
-    "explain_en": "When night temperatures drop, water vapor in the air near the ground condenses into low-level clouds (fog)."
+    "explain_en": "When night temperatures drop, water vapor in the air near the ground condenses into low-level clouds (fog).",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK040",
@@ -8860,7 +9099,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -8878,7 +9117,8 @@ window.QUESTIONS_500 = [
       "Roll tape measure",
       "Mercury thermometer"
     ],
-    "explain_en": "The tail of the wind vane rotates in the direction of the wind blowing to help determine the exact wind direction."
+    "explain_en": "The tail of the wind vane rotates in the direction of the wind blowing to help determine the exact wind direction.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK041",
@@ -8897,7 +9137,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -8915,7 +9155,8 @@ window.QUESTIONS_500 = [
       "Because road dust sticks to your face",
       "Because blood pressure drops to 0"
     ],
-    "explain_en": "Sweating and peripheral vasodilation are smart self-cooling mechanisms that help stabilize body temperature at 37°C."
+    "explain_en": "Sweating and peripheral vasodilation are smart self-cooling mechanisms that help stabilize body temperature at 37°C.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK042",
@@ -8934,7 +9175,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -8952,7 +9193,8 @@ window.QUESTIONS_500 = [
       "Add your other hand",
       "Stand still and close your eyes"
     ],
-    "explain_en": "This is an unconditioned reflex through the spinal cord that helps the body immediately defend itself from serious injury."
+    "explain_en": "This is an unconditioned reflex through the spinal cord that helps the body immediately defend itself from serious injury.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK043",
@@ -8971,7 +9213,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 2,
@@ -8989,7 +9231,8 @@ window.QUESTIONS_500 = [
       "Instantly makes the person weigh 5kg more",
       "Can easily cause sore throat, heat shock and stomach cramps"
     ],
-    "explain_en": "Ice water that is too cold causes sudden vasoconstriction in the nasopharynx and stomach lining, causing abdominal pain, cough and sore throat."
+    "explain_en": "Ice water that is too cold causes sudden vasoconstriction in the nasopharynx and stomach lining, causing abdominal pain, cough and sore throat.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK044",
@@ -9008,7 +9251,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "hard",
     "diff": 3,
     "grade": 3,
@@ -9026,7 +9269,8 @@ window.QUESTIONS_500 = [
       "Children do not know pain",
       "Children's bones are made of flexible rubber"
     ],
-    "explain_en": "Children's bone structure has high elasticity and outstanding ability to regenerate new bone cells."
+    "explain_en": "Children's bone structure has high elasticity and outstanding ability to regenerate new bone cells.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK045",
@@ -9045,7 +9289,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 2,
@@ -9063,7 +9307,8 @@ window.QUESTIONS_500 = [
       "Place it close to the right hand side",
       "Place the mat on the back of your neck"
     ],
-    "explain_en": "Light shining from the left helps the right hand when writing to not obscure the shadow on the notebook page."
+    "explain_en": "Light shining from the left helps the right hand when writing to not obscure the shadow on the notebook page.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK046",
@@ -9082,7 +9327,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -9100,7 +9345,8 @@ window.QUESTIONS_500 = [
       "Replenish the amount of water and electrolytes lost through sweat",
       "To increase fever temperature"
     ],
-    "explain_en": "Dehydration due to high fever causes fatigue. Supplementing electrolyte solution helps the body restore biological balance."
+    "explain_en": "Dehydration due to high fever causes fatigue. Supplementing electrolyte solution helps the body restore biological balance.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK047",
@@ -9119,7 +9365,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -9137,7 +9383,8 @@ window.QUESTIONS_500 = [
       "Bones are growing longer",
       "Nerves are stirring"
     ],
-    "explain_en": "Each heartbeat pushes blood waves through the arterial system, forming a pulse in the wrist."
+    "explain_en": "Each heartbeat pushes blood waves through the arterial system, forming a pulse in the wrist.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK048",
@@ -9156,7 +9403,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -9174,7 +9421,8 @@ window.QUESTIONS_500 = [
       "Breathing through your mouth causes teeth to fall out",
       "The nose has many teeth"
     ],
-    "explain_en": "The nasal cavity has a lining of blood vessels that warms and mucus traps bacteria and dirt before entering the lungs."
+    "explain_en": "The nasal cavity has a lining of blood vessels that warms and mucus traps bacteria and dirt before entering the lungs.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK049",
@@ -9193,7 +9441,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "hard",
     "diff": 3,
     "grade": 3,
@@ -9211,7 +9459,8 @@ window.QUESTIONS_500 = [
       "Helps the eyes and vestibular organs in the ears unify the sense of movement",
       "Because it makes the car slow down"
     ],
-    "explain_en": "Motion sickness is caused by the eyes and inner ears sending conflicting signals to the brain; Looking out at the horizon helps the brain locate movement accurately."
+    "explain_en": "Motion sickness is caused by the eyes and inner ears sending conflicting signals to the brain; Looking out at the horizon helps the brain locate movement accurately.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK050",
@@ -9230,7 +9479,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -9248,7 +9497,8 @@ window.QUESTIONS_500 = [
       "White blood cells eat up excess blood",
       "Blood turns into water"
     ],
-    "explain_en": "Platelets quickly adhere to the site of injury, creating a hemostatic plug, protecting the body from blood loss."
+    "explain_en": "Platelets quickly adhere to the site of injury, creating a hemostatic plug, protecting the body from blood loss.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK051",
@@ -9267,7 +9517,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -9285,7 +9535,8 @@ window.QUESTIONS_500 = [
       "Cup of hot water A",
       "Melt at the same time"
     ],
-    "explain_en": "High temperatures cause water molecules to move thermally faster, colliding and causing sugar to dissolve quickly."
+    "explain_en": "High temperatures cause water molecules to move thermally faster, colliding and causing sugar to dissolve quickly.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK052",
@@ -9304,7 +9555,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -9322,7 +9573,8 @@ window.QUESTIONS_500 = [
       "Let the train make a pleasant rumbling sound",
       "Save metal during construction"
     ],
-    "explain_en": "Solids expand when heated. If there is no thermal gap, the rail will warp and cause danger."
+    "explain_en": "Solids expand when heated. If there is no thermal gap, the rail will warp and cause danger.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK053",
@@ -9341,7 +9593,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -9359,7 +9611,8 @@ window.QUESTIONS_500 = [
       "The surface tension of the soapy water film shrinks the area to a minimum",
       "Because the wind blows and presses into the 4 corners"
     ],
-    "explain_en": "A sphere is the geometry with the smallest surface area for a given volume under surface tension."
+    "explain_en": "A sphere is the geometry with the smallest surface area for a given volume under surface tension.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK054",
@@ -9378,7 +9631,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -9396,7 +9649,8 @@ window.QUESTIONS_500 = [
       "The water in the dish disappeared completely",
       "The candle burns for a moment and then goes out, and at the same time the water level rises in the cup"
     ],
-    "explain_en": "The oxygen in the cup is consumed, causing the candle to go out; The pressure in the cup decreases, causing the water to rise."
+    "explain_en": "The oxygen in the cup is consumed, causing the candle to go out; The pressure in the cup decreases, causing the water to rise.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK055",
@@ -9415,7 +9669,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -9433,7 +9687,8 @@ window.QUESTIONS_500 = [
       "Push the water backwards",
       "Pushes the water forward"
     ],
-    "explain_en": "The force of the oar pushes the water backwards, creating a reaction force that pushes the boat forward."
+    "explain_en": "The force of the oar pushes the water backwards, creating a reaction force that pushes the boat forward.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK056",
@@ -9452,7 +9707,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -9470,7 +9725,8 @@ window.QUESTIONS_500 = [
       "Rolling friction is many times smaller than sliding friction",
       "Electric self-powered roller"
     ],
-    "explain_en": "Using rollers turns sliding friction into rolling friction, minimizing resistance for easy transportation."
+    "explain_en": "Using rollers turns sliding friction into rolling friction, minimizing resistance for easy transportation.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK057",
@@ -9489,7 +9745,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -9507,7 +9763,8 @@ window.QUESTIONS_500 = [
       "Convection",
       "Heat conduction"
     ],
-    "explain_en": "Thermal conduction is the main form of heat transfer in solids, heat flows from one molecule to another."
+    "explain_en": "Thermal conduction is the main form of heat transfer in solids, heat flows from one molecule to another.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK058",
@@ -9526,7 +9783,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -9544,7 +9801,8 @@ window.QUESTIONS_500 = [
       "To shake off the night dew",
       "Make the bird look big and scare away enemies"
     ],
-    "explain_en": "Dry air is a very good insulator; Ruffled feathers create a thick air cushion that prevents the body from losing heat."
+    "explain_en": "Dry air is a very good insulator; Ruffled feathers create a thick air cushion that prevents the body from losing heat.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK059",
@@ -9563,7 +9821,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -9581,7 +9839,8 @@ window.QUESTIONS_500 = [
       "The pencil looks like it's broken at the interface between water and air",
       "The pencil is completely gone"
     ],
-    "explain_en": "The phenomenon of light refraction (light rays are broken when passing through two different media) causes the above illusion."
+    "explain_en": "The phenomenon of light refraction (light rays are broken when passing through two different media) causes the above illusion.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK060",
@@ -9600,7 +9859,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -9618,7 +9877,8 @@ window.QUESTIONS_500 = [
       "Sound and magnetic fields",
       "Optical energy (light) and thermal energy (heat)"
     ],
-    "explain_en": "Electric current flowing through the light bulb's filament heats up the glowing filament, and at the same time radiates heat to the environment."
+    "explain_en": "Electric current flowing through the light bulb's filament heats up the glowing filament, and at the same time radiates heat to the environment.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK061",
@@ -9637,7 +9897,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -9655,7 +9915,8 @@ window.QUESTIONS_500 = [
       "Because light color paint is the cheapest",
       "To easily detect adhering dirt"
     ],
-    "explain_en": "Bright or metallic objects reflect most of the light and heat, limiting the absorption of heat from the Sun."
+    "explain_en": "Bright or metallic objects reflect most of the light and heat, limiting the absorption of heat from the Sun.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK062",
@@ -9674,7 +9935,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -9692,7 +9953,8 @@ window.QUESTIONS_500 = [
       "Earth's magnetic force",
       "The gravitational force of the Sun"
     ],
-    "explain_en": "The canopy has a very large contact area, creating strong upward air resistance, slowing down the speed of free fall."
+    "explain_en": "The canopy has a very large contact area, creating strong upward air resistance, slowing down the speed of free fall.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK063",
@@ -9711,7 +9973,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -9729,7 +9991,8 @@ window.QUESTIONS_500 = [
       "Use a strong magnet to sweep across the sawdust surface",
       "Pour in water so that the sawdust sinks"
     ],
-    "explain_en": "The magnet attracts iron but not wood sawdust, helping to separate metal mixtures extremely quickly."
+    "explain_en": "The magnet attracts iron but not wood sawdust, helping to separate metal mixtures extremely quickly.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK064",
@@ -9748,7 +10011,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -9766,7 +10029,8 @@ window.QUESTIONS_500 = [
       "Moist air meets the cold floor and condenses into water droplets",
       "Water from the ground seeps back through ceramic tiles"
     ],
-    "explain_en": "The floor has thermal inertia that keeps it cold for a long time; The wind brings in warm water vapor and when it cools, it condenses into liquid water."
+    "explain_en": "The floor has thermal inertia that keeps it cold for a long time; The wind brings in warm water vapor and when it cools, it condenses into liquid water.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK065",
@@ -9785,7 +10049,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -9803,7 +10067,8 @@ window.QUESTIONS_500 = [
       "To protect shoes from wearing out soles",
       "Increase the contact area to reduce compaction pressure and avoid sinking deeply into the snow"
     ],
-    "explain_en": "Pressure is equal to pressure divided by area; Increased contact area reduces pressure on soft snow surfaces."
+    "explain_en": "Pressure is equal to pressure divided by area; Increased contact area reduces pressure on soft snow surfaces.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IK066",
@@ -9822,7 +10087,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -9840,7 +10105,8 @@ window.QUESTIONS_500 = [
       "Rotate from South to North",
       "Rotate from North to South"
     ],
-    "explain_en": "The Earth's rotation from West to East creates the opposite apparent motion of the Sun."
+    "explain_en": "The Earth's rotation from West to East creates the opposite apparent motion of the Sun.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK067",
@@ -9859,7 +10125,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -9877,7 +10143,8 @@ window.QUESTIONS_500 = [
       "The equator is closer to the Sun than 1 million km",
       "The equatorial region receives a more vertical angle of sunlight"
     ],
-    "explain_en": "Sun rays shining nearly perpendicularly down the equator carry highly concentrated energy; In the polar regions, the sun's rays are angled."
+    "explain_en": "Sun rays shining nearly perpendicularly down the equator carry highly concentrated energy; In the polar regions, the sun's rays are angled.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK068",
@@ -9896,7 +10163,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -9914,7 +10181,8 @@ window.QUESTIONS_500 = [
       "The Sun dims periodically",
       "The Earth moves around the Sun with a constant tilt axis"
     ],
-    "explain_en": "The tilted axis of 23.5 degrees does not change direction when rotating around the Sun, causing the two hemispheres to receive different heat."
+    "explain_en": "The tilted axis of 23.5 degrees does not change direction when rotating around the Sun, causing the two hemispheres to receive different heat.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK069",
@@ -9933,7 +10201,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -9951,7 +10219,8 @@ window.QUESTIONS_500 = [
       "The sky is bright red",
       "The sky is white"
     ],
-    "explain_en": "The Moon has no atmosphere, so there is no light scattering phenomenon, the sky is always a deep black color."
+    "explain_en": "The Moon has no atmosphere, so there is no light scattering phenomenon, the sky is always a deep black color.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK070",
@@ -9970,7 +10239,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -9988,7 +10257,8 @@ window.QUESTIONS_500 = [
       "Prevent people from flying into space",
       "Makes the Earth always dark"
     ],
-    "explain_en": "The ozone layer filters ultraviolet UV rays, and atmospheric friction ignites meteorite fragments before reaching the ground."
+    "explain_en": "The ozone layer filters ultraviolet UV rays, and atmospheric friction ignites meteorite fragments before reaching the ground.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK071",
@@ -10007,7 +10277,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -10025,7 +10295,8 @@ window.QUESTIONS_500 = [
       "The Sun is located between the Earth and the Moon",
       "The Moon is located between the Sun and the Earth"
     ],
-    "explain_en": "The Moon passes into the middle of the line connecting the Earth and the Sun, partially or completely obscuring the Sun's disk."
+    "explain_en": "The Moon passes into the middle of the line connecting the Earth and the Sun, partially or completely obscuring the Sun's disk.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK072",
@@ -10044,7 +10315,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -10062,7 +10333,8 @@ window.QUESTIONS_500 = [
       "Storm clouds provide shade",
       "Venus blocks the ball"
     ],
-    "explain_en": "The Earth is located between the Sun and the Moon, the Earth's shadow covers the Moon's surface."
+    "explain_en": "The Earth is located between the Sun and the Moon, the Earth's shadow covers the Moon's surface.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK073",
@@ -10081,7 +10353,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -10099,7 +10371,8 @@ window.QUESTIONS_500 = [
       "Totally 0 kg",
       "Reduced to only about 10 kg (equal to 1/6)"
     ],
-    "explain_en": "The gravitational force on the Moon is only about 1/6 that of the Earth because the Moon's mass is much smaller."
+    "explain_en": "The gravitational force on the Moon is only about 1/6 that of the Earth because the Moon's mass is much smaller.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK074",
@@ -10118,7 +10391,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -10136,7 +10409,8 @@ window.QUESTIONS_500 = [
       "Primitive people buried fish on top of mountains",
       "That high mountain area used to be the bottom of the deep sea millions of years ago"
     ],
-    "explain_en": "The collision of the Earth's crustal tectonic plates pushed the ancient ocean floor crust up to form the great Himalayan mountain range."
+    "explain_en": "The collision of the Earth's crustal tectonic plates pushed the ancient ocean floor crust up to form the great Himalayan mountain range.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK075",
@@ -10155,7 +10429,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -10173,7 +10447,8 @@ window.QUESTIONS_500 = [
       "Permanent snow and ice in the polar regions and iceberg peaks",
       "Drinking water in bottles"
     ],
-    "explain_en": "About 70% of global fresh water is frozen in Antarctica, the Arctic and Greenland."
+    "explain_en": "About 70% of global fresh water is frozen in Antarctica, the Arctic and Greenland.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK076",
@@ -10192,7 +10467,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -10210,7 +10485,8 @@ window.QUESTIONS_500 = [
       "Due to lightning striking the ground",
       "Because storm winds blow too strongly on the ground"
     ],
-    "explain_en": "Energy accumulated in fault zones between lithospheric plates is suddenly released, creating seismic waves."
+    "explain_en": "Energy accumulated in fault zones between lithospheric plates is suddenly released, creating seismic waves.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK077",
@@ -10229,7 +10505,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -10247,7 +10523,8 @@ window.QUESTIONS_500 = [
       "Freezes and melts permanently",
       "Water flies out into space"
     ],
-    "explain_en": "Water evaporates thanks to the sun's heat, condenses at high altitudes into cloud particles, and when it cools, it falls into closed-circuit rain."
+    "explain_en": "Water evaporates thanks to the sun's heat, condenses at high altitudes into cloud particles, and when it cools, it falls into closed-circuit rain.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK078",
@@ -10266,7 +10543,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -10284,7 +10561,8 @@ window.QUESTIONS_500 = [
       "Venus itself emits nuclear radiation",
       "Venus has a volcano 100 km high"
     ],
-    "explain_en": "The atmosphere contains more than 96% CO2, which traps enormous heat, heating the surface of Venus to nearly 470°C."
+    "explain_en": "The atmosphere contains more than 96% CO2, which traps enormous heat, heating the surface of Venus to nearly 470°C.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK079",
@@ -10303,7 +10581,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -10321,7 +10599,8 @@ window.QUESTIONS_500 = [
       "Water boils at temperatures higher than 150°C",
       "Water boils at temperatures lower than 100°C"
     ],
-    "explain_en": "Atmospheric pressure gradually decreases with altitude; Low pressure causes the boiling point of water to drop below 100°C."
+    "explain_en": "Atmospheric pressure gradually decreases with altitude; Low pressure causes the boiling point of water to drop below 100°C.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK080",
@@ -10340,7 +10619,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -10358,7 +10637,8 @@ window.QUESTIONS_500 = [
       "About 10 years",
       "Approximately 365 days and 6 hours (1 sidereal year)"
     ],
-    "explain_en": "One cycle around the Sun lasts 365.25 days; The extra 6 hours accumulated over 4 years create a leap year of 366 days."
+    "explain_en": "One cycle around the Sun lasts 365.25 days; The extra 6 hours accumulated over 4 years create a leap year of 366 days.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IK081",
@@ -10377,7 +10657,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -10395,7 +10675,8 @@ window.QUESTIONS_500 = [
       "The food chain is not affected at all",
       "The number of snakes will suddenly increase"
     ],
-    "explain_en": "Losing intermediate predators (frogs), their prey (locusts) lost control of population explosion."
+    "explain_en": "Losing intermediate predators (frogs), their prey (locusts) lost control of population explosion.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK082",
@@ -10414,7 +10695,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -10432,7 +10713,8 @@ window.QUESTIONS_500 = [
       "To see the sky and the Sun",
       "Let it dry in the sun to keep warm"
     ],
-    "explain_en": "Whales breathe with lungs like humans, the breathing hole on the top of their head helps them get oxygen easily when they surface."
+    "explain_en": "Whales breathe with lungs like humans, the breathing hole on the top of their head helps them get oxygen easily when they surface.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK083",
@@ -10451,7 +10733,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -10469,7 +10751,8 @@ window.QUESTIONS_500 = [
       "Sea anemones feed milk to clownfish",
       "The sea anemone's poisonous tentacles protect clownfish from large predators"
     ],
-    "explain_en": "Clownfish have a special mucus layer that is immune to the sea anemone's venom, using poisonous tentacles as a safe fortress."
+    "explain_en": "Clownfish have a special mucus layer that is immune to the sea anemone's venom, using poisonous tentacles as a safe fortress.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK084",
@@ -10488,7 +10771,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -10506,7 +10789,8 @@ window.QUESTIONS_500 = [
       "Contains oxygen for respiration and helps the plant stem float slightly",
       "Because the tree trunk is bored by worms"
     ],
-    "explain_en": "Hollow air tubes transport air from the leaves above the water to feed the roots and help the plant float."
+    "explain_en": "Hollow air tubes transport air from the leaves above the water to feed the roots and help the plant float.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK085",
@@ -10525,7 +10809,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -10543,7 +10827,8 @@ window.QUESTIONS_500 = [
       "Chlorophyll breaks down, revealing other color pigments",
       "Because the tree absorbs water with a red tinge from the soil"
     ],
-    "explain_en": "The lack of light and cold in autumn causes chlorophyll to decay quickly, revealing available carotenoid and anthocyanin pigments."
+    "explain_en": "The lack of light and cold in autumn causes chlorophyll to decay quickly, revealing available carotenoid and anthocyanin pigments.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK086",
@@ -10562,7 +10847,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -10580,7 +10865,8 @@ window.QUESTIONS_500 = [
       "Self-photosynthesis from moonlight at night",
       "Absorbs nutrients by decomposing rotting organic matter"
     ],
-    "explain_en": "Fungi are heterotrophic organisms, playing an extremely important role in decomposition to help clean organic matter in nature."
+    "explain_en": "Fungi are heterotrophic organisms, playing an extremely important role in decomposition to help clean organic matter in nature.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK087",
@@ -10599,7 +10885,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -10617,7 +10903,8 @@ window.QUESTIONS_500 = [
       "Because caterpillars don't know when they're full",
       "Because the leaves cool the body deeply"
     ],
-    "explain_en": "The larval stage requires a huge amount of protein and fat to create cocoons and reorganize body tissue into a complete butterfly."
+    "explain_en": "The larval stage requires a huge amount of protein and fat to create cocoons and reorganize body tissue into a complete butterfly.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK088",
@@ -10636,7 +10923,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -10654,7 +10941,8 @@ window.QUESTIONS_500 = [
       "Acidic swamp soil is poor in nitrogen compounds (protein).",
       "Coastal mangrove land"
     ],
-    "explain_en": "Swamp soil is seriously deficient in nitrogen; Insect digestion provides essential nitrogen for plants to survive."
+    "explain_en": "Swamp soil is seriously deficient in nitrogen; Insect digestion provides essential nitrogen for plants to survive.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK089",
@@ -10673,7 +10961,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -10691,7 +10979,8 @@ window.QUESTIONS_500 = [
       "Permanent drought with no rain",
       "Earthquakes and volcanic eruptions"
     ],
-    "explain_en": "The roots of forest trees hold the soil and their foliage blocks the swift current; Loss of forest cover causes rainwater to wash away soil and rocks, causing flash floods."
+    "explain_en": "The roots of forest trees hold the soil and their foliage blocks the swift current; Loss of forest cover causes rainwater to wash away soil and rocks, causing flash floods.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK090",
@@ -10710,7 +10999,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -10728,7 +11017,8 @@ window.QUESTIONS_500 = [
       "The body always freezes",
       "Body temperature is always hot above 50°C"
     ],
-    "explain_en": "Ectothermic animals do not regulate their own body temperature but depend on heating from outside sunlight."
+    "explain_en": "Ectothermic animals do not regulate their own body temperature but depend on heating from outside sunlight.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IK091",
@@ -10747,7 +11037,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -10765,7 +11055,8 @@ window.QUESTIONS_500 = [
       "To cool the body down to 0 degrees",
       "Delivers more oxygen and energy-rich blood to working muscles"
     ],
-    "explain_en": "Increased oxygen demand forces the heart muscle and pulmonary diaphragm to increase their work speed to compensate."
+    "explain_en": "Increased oxygen demand forces the heart muscle and pulmonary diaphragm to increase their work speed to compensate.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK092",
@@ -10784,7 +11075,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -10802,7 +11093,8 @@ window.QUESTIONS_500 = [
       "Seeing distant objects (like letters on a distant board)",
       "Myopia does not affect anything"
     ],
-    "explain_en": "Nearsighted eyes focus images in front of the retina, causing distant objects to appear blurred."
+    "explain_en": "Nearsighted eyes focus images in front of the retina, causing distant objects to appear blurred.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK093",
@@ -10821,7 +11113,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -10839,7 +11131,8 @@ window.QUESTIONS_500 = [
       "Instantly destroys all cells in the body",
       "Provides more calcium for bones"
     ],
-    "explain_en": "Vaccines train the immune system to recognize antigens, ready to defeat the real virus when invaded."
+    "explain_en": "Vaccines train the immune system to recognize antigens, ready to defeat the real virus when invaded.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK094",
@@ -10858,7 +11151,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -10876,7 +11169,8 @@ window.QUESTIONS_500 = [
       "Causes teeth to wear out faster",
       "Makes food cold"
     ],
-    "explain_en": "The amylase enzyme in saliva breaks down starch and fine foods, reducing the kneading pressure on the stomach."
+    "explain_en": "The amylase enzyme in saliva breaks down starch and fine foods, reducing the kneading pressure on the stomach.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK095",
@@ -10895,7 +11189,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -10913,7 +11207,8 @@ window.QUESTIONS_500 = [
       "Hair cells sense sound in the cochlea",
       "The outer ear is made of cartilage"
     ],
-    "explain_en": "Sound waves with too much energy can permanently destroy auditory receptor cells, causing hearing loss."
+    "explain_en": "Sound waves with too much energy can permanently destroy auditory receptor cells, causing hearing loss.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK096",
@@ -10932,7 +11227,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -10950,7 +11245,8 @@ window.QUESTIONS_500 = [
       "Moves straight out through the airway",
       "Turns into sweat on the forehead"
     ],
-    "explain_en": "Microvilli in the wall of the small intestine absorb amino acids, sugars, and fats into the blood vessels that feed the cells."
+    "explain_en": "Microvilli in the wall of the small intestine absorb amino acids, sugars, and fats into the blood vessels that feed the cells.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK097",
@@ -10969,7 +11265,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -10987,7 +11283,8 @@ window.QUESTIONS_500 = [
       "Only wear the bag on one shoulder all week",
       "Carry the briefcase with both straps balanced on both shoulders"
     ],
-    "explain_en": "Wearing it on one shoulder causes the muscles and spine to be pulled to one side for a long time, leading to scoliosis."
+    "explain_en": "Wearing it on one shoulder causes the muscles and spine to be pulled to one side for a long time, leading to scoliosis.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK098",
@@ -11006,7 +11303,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -11024,7 +11321,8 @@ window.QUESTIONS_500 = [
       "Water does not play any important role",
       "Water makes up more than 60% of the body's weight, helping to transport substances and eliminate toxins"
     ],
-    "explain_en": "Water is the solvent that dissolves all biochemical metabolic reactions, regulates body temperature and eliminates waste."
+    "explain_en": "Water is the solvent that dissolves all biochemical metabolic reactions, regulates body temperature and eliminates waste.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK099",
@@ -11043,7 +11341,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -11061,7 +11359,8 @@ window.QUESTIONS_500 = [
       "Only about 1%",
       "Doesn't consume any energy"
     ],
-    "explain_en": "Although it only accounts for 2% of the body weight, the brain consumes up to 20% of glucose and oxygen to process information."
+    "explain_en": "Although it only accounts for 2% of the body weight, the brain consumes up to 20% of glucose and oxygen to process information.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IK100",
@@ -11080,7 +11379,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "Kangaroo Khoa học (IKSC)",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -11098,7 +11397,8 @@ window.QUESTIONS_500 = [
       "Apply the flame to the wound",
       "Clean the wound under clean tap water or physiological saline"
     ],
-    "explain_en": "Cleaning the wound helps remove dirt, grit and bacteria, reducing the risk of tetanus infection."
+    "explain_en": "Cleaning the wound helps remove dirt, grit and bacteria, reducing the risk of tetanus infection.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL001",
@@ -11117,7 +11417,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -11135,7 +11435,8 @@ window.QUESTIONS_500 = [
       "Volatilely disappears into the air",
       "Easily flows in all directions"
     ],
-    "explain_en": "Solids have particles that are very tightly bound so they maintain a fixed shape and volume."
+    "explain_en": "Solids have particles that are very tightly bound so they maintain a fixed shape and volume.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL002",
@@ -11154,7 +11455,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -11172,7 +11473,8 @@ window.QUESTIONS_500 = [
       "It has a definite volume but its shape depends on the vessel in which it is contained",
       "Always burns in air"
     ],
-    "explain_en": "Liquid can flow and change shape to fit the container but its volume remains constant."
+    "explain_en": "Liquid can flow and change shape to fit the container but its volume remains constant.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL003",
@@ -11191,7 +11493,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -11209,7 +11511,8 @@ window.QUESTIONS_500 = [
       "It has no defined shape and is diffuse, occupying the entire container space",
       "Many times heavier than solids"
     ],
-    "explain_en": "Gas molecules move freely and chaotically, filling every space in the container."
+    "explain_en": "Gas molecules move freely and chaotically, filling every space in the container.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL004",
@@ -11228,7 +11531,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -11246,7 +11549,8 @@ window.QUESTIONS_500 = [
       "Condensation",
       "Condensation"
     ],
-    "explain_en": "The change from solid to liquid due to the addition of heat is called melting."
+    "explain_en": "The change from solid to liquid due to the addition of heat is called melting.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL005",
@@ -11265,7 +11569,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -11283,7 +11587,8 @@ window.QUESTIONS_500 = [
       "Evaporation",
       "Condensation"
     ],
-    "explain_en": "The transition from liquid to solid when the temperature drops to 0°C is called freezing."
+    "explain_en": "The transition from liquid to solid when the temperature drops to 0°C is called freezing.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL006",
@@ -11302,7 +11607,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -11320,7 +11625,8 @@ window.QUESTIONS_500 = [
       "Agglutination",
       "Evaporation (vaporization)"
     ],
-    "explain_en": "When heated, liquid water transforms into gaseous water vapor."
+    "explain_en": "When heated, liquid water transforms into gaseous water vapor.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL007",
@@ -11339,7 +11645,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -11357,7 +11663,8 @@ window.QUESTIONS_500 = [
       "Evaporation of the ground",
       "Hail fell from the sky"
     ],
-    "explain_en": "Water vapor in the air encounters cool night temperatures and condenses into liquid water droplets."
+    "explain_en": "Water vapor in the air encounters cool night temperatures and condenses into liquid water droplets.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL008",
@@ -11376,7 +11683,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -11394,7 +11701,8 @@ window.QUESTIONS_500 = [
       "Construction sand grains",
       "Table salt"
     ],
-    "explain_en": "Table salt (NaCl) dissociates and dissolves evenly in water, while sand and iron filings are insoluble."
+    "explain_en": "Table salt (NaCl) dissociates and dissolves evenly in water, while sand and iron filings are insoluble.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL009",
@@ -11413,7 +11721,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -11431,7 +11739,8 @@ window.QUESTIONS_500 = [
       "Pour in water and cook until sticky rice",
       "Burn the whole mixture"
     ],
-    "explain_en": "Based on the difference in particle size, we use a sieve to separate easily."
+    "explain_en": "Based on the difference in particle size, we use a sieve to separate easily.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL010",
@@ -11450,7 +11759,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -11468,7 +11777,8 @@ window.QUESTIONS_500 = [
       "Metal copper",
       "Transparent glass"
     ],
-    "explain_en": "Copper is a metal with a high density of free electrons, conducts electricity very well and is easy to bend."
+    "explain_en": "Copper is a metal with a high density of free electrons, conducts electricity very well and is easy to bend.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL011",
@@ -11487,7 +11797,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -11505,7 +11815,8 @@ window.QUESTIONS_500 = [
       "Pure aluminum",
       "Rusty iron"
     ],
-    "explain_en": "Plastic does not allow electric current to pass through, acting as an insulating shell to protect human safety."
+    "explain_en": "Plastic does not allow electric current to pass through, acting as an insulating shell to protect human safety.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL012",
@@ -11524,7 +11835,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -11542,7 +11853,8 @@ window.QUESTIONS_500 = [
       "Elastic force",
       "Friction force"
     ],
-    "explain_en": "Elastic materials generate elastic force that resists deformation and restores its original shape."
+    "explain_en": "Elastic materials generate elastic force that resists deformation and restores its original shape.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL013",
@@ -11561,7 +11873,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -11579,7 +11891,8 @@ window.QUESTIONS_500 = [
       "String tension",
       "Magnetic thrust"
     ],
-    "explain_en": "Sliding friction force appears at the contact surface, hindering the movement of the object."
+    "explain_en": "Sliding friction force appears at the contact surface, hindering the movement of the object.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL014",
@@ -11598,7 +11911,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -11616,7 +11929,8 @@ window.QUESTIONS_500 = [
       "Two poles of the same name push each other away",
       "Nothing happened"
     ],
-    "explain_en": "Two magnetic poles with the same name (North - North or South - South) repel each other; Two poles with different names (North - South) attract each other."
+    "explain_en": "Two magnetic poles with the same name (North - North or South - South) repel each other; Two poles with different names (North - South) attract each other.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL015",
@@ -11635,7 +11949,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -11653,7 +11967,8 @@ window.QUESTIONS_500 = [
       "Inclined planes have extremely steep slopes",
       "Roll the rock in the water"
     ],
-    "explain_en": "A lever with a suitable fulcrum helps amplify mechanical force, lifting heavy objects much more gently."
+    "explain_en": "A lever with a suitable fulcrum helps amplify mechanical force, lifting heavy objects much more gently.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL016",
@@ -11672,7 +11987,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -11690,7 +12005,8 @@ window.QUESTIONS_500 = [
       "Fish, Amphibians, Reptiles, Birds and Mammals (Mammals)",
       "Green Plants, Yeast, Bacteria, Algae and Moss"
     ],
-    "explain_en": "The five standard taxonomic classes of vertebrates are Fish, Amphibians, Reptiles, Birds and Mammals."
+    "explain_en": "The five standard taxonomic classes of vertebrates are Fish, Amphibians, Reptiles, Birds and Mammals.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL017",
@@ -11709,7 +12025,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -11727,7 +12043,8 @@ window.QUESTIONS_500 = [
       "Class Amphibians",
       "Bird Class"
     ],
-    "explain_en": "Frogs are amphibians: the tadpole stage lives in water and breathes through gills, while adult frogs live on land."
+    "explain_en": "Frogs are amphibians: the tadpole stage lives in water and breathes through gills, while adult frogs live on land.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL018",
@@ -11746,7 +12063,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -11764,7 +12081,8 @@ window.QUESTIONS_500 = [
       "Fish Class",
       "Class Reptiles"
     ],
-    "explain_en": "Reptiles have dry skin covered with horny scales, breathe entirely with lungs and lay eggs with tough protective shells."
+    "explain_en": "Reptiles have dry skin covered with horny scales, breathe entirely with lungs and lay eggs with tough protective shells.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL019",
@@ -11783,7 +12101,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -11801,7 +12119,8 @@ window.QUESTIONS_500 = [
       "Goldfish",
       "Pigeon"
     ],
-    "explain_en": "Octopuses belong to the phylum Mollusca, with a soft body that has absolutely no internal skeleton."
+    "explain_en": "Octopuses belong to the phylum Mollusca, with a soft body that has absolutely no internal skeleton.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL020",
@@ -11820,7 +12139,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -11838,7 +12157,8 @@ window.QUESTIONS_500 = [
       "Class Mammals (Mammals)",
       "Bird Class"
     ],
-    "explain_en": "Bats have fur, give birth and breastfeed their young, so they belong to the class Mammal even though they can fly."
+    "explain_en": "Bats have fur, give birth and breastfeed their young, so they belong to the class Mammal even though they can fly.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL021",
@@ -11857,7 +12177,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 3,
@@ -11875,7 +12195,8 @@ window.QUESTIONS_500 = [
       "Class Bony fish",
       "Class Mammals (Mammals)"
     ],
-    "explain_en": "They give birth to young, feed them with their mother's milk glands and breathe with their lungs, not their gills."
+    "explain_en": "They give birth to young, feed them with their mother's milk glands and breathe with their lungs, not their gills.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL022",
@@ -11894,7 +12215,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -11912,7 +12233,8 @@ window.QUESTIONS_500 = [
       "Tree roots",
       "Wooden body"
     ],
-    "explain_en": "The flower contains stamens (male stamens) and pistils (female pistils). After pollination, the flower produces fruit containing young seeds."
+    "explain_en": "The flower contains stamens (male stamens) and pistils (female pistils). After pollination, the flower produces fruit containing young seeds.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL023",
@@ -11931,7 +12253,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -11949,7 +12271,8 @@ window.QUESTIONS_500 = [
       "Tertiary consumers",
       "Ferocious predator"
     ],
-    "explain_en": "Photosynthetic plants created the first organic biomass, which is the foundation for all food chains."
+    "explain_en": "Photosynthetic plants created the first organic biomass, which is the foundation for all food chains.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL024",
@@ -11968,7 +12291,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -11986,7 +12309,8 @@ window.QUESTIONS_500 = [
       "Primary consumers (primary feeders)",
       "Decomposing organisms"
     ],
-    "explain_en": "Organisms that eat directly producers (grass, trees) are first-order consumers."
+    "explain_en": "Organisms that eat directly producers (grass, trees) are first-order consumers.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL025",
@@ -12005,7 +12329,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -12023,7 +12347,8 @@ window.QUESTIONS_500 = [
       "Pupa -> Egg -> Butterfly -> Caterpillar",
       "Egg -> Young butterfly -> Old butterfly"
     ],
-    "explain_en": "Butterflies undergo complete metamorphosis in four distinct stages."
+    "explain_en": "Butterflies undergo complete metamorphosis in four distinct stages.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL026",
@@ -12042,7 +12367,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -12060,7 +12385,8 @@ window.QUESTIONS_500 = [
       "Egg -> Tadpole (underwater) -> Baby frog with tail -> Adult frog",
       "Tadpoles lay eggs"
     ],
-    "explain_en": "Tadpoles that live in water have gills and tails, then grow hind legs and front legs, and lose their tails to become frogs."
+    "explain_en": "Tadpoles that live in water have gills and tails, then grow hind legs and front legs, and lose their tails to become frogs.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL027",
@@ -12079,7 +12405,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -12097,7 +12423,8 @@ window.QUESTIONS_500 = [
       "Chlorophyll",
       "Leaf veins"
     ],
-    "explain_en": "Bean cells in the stomata open and close rhythmically to regulate the amount of water vapor released into the environment."
+    "explain_en": "Bean cells in the stomata open and close rhythmically to regulate the amount of water vapor released into the environment.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL028",
@@ -12116,7 +12443,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -12134,7 +12461,8 @@ window.QUESTIONS_500 = [
       "Big leaves",
       "Wooden trunk"
     ],
-    "explain_en": "The swollen roots store a large amount of starch to nourish young shoots called tubers."
+    "explain_en": "The swollen roots store a large amount of starch to nourish young shoots called tubers.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL029",
@@ -12153,7 +12481,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 3,
@@ -12171,7 +12499,8 @@ window.QUESTIONS_500 = [
       "The underground stem deforms into a tuber (tuber stem)",
       "Bunch of flowers"
     ],
-    "explain_en": "Unlike sweet potatoes, potatoes have bud eyes, so the scientific nature is that the tuber is underground."
+    "explain_en": "Unlike sweet potatoes, potatoes have bud eyes, so the scientific nature is that the tuber is underground.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL030",
@@ -12190,7 +12519,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -12208,7 +12537,8 @@ window.QUESTIONS_500 = [
       "Everyone knows how to swim in the deep sea",
       "They are birds but cannot fly in the sky"
     ],
-    "explain_en": "Ostriches and penguins are adapted to running on the ground or swimming, their wings are not used for flying."
+    "explain_en": "Ostriches and penguins are adapted to running on the ground or swimming, their wings are not used for flying.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL031",
@@ -12227,7 +12557,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -12245,7 +12575,8 @@ window.QUESTIONS_500 = [
       "Sand -> Lava -> Diamonds",
       "Limestone -> Clay silt -> Sea water"
     ],
-    "explain_en": "The Earth's geological structure consists of a thin outer solid crust, a flexible mantle and an inner molten metal core."
+    "explain_en": "The Earth's geological structure consists of a thin outer solid crust, a flexible mantle and an inner molten metal core.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL032",
@@ -12264,7 +12595,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -12282,7 +12613,8 @@ window.QUESTIONS_500 = [
       "The cooling and solidification of volcanic lava",
       "Due to fossilized animal bones"
     ],
-    "explain_en": "When molten magma underground or erupting lava cools, it crystallizes into igneous rock."
+    "explain_en": "When molten magma underground or erupting lava cools, it crystallizes into igneous rock.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL033",
@@ -12301,7 +12633,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -12319,7 +12651,8 @@ window.QUESTIONS_500 = [
       "Layers of mud, sand, and shells were deposited and compacted over millions of years",
       "Melted by falling meteorite"
     ],
-    "explain_en": "Sediment accumulated on the bottom of rivers and seas over time is cemented and compressed to form sedimentary rock layers."
+    "explain_en": "Sediment accumulated on the bottom of rivers and seas over time is cemented and compressed to form sedimentary rock layers.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL034",
@@ -12338,7 +12671,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -12356,7 +12689,8 @@ window.QUESTIONS_500 = [
       "Solid diamond",
       "Volcanic igneous rock"
     ],
-    "explain_en": "Sedimentary rocks form under gentle pressure and temperature conditions, preserving intact the remains of ancient organisms."
+    "explain_en": "Sedimentary rocks form under gentle pressure and temperature conditions, preserving intact the remains of ancient organisms.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL035",
@@ -12375,7 +12709,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -12393,7 +12727,8 @@ window.QUESTIONS_500 = [
       "Mineral substances (sand grains, clay), organic humus, water and air",
       "Only sea salt water"
     ],
-    "explain_en": "The soil is a perfect mixture of nutritious humus, trace minerals, and water and air spaces for the roots."
+    "explain_en": "The soil is a perfect mixture of nutritious humus, trace minerals, and water and air spaces for the roots.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL036",
@@ -12412,7 +12747,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -12430,7 +12765,8 @@ window.QUESTIONS_500 = [
       "Radioactive nuclear energy is dangerous",
       "Fossil energy causes pollution"
     ],
-    "explain_en": "Wind and sunlight are continuously regenerated by nature, are inexhaustible and do not emit polluting greenhouse gases."
+    "explain_en": "Wind and sunlight are continuously regenerated by nature, are inexhaustible and do not emit polluting greenhouse gases.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL037",
@@ -12449,7 +12785,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -12467,7 +12803,8 @@ window.QUESTIONS_500 = [
       "Formed by fast-flowing underground rivers",
       "Because people buried wood in the ground yesterday"
     ],
-    "explain_en": "High pressure and temperature underground transform ancient biomass into hydrocarbon fuel minerals."
+    "explain_en": "High pressure and temperature underground transform ancient biomass into hydrocarbon fuel minerals.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL038",
@@ -12486,7 +12823,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -12504,7 +12841,8 @@ window.QUESTIONS_500 = [
       "Reduce the burning of fossil fuels that cause air pollution and climate change",
       "Because household appliances will get dirty"
     ],
-    "explain_en": "Reducing electricity consumption from coal-fired power helps reduce CO2 emissions, protecting the green Earth's atmosphere."
+    "explain_en": "Reducing electricity consumption from coal-fired power helps reduce CO2 emissions, protecting the green Earth's atmosphere.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL039",
@@ -12523,7 +12861,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -12541,7 +12879,8 @@ window.QUESTIONS_500 = [
       "Northeast monsoon",
       "Light drizzle"
     ],
-    "explain_en": "Lightning is a coronal discharge between giant regions of opposite charges in a thundercloud."
+    "explain_en": "Lightning is a coronal discharge between giant regions of opposite charges in a thundercloud.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL040",
@@ -12560,7 +12899,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -12578,7 +12917,8 @@ window.QUESTIONS_500 = [
       "Thunder broke out before lightning",
       "Because our ears hear slower than our eyes see"
     ],
-    "explain_en": "Light travels at a speed of 300,000 km/s (visible instantly), sound only travels at 340 m/s, so thunder arrives a few seconds later."
+    "explain_en": "Light travels at a speed of 300,000 km/s (visible instantly), sound only travels at 340 m/s, so thunder arrives a few seconds later.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL041",
@@ -12597,7 +12937,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -12615,7 +12955,8 @@ window.QUESTIONS_500 = [
       "Fat",
       "Carbohydrates (Glucid/Carbohydrate)"
     ],
-    "explain_en": "Carbohydrates are the main source of energy for all children's movement and learning activities."
+    "explain_en": "Carbohydrates are the main source of energy for all children's movement and learning activities.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL042",
@@ -12634,7 +12975,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -12652,7 +12993,8 @@ window.QUESTIONS_500 = [
       "Causes people to lose height",
       "Helps yellow teeth"
     ],
-    "explain_en": "Protein is the building block of tissues, muscle cells and immune antibodies."
+    "explain_en": "Protein is the building block of tissues, muscle cells and immune antibodies.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL043",
@@ -12671,7 +13013,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -12689,7 +13031,8 @@ window.QUESTIONS_500 = [
       "Helps grow more hair on the arms",
       "Makes nails turn blue"
     ],
-    "explain_en": "Calcium forms hydroxyapatite crystals in bone tissue and tooth enamel, helping bones grow longer and become stronger."
+    "explain_en": "Calcium forms hydroxyapatite crystals in bone tissue and tooth enamel, helping bones grow longer and become stronger.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL044",
@@ -12708,7 +13051,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -12726,7 +13069,8 @@ window.QUESTIONS_500 = [
       "Protects and enhances vision for bright, healthy eyes",
       "Make toenails grow fast"
     ],
-    "explain_en": "Vitamin A constitutes the pigment rhodopsin in retinal rod cells, helping the eye see clearly in low light conditions."
+    "explain_en": "Vitamin A constitutes the pigment rhodopsin in retinal rod cells, helping the eye see clearly in low light conditions.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL045",
@@ -12745,7 +13089,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -12763,7 +13107,8 @@ window.QUESTIONS_500 = [
       "Animal fat",
       "Oxygen in the abdomen"
     ],
-    "explain_en": "Fresh fruits and vegetables are a source of fiber to support digestion and prevent constipation and vitamins to enhance resistance."
+    "explain_en": "Fresh fruits and vegetables are a source of fiber to support digestion and prevent constipation and vitamins to enhance resistance.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL046",
@@ -12782,7 +13127,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -12800,7 +13145,8 @@ window.QUESTIONS_500 = [
       "Obesity, tooth decay and increased risk of diabetes",
       "Helps the body grow taller"
     ],
-    "explain_en": "High sugar content in soft drinks erodes tooth enamel and accumulates excess fat, which is harmful to health."
+    "explain_en": "High sugar content in soft drinks erodes tooth enamel and accumulates excess fat, which is harmful to health.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL047",
@@ -12819,7 +13165,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -12837,7 +13183,8 @@ window.QUESTIONS_500 = [
       "Two lungs",
       "The brain"
     ],
-    "explain_en": "The heart muscle contracts rhythmically like a hydraulic pump that automatically pumps blood throughout the circulatory system."
+    "explain_en": "The heart muscle contracts rhythmically like a hydraulic pump that automatically pumps blood throughout the circulatory system.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL048",
@@ -12856,7 +13203,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -12874,7 +13221,8 @@ window.QUESTIONS_500 = [
       "Nitrogen gas",
       "Methane gas"
     ],
-    "explain_en": "The hemoglobin in red blood cells combines with oxygen to form oxyhemoglobin, which has a bright bright red color."
+    "explain_en": "The hemoglobin in red blood cells combines with oxygen to form oxyhemoglobin, which has a bright bright red color.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL049",
@@ -12893,7 +13241,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -12911,7 +13259,8 @@ window.QUESTIONS_500 = [
       "Grind, knead and digest food with acidic gastric juice",
       "Blow air out of your mouth"
     ],
-    "explain_en": "The thick muscle layers of the stomach contract vigorously to mix food with hydrochloric acid and the enzyme pepsin that breaks down proteins."
+    "explain_en": "The thick muscle layers of the stomach contract vigorously to mix food with hydrochloric acid and the enzyme pepsin that breaks down proteins.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL050",
@@ -12930,7 +13279,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -12948,7 +13297,8 @@ window.QUESTIONS_500 = [
       "Small intestine",
       "Esophagus"
     ],
-    "explain_en": "The small intestine is folded and curled in the middle of the abdomen with a huge surface area for absorbing nutrients."
+    "explain_en": "The small intestine is folded and curled in the middle of the abdomen with a huge surface area for absorbing nutrients.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL051",
@@ -12967,7 +13317,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -12985,7 +13335,8 @@ window.QUESTIONS_500 = [
       "9 planets",
       "8 planets"
     ],
-    "explain_en": "Since 2006, the IAU standard recognizes 8 main planets: Water, Venus, Earth, Fire, Wood, Earth, Uranus, and Neptune."
+    "explain_en": "Since 2006, the IAU standard recognizes 8 main planets: Water, Venus, Earth, Fire, Wood, Earth, Uranus, and Neptune.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL052",
@@ -13004,7 +13355,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -13022,7 +13373,8 @@ window.QUESTIONS_500 = [
       "Earth",
       "Jupiter"
     ],
-    "explain_en": "Jupiter is a gas giant, able to fit more than 1,300 Earths inside it."
+    "explain_en": "Jupiter is a gas giant, able to fit more than 1,300 Earths inside it.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL053",
@@ -13041,7 +13393,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -13059,7 +13411,8 @@ window.QUESTIONS_500 = [
       "Venus",
       "Mars"
     ],
-    "explain_en": "Mercury is the first planet from the Sun, one revolution around the Sun takes only 88 Earth days."
+    "explain_en": "Mercury is the first planet from the Sun, one revolution around the Sun takes only 88 Earth days.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL054",
@@ -13078,7 +13431,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -13096,7 +13449,8 @@ window.QUESTIONS_500 = [
       "Venus",
       "Jupiter"
     ],
-    "explain_en": "Saturn's rings consist of countless ice sheets, dust particles and rocks orbiting the planet's equator."
+    "explain_en": "Saturn's rings consist of countless ice sheets, dust particles and rocks orbiting the planet's equator.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL055",
@@ -13115,7 +13469,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -13133,7 +13487,8 @@ window.QUESTIONS_500 = [
       "Moon",
       "Neptune"
     ],
-    "explain_en": "Orange-red iron oxide dust covers the surface of Mars, creating a distinctive reddish appearance in the night sky."
+    "explain_en": "Orange-red iron oxide dust covers the surface of Mars, creating a distinctive reddish appearance in the night sky.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL056",
@@ -13152,7 +13507,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -13170,7 +13525,8 @@ window.QUESTIONS_500 = [
       "A rocky planet similar to Earth",
       "A star emits light and heat on its own"
     ],
-    "explain_en": "The Sun is a yellow dwarf star, generating enormous energy from nuclear fusion reactions."
+    "explain_en": "The Sun is a yellow dwarf star, generating enormous energy from nuclear fusion reactions.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL057",
@@ -13189,7 +13545,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -13207,7 +13563,8 @@ window.QUESTIONS_500 = [
       "Snow storm",
       "Summer thunder"
     ],
-    "explain_en": "The energy accumulated at the edges of the array disk is suddenly released, causing the ground to shake in an earthquake."
+    "explain_en": "The energy accumulated at the edges of the array disk is suddenly released, causing the ground to shake in an earthquake.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL058",
@@ -13226,7 +13583,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -13244,7 +13601,8 @@ window.QUESTIONS_500 = [
       "Crude oil",
       "Boiling water"
     ],
-    "explain_en": "Magma, when still underground, when it erupts, releases gas to the Earth's surface, called lava."
+    "explain_en": "Magma, when still underground, when it erupts, releases gas to the Earth's surface, called lava.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL059",
@@ -13263,7 +13621,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -13281,7 +13639,8 @@ window.QUESTIONS_500 = [
       "Saturn and Uranus",
       "Mars and Jupiter"
     ],
-    "explain_en": "Millions of rocky asteroids are concentrated in the main belt between the orbits of Mars and Jupiter."
+    "explain_en": "Millions of rocky asteroids are concentrated in the main belt between the orbits of Mars and Jupiter.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL060",
@@ -13300,7 +13659,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -13318,7 +13677,8 @@ window.QUESTIONS_500 = [
       "Baby star",
       "Brother planet"
     ],
-    "explain_en": "A celestial body moving in a closed orbit around a planet is defined as a natural satellite."
+    "explain_en": "A celestial body moving in a closed orbit around a planet is defined as a natural satellite.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL061",
@@ -13337,7 +13697,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -13355,7 +13715,8 @@ window.QUESTIONS_500 = [
       "Thermal layer",
       "Middle class"
     ],
-    "explain_en": "The troposphere contains up to 80% of the air mass and most of the water vapor of the entire Earth's atmosphere."
+    "explain_en": "The troposphere contains up to 80% of the air mass and most of the water vapor of the entire Earth's atmosphere.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL062",
@@ -13374,7 +13735,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -13392,7 +13753,8 @@ window.QUESTIONS_500 = [
       "Absorbs most harmful ultraviolet (UV) rays from the sun",
       "Prevent the wind from blowing"
     ],
-    "explain_en": "Ozone gas (O3) acts as a filter for short-wavelength ultraviolet radiation that causes skin cancer and blindness."
+    "explain_en": "Ozone gas (O3) acts as a filter for short-wavelength ultraviolet radiation that causes skin cancer and blindness.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL063",
@@ -13411,7 +13773,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -13429,7 +13791,8 @@ window.QUESTIONS_500 = [
       "Because the other half of the Moon is broken",
       "The Moon's rotation period is exactly the same as the period it rotates around the Earth"
     ],
-    "explain_en": "The tidal locking phenomenon causes the Moon to rotate on its axis exactly 27.3 days, the same time it takes to orbit the Earth."
+    "explain_en": "The tidal locking phenomenon causes the Moon to rotate on its axis exactly 27.3 days, the same time it takes to orbit the Earth.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL064",
@@ -13448,7 +13811,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -13466,7 +13829,8 @@ window.QUESTIONS_500 = [
       "The rays of Mars",
       "Cold winds blow from the poles"
     ],
-    "explain_en": "Steam rising from the warm sea surface condenses, releasing huge latent heat that nourishes the storm tornado."
+    "explain_en": "Steam rising from the warm sea surface condenses, releasing huge latent heat that nourishes the storm tornado.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL065",
@@ -13485,7 +13849,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -13503,7 +13867,8 @@ window.QUESTIONS_500 = [
       "The enormous distance between stars",
       "Speed of spaceship"
     ],
-    "explain_en": "A light year is the distance that light particles move continuously in a vacuum during a year (about 9,460 billion km)."
+    "explain_en": "A light year is the distance that light particles move continuously in a vacuum during a year (about 9,460 billion km).",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "IXL066",
@@ -13522,7 +13887,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -13540,7 +13905,8 @@ window.QUESTIONS_500 = [
       "Physical change (only change in shape and size, substance remains unchanged)",
       "Chemical change (creation of new substance)"
     ],
-    "explain_en": "The paper is slightly torn, but each piece is still the cellulose of the paper, not producing new substances."
+    "explain_en": "The paper is slightly torn, but each piece is still the cellulose of the paper, not producing new substances.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL067",
@@ -13559,7 +13925,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -13577,7 +13943,8 @@ window.QUESTIONS_500 = [
       "Evaporation",
       "Chemical change (old substance changes to form new substance)"
     ],
-    "explain_en": "Combustion is a redox reaction that creates new substances including CO2 gas, water vapor and carbon ash."
+    "explain_en": "Combustion is a redox reaction that creates new substances including CO2 gas, water vapor and carbon ash.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL068",
@@ -13596,7 +13963,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -13614,7 +13981,8 @@ window.QUESTIONS_500 = [
       "Iron nails are dirty and stuck to the ground",
       "Physical changes due to cold"
     ],
-    "explain_en": "Iron reacts with oxygen and water in the air to form hydrated iron oxide (reddish brown rust)."
+    "explain_en": "Iron reacts with oxygen and water in the air to form hydrated iron oxide (reddish brown rust).",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL069",
@@ -13633,7 +14001,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -13651,7 +14019,8 @@ window.QUESTIONS_500 = [
       "Energy exists only in the form of heat",
       "Energy naturally disappears after use"
     ],
-    "explain_en": "The total energy of an isolated system is always conserved through all transitions."
+    "explain_en": "The total energy of an isolated system is always conserved through all transitions.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL070",
@@ -13670,7 +14039,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -13688,7 +14057,8 @@ window.QUESTIONS_500 = [
       "Electricity",
       "Chemical energy"
     ],
-    "explain_en": "Decreasing altitude causes gravitational potential energy to gradually decrease, while increasing velocity causes kinetic energy to increase correspondingly."
+    "explain_en": "Decreasing altitude causes gravitational potential energy to gradually decrease, while increasing velocity causes kinetic energy to increase correspondingly.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL071",
@@ -13707,7 +14077,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -13725,7 +14095,8 @@ window.QUESTIONS_500 = [
       "Thermos containing water",
       "Solar batteries (photovoltaic panels)"
     ],
-    "explain_en": "The photovoltaic effect in silicon semiconductors helps solar cells convert light photons into electric current."
+    "explain_en": "The photovoltaic effect in silicon semiconductors helps solar cells convert light photons into electric current.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL072",
@@ -13744,7 +14115,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -13762,7 +14133,8 @@ window.QUESTIONS_500 = [
       "Light shines in",
       "Mechanical energy (mechanical work of the hand)"
     ],
-    "explain_en": "The frictional movement between the palms turns mechanical energy into heating heat."
+    "explain_en": "The frictional movement between the palms turns mechanical energy into heating heat.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL073",
@@ -13781,7 +14153,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -13799,7 +14171,8 @@ window.QUESTIONS_500 = [
       "Triangular glass prism",
       "Flat mirror shows face"
     ],
-    "explain_en": "The prism bends different monochromatic light rays with different deflection angles, creating a 7-color spectrum."
+    "explain_en": "The prism bends different monochromatic light rays with different deflection angles, creating a 7-color spectrum.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL074",
@@ -13818,7 +14191,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -13836,7 +14209,8 @@ window.QUESTIONS_500 = [
       "Only transmitted through air",
       "Only transmitted in the vacuum of outer space"
     ],
-    "explain_en": "Sound requires a molecular elastic material medium to transmit vibrations; Vacuum space cannot transmit sound."
+    "explain_en": "Sound requires a molecular elastic material medium to transmit vibrations; Vacuum space cannot transmit sound.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL075",
@@ -13855,7 +14229,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -13873,7 +14247,8 @@ window.QUESTIONS_500 = [
       "In outer space",
       "In solids (like metal steel bars)"
     ],
-    "explain_en": "The density of particles in solids is very tight and tightly bonded, so sound waves propagate at the highest speed."
+    "explain_en": "The density of particles in solids is very tight and tightly bonded, so sound waves propagate at the highest speed.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL076",
@@ -13892,7 +14267,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -13910,7 +14285,8 @@ window.QUESTIONS_500 = [
       "Pure black color",
       "Red"
     ],
-    "explain_en": "Acidic solutions (pH < 7) turn red litmus red; An alkaline base solution (such as lime water) turns litmus green."
+    "explain_en": "Acidic solutions (pH < 7) turn red litmus red; An alkaline base solution (such as lime water) turns litmus green.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL077",
@@ -13929,7 +14305,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -13947,7 +14323,8 @@ window.QUESTIONS_500 = [
       "Original purple color",
       "Clear white color"
     ],
-    "explain_en": "The alkaline nature of the solution changes the color of the litmus indicator to a characteristic blue color."
+    "explain_en": "The alkaline nature of the solution changes the color of the litmus indicator to a characteristic blue color.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL078",
@@ -13966,7 +14343,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -13984,7 +14361,8 @@ window.QUESTIONS_500 = [
       "A mixture",
       "One molecule"
     ],
-    "explain_en": "A mixture is a mechanical combination of two or more substances in which each substance retains its inherent chemical nature."
+    "explain_en": "A mixture is a mechanical combination of two or more substances in which each substance retains its inherent chemical nature.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL079",
@@ -14003,7 +14381,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -14021,7 +14399,8 @@ window.QUESTIONS_500 = [
       "Evaporation of water in sunlight (salt crystallization)",
       "Use a magnet to attract"
     ],
-    "explain_en": "Under the heat of the Sun and sea breeze, the water evaporates completely into the air, leaving crystallized salt crystals in the field."
+    "explain_en": "Under the heat of the Sun and sea breeze, the water evaporates completely into the air, leaving crystallized salt crystals in the field.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL080",
@@ -14040,7 +14419,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -14058,7 +14437,8 @@ window.QUESTIONS_500 = [
       "Electromagnetic force arises from clouds",
       "Archimedes thrust of the ground"
     ],
-    "explain_en": "The enormous mass of the Earth creates a gravitational field that pulls all objects falling towards its surface."
+    "explain_en": "The enormous mass of the Earth creates a gravitational field that pulls all objects falling towards its surface.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "IXL081",
@@ -14077,7 +14457,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -14095,7 +14475,8 @@ window.QUESTIONS_500 = [
       "A net for people to trap wild birds",
       "Consists of only one animal species that eats one species of grass"
     ],
-    "explain_en": "In nature, one species can eat many other species and be hunted by many species, forming a complex food web."
+    "explain_en": "In nature, one species can eat many other species and be hunted by many species, forming a complex food web.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL082",
@@ -14114,7 +14495,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -14132,7 +14513,8 @@ window.QUESTIONS_500 = [
       "Hunting large birds and animals",
       "Generate oxygen from sunlight"
     ],
-    "explain_en": "Decomposers recycle organic nutrients back into the soil for continued absorption by plants."
+    "explain_en": "Decomposers recycle organic nutrients back into the soil for continued absorption by plants.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL083",
@@ -14151,7 +14533,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -14169,7 +14551,8 @@ window.QUESTIONS_500 = [
       "Helps ponds and lakes become cleaner and more beautiful",
       "Make native fish bigger"
     ],
-    "explain_en": "Invasive species without natural enemies will explode in numbers, devastating local species' food sources."
+    "explain_en": "Invasive species without natural enemies will explode in numbers, devastating local species' food sources.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL084",
@@ -14188,7 +14571,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -14206,7 +14589,8 @@ window.QUESTIONS_500 = [
       "Number of trees planted in a row",
       "Number of concrete roads built in the forest"
     ],
-    "explain_en": "Biodiversity is a measure of the richness of life at all levels from species to genes to entire ecosystems."
+    "explain_en": "Biodiversity is a measure of the richness of life at all levels from species to genes to entire ecosystems.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL085",
@@ -14225,7 +14609,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -14243,7 +14627,8 @@ window.QUESTIONS_500 = [
       "Prevent rain from falling to Earth",
       "Contains a lot of wood to exploit"
     ],
-    "explain_en": "Tropical forests absorb billions of tons of carbon dioxide each year and act as global climate regulators."
+    "explain_en": "Tropical forests absorb billions of tons of carbon dioxide each year and act as global climate regulators.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL086",
@@ -14262,7 +14647,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -14280,7 +14665,8 @@ window.QUESTIONS_500 = [
       "Carbon dioxide (CO2) and Methane (CH4)",
       "Oxygen Gas (O2)"
     ],
-    "explain_en": "Greenhouse gas molecules trap infrared heat radiation from the ground into space, warming the planet."
+    "explain_en": "Greenhouse gas molecules trap infrared heat radiation from the ground into space, warming the planet.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL087",
@@ -14299,7 +14685,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -14317,7 +14703,8 @@ window.QUESTIONS_500 = [
       "Sulfur dioxide (SO2) and nitrogen oxides (NOx)",
       "Pure oxygen gas"
     ],
-    "explain_en": "SO2 and NOx gases react with water vapor in the atmosphere to form sulfuric and nitric acids as rain falls."
+    "explain_en": "SO2 and NOx gases react with water vapor in the atmosphere to form sulfuric and nitric acids as rain falls.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL088",
@@ -14336,7 +14723,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -14354,7 +14741,8 @@ window.QUESTIONS_500 = [
       "Plastic dissolves in seawater after 1 day",
       "Plastic makes sea water as sweet as sugar"
     ],
-    "explain_en": "Plastic trash persists for centuries and is swallowed by marine animals, causing digestive blockage and microplastic poisoning."
+    "explain_en": "Plastic trash persists for centuries and is swallowed by marine animals, causing digestive blockage and microplastic poisoning.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL089",
@@ -14373,7 +14761,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -14391,7 +14779,8 @@ window.QUESTIONS_500 = [
       "Red, Rose, River",
       "Reduce, Reuse, Recycle"
     ],
-    "explain_en": "The 3R model encourages reducing waste, reusing reusable items and classifying and processing waste into new items."
+    "explain_en": "The 3R model encourages reducing waste, reusing reusable items and classifying and processing waste into new items.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL090",
@@ -14410,7 +14799,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -14428,7 +14817,8 @@ window.QUESTIONS_500 = [
       "Tree leaves absorb all vehicle sounds",
       "Green trees emit cold wind like an air conditioner"
     ],
-    "explain_en": "Each gram of water that escapes through the stomata absorbs a large amount of heat, naturally cooling urban air."
+    "explain_en": "Each gram of water that escapes through the stomata absorbs a large amount of heat, naturally cooling urban air.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "IXL091",
@@ -14447,7 +14837,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -14465,7 +14855,8 @@ window.QUESTIONS_500 = [
       "Control thoughts and reflexes",
       "Filter the urine out"
     ],
-    "explain_en": "The heart pumps blood through a system of arteries, capillaries and veins to feed every cell in the body."
+    "explain_en": "The heart pumps blood through a system of arteries, capillaries and veins to feed every cell in the body.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL092",
@@ -14484,7 +14875,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -14502,7 +14893,8 @@ window.QUESTIONS_500 = [
       "Stomach",
       "Pancreas"
     ],
-    "explain_en": "The liver detoxifies harmful substances, stores glycogen energy and produces bile to help digest fats."
+    "explain_en": "The liver detoxifies harmful substances, stores glycogen energy and produces bile to help digest fats.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL093",
@@ -14521,7 +14913,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -14539,7 +14931,8 @@ window.QUESTIONS_500 = [
       "Pump blood to the brain",
       "Filters the blood to remove waste and create urine"
     ],
-    "explain_en": "Millions of nephrons in the kidneys continuously function as sophisticated filters to clean the bloodstream throughout the body."
+    "explain_en": "Millions of nephrons in the kidneys continuously function as sophisticated filters to clean the bloodstream throughout the body.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL094",
@@ -14558,7 +14951,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -14576,7 +14969,8 @@ window.QUESTIONS_500 = [
       "Calcium in bones",
       "Excess oxygen"
     ],
-    "explain_en": "When lacking oxygen, muscle cells switch to anaerobic respiration, producing lactic acid, causing inhibition of muscle contraction and fatigue."
+    "explain_en": "When lacking oxygen, muscle cells switch to anaerobic respiration, producing lactic acid, causing inhibition of muscle contraction and fatigue.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL095",
@@ -14595,7 +14989,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -14613,7 +15007,8 @@ window.QUESTIONS_500 = [
       "Identify and destroy invading bacteria, viruses and pathogens",
       "Makes hair grow long"
     ],
-    "explain_en": "Phagocytic leukocytes and antibodies act as a defense army to protect the body from disease."
+    "explain_en": "Phagocytic leukocytes and antibodies act as a defense army to protect the body from disease.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL096",
@@ -14632,7 +15027,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -14650,7 +15045,8 @@ window.QUESTIONS_500 = [
       "Gas exchange: absorbing oxygen into the blood and expelling carbon dioxide",
       "Digest starchy foods"
     ],
-    "explain_en": "Hundreds of millions of thin-walled alveoli are surrounded by a dense capillary network that helps gases diffuse easily."
+    "explain_en": "Hundreds of millions of thin-walled alveoli are surrounded by a dense capillary network that helps gases diffuse easily.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL097",
@@ -14669,7 +15065,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -14687,7 +15083,8 @@ window.QUESTIONS_500 = [
       "The vessel walls are fragile and easily broken",
       "Made of hard cartilage"
     ],
-    "explain_en": "Arterial walls are thick and elastic, helping to withstand the very strong pressure of blood ejection from the heart's ventricles."
+    "explain_en": "Arterial walls are thick and elastic, helping to withstand the very strong pressure of blood ejection from the heart's ventricles.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL098",
@@ -14706,7 +15103,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -14724,7 +15121,8 @@ window.QUESTIONS_500 = [
       "Just located on the soles of the feet",
       "Only in the ear"
     ],
-    "explain_en": "The skin is the body's largest organ, containing millions of nerve receptors that sense touch, temperature and pressure."
+    "explain_en": "The skin is the body's largest organ, containing millions of nerve receptors that sense touch, temperature and pressure.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL099",
@@ -14743,7 +15141,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -14761,7 +15159,8 @@ window.QUESTIONS_500 = [
       "External skeletal system",
       "Endocrine system"
     ],
-    "explain_en": "The spinal cord along with the brain forms the central nervous system, controlling the body's automatic reflexes."
+    "explain_en": "The spinal cord along with the brain forms the central nervous system, controlling the body's automatic reflexes.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "IXL100",
@@ -14780,7 +15179,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "IXL & Khan Academy",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -14798,7 +15197,8 @@ window.QUESTIONS_500 = [
       "Exactly 5 beats per minute",
       "About 60 to 80 beats per minute"
     ],
-    "explain_en": "In a resting state, a healthy adult heart contracts rhythmically 60-80 times per minute."
+    "explain_en": "In a resting state, a healthy adult heart contracts rhythmically 60-80 times per minute.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG001",
@@ -14817,7 +15217,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -14835,7 +15235,8 @@ window.QUESTIONS_500 = [
       "African elephant",
       "Megalodon shark"
     ],
-    "explain_en": "Blue whales can be more than 30 meters long and weigh nearly 200 tons, with the tongue alone weighing as much as an elephant!"
+    "explain_en": "Blue whales can be more than 30 meters long and weigh nearly 200 tons, with the tongue alone weighing as much as an elephant!",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG002",
@@ -14854,7 +15255,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -14872,7 +15273,8 @@ window.QUESTIONS_500 = [
       "Wildebeest",
       "African lion"
     ],
-    "explain_en": "The Cheetah has an elongated aerodynamic body and a flexible spine that helps it achieve super speed."
+    "explain_en": "The Cheetah has an elongated aerodynamic body and a flexible spine that helps it achieve super speed.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG003",
@@ -14891,7 +15293,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -14909,7 +15311,8 @@ window.QUESTIONS_500 = [
       "Hummingbird",
       "Pigeon"
     ],
-    "explain_en": "The Cuban bee hummingbird is only about 5 cm long, and is the only bird that can fly backwards and fly still."
+    "explain_en": "The Cuban bee hummingbird is only about 5 cm long, and is the only bird that can fly backwards and fly still.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG004",
@@ -14928,7 +15331,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -14946,7 +15349,8 @@ window.QUESTIONS_500 = [
       "The two eyes can move independently and look in two completely different directions",
       "Eyes emit infrared rays"
     ],
-    "explain_en": "Each chameleon's eyes can rotate 180 degrees independently, creating a 360-degree view without dead angles around."
+    "explain_en": "Each chameleon's eyes can rotate 180 degrees independently, creating a 360-degree view without dead angles around.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG005",
@@ -14965,7 +15369,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -14983,7 +15387,8 @@ window.QUESTIONS_500 = [
       "Koala bear",
       "Dingo dog"
     ],
-    "explain_en": "The platypus is one of the strangest monotremes in the world: it lays eggs but feeds its young with mother's milk."
+    "explain_en": "The platypus is one of the strangest monotremes in the world: it lays eggs but feeds its young with mother's milk.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG006",
@@ -15002,7 +15407,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -15020,7 +15425,8 @@ window.QUESTIONS_500 = [
       "Fresh stream fish",
       "Wild honey"
     ],
-    "explain_en": "Eucalyptus leaves are very low in calories and contain toxins. Koala's special digestive system breaks down toxins and sleeps a lot to save energy."
+    "explain_en": "Eucalyptus leaves are very low in calories and contain toxins. Koala's special digestive system breaks down toxins and sleeps a lot to save energy.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG007",
@@ -15039,7 +15445,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -15057,7 +15463,8 @@ window.QUESTIONS_500 = [
       "Use your tail to swing like a fish's tail",
       "Flying is flying over the water"
     ],
-    "explain_en": "Hippopotamus bones are very dense and heavy, they cannot swim but glide quickly along the bottom of rivers and lakes."
+    "explain_en": "Hippopotamus bones are very dense and heavy, they cannot swim but glide quickly along the bottom of rivers and lakes.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG008",
@@ -15076,7 +15483,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -15094,7 +15501,8 @@ window.QUESTIONS_500 = [
       "There are 10 hearts",
       "There is no heart"
     ],
-    "explain_en": "Octopuses have 2 hearts that pump blood through their gills to get oxygen and 1 main heart that pumps blood throughout the body."
+    "explain_en": "Octopuses have 2 hearts that pump blood through their gills to get oxygen and 1 main heart that pumps blood throughout the body.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG009",
@@ -15113,7 +15521,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 3,
@@ -15131,7 +15539,8 @@ window.QUESTIONS_500 = [
       "Bright red",
       "Pure black color"
     ],
-    "explain_en": "Instead of using red iron-containing hemoglobin like humans, octopus blood contains copper-rich hemocyanin that creates a blue color."
+    "explain_en": "Instead of using red iron-containing hemoglobin like humans, octopus blood contains copper-rich hemocyanin that creates a blue color.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG010",
@@ -15150,7 +15559,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 3,
@@ -15168,7 +15577,8 @@ window.QUESTIONS_500 = [
       "There are 7 cervical vertebrae (equal to the exact number of human cervical vertebrae)",
       "There is only 1 segment"
     ],
-    "explain_en": "Most mammals (including humans and giraffes) have exactly 7 cervical vertebrae, but deer's are very large and long."
+    "explain_en": "Most mammals (including humans and giraffes) have exactly 7 cervical vertebrae, but deer's are very large and long.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG011",
@@ -15187,7 +15597,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -15205,7 +15615,8 @@ window.QUESTIONS_500 = [
       "Bone marrow is dense",
       "Ivory calcium"
     ],
-    "explain_en": "Rhino horns are not bones attached to the skull but are tightly packed bundles of keratin fibers attached to the skin of the nose."
+    "explain_en": "Rhino horns are not bones attached to the skull but are tightly packed bundles of keratin fibers attached to the skin of the nose.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG012",
@@ -15224,7 +15635,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -15242,7 +15653,8 @@ window.QUESTIONS_500 = [
       "Flying squirrel",
       "Bat"
     ],
-    "explain_en": "Flying squirrels or flying fish only have skin membranes that flutter to catch the wind, only bats have muscular wings that actually flap."
+    "explain_en": "Flying squirrels or flying fish only have skin membranes that flutter to catch the wind, only bats have muscular wings that actually flap.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG013",
@@ -15261,7 +15673,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -15279,7 +15691,8 @@ window.QUESTIONS_500 = [
       "Dig a cave deep underground",
       "Gather close together into a giant circle and take turns changing places"
     ],
-    "explain_en": "The act of standing huddled together to share body heat helps halve heat loss during polar snowstorms."
+    "explain_en": "The act of standing huddled together to share body heat helps halve heat loss during polar snowstorms.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG014",
@@ -15298,7 +15711,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -15316,7 +15729,8 @@ window.QUESTIONS_500 = [
       "Due to too much sun exposure",
       "Because their food is rich in carotenoid pigments (red algae and small shrimp)"
     ],
-    "explain_en": "When young birds first hatch, their feathers are gray-white. Only when they eat a lot of algae and red crustaceans do their feathers turn pink."
+    "explain_en": "When young birds first hatch, their feathers are gray-white. Only when they eat a lot of algae and red crustaceans do their feathers turn pink.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG015",
@@ -15335,7 +15749,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -15353,7 +15767,8 @@ window.QUESTIONS_500 = [
       "Green algae growing on their hair helps them camouflage into the tree canopy",
       "Orchids bloom"
     ],
-    "explain_en": "The symbiotic relationship between sloth fur and green algae creates the perfect camouflage to hide from predatory eagles."
+    "explain_en": "The symbiotic relationship between sloth fur and green algae creates the perfect camouflage to hide from predatory eagles.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG016",
@@ -15372,7 +15787,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -15390,7 +15805,8 @@ window.QUESTIONS_500 = [
       "There are only 32 pieces",
       "Only changed exactly once"
     ],
-    "explain_en": "Shark teeth are arranged in many rows like a conveyor belt. If a broken tooth falls out, the next row of teeth will slide up to replace it immediately."
+    "explain_en": "Shark teeth are arranged in many rows like a conveyor belt. If a broken tooth falls out, the next row of teeth will slide up to replace it immediately.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG017",
@@ -15409,7 +15825,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 3,
@@ -15427,7 +15843,8 @@ window.QUESTIONS_500 = [
       "Sleep for 100 years",
       "Only slept exactly 1 hour"
     ],
-    "explain_en": "During periods of severe drought, snails secrete mucus to seal the mouth of their shells and fall into a state of summer dormancy that lasts for many years."
+    "explain_en": "During periods of severe drought, snails secrete mucus to seal the mouth of their shells and fall into a state of summer dormancy that lasts for many years.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG018",
@@ -15446,7 +15863,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -15464,7 +15881,8 @@ window.QUESTIONS_500 = [
       "About 20 years",
       "About 500 years"
     ],
-    "explain_en": "The slow metabolic rate helps giant turtles become one of the longest-living vertebrates."
+    "explain_en": "The slow metabolic rate helps giant turtles become one of the longest-living vertebrates.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG019",
@@ -15483,7 +15901,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -15501,7 +15919,8 @@ window.QUESTIONS_500 = [
       "About 500 flowers",
       "About 100 flowers"
     ],
-    "explain_en": "It is an extraordinary result of labor: millions of flights of nectar combined with enzymes in the honeycomb."
+    "explain_en": "It is an extraordinary result of labor: millions of flights of nectar combined with enzymes in the honeycomb.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG020",
@@ -15520,7 +15939,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -15538,7 +15957,8 @@ window.QUESTIONS_500 = [
       "Between 10 and 50 times its weight",
       "Can't carry anything"
     ],
-    "explain_en": "The muscular structure and area-to-volume ratio help ants possess relatively extraordinary lifting power."
+    "explain_en": "The muscular structure and area-to-volume ratio help ants possess relatively extraordinary lifting power.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG021",
@@ -15557,7 +15977,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -15575,7 +15995,8 @@ window.QUESTIONS_500 = [
       "Arctic Ocean",
       "Pacific Ocean"
     ],
-    "explain_en": "The Pacific Ocean stretches over a huge area of more than 165 million km², covering more than 30% of the earth's surface."
+    "explain_en": "The Pacific Ocean stretches over a huge area of more than 165 million km², covering more than 30% of the earth's surface.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG022",
@@ -15594,7 +16015,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -15612,7 +16033,8 @@ window.QUESTIONS_500 = [
       "Gulf of Tonkin",
       "Mariana Trench (nearly 11,000 meters deep)"
     ],
-    "explain_en": "The depth of nearly 11 km of the Mariana Trench is deep enough to submerge the entire peak of Mount Everest and still leave 2 km of water above!"
+    "explain_en": "The depth of nearly 11 km of the Mariana Trench is deep enough to submerge the entire peak of Mount Everest and still leave 2 km of water above!",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG023",
@@ -15631,7 +16053,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -15649,7 +16071,8 @@ window.QUESTIONS_500 = [
       "Atacama Desert",
       "Sahara Desert"
     ],
-    "explain_en": "The Sahara has an area of more than 9 million km², nearly as large as the entire area of the United States or China."
+    "explain_en": "The Sahara has an area of more than 9 million km², nearly as large as the entire area of the United States or China.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG024",
@@ -15668,7 +16091,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -15686,7 +16109,8 @@ window.QUESTIONS_500 = [
       "North America",
       "Asia"
     ],
-    "explain_en": "Although covered with ice and snow, Antarctica is actually a giant icy desert with extremely low annual snowfall."
+    "explain_en": "Although covered with ice and snow, Antarctica is actually a giant icy desert with extremely low annual snowfall.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG025",
@@ -15705,7 +16129,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -15723,7 +16147,8 @@ window.QUESTIONS_500 = [
       "Mount Everest (in the Himalayas)",
       "Fansipan peak"
     ],
-    "explain_en": "Everest is the 'roof of the world', covered with permafrost all year round and the air is extremely thin."
+    "explain_en": "Everest is the 'roof of the world', covered with permafrost all year round and the air is extremely thin.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG026",
@@ -15742,7 +16167,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -15760,7 +16185,8 @@ window.QUESTIONS_500 = [
       "Japan",
       "Australia (Australia)"
     ],
-    "explain_en": "The Great Barrier Reef is the greatest living structure built by billions of tiny coral polyps."
+    "explain_en": "The Great Barrier Reef is the greatest living structure built by billions of tiny coral polyps.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG027",
@@ -15779,7 +16205,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -15797,7 +16223,8 @@ window.QUESTIONS_500 = [
       "Venezuela",
       "America"
     ],
-    "explain_en": "Angel Waterfall pours from the top of Auyán-tepui table mountain, the water falling from above turns into mist before reaching the ground."
+    "explain_en": "Angel Waterfall pours from the top of Auyán-tepui table mountain, the water falling from above turns into mist before reaching the ground.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG028",
@@ -15816,7 +16243,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -15834,7 +16261,8 @@ window.QUESTIONS_500 = [
       "Due to light reflection from snow and ice",
       "Because the Moon exploded"
     ],
-    "explain_en": "Earth's magnetic field guides electrons and protons from the Sun to collide with shimmering oxygen and nitrogen."
+    "explain_en": "Earth's magnetic field guides electrons and protons from the Sun to collide with shimmering oxygen and nitrogen.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG029",
@@ -15853,7 +16281,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -15871,7 +16299,8 @@ window.QUESTIONS_500 = [
       "The hottest lake in the world",
       "The deepest freshwater lake and contains the largest amount of fresh water on the planet"
     ],
-    "explain_en": "Lake Baikal is more than 1,600m deep and contains more than 20% of the Earth's total unfrozen surface fresh water."
+    "explain_en": "Lake Baikal is more than 1,600m deep and contains more than 20% of the Earth's total unfrozen surface fresh water.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG030",
@@ -15890,7 +16319,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "hard",
     "diff": 3,
     "grade": 3,
@@ -15908,7 +16337,8 @@ window.QUESTIONS_500 = [
       "Arabian Desert",
       "Sahara Desert"
     ],
-    "explain_en": "Atacama is so dry that NASA scientists use this place to test Mars exploration rovers."
+    "explain_en": "Atacama is so dry that NASA scientists use this place to test Mars exploration rovers.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG031",
@@ -15927,7 +16357,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "hard",
     "diff": 3,
     "grade": 3,
@@ -15945,7 +16375,8 @@ window.QUESTIONS_500 = [
       "Approximately 30,000°C (5 times hotter than the Sun's surface)",
       "About 0°C"
     ],
-    "explain_en": "Lightning releases a powerful electric current that heats the surrounding air and instantly expands, creating a thunderous boom."
+    "explain_en": "Lightning releases a powerful electric current that heats the surrounding air and instantly expands, creating a thunderous boom.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG032",
@@ -15964,7 +16395,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -15982,7 +16413,8 @@ window.QUESTIONS_500 = [
       "Baby Sun",
       "Comet"
     ],
-    "explain_en": "Most meteors are just dust particles or pea-sized pieces of rock that burn up in the upper atmosphere."
+    "explain_en": "Most meteors are just dust particles or pea-sized pieces of rock that burn up in the upper atmosphere.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG033",
@@ -16001,7 +16433,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -16019,7 +16451,8 @@ window.QUESTIONS_500 = [
       "Because there is a giant artificial salt mine poured into it",
       "Because fish in the sea secrete salt"
     ],
-    "explain_en": "Over billions of years, rainwater erodes soil and rocks, carrying sodium and chlorine ions into the ocean, accumulating into a strong salty taste."
+    "explain_en": "Over billions of years, rainwater erodes soil and rocks, carrying sodium and chlorine ions into the ocean, accumulating into a strong salty taste.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG034",
@@ -16038,7 +16471,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -16056,7 +16489,8 @@ window.QUESTIONS_500 = [
       "More than 100,000 liters of water",
       "About 50 liters"
     ],
-    "explain_en": "The tree trunk is spongy like a sponge, helping Baobab absorb water during the rainy season to survive the harsh dry season."
+    "explain_en": "The tree trunk is spongy like a sponge, helping Baobab absorb water during the rainy season to survive the harsh dry season.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG035",
@@ -16075,7 +16509,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Thực Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 3,
@@ -16093,7 +16527,8 @@ window.QUESTIONS_500 = [
       "Not any longer",
       "100 meters longer"
     ],
-    "explain_en": "Thanks to internode meristems working together, bamboo shoots can break record heights in the plant world."
+    "explain_en": "Thanks to internode meristems working together, bamboo shoots can break record heights in the plant world.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG036",
@@ -16112,7 +16547,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -16130,7 +16565,8 @@ window.QUESTIONS_500 = [
       "About 10 million times",
       "About 1,000 times"
     ],
-    "explain_en": "With an average rhythm of 70-75 times per minute, the resilient heart contracts and pumps blood more than 100,000 times every 24 hours."
+    "explain_en": "With an average rhythm of 70-75 times per minute, the resilient heart contracts and pumps blood more than 100,000 times every 24 hours.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG037",
@@ -16149,7 +16585,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "hard",
     "diff": 3,
     "grade": 3,
@@ -16167,7 +16603,8 @@ window.QUESTIONS_500 = [
       "About 10 meters",
       "Only about 1 meter"
     ],
-    "explain_en": "The super-dense network of tiny capillaries reaching every cell creates a magical giant transportation system."
+    "explain_en": "The super-dense network of tiny capillaries reaching every cell creates a magical giant transportation system.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG038",
@@ -16186,7 +16623,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -16204,7 +16641,8 @@ window.QUESTIONS_500 = [
       "Femur (in the leg)",
       "Toe bones"
     ],
-    "explain_en": "The femur can withstand a compression force equivalent to a ton, supporting the entire weight of the upper body when we run and jump."
+    "explain_en": "The femur can withstand a compression force equivalent to a ton, supporting the entire weight of the upper body when we run and jump.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG039",
@@ -16223,7 +16661,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -16241,7 +16679,8 @@ window.QUESTIONS_500 = [
       "The bones of the little finger",
       "Nose tip bone"
     ],
-    "explain_en": "The stapes bone in the ear is only about 3 millimeters long, playing the role of transmitting sound wave vibrations to the cochlea."
+    "explain_en": "The stapes bone in the ear is only about 3 millimeters long, playing the role of transmitting sound wave vibrations to the cochlea.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG040",
@@ -16260,7 +16699,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -16278,7 +16717,8 @@ window.QUESTIONS_500 = [
       "Fingerprints (and tongue prints)",
       "Hair length"
     ],
-    "explain_en": "Even identical twins have completely different fingerprints due to their development in the fetus."
+    "explain_en": "Even identical twins have completely different fingerprints due to their development in the fetus.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG041",
@@ -16297,7 +16737,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -16315,7 +16755,8 @@ window.QUESTIONS_500 = [
       "Reflex automatically repels foreign objects and cleans the nasal cavity with extremely high wind speeds",
       "To blow out birthday candles"
     ],
-    "explain_en": "A sneeze can expel air from the nose at speeds of up to 160 km/h to protect the airway."
+    "explain_en": "A sneeze can expel air from the nose at speeds of up to 160 km/h to protect the airway.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG042",
@@ -16334,7 +16775,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -16352,7 +16793,8 @@ window.QUESTIONS_500 = [
       "It is the hardest substance in the entire human body",
       "Softer than muscles"
     ],
-    "explain_en": "Tooth enamel contains up to 96% crystallized calcium phosphate minerals, harder than bone marrow to bite and chew hard foods."
+    "explain_en": "Tooth enamel contains up to 96% crystallized calcium phosphate minerals, harder than bone marrow to bite and chew hard foods.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG043",
@@ -16371,7 +16813,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -16389,7 +16831,8 @@ window.QUESTIONS_500 = [
       "That's when the brain is busy projecting vivid dreams",
       "Because the bedroom is too bright"
     ],
-    "explain_en": "The rapid eye movement (REM) stage is the time when the brain synthesizes memories and creates exciting dreams."
+    "explain_en": "The rapid eye movement (REM) stage is the time when the brain synthesizes memories and creates exciting dreams.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG044",
@@ -16408,7 +16851,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -16426,7 +16869,8 @@ window.QUESTIONS_500 = [
       "Sweet, sour, salty, bitter and umami (meaty/rich taste)",
       "Sweet, spicy, fatty, rich and fragrant"
     ],
-    "explain_en": "Modern science recognizes 5 basic tastes: sweet, sour, salty, bitter and umami (the taste of MSG/meat broth)."
+    "explain_en": "Modern science recognizes 5 basic tastes: sweet, sour, salty, bitter and umami (the taste of MSG/meat broth).",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG045",
@@ -16445,7 +16889,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "hard",
     "diff": 3,
     "grade": 3,
@@ -16463,7 +16907,8 @@ window.QUESTIONS_500 = [
       "The stomach has a dense layer of alkaline mucus that continuously protects the mucosa",
       "Because the stomach is made of stainless steel"
     ],
-    "explain_en": "The bicarbonate-rich mucous membrane is constantly regenerated to prevent acidic gastric juice from corroding the stomach muscle wall."
+    "explain_en": "The bicarbonate-rich mucous membrane is constantly regenerated to prevent acidic gastric juice from corroding the stomach muscle wall.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG046",
@@ -16482,7 +16927,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -16500,7 +16945,8 @@ window.QUESTIONS_500 = [
       "Hair is about to fall out",
       "The skin is cracked by the wind"
     ],
-    "explain_en": "This is an evolutionary trace from animal ancestors: erecting hair to inflate the layer to retain heat or scare away predators."
+    "explain_en": "This is an evolutionary trace from animal ancestors: erecting hair to inflate the layer to retain heat or scare away predators.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG047",
@@ -16519,7 +16965,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 2,
@@ -16537,7 +16983,8 @@ window.QUESTIONS_500 = [
       "Only blink once",
       "About 15 to 20 times per minute"
     ],
-    "explain_en": "Blinking helps sweep away a thin layer of tear film that moistens, cleans the cornea and provides oxygen to the eye."
+    "explain_en": "Blinking helps sweep away a thin layer of tear film that moistens, cleans the cornea and provides oxygen to the eye.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG048",
@@ -16556,7 +17003,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "medium",
     "diff": 2,
     "grade": 3,
@@ -16574,7 +17021,8 @@ window.QUESTIONS_500 = [
       "Because the cutting knife is rusty",
       "Onions release sulfur gas that reacts with tears to form mild acids that cause irritation"
     ],
-    "explain_en": "Enzymes in onions break down amino acids to create syn-propanethial-S-oxide, which stimulates the lacrimal gland to secrete eyewash."
+    "explain_en": "Enzymes in onions break down amino acids to create syn-propanethial-S-oxide, which stimulates the lacrimal gland to secrete eyewash.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG049",
@@ -16593,7 +17041,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "easy",
     "diff": 1,
     "grade": 1,
@@ -16611,7 +17059,8 @@ window.QUESTIONS_500 = [
       "Because the brain forgets the feeling of pain",
       "They are made of dead keratin cells without nerves"
     ],
-    "explain_en": "Only the hair roots and nail roots have living cells and nerve receptors, the protruding parts are dead keratin cells."
+    "explain_en": "Only the hair roots and nail roots have living cells and nerve receptors, the protruding parts are dead keratin cells.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG050",
@@ -16630,7 +17079,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Con người & Sức khỏe",
+    "topic": "Cơ Thể Người",
     "difficulty": "hard",
     "diff": 3,
     "grade": 3,
@@ -16648,7 +17097,8 @@ window.QUESTIONS_500 = [
       "Countless and uncountable (more than 1000 trillion)",
       "There are only about 100 cells"
     ],
-    "explain_en": "More than 86 billion neurons with hundreds of trillions of joints make up the most complex thinking machine in the known universe."
+    "explain_en": "More than 86 billion neurons with hundreds of trillions of joints make up the most complex thinking machine in the known universe.",
+    "curriculum_topic": "Con người & Sức khỏe"
   },
   {
     "id": "NG051",
@@ -16667,7 +17117,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -16685,7 +17135,8 @@ window.QUESTIONS_500 = [
       "An impact crater caused by a meteorite impact",
       "A vast ocean of red water"
     ],
-    "explain_en": "The Great Red Spot anticyclone is so huge that it could swallow the entire Earth inside it!"
+    "explain_en": "The Great Red Spot anticyclone is so huge that it could swallow the entire Earth inside it!",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG052",
@@ -16704,7 +17155,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -16722,7 +17173,8 @@ window.QUESTIONS_500 = [
       "Mars",
       "Venus"
     ],
-    "explain_en": "Olympus Mons is nearly 22 km high and as wide as France. It is a giant shield volcano on Mars."
+    "explain_en": "Olympus Mons is nearly 22 km high and as wide as France. It is a giant shield volcano on Mars.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG053",
@@ -16741,7 +17193,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -16759,7 +17211,8 @@ window.QUESTIONS_500 = [
       "Doesn't spin at all",
       "Rotates from East to West (Sun rises in the West)"
     ],
-    "explain_en": "Venus rotates in retrograde rotation, making a day on Venus longer than its year!"
+    "explain_en": "Venus rotates in retrograde rotation, making a day on Venus longer than its year!",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG054",
@@ -16778,7 +17231,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -16796,7 +17249,8 @@ window.QUESTIONS_500 = [
       "The axis of rotation lies almost horizontally (about 98 degrees), like a ball rolling in orbit",
       "The rotating shaft swings like a pendulum"
     ],
-    "explain_en": "The extreme tilt of the axis causes Uranus's poles to experience 42 years of continuous days and 42 years of bitterly dark nights."
+    "explain_en": "The extreme tilt of the axis causes Uranus's poles to experience 42 years of continuous days and 42 years of bitterly dark nights.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG055",
@@ -16815,7 +17269,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -16833,7 +17287,8 @@ window.QUESTIONS_500 = [
       "Pluto (Pluto - Dwarf planet)",
       "Sun"
     ],
-    "explain_en": "Pluto was reclassified as a dwarf planet in 2006, residing in the Kuiper belt."
+    "explain_en": "Pluto was reclassified as a dwarf planet in 2006, residing in the Kuiper belt.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG056",
@@ -16852,7 +17307,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -16870,7 +17325,8 @@ window.QUESTIONS_500 = [
       "About once every 1000 years",
       "Once a year"
     ],
-    "explain_en": "Comet Halley is the most famous short-period comet, last appearing in 1986 and will return in 2061."
+    "explain_en": "Comet Halley is the most famous short-period comet, last appearing in 1986 and will return in 2061.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG057",
@@ -16889,7 +17345,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -16907,7 +17363,8 @@ window.QUESTIONS_500 = [
       "Always face away from the Sun (due to radiation pressure and solar wind blowing out)",
       "Always aim towards the stern of the ship"
     ],
-    "explain_en": "Solar wind and light blow dust and gas vaporized from the comet's icy core toward the opposite side of the Sun."
+    "explain_en": "Solar wind and light blow dust and gas vaporized from the comet's icy core toward the opposite side of the Sun.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG058",
@@ -16926,7 +17383,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -16944,7 +17401,8 @@ window.QUESTIONS_500 = [
       "It is a completely empty space with no mass",
       "Gravity is so strong that even light cannot escape"
     ],
-    "explain_en": "Infinitely dense matter bends spacetime so much that the escape velocity exceeds the speed of light."
+    "explain_en": "Infinitely dense matter bends spacetime so much that the escape velocity exceeds the speed of light.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG059",
@@ -16963,7 +17421,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -16981,7 +17439,8 @@ window.QUESTIONS_500 = [
       "Round ball shape",
       "Square box shape"
     ],
-    "explain_en": "The Milky Way consists of hundreds of billions of stars rotating around the center, forming beautiful sparkling spiral arms."
+    "explain_en": "The Milky Way consists of hundreds of billions of stars rotating around the center, forming beautiful sparkling spiral arms.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG060",
@@ -17000,7 +17459,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -17018,7 +17477,8 @@ window.QUESTIONS_500 = [
       "About 1,000 km/h by passenger plane",
       "About 7.9 km per second (nearly 28,000 km/h)"
     ],
-    "explain_en": "Level 1 cosmic speed (7.9 km/s) helps the spacecraft balance gravity and centrifugal force to orbit the Earth."
+    "explain_en": "Level 1 cosmic speed (7.9 km/s) helps the spacecraft balance gravity and centrifugal force to orbit the Earth.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG061",
@@ -17037,7 +17497,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -17055,7 +17515,8 @@ window.QUESTIONS_500 = [
       "To be internationally trendy",
       "Reflects extremely strong heat radiation from the Sun and is easy to identify in black space"
     ],
-    "explain_en": "The temperature in space can reach more than 120°C in the sun; White color reflects heat to protect astronauts' lives."
+    "explain_en": "The temperature in space can reach more than 120°C in the sun; White color reflects heat to protect astronauts' lives.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG062",
@@ -17074,7 +17535,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -17092,7 +17553,8 @@ window.QUESTIONS_500 = [
       "About 16 sunrises and sunsets each day",
       "Only seen once like on the ground"
     ],
-    "explain_en": "Flying around the Earth in just 90 minutes, the ISS takes astronauts to admire 16 sunrises every 24 hours."
+    "explain_en": "Flying around the Earth in just 90 minutes, the ISS takes astronauts to admire 16 sunrises every 24 hours.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG063",
@@ -17111,7 +17573,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -17129,7 +17591,8 @@ window.QUESTIONS_500 = [
       "Only whispers were heard",
       "Hear continuous thunder"
     ],
-    "explain_en": "Sound is a mechanical wave that needs a medium of matter particles to propagate, the vacuum of space cannot transmit sound."
+    "explain_en": "Sound is a mechanical wave that needs a medium of matter particles to propagate, the vacuum of space cannot transmit sound.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG064",
@@ -17148,7 +17611,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -17166,7 +17629,8 @@ window.QUESTIONS_500 = [
       "Over 100 trillion years",
       "About 1 million years"
     ],
-    "explain_en": "The Sun is in the middle of its yellow dwarf star's life and will shine steadily for about another 5 billion years."
+    "explain_en": "The Sun is in the middle of its yellow dwarf star's life and will shine steadily for about another 5 billion years.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG065",
@@ -17185,7 +17649,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Vũ Trụ & Bầu Trời",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -17203,7 +17667,8 @@ window.QUESTIONS_500 = [
       "Dust trail left by comet Swift-Tuttle in orbit",
       "The rocks were thrown by aliens"
     ],
-    "explain_en": "As Earth cuts through the stream of comet debris, the dust particles rush into the atmosphere and burn up to create a stunning meteor shower."
+    "explain_en": "As Earth cuts through the stream of comet debris, the dust particles rush into the atmosphere and burn up to create a stunning meteor shower.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG066",
@@ -17222,7 +17687,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 4,
@@ -17240,7 +17705,8 @@ window.QUESTIONS_500 = [
       "Flea",
       "Fire ant"
     ],
-    "explain_en": "Water bears have the ability to dehydrate, enter a state of osmosis 'cryptobiosis' and miraculously revive when exposed to water."
+    "explain_en": "Water bears have the ability to dehydrate, enter a state of osmosis 'cryptobiosis' and miraculously revive when exposed to water.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG067",
@@ -17259,7 +17725,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -17277,7 +17743,8 @@ window.QUESTIONS_500 = [
       "The tree with the sweetest fruit",
       "The plant grows quickly in 1 hour"
     ],
-    "explain_en": "The Hyperion tree is 115.92 meters tall, taller than the Statue of Liberty, and is the greatest botanical wonder on the planet."
+    "explain_en": "The Hyperion tree is 115.92 meters tall, taller than the Statue of Liberty, and is the greatest botanical wonder on the planet.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG068",
@@ -17296,7 +17763,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -17314,7 +17781,8 @@ window.QUESTIONS_500 = [
       "Exactly 10,000 years",
       "About 100 years"
     ],
-    "explain_en": "The Great Basin Bristlecone pine growing on a barren cliff has lived for nearly five millennia through many ups and downs of history."
+    "explain_en": "The Great Basin Bristlecone pine growing on a barren cliff has lived for nearly five millennia through many ups and downs of history.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG069",
@@ -17333,7 +17801,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -17351,7 +17819,8 @@ window.QUESTIONS_500 = [
       "Can't lift anything",
       "Up to 850 times its body mass"
     ],
-    "explain_en": "That's equivalent to a 70 kg person lifting 9 African elephants at the same time!"
+    "explain_en": "That's equivalent to a 70 kg person lifting 9 African elephants at the same time!",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG070",
@@ -17370,7 +17839,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -17388,7 +17857,8 @@ window.QUESTIONS_500 = [
       "Small clownfish",
       "Electric eel (South American electric eel)"
     ],
-    "explain_en": "Thousands of electrochemical cells (electrocyte) arranged in series along the electric eel's body act like a giant biological battery."
+    "explain_en": "Thousands of electrochemical cells (electrocyte) arranged in series along the electric eel's body act like a giant biological battery.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG071",
@@ -17407,7 +17877,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -17425,7 +17895,8 @@ window.QUESTIONS_500 = [
       "Emit fire that burns enemies",
       "It is possible to reverse the life cycle from an adult back to the young polyp stage indefinitely"
     ],
-    "explain_en": "The process of cell differentiation allows this jellyfish to rejuvenate, theoretically achieving immortality."
+    "explain_en": "The process of cell differentiation allows this jellyfish to rejuvenate, theoretically achieving immortality.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG072",
@@ -17444,7 +17915,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -17462,7 +17933,8 @@ window.QUESTIONS_500 = [
       "More than 1000 km/h exceeding the speed of sound",
       "About 60 km/h"
     ],
-    "explain_en": "The aerodynamic bullet-shaped body helps the kestrel dive like an arrow through the sky to catch pigeons."
+    "explain_en": "The aerodynamic bullet-shaped body helps the kestrel dive like an arrow through the sky to catch pigeons.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG073",
@@ -17481,7 +17953,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 4,
@@ -17499,7 +17971,8 @@ window.QUESTIONS_500 = [
       "Blue",
       "Bright pink color"
     ],
-    "explain_en": "Black skin helps absorb maximum heat from the sun, while transparent hollow hairs scatter white light."
+    "explain_en": "Black skin helps absorb maximum heat from the sun, while transparent hollow hairs scatter white light.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG074",
@@ -17518,7 +17991,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -17536,7 +18009,8 @@ window.QUESTIONS_500 = [
       "Each family flock has its own distinct call dialect (language) passed down through generations",
       "They use lights"
     ],
-    "explain_en": "Orca are apex predators with complex social cultures, whistles and pulses of sound that are passed down through family oral tradition."
+    "explain_en": "Orca are apex predators with complex social cultures, whistles and pulses of sound that are passed down through family oral tradition.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG075",
@@ -17555,7 +18029,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -17573,7 +18047,8 @@ window.QUESTIONS_500 = [
       "Baby seahorses are born from sea sponges",
       "Seahorses lay eggs on tree branches"
     ],
-    "explain_en": "The female seahorse transfers the eggs to the male's incubator bag in front of the abdomen. The male fertilizes, nourishes and gives birth to the fry."
+    "explain_en": "The female seahorse transfers the eggs to the male's incubator bag in front of the abdomen. The male fertilizes, nourishes and gives birth to the fry.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG076",
@@ -17592,7 +18067,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -17610,7 +18085,8 @@ window.QUESTIONS_500 = [
       "As much as a bus",
       "With small coins"
     ],
-    "explain_en": "The largest eyes in the animal world help the giant squid capture every photon of light flickering on the ocean floor."
+    "explain_en": "The largest eyes in the animal world help the giant squid capture every photon of light flickering on the ocean floor.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG077",
@@ -17629,7 +18105,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -17647,7 +18123,8 @@ window.QUESTIONS_500 = [
       "Cold bioluminescence chemical reaction has nearly 100% efficiency",
       "Due to absorption of sunlight, it is retained"
     ],
-    "explain_en": "The luciferase enzyme catalyzes the luciferin compound to release pure light energy without losing it as heat."
+    "explain_en": "The luciferase enzyme catalyzes the luciferin compound to release pure light energy without losing it as heat.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG078",
@@ -17666,7 +18143,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -17684,7 +18161,8 @@ window.QUESTIONS_500 = [
       "Giraffe",
       "Deep sea shark"
     ],
-    "explain_en": "The pitcher of this carnivorous plant can hold more than 3 liters of digestive fluid, trapping all small animals that fall into it."
+    "explain_en": "The pitcher of this carnivorous plant can hold more than 3 liters of digestive fluid, trapping all small animals that fall into it.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG079",
@@ -17703,7 +18181,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -17721,7 +18199,8 @@ window.QUESTIONS_500 = [
       "To collect odor particles in the air, put them into the Jacobson's organ on the nasopharynx to smell odors",
       "To drink the morning dew"
     ],
-    "explain_en": "The forked tongue carries chemical odor molecules to the nasopharynx, helping the snake locate prey accurately in 3D space."
+    "explain_en": "The forked tongue carries chemical odor molecules to the nasopharynx, helping the snake locate prey accurately in 3D space.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG080",
@@ -17740,7 +18219,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -17758,7 +18237,8 @@ window.QUESTIONS_500 = [
       "Legs have 502 adhesive",
       "The feet have iron hooks stuck into the ceiling"
     ],
-    "explain_en": "Each gecko toe has hundreds of thousands of spatulae in close contact with the surface, creating a super-strong molecular attraction."
+    "explain_en": "Each gecko toe has hundreds of thousands of spatulae in close contact with the surface, creating a super-strong molecular attraction.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG081",
@@ -17777,7 +18257,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -17795,7 +18275,8 @@ window.QUESTIONS_500 = [
       "Expanded range of electric field sensing receptors to detect prey buried under sand",
       "To swim backwards faster"
     ],
-    "explain_en": "The hammerhead structure carries widely spread Ampullae of Lorenzini sensory pores that scan the biomagnetic field of the rays on the seafloor."
+    "explain_en": "The hammerhead structure carries widely spread Ampullae of Lorenzini sensory pores that scan the biomagnetic field of the rays on the seafloor.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG082",
@@ -17814,7 +18295,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Thực Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -17832,7 +18313,8 @@ window.QUESTIONS_500 = [
       "Because the tree sap caught fire",
       "Sudden change in water turgor pressure in leaf petioles"
     ],
-    "explain_en": "When stimulated, potassium ions and water quickly escape from petiole stromal cells, causing the leaves to collapse to repel herbivores."
+    "explain_en": "When stimulated, potassium ions and water quickly escape from petiole stromal cells, causing the leaves to collapse to repel herbivores.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG083",
@@ -17851,7 +18333,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -17869,7 +18351,8 @@ window.QUESTIONS_500 = [
       "The phenomenon of straying",
       "The phenomenon of imitating singing"
     ],
-    "explain_en": "The rapid learning mechanism during the 'sensitive period' connects young children with their parents, helping to ensure safe survival."
+    "explain_en": "The rapid learning mechanism during the 'sensitive period' connects young children with their parents, helping to ensure safe survival.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG084",
@@ -17888,7 +18371,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -17906,7 +18389,8 @@ window.QUESTIONS_500 = [
       "Shoots out 220V high voltage electric rays",
       "Sprays a stream of boiling chemical liquid up to 100°C with a popping sound"
     ],
-    "explain_en": "The reaction chamber in the bug's abdomen mixes hydroquinone and hydrogen peroxide to create a powerful exothermic reaction that ejects boiling fluid into the enemy."
+    "explain_en": "The reaction chamber in the bug's abdomen mixes hydroquinone and hydrogen peroxide to create a powerful exothermic reaction that ejects boiling fluid into the enemy.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG085",
@@ -17925,7 +18409,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -17943,7 +18427,8 @@ window.QUESTIONS_500 = [
       "The amount of food equivalent to a large city consumed in a day",
       "They don't need to eat anything during the flight"
     ],
-    "explain_en": "Each grasshopper eats an amount of food equal to its body weight every day. Grasshopper storms can devastate every field."
+    "explain_en": "Each grasshopper eats an amount of food equal to its body weight every day. Grasshopper storms can devastate every field.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG086",
@@ -17962,7 +18447,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -17980,7 +18465,8 @@ window.QUESTIONS_500 = [
       "Liquid mercury",
       "Carbon (like pencil lead graphite)"
     ],
-    "explain_en": "They are the same element as carbon, but the tetrahedral crystal structure is extremely stable under enormous pressure, creating bright diamonds."
+    "explain_en": "They are the same element as carbon, but the tetrahedral crystal structure is extremely stable under enormous pressure, creating bright diamonds.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "NG087",
@@ -17999,7 +18485,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -18017,7 +18503,8 @@ window.QUESTIONS_500 = [
       "Mercury",
       "Aluminum"
     ],
-    "explain_en": "Mercury has a very low melting point (-38.8°C), so under normal conditions it is a heavy, silvery liquid."
+    "explain_en": "Mercury has a very low melting point (-38.8°C), so under normal conditions it is a heavy, silvery liquid.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "NG088",
@@ -18036,7 +18523,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -18054,7 +18541,8 @@ window.QUESTIONS_500 = [
       "The volume expands and the density is lighter than liquid water (floats on water).",
       "Turns into flammable gas"
     ],
-    "explain_en": "Hydrogen bonds create a hollow crystal lattice when it freezes, causing ice to float on the surface of the lake, protecting the organisms below from freezing as well."
+    "explain_en": "Hydrogen bonds create a hollow crystal lattice when it freezes, causing ice to float on the surface of the lake, protecting the organisms below from freezing as well.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "NG089",
@@ -18073,7 +18561,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -18091,7 +18579,8 @@ window.QUESTIONS_500 = [
       "Helium has flying wings",
       "Helium balloons do not have shells"
     ],
-    "explain_en": "The molar mass of Helium is only 4 g/mol while the average air is 29 g/mol, creating an Archimedes thrust that lifts the balloon."
+    "explain_en": "The molar mass of Helium is only 4 g/mol while the average air is 29 g/mol, creating an Archimedes thrust that lifts the balloon.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "NG090",
@@ -18110,7 +18599,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -18128,7 +18617,8 @@ window.QUESTIONS_500 = [
       "It can only be inlaid with a grain of rice",
       "Nearly 1 square meter wide, super thin, light penetrates"
     ],
-    "explain_en": "Gold's superior ductility allows it to be laminated to a thickness of just a few hundred atoms as a protective coating for astronaut helmets."
+    "explain_en": "Gold's superior ductility allows it to be laminated to a thickness of just a few hundred atoms as a protective coating for astronaut helmets.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "NG091",
@@ -18147,7 +18637,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -18165,7 +18655,8 @@ window.QUESTIONS_500 = [
       "Because the wind blows directly into the eardrum",
       "The difference in air pressure between the middle ear cavity and the outside environment"
     ],
-    "explain_en": "Rapid changes in cabin pressure cause the eardrum to bulge or cave in; Swallowing saliva helps the Eustachian tube open to equalize the pressure."
+    "explain_en": "Rapid changes in cabin pressure cause the eardrum to bulge or cave in; Swallowing saliva helps the Eustachian tube open to equalize the pressure.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "NG092",
@@ -18184,7 +18675,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -18202,7 +18693,8 @@ window.QUESTIONS_500 = [
       "It took about 1 hour",
       "About 10 minutes"
     ],
-    "explain_en": "The speed of sound in air is 340 m/s, so it takes about 3 seconds to travel 1000 meters (1 km)."
+    "explain_en": "The speed of sound in air is 340 m/s, so it takes about 3 seconds to travel 1000 meters (1 km).",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "NG093",
@@ -18221,7 +18713,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Vật chất & Năng lượng",
+    "topic": "Vật Chất & Năng Lượng",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -18239,7 +18731,8 @@ window.QUESTIONS_500 = [
       "Industrial kerosene",
       "Pure distilled water (pure H2O)"
     ],
-    "explain_en": "Distilled water contains very few free ions; When dissolving table salt (NaCl), free Na+ and Cl- ions conduct electric current extremely well."
+    "explain_en": "Distilled water contains very few free ions; When dissolving table salt (NaCl), free Na+ and Cl- ions conduct electric current extremely well.",
+    "curriculum_topic": "Vật chất & Năng lượng"
   },
   {
     "id": "NG094",
@@ -18258,7 +18751,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 5,
@@ -18276,7 +18769,8 @@ window.QUESTIONS_500 = [
       "Because the air contains blue dye",
       "Because the ocean reflects blue into the sky"
     ],
-    "explain_en": "Blue light has a short wavelength, so it is scattered in all directions by atmospheric molecules nearly 10 times stronger than red light."
+    "explain_en": "Blue light has a short wavelength, so it is scattered in all directions by atmospheric molecules nearly 10 times stronger than red light.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG095",
@@ -18295,7 +18789,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 1,
     "ans": "B",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -18313,7 +18807,8 @@ window.QUESTIONS_500 = [
       "Clouds cover all the blue",
       "The Sun cools and turns red"
     ],
-    "explain_en": "At the angle of light, which is the horizon, the long light path scatters all blue rays, leaving only long-wavelength red rays passing straight through."
+    "explain_en": "At the angle of light, which is the horizon, the long light path scatters all blue rays, leaving only long-wavelength red rays passing straight through.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG096",
@@ -18332,7 +18827,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 0,
     "ans": "A",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -18350,7 +18845,8 @@ window.QUESTIONS_500 = [
       "Only 10% sinks, most floats on the surface",
       "Floats 100% on water"
     ],
-    "explain_en": "The density of ice (0.92 g/cm³) is approximately the same as sea water (1.03 g/cm³), causing the iceberg to only protrude a small tip above."
+    "explain_en": "The density of ice (0.92 g/cm³) is approximately the same as sea water (1.03 g/cm³), causing the iceberg to only protrude a small tip above.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG097",
@@ -18369,7 +18865,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 2,
     "ans": "C",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -18387,7 +18883,8 @@ window.QUESTIONS_500 = [
       "Mid-Ocean Ridge",
       "The Alps"
     ],
-    "explain_en": "Mid-ocean ridges are giant tectonic plate spreading boundaries where magma constantly erupts to create new ocean crust."
+    "explain_en": "Mid-ocean ridges are giant tectonic plate spreading boundaries where magma constantly erupts to create new ocean crust.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG098",
@@ -18406,7 +18903,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Trái Đất & Bầu trời",
+    "topic": "Địa Lý",
     "difficulty": "easy",
     "diff": 1,
     "grade": 4,
@@ -18424,7 +18921,8 @@ window.QUESTIONS_500 = [
       "Helium gas",
       "Nitrogen gas (about 78%)"
     ],
-    "explain_en": "Most of the air is inert nitrogen (78%), life-sustaining oxygen accounts for 21%, and the remaining 1% is argon, water vapor and other gases."
+    "explain_en": "Most of the air is inert nitrogen (78%), life-sustaining oxygen accounts for 21%, and the remaining 1% is argon, water vapor and other gases.",
+    "curriculum_topic": "Trái Đất & Bầu trời"
   },
   {
     "id": "NG099",
@@ -18443,7 +18941,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "medium",
     "diff": 2,
     "grade": 4,
@@ -18461,7 +18959,8 @@ window.QUESTIONS_500 = [
       "Domestic dog",
       "Honey bees and some birds"
     ],
-    "explain_en": "Honey bees' eyes can see ultraviolet rays, which helps them see secret guiding patterns on flower petals to find honey."
+    "explain_en": "Honey bees' eyes can see ultraviolet rays, which helps them see secret guiding patterns on flower petals to find honey.",
+    "curriculum_topic": "Thực vật & Động vật"
   },
   {
     "id": "NG100",
@@ -18480,7 +18979,7 @@ window.QUESTIONS_500 = [
     "correctIndex": 3,
     "ans": "D",
     "source": "National Geographic Kids",
-    "topic": "Thực vật & Động vật",
+    "topic": "Động Vật",
     "difficulty": "hard",
     "diff": 3,
     "grade": 5,
@@ -18498,6 +18997,7 @@ window.QUESTIONS_500 = [
       "Softer than sponge",
       "Stronger than metal steel fibers and artificial carbon fibers"
     ],
-    "explain_en": "The nano-sized goethite mineral structure in cone snail teeth has a record tensile strength, breaking all records for natural materials."
+    "explain_en": "The nano-sized goethite mineral structure in cone snail teeth has a record tensile strength, breaking all records for natural materials.",
+    "curriculum_topic": "Thực vật & Động vật"
   }
 ];
