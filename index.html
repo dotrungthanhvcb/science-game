@@ -4610,12 +4610,12 @@
       <div class="history-header-bar">
         <h2 style="font-size:1.35rem; font-weight:900; color:var(--dark); display:flex; align-items:center; gap:8px;">
           <span>📊</span>
-          <span>Lịch Sử Bài Thi & Bảng Thống Kê</span>
+          <span id="hist-screen-title">Lịch Sử Bài Thi & Bảng Thống Kê</span>
         </h2>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
-          <button class="btn-source-action" onclick="syncAllHistoryToSheets()" style="background:#EEF2FF; color:var(--primary); border-color:#C7D2FE; font-weight:800; display:inline-flex; align-items:center; gap:6px;">🔄 Đồng bộ lên Sheets</button>
-          <a href="https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit" target="_blank" onclick="openGoogleSheetsDirectly(event)" class="btn-source-action" style="background:#F0FDF4; color:#15803D; border-color:#86EFAC; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">📄 Mở File Google Sheets ↗</a>
-          <button class="btn-source-action" onclick="showScreen('home-screen')" style="font-weight:700;">🏠 Về Trang Chủ</button>
+          <button class="btn-source-action" id="btn-hist-sync-sheets" onclick="syncAllHistoryToSheets()" style="background:#EEF2FF; color:var(--primary); border-color:#C7D2FE; font-weight:800; display:inline-flex; align-items:center; gap:6px;">🔄 Đồng bộ lên Sheets</button>
+          <a href="https://docs.google.com/spreadsheets/d/1YW3md3WW_8vj5C2kjztqG7Si_TMidM6NEb9TwFCTNMc/edit" target="_blank" onclick="openGoogleSheetsDirectly(event)" id="btn-hist-open-sheets" class="btn-source-action" style="background:#F0FDF4; color:#15803D; border-color:#86EFAC; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">📄 Mở File Google Sheets ↗</a>
+          <button class="btn-source-action" id="btn-hist-back-home" onclick="showScreen('home-screen')" style="font-weight:700;">🏠 Về Trang Chủ</button>
           
         </div>
       </div>
@@ -4627,19 +4627,19 @@
       <div class="history-dashboard-grid">
         <div class="history-stat-card">
           <div class="history-stat-val" id="hist-total-tests">0</div>
-          <div class="history-stat-lbl">LƯỢT ĐÃ THI</div>
+          <div class="history-stat-lbl" id="lbl-hist-total">LƯỢT ĐÃ THI</div>
         </div>
         <div class="history-stat-card">
           <div class="history-stat-val" id="hist-avg-score" style="color:#059669;">0.0</div>
-          <div class="history-stat-lbl">ĐIỂM TRUNG BÌNH</div>
+          <div class="history-stat-lbl" id="lbl-hist-avg-score">ĐIỂM TRUNG BÌNH</div>
         </div>
         <div class="history-stat-card">
           <div class="history-stat-val" id="hist-avg-accuracy" style="color:var(--primary);">0%</div>
-          <div class="history-stat-lbl">TỈ LỆ ĐÚNG</div>
+          <div class="history-stat-lbl" id="lbl-hist-accuracy">TỈ LỆ ĐÚNG</div>
         </div>
         <div class="history-stat-card">
           <div class="history-stat-val" id="hist-highest-score" style="color:#D97706;">0.0</div>
-          <div class="history-stat-lbl">KỶ LỤC ĐIỂM CAO</div>
+          <div class="history-stat-lbl" id="lbl-hist-high-score">KỶ LỤC ĐIỂM CAO</div>
         </div>
       </div>
 
@@ -4686,17 +4686,17 @@
         <table class="history-table">
           <thead>
             <tr>
-              <th style="white-space:nowrap;">Mã ID</th>
-              <th style="white-space:nowrap;">Ngày Thi</th>
-              <th style="white-space:nowrap;">Giờ Thi</th>
-              <th>Học Sinh</th>
-              <th>Lớp</th>
-              <th>Ngôn Ngữ</th>
-              <th>Loại Đề Thi</th>
-              <th style="text-align:center;">Đúng / Tổng</th>
-              <th style="text-align:center;">Điểm Số</th>
-              <th style="text-align:center;">Thời Gian</th>
-              <th style="text-align:center;">Xem Lại</th>
+              <th style="white-space:nowrap;" id="th-hist-id">Mã ID</th>
+              <th style="white-space:nowrap;" id="th-hist-date">Ngày Thi</th>
+              <th style="white-space:nowrap;" id="th-hist-time">Giờ Thi</th>
+              <th id="th-hist-student">Học Sinh</th>
+              <th id="th-hist-class">Lớp</th>
+              <th id="th-hist-lang">Ngôn Ngữ</th>
+              <th id="th-hist-type">Loại Đề Thi</th>
+              <th style="text-align:center;" id="th-hist-correct">Đúng / Tổng</th>
+              <th style="text-align:center;" id="th-hist-score">Điểm Số</th>
+              <th style="text-align:center;" id="th-hist-duration">Thời Gian</th>
+              <th style="text-align:center;" id="th-hist-action">Xem Lại</th>
             </tr>
           </thead>
           <tbody id="history-table-body">
@@ -6245,7 +6245,97 @@ function applyLanguageToUI(lang) {
   const btnReplayWrong = document.getElementById('btn-replay-wrong-text');
   if (btnReplayWrong) btnReplayWrong.textContent = isEn ? 'Practice Wrong Answers' : 'Ôn lại câu sai';
 
-  // 6. If Quiz is currently active, immediately re-render question & mission header
+  // 6. Home pool & source summary bilingual update
+  if (typeof updatePoolCountDisplay === 'function') {
+    updatePoolCountDisplay();
+  }
+
+  // 7. History Screen Bilingual Translation
+  const histTitle = document.getElementById('hist-screen-title');
+  if (histTitle) histTitle.textContent = isEn ? 'Quiz History & Performance Dashboard' : 'Lịch Sử Bài Thi & Bảng Thống Kê';
+  const btnHistSync = document.getElementById('btn-hist-sync-sheets');
+  if (btnHistSync) btnHistSync.textContent = isEn ? '🔄 Sync to Sheets' : '🔄 Đồng bộ lên Sheets';
+  const btnHistOpen = document.getElementById('btn-hist-open-sheets');
+  if (btnHistOpen) btnHistOpen.textContent = isEn ? '📄 Open Google Sheets ↗' : '📄 Mở File Google Sheets ↗';
+  const btnHistHome = document.getElementById('btn-hist-back-home');
+  if (btnHistHome) btnHistHome.textContent = isEn ? '🏠 Back to Home' : '🏠 Về Trang Chủ';
+
+  const lblHistTotal = document.getElementById('lbl-hist-total');
+  if (lblHistTotal) lblHistTotal.textContent = isEn ? 'TOTAL QUIZZES' : 'LƯỢT ĐÃ THI';
+  const lblHistAvg = document.getElementById('lbl-hist-avg-score');
+  if (lblHistAvg) lblHistAvg.textContent = isEn ? 'AVERAGE SCORE' : 'ĐIỂM TRUNG BÌNH';
+  const lblHistAcc = document.getElementById('lbl-hist-accuracy');
+  if (lblHistAcc) lblHistAcc.textContent = isEn ? 'ACCURACY RATE' : 'TỈ LỆ ĐÚNG';
+  const lblHistHigh = document.getElementById('lbl-hist-high-score');
+  if (lblHistHigh) lblHistHigh.textContent = isEn ? 'HIGH SCORE' : 'KỶ LỤC ĐIỂM CAO';
+
+  const histSearch = document.getElementById('history-search');
+  if (histSearch) histSearch.placeholder = isEn ? '🔍 Search by student name, class...' : '🔍 Tìm theo tên học sinh, lớp...';
+
+  // History Filter Dropdowns Translation
+  const filterSizeSelect = document.getElementById('history-filter-size');
+  if (filterSizeSelect) {
+    const sizeMap = {
+      'all': isEn ? '🔢 All Sizes' : '🔢 Tất cả số câu',
+      '5': isEn ? '5 questions (Warm-up)' : '5 câu (Khởi động)',
+      '10': isEn ? '10 questions (Quick)' : '10 câu (Nhanh)',
+      '15': isEn ? '15 questions (Standard)' : '15 câu (Chuẩn thi)',
+      '20': isEn ? '20 questions (Challenge)' : '20 câu (Thử thách)',
+      '25': isEn ? '25 questions (Advanced)' : '25 câu (Nâng cao)',
+      '30': isEn ? '30 questions (Scholarship)' : '30 câu (Học bổng)',
+      '50': isEn ? '50 questions (Grand Arena)' : '50 câu (Đại hội)'
+    };
+    Array.from(filterSizeSelect.options).forEach(opt => {
+      if (sizeMap[opt.value]) opt.textContent = sizeMap[opt.value];
+    });
+  }
+
+  const filterDiffSelect = document.getElementById('history-filter-diff');
+  if (filterDiffSelect) {
+    const diffMap = {
+      'all': isEn ? '🎚️ All Levels' : '🎚️ Tất cả độ khó',
+      '1': isEn ? '⭐ Level 1: Easy (6 - 7 yrs)' : '⭐ Mức 1: Dễ (6 - 7 tuổi)',
+      '2': isEn ? '⭐⭐ Level 2: Medium (7 - 8 yrs)' : '⭐⭐ Mức 2: Vừa (7 - 8 tuổi)',
+      '3': isEn ? '⭐⭐⭐ Level 3: Hard (8 - 9 yrs)' : '⭐⭐⭐ Mức 3: Khó (8 - 9 tuổi)',
+      'mixed': isEn ? '🌟 Mixed Levels' : '🌟 Hỗn hợp đa cấp độ'
+    };
+    Array.from(filterDiffSelect.options).forEach(opt => {
+      if (diffMap[opt.value]) opt.textContent = diffMap[opt.value];
+    });
+  }
+
+  const filterLevelSelect = document.getElementById('history-filter-level');
+  if (filterLevelSelect) {
+    const levelMap = {
+      'all': isEn ? '🎯 All Scores' : '🎯 Tất cả mức điểm',
+      'high': isEn ? '🏆 Excellent (≥ 9.0 pts)' : '🏆 Xuất sắc (≥ 9.0 điểm)',
+      'medium': isEn ? '👍 Good (6.5 - 8.9 pts)' : '👍 Khá tốt (6.5 - 8.9 điểm)',
+      'low': isEn ? '📖 Needs Practice (< 6.5 pts)' : '📖 Cần cố gắng (< 6.5 điểm)'
+    };
+    Array.from(filterLevelSelect.options).forEach(opt => {
+      if (levelMap[opt.value]) opt.textContent = levelMap[opt.value];
+    });
+  }
+
+  // History Table Headers
+  const thId = document.getElementById('th-hist-id'); if (thId) thId.textContent = isEn ? 'ID' : 'Mã ID';
+  const thDate = document.getElementById('th-hist-date'); if (thDate) thDate.textContent = isEn ? 'Date' : 'Ngày Thi';
+  const thTime = document.getElementById('th-hist-time'); if (thTime) thTime.textContent = isEn ? 'Time' : 'Giờ Thi';
+  const thStudent = document.getElementById('th-hist-student'); if (thStudent) thStudent.textContent = isEn ? 'Student' : 'Học Sinh';
+  const thClass = document.getElementById('th-hist-class'); if (thClass) thClass.textContent = isEn ? 'Class' : 'Lớp';
+  const thLang = document.getElementById('th-hist-lang'); if (thLang) thLang.textContent = isEn ? 'Language' : 'Ngôn Ngữ';
+  const thType = document.getElementById('th-hist-type'); if (thType) thType.textContent = isEn ? 'Mission Type' : 'Loại Đề Thi';
+  const thCorrect = document.getElementById('th-hist-correct'); if (thCorrect) thCorrect.textContent = isEn ? 'Score' : 'Đúng / Tổng';
+  const thScore = document.getElementById('th-hist-score'); if (thScore) thScore.textContent = isEn ? 'Grade (10)' : 'Điểm Số';
+  const thDur = document.getElementById('th-hist-duration'); if (thDur) thDur.textContent = isEn ? 'Time' : 'Thời Gian';
+  const thAction = document.getElementById('th-hist-action'); if (thAction) thAction.textContent = isEn ? 'Review' : 'Xem Lại';
+
+  // Re-render history table rows with current language
+  if (typeof renderHistoryTable === 'function') {
+    renderHistoryTable();
+  }
+
+  // 8. If Quiz is currently active, immediately re-render question & mission header
   const quizScreen = document.getElementById('quiz-screen');
   if (quizScreen && quizScreen.classList.contains('active') && typeof currentDeck !== 'undefined' && currentDeck && currentDeck.length > 0 && !isQuizSubmitted) {
     displayQuestion();
@@ -6361,16 +6451,22 @@ function updatePoolCountDisplay() {
     return false;
   }).length;
 
+  const isEn = (currentLanguageMode === 'en');
+
   // XỬ LÝ KHI NGƯỜI DÙNG BỎ CHỌN TẤT CẢ NGUỒN (0 nguồn)
   if (selectedSources.size === 0) {
     if (sourceSummaryBox) {
       sourceSummaryBox.className = 'source-status-summary warning';
     }
     if (sourceSummaryElem) {
-      sourceSummaryElem.textContent = '⚠️ Bé hoặc phụ huynh vui lòng chọn ít nhất 1 nguồn đề thi để bắt đầu!';
+      sourceSummaryElem.textContent = isEn 
+        ? '⚠️ Please select at least 1 target exam source to begin!' 
+        : '⚠️ Bé hoặc phụ huynh vui lòng chọn ít nhất 1 nguồn đề thi để bắt đầu!';
     }
     if (textElem) {
-      textElem.textContent = 'Chưa có câu hỏi nào sẵn sàng vì chưa có nguồn đề thi nào được chọn.';
+      textElem.textContent = isEn 
+        ? 'No questions available because no target sources are selected.' 
+        : 'Chưa có câu hỏi nào sẵn sàng vì chưa có nguồn đề thi nào được chọn.';
     }
     if (btnStart) {
       btnStart.disabled = true;
@@ -6384,17 +6480,18 @@ function updatePoolCountDisplay() {
     sourceSummaryBox.className = 'source-status-summary';
   }
   if (sourceSummaryElem) {
-    sourceSummaryElem.textContent = `Đang chọn: ${totalInSelectedSources} câu hỏi khả dụng từ ${selectedSources.size} nguồn đề thi.`;
+    sourceSummaryElem.textContent = isEn 
+      ? `Selected: ${totalInSelectedSources} available questions from ${selectedSources.size} target exam sources.`
+      : `Đang chọn: ${totalInSelectedSources} câu hỏi khả dụng từ ${selectedSources.size} nguồn đề thi.`;
   }
   if (btnStart) {
     btnStart.disabled = false;
     btnStart.classList.remove('disabled-btn');
   }
 
-  const isEn = (currentLanguageMode === 'en');
   if (pool.length >= requested) {
     textElem.textContent = isEn 
-      ? `Filters matched ${pool.length} questions. Ready with ${requested} questions for this mission!`
+      ? `Filters matched ${pool.length} questions. Selected ${requested} questions for this mission!`
       : `Bộ lọc hiện có ${pool.length} câu phù hợp. Đảm bảo chọn đủ ${requested} câu cho lượt thi này!`;
   } else if (pool.length > 0) {
     textElem.textContent = isEn
@@ -8175,6 +8272,7 @@ function renderHistoryTable() {
   const allHistory = getLocalHistory();
   const acc = getStoredAccount();
   const isAdm = isAdmin();
+  const isEn = (currentLanguageMode === 'en');
 
   // 1. CẬP NHẬT BANNER PHÂN QUYỀN & BỘ LỌC HỌC SINH
   const roleBanner = document.getElementById('history-role-banner');
@@ -8184,7 +8282,17 @@ function renderHistoryTable() {
   if (isAdm) {
     // 👑 QUYỀN ADMIN: Xem TOÀN BỘ bài thi của tất cả học sinh
     if (roleBanner) {
-      roleBanner.innerHTML = `
+      roleBanner.innerHTML = isEn ? `
+        <div class="admin-badge-banner">
+          <span style="font-size:1.35rem;">👑</span>
+          <div style="flex:1;">
+            <strong>ADMIN VIEW:</strong> Viewing ALL quiz attempts and analytics across all students.
+          </div>
+          <button onclick="openUserManagementModal()" class="btn-source-action" style="background:#B91C1C; color:white; border:none; padding:5px 12px; font-weight:800; font-size:0.78rem; border-radius:8px;">
+            👥 Manage Users
+          </button>
+        </div>
+      ` : `
         <div class="admin-badge-banner">
           <span style="font-size:1.35rem;">👑</span>
           <div style="flex:1;">
@@ -8200,7 +8308,8 @@ function renderHistoryTable() {
       studentSelect.style.display = 'inline-block';
       const prevVal = studentSelect.value;
       const uniqueStudents = Array.from(new Set(allHistory.map(r => r.studentName || 'Học sinh'))).filter(Boolean);
-      studentSelect.innerHTML = `<option value="all">👑 Tất cả học sinh (${uniqueStudents.length} bạn)</option>` +
+      const allStudentsLabel = isEn ? `👑 All Students (${uniqueStudents.length} learners)` : `👑 Tất cả học sinh (${uniqueStudents.length} bạn)`;
+      studentSelect.innerHTML = `<option value="all">${allStudentsLabel}</option>` +
         uniqueStudents.map(s => `<option value="${s}">👤 ${s}</option>`).join('');
       if (prevVal) studentSelect.value = prevVal;
     }
@@ -8213,8 +8322,19 @@ function renderHistoryTable() {
     }
   } else if (acc && acc.username) {
     // 👤 HỌC SINH ĐĂNG NHẬP: THUẬT TOÁN SO KHỚP THÔNG MINH ĐA CHIỀU
+    const classNameDisplay = acc.studentClass ? (isEn ? acc.studentClass.replace('Lớp ', 'Grade ') : acc.studentClass) : (isEn ? 'Grade 2' : 'Lớp 2');
     if (roleBanner) {
-      roleBanner.innerHTML = `
+      roleBanner.innerHTML = isEn ? `
+        <div class="student-badge-banner">
+          <span style="font-size:1.35rem;">👤</span>
+          <div style="flex:1;">
+            <strong>STUDENT PROFILE: ${acc.studentName || acc.username} (${classNameDisplay})</strong> • Showing your personalized learning results.
+          </div>
+          <button onclick="fetchHistoryFromCloud()" class="btn-source-action" style="background:white; color:#1E40AF; border-color:#BFDBFE; font-size:0.75rem; padding:4px 10px; font-weight:800; border-radius:8px;" title="Sync quizzes from Cloud">
+            🔄 Sync Cloud
+          </button>
+        </div>
+      ` : `
         <div class="student-badge-banner">
           <span style="font-size:1.35rem;">👤</span>
           <div style="flex:1;">
@@ -8252,7 +8372,16 @@ function renderHistoryTable() {
   } else {
     // 🔒 CHẾ ĐỘ KHÁCH: BẢO MẬT TUYỆT ĐỐI
     if (roleBanner) {
-      roleBanner.innerHTML = `
+      roleBanner.innerHTML = isEn ? `
+        <div class="guest-badge-banner">
+          <div>
+            🔒 <strong>GUEST MODE:</strong> Please log in to view your personal quiz history and statistics.
+          </div>
+          <button onclick="openAuthModal()" class="btn-source-action" style="background:linear-gradient(135deg, #0284C7, #0369A1); color:white; border:none; font-weight:800; font-size:0.8rem; padding:6px 14px; border-radius:8px; box-shadow:0 2px 8px rgba(2, 132, 199, 0.3);">
+            👤 Log In Now
+          </button>
+        </div>
+      ` : `
         <div class="guest-badge-banner">
           <div>
             🔒 <strong>CHẾ ĐỘ KHÁCH (GUEST):</strong> Bạn cần đăng nhập để xem lịch sử bài thi và bảng thống kê cá nhân của mình.
@@ -8273,10 +8402,10 @@ function renderHistoryTable() {
   const filterDiff = document.getElementById('history-filter-diff');
   const filterLevel = document.getElementById('history-filter-level');
 
-  const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
-  const sizeVal = filterSize ? filterSize.value : 'all';
-  const diffVal = filterDiff ? filterDiff.value : 'all';
-  const levelVal = filterLevel ? filterLevel.value : 'all';
+  const searchTerm = searchInput ? (searchInput.value || '').toLowerCase().trim() : '';
+  const sizeVal = filterSize ? (filterSize.value || 'all') : 'all';
+  const diffVal = filterDiff ? (filterDiff.value || 'all') : 'all';
+  const levelVal = filterLevel ? (filterLevel.value || 'all') : 'all';
 
   // Cập nhật Dashboard tổng quan
   const totalTests = historyList.length;
@@ -8376,22 +8505,35 @@ function renderHistoryTable() {
     if (r.score10 >= 8.5) badgeClass = 'high';
     else if (r.score10 < 6.5) badgeClass = 'low';
 
-    const diffDisplay = r.diffText || (r.diffVal === '1' ? 'Mức 1: Dễ' : (r.diffVal === '2' ? 'Mức 2: Vừa' : (r.diffVal === '3' ? 'Mức 3: Khó' : 'Hỗn hợp')));
+    let diffDisplay = '';
+    if (isEn) {
+      diffDisplay = r.diffVal === '1' ? 'Level 1: Easy' : (r.diffVal === '2' ? 'Level 2: Med' : (r.diffVal === '3' ? 'Level 3: Hard' : 'Mixed'));
+    } else {
+      diffDisplay = r.diffText || (r.diffVal === '1' ? 'Mức 1: Dễ' : (r.diffVal === '2' ? 'Mức 2: Vừa' : (r.diffVal === '3' ? 'Mức 3: Khó' : 'Hỗn hợp')));
+    }
 
     const parts = (r.timestamp || "").split(" ");
     const rowTime = r.quizTime || (parts.length >= 2 ? parts[0] : "");
     const rowDate = r.quizDate || (parts.length >= 2 ? parts[1] : r.timestamp || "");
     const rowId = r.quizId || r.id || (rowTime ? "QUIZ-" + rowTime.replace(/[:]/g, "") : "QUIZ");
 
+    const rowStudentClass = r.studentClass ? (isEn ? r.studentClass.replace('Lớp ', 'Grade ') : r.studentClass) : (isEn ? 'Grade 2' : 'Lớp 2');
+    let rowLangDisplay = isEn ? 'Vietnamese' : 'Tiếng Việt';
+    if (r.language === 'Tiếng Anh' || r.language === 'English') rowLangDisplay = 'English';
+    else if (r.language === 'Song ngữ Anh - Việt' || r.language === 'Bilingual') rowLangDisplay = isEn ? 'Bilingual' : 'Song ngữ Anh - Việt';
+
+    const rowQuestionsCount = `${r.totalQuestions} ${isEn ? 'qs' : 'câu'}`;
+    const rowActionBtn = isEn ? '🔍 Review' : '🔍 Xem lại';
+
     tr.innerHTML = `
       <td style="white-space:nowrap;"><span style="white-space:nowrap; display:inline-block; font-family:monospace; font-weight:800; color:#0891B2; font-size:0.75rem; background:#ECFEFF; border:1px solid #BAE6FD; padding:3px 8px; border-radius:6px;">${rowId}</span></td>
       <td style="font-weight:700; color:#334155; white-space:nowrap;">${rowDate}</td>
       <td style="font-weight:700; color:#64748B; white-space:nowrap;">${rowTime}</td>
-      <td style="font-weight:800; color:var(--dark); white-space:nowrap;">${r.studentName || 'Bé'}</td>
-      <td style="white-space:nowrap;"><span style="white-space:nowrap; display:inline-block; background:#F1F5F9; border:1px solid #E2E8F0; padding:3px 10px; border-radius:8px; font-weight:700; font-size:0.8rem; color:#334155;">${r.studentClass || 'Lớp 2'}</span></td>
-      <td style="white-space:nowrap;"><span style="white-space:nowrap; display:inline-block; background:${r.language === 'Tiếng Anh' ? '#F0F9FF' : (r.language === 'Song ngữ Anh - Việt' ? '#FAF5FF' : '#F0FDF4')}; color:${r.language === 'Tiếng Anh' ? '#0369A1' : (r.language === 'Song ngữ Anh - Việt' ? '#7E22CE' : '#15803D')}; border:1px solid ${r.language === 'Tiếng Anh' ? '#BAE6FD' : (r.language === 'Song ngữ Anh - Việt' ? '#E9D5FF' : '#BBF7D0')}; padding:3px 10px; border-radius:8px; font-weight:700; font-size:0.75rem;">${r.language || 'Tiếng Việt'}</span></td>
+      <td style="font-weight:800; color:var(--dark); white-space:nowrap;">${r.studentName || (isEn ? 'Student' : 'Bé')}</td>
+      <td style="white-space:nowrap;"><span style="white-space:nowrap; display:inline-block; background:#F1F5F9; border:1px solid #E2E8F0; padding:3px 10px; border-radius:8px; font-weight:700; font-size:0.8rem; color:#334155;">${rowStudentClass}</span></td>
+      <td style="white-space:nowrap;"><span style="white-space:nowrap; display:inline-block; background:${r.language === 'Tiếng Anh' ? '#F0F9FF' : (r.language === 'Song ngữ Anh - Việt' ? '#FAF5FF' : '#F0FDF4')}; color:${r.language === 'Tiếng Anh' ? '#0369A1' : (r.language === 'Song ngữ Anh - Việt' ? '#7E22CE' : '#15803D')}; border:1px solid ${r.language === 'Tiếng Anh' ? '#BAE6FD' : (r.language === 'Song ngữ Anh - Việt' ? '#E9D5FF' : '#BBF7D0')}; padding:3px 10px; border-radius:8px; font-weight:700; font-size:0.75rem;">${rowLangDisplay}</span></td>
       <td style="white-space:nowrap;">
-        <span style="font-weight:800; color:var(--primary); font-size:0.82rem; white-space:nowrap;">${r.totalQuestions} câu</span>
+        <span style="font-weight:800; color:var(--primary); font-size:0.82rem; white-space:nowrap;">${rowQuestionsCount}</span>
         <span style="color:#64748B; font-size:0.72rem; display:block; white-space:nowrap;">${diffDisplay}</span>
       </td>
       <td style="text-align:center; font-weight:800; white-space:nowrap;"><span style="color:#15803D;">${r.correctCount}</span> / ${r.totalQuestions}</td>
@@ -8399,7 +8541,7 @@ function renderHistoryTable() {
       <td style="text-align:center; font-weight:700; color:#64748B; white-space:nowrap;">⏱️ ${r.duration || '00:00'}</td>
       <td style="text-align:center; white-space:nowrap;">
         <button class="btn-source-action" onclick="viewHistoryDetail('${r.id}')" style="white-space:nowrap; display:inline-flex; align-items:center; gap:4px; background:#E0F2FE; color:#0284C7; border:1px solid #BAE6FD; font-size:0.78rem; padding:5px 12px; font-weight:800; border-radius:9999px; cursor:pointer;">
-          🔍 Xem lại
+          ${rowActionBtn}
         </button>
       </td>
     `;
