@@ -3006,17 +3006,15 @@
   /* Áp dụng cho màn hình Laptop & Desktop (Chiều cao >= 620px và Chiều rộng >= 768px) */
   @media (min-height: 620px) and (min-width: 768px) {
     body {
-      height: 100vh !important;
-      max-height: 100vh !important;
-      overflow: hidden !important;
+      min-height: 100vh !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
       padding: 10px 18px !important;
     }
 
     .main-wrapper {
-      height: 100% !important;
-      max-height: calc(100vh - 20px) !important;
-      overflow: hidden !important;
-      justify-content: space-between !important;
+      min-height: calc(100vh - 20px) !important;
+      justify-content: flex-start !important;
     }
 
     /* Header cố định chiều cao gọn gàng */
@@ -3028,14 +3026,13 @@
       padding: 6px 20px !important;
     }
 
-    /* Màn hình active chiếm trọn không gian còn lại mà không sinh scrollbar */
+    /* Màn hình active cho phép cuộn mượt mà khi nội dung dài, không bị che khuất */
     .screen.active {
-      flex: 1 1 0% !important;
-      min-height: 0 !important;
+      flex: 1 1 auto !important;
       display: flex !important;
       flex-direction: column !important;
-      overflow: hidden !important;
-      padding: 12px 20px !important;
+      overflow-y: auto !important;
+      padding: 14px 20px !important;
       border-radius: 24px !important;
     }
 
@@ -3620,6 +3617,22 @@
     border-bottom-width: 1px !important;
     margin-top: 4px;
     transform: translateY(3px);
+  }
+
+  
+  /* CHOICES 2X2 GRID TO FIT SCREEN AT 100% ZOOM */
+  #choices-list {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+  @media (max-width: 640px) {
+    #choices-list {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  #quiz-screen {
+    overflow-y: auto !important;
   }
 
   /* OPTION CARDS (3D TACTILE SELECTION) */
@@ -4433,7 +4446,7 @@
         </div>
 
         <!-- 4 TACTILE 3D OPTION CARDS (A, B, C, D) -->
-        <div class="flex flex-col gap-2.5" id="choices-list">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="choices-list">
           <!-- Render động qua renderMultipleChoice(q) -->
         </div>
 
@@ -7865,108 +7878,6 @@ function filterLeaderboardView() {
     const filtered = cachedLeaderboard.filter(p => p.studentClass === filterClass);
     renderLeaderboardList(filtered);
   }
-}
-
-function renderLeaderboardList(players) {
-  const listElem = document.getElementById('lead-players-list');
-  if (!listElem) return;
-
-  if (players.length === 0) {
-    listElem.innerHTML = '<div style="text-align:center; padding:30px; color:#64748B;">Chưa có bạn nào trong lớp này. Bé hãy là người đầu tiên ghi danh nhé!</div>';
-    return;
-  }
-
-  let html = '';
-
-  // NẾU CÓ TỪ 3 BẠN TRỞ LÊN: VẼ BỤC VINH QUANG PODIUM CHUẨN FIGMA AI (LEADERBOARD WEEKLY STARS)
-  if (players.length >= 3) {
-    const p1 = players[0];
-    const p2 = players[1];
-    const p3 = players[2];
-
-    html += `
-      <div class="podium-container flex items-end justify-center gap-2.5 mb-5 pt-3 select-none">
-        
-        <!-- HẠNG 2: BẠC -->
-        <div class="flex flex-col items-center w-24">
-          <div class="w-12 h-12 rounded-full border-2 border-slate-300 bg-slate-100 flex items-center justify-center text-xl mb-1 shadow-sm">
-            🥈
-          </div>
-          <div class="font-baloo font-bold text-xs text-slate-900 truncate max-w-[85px] text-center">
-            ${p2.name}
-          </div>
-          <div class="text-[11px] font-extrabold text-cyan-600 mb-1">
-            ${p2.highestScore || 0}/10 ⭐
-          </div>
-          <div class="podium-2nd w-full h-16 flex flex-col items-center justify-center text-white font-baloo font-black shadow-md">
-            <span class="text-base">2</span>
-            <span class="text-[9px] opacity-90">${isEn ? 'RUNNER-UP' : 'Á QUÂN'}</span>
-          </div>
-        </div>
-
-        <!-- HẠNG 1: VÀNG (QUÁN QUÂN) -->
-        <div class="flex flex-col items-center w-28 -mt-4 cursor-pointer" onclick="launchFireworks()" title="${isEn ? 'Tap Champion to launch celebratory fireworks!' : 'Bấm vào Quán quân để bắn pháo hoa ăn mừng!'}">
-          <div class="relative">
-            <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 text-base animate-bounce">👑</span>
-            <div class="w-14 h-14 rounded-full border-3 border-amber-400 bg-amber-100 flex items-center justify-center text-2xl mb-1 shadow-lg ring-4 ring-amber-300/40">
-              🥇
-            </div>
-          </div>
-          <div class="font-baloo font-bold text-sm text-slate-900 truncate max-w-[95px] text-center">
-            ${p1.name}
-          </div>
-          <div class="text-xs font-black text-amber-600 mb-1">
-            ${p1.highestScore || 0}/10 🌟
-          </div>
-          <div class="podium-1st w-full h-24 flex flex-col items-center justify-center text-slate-950 font-baloo font-black shadow-xl">
-            <span class="text-xl">1</span>
-            <span class="text-[10px] tracking-wider font-extrabold">${isEn ? 'CHAMPION' : 'QUÁN QUÂN'}</span>
-          </div>
-        </div>
-
-        <!-- HẠNG 3: ĐỒNG -->
-        <div class="flex flex-col items-center w-24">
-          <div class="w-12 h-12 rounded-full border-2 border-orange-300 bg-orange-100 flex items-center justify-center text-xl mb-1 shadow-sm">
-            🥉
-          </div>
-          <div class="font-baloo font-bold text-xs text-slate-900 truncate max-w-[85px] text-center">
-            ${p3.name}
-          </div>
-          <div class="text-[11px] font-extrabold text-orange-600 mb-1">
-            ${p3.highestScore || 0}/10 ⭐
-          </div>
-          <div class="podium-3rd w-full h-12 flex flex-col items-center justify-center text-white font-baloo font-black shadow-md">
-            <span class="text-sm">3</span>
-            <span class="text-[9px] opacity-90">${isEn ? '3RD PLACE' : 'QUÝ QUÂN'}</span>
-          </div>
-        </div>
-
-      </div>
-    `;
-  }
-
-  // DANH SÁCH TỪ HẠNG 4 TRỞ ĐI
-  html += '<div class="flex flex-col gap-2">';
-  players.slice(3).forEach((p, idx) => {
-    const rank = idx + 4;
-    const mascotEmoji = p.mascot || '🦉';
-    html += `
-      <div class="flex items-center justify-between p-2.5 rounded-2xl bg-white border border-slate-100 shadow-2xs hover:bg-slate-50 transition">
-        <div class="flex items-center gap-3">
-          <span class="w-6 text-center font-baloo font-black text-slate-400 text-xs">${rank}</span>
-          <span class="text-lg">${mascotEmoji}</span>
-          <div>
-            <div class="text-xs font-bold text-slate-800">${p.name}</div>
-            <div class="text-[10px] text-slate-400 font-medium">${p.className || 'Học sinh'} • ${p.school || 'Khoa học nhí'}</div>
-          </div>
-        </div>
-        <span class="text-xs font-black text-slate-700 bg-slate-50 border border-slate-200 px-2.5 py-1 rounded-full shadow-2xs">${p.highestScore || 0}/10 ⭐</span>
-      </div>
-    `;
-  });
-  html += '</div>';
-
-  listElem.innerHTML = html;
 }
 
 // TÍNH NĂNG CHIA SẺ LINK GAME CHO BẠN BÈ
